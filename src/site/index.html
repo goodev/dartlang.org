@@ -18,8 +18,8 @@ js:
       <div class="hero container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h5>1.0 JUST RELEASED</h5>
-            <h1>Dart is a new language for scalable web app engineering.</h1>
+            <h5>1.0 发布了</h5>
+            <h1>Dart 是一种新的用来建构可扩展Web应用程序的语言。</h1>
             {% include downloads/_dart-editor.html buttonclass="btn btn-default btn-lg download-btn" %}
           </div>
         </div>
@@ -38,33 +38,32 @@ js:
           <div class="col-md-10 col-md-offset-1">
             <div class="row">
               <div class="col-md-4">
-                <h2>See Dart</h2>
-                <p class="timer"><i class="sprite-icon-timer"></i>About 5 minutes</p>
-                <p>Dart is class based and object oriented, without being dogmatic.</p>
-                <a id="see-code" href="#code"><i class="sprite-icon-triangle"></i>See code</a>
+                <h2>了解下 Dart</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>大约 5 分钟</p>
+                <p>Dart 是基于类的和面向对象的、非教条式的语言。</p>
+                <a id="see-code" href="#code"><i class="sprite-icon-triangle"></i>了解代码</a>
               </div>
               <div class="col-md-4">
-                <h2>Try Dart</h2>
-                <p class="timer"><i class="sprite-icon-timer"></i>About 1 hour</p>
-                <p>Write a Dart web app, even if you've never written
-		a web app before. </p>
-                <a href="/codelabs/darrrt/"><i class="sprite-icon-triangle"></i>Write code</a>
+                <h2>尝试下 Dart</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>大约 1 小时</p>
+                <p>编写一个 Dart web 程序 - 即使你以前从未编写过 web 程序。</p>
+                <a href="/codelabs/darrrt/"><i class="sprite-icon-triangle"></i>编写代码</a>
               </div>
               <div class="col-md-4">
-                <h2>Dive deep</h2>
-                <p class="timer"><i class="sprite-icon-timer"></i>About 1 day</p>
-                <p>Dart has lots of <a href="#tools">tools</a>,
-                <a href="#libraries">libraries</a>, and documentation,
-                plus a developer community.</p>
-                <a href="/docs/"><i class="sprite-icon-triangle"></i>Learn more</a>
+                <h2>深入了解</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>大约 1 天</p>
+                <p>Dart 有很多 <a href="#tools">工具</a>、
+                <a href="#libraries">代码库</a>、以及文档和
+                                                         一个开发者社区</p>
+                <a href="/docs/"><i class="sprite-icon-triangle"></i>了解更多</a>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-10 col-md-offset-1 browser-support">
-            <p>All modern browsers (both desktop and mobile) can run Dart web apps, thanks to our
-            <a href="#dart2js">Dart-to-JavaScript compiler</a>.</p>
+            <p>使用 <a href="#dart2js">Dart-to-JavaScript 编译器</a>，
+                                                  所有最新的浏览器 (包含桌面版和移动版) 都可以运行 Dart web 程序。</p>
             <i class="sprite-icon-browsers"></i>
           </div>
         </div>
@@ -73,93 +72,93 @@ js:
       <section class="dart-new-language sec-shadow" id="code">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h2>Dart is new, yet familiar</h2>
+            <h2>Dart 是新且非常熟悉的</h2>
 
             <div id="dart-language-carousel" class="carousel slide dart-carousel" data-interval="false">
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#dart-language-carousel" data-slide-to="0" class="active">Easy to learn</li>
-                <li data-target="#dart-language-carousel" data-slide-to="1">Concise</li>
-                <li data-target="#dart-language-carousel" data-slide-to="2">Optionally typed</li>
-                <li data-target="#dart-language-carousel" data-slide-to="3">Modular</li>
+                <li data-target="#dart-language-carousel" data-slide-to="0" class="active">易于学习</li>
+                <li data-target="#dart-language-carousel" data-slide-to="1">简洁的</li>
+                <li data-target="#dart-language-carousel" data-slide-to="2">可选类型的</li>
+                <li data-target="#dart-language-carousel" data-slide-to="3">模块化的</li>
               </ol>
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                  <p>You can probably already read and even write Dart code. <a href="/samples/">See more samples.</a> </p>
+                  <p>你可能已经见过甚至编写过 Dart 代码。 <a href="/samples/">查看更多示例。</a> </p>
                   <div class="code-hldr">
 <pre class="prettyprint lang-dart">
-main() {                              // This is where the app starts executing.
-  print(<a href="#" class="dart-popover" data-toggle="popover" title="Converting objects to strings" data-html="true" data-trigger="hover focus" data-content="The print() function takes any object and converts it to a string, using the object's toString() method.">new Fibonacci(10)</a>);          // Print a new object's value.
+main() {                              // 这里是程序开始执行的入口
+  print(<a href="#" class="dart-popover" data-toggle="popover" title="把对象转化为字符串" data-html="true" data-trigger="hover focus" data-content="print() 函数 -- 使用 object 的 toString() 函数 -- 把接收的任何对象参数转化为字符串 。">new Fibonacci(10)</a>);          // 打印一个对象的值
 }
 
-class Fibonacci {                     // Define a class.
-  int original, fibo;                 // Declare variables.
-  String toString() => '<a href="#" class="dart-popover" data-toggle="popover" title="String interpolation" data-html="true" data-trigger="hover focus" data-content="Use $identifier to insert the value of an identifier (in this case, the integer value of fibo) into a string.">$fibo</a>';      // Define a method using shorthand syntax.
+class Fibonacci {                     // 定义一个类。
+  int original, fibo;                 //声明变量。
+  String toString() => '<a href="#" class="dart-popover" data-toggle="popover" title="字符串插值" data-html="true" data-trigger="hover focus" data-content="使用 $标示符 来插入标示符所代表的值 (在该示例中是 fibo 变量的整数值) 到一个字符串中。">$fibo</a>';      // 使用速记语法来定义函数。
 
-  Fibonacci(int value) :              // Define a constructor with list initializer.
+  Fibonacci(int value) :              // 使用列表初始化程序定义构造函数。
     original = value, fibo = fib(value) {
   }
 
-  static int fib(int n) {             // Define a class method.
-    if (n < 2) {                      // Control flow and expressions.
+  static int fib(int n) {             // 定义一个类函数。
+    if (n < 2) {                      // 流程控制和表达式。
       return n;
     } else {
-      return fib(n-1) + fib(n-2);     // Arithmetic operators.
+      return fib(n-1) + fib(n-2);     // 算术操作符。
     }
   }
 }
-// Want terser code? Write a one-line function instead:
+// 想要更简洁的代码？ 可以用一行代码函数替代：
 // fib(n) => n < 2 ? n : (fib(n - 1) + fib(n - 2));
 </pre>
                   </div>
                 </div>
                 <div class="item">
-                  <p>Write less. Say more.</p>
+                  <p>写的少。干的多。</p>
                   <div class="code-hldr">
 <pre class="prettyprint lang-dart">
 import 'dart:math' show PI;
 
-List shapes = <a href="#" class="dart-popover" data-toggle="popover" title="Empty list literal" data-html="true" data-trigger="hover focus" data-content="Empty square brackets form an empty list literal, which creates a new, empty List object. This is equivalent to new List().">[]</a>;                     // Use literals to create lists.
-addShape(shape) <a href="#" class="dart-popover" data-toggle="popover" title="Fat-arrow syntax" data-html="true" data-trigger="hover focus" data-content="The function on the left-hand side of the fat arrow (in this case, addShape) returns the value on the right-hand side of the fat arrow.">=></a> shapes.add(shape); // Function shorthand syntax.
+List shapes = <a href="#" class="dart-popover" data-toggle="popover" title="空列表字符串" data-html="true" data-trigger="hover focus" data-content="使用空的方括号可以创建一个新的空 List 对象。等价于 new List()。">[]</a>;                     // 使用字面字符串创建列表。
+addShape(shape) <a href="#" class="dart-popover" data-toggle="popover" title="胖箭头( Fat-arrow )语法 " data-html="true" data-trigger="hover focus" data-content="在胖箭头左边的函数 (在该示例中为 addShape) 返回胖箭头右边的值。">=></a> shapes.add(shape); // 速记函数语法。
 
 main() {
-  // The cascade operator (..) saves you from repetitive typing.
-  addShape(new Ellipse(10, 20)<a href="#" class="dart-popover" data-toggle="popover" title="Cascade operator" data-html="true" data-trigger="hover focus" data-content="The cascade operator lets you chain multiple method calls and member references to the same object.">..</a>rotation = 45*PI/180
-                              <a href="#" class="dart-popover" data-toggle="popover" title="Cascade operator" data-html="true" data-trigger="hover focus" data-content="The cascade operator lets you chain multiple method calls and member references to the same object.">..</a>color = 'rgb(0,129,198)'
-                              <a href="#" class="dart-popover" data-toggle="popover" title="Cascade operator" data-html="true" data-trigger="hover focus" data-content="The cascade operator lets you chain multiple method calls and member references to the same object.">..</a>outlineWidth = 0);
+  // 级联(Cascade)操作符 (..) 可以减少输入重复的变量。
+  addShape(new Ellipse(10, 20)<a href="#" class="dart-popover" data-toggle="popover" title="级联操作符" data-html="true" data-trigger="hover focus" data-content="级联操作符可以连续调用同一个对象上的多个函数和变量。">..</a>rotation = 45*PI/180
+                              <a href="#" class="dart-popover" data-toggle="popover" title="级联操作符" data-html="true" data-trigger="hover focus" data-content="级联操作符可以连续调用同一个对象上的多个函数和变量。">..</a>color = 'rgb(0,129,198)'
+                              <a href="#" class="dart-popover" data-toggle="popover" title="级联操作符" data-html="true" data-trigger="hover focus" data-content="级联操作符可以连续调用同一个对象上的多个函数和变量。">..</a>outlineWidth = 0);
 
-  // You can easily insert expression values into strings.
-  print('Area of the first shape: <a href="#" class="dart-popover" data-toggle="popover" title="Insert expressions into strings" data-html="true" data-trigger="hover focus" data-content="Use ${expression} to insert the value of an expression into a string. The expression is evaluated and converted to a string.">${shapes[0].area}</a>');
+  // 可以很方便的在字符串中插入表达式的值。
+  print('Area of the first shape: <a href="#" class="dart-popover" data-toggle="popover" title="在字符串中插入表达式的值" data-html="true" data-trigger="hover focus" data-content="使用 ${表达式} 在字符串中插入表达式的值。表达式运算后的值转化为字符串。">${shapes[0].area}</a>');
 }
 
 class Ellipse {
   num minorAxis, majorAxis;
-  // Syntactic sugar to set members before the constructor body runs.
+  // 在构造函数体运行之前设置变量值的语法糖。
   Ellipse(this.minorAxis, this.majorAxis);
 }
 </pre>
                   </div>
                 </div>
                 <div class="item">
-                  <p>Add types to your code to help people and tools.
-                  Or don’t. You can always go dynamic.</p>
+                  <p>在代码中添加类型可以帮助人和工具理解代码。
+                                                                  或者不用类型。你可以一直使用动态类型。</p>
                   <div class="code-hldr">
                     <div class="code-hldr">  
                       <div class="item" style="margin-top:23px">
-                          Without types, code freely.<br>
+                                                                                           没有类型，更自由的编写代码。<br>
                         <img src="imgs/no_types.png">
                                 </div>
                                 <div class="item" style="margin-top:23px;">
-                          With types, learn about errors early.<br>
+                                                                                               有类型， 很容易的检测错误。<br>
                         <img src="imgs/with_types.png">
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="item">
-                  <p>Structure that scales. Organize your code with functions,
-                  classes, mixins, and libraries.</p>
+                  <p>可扩展的结构。用函数、类、
+                  mixins（混入）、和库。</p>
                   <div class="code-hldr">  
   <img src="imgs/modular.png">
                   </div>
@@ -174,63 +173,63 @@ class Ellipse {
       <section class="dart-libraries">
         <div class="row">
           <div class="col-md-10 col-md-offset-1" id="libraries">
-            <h2>Dart’s comprehensive libraries give you lots of choices</h2>
+            <h2>Dart 语言广泛的库给你更多选择</h2>
 
             <div id="dart-libraries-carousel" class="carousel slide dart-carousel" data-interval="false">
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#dart-libraries-carousel" data-slide-to="0" class="active">Collections</li>
-                <li data-target="#dart-libraries-carousel" data-slide-to="1">Async</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="0" class="active">集合</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="1">异步</li>
                 <li data-target="#dart-libraries-carousel" data-slide-to="2">HTML</li>
-                <li data-target="#dart-libraries-carousel" data-slide-to="3">Testing</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="3">测试</li>
               </ol>
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                  <p>Every app can use lists, sets, and maps, all provided by Dart's core library.</p>
+                  <p>每个应用都可以使用 Dart 核心类库提供的 lists、 sets、和 maps。</p>
                   <div class="code-hldr">        
 <pre class="prettyprint lang-dart">
-Map famousDuos = { 'Han Solo': 'Chewbacca',      // Map literal.
+Map famousDuos = { 'Han Solo': 'Chewbacca',      // Map 字面字符串。
                    'Bonnie': 'Clyde',
                    'Laurel': 'Hardy' };
-List myFriends = [ 'Seth', 'Kathy', 'Shailen' ]; // List literal.
+List myFriends = [ 'Seth', 'Kathy', 'Shailen' ]; // List 字面字符串。
 
-// Create lists and maps from <a href="#" class="dart-popover" data-toggle="popover" title="Iterables" data-html="true" data-trigger="hover focus" data-content="An Iterable object uses an Iterator to serve objects one at a time. Maps, lists, and sets are all examples of Iterable objects.">Iterable</a> objects.
+// 从<a href="#" class="dart-popover" data-toggle="popover" title="Iterables" data-html="true" data-trigger="hover focus" data-content="一个 Iterable 对象使用  Iterator 每次提供一个对象。 Maps、 lists、 和 sets 都是 Iterable 对象。">Iterable</a> 对象创建 lists 和 maps。
 List shuffledSidekicks = new List.from(famousDuos.values)..shuffle();
 Map mixedDuos = new Map.fromIterables(famousDuos.keys, shuffledSidekicks);
 
-// Iteration.
-mixedDuos.<a href="#" class="dart-popover" data-toggle="popover" title="Iteration with forEach()" data-html="true" data-trigger="hover focus" data-content="The forEach() method calls the provided function for each key-value pair in the Map object, passing in both the key and the value. In this example, the function just prints the key and value.">forEach((k, v) { print('$k, $v'); });</a>
+// 遍历集合
+mixedDuos.<a href="#" class="dart-popover" data-toggle="popover" title="使用 forEach()遍历集合" data-html="true" data-trigger="hover focus" data-content="forEach() 函数使用每个 Map 对象中的 key-value 值调用所提供的函数。在该示例中，函数只是打印出 Map 的 key和value。">forEach((k, v) { print('$k, $v'); });</a>
 
-// Some lists, maps, and sets are growable.
+// 一些 lists、 maps、 和 sets 是可扩容的。
 Set setOfMyFriends = new Set.from(myFriends);
 Set famousPeople = new Set.from(famousDuos.values);
 famousPeople.addAll(famousDuos.keys);
 
-// Rich set of functionality for collections.
+// 集合提供了丰富的遍历函数。
 print(famousPeople.intersection(setOfMyFriends).isEmpty);
 print(famousPeople.union(setOfMyFriends).length);
 </pre>
                   </div>
                 </div>
                 <div class="item">
-                  <p>Dart's Future and Stream classes provide a consistent interface to values that aren’t yet available.</p>
+                  <p>Dart 中的 Future 和 Stream 类提供了用来访问当前尚未可用对象的统一接口。</p>
                   <div class="code-hldr">   
 <pre class="prettyprint lang-dart">
-// Get a stream of key-press events from an element:
-querySelector('textarea').<a href="#" class="dart-popover" data-toggle="popover" title="onKeyPress" data-html="true" data-trigger="hover focus" data-content="The onKeyPress field of an element is an instance of ElementStream, which provides notifications about key press events on the element.">onKeyPress</a>
+// 获取一个元素上的 key-press 事件：
+querySelector('textarea').<a href="#" class="dart-popover" data-toggle="popover" title="onKeyPress" data-html="true" data-trigger="hover focus" data-content="元素的 onKeyPress 变量是 ElementStream 的实例，当在元素上按键的时候 ElementStream 提供了按键事件的通知。">onKeyPress</a>
 
-  // Filter the stream, getting a stream of events only for certain key codes:
-  <a href="#" class="dart-popover" data-toggle="popover" title="where()" data-html="true" data-trigger="hover focus" data-content="where() is a method in Stream that filters out some events.">.where</a>((e) => e.keyCode >= 32 && e.keyCode <= 122)
+  // 过滤按键事件，值获取特定键的事件：
+  <a href="#" class="dart-popover" data-toggle="popover" title="where()" data-html="true" data-trigger="hover focus" data-content="where() 是用来过滤事件流的函数。">.where</a>((e) => e.keyCode >= 32 && e.keyCode <= 122)
 
-  // Convert those key codes, getting a stream of corresponding characters:
-  <a href="#" class="dart-popover" data-toggle="popover" title="map()" data-html="true" data-trigger="hover focus" data-content="map() is a method in Stream that converts each item in the stream to a new value using the function provided.">.map</a>((e) => new String.fromCharCode(e.charCode))
+  // 把输入的按键代码转化为对应的字符：
+  <a href="#" class="dart-popover" data-toggle="popover" title="map()" data-html="true" data-trigger="hover focus" data-content="map() 是用提供的函数来转换事件流中每个值的函数。">.map</a>((e) => new String.fromCharCode(e.charCode))
 
-  // Ask for the first character, getting a Future.
-  <a href="#" class="dart-popover" data-toggle="popover" title="first" data-html="true" data-trigger="hover focus" data-content="first is a property in Stream that returns the first element of the stream by way of a Future.">.first</a>
+  // 获取第一个字符，返回一个 Future。
+  <a href="#" class="dart-popover" data-toggle="popover" title="first" data-html="true" data-trigger="hover focus" data-content="first 是 Stream 的一个属性， 使用 Future 返回 Stream 中的第一个元素。">.first</a>
 
-  // When the Future completes, print the first character to the console.
-  <a href="#" class="dart-popover" data-toggle="popover" title="then()" data-html="true" data-trigger="hover focus" data-content="then() is a method in Future that registers a callback function on the Future.">.then</a>((char) => print('First char=$char'));
+  // 当 Future 完成的时候，在控制台打印出第一个字符。
+  <a href="#" class="dart-popover" data-toggle="popover" title="then()" data-html="true" data-trigger="hover focus" data-content="then() 是 Future 中的一个函数，该函数用来在 Future 中注册一个回调函数。">.then</a>((char) => print('First char=$char'));
 
 
 
@@ -241,7 +240,7 @@ querySelector('textarea').<a href="#" class="dart-popover" data-toggle="popover"
                   </div>
                 </div>
                 <div class="item">
-                  <p>Dart’s HTML library unlocks the power of the modern browser, smoothing over browser differences.</p>
+                  <p>Dart 的 HTML 库释放现代浏览器的能力， 平滑处理浏览器之间的差异。</p>
                   <div class="code-hldr">
 
 <pre class="prettyprint lang-dart">
@@ -249,29 +248,29 @@ import 'dart:html';
 import 'dart:convert' show JSON;
 
 void main() {
-  querySelector('#getColors')<a href="#" class="dart-popover" data-toggle="popover" title="Listen to a stream" data-html="true" data-trigger="hover focus" data-content="Register an event handler for mouse click events.">.onClick.listen(showColors)</a>; // Event handling.
+  querySelector('#getColors')<a href="#" class="dart-popover" data-toggle="popover" title="监听事件流" data-html="true" data-trigger="hover focus" data-content="注册一个鼠标点击事件的监听器">.onClick.listen(showColors)</a>; // Event handling.
 }
 void showColors(Event e) {
-  <a href="#" class="dart-popover" data-toggle="popover" title="Make HTTP Requests" data-html="true" data-trigger="hover focus" data-content="Use HttpRequest.getString() to read data from a URI as a string. In this case, the file contains JSON-encoded data.">HttpRequest.getString('colors.json')</a>             // One-line HTTP request.
-      .then((String jsonString) {                   // Uses Futures and Streams.
-        UListElement colors = querySelector('#colors');  // DOM element types.
-        List<String> colorList = <a href="#" class="dart-popover" data-toggle="popover" title="JSON converter" data-html="true" data-trigger="hover focus" data-content="JSON, an object in dart:convert, encodes and decodes JSON data.">JSON.decode(jsonString);</a>
+  <a href="#" class="dart-popover" data-toggle="popover" title="Make HTTP Requests" data-html="true" data-trigger="hover focus" data-content="使用 HttpRequest.getString() 来从一个URI中读取数据。在该示例中，返回的数据为 JSON 格式。">HttpRequest.getString('colors.json')</a>             // 在线的 HTTP 请求。
+      .then((String jsonString) {                   // 使用 Futures 和 Streams.
+        UListElement colors = querySelector('#colors');  // DOM element 类型。
+        List<String> colorList = <a href="#" class="dart-popover" data-toggle="popover" title="JSON converter" data-html="true" data-trigger="hover focus" data-content="JSON-- dart:convert中的对象-- 提供了编码和解码 JSON 字符串的功能。">JSON.decode(jsonString);</a>
         for (int i = 0; i < colorList.length; i++) {
-          colors.children.add(                      // Dynamic DOM manipulation.
-            new LIElement()..text = colorList[i]    // Dynamic element creation.
-             ..style.color = colorList[i]           // Uniform CSS styles.
+          colors.children.add(                      // 动态操作 DOM .
+            new LIElement()..text = colorList[i]    // 动态创建 element 。
+             ..style.color = colorList[i]           // 改变 CSS 样式。
              ..style.fontFamily = 'Marker Felt');
         }
       })
-      .catchError((_) { /* Handle error. */ });
+      .catchError((_) { /* 错误处理。 */ });
 }
 </pre>
 
                   </div>
                 </div>
                 <div class="item">
-                  <p>Use Dart's unit testing and mocking libraries
-                  to make sure your app keeps working well.</p>
+                  <p>使用  Dart 的单元测试和 mock 库
+                                                                 来确保你的应用没有Bug。</p>
                   <div class="code-hldr">
 {% prettify dart %}
 import 'package:unittest/unittest.dart';
@@ -307,29 +306,29 @@ main() {
       <section class="js-dart-apps sec-shadow">
         <div class="row">
           <div class="col-md-10 col-md-offset-1" id="dart2js">
-            <h2>Compilation to JavaScript lets you deploy Dart apps now</h2>
+            <h2>编译为 JavaScript 可以让你的应用现在就可以部署</h2>
 
             <div id="js-dart-apps-carousel" class="carousel slide dart-carousel" data-interval="false">
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#js-dart-apps-carousel" data-slide-to="0" class="active">Support for all modern browsers</li>
-                <li data-target="#js-dart-apps-carousel" data-slide-to="1">Tree shaking</li>
-                <li data-target="#js-dart-apps-carousel" data-slide-to="2">Minifying</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="0" class="active">支持所有流行的浏览器</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="1">Tree shaking（代码混淆）</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="2">Minifying（最小化）</li>
               </ol>
               <!-- Wrapper for slides -->
               <div class="carousel-inner">
                 <div class="item active">
-                  <p>Dart web apps run in all modern browsers.
+                  <p>Dart web 应用可以在所有流行的浏览器中运行。
 		  </p>
                   <img src="/imgs/temp-code-example.png" alt="Modern browsers, desktop and mobile">
 
                 </div>
                 <div class="item">
-                  <p>Use lots of libraries? That’s OK. Tree shaking gets rid of the stuff you don’t need.</p>
+                  <p>使用了大量的库？没关系。 Tree shaking 自动去除那些没有使用的代码。</p>
                    <img src="/imgs/slider-tree-example.png" alt="temp image">
                 </div>
                 <div class="item">
-                  <p>Shrink your code before you deploy to generate faster-loading JavaScript.</p>
+                  <p>在部署之前压缩代码可以加速 JavaScript 的加载。</p>
                   <img src="/imgs/slider-minify-example.png" alt="temp image">
                 </div>
               </div>
@@ -342,7 +341,7 @@ main() {
       <section class="amazing-apps">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h2>Dart is used to build amazing apps</h2>
+            <h2>Dart 是用来创建令人惊奇的应用的</h2>
 
             <div id="amazing-apps-carousel" class="carousel slide dart-carousel" data-interval="false">
               <!-- Indicators -->
@@ -356,24 +355,24 @@ main() {
               <div class="carousel-inner">
                 <div class="item active">
 
-                  <h4>&ldquo;Dart offers a sane and consistent development experience for modern web applications. It really is exactly what we were looking for.&rdquo;</h4>
+                  <h4>&ldquo;Dart 提供了健全的和一致的开发体验用来创建现代 web 程序。这正好就是我们正在寻找的工具。&rdquo;</h4>
                   <p class="person"><span class="title"></span></p>
                   <p class="company">Blossom</p>
 
                 </div>
                 <div class="item">
-           <h4>&ldquo;We took a team of developers unfamiliar with Dart and were able to ship a sales force automation application in under six months. I think that's pretty amazing productivity.&rdquo;</h4>
+           <h4>&ldquo;我们组建了一个对 Dart 一点都不熟悉的开发团队，并且我们在 6 个月完成了一个 自动销售系统。我认为 Dart 的生产力是相当惊人的。&rdquo;</h4>
                   <p class="person"><span class="title"></span></p>
                   <p class="company">Google CRM</p>
                   
                 </div>
                 <div class="item">
-           <h4>&ldquo;Being able to work well at scale is extremely important, and Dart is instrumental to this effort.&rdquo;</h4>
+           <h4>&ldquo;在工作中，可扩展性是非常重要的，但是 Dart 从根本上 保证了这点。&rdquo;</h4>
                   <p class="person"><span class="title"></span></p>
                   <p class="company">Mandrill</p>
                 </div>
                 <div class="item">
-           <h4>&ldquo;When we were first started exploring Dart, the team was very excited about its potential. After using it with Montage, we're even more convinced about its future.&rdquo;</h4>
+           <h4>&ldquo;当我们第一次开始探索 Dart， 我们非常惊奇她的潜力。当我们开始使用后，更加确信其美好的未来。&rdquo;</h4>
                   <p class="person"><span class="title"></span></p>
                   <p class="company">Montage</p>
                 </div>
@@ -387,9 +386,9 @@ main() {
       <section class="productivity-tools sec-shadow">
         <div class="row">
           <div class="col-md-12" id="tools">
-            <h2>Dart’s tools help you be productive</h2>
+            <h2>Dart 工具帮助你提高生产力</h2>
             <img src="/imgs/dart-editor.png" alt="Image of Dart Editor">
-            <p>Dart Editor is the easiest way to get started, helping you edit, debug, and run Dart apps. When you download Dart Editor, you get other tools, as well:</p>
+            <p>Dart Editor 是上手的最简单方式，帮助你编辑、调试、和运行 Dart 程序。当你下载 Dart Editor 时，还包含了以下工具：</p>
           </div>
         </div>
         <div class="row productivity-tools-options">
@@ -397,15 +396,15 @@ main() {
             <div class="row">
               <div class="col-md-4">
                 <h4>Pub package manager</h4>
-                <p>The easiest way to get and share Dart code, pub keeps your packages up to date, handling versioning and dependency.</p>
+                <p>获取和分享 Dart 代码的最简单方式， pub 保证你的代码包更新到最新，自动处理版本和依赖关系。</p>
               </div>
               <div class="col-md-4">
                 <h4>Dev Server</h4>
-                <p>Automatically generate assets using pub’s dev server.</p>
+                <p>使用 pub dev server 自动生成资源。</p>
               </div>
               <div class="col-md-4">
                 <h4>Dartium</h4>
-                <p>Experience zero-compile edit/refresh cycles. This build of Chromium includes the Dart VM.</p>
+                <p>体验编辑/刷新的开发循环。该版本的Chromium包含了 Dart VM。</p>
               </div>
             </div>
           </div>
@@ -416,11 +415,11 @@ main() {
           {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
           </div>
           <aside class="alert alert-info os-choices col-md-8 col-md-offset-2">
-            <b>Note:</b>
-            You can write Dart apps using any recent version of
+            <b>注意：</b>
+                                       你可以使用最近发布的任意版本编辑器编写 Dart 应用
             {% include os-choices.html %}
-            The Dart development tools <b>do not&nbsp;support Windows XP</b>.
-            Dart Editor requires Java version 6 or higher.
+            Dart 开发工具 <b>不支持 Windows XP</b>。
+            Dart Editor 需要 Java 6+版本。
           </aside>
         </div>
       </section>
