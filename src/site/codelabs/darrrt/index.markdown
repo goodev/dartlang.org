@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Try Dart"
-description: "Write some Dart code. Learn some stuff."
+title: "试试 Dart"
+description: "尝试些点 Dart 代码，学习一些基础内容。"
 snippet_img: images/piratemap.jpg
 has-permalinks: true
 tutorial:
@@ -19,14 +19,14 @@ header:
 
 # {{ page.title }}
 
-## Got an hour? Write a Dart app.
+## 有点空闲时间？来编写个 Dart 应用吧
 
-In this code lab,
-you build a pirate badge generator from a skeleton app.
-The sample app provides a brief look at some Dart language and library features.
-This code lab assumes that you have some programming experience.
+在该代码实验室中,
+你将从一个框架应用中创建一个私有徽章生成器。
+该示例应用简单的介绍了一些 Dart 语言和库的特性。
+该代码实验室假设你具有其他编程语言的背景。
 
-<strong>Build this app!</strong>
+<strong>建构该应用！</strong>
 
 <iframe class="running-app-frame"
         style="height:220px;width:530px;"
@@ -37,68 +37,68 @@ This code lab assumes that you have some programming experience.
 
 <div class="piratemap" markdown="1" style="min-height:325px">
 
-## Map
+## 步骤
 
-* [Step 0: Set up](#set-up)
-* [Step 1: Run the skeleton app](#step-one)
-* [Step 2: Add an input field](#step-two)
-* [Step 3: Add a button](#step-three)
-* [Step 4: Create a class](#step-four)
-* [Step 5: Save to local storage](#step-five)
-* [Step 6: Read names from JSON file using HttpRequest](#step-six)
-* [Step 7: Go forth and learn more about Dart](#step-seven)
+* [Step 0: 设置环境](#set-up)
+* [Step 1: 运行框架应用](#step-one)
+* [Step 2: 添加一个输入框](#step-two)
+* [Step 3: 添加一个按钮](#step-three)
+* [Step 4: 创建一个类](#step-four)
+* [Step 5: 保存到本地存储中](#step-five)
+* [Step 6: 使用 HttpRequest 从 JSON 文件中读取姓名](#step-six)
+* [Step 7: 继续前行，了解 Dart 语言的更多特性](#step-seven)
 
 </div>
 
 
 <hr>
 
-## Step 0: Set up {#set-up}
+## Step 0: 设置环境 {#set-up}
 
-In this step, you download Dart and get the sample code.
+在该步骤中，你需要下载 Dart 并获取一些实例代码。
 
 
-### <i class="icon-anchor"> </i> Get Dart.
+### <i class="icon-anchor"> </i> 下载 Dart。
 
 <div class="trydart-step-details" markdown="1">
-If you haven't already done so,
-get the Dart download.
-Unzip the ZIP file, which creates a directory called `dart`.
+如果你尚未下载 Dart，
+点击下面按钮下载。
+解压下载的文件得到一个名称为 `dart` 的目录。
 
 {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
 
 <p class="os-choices" markdown="1">
-  The Dart tools
-  work in recent versions of
+  Dart 工具
+  可以在最新的这些系统中使用
   {% include os-choices.html %}
 </p>
 </div>
 
-### <i class="icon-anchor"> </i> Start the editor.
+### <i class="icon-anchor"> </i> 启动编辑器。
 
 <div class="trydart-step-details" markdown="1">
-Go to the `dart` directory and double-click **DartEditor**.
+打开 `dart` 目录，双击  **DartEditor**。
 
-**Got questions? Having trouble?** Go to the
-[Troubleshooting Dart Editor](/tools/editor/troubleshoot.html) page.
+**有问题？遇到麻烦了？** 请访问
+[Dart 编辑器问题指南](/tools/editor/troubleshoot.html) 页面。
 
 </div>
 
-### <i class="icon-anchor"> </i> Get the sample code.
+### <i class="icon-anchor"> </i> 下载示例代码。
 
 <div class="trydart-step-details" markdown="1">
-<a href="https://github.com/dart-lang/one-hour-codelab/archive/master.zip">Download</a>
-the sample code.
-Unzip the ZIP file,
-which creates a directory called `one-hour-codelab-master`.
+<a href="https://github.com/dart-lang/one-hour-codelab/archive/master.zip">下载</a>
+示例代码。
+解压文件后
+得到一个名称为 `one-hour-codelab-master` 的目录。
 </div>
 
-### <i class="icon-anchor"> </i> Open the one-hour-codelab-master sample.
+### <i class="icon-anchor"> </i> 打开 the one-hour-codelab-master 示例应用
 
 <div class="trydart-step-details" markdown="1">
-In Dart Editor,
-use **File > Open Existing Folder...**
-to open the `one-hour-codelab-master` directory.
+在 Dart 编辑器中，
+使用菜单 **File > Open Existing Folder...**
+打开 `one-hour-codelab-master` 目录。
 </div>
 
 <div class="row"> <div class="col-md-7" markdown="1">
@@ -107,20 +107,20 @@ to open the `one-hour-codelab-master` directory.
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* The `packages` directory, as well as the `pubspec.yaml` and `pubspec.lock` files are
-related to package dependencies.
-This project has all the dependencies set up for you.
-Dart Editor automatically installs the necessary packages.
+* `packages` 目录、 `pubspec.yaml` 和 `pubspec.lock` 文件是
+和项目依赖相关的文件。
+该项目已经设置了所有的依赖项了。
+Dart 编辑器自动安装需要的包。
 
-* Several numbered directories contain the completed code for each step.
-`1-blankbadge` contains the skeletal version of the app that you begin with.
-`6-piratebadge_json` contains the final version of the app.
+* 几个带编号的目录包含了每个步骤中的完整代码。
+`1-blankbadge` 包含了框架应用代码，你将从这里开始。
+`6-piratebadge_json` 包含了最终版本的代码。
 
-* The `piratebadge.css` file
-provides the CSS styles for all steps of the app.
-You don't change this file during this code lab.
+* `piratebadge.css` 文件提供
+了所有步骤中需要用到的 CSS 样式文件。
+在该示例中你无须修改该文件。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -128,32 +128,32 @@ You don't change this file during this code lab.
 
 <hr>
 
-##Step 1: Run the skeleton app {#step-one}
+##Step 1: 运行框架应用 {#step-one}
 
-In this step, you open the source files,
-familiarize yourself with the Dart and HTML code,
-and run the app.
+在该步骤中，你打开源代码文件，
+熟悉下 Dart 和 HTML 代码，
+然后运行应用。
 
-### <i class="icon-anchor"> </i> Expand the 1-blankbadge directory.
+### <i class="icon-anchor"> </i> 展开 1-blankbadge 目录。
 
 <div class="trydart-step-details" markdown="1">
-In Dart Editor, expand the `1-blankbadge` directory
-by clicking the little arrow
-![wee arrow](images/wee-arrow.png) to the left of its name.
-The directory contains two files, `piratebadge.html` and `piratebadge.dart`.
+在 Dart 编辑器中，通过点击目录前面的小箭头
+![wee arrow](images/wee-arrow.png) 图标来
+展开 `1-blankbadge` 目录
+这个目录包含两个文件 ：`piratebadge.html` 和 `piratebadge.dart`。
 </div>
 
-### <i class="icon-anchor"> </i> Open the files.
+### <i class="icon-anchor"> </i> 打开文件。
 
 <div class="trydart-step-details" markdown="1">
-Open both files, `piratebadge.html` and `piratebadge.dart`,
-by double-clicking each filename in Dart Editor.
+通过在 Dart 编辑器中双击 `piratebadge.html` 和 `piratebadge.dart`来
+打开这两个文件。
 </div>
 
-### <i class="icon-anchor"> </i> Review the code.
+### <i class="icon-anchor"> </i> 浏览代码。
 
 <div class="trydart-step-details" markdown="1">
-Get familiar with the HTML and the Dart code for the skeleton version of the app.
+熟悉下框架应用的 Dart 和 HTML 代码。
 </div>
 
 <div class="trydart-step-details" markdown="1">
@@ -196,22 +196,22 @@ Get familiar with the HTML and the Dart code for the skeleton version of the app
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* During this code lab,
-all the changes you make to `piratebadge.html` are within
-the &lt;div&gt; element identified with the class `widgets`.
+* 在该示例中，所有`piratebadge.html` 文件代码的改动
+都在带有 `widgets` class 标示的
+&lt;div&gt; 元素内完成。
 
-* In later steps,
-the &lt;span&gt; element with the ID `badgeName`
-is programmatically updated by the Dart code
-based on user input.
+* 在后面的步骤中，
+带有 `badgeName` 的 &lt;span&gt; 元素将有
+Dart 代码根基用户输入内容
+来动态更新。
 
-* The `piratebadge.dart` script provides the main program for the app.
+* `piratebadge.dart` 脚本是该应用的主要代码文件。
 
-* The `packages/browser/dart.js` script is a bootstrap script
-that takes care of turning on the Dart VM,
-as well as compatibility with non-Dart browsers.
+* `packages/browser/dart.js` 脚本是一个启动脚本，
+负责启动 Dart VM 和兼容
+不支持 Dart 的浏览器。
 
 </div> </div>
 
@@ -233,30 +233,30 @@ as well as compatibility with non-Dart browsers.
 
 </div> <div class="col-md-5" markdown="1">
 
-* This file is the main script for the app.
-It is referenced by a &lt;script&gt; tag in the `piratebadge.html` file.
+* 该文件是该应用的主要代码文件。
+通过  `piratebadge.html` 文件中的 &lt;script&gt; 标签引用代码文件。
 
-* The `main()` function is a top-level function.
-  Dart calls this function when your app starts.
+* `main()` 函数是代码入口。
+当应用启动的时候 Dart调用该函数。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 </div> </div>
 
-### <i class="icon-anchor"> </i> Run the app.
+### <i class="icon-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
-To run the app in Dart Editor, select `piratebadge.html`
-and click the Run button
+要在 Dart 编辑器中运行该应用，只需要选择 `piratebadge.html`
+文件并点击 Run 按钮即可。
 <img src="images/run.png" width="16" height="16"
      alt="Run button">.
 
 ![Click the run button](images/clickrun.png)
 
-Dart Editor launches _Dartium_, a special build of Chromium
-that has the Dart Virtual Machine built in, and loads the app.
+Dart 编辑器将启动 _Dartium_来加载该应用，Dartium 是一个包含
+Dart 虚拟机的浏览器。
 
-You should see a TO DO comment on the left
-and a red and white name badge on the right.
+在左边会看到一个 TO DO 注释，
+在右边有个红底白字的徽章。
 </div>
 
 <div class="trydart-step-details" markdown="1">
@@ -268,7 +268,7 @@ and a red and white name badge on the right.
 
 <hr>
 
-##Step 2: Add an input field {#step-two}
+##Step 2: 添加一个输入框 {#step-two}
 
 <div class="trydart-note" markdown="1">
 <strong>Note:</strong> Throughout this code lab,
@@ -305,7 +305,7 @@ within the `widgets` &lt;div&gt;.
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
 * The ID for the input element is `inputName`.
 Dart uses CSS selectors, like this ID,
@@ -454,7 +454,7 @@ Check your code against the files in `2-inputbadge`.
 
 <hr> 
 
-##Step 3: Add a button {#step-three}
+##Step 3: 添加一个按钮 {#step-three}
 
 In this step, you add a button to the app.
 The button is enabled when the text field contains no text.
@@ -488,7 +488,7 @@ Add the &lt;button&gt; tag below the input field.
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
 * The button has the ID `generateButton` so
 the Dart code can get the element.
@@ -784,7 +784,7 @@ import 'dart:html';
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
 * Using the `show` keyword,
 you can import only the classes, functions, or properties you need.
@@ -823,7 +823,7 @@ Add a class declaration to the bottom of the file.
 
 <hr>
 
-Create a class-level Random object.
+创建一个类-level Random object.
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1115,7 +1115,7 @@ Check your code against the files in `4-classbadge`.
 <hr>
 
 
-##Step 5: Save to local storage {#step-five}
+##Step 5: 保存到本地存储中 {#step-five}
 
 In this step, you give the app some persistence
 by saving the badge name to local storage each time it changes.
@@ -1143,7 +1143,7 @@ import 'dart:convert' show JSON;[[/highlight]]
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
 * `JSON` provides convenient access to the most common JSON use cases.
 
@@ -1426,7 +1426,7 @@ Put the file in `1-blankbadge` alongside the Dart and HTML files you've been edi
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> Key Information </strong>
+<i class="icon-key"> </i> <strong> 关键信息 </strong>
 
 * The file contains a JSON-encoded map,
 which contains two lists of strings.
@@ -1745,7 +1745,7 @@ Share your pirate name with the world.
 
 <hr>
 
-##Step 7: Go forth and learn more about Dart {#step-seven}
+##Step 7: 继续前行，了解 Dart 语言的更多特性 {#step-seven}
 
 ### <i class="icon-anchor"> </i> Think about what you've done!
 
