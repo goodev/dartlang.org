@@ -1,11 +1,12 @@
 ---
 layout: default
-title: "Dart Tutorials"
-description: "The Dart Tutorials&mdash;Your guide to building great web apps."
+title: "Dart 教程"
+description: "Dart 教程 &mdash; 创建优秀 web 应用指南"
 has-permalinks: true
 rel:
   author:
     - mary-campione
+    - rain
 tutorial:
   id: tut-home
 next: get-started/
