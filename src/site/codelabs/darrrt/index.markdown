@@ -1740,7 +1740,7 @@ void main() {
 
 <script src="https://apis.google.com/js/plusone.js"></script>
 <g:plus action="share"></g:plus>
-
+<wb:share-button appkey="3wn9s7" addition="number" type="button" default_text="我通过学习Dart语言制作了一个海盗徽章，快来围观吧！" ralateUid="3908541102" picture_search="false"></wb:share-button>
 </div>
 
 
@@ -1748,45 +1748,45 @@ void main() {
 
 ##Step 7: 继续前行，了解 Dart 语言的更多特性 {#step-seven}
 
-### <i class="icon-anchor"> </i> Think about what you've done!
+### <i class="icon-anchor"> </i> 回顾下你都学会了那些内容！
 
 <div class="trydart-step-details" markdown="1">
 
-This code lab provided a tour of most Dart language features
-and many library features.
-Here's where to go to learn more.
+该代码实验室提供了对 Dart 语音和很多库特性的
+一个概览。
+下面深入学习的资料。
 
-#### The Dart language
+#### Dart 语言
 
-<a href="https://www.dartlang.org/docs/dart-up-and-running/contents/ch02.html">
-A Tour of the Dart Language</a>
-shows you how to use each major Dart feature,
-from variables and operators to classes and libraries.
-This code lab introduced the following Dart language features,
-all of which are covered in more detail in the language tour.
+<a href="/docs/dart-up-and-running/contents/ch02.html">
+Dart 语言简介</a>
+告诉你如何使用 Dart 语言的所有主要特性，
+从变量到操作符、从类到库。
+本代码实验室中介绍了如下 Dart 语言特性，
+所有的特性在 语言简介 中都会有详细的介绍。
 
-* string interpolation (`'$_firstName the $_appellation'`)
-* the cascade operator (`..`)
-* the fat arrow (`=>`) function syntax
-* the ternary operator (`?:`)
-* named constructors (`PirateName.fromJSON(...)`)
-* optional parameters
-* a class
-* getters
-* instance methods and fields
-* class level methods and fields
-* top-level variables and functions
-* typecasting with `as` (`(e.target as InputElement)`)
-* import, and import with `show` (`import 'dart:math' show Random;`)
-* generics
+* 字符串插值 (`'$_firstName the $_appellation'`)
+* 级联操作符 (`..`)
+* 胖箭头 (`=>`) 函数语法
+* 三元操作符 (`?:`)
+* 命名构造函数 (`PirateName.fromJSON(...)`)
+* 可选参数
+* 类
+* getters 函数
+* 实例变量和函数
+* 类变量和函数
+* 顶级变量和函数
+* 使用 `as` 关键字来转换对象 (`(e.target as InputElement)`) 
+* import和 `show` 关键字 (`import 'dart:math' show Random;`)
+* 泛型
 
-#### The Dart libraries
+#### Dart 库
 
-<a href="https://www.dartlang.org/docs/dart-up-and-running/contents/ch03.html">
-A Tour of the Dart Libraries</a>
-shows you how to use the major features in Dart’s libraries.
+<a href="/docs/dart-up-and-running/contents/ch03.html">
+Dart 库简介</a>
+介绍了如何使用 Dart 库的主要特性。
 
-#### API documentation for classes
+#### 类的 API 文档
 
 <a href="https://api.dartlang.org/dart_core/String.html" target="_blank">String</a>,
 <a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>,
@@ -1798,7 +1798,7 @@ shows you how to use the major features in Dart’s libraries.
 <a href="https://api.dartlang.org/dart_html/HttpRequest.html" target="_blank">HttpRequest</a>, and
 <a href="https://api.dartlang.org/dart_async/Future.html" target="_blank">Future</a>
 
-#### API documentation for libraries
+#### 库的 API 文档
 
 <a href="https://api.dartlang.org/dart_core.html" target="_blank">dart:core</a>,
 <a href="https://api.dartlang.org/dart_math.html" target="_blank">dart:math</a>,
@@ -1806,7 +1806,7 @@ shows you how to use the major features in Dart’s libraries.
 <a href="https://api.dartlang.org/dart_async.html" target="_blank">dart:async</a>, and
 <a href="https://api.dartlang.org/dart_convert.html" target="_blank">dart:convert</a>
 
-#### API documentation for JSON and local storage
+#### JSON 和本地存储的 API 文档
 
 <a href="https://api.dartlang.org/dart_html/Window.html#localStorage" target="_blank">LocalStorage</a>, and
 <a href="https://api.dartlang.org/dart_convert.html#JSON" target="_blank">JSON</a>
@@ -1814,18 +1814,17 @@ shows you how to use the major features in Dart’s libraries.
 
 </div>
 
-### <i class="icon-anchor"> </i> Check out the samples.
+### <i class="icon-anchor"> </i> 看看示例项目。
 
 <div class="trydart-step-details" markdown="1">
 
-Run some Dart programs online and check out the source code
-on our [Samples page](/samples/).
+在线运行下 Dart 示例程序，并在
+ [示例项目](/samples/)界面查看示例代码。
 </div>
 
-### <i class="icon-anchor"> </i> Read the tutorials.
+### <i class="icon-anchor"> </i> 阅读语言教程。
 
 <div class="trydart-step-details" markdown="1">
-Learn more about Dart from
-the [Dart tutorials](/docs/tutorials/).
+从 [Dart 语言教程](/docs/tutorials/)中学习更多内容。
 </div>
 
