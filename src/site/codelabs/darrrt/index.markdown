@@ -855,8 +855,8 @@ class PirateName {
 
 <hr>
 
-Add two instance variables to class,
-one for the first name and one for the appellation.
+在类中添加两个实例变量，
+一个记录名字，一个记录称呼。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -875,7 +875,7 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Private variables start with underscore (`_`).
+* 私有变量用 (`_`) 开始。
 
 </div></div>
 
@@ -883,8 +883,8 @@ class PirateName {
 
 <hr>
 
-Create two static lists within the class
-that provide a small collection of names and appellations to choose from.
+在类中创建两个静态的列表，
+用来保存一些名字和称呼。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -907,12 +907,12 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* `final` variables cannot change.
+* `final` 修饰的变量无法修改。
 
-* Lists are built into the language.
-These lists are created using list literals.
+* Dart 语音原生支持列表，这里通过
+列表字面字符串来创建列表。
 
-* The `List` class provides the API for lists.
+* `List` 类提供了列表的相关API。
 
 </div></div>
 
@@ -921,7 +921,7 @@ These lists are created using list literals.
 
 <hr>
 
-Provide a constructor for the class.
+定义类的构造函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -950,19 +950,19 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Constructors have the same name as the class.
+* 构造函数名字和类名一样。
 
-* The parameters enclosed in curly brackets (`{` and `}`)
-are optional, named parameters.
+* 在花括号 (`{` 和 `}`) 之间的参数是
+可选的、带有名称的参数。
 
-* The `nextInt()` function gets a new random integer
-from the random number generator.
+* `nextInt()` 函数从随机数生成器中
+获取一个新的随机整数。
 
-* Use square brackets (`[` and `]`) to index into a list.
+* 使用方括号 (`[` 和 `]`) 来索引列表元素。
 
-* The `length` property returns the number of items in a list.
+* List 的 `length` 变量用来返回列表的大小。
 
-* The code uses a random number as an index into the list.
+* 这里使用一个随机位置来获取列表元素。
 
 </div> </div>
 
@@ -970,7 +970,7 @@ from the random number generator.
 
 <hr>
 
-Provide a getter for the pirate name.
+添加一个获取海盗名字的函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -989,15 +989,15 @@ class PirateName {
 
 </div><div class="col-md-5" markdown="1">
 
-* Getters are special methods that provide read access to an object’s properties.
+* Getters 是用来读取示例变量的特殊函数。
 
-* The ternary operator `?:` is short-hand for an if-then-else statement.
+* 三元操作法 `?:` 是 if-then-else 语句的缩写形式。
 
-* String interpolation
-(`'$_firstName the $_appellation'`)
-lets you easily build strings from other objects.
+* 字符串插值
+(`'$_firstName the $_appellation'`) 简化了
+从对象值创建字符串。
 
-* The fat arrow (` => expr; `) syntax is a shorthand for `{ return expr; }`.
+* 胖箭头 (` => expr; `) 语法是 `{ return expr; }`的缩写形式。
 
 </div></div>
 
@@ -1005,7 +1005,7 @@ lets you easily build strings from other objects.
 
 <hr>
 
-Modify the function `setBadgeName()` to use a PirateName instead of a String:
+修改 `setBadgeName()` 函数使用 PirateName 对象来替代 String 参数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1022,7 +1022,7 @@ void setBadgeName([[highlight]]PirateName[[/highlight]] newName) {
 
 </div><div class="col-md-5" markdown="1">
 
-* This code calls the getter to get the PirateName as a string.
+* 这里调用 PirateName 的 Get 函数来获取字符串。
 
 </div></div>
 
@@ -1030,7 +1030,7 @@ void setBadgeName([[highlight]]PirateName[[/highlight]] newName) {
 
 <hr>
 
-Change `updateBadge()` to generate a PirateName based on the input field value.
+修改 `updateBadge()` 函数，根据输入框中的值来创建一个  PirateName 对象。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1050,7 +1050,7 @@ void updateBadge(Event e) {
 
 </div><div class="col-md-5" markdown="1">
 
-* The call to the constructor provides a value for one optional named parameter.
+* 这里用一个可选的参数调用构造函数。
 
 </div></div>
 
@@ -1058,7 +1058,7 @@ void updateBadge(Event e) {
 
 <hr>
 
-Change `generateBadge()` to generate a PirateName instead of using `Anne Bonney`.
+修改 `generateBadge()` ，创建一个 PirateName 对象来替代 `Anne Bonney`。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1075,26 +1075,26 @@ void generateBadge(Event e) {
 
 </div><div class="col-md-5" markdown="1">
 
-* In this case, the call to the constructor passes no parameters.
+* 这里，调用构造函数的时候没有传递参数。
 
 </div></div>
 
-### <i class="icon-anchor"> </i> Run the app.
+### <i class="icon-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
   
 使用菜单 **File > Save All** 保存文件。
 
-Use the Run button
+使用 Dart 编辑器中的 Run 按钮
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
-in Dart Editor to run the app.
+来运行应用。
 
 比较你的应用和如下是否一样。
 
-Type in the input field.
-Remove the text from the input field.
-Click the button.
+在输入框中输入文本。
+从输入框中删除文本。
+点击按钮。
 
 <iframe class="running-app-frame"
         style="height:220px;width:530px;"
@@ -1104,7 +1104,7 @@ Click the button.
 
 #### 问题？
 
-Check your code against the files in `4-classbadge`.
+如果你遇到了任何问题，可以和 `4-classbadge`步中的代码比较来发现问题。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/4-classbadge/piratebadge.html)
 
@@ -1118,15 +1118,15 @@ Check your code against the files in `4-classbadge`.
 
 ##Step 5: 保存到本地存储中 {#step-five}
 
-In this step, you give the app some persistence
-by saving the badge name to local storage each time it changes.
-When you restart the app,
-it initializes the badge from the saved name.
+在该步骤中，将会把每次改变后的徽章名字
+保存到本地中，这样可以记住每次的修改。
+当重新打开该应用的时候，
+会从本地保存的数据中初始化徽章名字。
 
-### <i class="icon-anchor"> </i> Edit piratebadge.dart.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
-Import the JSON converter from the `dart:convert` library.
+从 `dart:convert` 库中导入 JSON 转换器。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1146,7 +1146,7 @@ import 'dart:convert' show JSON;[[/highlight]]
 
 <i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* `JSON` provides convenient access to the most common JSON use cases.
+* `JSON` 提供了常用操作 JSON 数据的功能。
 
 </div> </div>
 
@@ -1154,7 +1154,7 @@ import 'dart:convert' show JSON;[[/highlight]]
 
 <hr>
 
-Add a named constructor to the PirateName class.
+在 PirateName 类中添加一个命名构造函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1176,13 +1176,13 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* The constructor creates a new PirateName instance from a JSON-encoded string.
+* 该构造函数从 JSON 字符串中创建一个 PirateName 对象。
 
-* `PirateName.fromJson` is a named constructor.
+* `PirateName.fromJson` 是一个命名构造函数。
 
-* `JSON.decode()` parses a JSON string and creates Dart objects from it.
+* `JSON.decode()` 解析 JSON 字符串，并创建一个 Dart 对象。
 
-* The pirate name is decoded into a `Map` object.
+* 海盗的名字解析到一个 `Map` 对象中。
 
 </div> </div>
 
@@ -1190,8 +1190,8 @@ class PirateName {
 
 <hr>
 
-Add a getter to the PirateName class
-that encodes a pirate name in a JSON string.
+在 PirateName 类中添加一个
+获取海盗名字 JSON 字符串的 Getter 函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1209,7 +1209,7 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* The getter formats the JSON string using the map format.
+* Getter 函数使用 map 来格式化 JSON 字符串。
 
 </div> </div>
 
@@ -1218,7 +1218,7 @@ class PirateName {
 
 <hr>
 
-Declare a top-level string.
+定义一个顶级字符串。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1237,8 +1237,8 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* You store key-value pairs in local storage. This string is the key.
-The value is the pirate name.
+* 本地存储用的是 key-value 格式，该字符串定义了
+本地存储的 Key， 海盗的名字字符串为 value。
 
 </div> </div>
 
@@ -1246,7 +1246,7 @@ The value is the pirate name.
 
 <hr>
 
-Save the pirate name when the badge name changes.
+当徽章名字改变的时候，保存海盗的名字。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1267,7 +1267,7 @@ void setBadgeName(PirateName newName) {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Local storage is provided by the browser's `Window`.
+* 浏览器的 `Window` 提供了本地存储功能。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -1277,7 +1277,7 @@ void setBadgeName(PirateName newName) {
 
 <hr>
 
-Add a top-level function called `getBadgeNameFromStorage()`.
+添加一个名称为 `getBadgeNameFromStorage()`的顶级函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1303,8 +1303,8 @@ void setBadgeName(PirateName newName) {
 
 </div> <div class="col-md-5" markdown="1">
 
-* The function retrieves the pirate name from local storage
-and creates a PirateName object from it.
+* 该函数从本地存储中获取海盗的名字并创建
+一个 PirateName 对象。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -1312,7 +1312,7 @@ and creates a PirateName object from it.
 
 <div class="trydart-step-details" markdown="1">
 <hr>
-Call the function from the `main()` function.
+在 `main()` 函数中调用该函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1330,27 +1330,27 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Initialize the badge name from local storage.
+* 从本地存储中初始化海盗名字。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Run the app.
+### <i class="icon-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
   
 使用菜单 **File > Save All** 保存文件。
 
-Use the Run button
+使用 Dart 编辑器中的 Run 按钮
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
-in Dart Editor to run the app.
+来运行应用。
 
 比较你的应用和如下是否一样。
 
-Click the button to put a name on the badge.
-Start the app again by duplicating this window.
+点击按钮在徽章上添加一个名字。
+复制该窗口再次打开该应用。
 
 <iframe class="running-app-frame"
         style="height:220px;width:530px;"
@@ -1360,7 +1360,7 @@ Start the app again by duplicating this window.
 
 #### 问题？
 
-Check your code against the files in `5-localbadge`.
+如果遇到问题，把你的代码和`5-localbadge`中的代码比较。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/5-localbadge/piratebadge.html)
 
@@ -1372,20 +1372,20 @@ Check your code against the files in `5-localbadge`.
 <hr>
 
 
-##Step 6: Read names from JSON-encoded file {#step-six}
+##Step 6: 从 JSON 格式文件中读取名字 {#step-six}
 
-In this step, you change the PirateName class to get
-the list of names and appellations from a JSON file.
-This gives you a chance to add more names and
-appellations to the program.
+在该步骤中，将修改 PirateName 类
+从一个 JSON 文件中获取海盗名字和称呼。
+这样可以方便在添加更多的
+名字和称呼。
 
-### <i class="icon-anchor"> </i> Create piratenames.json.
+### <i class="icon-anchor"> </i> 创建 piratenames.json.
 
 <div class="trydart-step-details" markdown="1">
-Use **File > New File...** to create a JSON-encoded file
-named `piratenames.json` with the following content.
+使用菜单 **File > New File...** 来创建一个名称为
+ `piratenames.json` 的文件，内容如下。
 
-Put the file in `1-blankbadge` alongside the Dart and HTML files you've been editing.
+把该文件放到 `1-blankbadge` 中的位置（或者你正在修改的代码目录下）。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1429,15 +1429,15 @@ Put the file in `1-blankbadge` alongside the Dart and HTML files you've been edi
 
 <i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* The file contains a JSON-encoded map,
-which contains two lists of strings.
+* 该文件包含了一个 JSON 格式的 map 数据，
+map 中有两个字符串列表。
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Edit piratebadge.html.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.html.
 
 <div class="trydart-step-details" markdown="1">
-Disable the input field and the button.
+禁用输入框和按钮。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1460,17 +1460,17 @@ Disable the input field and the button.
 </div> <div class="col-md-5" markdown="1">
 
 
-* The Dart code enables the text field and
-the button after the pirate names are successfully read from
-the JSON file.
+* 当成功的从 JSON 文件中读取到数据后
+Dart 代码将启用
+输入框和按钮。
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Edit piratebadge.dart.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 
-Add an import to the top of the file.
+在代码顶部添加一个导入语句。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1489,16 +1489,16 @@ import 'dart:convert' show JSON;
 
 </div> <div class="col-md-5" markdown="1">
 
-* The `dart:async` library provides for asynchronous programming.
+* `dart:async` 库提供了对异步编程的支持。
 
-* A `Future` provides a way to get a value in the future.
+* `Future` 提供了从未来得到数据的方式。
 
 </div> </div>
 
 <div class="trydart-step-details" markdown="1">
 
 <hr>
-Replace the `names` and `appellations` lists with these static, empty lists:
+使用静态的空列表替代 `names` 和 `appellations` ：
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1518,13 +1518,13 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* **Be sure to remove `final` from these declarations.**
+* **确定记得删除 `final` 修饰符。**
 
-* `[]` is equivalent to `new List()`.
+* `[]` 等价于 `new List()`.
 
-* A List is a _generic_ type&mdash;a List can contain any kind of object.
-If you intend for a list to contain only strings,
-you can declare it as `List<String>`.
+* List 是一个  _generic(泛型)_ 类型&mdash; 一个 List 可以包含任意类型的对象。
+如果你想让一个 List 只包含 String，
+则可以这样定义 `List<String>`。
 
 </div> </div>
 
@@ -1532,7 +1532,7 @@ you can declare it as `List<String>`.
 
 <hr>
 
-Add two static functions to the PirateName class:
+在 PirateName 类中添加两个静态函数：
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1561,27 +1561,27 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* `HttpRequest` is a utility for retrieving data from a URL.
+* `HttpRequest` 是从 URL 获取数据的工具类。
 
-* `getString()` is a convenience method for doing a simple
-GET request that returns a string.
+* `getString()` 是发起一个 GET 请求并返回结果为
+字符串的函数。
 
-* The code uses a `Future` to perform the GET asynchronously.
+* 代码中用 `Future` 来执行异步 GET 到的结果。
 
-* The callback function for `.then()` is called when
-the Future completes successfully.
+* 当 Future 成功的完成后会
+调用回调函数 `.then()`。
 
-* When the Future completes successfully,
-the pirate names are read from the JSON file.
+* 当 Future 成功的完成后，
+将会从 JSFON 文件中获取到海盗的名字。
 
-* `readyThePirates` returns the Future so the main program has the
-opportunity to do something after the file is read.
+* `readyThePirates` 函数返回一个 Future，这样主程序
+就读取该文件后就有机会继续干其他任务。
 
 </div> </div>
 
 <div class="trydart-step-details" markdown="1">
 <hr>
-Add a top-level variable.
+添加一个顶级变量。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1600,13 +1600,13 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Stash the span element for repeated use instead of querying the DOM for it.
+* 保存 Span 元素可以重复使用而不是每次都从 DOM 中查询。
 
 </div> </div>
 
 <div class="trydart-step-details" markdown="1">
 <hr>
-Make these changes to the `main()` function.
+在 `main()` 函数中修改相关代码。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1629,16 +1629,16 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Stash the span element in the global variable.
-Also, stash the input element in a local variable.
+* 保存 Span 元素为全局变量，
+同时保存输入框变量为局部变量。
 
 
 </div> </div>
 
 <div class="trydart-step-details" markdown="1">
 <hr>
-Then, add the code to get the names from the JSON file,
-handling both success and failure.
+然后从 JSON 文件中读取数据，
+并处理成功和失败的情况。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -1667,42 +1667,42 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Call the `readyThePirates()` function,
-which returns a Future.
+* 调用 `readyThePirates()` 函数会
+返回一个 Future。
 
-* When the Future successfully completes,
-the `then()` callback function is called.
+* 当 Future 成功完成后，
+将调用 `then()` 回调函数。
 
-* Using underscore (`_`) as a parameter name
-indicates that the parameter is ignored.
+* 使用下划线 (`_`) 作为参数名称，
+则参数将会被忽略掉。
 
-* The callback function enables the UI
-and gets the stored name.
+* 回调函数启用 UI 并
+获取保存的名字。
 
-* If the Future encounters an error
-the `catchError` callback function is called
-and the program displays an error message,
-leaving the UI disabled.
+* 如果 Future 遇到了问题，会触发
+ `catchError` 回调函数，
+ 程序然后显示一个错误信息，
+ 并保持 UI 不可用。
 
-* The callback functions for `then()` and `catchError` are defined inline.
+* `then()` 和 `catchError` 回到函数定义为内联函数。
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Run the app.
+### <i class="icon-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
   
 使用菜单 **File > Save All** 保存文件。
 
-Use the Run button
+使用 Dart 编辑器中的 Run 按钮
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
-in Dart Editor to run the app.
+来运行应用。
 
-If you want to see what happens when the app can't find the `.json` file,
-change the file name in the code and run the program again.
+如果你想看看当找不到 `.json` 文件时会出现啥情况，
+改变该文件的名字并再次运行该应用。
 
-Compare your app to the final version running below.
+把你的代码和最后一步的代码比较下，并运行。
 
 
 <iframe class="running-app-frame"
@@ -1713,7 +1713,7 @@ Compare your app to the final version running below.
 
 #### 问题？
 
-Check your code against the files in `6-piratebadge_json`.
+如果遇到问题把你的代码和 `6-piratebadge_json`中的代码比较下。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.html)
 
@@ -1721,14 +1721,14 @@ Check your code against the files in `6-piratebadge_json`.
 
 </div>
 
-### <i class="icon-anchor"> </i> Share your pirate name.
+### <i class="icon-anchor"> </i> 分享您的海盗名字。
 
 <div class="trydart-step-details" markdown="1">
 
-Congratulations! You finished the pirate badge code lab.
+共享！您完成了海盗徽章代码实验室项目。
 
 
-Share your pirate name with the world.
+来分享下你的海盗名字吧。
 
 <p class="share-button twitter">
 <a href="https://twitter.com/share"
