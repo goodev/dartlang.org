@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Web UI Specification | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Web UI Specification | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  
+  <meta itemprop="description" content="A detailed reference guide of how to use Web UI for declarative modern web apps.">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	<link rel="author" href="/authors/siggi-cherem.html">
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+      <div class="row">
+        <article class="has-permalinks">
+<div class="col-md-3">
+  <div class="bs-sidebar hidden-print affix-top" role="complementary">
+
+<ol class="toc nav bs-sidenav" id="markdown-toc">
+  <li><a href="#components">Components</a>    <ol>
+      <li><a href="#declaration">Declaration</a></li>
+      <li><a href="#instantiation">Instantiation</a></li>
+      <li><a href="#retrieval">Retrieval</a></li>
+      <li><a href="#template-scope">Template lexical scope</a></li>
+      <li><a href="#lifecycle-methods">Lifecycle methods</a></li>
+    </ol>
+  </li>
+  <li><a href="#template-syntax">Template Syntax</a>    <ol>
+      <li><a href="#data-binding">Data binding</a></li>
+      <li><a href="#conditionals">Conditionals</a></li>
+      <li><a href="#loops">Loops</a></li>
+      <li><a href="#event-listeners">Event listeners</a></li>
+    </ol>
+  </li>
+  <li><a href="#web-apps">Web apps</a>    <ol>
+      <li><a href="#declaring-components">Declaring components</a></li>
+      <li><a href="#loading-components">Loading components</a></li>
+      <li><a href="#main-script">Main script</a></li>
+      <li><a href="#top-level-templates">Top-level templates</a></li>
+    </ol>
+  </li>
+</ol>
+
+  </div>
+</div>
+<div class="col-md-7">
+  <p><!-- Start of content -->
+	</p>
+
+  <h1 class="no_toc" id="web-ui-specification">Web UI Specification</h1>
+
+  <aside class="alert alert-danger">
+    <p><strong>Web UI is deprecated.</strong>
+Instead, use <a href="/polymer-dart/">Polymer.dart</a>,
+which supersedes Web UI beginning with version 0.5
+and provides many fixes and improvements.
+We encourage Web UI users to upgrade to Polymer.dart.
+The information on this page applies only to Web UI.</p>
+  </aside>
+
+  <p><em>Written by Sigmund Cherem<br />
+November 2012 (Updated February 2013)</em></p>
+
+  <p>The Web UI package (Web UI for short) provides web components and templating to
+help you write web applications at scale. This article contains a detailed
+specification of Web UI&#8217;s features. For a quick reference table of
+these features, please refer to our <a href="summary.html">summary article</a>; for a
+high-level introduction and examples, see our
+<a href="/articles/web-ui/">explainer article</a>.</p>
+
+  <hr />
+
+  <h2 id="components">Components</h2>
+
+  <p>The appearance and behavior of a web component is encapsulated as a
+<a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html">custom HTML element</a>. This section describes how to declare them, shows how
+to use them, and gives some insights about how they work.</p>
+
+  <h3 id="declaration">Declaration</h3>
+
+  <p>Dart web components are declared using custom elements, which are introduced
+with the <code>&lt;element&gt;</code> tag. You can put an <code>&lt;element&gt;</code> tag anywhere under the
+<code>&lt;body&gt;</code> tag of an HTML page. The attributes and children of an element tag
+describe the component in detail.</p>
+
+  <p>An element tag accepts the following attributes, some of which are mandatory:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&#160;</th>
+        <th style="text-align: left">Attribute</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Required?</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>name</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">required</td>
+        <td>&#160;</td>
+        <td style="text-align: left">The component&#8217;s tag name.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>extends</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">required</td>
+        <td>&#160;</td>
+        <td style="text-align: left">DOM element or other component that this component refines.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>constructor</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">optional</td>
+        <td>&#160;</td>
+        <td style="text-align: left">Dart type associated with the component.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>apply-author-styles</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">optional</td>
+        <td>&#160;</td>
+        <td style="text-align: left">Whether styles from the document apply to the contents of the component.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>An element tag can have the following children (at most one of each):</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&#160;</th>
+        <th style="text-align: left">Child</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Required?</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;template&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">required</td>
+        <td>&#160;</td>
+        <td style="text-align: left">The visual appearance of the component.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;script type='application/dart'&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">optional</td>
+        <td>&#160;</td>
+        <td style="text-align: left">The component&#8217;s behavior written in Dart</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;style&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">optional</td>
+        <td>&#160;</td>
+        <td style="text-align: left">Any scoped style that applies only to the component&#8217;s appearance.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Note that these attributes and children match the <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/explainer/index.html#appendix-b-html-elements">web components
+specification</a>.</p>
+
+  <p>The <code>name</code> attribute in the element tag declaration defines the actual tag name
+associated with the component. This name can later be used to
+<a href="#instantiation">instantiate a component</a> in your markup. These tag names are
+part of the same namespace as normal markup tags. To avoid collissions, we
+require that tag names start with an <code>x-</code> prefix, for instance <code>x-my-button</code>.</p>
+
+  <p>The <code>constructor</code> attribute is optional. When it is not specified its value is
+inferred as the CamelCase name associated with the name attribute without the
+<code>x-</code> prefix. For instance, the inferred constructor for <code>x-my-button</code> is
+<code>MyButton</code>.</p>
+
+  <p>Let&#8217;s discuss the rest of these attributes and children in more detail as we
+discuss the appearance and behavioral aspects of a component.</p>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Status:</strong> It should be allowed to declare element tags anywhere,
+not just in the body of an HTML page. See
+<a href="https://github.com/dart-lang/web-ui/issues/197">Issue
+#197</a> for details.</p>
+    </div>
+  </aside>
+
+  <h4 id="appearance">Appearance</h4>
+
+  <p>Every component inherits from existing tags.
+This includes tags corresponding to
+standard DOM elements or previously defined components. For example, you can
+extend <code>div</code>, <code>span</code>, <code>button</code>, <code>x-my-button</code>, etc. The base tag for the
+component is specified in the <code>extends</code> attribute. The idea is that a component
+can override and compose the appearance and behavior of its base tag. It is a
+common practice to use <code>span</code> as the base tag if you intend to define the
+entire appearance of a component yourself.</p>
+
+  <p>A component&#8217;s <code>&lt;template&gt;</code> tag declares the HTML fragment that will be rendered
+when the component is instantiated. When possible, this fragment will be
+encapsulated using <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html">Shadow DOM</a>. Within a <code>&lt;template&gt;</code> it is valid to:</p>
+
+  <ul>
+    <li>use standard HTML elements</li>
+    <li>use other <a href="#declaration">component tag names</a></li>
+    <li>use <a href="#template-syntax">templating features</a> (described further below)</li>
+    <li>use the <code>&lt;content&gt;</code> element for <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html#content-element">composition</a></li>
+    <li>use the <code>&lt;shadow&gt;</code> element for <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html#shadow-element">extension</a></li>
+  </ul>
+
+  <p>The <code>&lt;content&gt;</code> tag, combined with <a href="http://www.w3.org/TR/selectors/">CSS selectors</a>,
+lets you control how to
+distribute child nodes provided at the component&#8217;s
+<a href="#instantiate">instantiations</a>.
+The <code>&lt;shadow&gt;</code> tag is useful when extending from
+other components. It allows you to inject within your template the contents of
+the parent&#8217;s component. Web UI follows the same <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html#composition">composition rules</a>
+as the Shadow DOM spec for both <code>&lt;content&gt;</code> and <code>&lt;shadow&gt;</code> tags.</p>
+
+  <p>A component&#8217;s <code>&lt;style&gt;</code> tag contains scoped CSS rules that are only applicable
+in the context of the component&#8217;s <code>&lt;template&gt;</code> body. If the attribute
+<code>apply-author-styles</code> is present in the element tag declaration, then author
+style rules from the document will also apply within the template (even if
+Shadow DOM is available).</p>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>NOTE:</strong> scoped <code>style</code> is not supported yet in the
+current implementation of the the Web UI compiler, and a lot of details are
+missing in this specification. Learn more at the <a href="http://dvcs.w3.org/hg/webcomponents/raw-file/tip/spec/shadow/index.html#styles">web
+components specification article</a>.</p>
+    </div>
+  </aside>
+
+  <h4 id="behavior">Behavior</h4>
+
+  <p>The behavior of a component is declared directly in Dart code. The <code>&lt;script&gt;</code>
+tag declares the code associated with the component.
+It must be specified unless
+a component has no behavior and its code can be assumed to be an empty class.
+If the tag is present, it must use the <code>type="application/dart"</code> attribute to
+indicate that the code is written in Dart.</p>
+
+  <p>Whether you write code inline or you include it via a <code>src</code> attribute, the code
+must be a valid Dart library. In such a library you must define a class
+corresponding to the component. The name of this class must match the name
+specified by the <code>constructor</code> attribute. For example,</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-my-friend' constructor='AName'&gt;
+ ...
+ &lt;script type='application/dart'&gt;
+   ...
+   // name matches constructor attribute
+   class AName extends WebComponent { ... }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <p>but if the constructor attribute was omitted, you must use the name inferred
+from the tag name, for example,</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-my-friend'&gt;
+ ...
+ &lt;script type='application/dart'&gt;
+   ...
+   // contructor attribute omitted, name inferred from tag name.
+   class MyFriend extends WebComponent { ... }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <p>Currently the component&#8217;s Dart class must be a subclass of <code>WebComponent</code> from
+<code>package:web_ui/web_ui.dart</code>.</p>
+
+  <aside>
+    <div class="alert alert-info">
+      <p>In the future the Dart class defining a component will
+extend directly from an HTML type, instead of extending from WebComponent, for
+example <code>MyButton extends ButtonElement</code>.</p>
+    </div>
+  </aside>
+
+  <h3 id="instantiation">Instantiation</h3>
+
+  <p>Components can be instantiated declaratively or programatically. Consider a
+component declared as:</p>
+
+  <pre class="prettyprint lang-html">&lt;element name=&quot;x-foo&quot; extends=&quot;span&quot; constructor=&quot;FooComponent&quot;&gt;
+ ...</pre>
+
+  <p>You can instantiate such component in the following three ways:</p>
+
+  <ul>
+    <li>
+      <p>use the element&#8217;s name as a tag. For example, use <code>&lt;x-foo&gt;&lt;/x-foo&gt;</code> in your
+HTML. <strong>Note</strong>: Components are treated as <a href="http://dev.w3.org/html5/spec/infrastructure.html#other-applicable-specifications">semantically
+neutral</a>
+by the HTML parser. They are not treated as <a href="http://dev.w3.org/html5/spec/syntax.html#void-elements">void
+elements</a> even if
+they extend a void element. This means you should use an end tag to avoid
+HTML <a href="http://dev.w3.org/html5/spec/parsing.html#parse-error">parse errors</a>.</p>
+    </li>
+    <li>
+      <p>use a <code>&lt;span is="x-foo"&gt;&lt;/span&gt;</code> tag in your HTML. More specifically, create
+the node that is being extended (<code>span</code> in this case) and include an <code>is</code>
+attribute indicating the name.</p>
+    </li>
+    <li>
+      <p>create the component programatically in Dart. We don&#8217;t recommend using
+this approach because it requires several set up steps. Ultimately this
+should be easier when components can directly subclass elements in the Dart
+type hierarchy.  If you wish to do so, <a href="https://github.com/dart-lang/web-ui/blob/master/test/data/input/component_created_in_code_test.html#L28">this
+test</a>
+shows an example of how to do so. Basically we:</p>
+      <ul>
+        <li>create the component instance, for instance <code>c = new MyComponent()</code></li>
+        <li>create a host element and associate it with your component, for
+instance <code>c.host = new SpanElement()</code></li>
+        <li>update any fields in your component that need to be initialized (like
+fields used in <a href="#data-bindings">data bindings</a>)</li>
+        <li>use a lifecycle helper to initialize the component, for instance
+   <code>helper = new ComponentInfo(c)..create();</code></li>
+        <li>insert the host node to the DOM tree</li>
+        <li>call the <code>helper.insert()</code> on your lifecycle helper.</li>
+      </ul>
+
+      <p>When components extend directly from DOM elements you&#8217;ll be able
+to add a component directly in the DOM tree without creating a host element
+by hand.</p>
+    </li>
+  </ul>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Open issues</strong>: we strongly would like to completely hide any
+pieces that are autogenerated. This explanation should also be simpler once we
+add a runtime library for constructing components programatically. For more
+details see <a href="https://github.com/dart-lang/web-ui/issues/93">issue #93</a>.</p>
+    </div>
+  </aside>
+
+  <h3 id="retrieval">Retrieval</h3>
+
+  <p>You can reach a component instance using the <code>xtag</code> property of the
+associated HTML element. For example, if you create a tag as <code>&lt;x-foo
+id="example"&gt;&lt;/x-foo&gt;</code> in the top-level body of your page, you can get an
+instance of the component by calling <code>document.query('#example').xtag</code>.</p>
+
+  <p>Note that <code>xtag</code> only works after an application is initialized and web
+components have been created. In particular, the <code>xtag</code> will be null when the
+main script of an application just started running, but will be available at the
+end of the event loop. See the <a href="#main-script">main script section</a> for more
+details.</p>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Note</strong>: The <code>xtag</code> field will not be needed in the future when
+components extend directly from HTML elements.</p>
+    </div>
+  </aside>
+
+  <h3 id="template-scope">Template lexical scope</h3>
+
+  <p>There is a strong connection between a components&#8217;s script and a component&#8217;s
+template.
+Data bindings and other <a href="#template-syntax">templating</a> features inside
+the <code>&lt;template&gt;</code> tag can contain expressions and references to functions.
+Unlike templates in model driven views (<a href="http://code.google.com/p/mdv/">MDV</a>), Web UI uses
+<a href="http://www.dartlang.org/docs/spec/latest/dart-language-specification.html#h.jb82efuudrc5">lexical scoping rules</a> to determine the meaning of these
+expressions and symbols. In particular, template binding expressions will be
+interpreted as a lexical part of the component class definition. For instance,
+consider the following example:</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example'&gt;
+ &lt;template&gt;{{foo}} {{bar}}&lt;/template&gt;
+ &lt;script type='application/dart'&gt;
+   var foo = 'foo top-level';
+   var bar = 'bar top-level';
+   class Example extends WebComponent {
+     var foo = 'foo class-level';
+   }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <p>The expressions <code>{{foo}}</code> and <code>{{bar}}</code> are valid <a href="http://www.dartlang.org/docs/spec/latest/dart-language-specification.html#h.dz8ekoegseec">Dart
+expressions</a> and are evaluated as if you
+wrote them inside a method of the class <code>Example</code>. In this case, the template
+will display the value <code>foo class-level</code> and <code>bar top-level</code>.</p>
+
+  <h3 id="lifecycle-methods">Lifecycle methods</h3>
+
+  <p>A component class exposes public methods to attach hooks to lifecycle events of
+the component.
+These special callback methods are invoked during the lifetime of a Dart web
+component. These methods are defined as part of the <code>WebComponent</code> class, and
+you can override them to run code at those lifecycle events. These special
+lifecycle methods are:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&#160;</th>
+        <th style="text-align: left">Method</th>
+        <th>&#160;</th>
+        <th style="text-align: left">When will it be invoked?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>created</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Invoked slightly after a component is created.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>inserted</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Invoked whenever a component is added to the DOM.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>attributeChanged</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Invoked whenever an attribute in the component changes.</td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>removed</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Invoked whenever a component is removed from the DOM</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Status:</strong> <em>attributeChanged</em> is not supported yet. See
+<a href="https://github.com/dart-lang/web-ui/issues/90">Issue
+#90</a>.</p>
+    </div>
+  </aside>
+
+  <h2 id="template-syntax">Template Syntax</h2>
+
+  <p>Templates provide a declarative syntax to create applications that follow a
+model-view-viewmodel (MVVM) architecture.
+In this architecture, applications use
+models to hold data, view-models adapt the model to a friendly representation
+to display to the end user, and views reflect the latest changes to the model
+and view-model in the UI.</p>
+
+  <p>The declarative syntax of templates gives developers an easy way to express how
+views bind data from the model and view-model. This makes it possible to
+simplify dramatically how to keep the views in sync with the data, which
+sometimes can be done completely automatically.</p>
+
+  <p>Just like <a href="http://code.google.com/p/mdv/">MDV</a> templates, our template syntax is valid HTML. Hence, it is
+always processed first as HTML. Within the HTML content, special text nodes and
+attributes can be used to add more semantic meaning to the template.  This
+section discusses these special features in detail.</p>
+
+  <h3 id="data-binding">Data binding</h3>
+
+  <p>Data bindings concisely describe the relation between portions of the document
+and Dart expressions.
+Bindings can be used to indicate that some HTML content or
+attributes should be rendered with the result of evaluating a Dart expression.
+They can also be used to indicate that we wish to watch Dart expressions and
+reactively update the document whenever the expressions change. Alternatively,
+bindings can also be used to update Dart properties with the latest value in an
+interactive element, such as input boxes and text areas.</p>
+
+  <p>If data bindings are used within a component, the associated Dart expressions
+are resolved in the scope of the class associated with the component (see more
+details <a href="#template-scope">above</a>). If data bindings are used directly on
+the body of an HTML page, these expressions are evaluated in the context of the
+main script associated with that page (more details
+<a href="#top-level-templates">later</a>).</p>
+
+  <h4 id="binding-in-content">Binding in content</h4>
+
+  <p>You can introduce a data binding in a text node
+by using expressions of the form
+<code>{{exp}}</code> as nodes in your HTML. For example, a component with the
+following template:</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example2'&gt;
+ &lt;template&gt;&lt;span&gt;one {{x}} tree&lt;/span&gt;&lt;/template&gt;
+ &lt;script type='application/dart'&gt;
+   class Example2 extends WebComponent {
+     String x = 'two';
+   }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <p>will render as <code>&lt;span&gt;one two three&lt;/span&gt;</code>. At runtime, <code>x</code> will be
+<a href="#watchers">watched</a> for changes.
+When changes are detected, the contents of the
+page will be updated in place.</p>
+
+  <p>You can use any valid Dart expression inside the double brackets <code>{{ ...
+}}</code>. While any expression is allowed, it is good practice to use expressions
+that have no visible side-effects. In particular, binding expressions will
+be evaluated to render your application, and sometimes they might be evaluated
+more than once in a single event cycle. If your expression has visible
+side effects, those changes might trigger more updates in the document
+than what you initially intended to happen.</p>
+
+  <p>The program generated by the Web UI compiler will evaluate a
+binding expression to a value,  call <a href="http://api.dartlang.org/docs/bleeding_edge/dart_core/Object.html#toString"><code>toString()</code></a> on it and place
+the result as a text node where the binding was found. This means that if your
+content has some HTML tags in it, the content is automatically escaped. For
+instance, if we use <code>x='&lt;span&gt;two&lt;/span&gt;'</code>, the result will be <code>&lt;span&gt;one
+&amp;lt;span&amp;gt;two&amp;lt;/span&amp;gt; three&lt;/span&gt;</code></p>
+
+  <p>On occasions, you may want to inject HTML fragments directly in the page.
+You can do so by creating an instance of <code>SafeHtml</code> (see 
+<a href="https://github.com/dart-lang/web-ui/blob/master/lib/safe_html.dart"><code>package:web_ui/safe_html.dart</code></a>). If your content happen to
+be an instance of <code>SafeHtml</code>, then the data will not be escaped.</p>
+
+  <p><strong>Note:</strong> Use <code>SafeHtml</code> carefully. In particular, you can easily
+make your application exploitable through cross-site scripting (XSS) attacks if
+you allow arbitrary user data to be placed unescaped in your page. In practice,
+you should only use it when you know that the HTML is valid and safe.</p>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Status:</strong> <code>SafeHtml</code> is available but very primitive at this
+point. This type should evolve,
+and maybe one day it could be integrated as part
+of the <code>dart:html</code> APIs.</p>
+    </div>
+  </aside>
+
+  <h4 id="binding-in-attributes">Binding in attributes</h4>
+
+  <p>You can also use <code>{{expression}}</code> bindings in the middle of HTML
+attributes. An attribute written as <code>foo="{{exp}}"</code> will be initialized
+with the value of <code>exp</code>. Like bindings in content nodes, expressions are
+<a href="#watchers">watched</a> for changes and attributes will be updated in place when
+expressions&#8217; changes are detected.  At runtime, attribute values will be updated
+using an assignment directly on the HTML element property corresponding to that
+attribute. Bindings of the form <code>attribute="{{exp}}"</code> are assigned
+directly, however bindings of the form <code>attribute="abc {{exp}} xyc"</code> will
+perform string interpolation.</p>
+
+  <p>It is perfectly valid to use bindings to set and update boolean attributes.
+Without data-bindings a tag such as <code>&lt;input type="checkbox"
+disabled="false"&gt;</code> will be disabled.  The value &#8220;false&#8221; is ignored by browsers
+and the only two ways to make the element enabled is to remove the <code>disabled</code>
+attribute or to programatically set the <code>disabled</code> property on the element to
+false. When you use attribute bindings you can simply write: <code>&lt;input
+type="checkbox" disabled="{{exp}}"&gt;</code>. At runtime this will create the
+element with the disabled attribute, but the property will be assigned the value
+of <code>exp</code> immediately after. If <code>exp</code> is false, the element will be enabled.</p>
+
+  <p>You can use bindings in any kind of attribute, but there are some additional
+features available for class and style attributes.</p>
+
+  <ul>
+    <li>class attributes: A common use of data bindings in attributes is to select
+classes to attach to an element. You can bind a single class attribute by
+binding a getter to the property defining your class. For example,</li>
+  </ul>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example2'&gt;
+ &lt;template&gt;&lt;span class=&quot;{{class1}}&quot;&gt;&lt;/span&gt;&lt;/template&gt;
+ &lt;script type='application/dart'&gt;
+   class Example2 extends WebComponent {
+     String class1 = 'pretty';
+   }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <p>In this example, if you update <code>class1</code> to null or an empty string, when the
+  associated watcher detects this change it will remove the previous value
+  (<code>'pretty'</code>) from the element.</p>
+
+  <p>You can bind multiple class attributes in several ways: by returning a list
+  of values in your expression, by returning a string with multiple classes
+  separated by spaces, or by writing multiple bindings in the same class
+  attribute. For example, suppose you want to bind 2 CSS class variables,
+  <code>class1</code> and <code>class2</code>, on an element. The tree alternatives would look as
+  follows:</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example2'&gt;
+ &lt;template&gt;
+  &lt;!-- bind classes with a list --&gt;
+   &lt;span class=&quot;{{classesAsList}}&quot;&gt;&lt;/span&gt;
+
+  &lt;!-- bind classes with a string --&gt;
+   &lt;span class=&quot;{{classesAsString}}&quot;&gt;&lt;/span&gt;
+
+  &lt;!-- bind classes separately --&gt;
+   &lt;span class=&quot;{{class1}} {{class2}}&quot;&gt;&lt;/span&gt;
+ &lt;/template&gt;
+ &lt;script type='application/dart'&gt;
+   class Example2 extends WebComponent {
+      String class1 = 'pretty';
+      String class2 = 'selected';
+      List&lt;String&gt; get classesAsList =&gt; [class1, class2];
+      String get classesAsString =&gt;
+        &quot;${class1 != null ? class1 : ''} &quot;
+        &quot;${class2 != null ? class2 : ''}&quot;;
+      ...
+   }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <ul>
+    <li>style attributes: you can pass either a <code>String</code> or a <code>Map&lt;String, String&gt;</code> as
+a binding to <code>style</code> attributes. When using a map, we track changes to
+the map keys and values and update actual style of the element accordingly.</li>
+  </ul>
+
+  <h4 id="binding-interactive-elements">Binding interactive elements</h4>
+
+  <p>Bindings can also be used to monitor user modifications on interactive elements,
+such as input boxes, text areas, and radio buttons. We do so by binding an
+interactive element with a Dart assignable value, such as a field or a property
+with a getter and setter. Unlike the bindings we discussed above, these bindings
+operate in two directions: changes in the Dart value are reflected in the UI,
+but also changes from the user in the UI are reflected directly in the Dart
+value. Because of their bidirectional nature, we refer to these bindings as
+<em>two-way data bindings</em>. Two-way data bindings are expressed with an attribute
+of the form <code>bind-property="assignableValue"</code>, where <em>property</em> is the
+associated property in the HTML element that we are monitoring, and
+<em>assignableValue</em> is a Dart assignable value. This is the current list of
+two-way bindings supported by Web UI:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>&#160;</th>
+        <th style="text-align: left">Interactive element</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Attribute</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Description</th>
+        <th>&#160;</th>
+        <th style="text-align: left">Event that triggers an update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;textarea&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>value</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">The current value in the textarea element</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>input</code></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;input type="text"&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>value</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">The current value in the input box</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>input</code></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;input type="checkbox"&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>checked</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Whether the checkbox is checked</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>change</code></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;input type="radio"&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>checked</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Whether a radio button is checked</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>change</code></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;input name="group" type="radio" value="option"&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>value</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Whether a value matches the radio button&#8217;s value</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>change</code></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;select&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>selected-index</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Selected option index on the dropdown list</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>change</code></td>
+      </tr>
+      <tr>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>&lt;select&gt;</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>value</code></td>
+        <td>&#160;</td>
+        <td style="text-align: left">Selected option value on the dropdown list</td>
+        <td>&#160;</td>
+        <td style="text-align: left"><code>change</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Under the hood two-way bindings are implemented by using a <a href="#watchers">watcher</a>
+to watch for changes in Dart that will trigger updates in the corresponding HTML
+element property, and a <a href="#event-listeners">UI event listener</a> that will react to
+user interactions and update the corresponding Dart assignable value.</p>
+
+  <p>Although most two-way bindings copy contents between an HTML element property
+and a Dart value without doing any processing of the data, one special binding
+on radio buttons behaves differently. Radio buttons can be grouped together by
+name, so only one button in a group is selected at a time. You can track which
+element is seleceted in two ways: you can bind each radio button to a boolean
+flag, or you can bind all radio buttons in a group to a single Dart value. The
+following example illustrates how to do both. Note that in this example both
+groups behave exactly the same way.</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example2'&gt;
+ &lt;template&gt;
+   &lt;input name=&quot;a&quot; type=&quot;radio&quot; value=&quot;one&quot; bind-value=&quot;groupValue&quot;&gt;One
+   &lt;input name=&quot;a&quot; type=&quot;radio&quot; value=&quot;two&quot; bind-value=&quot;groupValue&quot;&gt;Two
+
+   &lt;input name=&quot;b&quot; type=&quot;radio&quot; value=&quot;one&quot; bind-checked=&quot;oneSelected&quot;&gt;One
+   &lt;input name=&quot;b&quot; type=&quot;radio&quot; value=&quot;two&quot; bind-checked=&quot;twoSelected&quot;&gt;Two
+ &lt;/template&gt;
+ &lt;script type='application/dart'&gt;
+   class Example2 extends WebComponent {
+      var groupValue = &quot;one&quot;;
+
+      bool get oneSelected =&gt; groupValue == 'one';
+      bool get twoSelected =&gt; groupValue == 'two';
+      set oneSelected(v) { groupValue = 'one'; }
+      set twoSelected(v) { groupValue = 'two'; }
+   }
+ &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Status:</strong> More interactive elements need to be supported.</p>
+    </div>
+  </aside>
+
+  <h4 id="watchers">Watchers</h4>
+
+  <p>As hinted in the previous sections, data bindings are reactive. We would like
+the UI to be updated automatically whenever a Dart expression used in a data
+binding changes. Watchers provide a way to implement this functionality. Their
+implementation is available under <code>package:web_ui/watcher.dart</code>. For
+each expression used in a data binding, we create a watcher. These watchers are
+inactive until the special method <code>dispatch</code> in the watcher&#8217;s library is
+invoked. The <code>dispatch</code> method will iterate over all active watchers and fire
+events on any watcher whose value has changed.</p>
+
+  <p>Web UI automatically adds call to <code>dispatch</code> on two-way data bindings and at the
+end of <a href="#event-listeners">inlined UI event listeners</a>.  If a change made in your
+data doesn&#8217;t automatically appear in the UI, it is very likely that a call to
+<code>dispatch</code> is missing. Here are common situations where you need to invoke
+<code>dispatch</code> by hand:</p>
+
+  <ul>
+    <li>If you install event listeners manually via the <code>dart:html</code> API.</li>
+    <li>If you make data changes that happen after an asynchronous API call, for
+example: after receiving the results of an <code>HttpRequest</code>, or after working
+with a local database API.</li>
+  </ul>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Status:</strong> We are looking at alternatives to automatically call
+dispatch or change how watchers are implemented so that you don&#8217;t need to
+manually write any of the additional calls above.  See <a href="https://github.com/dart-lang/web-ui/issues/156">Issue
+#156</a> for more details.</p>
+
+    </div>
+  </aside>
+
+  <h3 id="conditionals">Conditionals</h3>
+
+  <p>Portions of the template can be conditionally hidden using template
+conditionals. Web UI supports two different ways to express conditionals. You
+can make a document fragment conditionally visible by declaring it within a
+conditional <code>&lt;template&gt;</code> element node, or you can make an element and its
+children conditionally visible by using a conditional attribute
+in the element. Next, we discuss each of these approaches and when it is
+appropriate to <a href="#which-conditional">use one or the other</a>.</p>
+
+  <h4 id="conditional-template">The conditional element node</h4>
+
+  <p>A template conditional element is a <code>&lt;template&gt;</code> tag containing a special
+attribute of the form <code>instantiate="if expression"</code>, where <code>expression</code> is a
+valid Dart expression, just like any <a href="#data-binding">data binding expression</a>.
+Alternatively, instead of <code>instantiate="if exp"</code> you can write <code>if="exp"</code>.</p>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Note:</strong> 
+The final syntax for conditionals is not finalized. In particular, currently
+only <code>instantiate="if ..."</code> is part of the MDV specification.
+However, Web UI supports both <code>instantiate="if ..."</code> and
+<code>if="..."</code> and it will later provide feedback whenever one is
+deprecated in favor of the other.</p>
+    </div>
+  </aside>
+
+  <p>Consider this concrete example:</p>
+
+  <pre class="prettyprint lang-html">Unconditional portion 1
+&lt;!-- a template conditional --&gt;
+&lt;template instantiate=&quot;if exp&quot;&gt;
+ this &lt;div&gt;is sometimes &lt;strong&gt;shown&lt;/strong&gt;&lt;/div&gt; here
+&lt;/template&gt;
+Unconditional portion 2</pre>
+
+  <p>If <code>exp</code> is <code>true</code>, then the contents of the tag will be displayed,
+otherwise, they will not be rendered altogether. In particular, if there were
+additional data bindings under the conditional node, those binding expressions
+will only be evaluated when <code>exp</code> is  true.</p>
+
+  <p>At runtime, the HTML generated for a template using a conditional will have an
+invisible placeholder that indicates where was this conditional initially
+declared, then if the condition is true, the contents of the template node will
+be appended as siblings of this placeholder.</p>
+
+  <p>The Web UI compiler uses a shallow clone of the original template node as the
+invisible placeholder. For example, this is how the tree looks when the
+condition is false in our example above:</p>
+
+  <pre class="prettyprint lang-html">Unconditional portion 1
+&lt;!-- the next tag is an invisible placeholder --&gt;
+&lt;template instantiate=&quot;if exp&quot; style=&quot;display:none&quot;&gt;&lt;/template&gt;
+Unconditional portion 2</pre>
+
+  <p>When the condition becomes true, the HTML tree will look as follows:</p>
+
+  <pre class="prettyprint lang-html">Unconditional portion 1
+&lt;!-- the next tag is an invisible placeholder --&gt;
+&lt;template instantiate=&quot;if exp&quot; style=&quot;display:none&quot;&gt;&lt;/template&gt;
+this
+&lt;div&gt;
+  is sometimes &lt;strong&gt;shown&lt;/strong&gt;
+&lt;/div&gt;
+here
+Unconditional portion 2</pre>
+
+  <p>Note that the contents of the initial template are not within the template
+tag anymore, they got added directly as siblings. This behavior is
+intentional. Template nodes are intended to be inert, and they are mainly used
+as a declaration. This matches closely the semantics of <a href="http://code.google.com/p/mdv/">MDV</a> templates.</p>
+
+  <p>A benefit of this semantics is that the resulting HTML is often closer to 
+what the developer intended to say. For example, a template of the form:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; item 1
+  &lt;template instantiate=&quot;if showItem2&quot;&gt;
+    &lt;li&gt; item 2
+  &lt;/template&gt;
+&lt;/ul&gt;</pre>
+
+  <p>Will be rendered so that all <code>&lt;li&gt;</code> elements are direct children of the <code>&lt;ul&gt;</code>
+element:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; item 1
+  &lt;template instantiate=&quot;if showItem2&quot; style=&quot;display:none&quot;&gt;&lt;/template&gt;
+  &lt;li&gt; item 2
+&lt;/ul&gt;</pre>
+
+  <p>As an app developer, you must know these rendering decisions because it may
+affect parts of the application logic, like CSS selectors. The current approach
+has the advantage that parent/child relationships are preserved if you add a
+conditional in the middle of your template. Note, however, that the extra
+placeholder node can still affect positional selectors like matching the <em>nth</em>
+child of a node.</p>
+
+  <p><strong>Note</strong>: the <code>&lt;template&gt;</code> tag has multiple uses in this specification: it is
+used to declare the appearance of a component and it can be used to declare
+conditionals and loops. It is mandatory to use separate tags for each intended
+use. In particular, the first example below is valid, but the second is invalid:</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example'&gt;
+ &lt;template&gt;
+   &lt;template instantiate=&quot;if true&quot;&gt;this is valid&lt;/template&gt;
+ &lt;/template&gt;
+&lt;/element&gt;</pre>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example'&gt;
+ &lt;!-- invalid: we need an extra template here. --&gt;
+ &lt;template instantiate=&quot;if true&quot;&gt;this is invalid&lt;/template&gt;
+&lt;/element&gt;</pre>
+
+  <h4 id="conditional-attribute">The conditional attribute.</h4>
+
+  <p>An alternative syntax to create conditional content is to use a conditional
+attribute on an arbitrary element. This is especially useful in contexts where
+you are not allowed to insert a <code>&lt;template&gt;</code> element (such as tables).</p>
+
+  <p>You can express a conditional by adding two attributes to any element, an empty
+<code>template</code> attribute, and a <code>instantiate="if ..."</code> attribute. For example, in
+the following code, <code>item 2</code> will only be visible if <code>showItem2</code> is true.</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; item 1
+  &lt;li template instantiate=&quot;if showItem2&quot;&gt; item 2
+&lt;/ul&gt;</pre>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Note:</strong> In the future a single attribute will be enough, we
+intend to remove the extra <code>template</code> attribute.</p>
+    </div>
+  </aside>
+
+  <p>The runtime semantics of these conditionals is similar, but not quite the same
+as conditional <code>&lt;template&gt;</code> elements. Like before, an invisible placeholder is
+added to the tree regardless of the condition being true or false. Instead of a
+template node, the HTML will have an empty clone of the element annotated with
+the condition. When the condition is true, the actual element itself is added
+(with the template attribute removed). For instance, the following shows the
+rendered tree when the condition is true in the example above:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; item 1
+  &lt;!-- the next tag is an invisible placeholder --&gt;
+  &lt;li template instantiate=&quot;if showItem2&quot; style=&quot;display:none&quot;&gt;&lt;/li&gt;
+  &lt;li&gt; item 2
+&lt;/ul&gt;</pre>
+
+  <p>And the following shows the rendered tree when the condition is false:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; item 1
+  &lt;!-- the next tag is an invisible placeholder --&gt;
+  &lt;li template instantiate=&quot;if showItem2&quot; style=&quot;display:none&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Note:</strong> These semantics might change in the near future. The
+placeholder in this case seems redundant when the condition is true - we could
+simply reuse the placeholder node to render the contents within it.</p>
+    </div>
+  </aside>
+
+  <h4 id="which-conditional">Conditional element vs. attribute</h4>
+
+  <p>The main difference between conditional template nodes and conditional
+attributes is that the former makes the contents of the template node
+conditionally visible, while the latter makes the actual node conditionally
+visible.</p>
+
+  <p>This difference is especially noticeable when making plain text nodes
+conditionally visible. For example, the following template:</p>
+
+  <pre class="prettyprint lang-html">&lt;div&gt; a &lt;template instantiate=&quot;if exp&quot;&gt;c&lt;/template&gt; b &lt;/div&gt;</pre>
+
+  <p>will be rendered such that <code>c</code> is a direct child of <code>&lt;div&gt;</code>:</p>
+
+  <pre class="prettyprint lang-html">&lt;div&gt; a &lt;template style=&quot;display:none&quot;&gt;&lt;/template&gt; c b &lt;/div&gt;</pre>
+
+  <p>This cannot be expressed using conditional attributes. If you were to use
+conditional attributes, you would be forced to introduce a DOM node that will
+wrap <code>c</code>:</p>
+
+  <pre class="prettyprint lang-html">&lt;div&gt; a &lt;span instantiate=&quot;if exp&quot;&gt;c&lt;/span&gt; b &lt;/div&gt;</pre>
+
+  <p>which will render as:</p>
+
+  <pre class="prettyprint lang-html">&lt;div&gt; a &lt;span style=&quot;display:none&quot;&gt;&lt;/span&gt; &lt;span&gt;c&lt;/span&gt; b &lt;/div&gt;</pre>
+
+  <p>Another subtle difference derives from the fact that templates are
+syntactically valid HTML. The HTML5 parsing algorithm has very strict rules
+about where you can use certain element types.
+In particular, <code>&lt;template&gt;</code> nodes
+cannot occur within tables, and the parsing algorithm move these template nodes
+somewhere else. This also happens in the Web UI compiler, which uses an HTML5
+compliant parser. For example, if you write:</p>
+
+  <pre class="prettyprint lang-html">&lt;table&gt;&lt;tbody&gt;
+&lt;template instantiate=&quot;if showRow&quot;&gt;&lt;tr&gt;&lt;td&gt; row &lt;/td&gt;&lt;/tr&gt;&lt;/template&gt;
+&lt;/tbody&gt;&lt;/table&gt;</pre>
+
+  <p>This is transformed by HTML parsers as if you had written the template outside
+of the table:</p>
+
+  <pre class="prettyprint lang-html">&lt;template instantiate=&quot;if showRow&quot;&gt;&lt;tr&gt;&lt;td&gt; row &lt;/td&gt;&lt;/tr&gt;&lt;/template&gt;
+&lt;table&gt;&lt;tbody&gt;
+&lt;/tbody&gt;&lt;/table&gt;</pre>
+
+  <p>We can express our intent of conditionally hiding a row using conditional
+attributes as follows:</p>
+
+  <pre class="prettyprint lang-html">&lt;table&gt;&lt;tbody&gt;
+&lt;tr instantiate=&quot;if showRow&quot;&gt;&lt;td&gt; row &lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;</pre>
+
+  <h3 id="loops">Loops</h3>
+
+  <p>Loops make it possible to iterate over a collection and repeat portions of a
+template with each iteration. Just like <a href="#conditionals">conditionals</a>,
+there are
+also 2 ways to express loops.
+You can repeat a fragment by declaring it within a
+iterate <code>&lt;template&gt;</code> element node, or you can repeat the body of an element by
+using an iterate attribute on the element.</p>
+
+  <h4 id="iterate-template">The iterate element node</h4>
+
+  <p>A template iterate element is a <code>&lt;template&gt;</code> tag containing a special attribute
+of the form <code>iterate="identifier in expression"</code>, where <code>expression</code> evaluates
+to a collection, and <code>identifier</code> is a new variable that will be visible to the
+body of the iterate element. For instance, in the following example:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; header
+  &lt;!-- a template iteration --&gt;
+  &lt;template iterate=&quot;x in list&quot;&gt;
+    &lt;li&gt; before {{x}}
+    &lt;li&gt; {{x}}
+  &lt;/template&gt;
+  &lt;li&gt; footer
+&lt;/ul&gt;</pre>
+
+  <p>the expression <code>list</code> is evaluated to a collection. For each element in the
+collection, there will be 2 <code>&lt;li&gt;</code> tags in the generated HTML.</p>
+
+  <p>The runtime semantics of loops has a lot of similarities with conditionals.
+At runtime,
+the HTML generated for this template will have an invisible placeholder
+indicating where the loop starts, the repeated content is appended directly
+after this placeholder node.</p>
+
+  <p>For example, <code>list</code> is <code>['one', 'two', 'three']</code> then the rendered HTML will
+look as follows:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; header
+  &lt;!-- invisible placeholder --&gt;
+  &lt;template iterate=&quot;x in list&quot; style=&quot;display:none&quot;&gt;&lt;/template&gt;
+  &lt;li&gt; before one
+  &lt;li&gt; one
+  &lt;li&gt; before two
+  &lt;li&gt; two
+  &lt;li&gt; before three
+  &lt;li&gt; three
+  &lt;li&gt; footer
+&lt;/ul&gt;</pre>
+
+  <p>See the sections above on <a href="#conditionals">conditionals</a> for more details on why
+children of the template node are appended directly as siblings of the
+placeholder node, and to understand what implications this has during app
+development.</p>
+
+  <h4 id="iterate-attribute">The iterate attribute</h4>
+
+  <p>An alternative syntax to do template iterations is
+to use an <code>iterate</code> attribute
+directly on an element. This is especially useful to iterate on table rows or
+columns, where you are not allowed to use <code>&lt;template&gt;</code> tags.</p>
+
+  <p>The runtime semantics of iterate attributes are different than iterate template
+nodes. The placeholder node and the iteration element are basically the same.
+The node is always present, but its contents are modified depending on the
+values found in the collection. For example, the following template:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul template iterate=&quot;x in list&quot;&gt;
+  &lt;li&gt; before {{x}}
+  &lt;li&gt; {{x}}
+&lt;/ul&gt;</pre>
+
+  <p>will be rendered as follows when <code>list</code> has the following value <code>['one', 'two',
+'three']</code>:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; before one
+  &lt;li&gt; one
+  &lt;li&gt; before two
+  &lt;li&gt; two
+  &lt;li&gt; before three
+  &lt;li&gt; three
+&lt;/ul&gt;</pre>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Note:</strong> In the future a single attribute will be enough, we
+intent to remove the extra <code>template</code> attribute.</p>
+    </div>
+  </aside>
+
+  <h4 id="which-loop">Iterate element vs. attribute</h4>
+
+  <p>The main difference between iterate template nodes and iterate attributes is
+that the former appends the repeated contents
+as siblings of the iteration node,
+while the latter appends them as children of
+the element containing the iterate attribute.</p>
+
+  <p>This difference is especially noticeable when you want to create a list with a
+header and a footer. This is supported by template nodes as follows:</p>
+
+  <pre class="prettyprint lang-html">&lt;ul&gt;
+  &lt;li&gt; header
+  &lt;template iterate=&quot;x in list&quot;&gt;
+    &lt;li&gt; item {{x}}
+  &lt;/template&gt;
+  &lt;li&gt; footer
+&lt;/ul&gt;</pre>
+
+  <p>but it cannot be expressed using iteration attributes.</p>
+
+  <p>Because HTML parsering algorithm moves <code>&lt;template&gt;</code> nodes outside tables, they
+cannot be used to iterate over <code>&lt;tr&gt;</code> or <code>&lt;td&gt;</code> elements.
+Here again, similar to
+conditional attributes, iteration attributes can be used in this context. For
+example:</p>
+
+  <pre class="prettyprint lang-html">&lt;table&gt;
+  &lt;tbody iterate=&quot;row in rows&quot;&gt;
+  &lt;tr iterate=&quot;cell in row&quot;&gt;
+    &lt;td&gt; {{cell}} &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+
+  <aside>
+    <div class="alert alert-info">
+      <p><strong>Status:</strong>
+Tables always have a <code>&lt;tbody&gt;</code>, and if
+instead you use the iterate attribute in <code>&lt;table&gt;</code>
+the Dart web
+component compiler will think that you intend to repeat the table body multiple
+times. This needs to be fixed.</p>
+    </div>
+  </aside>
+
+  <h3 id="event-listeners">Event listeners</h3>
+
+  <p>Templates also have a concise syntax to bind a Dart event handler with a
+UI event. These can be expressed today using an attribute of the form
+<code>on-event-name="action"</code>. For example, the following code will listen for click
+events on the <code>div</code> element, on each click the function <code>handleClick</code> will be
+called:</p>
+
+  <pre class="prettyprint lang-html">&lt;element name='x-example3'&gt;
+  &lt;template&gt;&lt;div on-click=&quot;handleClick($event)&quot;&gt;click me&lt;/div&gt;&lt;/template&gt;
+  &lt;script type='application/dart'&gt;
+    class Example3 extends WebComponent {
+      handleClick(Event e) { ... }
+    }
+  &lt;/script&gt;
+&lt;/element&gt;</pre>
+
+  <p>The name for the <code>on-</code> attributes is the hyphenated version of the Dart name
+associated with the event in <code>dart:html</code>,
+which is what you would normally write
+in calls of the form <code>elem.onSomeEvent.listen(eventListener)</code>. For example, the
+attribute for the <code>doubleClick</code> event is <code>on-double-click</code>. See the API docs for
+<a href="http://api.dartlang.org/docs/releases/latest/dart_html/Element.html">Element</a> for a complete list of event names.</p>
+
+  <p>The action written in the attribute value can be any valid Dart expression, but
+typically is a method invocation. This expression is evaluated using lexical
+scoping just like any <a href="#data-binding">data binding expression</a>. A special
+variable <code>$event</code> is added to the scope of this expression to refer to the HTML
+event that was fired.</p>
+
+  <p>At runtime, when the event is fired, the handler will be invoked followed
+immediately after by a call to <code>dispatch</code> that notifies watchers about data
+changes.</p>
+
+  <h2 id="web-apps">Web apps</h2>
+
+  <p>To create modern web applications, use web components and templates as
+building blocks and put it all together with HTML pages. The main HTML file for
+a web app can declare components directly, load components from other files,
+declare the main Dart script, and even use templating features directly in the
+HTML body.</p>
+
+  <h3 id="declaring-components">Declaring components</h3>
+
+  <p>We mentioned earlier that components are declared using the <code>&lt;element&gt;</code> tag.
+You can write many of these tags in a page,
+but only directly under the <code>&lt;body&gt;</code>
+element. For example,</p>
+
+  <pre class="prettyprint lang-html">&lt;html&gt;
+  ...
+  &lt;body&gt;
+  &lt;element name='x-example1'&gt;...&lt;/element&gt;
+  &lt;element name='x-example2'&gt;...&lt;/element&gt;
+  ...</pre>
+
+  <p>You can then either use these components directly in your page
+or load this file
+from other HTML files. In essence, an HTML file works like a library that
+bundles web components.</p>
+
+  <h3 id="loading-components">Loading components</h3>
+
+  <p>Web components defined in an external HTML file can be loaded with a <code>&lt;link&gt;</code>
+tag in the HTML header. For example,</p>
+
+  <pre class="prettyprint lang-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;link rel=&quot;import&quot; href='otherfile.html'&gt;
+  &lt;/head&gt;
+...</pre>
+
+  <p>Loading such file allows you to use the loaded components directly in the body
+of the page or within a component declaration.</p>
+
+  <h3 id="main-script">Main script</h3>
+
+  <p>Like with other dart web apps, the main entry point of your app has top-level
+script (either inlined or sourced) which starts everything. For instance,</p>
+
+  <pre class="prettyprint lang-html">&lt;html&gt;
+  &lt;body&gt;
+    ...
+    &lt;script type='application/dart'&gt;
+      main() {
+        ...
+      }
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+  <p>Only one script tag loading Dart code is allowed in a single page. Similar to
+script tags in component declarations, this script tag is optional. If all the
+behavior of your application is already initialized and defined with your
+components, you can omit this script tag and the Web UI compiler
+will automatically generate a standard one.</p>
+
+  <p>Within your main script, you can query for DOM elements that you had initially
+written in the page. However, you cannot query for children of conditional and
+iteration nodes.</p>
+
+  <p>The initialization of web components is done after <code>main</code> is executed, but
+before the end of the event loop. If you query in <code>main</code> for the element
+associated with a component, its <code>xtag</code> will be null. To <a href="#retrieval">retrieve a component
+instance</a> you need to defer queries until the end of the event loop,
+for example using a <code>Timer.run(f)</code>.</p>
+
+  <h3 id="top-level-templates">Top-level templates</h3>
+
+  <p>The same template features we described earlier in this article can be used in
+the body of your HTML page. One important distinction here is how data bindings
+are evaluated. We discussed earlier that templates in a component are evaluated
+in the context of the <a href="#template-scope">component&#8217;s class</a>, here the templates
+are evaluated in the top-level context of the main script.</p>
+
+</div>
+
+    	  </div> <!-- End of content from toc.html -->
+        </article>
+	  </div>
+
+	
+
+	</div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

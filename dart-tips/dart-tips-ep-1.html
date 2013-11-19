@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>A Simple Dart Script - Dart Tips, Ep 1 | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="A Simple Dart Script - Dart Tips, Ep 1 | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="//i.ytimg.com/vi/g09UVKyYfIs/0.jpg">
+  
+  <meta itemprop="description" content="Welcome to Dart Tips, the video series that teaches you all about Dart. In our first episode, we show you a simple Dart script and get you comfortable with reading Dart code.">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	<link rel="author" href="/authors/seth-ladd.html">
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+    <article>
+    <h1 id="a-simple-dart-script---dart-tips-ep-1">A Simple Dart Script - Dart Tips, Ep 1</h1>
+
+<iframe class="dart-tips-video" src="//www.youtube.com/embed/g09UVKyYfIs" frameborder="0" allowfullscreen=""></iframe>
+
+<p><a href="/dart-tips/">Back to all Dart Tips episodes</a>.</p>
+
+<hr />
+
+<h3 id="transcript">Transcript</h3>
+
+<p>Hi, I’m Seth Ladd, and welcome to our first episode of Dart Tips. Throughout this series, I’ll teach you all about the Dart language and libraries in short, easy to watch videos. To kick things off, here is a quick orientation to a simple Dart script.</p>
+
+<p>The designers of Dart built a scripting language that is generally free of ceremony, yet provides structure for larger apps and is analyzable by tools. Primarily a web development language, Dart must make it easy to write a few lines of code and then simply hit reload in your browser to see the changes. Those scripts must then be able to scale up to large, full-featured apps with potentially hundreds of thousands of lines of code. Therefore, Dart has to be terse, easy to read and write, structured with classes and libraries, and not force you into rituals or formalities.</p>
+
+<p>This philosophy is evident in this very simple Dart program:</p>
+
+<pre class="prettyprint lang-dart">printNumber(num aNumber) {
+  print('The number is $aNumber.');
+}
+
+main() {
+  var answer = 42;          // The meaning of life.
+  printNumber(answer);
+}</pre>
+
+<p>All Dart scripts starts with main(). Knowing exactly where the program starts is the first step to understanding the complete program structure, which in turn makes it easier for minimizers or other code-size reduction utilities to do a good job.</p>
+
+<p>Dart is an optionally typed language, which means variables can be typed or untyped. Here we use var to declare that answer is an untyped variable with an initial value of 42 (an integer literal). The object that answer points is an int, but the variable itself is dynamic or untyped. Tools like Dart Editor can infer that the variable answer is an integer, but you can be even more clear by using type annotations.</p>
+
+<pre class="prettyprint lang-dart">main() {
+  int answer = 42;
+  printNumber(number);
+}</pre>
+
+<p>Here we have typed the answer variable as an int. Sometimes developers want to be more explicit, which is especially helpful when writing code that other developers will use. Dart’s optional static types are an important topic, and we will cover them in more detail in a future episode. For now, just think of static types as inline documentation or type annotations that convey your intention to tools and fellow developers. Both versions of the script have the same runtime semantics, because type annotations are optional and the program runs as if you used var everywhere.</p>
+
+<p>Everything in Dart is an object, and every object is an instance of a class. Even numbers and functions are objects.  So, yes, 42 is an object and not a primitive. Speaking of functions, let’s look at the printNumber function.</p>
+
+<p>Dart supports top-level functions, because again, sometimes you don’t need full classes and it should be easy to start with the most simple thing that works. The printNumber function takes one parameter, which is typed as num and named aNumber. It is good Dart style to use type annotations in the “surface area” of your program, such as function signatures, because it makes it very easy to declare what the function expects.</p>
+
+<p>Inside of printNumber, we use the built-in print() function to display “The number is 42” to the console. Notice the dollar sign followed by the name of a variable. This syntax, called string interpolation, includes a variable’s value inside a string literal. This is a terse way to build strings.</p>
+
+<p>Nothing new, but Dart uses the double-forward-slash as a one line comment. Dart also support the multi-line comment format made popular in other languages.</p>
+
+<p>As you can see, Dart is unsurprising and familiar, which is exactly the point. We built a language that most developers can be productive with in a few hours or less. If you’re have experience with C, C++, Java, ActionScript, C#, or JavaScript, you’ll find Dart easy to learn. Don’t let the familiar syntax fool you, though, for now that you know how to read Dart code, there are plenty of improvements and cool features to show off in future videos.</p>
+
+<p>Thanks for watching. My name is Seth Ladd, and as we say here on Dart Tips, stay sharp.</p>
+
+<hr />
+
+<p><a href="http://marakana.com"><img src="imgs/marakana-logo.png" alt="Marakana Logo" /></a></p>
+
+<p>Our thanks go out to <a href="http://www.marakana.com">Marakana</a> for producing this
+video series.</p>
+
+<p><a href="/dart-tips/">Back to all Dart Tips episodes</a>.</p>
+
+    </article>
+    
+	
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,79 +1,812 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Dartlang.org- : Documentation for the Dart language and tools." />
+  
+  <title>Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  
+  <meta itemprop="description" content="Dart 是一种新的用来建构可扩展Web应用程序的语言。包含一种新的语言、一个 VM、库、工具盒一个编译为JavaScript的编译器。 今天就开始尝试 Dart！">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Dartlang.org-</title>
-  </head>
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
 
-  <body>
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/goodev/dartlang.org">View on GitHub</a>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
 
-          <h1 id="project_title">Dartlang.org-</h1>
-          <h2 id="project_tagline">Documentation for the Dart language and tools.</h2>
+  <!-- 
+<script type="text/javascript">
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/goodev/dartlang.org/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/goodev/dartlang.org/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("feeds", "1"); 
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Dartlang.org- maintained by <a href="https://github.com/goodev">goodev</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
 
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+    <div class="container-page">
+    <div class="container-full hero-hldr">
+      <div class="hero container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h5>1.0 发布了</h5>
+            <h1>Dart 是一种新的用来建构可扩展Web应用程序的语言。</h1>
+            <div class="editor download-buttons">
+
+  
+
+  <div class="windows downloads">
     
+    <a data-bits="64" data-os="windows" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
+      <button class="btn btn-default btn-lg download-btn">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (64-bit Windows)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="windows" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
+      <button class="btn btn-default btn-lg download-btn">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (32-bit Windows)
+      </button>
+    </a>
+    
+  </div>
 
-  </body>
+  
+
+  <div class="macos downloads">
+    
+    <a data-bits="64" data-os="macos" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
+      <button class="btn btn-default btn-lg download-btn">
+        <i class="sprite-icon-download-btn"> </i>
+                      下载 Dart (Mac)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="linux downloads">
+    
+    <a data-bits="64" data-os="linux" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
+      <button class="btn btn-default btn-lg download-btn">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (64-bit Linux)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="linux" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
+      <button class="btn btn-default btn-lg download-btn">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (32-bit Linux)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="editor-current-version version">
+                      当前 Dart 稳定版本：
+    <span class="editor-build-rev-stable">[计算中]</span>
+  </div>
+</div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-full sub-hero-hldr">
+      <div id="feed-posts" class="sub-hero container">
+      </div>
+    </div>
+
+    <div class="container dart-container">
+      
+      <section class="dart-ctas">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+              <div class="col-md-4">
+                <h2>了解下 Dart</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>大约 5 分钟</p>
+                <p>Dart 是基于类的和面向对象的、非教条式的语言。</p>
+                <a id="see-code" href="#code"><i class="sprite-icon-triangle"></i>了解代码</a>
+              </div>
+              <div class="col-md-4">
+                <h2>尝试下 Dart</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>大约 1 小时</p>
+                <p>编写一个 Dart web 程序 - 即使你以前从未编写过 web 程序。</p>
+                <a href="/codelabs/darrrt/"><i class="sprite-icon-triangle"></i>编写代码</a>
+              </div>
+              <div class="col-md-4">
+                <h2>深入了解</h2>
+                <p class="timer"><i class="sprite-icon-timer"></i>大约 1 天</p>
+                <p>Dart 有很多 <a href="#tools">工具</a>、
+                <a href="#libraries">代码库</a>、以及文档和
+                                                         一个开发者社区</p>
+                <a href="/docs/"><i class="sprite-icon-triangle"></i>了解更多</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1 browser-support">
+            <p>使用 <a href="#dart2js">Dart-to-JavaScript 编译器</a>，
+                                                  所有最新的浏览器 (包含桌面版和移动版) 都可以运行 Dart web 程序。</p>
+            <i class="sprite-icon-browsers"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="dart-new-language sec-shadow" id="code">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Dart 是新且非常熟悉的</h2>
+
+            <div id="dart-language-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#dart-language-carousel" data-slide-to="0" class="active">易于学习</li>
+                <li data-target="#dart-language-carousel" data-slide-to="1">简洁的</li>
+                <li data-target="#dart-language-carousel" data-slide-to="2">可选类型的</li>
+                <li data-target="#dart-language-carousel" data-slide-to="3">模块化的</li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <p>你可能已经见过甚至编写过 Dart 代码。 <a href="/samples/">查看更多示例。</a> </p>
+                  <div class="code-hldr">
+<pre class="prettyprint lang-dart">
+main() {                              // 这里是程序开始执行的入口
+  print(<a href="#" class="dart-popover" data-toggle="popover" title="把对象转化为字符串" data-html="true" data-trigger="hover focus" data-content="print() 函数 -- 使用 object 的 toString() 函数 -- 把接收的任何对象参数转化为字符串 。">new Fibonacci(10)</a>);          // 打印一个对象的值
+}
+
+class Fibonacci {                     // 定义一个类。
+  int original, fibo;                 //声明变量。
+  String toString() => '<a href="#" class="dart-popover" data-toggle="popover" title="字符串插值" data-html="true" data-trigger="hover focus" data-content="使用 $标示符 来插入标示符所代表的值 (在该示例中是 fibo 变量的整数值) 到一个字符串中。">$fibo</a>';      // 使用速记语法来定义函数。
+
+  Fibonacci(int value) :              // 使用列表初始化程序定义构造函数。
+    original = value, fibo = fib(value) {
+  }
+
+  static int fib(int n) {             // 定义一个类函数。
+    if (n < 2) {                      // 流程控制和表达式。
+      return n;
+    } else {
+      return fib(n-1) + fib(n-2);     // 算术操作符。
+    }
+  }
+}
+// 想要更简洁的代码？ 可以用一行代码函数替代：
+// fib(n) => n < 2 ? n : (fib(n - 1) + fib(n - 2));
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>写的少。干的多。</p>
+                  <div class="code-hldr">
+<pre class="prettyprint lang-dart">
+import 'dart:math' show PI;
+
+List shapes = <a href="#" class="dart-popover" data-toggle="popover" title="空列表字符串" data-html="true" data-trigger="hover focus" data-content="使用空的方括号可以创建一个新的空 List 对象。等价于 new List()。">[]</a>;                     // 使用字面字符串创建列表。
+addShape(shape) <a href="#" class="dart-popover" data-toggle="popover" title="胖箭头( Fat-arrow )语法 " data-html="true" data-trigger="hover focus" data-content="在胖箭头左边的函数 (在该示例中为 addShape) 返回胖箭头右边的值。">=></a> shapes.add(shape); // 速记函数语法。
+
+main() {
+  // 级联(Cascade)操作符 (..) 可以减少输入重复的变量。
+  addShape(new Ellipse(10, 20)<a href="#" class="dart-popover" data-toggle="popover" title="级联操作符" data-html="true" data-trigger="hover focus" data-content="级联操作符可以连续调用同一个对象上的多个函数和变量。">..</a>rotation = 45*PI/180
+                              <a href="#" class="dart-popover" data-toggle="popover" title="级联操作符" data-html="true" data-trigger="hover focus" data-content="级联操作符可以连续调用同一个对象上的多个函数和变量。">..</a>color = 'rgb(0,129,198)'
+                              <a href="#" class="dart-popover" data-toggle="popover" title="级联操作符" data-html="true" data-trigger="hover focus" data-content="级联操作符可以连续调用同一个对象上的多个函数和变量。">..</a>outlineWidth = 0);
+
+  // 可以很方便的在字符串中插入表达式的值。
+  print('Area of the first shape: <a href="#" class="dart-popover" data-toggle="popover" title="在字符串中插入表达式的值" data-html="true" data-trigger="hover focus" data-content="使用 ${表达式} 在字符串中插入表达式的值。表达式运算后的值转化为字符串。">${shapes[0].area}</a>');
+}
+
+class Ellipse {
+  num minorAxis, majorAxis;
+  // 在构造函数体运行之前设置变量值的语法糖。
+  Ellipse(this.minorAxis, this.majorAxis);
+}
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>在代码中添加类型可以帮助人和工具理解代码。
+                                                                  或者不用类型。你可以一直使用动态类型。</p>
+                  <div class="code-hldr">
+                    <div class="code-hldr">  
+                      <div class="item" style="margin-top:23px">
+                                                                                           没有类型，更自由的编写代码。<br>
+                        <img src="imgs/no_types.png">
+                                </div>
+                                <div class="item" style="margin-top:23px;">
+                                                                                               有类型， 很容易的检测错误。<br>
+                        <img src="imgs/with_types.png">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>可扩展的结构。用函数、类、
+                  mixins（混入）、和库。</p>
+                  <div class="code-hldr">  
+  <img src="imgs/modular.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      
+      <section class="dart-libraries">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" id="libraries">
+            <h2>Dart 语言广泛的库给你更多选择</h2>
+
+            <div id="dart-libraries-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#dart-libraries-carousel" data-slide-to="0" class="active">集合</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="1">异步</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="2">HTML</li>
+                <li data-target="#dart-libraries-carousel" data-slide-to="3">测试</li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <p>每个应用都可以使用 Dart 核心类库提供的 lists、 sets、和 maps。</p>
+                  <div class="code-hldr">        
+<pre class="prettyprint lang-dart">
+Map famousDuos = { 'Han Solo': 'Chewbacca',      // Map 字面字符串。
+                   'Bonnie': 'Clyde',
+                   'Laurel': 'Hardy' };
+List myFriends = [ 'Seth', 'Kathy', 'Shailen' ]; // List 字面字符串。
+
+// 从<a href="#" class="dart-popover" data-toggle="popover" title="Iterables" data-html="true" data-trigger="hover focus" data-content="一个 Iterable 对象使用  Iterator 每次提供一个对象。 Maps、 lists、 和 sets 都是 Iterable 对象。">Iterable</a> 对象创建 lists 和 maps。
+List shuffledSidekicks = new List.from(famousDuos.values)..shuffle();
+Map mixedDuos = new Map.fromIterables(famousDuos.keys, shuffledSidekicks);
+
+// 遍历集合
+mixedDuos.<a href="#" class="dart-popover" data-toggle="popover" title="使用 forEach()遍历集合" data-html="true" data-trigger="hover focus" data-content="forEach() 函数使用每个 Map 对象中的 key-value 值调用所提供的函数。在该示例中，函数只是打印出 Map 的 key和value。">forEach((k, v) { print('$k, $v'); });</a>
+
+// 一些 lists、 maps、 和 sets 是可扩容的。
+Set setOfMyFriends = new Set.from(myFriends);
+Set famousPeople = new Set.from(famousDuos.values);
+famousPeople.addAll(famousDuos.keys);
+
+// 集合提供了丰富的遍历函数。
+print(famousPeople.intersection(setOfMyFriends).isEmpty);
+print(famousPeople.union(setOfMyFriends).length);
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Dart 中的 Future 和 Stream 类提供了用来访问当前尚未可用对象的统一接口。</p>
+                  <div class="code-hldr">   
+<pre class="prettyprint lang-dart">
+// 获取一个元素上的 key-press 事件：
+querySelector('textarea').<a href="#" class="dart-popover" data-toggle="popover" title="onKeyPress" data-html="true" data-trigger="hover focus" data-content="元素的 onKeyPress 变量是 ElementStream 的实例，当在元素上按键的时候 ElementStream 提供了按键事件的通知。">onKeyPress</a>
+
+  // 过滤按键事件，值获取特定键的事件：
+  <a href="#" class="dart-popover" data-toggle="popover" title="where()" data-html="true" data-trigger="hover focus" data-content="where() 是用来过滤事件流的函数。">.where</a>((e) => e.keyCode >= 32 && e.keyCode <= 122)
+
+  // 把输入的按键代码转化为对应的字符：
+  <a href="#" class="dart-popover" data-toggle="popover" title="map()" data-html="true" data-trigger="hover focus" data-content="map() 是用提供的函数来转换事件流中每个值的函数。">.map</a>((e) => new String.fromCharCode(e.charCode))
+
+  // 获取第一个字符，返回一个 Future。
+  <a href="#" class="dart-popover" data-toggle="popover" title="first" data-html="true" data-trigger="hover focus" data-content="first 是 Stream 的一个属性， 使用 Future 返回 Stream 中的第一个元素。">.first</a>
+
+  // 当 Future 完成的时候，在控制台打印出第一个字符。
+  <a href="#" class="dart-popover" data-toggle="popover" title="then()" data-html="true" data-trigger="hover focus" data-content="then() 是 Future 中的一个函数，该函数用来在 Future 中注册一个回调函数。">.then</a>((char) => print('First char=$char'));
+
+
+
+
+
+
+</pre>
+                  </div>
+                </div>
+                <div class="item">
+                  <p>Dart 的 HTML 库释放现代浏览器的能力， 平滑处理浏览器之间的差异。</p>
+                  <div class="code-hldr">
+
+<pre class="prettyprint lang-dart">
+import 'dart:html';
+import 'dart:convert' show JSON;
+
+void main() {
+  querySelector('#getColors')<a href="#" class="dart-popover" data-toggle="popover" title="监听事件流" data-html="true" data-trigger="hover focus" data-content="注册一个鼠标点击事件的监听器">.onClick.listen(showColors)</a>; // Event handling.
+}
+void showColors(Event e) {
+  <a href="#" class="dart-popover" data-toggle="popover" title="Make HTTP Requests" data-html="true" data-trigger="hover focus" data-content="使用 HttpRequest.getString() 来从一个URI中读取数据。在该示例中，返回的数据为 JSON 格式。">HttpRequest.getString('colors.json')</a>             // 在线的 HTTP 请求。
+      .then((String jsonString) {                   // 使用 Futures 和 Streams.
+        UListElement colors = querySelector('#colors');  // DOM element 类型。
+        List<String> colorList = <a href="#" class="dart-popover" data-toggle="popover" title="JSON converter" data-html="true" data-trigger="hover focus" data-content="JSON-- dart:convert中的对象-- 提供了编码和解码 JSON 字符串的功能。">JSON.decode(jsonString);</a>
+        for (int i = 0; i < colorList.length; i++) {
+          colors.children.add(                      // 动态操作 DOM .
+            new LIElement()..text = colorList[i]    // 动态创建 element 。
+             ..style.color = colorList[i]           // 改变 CSS 样式。
+             ..style.fontFamily = 'Marker Felt');
+        }
+      })
+      .catchError((_) { /* 错误处理。 */ });
+}
+</pre>
+
+                  </div>
+                </div>
+                <div class="item">
+                  <p>使用  Dart 的单元测试和 mock 库
+                                                                 来确保你的应用没有Bug。</p>
+                  <div class="code-hldr">
+<pre class="prettyprint lang-dart">import 'package:unittest/unittest.dart';
+import 'dart:math' show Point;
+
+main() {
+  Point a = new Point(2, 15);
+  Point b = new Point(7, 3);
+
+  test('point distances', () {
+    expect(a.distanceTo(b), equals(13));
+  });
+  test('point magnitude close to', () {
+    expect(a.magnitude, closeTo(15, .25));
+  });
+  test('point magnitude greater than', () {
+    expect(a.magnitude, greaterThan(b.magnitude));
+  });
+  test('point == operator', () {
+    expect(a == b, equals(false));
+  });
+}</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="js-dart-apps sec-shadow">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1" id="dart2js">
+            <h2>编译为 JavaScript 可以让你的应用现在就可以部署</h2>
+
+            <div id="js-dart-apps-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#js-dart-apps-carousel" data-slide-to="0" class="active">支持所有流行的浏览器</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="1">Tree shaking（代码混淆）</li>
+                <li data-target="#js-dart-apps-carousel" data-slide-to="2">Minifying（最小化）</li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <p>Dart web 应用可以在所有流行的浏览器中运行。
+		  </p>
+                  <img src="/imgs/temp-code-example.png" alt="Modern browsers, desktop and mobile">
+
+                </div>
+                <div class="item">
+                  <p>使用了大量的库？没关系。 Tree shaking 自动去除那些没有使用的代码。</p>
+                   <img src="/imgs/slider-tree-example.png" alt="temp image">
+                </div>
+                <div class="item">
+                  <p>在部署之前压缩代码可以加速 JavaScript 的加载。</p>
+                  <img src="/imgs/slider-minify-example.png" alt="temp image">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="amazing-apps">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <h2>Dart 是用来创建令人惊奇的应用的</h2>
+
+            <div id="amazing-apps-carousel" class="carousel slide dart-carousel" data-interval="false">
+              <!-- Indicators -->
+              <ol class="carousel-indicators icon-indicators">
+                <li data-target="#amazing-apps-carousel" data-slide-to="0" class="active"><i class="sprite-icon-app-1"></i></li>
+                <li data-target="#amazing-apps-carousel" data-slide-to="1"><i class="sprite-icon-app-2"></i></li>
+                <li data-target="#amazing-apps-carousel" data-slide-to="2"><i class="sprite-icon-app-3"></i></li>
+                <li data-target="#amazing-apps-carousel" data-slide-to="3"><i class="sprite-icon-app-4"></i></li>
+              </ol>
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+
+                  <h4>&ldquo;Dart 提供了健全的和一致的开发体验用来创建现代 web 程序。这正好就是我们正在寻找的工具。&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Blossom</p>
+
+                </div>
+                <div class="item">
+           <h4>&ldquo;我们组建了一个对 Dart 一点都不熟悉的开发团队，并且我们在 6 个月完成了一个 自动销售系统。我认为 Dart 的生产力是相当惊人的。&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Google CRM</p>
+                  
+                </div>
+                <div class="item">
+           <h4>&ldquo;在工作中，可扩展性是非常重要的，但是 Dart 从根本上 保证了这点。&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Mandrill</p>
+                </div>
+                <div class="item">
+           <h4>&ldquo;当我们第一次开始探索 Dart， 我们非常惊奇她的潜力。当我们开始使用后，更加确信其美好的未来。&rdquo;</h4>
+                  <p class="person"><span class="title"></span></p>
+                  <p class="company">Montage</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="productivity-tools sec-shadow">
+        <div class="row">
+          <div class="col-md-12" id="tools">
+            <h2>Dart 工具帮助你提高生产力</h2>
+            <img src="/imgs/dart-editor.png" alt="Image of Dart Editor">
+            <p>Dart Editor 是上手的最简单方式，帮助你编辑、调试、和运行 Dart 程序。当你下载 Dart Editor 时，还包含了以下工具：</p>
+          </div>
+        </div>
+        <div class="row productivity-tools-options">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="row">
+              <div class="col-md-4">
+                <h4>Pub package manager</h4>
+                <p>获取和分享 Dart 代码的最简单方式， pub 保证你的代码包更新到最新，自动处理版本和依赖关系。</p>
+              </div>
+              <div class="col-md-4">
+                <h4>Dev Server</h4>
+                <p>使用 pub dev server 自动生成资源。</p>
+              </div>
+              <div class="col-md-4">
+                <h4>Dartium</h4>
+                <p>体验编辑/刷新的开发循环。该版本的Chromium包含了 Dart VM。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+          <div class="editor download-buttons">
+
+  
+
+  <div class="windows downloads">
+    
+    <a data-bits="64" data-os="windows" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (64-bit Windows)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="windows" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (32-bit Windows)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="macos downloads">
+    
+    <a data-bits="64" data-os="macos" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                      下载 Dart (Mac)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="linux downloads">
+    
+    <a data-bits="64" data-os="linux" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (64-bit Linux)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="linux" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (32-bit Linux)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="editor-current-version version">
+                      当前 Dart 稳定版本：
+    <span class="editor-build-rev-stable">[计算中]</span>
+  </div>
+</div>
+
+          </div>
+          <aside class="alert alert-info os-choices col-md-8 col-md-offset-2">
+            <b>注意：</b>
+                                       你可以使用最近发布的任意版本编辑器编写 Dart 应用
+            <span class="nowrap">
+<input type="radio" name="osChoices" id="windows">
+<label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
+</span>
+
+<span class="nowrap">
+<input type="radio" name="osChoices" id="linux" checked="checked">
+<label class="os-choice" for="linux">Linux</label>,
+</span> or
+
+<span class="nowrap">
+<input type="radio" name="osChoices" id="macos">
+<label class="os-choice" for="macos">Mac</label>.
+</span>
+
+            Dart 开发工具 <b>不支持 Windows XP</b>。
+            Dart Editor 需要 Java 6+版本。
+          </aside>
+        </div>
+      </section>
+    </div> <!-- end container -->
+  </div> <!-- end container-page -->      
+
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+<script  src="/js/display-news.js"></script>
+
+<script defer src="/js/os-switcher.js"></script>
+
+<script defer src="/js/editor-downloads-analytics.js"></script>
+
+<script defer src="/js/front-page-analytics.js"></script>
+
+<script defer src="/js/editor-version.js"></script>
+
+
+</body>
 </html>

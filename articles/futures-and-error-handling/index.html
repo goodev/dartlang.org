@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Futures and Error Handling | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Futures and Error Handling | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  
+  <meta itemprop="description" content="Everything you wanted to know about handling errors and exceptions when working with Futures (but were afraid to ask).">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	<link rel="author" href="/authors/shailen-tuli.html">
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+      <div class="row">
+        <article class="has-permalinks"><div class="col-md-3">
+  <div class="bs-sidebar hidden-print affix-top" role="complementary">
+
+<ol class="toc nav bs-sidenav" id="markdown-toc">
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#examples-of-using-then-with-catcherror">Examples of using then() with catchError()</a>    <ol>
+      <li><a href="#catcherror-as-a-comprehensive-error-handler">catchError() as a comprehensive error handler</a></li>
+      <li><a href="#error-handling-within-then">Error handling within then()</a></li>
+      <li><a href="#errors-in-the-middle-of-a-long-chain">Errors in the middle of a long chain</a></li>
+      <li><a href="#handling-specific-errors">Handling specific errors</a></li>
+    </ol>
+  </li>
+  <li><a href="#async-try-catch-finally-using-whencomplete">Async try-catch-finally using whenComplete()</a>    <ol>
+      <li><a href="#completing-the-future-returned-by-whencomplete">Completing the Future returned by whenComplete()</a></li>
+      <li><a href="#errors-originating-within-whencomplete">Errors originating within whenComplete()</a></li>
+    </ol>
+  </li>
+  <li><a href="#potential-problem-failing-to-register-error-handlers-early">Potential problem: failing to register error handlers early</a></li>
+  <li><a href="#potential-problem-accidentally-mixing-synchronous-and-asynchronous-errors">Potential problem: accidentally mixing synchronous and asynchronous errors</a>    <ol>
+      <li><a href="#solution-using-futuresync-to-wrap-your-code">Solution: Using Future.sync() to wrap your code</a></li>
+    </ol>
+  </li>
+  <li><a href="#more-information">More information</a></li>
+</ol>
+
+  </div>
+</div>
+<div class="col-md-7">
+  <p><!-- Start of content -->
+	</p>
+
+  <h1 id="futures-and-error-handling">Futures and Error Handling</h1>
+
+  <p><em>Written by Shailen Tuli
+<br />
+March 2013 (updated May 2013)</em></p>
+
+  <p>This article covers the subject of error handling when dealing with Futures.
+If you are unfamiliar with the general concepts behind Futures, we
+recommend you first read
+<a href="/articles/using-future-based-apis/">Using Future Based APIs</a>.</p>
+
+  <h2 id="introduction">Introduction</h2>
+
+  <p>A Future represents a deferred computation. Receivers of a Future can register
+callbacks that handle the value or the error that completes a Future:</p>
+
+  <pre class="prettyprint lang-dart">myFunc().then(processValue)
+        .catchError(handleError);</pre>
+
+  <p>The registered callbacks fire based on the following rules: <code>then()</code>’s
+callback fires if it is invoked on a Future that completes with a value;
+<code>catchError()</code>’s callback fires if it is invoked on a Future that completes
+with an error.</p>
+
+  <p>In the example above, if <code>myFunc()</code>’s Future completes with a value,
+<code>then()</code>’s callback fires. If no new error is produced within <code>then()</code>,
+<code>catchError()</code>’s callback does not fire. On the other hand, if <code>myFunc()</code>
+completes with an error, <code>then()</code>’s callback does not fire, and
+<code>catchError()</code>’s callback does.</p>
+
+  <p><img src="imgs/then_and_catcherror.png" alt="then() and catchError() callbacks" /></p>
+
+  <h2 id="examples-of-using-then-with-catcherror">Examples of using then() with catchError()</h2>
+
+  <p>Chained <code>then()</code> and <code>catchError()</code> invocations are a common pattern when
+dealing with Futures, and can be thought of as the rough equivalent of
+try-catch blocks.</p>
+
+  <p>The next few sections give examples of this pattern.</p>
+
+  <h3 id="catcherror-as-a-comprehensive-error-handler">catchError() as a comprehensive error handler</h3>
+
+  <p>The following example deals with throwing an exception from within <code>then()</code>’s
+callback and demonstrates <code>catchError()</code>’s versatility as an error handler:</p>
+
+  <pre class="prettyprint lang-dart">myFunc()
+  .then((value) {
+    doSomethingWith(value);
+    ...
+    throw(&quot;some arbitrary error&quot;);
+  })
+  .catchError(handleError);</pre>
+
+  <p>If <code>myFunc()</code>’s Future completes with a value, <code>then()</code>’s callback fires. If
+code within <code>then()</code>’s callback throws (as it does in the example above),
+<code>then()</code>’s Future completes with an error. That error is handled by
+<code>catchError()</code>.</p>
+
+  <p>If <code>myFunc()</code>’s Future completes with an error, <code>then()</code>’s Future completes
+with that error. The error is also handled by <code>catchError()</code>.</p>
+
+  <p>Regardless of whether the error originated within <code>myFunc()</code> or within
+<code>then()</code>, <code>catchError()</code> successfully handles it.</p>
+
+  <h3 id="error-handling-within-then">Error handling within then()</h3>
+
+  <p>For more granular error handling, you can register a second (<code>onError</code>)
+callback within <code>then()</code> to handle Futures completed with errors. Here is
+<code>then()</code>’s signature:</p>
+
+  <pre class="prettyprint lang-dart">abstract Future then(onValue(T value), {onError(AsyncError asyncError)})</pre>
+
+  <p>Register the optional onError callback only if you want to differentiate
+between an error forwarded <em>to</em> <code>then()</code>, and an error generated <em>within</em>
+<code>then()</code>:</p>
+
+  <pre class="prettyprint lang-dart">funcThatThrows()
+  .then(successCallback, onError: (e) {
+    handleError(e);          // Original error.
+    anotherFuncThatThrows(); // Oops, new error.
+  })
+  .catchError(handleError);  // Error from within then() handled.</pre>
+
+  <p>In the example above, <code>funcThatThrows()</code>’s Future’s error is handled with the
+<code>onError</code> callback; <code>anotherFuncThatThrows()</code> causes <code>then()</code>’s Future to
+complete with an error; this error is handled by <code>catchError()</code>.</p>
+
+  <p>In general, implementing two different error handling strategies is not
+recommended: register a second callback only if there is a compelling reason
+to catch the error within <code>then()</code>.</p>
+
+  <h3 id="errors-in-the-middle-of-a-long-chain">Errors in the middle of a long chain</h3>
+
+  <p>It is common to have a succession of <code>then()</code> calls, and catch errors
+generated from any part of the chain using <code>catchError()</code>:</p>
+
+  <pre class="prettyprint lang-dart">Future&lt;String&gt; one()   =&gt; new Future.value(&quot;from one&quot;);
+Future&lt;String&gt; two()   =&gt; new Future.error(&quot;error from two&quot;);
+Future&lt;String&gt; three() =&gt; new Future.value(&quot;from three&quot;);
+Future&lt;String&gt; four()  =&gt; new Future.value(&quot;from four&quot;);
+
+void main() {
+  one()                                   // Future completes with &quot;from one&quot;.
+    .then((_) =&gt; two())                   // Future completes with two()'s error.
+    .then((_) =&gt; three())                 // Future completes with two()'s error.
+    .then((_) =&gt; four())                  // Future completes with two()'s error.
+    .then((value) =&gt; processValue(value)) // Future completes with two()'s error.
+    .catchError((e) {
+      print(&quot;Got error: ${e.error}&quot;);     // Finally, callback fires.
+      return 42;                          // Future completes with 42.
+    })
+    .then((value) {
+      print(&quot;The value is $value&quot;);
+    });
+}
+
+// Output of this program:
+//   Got error: error from two
+//   The value is 42</pre>
+
+  <p>In the code above, <code>one()</code>’s Future completes with a value, but <code>two()</code>’s
+Future completes with an error. When <code>then()</code> is invoked on a Future that
+completes with an error, <code>then()</code>’s callback does not fire. Instead,
+<code>then()</code>’s Future completes with the error of its receiver. In our example,
+this means that after <code>two()</code> is called, the Future returned by every
+subsequent <code>then()</code>completes with <code>two()</code>’s error. That error is finally
+handled within <code>catchError()</code>.</p>
+
+  <h3 id="handling-specific-errors">Handling specific errors</h3>
+
+  <p>What if we want to catch a specific error? Or catch more than one error?</p>
+
+  <p><code>catchError()</code> takes an optional named argument, <code>test</code>, that
+allows us to query the kind of error thrown.</p>
+
+  <pre class="prettyprint lang-dart">abstract Future catchError(onError(AsyncError asyncError), {bool test(Object error)})</pre>
+
+  <p>Consider <code>handleAuthResponse(params)</code>, a function that authenticates a user
+based on the params provided, and redirects the user to an appropriate URL.
+Given the complex workflow, <code>handleAuthResponse()</code> could generate various
+errors and exceptions, and you should handle them differently. Here’s
+how you can use <code>test</code> to do that:</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  handleAuthResponse({'username': 'johncage', 'age': 92})
+    .then((_) =&gt; ...)
+    .catchError(handleFormatException,
+                test: (e) =&gt; e is FormatException)
+    .catchError(handleAuthorizationException,
+                test: (e) =&gt; e is AuthorizationException);
+}</pre>
+
+  <h2 id="async-try-catch-finally-using-whencomplete">Async try-catch-finally using whenComplete()</h2>
+
+  <p>If <code>then().catchError()</code> mirrors a try-catch, <code>whenComplete()</code> is the
+equivalent of ‘finally’. The callback registered within <code>whenComplete()</code> is
+called when <code>whenComplete()</code>’s receiver completes, whether it does so with a
+value or with an error:</p>
+
+  <pre class="prettyprint lang-dart">var server = connectToServer();
+server.post(myUrl, fields: {&quot;name&quot;: &quot;john&quot;, &quot;profession&quot;: &quot;juggler&quot;})
+      .then(handleResponse)
+      .catchError(handleError)
+      .whenComplete(server.close);</pre>
+
+  <p>We want to call <code>server.close</code> regardless of whether <code>server.post()</code> produces
+a valid response, or an error. We ensure this happens by placing it inside
+<code>whenComplete()</code>.</p>
+
+  <h3 id="completing-the-future-returned-by-whencomplete">Completing the Future returned by whenComplete()</h3>
+
+  <p>If no error is emitted from within <code>whenComplete()</code>, its Future completes
+the same way as the Future that <code>whenComplete()</code> is invoked on. This is
+easiest to understand through examples.</p>
+
+  <p>In the code below, <code>then()</code>’s Future completes with an error, so
+<code>whenComplete()</code>’s Future also completes with that error.</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  funcThatThrows()
+    .then((_) =&gt; print(&quot;Won't reach here...&quot;))   // Future completes with an error.
+    .whenComplete(() =&gt; print(&quot;... or here...&quot;)) // Future completes with the same error.
+    .then((_) =&gt; print(&quot;... nor here.&quot;))         // Future completes with the same error.
+    .catchError(handleError)                     // Error is handled here.
+}</pre>
+
+  <p>In the code below, <code>then()</code>’s Future completes with an error, which is now
+handled by <code>catchError()</code>.  Because <code>catchError()</code>’s Future completes with
+<code>someObject</code>, <code>whenComplete()</code>’s Future completes with that same object.</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  funcThatThrows()
+    .then((_) =&gt; ...)         // Future completes with an error.
+    .catchError((e) {
+      handleError(e);
+      printErrorMessage();
+      return someObject;
+    })                                   // Future completes with someObject.
+    .whenComplete(() =&gt; print(&quot;Done!&quot;)); // Future completes with someObject.
+}</pre>
+
+  <h3 id="errors-originating-within-whencomplete">Errors originating within whenComplete()</h3>
+  <p>If <code>whenComplete()</code>’s callback throws an error, then <code>whenComplete()</code>’s Future
+completes with that error:</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  funcThatThrows()
+    .catchError(handleError)               // Future completes with a value.
+    .whenComplete(() =&gt; throw &quot;new error&quot;) // Future completes with an error.
+    .catchError(handleError);              // Error is handled.
+}</pre>
+
+  <h2 id="potential-problem-failing-to-register-error-handlers-early">Potential problem: failing to register error handlers early</h2>
+
+  <p>It is crucial that error handlers are installed before a Future completes:
+this avoids scenarios where a Future completes with an error, the error
+handler is not yet attached, and the error accidentally propagates. Consider
+this code:</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  Future future = funcThatThrows();
+
+  // BAD. Too late to handle funcThatThrows() exception.
+  new Future.delayed(const Duration(milliseconds: 500), () {
+    future.then(...)
+          .catchError(...);
+  });
+}</pre>
+
+  <p>In the code above, <code>catchError()</code> is not registered until half a second after
+<code>funcThatThrows()</code> is called, and the error goes unhandled.</p>
+
+  <p>The problem goes away if <code>funcThatThrows()</code> is called within the
+<code>Future.delayed()</code> callback:</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  new Future.delayed(const Duration(milliseconds: 500), () {
+    funcThatThrows().then(processValue)
+                    .catchError(handleError)); // We get here.
+  });
+}</pre>
+
+  <h2 id="potential-problem-accidentally-mixing-synchronous-and-asynchronous-errors">Potential problem: accidentally mixing synchronous and asynchronous errors</h2>
+
+  <p>Functions that return Futures should almost always emit their errors in the
+future. Since we do not want the caller of such functions to have to
+implement multiple error-handling scenarios, we want to prevent any synchronous
+errors from leaking out. Consider this code:</p>
+
+  <pre class="prettyprint lang-dart">Future&lt;int&gt; parseAndRead(data) {
+  var filename = obtainFileName(data);         // Could throw.
+  File file = new File(filename);
+  return file.readAsString().then((contents) {
+    return parseFileData(contents);            // Could throw.
+  });
+}</pre>
+
+  <p>Two functions in that code could potentially throw synchronously:
+<code>obtainFileName()</code> and <code>parseFileData()</code>. Because <code>parseFileData()</code> executes
+inside a <code>then()</code> callback, its error does not leak out of the function.
+Instead, <code>then()</code>’s Future completes with <code>parseFileData()</code>’s error, the error
+eventually completes <code>parseAndRead()</code>’s Future, and the error can be
+successfully handled by <code>catchError()</code>.</p>
+
+  <p>But <code>obtainFileName()</code> is not called within a <code>then()</code> callback; if <em>it</em>
+throws, a synchronous error propagates:</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  parseAndRead(data).catchError((e) {
+    print(&quot;inside catchError&quot;);
+    print(e.error);
+  });
+}
+
+// Program Output:
+//   Unhandled exception:
+//   &lt;error from obtainFileName&gt;
+//   ...</pre>
+
+  <p>Because using <code>catchError()</code> does not capture the error, a client of
+<code>parseAndRead()</code> would implement a separate error-handling strategy for this
+error.</p>
+
+  <h3 id="solution-using-futuresync-to-wrap-your-code">Solution: Using Future.sync() to wrap your code</h3>
+
+  <p>A common pattern for ensuring that no synchronous error is accidentally
+thrown from a function is to wrap the function body inside a <code>new Future.sync()</code>
+callback:</p>
+
+  <pre class="prettyprint lang-dart">Future&lt;int&gt; parseAndRead(data) {
+  return new Future.sync(() {
+    var filename = obtainFileName(data);         // Could throw.
+    File file = new File(filename);
+    return file.readAsString().then((contents) {
+      return parseFileData(contents);            // Could throw.
+    });
+  });
+}</pre>
+
+  <p>If the callback returns a non-Future value, <code>Future.sync()</code>’s Future completes
+with that value. If the callback throws (as it does in the example
+above), the Future completes with an error. If the callback itself returns a
+Future, the value or the error of that Future completes <code>Future.sync()</code>’s
+Future.</p>
+
+  <p>With code wrapped within <code>Future.sync()</code>, <code>catchError()</code> can handle all errors:</p>
+
+  <pre class="prettyprint lang-dart">void main() {
+  parseAndRead(data).catchError((e) {
+    print(&quot;inside catchError&quot;);
+    print(e.error);
+  });
+}
+
+// Program Output:
+//   inside catchError
+//   &lt;error from obtainFileName&gt;</pre>
+
+  <p><code>Future.sync()</code> makes your code resilient against uncaught exceptions. If your
+function has a lot of code packed into it, chances are that you could be doing
+something dangerous without realizing it:</p>
+
+  <pre class="prettyprint lang-dart">Future fragileFunc() {
+  return new Future.sync(() {
+    var x = someFunc();     // Unexpectedly throws in some rare cases.
+    var y = 10 / x;         // x should not equal 0.
+    ...
+  });
+}</pre>
+
+  <p><code>Future.sync()</code> not only allows you to handle errors you know might occur, but
+also prevents errors from <em>accidentally</em> leaking out of your function.</p>
+
+  <h2 id="more-information">More information</h2>
+
+  <p>Read the following documentation for more details on using Futures:</p>
+
+  <ul>
+    <li><a href="/articles/event-loop/">The Event Loop and Dart</a>,
+an article that describes how to schedule tasks using Futures</li>
+    <li><a href="http://api.dartlang.org/dart_async/Future.html">Future API reference</a></li>
+  </ul>
+
+</div>
+
+    	  </div> <!-- End of content from toc.html -->
+        </article>
+	  </div>
+
+	
+	<ul class="pager">
+	  <li><a href="/articles/">More articles about Dart <i class="glyphicon glyphicon-chevron-up"></i></a></li>
+	 </ul>
+	 
+
+	</div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

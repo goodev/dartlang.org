@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Functions Are Fun, Pt 2 - Dart Tips, Ep 7 | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Functions Are Fun, Pt 2 - Dart Tips, Ep 7 | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="//i.ytimg.com/vi/RJujzs2ts4s/0.jpg">
+  
+  <meta itemprop="description" content="Functions are true objects in Dart. Watch this video to learn more about nested functions, functions as arguments, and lexical closures. Get ready for more FUNctional tips in Dart!">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	<link rel="author" href="/authors/seth-ladd.html">
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+    <article>
+    <h1 id="functions-are-fun-pt-2---dart-tips-ep-7">Functions Are Fun, Pt 2 - Dart Tips, Ep 7</h1>
+
+<iframe class="dart-tips-video" src="//www.youtube.com/embed/RJujzs2ts4s" frameborder="0" allowfullscreen=""></iframe>
+
+<p><a href="/dart-tips/">Back to all Dart Tips episodes</a>.</p>
+
+<hr />
+
+<h3 id="transcript">Transcript</h3>
+
+<p>Hi, my name is Seth Ladd and welcome to this episode of Dart Tips. Today we continue our tour of the fundamentals of Functions by looking at functions as objects, nested functions, functions are arguments, and lexical closures. Get ready for more FUNctional tips about functions in Dart, right now. Let’s get started.</p>
+
+<p>Dart is a true object-oriented language, so even functions are objects. This means functions can be assigned to variables, passed as arguments to other functions, and more.</p>
+
+<p>To start, check this out, Function is defined in the core library as an abstract class. This means there is a function type, and a function value is a subtype of the Function class.</p>
+
+<p>Just like you can assign objects to variables, here’s an example of assigning a fua function object to a variable.</p>
+
+<pre class="prettyprint lang-dart">loudPrint(String msg) {
+  print(msg.toUpperCase());
+}
+
+var loudify = loudPrint;
+
+loudify('Dart is fun');
+  // DART IS FUN</pre>
+
+<p>Notice how you can call the loudify variable just like a normal function.</p>
+
+<p>You can also assign an anonymous function directly to a variable, like this:</p>
+
+<pre class="prettyprint lang-dart">var loudify = (msg) =&gt; print(msg.toUpperCase());
+loudify('Dart is funtastic');
+  // DART IS FUNTASTIC</pre>
+
+<p>You might use this technique if you want to retain a handle on the function so that, for example, you can add or remove it from some collection.</p>
+
+<p>Now that you know you can treat functions as objects, you can start to do some even more fun things. For example, here is an example of filtering a list of numbers down to only even numbers, and then printing them all out:</p>
+
+<pre class="prettyprint lang-dart">[0, 1, 2, 3].where((n) =&gt; n.isEven).forEach((n) =&gt; print(n));</pre>
+
+<p>We can simplify this code, by simply passing print to forEach.</p>
+
+<pre class="prettyprint lang-dart">[0, 1, 2, 3].where((n) =&gt; n.isEven).forEach(print);
+  // 0, 2</pre>
+
+<p>This works because forEach() wants to be passed a single function that takes a single argument. The print function just so happens to be a function that takes a single argument. Ta da!</p>
+
+<p>Building on this example, let’s say you need to filter on a complicated condition. You could write the code this way:</p>
+
+<pre class="prettyprint lang-dart">[0, 1, 2, 3].where((n) {
+  if (checkStockQuotes() &gt; 500 &amp;&amp; dayOfWeek != 'Thursday') {
+    return true;
+  } else if (llamasNotYetFed() &amp;&amp; checkStockQuotes() &lt; 500) {
+    return false;
+  } else {
+    return new Random().nextBool();
+  }
+}).forEach(print);</pre>
+
+<p>Yuck! That’s a big complicated chunk of code in the middle of an otherwise pretty line. Surely, we can do better!</p>
+
+<p>Thanks to Dart’s support for nested functions, yes we can! Here is an example:</p>
+
+<pre class="prettyprint lang-dart">main() {
+  complicatedCheck(n) {
+    if (checkStockQuotes() &gt; 500 &amp;&amp; dayOfWeek != 'Thursday') {
+      return true;
+    } else if (llamasNotYetFed() &amp;&amp; checkStockQuotes() &lt; 500) {
+      return false;
+    } else {
+      return new Random().nextBool();
+    }
+  }
+  
+  [0, 1, 2, 3].where(complicatedCheck).forEach(print);
+}</pre>
+
+<p>Ahh, much better. Notice how we created a new, named function inside of main(), which is itself a function. The complicatedCheck function is a nested function. The where-forEach chain is now much easier to read.</p>
+
+<p>You can define your own functions that take functions as parameters. Here is an example:</p>
+
+<pre class="prettyprint lang-dart">filterAndPrint(List items, Function filter) {
+  items.where(filter).forEach(print);
+}
+
+filterAndPrint([8,9,10], (n) =&gt; n.isEven);
+  // 8, 10</pre>
+
+<p>Notice how the second parameter is annotated as the type Function. This code works, but it doesn’t tell you much about what the filter function should expect in terms of arguments or what it should return. All we know is that it’s a Function.</p>
+
+<p>We generally recommend that you use type annotations for the functions you expect as arguments. Here is an example:</p>
+
+<pre class="prettyprint lang-dart">filterAndPrint(List items, bool filter(int n)) {
+  items.where(filter).forEach(print);
+}
+
+filterAndPrint([8,9,10], (n) =&gt; n.isEven);
+  // 8, 10</pre>
+
+<p>Notice how in this example, it’s clear that filter should return a bool and should take a single parameter, ideally of type int. Now, with this extra type information, tools like Dart Editor can give better warnings if you try to pass in a filter that doesn’t match the description.</p>
+
+<p>Before we tackle our last topic, let’s review Dart’s scoping rules. Dart is a lexically scoped language, which means that the scope of variables is determined statically, simply by the layout of the code. I like to think of lexical scope as “follow the curly braces outwards”.</p>
+
+<p>Here is an example of nested functions with variables at each scope level:</p>
+
+<pre class="prettyprint lang-dart">var topLevel = true;
+
+main() {
+  var insideMain = true;
+  myFunction() {
+    var insideFunction = true;
+    
+    nestedFunction() {
+      var insideNestedFunction = true;
+      
+      print(topLevel);
+      print(insideMain);
+      print(insideFunction);
+      print(insideNestedFunction);
+    }
+  }
+}</pre>
+
+<p>Notice how nestedFunction can reach variables at every level, all the way up to the top level. Dart’s scoping rules are very easy to reason about, it’s very much  “what you see is what you get”. Dart’s lexical scope even works with “this”, but we’ll cover that more in an episode about classes.</p>
+
+<p>Now that we’ve looked at lexical scope, let’s take a look at functions as closures. A closure is a function object that has access to variables in its lexical scope, even when the function is used outside of its original scope. Closures are popular in other scripting languages, like JavaScript, and Dart is no stranger to lexical closures.</p>
+
+<p>Here is an example of a function that “closes around” its variable.</p>
+
+<pre class="prettyprint lang-dart">makeAdder(int addBy) {
+  adder(int a) {
+    return a + addBy;
+  }
+  return adder;
+}
+
+var add2 = makeAdder(2);
+var result = add2(1);
+  // 3</pre>
+
+<p>Notice how makeAdder has a nested function named adder that adds two numbers. makeAdder’s parameter, addBy, is lexically visible to adder. Then, makeAdder returns the function object adder, which at that moment creates a closure. So far, so good.</p>
+
+<p>[CLICK] Let’s use makeAdder to create a new adder, in this case the function add2. Calling the add2 function with 1 returns, you guessed it, 3. This is lexical closures in action, because add2 closes around addBy, whose value was originally passed to makeAdder.</p>
+
+<p>To really drill the point home, notice how you can create more adders with makeAdder, each one not affected by the other. Here is an example of making an adder that adds 100. Notice how add100 is independent of add2.</p>
+
+<pre class="prettyprint lang-dart">var add100 = makeAdder(100);
+var newResult = add100(1);
+ // 101
+
+var five = add2(3);  // still works!</pre>
+
+<p>Dart’s support for lexical scope, and lexical closures, really helps you compose your functions and apps. The better the composure, encapsulation, and reusability, the better the code.</p>
+
+<p>Thanks for watching this episode of Dart Tips. My name is Seth Ladd, and as we say here on Dart Tips, stay sharp! See you next time.</p>
+
+<hr />
+
+<p><img src="imgs/marakana-logo.png" alt="Marakana Logo" /></p>
+
+<p>Our thanks go out to <a href="http://www.marakana.com">Marakana</a> for producing this
+video series.</p>
+
+<p><a href="/dart-tips/">Back to all Dart Tips episodes</a>.</p>
+
+    </article>
+    
+	
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

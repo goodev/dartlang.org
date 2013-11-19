@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Classes: Setters & Getters - Dart Tips, Ep 10 | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Classes: Setters & Getters - Dart Tips, Ep 10 | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="//i.ytimg.com/vi/2woBWdBQ4Ro/0.jpg">
+  
+  <meta itemprop="description" content="Dart is a pure class-based object oriented language. In this first video covering classes in Dart, learn more about how getters and setters help you scale Dart code from simple fields to richer encapsulation.">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	<link rel="author" href="/authors/seth-ladd.html">
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+    <article>
+    <h1 id="classes-setters--getters---dart-tips-ep-10">Classes: Setters &amp; Getters - Dart Tips, Ep 10</h1>
+
+<iframe class="dart-tips-video" src="//www.youtube.com/embed/2woBWdBQ4Ro" frameborder="0" allowfullscreen=""></iframe>
+
+<p><a href="/dart-tips/">Back to all Dart Tips episodes</a>.</p>
+
+<hr />
+
+<h3 id="transcript">Transcript</h3>
+
+<p>Hi, my name is Seth Ladd, and welcome to this episode of Dart Tips! We made it
+to classes! Class-based object oriented programming is an extremely common and
+widely deployed programming model, and Dart has first-class support for classes
+and inheritance. Classes is a big topic, so today we start with an intro and
+look at fields. Let’s get started.</p>
+
+<p>When we say Dart is a class-based object oriented programming language, we mean
+it. Everything in Dart is an object, everything is an instance of a class, and
+all classes descend from Object. Dart is a single-inheritance language, which
+means a class can inherit from, or extend from, only one other class.</p>
+
+<p>A quick primer on classes and objects. A class defines how objects look and how
+they behave. A class is like an idea, and to turn the idea into reality you need
+an object. An object is like a physical thing, something you can create from a
+class, and manipulate on its own. For example, think of a class like “the
+blueprint for all sports cars” and an object like “a specific ferarri with
+license plate 1234, red paint, and a current speed of 80mph”. In this way we say
+that an object, a specific thing, is an instance of a class, a conceptual idea.</p>
+
+<p>Classes can be extended to define more specialized classes. A class hierarchy is
+a tree-like relationship between high level abstract concepts like Vehicle and
+more specific concepts like Car, and then even more specific like Sports Car.</p>
+
+<p><img src="imgs/class-hierarchy.png" alt="An example class hierarchy." /></p>
+
+<p>A more specific class inherits from, or extends, a more general class. The top
+level of the Dart class hierarchy is Object. That is, all objects are instances
+of the class Object.</p>
+
+<p>The Dart SDK ships with classes for everything from strings and numbers to dates
+and durations to abstract concepts like Type and Object. But of course, you can
+make your own classes! Here’s an example:</p>
+
+<pre class="prettyprint lang-dart">class Car {
+  String paintColor;
+  bool isRunning;
+
+  turnOn() {
+    if (checkKey()) {
+      isRunning = true;
+    } else {
+      throw new StateError('key not present');
+    }
+  }
+
+  turnOff() {
+    isRunning = false;
+  }
+
+  checkKey() {
+    // …
+  }
+}</pre>
+
+<p>This class is named Car. It has two fields: paintColor, and isRunning. Fields
+are used to hold the state of an object.</p>
+
+<p>This Car class has three methods: turnOn, turnOff, and checkKey. Methods are
+like functions that are bound to an object, and they can access an object’s
+state. Methods change or expose the state of an object. For example, the
+turnOn() method checks first if there is a key present and if so, starts the
+car.</p>
+
+<p>To create an object from a class, you need to instantiate it. Here is an
+example: Notice the use of new to create a new instance of the Car class. The
+object is assigned to the variable named sweetRide. You can now call methods on
+the object:</p>
+
+<pre class="prettyprint lang-dart">var sweetRide = new Car();
+sweetRide.paintColor = 'red';
+sweetRide.turnOn();
+print(sweetRide.isRunning); // true</pre>
+
+<p>Let’s dive into fields, or instance variables. Here is a reminder of the Car
+class with its two fields:</p>
+
+<pre class="prettyprint lang-dart">class Car {
+  String paintColor;
+  bool isRunning;</pre>
+
+<p>All instance variables have an implicit getter. This means that even though it
+looks like you’re accessing a field directly, you’re actually going through a
+generated getter method. Here is an example. Any non-final instance variable has
+an implicit setter. In other words, if the field is not final, it will have a
+setter method generated for it.</p>
+
+<pre class="prettyprint lang-dart">print(sweetRide.paintColor);  // calling the paintColor getter
+sweetRide.paintColor = 'purple';  // calling the paintColor setter</pre>
+
+<p>One of the reasons I love Dart is that it does not promote generating excessive
+setters and getters. Of course, you always have the option to make your own
+getters and setters. Let’s look at how to do this, and why.</p>
+
+<p>Dart wants to make it easier to evolve your API, and help you start simple and
+grow over time. A simple way to start is to just use fields. Here is an example:</p>
+
+<pre class="prettyprint lang-dart">class Car {
+  bool isEngineRunning;
+}
+
+var roadster = new Car();
+roadster.isEngineRunning = true;</pre>
+
+<p>Let’s imagine that over time the class evolves to include a field for the engine.</p>
+
+<pre class="prettyprint lang-dart">class Car {
+  bool isEngineRunning;
+  Engine engine;
+}</pre>
+
+<p>We can determine if the engine is running by asking the new engine field. This
+makes the isEngineRunning field redundant. However, if we remove
+isEngineRunning, we break existing users of the code. We want to change the
+implementation of the class without breaking backwards compatibility. This is
+exactly why getters and setters were introduced.</p>
+
+<p>Here’s how you use them.</p>
+
+<pre class="prettyprint lang-dart">class Car {
+  Engine engine;
+  
+  bool get isEngineRunning =&gt; engine.isRunning;
+  
+  void set isEngineRunning(bool isRunning) {
+    engine.isRunning = isRunning;
+  }
+}</pre>
+
+<p>Notice how the getter and setter method names are preceded by the words get and
+set. A getter has no parameters and returns a value, and the setter has one
+parameter and does not return a value.</p>
+
+<p>Here’s how you use the new Car class:</p>
+
+<pre class="prettyprint lang-dart">var roadster = new Car();
+roadster.isEngineRunning = true;
+print(roadster.isEngineRunning); // true</pre>
+
+<p>Looks familiar, right? Using setters and getters is transparent to the user of
+the class. This allows you to evolve your API over time without breaking
+existing users. The Dart way is to start simple, and scale up as you go.</p>
+
+<p>Classes are a big topic, there’s much more cool stuff to cover in future
+episodes. For example, we’ll cover constructors, inheritance, operate
+overriding, and much more. Thanks for watching! I’m Seth Ladd, and as we say
+here on Dart Tips, stay sharp!</p>
+
+<hr />
+
+<p><img src="imgs/marakana-logo.png" alt="Marakana Logo" /></p>
+
+<p>Our thanks go out to <a href="http://www.marakana.com">Marakana</a> for producing this
+video series.</p>
+
+<p><a href="/dart-tips/">Back to all Dart Tips episodes</a>.</p>
+
+    </article>
+    
+	
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

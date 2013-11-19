@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Getting Your Feet Wet with Streams | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Getting Your Feet Wet with Streams | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  
+  <meta itemprop="description" content="Learn how to consume single-subscriber and broadcast streams, with real-world uses.">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	<link rel="author" href="/authors/chris-buckett.html">
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+      <div class="row">
+        <article class="has-permalinks"><div class="col-md-3">
+  <div class="bs-sidebar hidden-print affix-top" role="complementary">
+
+<ol class="toc nav bs-sidenav" id="markdown-toc">
+  <li><a href="#background-reading-futures">Background reading: futures</a></li>
+  <li><a href="#what-are-streams-for">What are streams for?</a>    <ol>
+      <li><a href="#key-concepts">Key concepts</a></li>
+    </ol>
+  </li>
+  <li><a href="#consuming-a-stream">Consuming a stream</a></li>
+  <li><a href="#common-stream-methods">Common Stream methods</a>    <ol>
+      <li><a href="#subsets-of-stream-data">Subsets of stream data</a></li>
+      <li><a href="#transforming-stream-data">Transforming stream data</a></li>
+      <li><a href="#validating-stream-data">Validating stream data</a></li>
+    </ol>
+  </li>
+  <li><a href="#single-value-streams">Single value streams</a></li>
+  <li><a href="#error-handling-in-streams-and-futures">Error handling in streams and futures</a>    <ol>
+      <li><a href="#error-handling-with-streamsubscription">Error handling with StreamSubscription</a></li>
+    </ol>
+  </li>
+  <li><a href="#unsubscribing-from-a-stream">Unsubscribing from a stream</a></li>
+  <li><a href="#streams-are-generic">Streams are generic</a></li>
+  <li><a href="#some-real-world-examples-of-consuming-a-stream">Some real world examples of consuming a stream</a>    <ol>
+      <li><a href="#button-clicks-in-darthtml">Button clicks in dart:html</a></li>
+      <li><a href="#reading-a-file-in-dartio">Reading a file in dart:io</a></li>
+    </ol>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+  <li><a href="#about-the-author">About the author</a></li>
+</ol>
+
+  </div>
+</div>
+<div class="col-md-7">
+  <p><!-- Start of content -->
+	</p>
+
+  <h1 id="getting-your-feet-wet-with-streams">Getting Your Feet Wet with Streams</h1>
+
+  <p><em>Written by Chris Buckett <br />
+March 2013</em></p>
+
+  <p>Over the last few months you can’t help but notice that Streams have appeared 
+in Dart in a big way.  </p>
+
+  <p>Whether running in the browser as part of the various HTML events, such as 
+button.onClick, or on the server as part of the dart:io changes, Streams form 
+a unified interface to anything that might send out a repeating series of data.</p>
+
+  <p>This article explains how to consume streams using this unified interface.</p>
+
+  <h2 id="background-reading-futures">Background reading: futures</h2>
+
+  <p>Before we get started, it is important to note that Streams are part 
+of the <a href="http://api.dartlang.org/dart_async.html">dart:async</a> library.
+They share a close relationship with Dart’s async staple, <code>Future</code>,
+due to their asynchronous nature.
+(You can’t block code until a user clicks a button!)</p>
+
+  <p>The Future class is used for async communication within various Dart APIs. A 
+common example is a browser <code>HttpRequest</code> (or AJAX request).<br />
+You have some code running in the browser that wants to get a value from 
+the server, let’s say, the current number of logged on users.
+If your client-side code called the server and then waited (blocking) for 
+the server to respond, the UI would freeze up until the server responded 
+(due to code execution being halted).</p>
+
+  <p>Fortunately (and provided by the A in AJAX), this call to the server is 
+asynchronous, and modelled by Dart’s Future API, which returns a future 
+value wrapped up in a callback exposed by the <code>then()</code> 
+function.</p>
+
+  <p>The following snippet shows how this might work, with the callback 
+function specified as an argument to then():</p>
+
+  <!--- BEGIN(http_request) -->
+  <pre class="prettyprint lang-dart">var url = &quot;http://example.com/userCount&quot;;
+HttpRequest.getString(url).then((String result) {  // callback function
+  print(&quot;User count: $result&quot;);
+});</pre>
+  <!--- END(http_request) -->
+
+  <p>This pattern is used by streams to retrieve or manipulate data that the 
+stream is sending out to its consumers.</p>
+
+  <p>There is more detail about futures in the <a href="http://www.dartlang.org/articles/using-future-based-apis/">Using Future Based APIs</a>
+ article.</p>
+
+  <h2 id="what-are-streams-for">What are streams for?</h2>
+
+  <p>Imagine you are writing a chat application.  On a single client, you will be 
+receiving messages and displaying them to the user.  You can’t simply write a 
+while loop because that will block execution, so you need to use async 
+callbacks.  This is an ideal use case for streams: you have one part of your 
+code pushing data into the stream, and another part of your code listening to 
+the stream.  </p>
+
+  <h3 id="key-concepts">Key concepts</h3>
+
+  <ul>
+    <li><strong>Consuming a stream</strong>: Data is sent out of a stream to a 
+<code>StreamSubscriber</code> (or possibly multiple subscribers).</li>
+    <li><strong>Populating a stream</strong>: Data gets into a stream from a 
+<code>StreamController</code>.</li>
+  </ul>
+
+  <p>We’ll look at the <strong>consuming</strong> a stream in this article as you’re more likely 
+to come across streams as a consumer from existing APIs within Dart.  Populating
+a stream will be covered in a future article.</p>
+
+  <h2 id="consuming-a-stream">Consuming a stream</h2>
+
+  <p>Let’s take a look at some simple stream code.  For simplicity we’re going to 
+create a stream from a fixed, literal list at the moment by using the 
+stream’s <code>fromIterable()</code> constructor, rather than by dynamically 
+populating it with a <code>StreamController</code>.</p>
+
+  <!--- BEGIN(simple_stream_code) -->
+  <pre class="prettyprint lang-dart">var data = [1,2,3,4,5]; // some sample data
+var stream = new Stream.fromIterable(data); // create the stream</pre>
+  <!--- END(simple_stream_code) -->
+
+  <p>Now that we have a stream that is ready to send out some data, we can use 
+that stream to listen to some data.</p>
+
+  <p>The typical way is to use the stream’s <code>listen()</code> method to 
+subscribe to the stream.  This has a number of optional parameters, and 
+one mandatory parameter, which is the <code>onData</code> handler callback 
+function:</p>
+
+  <!--- BEGIN(consuming_a_stream) -->
+  <pre class="prettyprint lang-dart">import 'dart:async';
+
+main() {
+  var data = [1,2,3,4,5]; // some sample data
+  var stream = new Stream.fromIterable(data);  // create the stream
+
+  // subscribe to the streams events
+  stream.listen((value) {       //
+    print(&quot;Received: $value&quot;);  // onData handler
+  });                           //
+}</pre>
+  <!--- END(consuming_a_stream) -->
+
+  <p>The <code>listen()</code> method is fired every time some data is received. 
+In in our stream, the <code>listen()</code> callback is called for each of 
+the data elements, so the output of running this code is as expected:</p>
+
+  <pre><code>Received: 1
+Received: 2
+Received: 3
+Received: 4
+Received: 5
+</code></pre>
+
+  <p>There are other ways to consume data from the stream, using properties such 
+as <code>first</code>, <code>last</code>, <code>length</code>, and
+<code>isEmpty</code>.  Each of these properties returns a future. For example:</p>
+
+  <!--- BEGIN(stream_properties) -->
+  <pre class="prettyprint lang-dart">stream = new Stream.fromIterable([1,2,3,4,5]);
+stream.first.then((value) =&gt; print(&quot;stream.first: $value&quot;));  // 1
+
+stream = new Stream.fromIterable([1,2,3,4,5]);
+stream.last.then((value) =&gt; print(&quot;stream.last: $value&quot;));  // 5  
+
+stream = new Stream.fromIterable([1,2,3,4,5]);
+stream.isEmpty.then((value) =&gt; print(&quot;stream.isEmpty: $value&quot;));  // false
+
+stream = new Stream.fromIterable([1,2,3,4,5]);
+stream.length.then((value) =&gt; print(&quot;stream.length: $value&quot;));  // 5</pre>
+  <!--- END(stream_properties) -->
+
+  <p>Streams comes in two flavours: <strong>single</strong> or <strong>multiple</strong> 
+(also known as <strong>broadcast</strong>) subscriber.   By default, our stream is a
+single-subscriber stream.
+This means that if you try to listen to the stream more than 
+once, you will get an exception, and using any of the callback functions or 
+future properties counts as listening.</p>
+
+  <p>You can convert the single-subscriber stream into a broadcast stream by using 
+the <code>asBroadcastStream()</code> method, as shown below:</p>
+
+  <!--- BEGIN(as_broadcast_stream) -->
+  <pre class="prettyprint lang-dart">var data = [1,2,3,4,5];
+var stream = new Stream.fromIterable(data);
+var broadcastStream = stream.asBroadcastStream();
+
+broadcastStream.listen((value) =&gt; print(&quot;stream.listen: $value&quot;)); 
+broadcastStream.first.then((value) =&gt; print(&quot;stream.first: $value&quot;)); // 1 
+broadcastStream.last.then((value) =&gt; print(&quot;stream.last: $value&quot;)); // 5
+broadcastStream.isEmpty.then((value) =&gt; print(&quot;stream.isEmpty: $value&quot;)); // false
+broadcastStream.length.then((value) =&gt; print(&quot;stream.length: $value&quot;)); // 5</pre>
+  <!--- END(as_broadcast_stream) -->
+
+  <p>Now that the stream allows multiple subscribers, you can add multiple 
+listeners. You can check whether a stream is a broadcast stream by checking 
+the <code>stream.isBroadcast</code> property.</p>
+
+  <h2 id="common-stream-methods">Common Stream methods</h2>
+
+  <p>Lots of methods are available on the Stream class.
+In the following section, I’ll describe some of the more common ones.
+Be sure to check out 
+the <a href="http://api.dartlang.org/dart_async/Stream.html">API docs</a>
+for the complete list.</p>
+
+  <h3 id="subsets-of-stream-data">Subsets of stream data</h3>
+
+  <p>Streams have some useful methods for extracting parts of the data being 
+sent out from the stream.  The <code>take()</code>, <code>skip()</code>, 
+<code>takeWhile()</code>, <code>skipWhile()</code>, and <code>where()</code> 
+methods
+allow you to take a subset of data, as shown by the following example.  Each 
+outputs its own stream that you can listen to.</p>
+
+  <!--- BEGIN(stream_subsets) -->
+  <pre class="prettyprint lang-dart">broadcastStream
+    .where((value) =&gt; value % 2 == 0) // divisible by 2
+    .listen((value) =&gt; print(&quot;where: $value&quot;)); // where: 2
+                                                // where: 4
+
+broadcastStream
+    .take(3) // takes only the first three elements
+    .listen((value) =&gt; print(&quot;take: $value&quot;)); // take: 1
+                                               // take: 2
+                                               // take: 3
+
+broadcastStream
+    .skip(3)  // skips the first three elements
+    .listen((value) =&gt; print(&quot;skip: $value&quot;)); // skip: 4
+                                               // skip: 5
+
+broadcastStream
+    .takeWhile((value) =&gt; value &lt; 3) // take while true
+    .listen((value) =&gt; print(&quot;takeWhile: $value&quot;)); // takeWhile: 1
+                                                    // takeWhile: 2
+
+broadcastStream
+    .skipWhile((value) =&gt; value &lt; 3) // skip while true
+    .listen((value) =&gt; print(&quot;skipWhile: $value&quot;)); // skipWhile: 4
+                                                    // skipWhile: 5</pre>
+  <!--- END(stream_subsets) -->
+
+  <h3 id="transforming-stream-data">Transforming stream data</h3>
+
+  <p>Another useful method is the <code>transform()</code> method, which takes a 
+<code>StreamTransformer</code> instance.  This allows you to modify the 
+contents of the stream.  The <code>StreamTransformer</code> constructor takes 
+a <code>handleData</code> function, which is called for each value passed from 
+the stream.  You can modify the value as you wish, and add it back to the 
+<code>StreamSink</code>, which results in the modified values being output on 
+the <code>transform()</code> method’s own stream.  The example below takes our 
+data <code>[1,2,3,4,5]</code> and converts each item into two new 
+<code>String</code> values, <code>"Message n"</code> and 
+<code>"Body n"</code>. Each string is placed onto the new stream.</p>
+
+  <!--- BEGIN(stream_transformer) -->
+  <pre class="prettyprint lang-dart">// define a stream transformer
+var transformer = new StreamTransformer(handleData: (value, sink) {
+  // create two new values from the original value
+  sink.add(&quot;Message: $value&quot;);
+  sink.add(&quot;Body: $value&quot;);
+});
+  
+// transform the stream and listen to its output
+stream.transform(transformer).listen((value) =&gt; print(&quot;listen: $value&quot;));</pre>
+  <!--- END(stream_transformer) -->
+
+  <p>Running this produces the following output:</p>
+
+  <pre><code>listen: Message: 1
+listen: Body: 1
+listen: Message: 2
+listen: Body: 2
+listen: Message: 3
+listen: Body: 3
+listen: Message: 4
+listen: Body: 4
+listen: Message: 5
+listen: Body: 5
+</code></pre>
+
+  <p>Perhaps the most common transform you will use is transforming a 
+List&lt;int&gt; into a String by using a <code>StringDecoder</code>, such as 
+when reading data from a file or HTTP request, as in the following example.</p>
+
+  <!--- BEGIN(string_decoder) -->
+  <pre class="prettyprint lang-dart">File file = new File(&quot;some_file.txt&quot;);
+file.openRead()
+    .transform(new StringDecoder()) // use a StringDecoder
+    .listen((String data) =&gt; print(data), // output the data
+        onError: (error) =&gt; print(&quot;Error, could not open file&quot;),
+        onDone: () =&gt; print(&quot;Finished reading data&quot;));</pre>
+  <!--- END(string_decoder) -->
+
+  <h3 id="validating-stream-data">Validating stream data</h3>
+
+  <p>Sometimes, you want to validate that the data returned from a stream meets 
+certain conditions.  A following functions return 
+<code>Future&lt;bool&gt;</code> values: <code>any()</code>, <code>every()</code>, 
+and <code>contains()</code>.</p>
+
+  <!--- BEGIN(validating_stream_data) -->
+  <pre class="prettyprint lang-dart">broadcastStream
+    .any((value) =&gt; value &lt; 5)
+    .then((result) =&gt; print(&quot;Any less than 5?: $result&quot;)); // true
+  
+broadcastStream
+    .every((value) =&gt; value &lt; 5)
+    .then((result) =&gt; print(&quot;All less than 5?: $result&quot;)); // false
+  
+broadcastStream
+    .contains(4)
+    .then((result) =&gt; print(&quot;Contains 4?: $result&quot;)); // true</pre>
+  <!--- END(validating_stream_data) -->
+
+  <h2 id="single-value-streams">Single value streams</h2>
+  <p>Some streams are designed to return only a single value, and you want to 
+ensure that you only retrieve a  single value from them.
+The <code>single</code> getter 
+and <code>singleWhere()</code> method
+both return a future containing the single value, 
+or raise an error if they don’t.  For example, with our data set containing 5 
+values: <code>[1,2,3,4,5]</code>, the following will return the value 1:</p>
+
+  <!--- BEGIN(single_where) -->
+  <pre class="prettyprint lang-dart">broadcastStream
+    .singleWhere((value) =&gt; value &lt; 2)  // there is only one value less than 2
+    .then((value) =&gt; print(&quot;single value: $value&quot;)); 
+    // outputs: single value: 1</pre>
+  <!--- END(single_where) -->
+
+  <p>However, the following raises an error and halts the application (because 
+the error is unhandled):</p>
+
+  <!--- BEGIN(failure_using_single) -->
+  <pre class="prettyprint lang-dart">broadcastStream
+    .single  // will fail - there is more than one value in the stream
+    .then((value) =&gt; print(&quot;single value: $value&quot;));</pre>
+  <!--- END(failure_using_single) -->
+
+  <p>This brings us neatly on to…</p>
+
+  <h2 id="error-handling-in-streams-and-futures">Error handling in streams and futures</h2>
+
+  <p>There is already an <a href="http://www.dartlang.org/articles/futures-and-error-handling/">excellent article about handling errors with future 
+based APIs</a>, 
+so I’ll not repeat that here.  It’s useful to note, though, that we can 
+rewrite our previous snippet to include some error handling so that we can 
+detect that the <code>single</code> call has failed.  A Future’s 
+<code>then()</code> function returns a future, and you can use its 
+<code>catchError()</code> handler.  This <code>catchError</code> handler 
+will catch any errors thrown within the <code>then()<code> callback:</code></code></p>
+
+  <!--- BEGIN(catch_error) -->
+  <pre class="prettyprint lang-dart">broadcastStream
+    .single  // will fail - there is more than one value in the stream
+    .then((value) =&gt; print(&quot;single value: $value&quot;)) 
+    .catchError((err) =&gt; print(&quot;Expected Error: $err&quot;)); // catch any error in the then()
+    // output: Bad State: More than one element</pre>
+  <!--- END(catch_error) -->
+
+  <h3 id="error-handling-with-streamsubscription">Error handling with StreamSubscription</h3>
+
+  <p>When you use the <code>listen()</code> function to listen to values coming 
+from a stream, you have the option of adding error handling.  The listen 
+function creates a <code>StreamSubscription</code> instance, which is the 
+return value of the <code>listen()</code> function. </p>
+
+  <p>A StreamSubscription has a number of handlers, namely: <code>onData</code>, 
+<code>onError</code> and <code>onDone</code>.  Each of these can be assigned 
+via the <code>listen()</code> function, or later, via the returned 
+<code>StreamSubscription</code> object.  Note the <code>onError</code> handler, 
+which you can use to catch errors output from the stream:</p>
+
+  <!--- BEGIN(subscription_handler_methods) -->
+  <pre class="prettyprint lang-dart">// setup the handlers through the subscription's handler methods
+var subscription = stream.listen(null);
+subscription.onData((value) =&gt; print(&quot;listen: $value&quot;));
+subscription.onError((err) =&gt; print(&quot;error: $err&quot;));
+subscription.onDone(() =&gt; print(&quot;done&quot;));</pre>
+  <!--- END(subscription_handler_methods) -->
+
+  <p>and:</p>
+
+  <!--- BEGIN(arguments_to_listen) -->
+  <pre class="prettyprint lang-dart">// setup the handlers as arguments to the listen() function
+var subscription = stream.listen(
+    (value) =&gt; print(&quot;listen: $value&quot;),
+    onError: (err) =&gt; print(&quot;error: $err&quot;),
+    onDone: () =&gt; print(&quot;done&quot;));</pre>
+  <!--- END(arguments_to_listen) -->
+
+  <p>These two both print the same output:</p>
+
+  <pre><code>listen: 1
+listen: 2
+listen: 3
+listen: 4
+listen: 5
+done
+</code></pre>
+
+  <p>One of the benefits of using the form 
+<code>var subscription = stream.listen(null)</code> and then setting up the 
+<code>onData</code> handler separately means that you can use the 
+<code>subscription</code> object in the data handler itself.</p>
+
+  <p>The <code>onDone</code> handler is called when there is no more data, and the 
+underlying stream is closed.</p>
+
+  <h2 id="unsubscribing-from-a-stream">Unsubscribing from a stream</h2>
+
+  <p>You can use the <code>StreamSubscription</code> object to unsubscribe 
+from the stream, using the <code>cancel()</code> method.  For example, 
+the listener in the following code unsubscribes from the stream
+after receiving the value 2, so it never 
+receives the <code>onDone</code> message:</p>
+
+  <!--- BEGIN(cancelling_a_stream) -->
+  <pre class="prettyprint lang-dart">var subscription = stream.listen(null);
+subscription.onData((value) {
+  print(&quot;listen: $value&quot;);
+  if (value == 2) subscription.cancel(); // cancel the subscription
+});
+subscription.onError((err) =&gt; print(&quot;error: $err&quot;));
+subscription.onDone(() =&gt; print(&quot;done&quot;));</pre>
+  <!--- END(cancelling_a_stream) -->
+
+  <h2 id="streams-are-generic">Streams are generic</h2>
+
+  <p>All the stream classes are also generic, which means that you get strongly 
+typed data in the handlers.  For example, if you create a 
+<code>Stream&lt;String&gt;</code>, then all the handler functions will also be 
+expecting a <code>String</code>, as shown by the following code:</p>
+
+  <!--- BEGIN(stream_generics) -->
+  <pre class="prettyprint lang-dart">var data = [1,2,3,4,5]; // ints, valid
+// var data = [&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;]; // strings, not valid
+var stream = new Stream&lt;int&gt;.fromIterable(data); // Stream&lt;int&gt;
+stream.listen((value) { // value must be an int
+  print(&quot;listen: $value&quot;);
+});</pre>
+  <!--- END(stream_generics) -->
+
+  <h2 id="some-real-world-examples-of-consuming-a-stream">Some real world examples of consuming a stream</h2>
+
+  <p>Now that you’ve seen how to consume data in a stream, let’s take a look at a 
+couple of real-world examples: handling button clicks, and reading data from a 
+file.</p>
+
+  <h3 id="button-clicks-in-darthtml">Button clicks in dart:html</h3>
+
+  <p>Buttons have a number of <code>onSomeEvent</code> streams defined, and the 
+<code>onClick</code> stream is defined as <code>Stream&lt;MouseEvent&gt;</code>.
+This type means that the data that you receive when you listen to the 
+<code>onClick</code> stream is all going to be MouseEvents.</p>
+
+  <p>The following code sets up a button and a couple of event handlers.
+One event handler remains
+registered, and the other unregisters itself after the third button click.</p>
+
+  <!--- BEGIN(html_streams) -->
+  <pre class="prettyprint lang-dart">import 'dart:html';
+
+void main() {
+  var button = new ButtonElement();
+  document.body.children.add(button);
+  
+  button.text = &quot;Foo&quot;; 
+  var clickCount = 0;
+  button.onClick.listen((mouseEvent) {
+    print(&quot;clicked&quot;); // remain subscribed for all clicks
+  });
+  
+  var subscription = button.onClick.listen(null);
+  subscription.onData((mouseEvent) {
+    print(&quot;copy that&quot;);
+    clickCount++;
+    window.alert(&quot;Clicked&quot;);
+    if (clickCount == 3) {
+      subscription.cancel(); // unsubscribe after the third click
+    }
+  });  
+}</pre>
+  <!--- END(html_streams) -->
+
+  <p>When the button is clicked, the click counter is incremented. On the third 
+click, the second event handler unsubscribes itself.</p>
+
+  <h3 id="reading-a-file-in-dartio">Reading a file in dart:io</h3>
+
+  <p>The second real-world example shows how to read some data from a file on the 
+filesystem.  The <code>file.openRead()</code> returns a stream containing the 
+file’s contents.  The stream (which contains a <code>List&lt;int&gt;</code>) 
+is decoded using a <code>StringDecoder</code> class to allow for UTF-8 
+conversion.</p>
+
+  <!--- BEGIN(reading_a_file) -->
+  <pre class="prettyprint lang-dart">import 'dart:io';
+
+main() {
+  File file = new File(&quot;some_file.txt&quot;);
+  file.openRead()
+      .transform(new StringDecoder()) // use a StringDecoder
+      .listen((String data) =&gt; print(data), // output the data
+        onError: (error) =&gt; print(&quot;Error, could not open file&quot;),
+        onDone: () =&gt; print(&quot;Finished reading data&quot;));
+}</pre>
+  <!--- END(reading_a_file) -->
+
+  <h2 id="conclusion">Conclusion</h2>
+
+  <p>Streams are unified across Dart’s asynchronous APIs, providing a powerful 
+way to deal with streams of data, whether that data is event 
+objects, bytes, or your own custom classes.</p>
+
+  <h2 id="about-the-author">About the author</h2>
+
+  <p><img src="chris-buckett.png" width="95" height="115" alt="Chris Buckett head shot" align="left" style="margin-right: 10px" /></p>
+
+  <p>Chris Buckett is a Technical Manager for
+<a href="http://www.entity.co.uk/">Entity Group Ltd</a>, responsible for building and
+delivering enterprise client-server webapps, mostly with GWT, Java and .Net.
+He runs the <a href="http://blog.dartwatch.com/">dartwatch.com blog</a>, and has written
+the book <em>Dart in Action</em>, which is available
+at <a href="http://www.manning.com/buckett">manning.com</a>.</p>
+</div>
+
+    	  </div> <!-- End of content from toc.html -->
+        </article>
+	  </div>
+
+	
+	<ul class="pager">
+	  <li><a href="/articles/">More articles about Dart <i class="glyphicon glyphicon-chevron-up"></i></a></li>
+	 </ul>
+	 
+
+	</div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Dart: Up and Running from Dart: Up and Running | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Dart: Up and Running from Dart: Up and Running | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  
+  <meta itemprop="description" content="Read Dart: Up and Running of Dart: Up and Running, published by O'Reilly.">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+    <div class="container sub-page">
+
+      <div id="book-header">
+      An excerpt from <a href="/docs/dart-up-and-running/"><em>Dart: Up and Running</em></a>
+      </div>
+
+      <article class="up-and-running-contents">
+        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dart: Up and Running</th></tr><tr><td width="20%" align="left"> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="foreword.html">Next</a></td></tr></table><hr></div><div class="book"><div class="titlepage"><div><div><h1 class="title"><a name="idm9536"></a>Dart: Up and Running</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Kathy</span> <span class="surname">Walrath</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Seth</span> <span class="surname">Ladd</span></h3></div></div><div><div class="othercredit"><h3 class="othercredit"><span class="firstname">Christopher</span> <span class="surname">Hearse</span></h3></div></div><div><div class="othercredit"><h3 class="othercredit"><span class="firstname">David</span> <span class="surname">Futato</span></h3></div></div><div><div class="othercredit"><h3 class="othercredit"><span class="firstname">Rebecca</span> <span class="surname">Demarest</span></h3></div></div><div><div class="othercredit"><h3 class="othercredit"><span class="firstname">Randy</span> <span class="surname">Comer</span></h3></div></div><div><p class="copyright">Copyright © 2013 Kathy Walrath, Seth Ladd</p></div><div><div class="legalnotice"><a name="idp14044064"></a><p>Printed in the United States of America.</p></div></div><div><div class="legalnotice"><a name="idp13172256"></a><p>[LSI]</p></div></div><div><div class="legalnotice"><a name="idp13939984"></a><p>O’Reilly books may be purchased for educational, business, or sales
+    promotional use. Online editions are also available for most titles
+    (<a class="ulink" href="http://my.safaribooksonline.com/?portal=oreilly" target="_top">http://my.safaribooksonline.com</a>).
+    For more information, contact our corporate/institutional sales
+    department: 800-998-9938 or <code class="email">&lt;<a class="email" href="mailto:corporate@oreilly.com">corporate@oreilly.com</a>&gt;</code>.</p></div></div><div><div class="legalnotice"><a name="idp12136320"></a><p>Nutshell Handbook, the Nutshell Handbook logo, and the O’Reilly logo
+    are registered trademarks of O’Reilly Media, Inc. <span class="emphasis"><em>Dart: Up and
+    Running</em></span>, the image of a greater roadrunner, and related trade
+    dress are trademarks of O’Reilly Media, Inc.</p><p>This text of this work is available at this book’s GitHub project
+    (https://github.com/dart-lang/dart-up-and-running-book) under the Creative
+    Commons Attribution-Noncommercial-No Derivative Works 3.0 United States
+    License (http://creativecommons.org/licenses/by-nc-nd/3.0/us/).</p><p>Many of the designations used by manufacturers and sellers to
+    distinguish their products are claimed as trademarks. Where those
+    designations appear in this book, and O’Reilly Media, Inc., was aware of a
+    trademark claim, the designations have been printed in caps or initial
+    caps.</p></div></div><div><div class="legalnotice"><a name="idp15583552"></a><p>While every precaution has been taken in the preparation of this
+    book, the publisher and authors assume no responsibility for errors or
+    omissions, or for damages resulting from the use of the information
+    contained herein.</p></div></div><div><div class="legalnotice"><a name="idp15598800"></a><p></p></div></div><div><div lang="" class="revhistory"><table style="border-style:solid; width:100%;" summary="Revision History"><tr><th align="left" valign="top" colspan="2"><b>Revision History</b></th></tr><tr><td align="left"></td><td align="left">2012-10-24</td></tr><tr><td align="left" colspan="2">First release</td></tr><tr><td align="left"></td><td align="left">2013-03-29</td></tr><tr><td align="left" colspan="2">Second release</td></tr></table></div></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="preface"><a href="foreword.html">Foreword</a></span></dt><dt><span class="preface"><a href="preface.html">Preface</a></span></dt><dd><dl><dt><span class="sect1"><a href="preface.html#preface-conventions">Conventions Used in This Book</a></span></dt><dt><span class="sect1"><a href="preface.html#preface-examples">Using Code Examples</a></span></dt><dt><span class="sect1"><a href="preface.html#preface-safari">Safari® Books Online</a></span></dt><dt><span class="sect1"><a href="preface.html#preface-contact">How to Contact Us</a></span></dt><dt><span class="sect1"><a href="preface.html#preface-updates">Content Updates</a></span></dt><dd><dl><dt><span class="sect2"><a href="preface.html#preface-updates-v3">Changes After the Second Printing</a></span></dt><dt><span class="sect2"><a href="preface.html#preface-updates-v2">Changes in the Second Printing: March 29, 2013</a></span></dt></dl></dd><dt><span class="sect1"><a href="preface.html#preface-acknowledgments">Acknowledgments</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch01.html">1. Quick Start</a></span></dt><dd><dl><dt><span class="sect1"><a href="ch01.html#ch01-why-dart">Why Google Created Dart</a></span></dt><dt><span class="sect1"><a href="ch01.html#ch01-quick-look">A Quick Look at the Dart Language</a></span></dt><dt><span class="sect1"><a href="ch01.html#ch01-whats-cool">What’s Cool About Dart</a></span></dt><dt><span class="sect1"><a href="ch01.html#ch01-editor">Up and Running</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch01.html#ch01-editor-download">Step 1: Download and Install the Software</a></span></dt><dt><span class="sect2"><a href="ch01.html#ch01-editor-launch">Step 2: Launch the Editor</a></span></dt><dt><span class="sect2"><a href="ch01.html#ch01-editor-code">Step 3: Create and Run an App</a></span></dt><dt><span class="sect2"><a href="ch01.html#ch01-editor-sample">Step 4: Open and Run a Sample</a></span></dt><dt><span class="sect2"><a href="ch01.html#ch01-editor-next">What Next?</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="ch02.html">2. A Tour of the Dart Language</a></span></dt><dd><dl><dt><span class="sect1"><a href="ch02.html#main-print">A Basic Dart Program</a></span></dt><dt><span class="sect1"><a href="ch02.html#ch02-concepts">Important Concepts</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#ch02-keywords">Keywords</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-runtime-modes">Runtime Modes</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#variables">Variables</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#variables-default-value">Default Value</a></span></dt><dt><span class="sect2"><a href="ch02.html#variables-optional-types">Optional Types</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-final-const">Final and Const</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#built-in-types">Built-in Types</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#numbers">Numbers</a></span></dt><dt><span class="sect2"><a href="ch02.html#strings">Strings</a></span></dt><dt><span class="sect2"><a href="ch02.html#booleans">Booleans</a></span></dt><dt><span class="sect2"><a href="ch02.html#lists">Lists</a></span></dt><dt><span class="sect2"><a href="ch02.html#maps">Maps</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-symbols">Symbols</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#functions">Functions</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#functions-optional-parameters">Optional Parameters</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-main">The main() Function</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-functions-first-class">Functions as First-Class Objects</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-lexical-scope">Lexical Scope</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-functions-lexical-closures">Lexical Closures</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-function-equality">Testing Functions for Equality</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-functions-return-values">Return Values</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#operators">Operators</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#op-arithmetic">Arithmetic Operators</a></span></dt><dt><span class="sect2"><a href="ch02.html#op-equality">Equality and Relational Operators</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-op-type-test">Type Test Operators</a></span></dt><dt><span class="sect2"><a href="ch02.html#op-assign">Assignment Operators</a></span></dt><dt><span class="sect2"><a href="ch02.html#op-logical">Logical Operators</a></span></dt><dt><span class="sect2"><a href="ch02.html#op-bit">Bitwise and Shift Operators</a></span></dt><dt><span class="sect2"><a href="ch02.html#op-other">Other Operators</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#control-flow-statements">Control Flow Statements</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#if-else">If and Else</a></span></dt><dt><span class="sect2"><a href="ch02.html#for-loops">For Loops</a></span></dt><dt><span class="sect2"><a href="ch02.html#while">While and Do-While</a></span></dt><dt><span class="sect2"><a href="ch02.html#break">Break and Continue</a></span></dt><dt><span class="sect2"><a href="ch02.html#switch">Switch and Case</a></span></dt><dt><span class="sect2"><a href="ch02.html#assert">Assert</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#exceptions">Exceptions</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#ch02-exceptions-throw">Throw</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-exceptions-catch">Catch</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-exceptions-finally">Finally</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#classes">Classes</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#ch02-instance-variables">Instance Variables</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-constructors">Constructors</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-methods">Methods</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-class-abstract">Abstract Classes</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-implicit-interfaces">Implicit Interfaces</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-class-extend">Extending a Class</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-mixins">Adding Features to a Class: Mixins</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-class-vars-and-methods">Class Variables and Methods</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#generics">Generics</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#ch02-generics-why">Why Use Generics?</a></span></dt><dt><span class="sect2"><a href="ch02.html#generics-literals">Using Collection Literals</a></span></dt><dt><span class="sect2"><a href="ch02.html#generics-constructors">Using Parameterized Types with Constructors</a></span></dt><dt><span class="sect2"><a href="ch02.html#generics-collections">Generic Collections and the Types they Contain</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#libraries">Libraries and Visibility</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#libraries-import">Using Libraries</a></span></dt><dt><span class="sect2"><a href="ch02.html#libraries-implementing">Implementing Libraries</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#isolates">Isolates</a></span></dt><dt><span class="sect1"><a href="ch02.html#typedefs">Typedefs</a></span></dt><dt><span class="sect1"><a href="ch02.html#ch02-metadata">Metadata</a></span></dt><dt><span class="sect1"><a href="ch02.html#comments">Comments</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch02.html#ch02-comments-single-line">Single-Line Comments</a></span></dt><dt><span class="sect2"><a href="ch02.html#ch02-comments-multi-line">Multi-Line Comments</a></span></dt><dt><span class="sect2"><a href="ch02.html#comments-doc">Documentation Comments</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch02.html#ch02-summary">Summary</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch03.html">3. A Tour of the Dart Libraries</a></span></dt><dd><dl><dt><span class="sect1"><a href="ch03.html#ch03-dartcore---strings-collections-and-more">dart:core - Numbers, Collections, Strings, and More</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-numbers">Numbers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-strings-and-regular-expressions">Strings and Regular Expressions</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-collections">Collections</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-uri">URIs</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-dates-and-times">Dates and Times</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utility-interfaces">Utility Classes</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-exceptions">Exceptions</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-asynchronous-programming">dart:async - Asynchronous Programming</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-futures">Future</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-streams">Stream</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-9">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-math">dart:math - Math and Random</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-trigonometry">Trigonometry</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-maximum-and-minimum">Maximum and Minimum</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-math-constants">Math Constants</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-random-numbers">Random Numbers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-7">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-html-using-html5-apis">dart:html - Browser-Based Apps</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-manipulating-the-dom">Manipulating the DOM</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-httprequest">Using HTTP Resources with HttpRequest</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-websockets">Sending and Receiving Real-Time Data with WebSockets</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-html">More information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dartisolate---concurrency-with-isolates">dart:isolate - Concurrency with Isolates</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-isolate-concepts">Isolate Concepts</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-11">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dartio---file-and-socket-io-for-command-line-apps">dart:io - I/O for Command-Line Apps</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-files-and-directories">Files and Directories</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-io-http">HTTP Clients and Servers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-io">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-convert">dart:convert - Decoding and Encoding JSON, UTF-8, and more</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-json">Decoding and Encoding JSON</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utf">Decoding and Encoding UTF-8 Characters</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utf-other">Other Functionality</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-mirrors">dart:mirrors - Reflection</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-symbols">Symbols</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-introspection">Introspection</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-summary">Summary</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch04.html">4. Tools</a></span></dt><dd><dl><dt><span class="sect1"><a href="ch04-tools-pub.html">pub: The Dart Package Manager</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-pub.html#ch04-tools-pub-pubspec">Creating a Pubspec</a></span></dt><dt><span class="sect2"><a href="ch04-tools-pub.html#ch04-tools-pub-install">Installing Packages</a></span></dt><dt><span class="sect2"><a href="ch04-tools-pub.html#ch04-tools-pub-import">Importing Libraries from Packages</a></span></dt><dt><span class="sect2"><a href="ch04-tools-pub.html#ch04-tools-pub-more-options">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-tools-editor.html">Dart Editor</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-view-samples">Viewing Samples</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-apps">Managing the Files View</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-create-app">Creating Apps</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-edit">Editing Apps</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-run">Running Apps</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-debug">Debugging Apps</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-dart2js">Compiling to JavaScript</a></span></dt><dt><span class="sect2"><a href="ch04-tools-editor.html#ch04-editor-more">Other Features</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-tools-dartium.html">Dartium: Chromium with the Dart VM</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-dartium.html#ch04-dartium-download">Downloading and Installing the Browser</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dartium.html#ch04-dartium-launch">Launching the Browser</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dartium.html#ch04-dartium-bug">Filing Bugs</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dartium.html#ch04-dartium-linking">Linking to Dart Source</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dartium.html#ch04-dartium-detect">Detecting Dart Support</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dartium.html#ch04-dartium-command">Launching from the Command Line</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-tools-dart2js.html">dart2js: The Dart-to-JavaScript Compiler</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-dart2js.html#ch04-tools-dart2js-basic-usage">Basic Usage</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dart2js.html#ch04-tools-dart2js-options">Options</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dart2js.html#ch04-tools-dart2js-generating-efficient-code">Helping dart2js Generate Better Code</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dart2js.html#tools-dart2js-debugging">Debugging</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-tools-dart-vm.html">dart: The Standalone VM</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-dart-vm.html#ch04-tools-dart-vm-basic-usage">Basic Usage</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dart-vm.html#ch04-tools-dart-vm-options">Options</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dart-vm.html#ch04-tools-dart-vm-type-checks">Enabling Checked Mode</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-tools-dart_analyzer.html">dartanalyzer: The Static Analyzer</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-dart_analyzer.html#ch04-tools-dart_analyzer-basic-usage">Basic Usage</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dart_analyzer.html#ch04-tools-dart_analyzer-options">Options</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-tools-dartdoc.html">dartdoc: The API Documentation Generator</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch04-tools-dartdoc.html#ch04-tools-dartdoc-basic-usage">Basic Usage</a></span></dt><dt><span class="sect2"><a href="ch04-tools-dartdoc.html#ch04-tools-dartdoc-options">Options</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch04-summary.html">Summary</a></span></dt></dl></dd><dt><span class="chapter"><a href="ch05.html">5. Walkthrough: Dart Chat</a></span></dt></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="ch01.html#BrowserChart">Browser speed (V8 benchmark suite v7; higher numbers are
+      better)</a></dt><dt>1.2. <a href="ch01.html#DartEditor-initial">Dart Editor and its Welcome page</a></dt><dt>1.3. <a href="ch01.html#DartEditor-newapp">Create command-line or web apps with Dart Editor</a></dt><dt>1.4. <a href="ch01.html#DartEditor-helloworld">Dart Editor displaying a new app’s files</a></dt><dt>1.5. <a href="ch01.html#sunflower">The Sunflower sample running in Dartium</a></dt><dt>4.1. <a href="ch04-tools-editor.html#DartEditor-helloweb">A new app, pre-filled with basic, runnable code</a></dt><dt>4.2. <a href="ch04-tools-editor.html#helloweb-dotcomplete">Autocomplete suggestions</a></dt><dt>4.3. <a href="ch04-tools-editor.html#sunflower-outline">The Outline panel for the Sunflower sample</a></dt><dt>4.4. <a href="ch04-tools-editor.html#production-mode">To run in production mode, unselect checked mode</a></dt><dt>4.5. <a href="ch04-tools-editor.html#debugger">Using Dart Editor to debug the Sunflower sample app</a></dt><dt>4.6. <a href="ch04-tools-editor.html#key-assist">Help &gt; Key Assist</a></dt><dt>4.7. <a href="ch04-tools-dart2js.html#FirefoxDeveloperToolbar">Firefox’s Developer Toolbar</a></dt></dl></div><div class="list-of-tables"><p><b>List of Tables</b></p><dl><dt>2.1. <a href="ch02.html#keyword_table">Dart keywords</a></dt><dt>2.2. <a href="ch02.html#operator_table">Operators and their precedence</a></dt><dt>2.3. <a href="ch02.html#arithmetic_operator_table">Arithmetic operators</a></dt><dt>2.4. <a href="ch02.html#pfix_operator_table">Increment and decrement operators</a></dt><dt>2.5. <a href="ch02.html#equality_operator_table">Equality and relational operators</a></dt><dt>2.6. <a href="ch02.html#type_test_operator_table">Type test operators</a></dt><dt>2.7. <a href="ch02.html#assignment_operator_table">Assignment operators</a></dt><dt>2.8. <a href="ch02.html#logical_operator_table">Logical operators</a></dt><dt>2.9. <a href="ch02.html#bit_operator_table">Bitwise and shift operators</a></dt><dt>2.10. <a href="ch02.html#other_operator_table">Other operators</a></dt><dt>2.11. <a href="ch02.html#overridden_operator_table">Operators that can be overridden</a></dt><dt>4.1. <a href="ch04-tools-dart_analyzer.html#ch04-dartanalyzer-exit">Exit codes for dartanalyzer</a></dt></dl></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="foreword.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top"> </td><td width="20%" align="center"> </td><td width="40%" align="right" valign="top"> Foreword</td></tr></table></div>
+      </article>
+
+      
+
+    </div>
+  </div>
+</div>  
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+</body>
+</html>
+

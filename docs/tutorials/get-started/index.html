@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Get Started | Dart: 结构化的web应用</title>
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Get Started | Dart: 结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  
+  <meta itemprop="description" content="Get Dart and run two Dart applications">
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/css/dart-style.css" rel="stylesheet">
+  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+	
+	
+	
+	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script>
+  
+
+	window.___gcfg = {lang: 'en'};
+	(function()
+	{var po = document.createElement("script");
+	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(po, s);
+	})();
+  </script>
+
+  <script>
+    window.twttr = (function (d,s,id) {
+      var t, js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
+      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+    }(document, "script", "twitter-wjs"));
+  </script>
+</head>
+<body onload="prettyPrint()">
+
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                       入门
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
+                <li><a href="/docs/tutorials/">Dart 教程</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                              社区
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/support/">支持和社区资源</a></li>
+                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+  	<div class="container sub-page">
+    <article class="has-permalinks">
+    
+<!-- NAVI LINKS -->
+<div id="tutorial-navigation-links-top" class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-3">
+        <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
+      </div>
+      <div class="col-md-3">
+        <a href="/docs/tutorials/"><i class="glyphicon glyphicon-chevron-left"> </i> Home</a>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3">
+        <a href="/docs/tutorials/connect-dart-html/" class="pull-right">Connect Dart &amp; HTML <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+      </div>
+    </div> 
+    <hr />
+  </div> 
+</div>
+
+<!-- PAGE -->
+<div class="row">
+
+  <!-- LEFT SIDE BAR -->
+  <div class="col-md-3">
+
+    <div id="tutorial-side">
+      <div id="whats-the-point">
+        <h4 id="page-highlights">内容摘要</h4>
+        
+<ul>
+  <li>The Dart bundle has development tools, APIs, and samples.</li>
+  <li>You can use Dart for web apps and command-line apps.</li>
+  <li>Run Dart web apps directly in Dartium.</li>
+  <li>Compile Dart apps to JavaScript for other browsers.</li>
+  <li>All Dart apps have a main() function.</li>
+  <li>Dart supports top-level functions.</li>
+</ul>
+
+
+      </div> <!-- whats-the-point -->
+
+      <div id="code-links">
+        <h4 id="examples">示例</h4>
+
+        
+<p>This tutorial features two examples
+provided by Dart Editor:</p>
+
+<ul>
+  <li>helloworld</li>
+  <li>clickme</li>
+</ul>
+
+
+
+        <a href="https://drone.io/github.com/dart-lang/dart-tutorials-samples/latest">
+           <img src="https://drone.io/github.com/dart-lang/dart-tutorials-samples/status.png" alt="Build Status" style="margin-top:10px;max-width:100%;" />
+        </a>
+      </div> <!-- end code-links -->
+
+      <div id="tutorial-toc">
+        <a href="http://code.google.com/p/dart/issues/entry?template=Tutorial%20feedback" target="_blank">
+        <i class="glyphicon glyphicon-comment"> </i>
+        发送反馈
+        </a>
+      </div> <!-- tutorial-toc -->
+      
+    </div> <!-- tutorial-side -->
+
+  </div> <!-- end div col-md-3 -->
+
+  <!-- CONTENT-->
+  <article class="col-md-9 tutorial-content">
+
+    
+<div class="tute-target-title">
+<h1>Get Started</h1>
+<h3>Get Dart. Run two apps.</h3>
+</div>
+
+<p>This tutorial gets you ready
+to begin writing web apps in Dart.
+Here you will download the Dart software,
+and use Dart Editor to
+create and run two small applications.</p>
+
+<ul>
+  <li><a href="#download-dart">Download the Dart software bundle</a></li>
+  <li><a href="#what-did-you-get">What did you get?</a></li>
+  <li><a href="#start-dart-editor">Start Dart Editor</a></li>
+  <li><a href="#what-is-app">About Dart applications</a></li>
+  <li><a href="#create-cmd-line">Create a command-line app</a></li>
+  <li><a href="#run-cmd-line">Run a command-line app</a></li>
+  <li><a href="#create-web-app">Create a web app</a></li>
+  <li><a href="#run-web-app">Run a web app</a></li>
+  <li><a href="#source-files">About the HTML, CSS, and Dart triumvirate</a></li>
+  <li><a href="#top-level-functions">About main() and other top-level functions</a></li>
+  <li><a href="#file-names">About file naming conventions</a></li>
+  <li><a href="#other-resources">Other resources</a></li>
+  <li><a href="#what-next">What next?</a></li>
+</ul>
+
+<h2 id="download-dart">Download the Dart software bundle</h2>
+
+<p>Get Dart.
+The Dart download includes <a href="/tools/editor/">Dart Editor</a>,
+which you’ll be using
+throughout this tutorial.</p>
+
+<div align="center">
+  <div class="editor download-buttons">
+
+  
+
+  <div class="windows downloads">
+    
+    <a data-bits="64" data-os="windows" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (64-bit Windows)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="windows" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (32-bit Windows)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="macos downloads">
+    
+    <a data-bits="64" data-os="macos" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                      下载 Dart (Mac)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="linux downloads">
+    
+    <a data-bits="64" data-os="linux" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (64-bit Linux)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="linux" data-build="integration" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+                             下载 Dart (32-bit Linux)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="editor-current-version version">
+                      当前 Dart 稳定版本：
+    <span class="editor-build-rev-stable">[计算中]</span>
+  </div>
+</div>
+
+</div>
+
+<p class="os-choices">
+  The Dart tools
+  work in recent versions of
+  <span class="nowrap">
+<input type="radio" name="osChoices" id="windows" />
+<label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
+</span>
+
+<span class="nowrap">
+<input type="radio" name="osChoices" id="linux" checked="checked" />
+<label class="os-choice" for="linux">Linux</label>,
+</span> or
+
+<span class="nowrap">
+<input type="radio" name="osChoices" id="macos" />
+<label class="os-choice" for="macos">Mac</label>.
+</span>
+
+</p>
+
+<aside class="alert alert-info">
+  <b>Note:</b> The Dart tools <b>do not support Windows XP</b>.
+</aside>
+
+<h2 id="what-did-you-get">What did you get?</h2>
+
+<p>Unzip the file.
+The resulting directory,
+your <em>Dart installation directory</em>,
+contains the following:</p>
+
+<div>
+  <hr />
+  <div class="row">
+    <div class="col-md-2">
+    <img class="scale-img-max" src="images/dart-editor-icon.png" width="77" height="93" alt="Dart Editor" />
+    </div>
+    <div class="col-md-7">
+    Dart Editor is a powerful,
+    lightweight, open source editor.
+    With it you can create and edit files,
+    manage the files and directories for your project,
+    look up APIs, debug your code,
+    and control runtime conditions using named launches.
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-2">
+    <img class="scale-img-max" src="images/chromium.png" width="81" height="89" alt="Dartium, a special Chromium build" />
+    </div>
+    <div class="col-md-7">
+    This is a special build of the Chromium web browser, 
+    called Dartium, that has the Dart VM (virtual machine) embedded.
+    You can run your apps directly in this browser,
+    or use Dart Editor to do it for you,
+    thereby streamlining the build-test cycle.
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-2">
+    <img class="scale-img-max" src="images/dart-sdk-directory.png" width="86" height="94" alt="dart-sdk directory" />
+    </div>
+    <div class="col-md-7">
+    The dart-sdk directory contains the Dart software development kit.
+    Here you will find Dart libraries, such as dart:core and dart:html,
+    that define APIs useful to all apps.
+    Within, the bin directory contains several useful command-line tools,
+    such as the Dart-to-JavaScript compiler,
+    and the command-line version of the Dart VM.
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-2">
+    <img class="scale-img-max" src="images/samples-directory.png" width="81" height="91" alt="samples directory" />
+    </div>
+    <div class="col-md-7">
+    The samples directory contains the complete source code
+    for several Dart web applications.
+    You can experiment with
+    these examples in Dart Editor.
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-2">
+    <img class="scale-img-max" src="images/and-the-rest.png" width="81" height="71" alt="more directories" />
+    </div>
+    <div class="col-md-7">
+    You might notice some other directories
+    in the Dart installation directory.
+    You can ignore them for now. 
+    </div>
+  </div>
+  <hr />
+</div>
+
+<h2 id="start-dart-editor">Start Dart Editor</h2>
+
+<p>Invoke Dart Editor by double-clicking its icon
+in your Dart installation directory
+<img class="scale-img-max" src="/imgs/Dart_Logo_21.png" width="21" height="21" alt="Dart Editor icon" />.</p>
+
+<p>Dart Editor displays its Welcome Page
+in a tab in the <strong>Editor pane</strong>.
+The following diagram highlights
+some of the features of the editor.</p>
+
+<p><img class="scale-img-max" src="images/dart-editor-items.png" alt="Dart Editor's basic features" /></p>
+
+<dl>
+  <dt>Send feedback button</dt>
+  <dd>Allows you to share bugs and requests
+directly with the Dart Editor team
+as well as the larger Dart team.</dd>
+  <dt>Search field</dt>
+  <dd>Searches every file in your <strong>Files view</strong> for the entered text.
+Results for text searches are displayed in a <strong>Search view</strong>.
+Within that view,
+double-click a file to see it in the <strong>Editor pane</strong>.
+All occurrences of the search string in the <strong>Editor pane</strong> are highlighted.</dd>
+  <dt>Run button</dt>
+  <dd>Runs the application associated with the file
+that is currently selected in the <strong>Files view</strong>.</dd>
+  <dt>New application button</dt>
+  <dd>Creates a directory and, within it,
+the files for a new application.
+Alternatively, you can use the
+<strong>File &gt; New Application</strong> menu item
+or the <strong>Create an application</strong> button
+on the Welcome page.</dd>
+  <dt>Files view</dt>
+  <dd>Shows a hierarchical view of your Dart applications
+and their associated files.
+Double-click a file in the <strong>Files view</strong> to see its contents
+in the <strong>Editor pane</strong>.
+If you single-click a file in the <strong>Files view</strong>,
+the file is selected,
+but not necessarily displayed in the <strong>Editor pane</strong>.
+You must double-click the file.</dd>
+  <dt>Editor pane</dt>
+  <dd>Provides the basic editing functionality you’d expect,
+plus features such as Dart code completion,
+API browsing, and support for refactoring.
+The first time you use Dart Editor,
+it shows the Welcome Page in the Editor pane,
+which provides quick access to Dart resources
+and some nifty samples.
+The Welcome Page is also available under the <strong>Tools</strong> menu.</dd>
+  <dt>Problems pane</dt>
+  <dd>Displays warning and error messages.</dd>
+</dl>
+
+<aside class="alert alert-info">
+<b> Problems? </b>
+See <a href="/tools/editor/troubleshoot.html">Troubleshooting Dart Editor</a>.
+</aside>
+
+<h2 id="what-is-app">About Dart applications</h2>
+
+<p>At minimum, a Dart application has</p>
+
+<ul>
+  <li>one Dart source file—a
+file with the .dart suffix that contains Dart code</li>
+  <li>one top-level main() function.
+This is the entry point for your application.</li>
+</ul>
+
+<p>There are two kinds of Dart applications:
+command-line applications and web applications.
+A command-line application is a standalone program
+that you run in the Dart VM from the command-line in a terminal window.
+Web applications are hosted on a web page and run in a browser
+(either directly in a browser that supports Dart
+or by compiling to JavaScript).</p>
+
+<h3 id="command-line-applications">Command-line applications</h3>
+
+<p>Dart command-line applications
+run standalone from the command-line,
+independent of a web browser.
+Command-line apps are often used
+to provide server-side support to a web app,
+but they can also be scripts.</p>
+
+<p>The Dart VM runs Dart code directly without intermediate compilation.</p>
+
+<p><img class="scale-img-max" src="images/dartvm-cmd-line.png" alt="Run a command-line application without compilation" /></p>
+
+<p>Conveniently, you can run command-line apps
+directly in Dart Editor with the click of the Run button
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.
+Alternatively,
+use the Dart VM tool
+in the <code>dart-sdk/bin</code> directory in your Dart installation directory.</p>
+
+<h3 id="web-applications">Web applications</h3>
+
+<p>Dart web applications run inside of a browser page.
+In addition to a Dart file,
+a web app requires an HTML file to host the app.
+Often, a web app provides the client-side
+user interface for a server.</p>
+
+<p>You can run your Dart web app from Dart Editor
+by clicking the Run button
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.
+By default, Dart Editor will invoke Dartium,
+which has the Dart VM embedded in it,
+and loads your HTML file,
+which in turn loads your app.</p>
+
+<p><img class="scale-img-max" src="images/dartvm-web-app.png" alt="Run a web application directly in a Dart-savvy browser" /></p>
+
+<p>If you want to see your web app in a browser
+that does not yet support Dart,
+you can compile your Dart code to JavaScript
+using the Dart-to-JavaScript compiler,
+which is in the <code>dart-sdk/bin</code> directory in your Dart installation directory.
+You then load the resulting JavaScript file
+into your browser of choice.
+Dart Editor provides a convenient menu option for
+running web apps as JavaScript.</p>
+
+<p><img class="scale-img-max" src="images/dartvm-js.png" alt="Run a web application by compiling to JavaScript" /></p>
+
+<p>The rest of this tutorial steps you through
+creating and running first a command-line application
+and then a web application.</p>
+
+<h2 id="create-cmd-line">Create a command-line app</h2>
+
+<p>In Dart Editor, choose <strong>File-&gt;New Application</strong> from the menu
+or click the New Application button
+<img class="scale-img-max" src="images/newapp.png" width="17" height="16" alt="New App button" />.
+A dialog appears that looks like this:</p>
+
+<p><img class="scale-img-max" src="images/new-helloworld.png" alt="Create a new command-line application" /></p>
+
+<ol>
+<li>
+    <p>Type <code>helloworld</code> in the <strong>Application Name</strong> text field.
+By convention, application names are lowercase.
+This name is used for the app’s directory
+and the basename for the files it creates.</p>
+  </li>
+
+<li>
+    <p>Type or browse to the directory where you want to save the files.
+By default, Dart Editor creates a new directory named <code>dart</code>
+in your home directory.</p>
+  </li>
+
+<li>
+    <p>Select <strong>Generate sample content</strong>.
+Dart Editor generates sample code
+appropriate for the type of application you are creating.
+For a command-line application,
+the sample code implements the standard ‘Hello World’ program.</p>
+  </li>
+
+<li>
+    <p>Select <strong>Command-line application</strong> from the list.</p>
+  </li>
+
+<li>
+    <p>Click <strong>Finish</strong>.</p>
+  </li>
+</ol>
+
+<p>Dart Editor creates a directory for the application
+and boilerplate files for a small command-line app.
+The <strong>Files view</strong> displays
+the file hierarchy for the application.</p>
+
+<p><img class="scale-img-max" src="images/helloworld-files.png" alt="Dart Editor with new command-line app files" /></p>
+
+<p>Some of the files and directories in the helloworld application
+include the following:</p>
+
+<dl>
+  <dt>helloworld</dt>
+  <dd>Contains boilerplate files and directories for a
+simple command-line app.</dd>
+  <dt>pubspec.yaml</dt>
+  <dd>Declares which libraries
+your application needs.
+The <code>packages</code> directories contain those libraries.
+The <code>pubspec.lock</code> file specifies the version numbers
+of the libraries on which the application depends.</dd>
+  <dt>bin</dt>
+  <dd>Contains the source files for the application.
+The main source file for this example is <code>helloworld.dart</code>.</dd>
+  <dt>helloworld.dart</dt>
+  <dd>Contains the Dart source code for this app.</dd>
+</dl>
+
+<p>The <strong>Editor pane</strong> shows
+the contents of <code>helloworld.dart</code>.
+The program prints
+‘Hello, World!’ to the standard output stream
+using the print() function,
+which is provided by the dart:core library.
+The functions and objects defined in the core library
+are automatically available to all Dart applications.</p>
+
+<h2 id="run-cmd-line">Run a command-line app</h2>
+
+<p>To run the helloworld app from Dart Editor:</p>
+
+<ul>
+  <li>Select the helloworld.dart file in the <strong>Files view</strong>.</li>
+  <li>Click the Run button
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.</li>
+</ul>
+
+<p>Dart Editor opens a new panel,
+called the <strong>Output view</strong>,
+and displays the output of the helloworld app.</p>
+
+<p><img class="scale-img-max" src="images/helloworld-output.png" alt="Dart Editor with helloworld output view" /></p>
+
+<h2 id="create-web-app">Create a web app</h2>
+
+<p>Now let’s create a web application.
+As you did when creating a command-line application,
+click the <strong>New Application</strong> button
+<img class="scale-img-max" src="images/newapp.png" width="17" height="16" alt="New App button" />.
+Name the application <code>clickme</code>.
+This time you are creating a web app,
+so select <strong>Web application</strong> from the list
+in the New Application dialog window:</p>
+
+<p><img class="scale-img-max" src="images/new-click-me.png" alt="Create a new web application" /></p>
+
+<p>Dart Editor creates the directory and files needed
+for a boilerplate web application.</p>
+
+<p><img class="scale-img-max" src="images/click-me-files.png" alt="Dart Editor with new web application files" /></p>
+
+<p>As before, the directory is named after your application.
+So is the Dart source file that contains the main() function.
+In addition, Dart Editor creates an HTML file that hosts the app.</p>
+
+<p>The main() function in the clickme app
+contains Dart code 
+that puts text on the browser page
+and registers an <em>event handler</em>—a function
+that responds to user-generated events like a mouse click.
+This code uses API defined in the dart:html library.</p>
+
+<p>In the next tutorial,
+you will build a mini app from scratch,
+creating the Dart source, the HTML source,
+and the CSS source yourself.
+Afterward, you can re-visit the code for clickme.</p>
+
+<h2 id="run-web-app">Run a web app</h2>
+
+<p>To run the clickme app from Dart Editor:</p>
+
+<ul>
+  <li>Select <code>clickme.html</code>.</li>
+  <li>Click the Run button
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.</li>
+</ul>
+
+<p>Dart Editor invokes Dartium providing it with
+the URL for the clickme app’s HTML file.
+Dartium loads the clickme app’s HTML file
+and the embedded app, which looks like this:</p>
+
+<iframe class="running-app-frame" style="height:510px;width:500px;" src="examples/clickme/clickme.html">
+</iframe>
+
+<h3 id="run-as-javascript">Run as JavaScript</h3>
+
+<p>You can run Dart web applications in other browsers
+by compiling to JavaScript.
+Dart Editor provides a convenient menu option for doing so.
+Right click on <code>clickme.html</code>
+and select <strong>Run as JavaScript</strong> from the menu.</p>
+
+<p><img class="scale-img-max" src="images/run-as-javascript-screenshot.png" alt="Run a web app as JavaScript" /></p>
+
+<p>Dart Editor compiles the app to JavaScript and
+invokes your default browser,
+which runs the app.</p>
+
+<h2 id="source-files">About the HTML, CSS and Dart triumvirate</h2>
+
+<p>Typically three files—an HTML file, a Dart file,
+and a CSS file—together implement a Dart web application.
+Each is written in a different language
+and each is responsible for a different aspect of the program:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Language</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HTML</td>
+      <td>Describes the content of the document (the page elements in the document and the structure)</td>
+    </tr>
+    <tr>
+      <td>CSS</td>
+      <td>Governs the appearance of page elements</td>
+    </tr>
+    <tr>
+      <td>Dart</td>
+      <td>Implements the interactivity and dynamic behavior of the program</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>HTML is a language for describing web pages.
+Using tags, HTML sets up the initial page structure,
+puts elements on the page,
+and embeds any scripts for page interactivity.
+HTML sets up the initial document tree
+and specifies element types, classes, and IDs,
+which allow HTML, CSS, and Dart programs to refer to the same elements.</p>
+
+<p>CSS, which stands for Cascading Style Sheets, describes the appearance
+of the elements within a document.
+CSS controls many aspects of formatting:
+type face, font size, color, background color,
+borders, margins, and alignment, to name a few.</p>
+
+<p>Dart code is embedded into an HTML file as a script.
+A Dart program can
+respond to events such as mouse clicks,
+manipulate the elements on a web page dynamically,
+and can save information.</p>
+
+<h2 id="top-level-functions">About main() and other top-level functions</h2>
+
+<p>Dart lets you define <em>top-level</em> functions,
+that is, functions that are not encapsulated within a class or object.
+All apps have at least one top-level function,
+namely the main() function.</p>
+
+<p>The two apps you’ve seen in this tutorial have other top-level functions.
+The Hello World example calls print(),
+a top-level function defined in dart:core.
+And the clickme app defines a top-level function called reverseText().</p>
+
+<p>A function declaration
+has two parts: a <em>signature</em> and a <em>body</em>.</p>
+
+<p><img class="scale-img-max" src="images/function-parts.png" alt="Two parts of a function, the signature and the body" /></p>
+
+<p>The signature sets the function name,
+the data type of its return value,
+and the number and type of its input arguments.</p>
+
+<p><img class="scale-img-max" src="images/signature-parts.png" alt="The parts of a function signature" /></p>
+
+<p>The body is the code that defines the function’s behavior.
+It usually appears between curly braces ({<em>code</em>}).
+If the body is a single expression, then you
+can skip the braces and use the =&gt; shorthand:</p>
+
+<pre class="prettyprint lang-dart">double milesToKM(double miles) =&gt; miles/0.62;</pre>
+
+<p>The milesToKM() function performs a simple arithmetic calculation
+and returns the result.</p>
+
+<p>This function takes a single argument.
+Functions can take multiple arguments,
+in which case the arguments are set apart by commas.</p>
+
+<h2 id="file-names">About file naming conventions</h2>
+
+<p>When creating an application with Dart Editor,
+you are asked to provide an application name.
+By convention, application names,
+and thus, the related files and directories, are lowercase.</p>
+
+<p>As you saw,
+Dart Editor uses the application name for:</p>
+
+<ul>
+  <li>the name of the app’s directory</li>
+  <li>the basename of the main Dart file
+(the Dart file that contains the main() function)</li>
+  <li>the basename of the primary HTML file</li>
+  <li>the basename of the primary CSS file</li>
+</ul>
+
+<p>You should also follow these conventions
+when creating applications outside of Dart Editor.</p>
+
+<h2 id="other-resources">Other resources</h2>
+
+<ul>
+  <li>
+    <a href="/docs/dart-up-and-running/contents/ch04-tools-editor.html">Dart Editor</a>,
+    an excerpt from
+    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>,
+    provides details about using Dart Editor.
+    The excerpt includes, for example,
+    how to set up run-time environments,
+    how to use power features such as autocompletion,
+    debugging, refactoring,
+    and so on.
+  </li>
+  <li>
+    The <a href="/docs/">Programmer's Guide</a>
+    points you to docs, articles,
+    and other resources to help you as you create,
+    test, and deploy Dart code.
+  </li>
+</ul>
+
+<h2 id="what-next">What next?</h2>
+
+<ul>
+  <li>
+    <p>Get the code for all of the Dart tutorials samples.
+<a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
+Download the ZIP file</a>, unzip it,
+and open <code>dart-tutorials-samples</code> in Dart Editor.</p>
+  </li>
+  <li>
+    <p>Go to the next tutorial, <a href="/docs/tutorials/connect-dart-html/">Connect Dart &amp; HTML</a>,
+which steps you through writing a tiny web app from scratch.</p>
+  </li>
+</ul>
+
+
+
+  </article>
+</div>
+
+<!-- NAVI LINKS -->
+<div id="tutorial-navigation-links-bottom" class="row">
+  <div class="col-md-12">
+    <hr />
+    <div class="row">
+      <div class="col-md-3">
+        <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
+      </div>
+      <div class="col-md-3">
+        <a href="/docs/tutorials/"><i class="glyphicon glyphicon-chevron-left"> </i> Home</a>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3">
+        <a href="/docs/tutorials/connect-dart-html/" class="pull-right">Connect Dart &amp; HTML <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+      </div>
+    </div> 
+  </div> 
+</div>
+
+
+    </article>
+    
+	
+    </div>
+  </div>
+</div>
+
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/social-event-analytics.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+<script defer src="/js/os-switcher.js"></script>
+
+<script defer src="/js/editor-downloads-analytics.js"></script>
+
+<script defer src="/js/editor-version.js"></script>
+
+
+</body>
+</html>
+
