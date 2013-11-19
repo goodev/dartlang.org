@@ -22,7 +22,7 @@ header:
 ## 有点空闲时间？来编写个 Dart 应用吧
 
 在该代码实验室中,
-你将从一个框架应用中创建一个私有徽章生成器。
+你将从一个框架应用中创建一个海盗徽章生成器。
 该示例应用简单的介绍了一些 Dart 语言和库的特性。
 该代码实验室假设你具有其他编程语言的背景。
 
@@ -271,17 +271,17 @@ Dart 虚拟机的浏览器。
 ##Step 2: 添加一个输入框 {#step-two}
 
 <div class="trydart-note" markdown="1">
-<strong>Note:</strong> Throughout this code lab,
-continue to edit the files in `1-blankbadge`.
-You can use the files in the other directories to compare to your code
-or to recover if you get off track.
+<strong>提示：</strong> 在该代码实验室中，
+你可以继续编辑在`1-blankbadge`中的文件。
+你可以和其他目录的文件比较来确认你的修改，
+如果遇到问题也可以恢复这些文件。
 </div>
 
-In this step, you add an input field to the app.
-As the user types into the text field,
-the Dart code updates the badge from the value of the text field.
+在该步骤中，将在应用中添加一个输入框。
+当用户在输入框中输入的时候，
+Dart 代码使用输入的值来更新徽章的内容。
 
-### <i class="icon-anchor"> </i> Edit piratebadge.html.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.html.
 
 <div class="row"> <div class="col-md-7" markdown="1">
 
@@ -307,21 +307,21 @@ within the `widgets` &lt;div&gt;.
 
 <i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* The ID for the input element is `inputName`.
-Dart uses CSS selectors, like this ID,
-to get elements from the DOM.
+* 该输入框的 ID 为 `inputName`。
+Dart 使用 CSS 选择器（例如 这个 ID）
+来从 DOM 中查询元素。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Edit piratebadge.dart.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 
-Import the `dart:html`
-library at the top of the file
-(below the copyright).
+在代码文件顶部
+导入 `dart:html`
+(在版权信息下方)。
 
 </div>
 
@@ -338,11 +338,11 @@ library at the top of the file
 
 </div> <div class="col-md-5" markdown="1">
 
-* This imports all classes and other resources from dart:html,
-which provides HTML elements and access to the DOM.
+* 该导入语句将导入 dart:html 包中的所有类和资源，
+提供了 HTML 元素和访问 DOM 的能力。
 
-* Dart Editor helpfully warns you that the import is unused.
-Don't worry about it. You'll fix it in the next step.
+* Dart 编辑器非常乐意的提醒你 导入的内容没有使用。
+先不要关心它。在下一步将修复该问题。
 
 </div> </div>
 
@@ -350,7 +350,7 @@ Don't worry about it. You'll fix it in the next step.
 
 <hr>
 
-Register a function to handle input events on the input field.
+在输入框中添加一个监听器来处理输入事件。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -368,19 +368,19 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* The `querySelector()` function, defined in
-dart:html, gets an element from the DOM.
-Here, the code uses the ID `#inputName`
-to specify the input field.
+* 在 dart:html 中定义的 `querySelector()` 函数从 DOM 中获取
+一个元素。
+这里的代码使用 ID `#inputName` 
+来查询输入框。
 
-* `onInput` registers an event handler for input events.
+* `onInput` 注册监听输入事件的监听器。
 
-* An input event occurs when the user presses a key.
+* 当用户点击键盘的时候触发输入事件。
 
-* You can use either single or double quotes to create a string.
+* 你可以使用单引号或者双引号来创建字符串。
 
-* Dart Editor warns you that the function doesn't exist.
-Let's fix that now.
+* Dart 编辑器提示你该函数不存在。
+现在就创建该函数。
 
 </div> </div>
 
@@ -388,7 +388,7 @@ Let's fix that now.
 
 <hr>
 
-Implement the event handler as a top-level function.
+把事件监听函数实现为顶部（top-level）函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -408,43 +408,43 @@ Implement the event handler as a top-level function.
 
 </div> <div class="col-md-5" markdown="1">
 
-* This function sets the text of the `badgeName` element from the value of the input field.
+* 该函数从输入框中的值设置 `badgeName` 元素的值。
 
-* You can tell that `updateBadge()` is an event handler because it takes an
-`Event` object.
+* 可以发现 `updateBadge()` 是一个事件处理函数，
+其参数为一个 `Event` 对象。
 
-* The element that generated the event, the input field, is `e.target`.
+* 产生输入事件的元素为 `e.target` 对象。
 
-* The `as` keyword typecasts `e.target` to an
-`InputElement` to silence warnings from Dart Editor.
+* `as` 关键字把 `e.target` 转换为一个
+`InputElement` ，这样 Dart 编辑器就不会报提醒了。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Run the app.
+### <i class="icon-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
 
-Save your files with **File > Save All**.
+通过菜单 **File > Save All** 保存修改的内容。
 
-Use the Run button
+使用 Dart 编辑器的 Run 按钮
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
-in Dart Editor to run the app.
+运行应用。
 
-Compare your app to the one running below.
+比较你的应用和如下是否一样。
 
-Type in the input field.
+在输入框中输入内容。
 
 <iframe class="running-app-frame"
         style="height:220px;width:530px;"
         src="examples/2-inputnamebadge/piratebadge.html">
 </iframe>
 
-#### Problems?
+#### 问题？
 
-Check your code against the files in `2-inputbadge`.
+如果遇到问题，把你修改的代码和 `2-inputbadge` 中的代码比较一下。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/2-inputnamebadge/piratebadge.html)
 
@@ -456,15 +456,15 @@ Check your code against the files in `2-inputbadge`.
 
 ##Step 3: 添加一个按钮 {#step-three}
 
-In this step, you add a button to the app.
-The button is enabled when the text field contains no text.
-When the user clicks the button,
-the app puts the name `Anne Bonney` on the badge.
+在该步骤中，将在应用中添加一个按钮。
+当输入框中没有内容的时候按钮启用。
+当用户点击按钮的时候，
+应用把 `Anne Bonney` 这个名字输入到徽章中。
 
-### <i class="icon-anchor"> </i> Edit piratebadge.html.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.html.
 
 <div class="trydart-step-details" markdown="1">
-Add the &lt;button&gt; tag below the input field.
+在输入框下方添加 &lt;button&gt; 标签。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -490,15 +490,15 @@ Add the &lt;button&gt; tag below the input field.
 
 <i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* The button has the ID `generateButton` so
-the Dart code can get the element.
+* 该按钮有个 ID `generateButton` ，这样
+Dart 代码就可以通过 ID 获取按钮。
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> Edit piragebadge.dart.
+### <i class="icon-anchor"> </i> 编辑 piragebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
-Below the import, declare a top-level variable to hold the `ButtonElement`.
+在 import 语句下方，定义一个顶级 `ButtonElement` 变量。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -515,10 +515,10 @@ import 'dart:html';
 
 </div> <div class="col-md-5" markdown="1">
 
-* Top-level variables are names at the library level.
+* 顶级（Top-level）变量是库级别的名称。
 
-* ButtonElement is one of many different kinds of DOM elements
-provided by the dart:html library.
+* ButtonElement 是 dart:html 库中
+众多 DOM 元素中的一个。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -528,7 +528,7 @@ provided by the dart:html library.
 
 <hr>
 
-Wire up the button with an event handler.
+使用一个事件处理函数把按钮联系起来。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -547,7 +547,7 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-* `onClick` registers a mouse click handler.
+* `onClick` 注册一个鼠标点击事件。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -557,7 +557,7 @@ void main() {
 
 <hr>
 
-Add a top-level function that changes the name on the badge.
+添加一个顶级函数来修改徽章的名字。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -576,7 +576,7 @@ Add a top-level function that changes the name on the badge.
 
 </div> <div class="col-md-5" markdown="1">
 
-* The function updates the HTML page with a new name.
+* 该函数使用新的名字修改徽章内容。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -586,7 +586,7 @@ Add a top-level function that changes the name on the badge.
 
 <hr>
 
-Implement the click handler for the button.
+实现按钮的点击处理函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -605,7 +605,7 @@ Implement the click handler for the button.
 
 </div> <div class="col-md-5" markdown="1">
 
-* This function sets the badge name to `Anne Bonney`.
+* 该函数设置徽章的名字为 `Anne Bonney`。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -614,7 +614,7 @@ Implement the click handler for the button.
 <div class="trydart-step-details" markdown="1">
 
 <hr>
-Modify `updateBadge()` to call `setBadgeName()`.
+修改 `updateBadge()` 函数来调用 `setBadgeName()`函数。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -632,7 +632,7 @@ void updateBadge(Event e) {
 
 </div> <div class="col-md-5" markdown="1">
 
-* Assign the input field's value to a local string.
+* 设置输入框的值为本地字符串。
 
 </div></div>
 
@@ -641,7 +641,7 @@ void updateBadge(Event e) {
 
 <hr>
 
-Add a skeleton if-else statement to `updateBadge()`.
+在 `updateBadge()` 中添加一个 if-else 骨架代码。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -664,14 +664,14 @@ void updateBadge(Event e) {
 
 </div> <div class="col-md-5" markdown="1">
 
-* The `String` class has useful functions and properties 
-for working with string data,
-such as `trim()` and `isEmpty`.
+* `String` 类有一些用来处理字符串数据的
+函数和属性，
+例如 `trim()` 和 `isEmpty`。
 
-* String comes from the `dart:core` library,
-which is automatically imported into every Dart program.
+* String 类在 `dart:core` 库中定义，
+每个 Dart 程序中都会自动导入该库。
 
-* Dart has common programming language constructs like `if`-`else`.
+* Dart 具有通用的编程语言概念，例如  `if`-`else`。
 
 </div></div>
 
@@ -679,7 +679,7 @@ which is automatically imported into every Dart program.
 
 <hr>
 
-Now fill in the if-else statement to modify the button as needed.
+现在修改 if-else 语句来根据条件改变按钮的状态。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -704,12 +704,13 @@ void updateBadge(Event e) {
 
 </div> <div class="col-md-5" markdown="1">
 
-* The cascade operator (`..`) allows you to perform multiple
-operations on the members of a single object. 
+* 级联操作符 (`..`) 可以让你在同一个对象上
+操作多个函数和属性。
 
-* The `updateBadge()` code uses the cascade operator
-to set two properties on the button element.
-The result is the same as this more verbose code:
+* `updateBadge()` 代码用级联操作符来设置
+按钮的两个属性。
+和下面的代码具
+有同样的效果。
 
 <pre>
 genButton.disabled = false;
@@ -719,22 +720,22 @@ genButton.text = 'Aye! Gimme a name!';
 </div></div>
 
 
-### <i class="icon-anchor"> </i> Run the app.
+### <i class="icon-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
 
-Save your files with **File > Save All**.
+使用菜单 **File > Save All** 保存文件。
 
-Use the Run button
+使用 Dart 编辑器中的 Run 按钮
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
-in Dart Editor to run the app.
+运行应用。
 
-Compare your app to the one running below.
+比较你的应用和如下是否一样。
 
-Type in the input field.
-Remove the text from the input field.
-Click the button.
+在输入框中输入文字。
+从输入框中删除文字。
+点击按钮。
 
 <iframe class="running-app-frame"
         style="height:220px;width:530px;"
@@ -742,9 +743,9 @@ Click the button.
 </iframe>
 
 
-#### Problems?
+#### 问题？
 
-Check your code against the files in `3-buttonbadge`.
+如果遇到问题，把你的代码和 `3-buttonbadge`中的代码比较一下。
 
 * [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/3-buttonbadge/piratebadge.html)
 
@@ -755,19 +756,19 @@ Check your code against the files in `3-buttonbadge`.
 
 <hr>
 
-##Step 4: Create a PirateName class {#step-four}
+##Step 4: 创建 PirateName 类 {#step-four}
 
-In this step, you change only the Dart code.
-You create a class to represent a pirate name.
-When created, an instance of this class
-randomly selects a name and appellation from a list,
-or optionally you can provide a name
-and an appellation to the constructor.
+在该步骤中，你只需要修改 Dart 代码。
+创建一个代表海盗名称的类。
+完成后，该类随即的
+从一个列表中选择名字和称呼。
+或者你也可以在构造函数
+中提供名字和称呼。
 
-### <i class="icon-anchor"> </i> Edit piratebadge.dart.
+### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
-Add an import to the top of the file.
+在文件顶部添加一个 import 语句。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -786,10 +787,10 @@ import 'dart:html';
 
 <i class="icon-key"> </i> <strong> 关键信息 </strong>
 
-* Using the `show` keyword,
-you can import only the classes, functions, or properties you need.
+* 使用 `show` 关键字来
+导入你仅仅需要的类、函数、和属性。
 
-* `Random` provides a random number generator.
+* `Random` 提供了一个随机数生成器。
 
 </div></div>
 
@@ -797,7 +798,7 @@ you can import only the classes, functions, or properties you need.
 
 <hr>
 
-Add a class declaration to the bottom of the file.
+在文件底部定义一个类。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -815,7 +816,7 @@ Add a class declaration to the bottom of the file.
 
 </div> <div class="col-md-5" markdown="1">
 
-* The class declaration provides the class name.
+* 这里定义了类的名字。
 
 </div></div>
 
@@ -823,7 +824,7 @@ Add a class declaration to the bottom of the file.
 
 <hr>
 
-创建一个类-level Random object.
+创建一个类级别（静态）的 Random 对象。
 </div>
 
 <div class="row"> <div class="col-md-7">
@@ -840,13 +841,13 @@ class PirateName {
 
 </div> <div class="col-md-5" markdown="1">
 
-* `static` defines a class-level field. That is,
-the random number generator is shared with all
-instances of this class.
+* `static` 定义一个类变量。这样，
+随机数生成器将在所有该类的实例
+中共享。
 
-* Dart Editor italicizes static names.
+* Dart 编辑器用斜体字显示静态变量。
 
-* Use `new` to call a constructor.
+* 使用 `new` 来调用构造函数。
 
 </div></div>
 
@@ -1082,14 +1083,14 @@ void generateBadge(Event e) {
 
 <div class="trydart-step-details" markdown="1">
   
-Save your files with **File > Save All**.
+使用菜单 **File > Save All** 保存文件。
 
 Use the Run button
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
 in Dart Editor to run the app.
 
-Compare your app to the one running below.
+比较你的应用和如下是否一样。
 
 Type in the input field.
 Remove the text from the input field.
@@ -1101,7 +1102,7 @@ Click the button.
 </iframe>
 
 
-#### Problems?
+#### 问题？
 
 Check your code against the files in `4-classbadge`.
 
@@ -1339,14 +1340,14 @@ void main() {
 
 <div class="trydart-step-details" markdown="1">
   
-Save your files with **File > Save All**.
+使用菜单 **File > Save All** 保存文件。
 
 Use the Run button
 <img src="images/run.png" width="16" height="16"
      alt="Run button">
 in Dart Editor to run the app.
 
-Compare your app to the one running below.
+比较你的应用和如下是否一样。
 
 Click the button to put a name on the badge.
 Start the app again by duplicating this window.
@@ -1357,7 +1358,7 @@ Start the app again by duplicating this window.
 </iframe>
 
 
-#### Problems?
+#### 问题？
 
 Check your code against the files in `5-localbadge`.
 
@@ -1691,7 +1692,7 @@ leaving the UI disabled.
 
 <div class="trydart-step-details" markdown="1">
   
-Save your files with **File > Save All**.
+使用菜单 **File > Save All** 保存文件。
 
 Use the Run button
 <img src="images/run.png" width="16" height="16"
@@ -1710,7 +1711,7 @@ Compare your app to the final version running below.
 </iframe>
 
 
-#### Problems?
+#### 问题？
 
 Check your code against the files in `6-piratebadge_json`.
 
