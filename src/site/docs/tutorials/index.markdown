@@ -10,36 +10,36 @@ rel:
 tutorial:
   id: tut-home
 next: get-started/
-next-title: "Get Started"
+next-title: "开始"
 ---
 
 {% capture content %}
 
 <img class="scale-img-max" src="images/banner.png">
 
-**The Dart Tutorials** teach you how to build web applications
-using the Dart language, tools, and APIs.
+**Dart 教程**告诉你如何用 Dart 语言、工具和
+ API 创建 web 应用。
 
-<strong>Who are you?</strong>
+<strong>前提条件</strong>
 <ul>
-<li> You already know how to program in a structured language like C or Java.</li>
-<li> You are familiar with object-oriented programming.</li>
-<li> You might not know how to program the browser
-     through the DOM (Document Object Model).</li>
+<li> 你已经知道如何编写结构化程序语言，例如 C 或者 Java。</li>
+<li> 你熟悉面向对象编程概念。</li>
+<li> 你可以不了解如何通过
+     DOM (Document Object Model)来实现浏览器编程。</li>
 </ul>
 
-<strong>Let's go!</strong> Follow the tutorials in order
-from left to right...or choose just the ones you need.
+<strong>出发吧！</strong> 你可以按照从左到右的顺序
+逐步学习本教程，也可以直接选择你需要的部分。
 
 <div class="tute-tabs">
 <div class="tabbable">
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#basics" data-toggle="tab">Get started</a></li>
-    <li><a href="#dom" data-toggle="tab">Browser</a></li>
+    <li class="active"><a href="#basics" data-toggle="tab">开始</a></li>
+    <li><a href="#dom" data-toggle="tab">浏览器</a></li>
     <li><a href="#packages" data-toggle="tab">Packages</a></li>
     <li><a href="#polymer" data-toggle="tab">Polymer</a></li>
-    <li><a href="#forms" data-toggle="tab">Forms & Data</a></li>
-    <!--<li><a href="#mobile" data-toggle="tab">Mobile</a></li>-->
+    <li><a href="#forms" data-toggle="tab">表单和数据</a></li>
+    <!--<li><a href="#mobile" data-toggle="tab">移动浏览器</a></li>-->
   </ul>
 
   <div class="tab-content">
@@ -47,41 +47,41 @@ from left to right...or choose just the ones you need.
   <!-- BASICS TAB -->
     <div class="tab-pane active" id="basics">
 
-      Download the software and
-      discover which tools and libraries you get with the bundle.
-      Run two sample apps.
+              下载软件并且看看里面包含那些工具
+              和类库。
+              并运行如下两个示例程序。
 
       <div class="row">
 
         <!-- Getting Started -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="get-started/"><img src="images/target.png" height="20" width="20">&nbsp;Get started</a></h4>
-            <p>Get Dart. Run two apps.
+          <h4 class="no-permalink"><a href="get-started/"><img src="images/target.png" height="20" width="20">&nbsp;开始</a></h4>
+            <p>下载 Dart。运行两个示例应用。
             </p>
           <img src="images/clickme-screenshot.png" width="300">
           </section>
         </div>
         <div class="col-md-6">
           <section>
-            <h4 class="no-permalink">Get the sample code</h4>
-            Before moving on,
-            get the code for all the tutorials' samples.
+            <h4 class="no-permalink">下载示例代码</h4>
+                            在继续下一步之前，
+                            先下载该教程中的所有示例代码。
             <ol>
               <li><a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-                    Download the ZIP file.
+                    下载示例代码 ZIP 压缩包。
                   </a>
               </li>
               <li>
-                Unzip it.
+                                  解压。
               </li>
               <li>
-                Open the dart-tutorials-samples directory in Dart Editor.
+                在 Dart 编辑器中打开 dart-tutorials-samples 目录。
               </li>
               <li>
-                Go to the next tutorial,
+                找到下一个教程
                 <a href="/docs/tutorials/connect-dart-html">
-                  Connect Dart & HTML
+                  连接 Dart 和 HTML。
                 </a>.
               </li>
             </ol>
@@ -95,20 +95,20 @@ from left to right...or choose just the ones you need.
   <!-- DOM TAB -->
     <div class="tab-pane" id="dom">
 
-      Web pages are programmed in HTML and represented
-      within the browser as a tree structure
-      called the DOM (Document Object Model).
-      Dart apps can modify the DOM programmatically,
-      thus dynamically changing the web page.
-      First, learn how to connect Dart and HTML.
-      Then learn how to add, move, and remove DOM elements.
+      网页用 HTML 编程并且在浏览器中显示为一个
+      被称为 DOM(Document Object Model) 
+      的树形结构。
+      Dart 应用可以通过代码修改 DOM，
+      这样可以动态的修改网页内容。
+      首先，学习如何把 Dart 和 HTML 串联起来。
+      然后再学习如何 添加、移动和删除 DOM 元素。
 
       <div class="row">
         <!-- Connect Dart & HTML -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="connect-dart-html/"><img src="images/target.png" height="20" width="20">&nbsp;Connect Dart &amp; HTML</a></h4>
-            <p>Include a Dart script in an HTML page.
+          <h4 class="no-permalink"><a href="connect-dart-html/"><img src="images/target.png" height="20" width="20">&nbsp;连接 Dart 和 HTML</a></h4>
+            <p>在 HTML 页面中添加一个 Dart 脚本标签。
             </p>
           <img src="images/miniapp-screenshot.png" width="300">
           </section>
@@ -117,8 +117,8 @@ from left to right...or choose just the ones you need.
         <!-- Add Elements -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="add-elements/"><img src="images/target.png" height="20" width="20">&nbsp;Add Elements to the DOM</a></h4>
-          <p>Add elements to the web page and move them.</p>
+          <h4 class="no-permalink"><a href="add-elements/"><img src="images/target.png" height="20" width="20">&nbsp;在 DOM 中添加元素</a></h4>
+          <p>在网页中添加和移动元素。</p>
           <img src="images/todo-screenshot.png" width="300">
           </section>
         </div>
@@ -130,8 +130,8 @@ from left to right...or choose just the ones you need.
         <!-- Remove Elements -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="remove-elements/"><img src="images/target.png" height="20" width="20">&nbsp;Remove DOM Elements</a></h4>
-          <p>Delete elements from the web page.</p>
+          <h4 class="no-permalink"><a href="remove-elements/"><img src="images/target.png" height="20" width="20">&nbsp;删除 DOM 元素</a></h4>
+          <p>从网页中删除元素。</p>
           <img src="images/todo-with-delete-screenshot.png" width="300">
           </section>
         </div>
@@ -144,16 +144,16 @@ from left to right...or choose just the ones you need.
   <!-- PACKAGES TAB -->
     <div class="tab-pane" id="packages">
 
-      Dart developers have been busy creating code libraries that can help you be more productive.
-      Leverage that code or put your code out in the world to share with others.
+      Dart 开发者一直忙于创建代码库来帮助你提高生产率。
+      利用这些代码库或者把你的代码共享给其他人使用。
 
       <div class="row">
 
         <!-- Packages -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="shared-pkgs/"><img src="images/target.png" height="20" width="20">&nbsp;Install Shared Packages</a></h4>
-          <p>Organize and share code at <a href="http://pub.dartlang.org/">pub.dartlang.org</a>.</p>
+          <h4 class="no-permalink"><a href="shared-pkgs/"><img src="images/target.png" height="20" width="20">&nbsp;安装共享代码</a></h4>
+          <p>在 <a href="http://pub.dartlang.org/">pub.dartlang.org</a>分享和组织代码。</p>
           <img src="images/add-packages-screenshot.png" width="300">
           </section>
         </div>
@@ -170,7 +170,7 @@ from left to right...or choose just the ones you need.
         <div class="col-md-6">
           <section>
           <h4 class="no-permalink"><a href="polymer-intro/"><img src="images/target.png" height="20" width="20">&nbsp;Define a Custom Element</a></h4>
-          <p>Create a custom HTML element using Polymer.</p>
+          <p>使用 Polymer 创建自定义的 HTML 元素。</p>
           <img src="images/stopwatch-screenshot.png" width="200">
           </section>
         </div>
@@ -184,19 +184,19 @@ from left to right...or choose just the ones you need.
   <!-- FORMS TAB -->
     <div class="tab-pane" id="forms">
 
-      Various classes in the Dart libraries help you get, send, receive,
-      and save user data.
-      You can use input elements within forms to get data from users.
-      You can use JSON to format data and HttpRequest to send requests and receive responses.
-      And, finally, you can save data on the client with IndexedDB.
+      在 Dart 库中有很多类可以帮助你 获取、发送、接
+      收和保存用户数据。
+      你可以在 form 中用 input 元素来收集用户数据。
+      你可以用 JSON 来格式化数据，并用 HttpRequest来发送和接收数据。
+      最后，你可以用 IndexedDB 在客户端保存数据。
 
       <div class="row">
 
         <!-- Fetch Data -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="fetchdata/"><img src="images/target.png" height="20" width="20">&nbsp;Fetch Data Dynamically</a></h4>
-          <p>Load data from a static file or from a server.</p>
+          <h4 class="no-permalink"><a href="fetchdata/"><img src="images/target.png" height="20" width="20">&nbsp;动态获取数据</a></h4>
+          <p>从静态文件或者服务器获取数据。</p>
           <img src="images/allaboutyou-screenshot.png" width="300">
           </section>
         </div>
@@ -204,8 +204,8 @@ from left to right...or choose just the ones you need.
         <!-- Forms -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="forms/"><img src="images/target.png" height="20" width="20">&nbsp;Get Input from a Form</a></h4>
-          <p>Use forms and input elements to get data.</p>
+          <h4 class="no-permalink"><a href="forms/"><img src="images/target.png" height="20" width="20">&nbsp;从表单中收集数据</a></h4>
+          <p>使用 form 和 input 元素来收集数据。</p>
           <img src="images/slambook-screenshot.png" width="300">
           </section>
         </div>
@@ -215,8 +215,8 @@ from left to right...or choose just the ones you need.
         <!-- IndexedDB -->
         <div class="col-md-6">
           <section>
-          <h4 class="no-permalink"><a href="indexeddb/"><img src="images/target.png" height="20" width="20">&nbsp;Use IndexedDB</a></h4>
-          <p>Save data on the client with IndexedDB.</p>
+          <h4 class="no-permalink"><a href="indexeddb/"><img src="images/target.png" height="20" width="20">&nbsp;使用 IndexedDB</a></h4>
+          <p>用 IndexedDB 在客户端保存数据。</p>
           <img src="images/countdown-screenshot.png" width="300">
           </section>
         </div>
@@ -232,8 +232,8 @@ from left to right...or choose just the ones you need.
 
         <div class="col-md-6" style="border-right:1px solid Lavender">
           <section>
-          <h4 class="no-permalink"><a href="mobile/"><img src="images/target.png" height="20" width="20">&nbsp;Write for Mobile Devices</a></h4>
-          <p>Mobile devices are taking over the world!</p>
+          <h4 class="no-permalink"><a href="mobile/"><img src="images/target.png" height="20" width="20">&nbsp;适应移动设备</a></h4>
+          <p>移动设备已经占领世界了！</p>
           <img src="images/countdown-screenshot.png" width="300">
           </section>
         </div>

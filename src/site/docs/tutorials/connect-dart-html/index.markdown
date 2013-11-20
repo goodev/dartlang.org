@@ -1,14 +1,14 @@
 ---
 layout: default
-title: "Connect Dart &amp; HTML"
-description: "Shows basic scaffolding of a Dart web app"
+title: "连接 Dart 和 HTML"
+description: "演示 Dart web 应用的基本结构"
 has-permalinks: true
 tutorial:
   id: connect-dart-html
 next: add-elements/
-next-title: "Add Elements to the DOM"
+next-title: "在 DOM 中添加元素"
 prev: get-started/
-prev-title: "Get started"
+prev-title: "开始"
 ---
 
 {% capture whats_the_point %}
