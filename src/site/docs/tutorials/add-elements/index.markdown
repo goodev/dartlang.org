@@ -1,36 +1,36 @@
 ---
 layout: default
-title: "Add Elements to the DOM"
-description: "You have an Element object, now what?"
+title: "在 DOM 中添加元素"
+description: "你有一个 Element 对象，然后呢？"
 has-permalinks: true
 tutorial:
   id: add-elements
 next: remove-elements/
-next-title: "Remove DOM Elements"
+next-title: "删除 DOM 元素"
 prev: connect-dart-html/
-prev-title: "Connect Dart & HTML"
+prev-title: "连接 Dart 和 HTML"
 ---
 
 {% capture whats_the_point %}
 
-* In Dart, page elements are of type Element.
-* An Element knows its parent.
-* An Element keeps its children in a List\<Element>.
-* Change the DOM by adding or removing children of elements.
-* Respond to user input with an EventListener.
+* 在 Dart 中，页面元素都是 Element 类型。
+* 一个 Element 知道它的父节点。
+* 一个 Element 在 List\<Element> 中保存所有子节点。
+* 通过添加删除子元素来修改 DOM 结构。
+* 通过 EventListener 来响应用户输入。
 
 {% endcapture %}
 
 {% capture sample_links %}
 
-<p> This tutorial features these examples:</p>
+<p> 该教程使用如下两个示例应用：</p>
 * todo
 * anagram
 
 <p>
-Don't have the source code?
+还没有示例代码？
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  点击下载。
 </a>
 
 {% endcapture %}
@@ -39,47 +39,47 @@ Don't have the source code?
 
 <div class="tute-target-title">
 <h1>{{page.title}}</h1>
-<h3>Dynamically add items to the browser page.</h3>
+<h3>动态的在网页中添加元素</h3>
 </div>
 
-As you learned in the previous tutorial,
-the DOM represents the structure
-of a web page document using a simple tree structure.
-Each node in the tree represents an item on the page.
-Each node in the tree keeps track of both
-its parent and its children.
-In Dart, the
+在前面的教程你中学到了
+ DOM 通过简单的树形结构
+ 来代表网页文档结构。
+树中的每个节点都代表页面的一个元素。
+每个节点都知道它的父节点和
+所有子节点。
+在 Dart 中，
 <a href="https://api.dartlang.org/dart_html/Node.html" target="_blank">Node</a>
-class contains the methods and properties
-that implement a node's tree functionality.
+类包含了实现节点树功能的
+函数和属性。
 
-HTML page elements are one kind of node that can be in the DOM tree.
-They have a rectangular area on the page and can receive events.
-Examples of elements include
-heading elements, paragraph elements, table elements,
-button elements, and so on.
+HTML 页面元素是 DOM 树中的一种节点。
+他们在页面上占据一个矩形框，并且可以接收事件。
+标题、段落、表格、
+按钮 等都是
+页面元素的示例。
 
-In Dart,
-elements are implemented by the
+在 Dart 中，元素
+由
 <a href="https://api.dartlang.org/dart_html/Element.html" target="_blank">Element</a>
-class, which is a subclass of Node.
-Because the nodes you care about most are usually elements,
-this tutorial focuses on Element,
-rather than on Node.
+类实现，该类是 Node 的子类。
+由于你通常只关心元素节点，所以
+该教程主要介绍 Element 类，而
+不是 Node 类。
 
-* [Copy and run the todo app](#copy-app)
-* [About parent and child Elements in Dart](#tree-structure)
-* [Setting up the page in HTML](#html-code)
-* [Getting an element from the DOM](#dart-code)
-* [Registering an event handler](#event-handler)
-* [About EventListener functions](#about-event-listeners)
-* [Adding an element to the DOM tree](#add-elem)
-* [Styling the page elements](#about-css)
-* [Moving elements within the DOM tree](#moving-elements)
-* [Other resources](#other-resources)
-* [What next?](#what-next)
+* [复制并运行 todo 应用](#copy-app)
+* [关于 Dart 中的父和子元素](#tree-structure)
+* [设置 HTML 页面](#html-code)
+* [从 DOM 中获取一个元素](#dart-code)
+* [注册一个事件监听器](#event-handler)
+* [关于 EventListener 函数](#about-event-listeners)
+* [在 DOM 树中添加一个元素](#add-elem)
+* [给页面元素应用样式](#about-css)
+* [在 DOM 树中移动元素](#moving-elements)
+* [其他资源](#other-resources)
+* [接下来干啥？](#what-next)
 
-##Copy and run the todo app {#copy-app}
+##复制并运行 todo 应用 {#copy-app}
 
 In this tutorial, you will be working with a sample web app
 that is a partial implementation of a todo list.
@@ -101,7 +101,7 @@ Right now, this app is for procrastinators only
 because the program can only add items to your to do list
 but not remove them.
 
-##About parent and child Elements in Dart {#tree-structure}
+##关于 Dart 中的父和子元素 {#tree-structure}
 
 The Node class in Dart implements the basic treeing behavior
 for nodes in the Dart DOM.
@@ -178,7 +178,7 @@ When you change an Element or its child Elements in your Dart program,
 you change the DOM and therefore the web page.
 The browser re-renders the page automatically.
 
-##Setting up the page in HTML {#html-code}
+##设置 HTML 页面 {#html-code}
 
 Let's take a look at the todo app
 to see how it dynamically
@@ -207,7 +207,7 @@ containing the task items.
 Dart code adds elements to this list
 whenever the user enters text into the input element.
 
-##Getting an element from the DOM {#dart-code}
+##从 DOM 中获取一个元素 {#dart-code}
 
 The following diagram shows
 the Dart code for the todo app.
@@ -240,7 +240,7 @@ This program uses three:
 | \<li> | <a href="https://api.dartlang.org/dart_html/LIElement.html" target="_blank">LIElement</a> |
 {: .table}
 
-## Registering an event handler {#event-handler}
+## 注册一个事件监听器 {#event-handler}
 
 When a user enters text into the input field,
 a _change_ event fires,
@@ -264,7 +264,7 @@ that an input element can generate.
 For example, you can use `click` to handle mouse clicks,
 or `keyDown` for when the user presses a key on the keyboard.
 
-##About EventListener functions {#about-event-listeners}
+##关于 EventListener 函数 {#about-event-listeners}
 
 The argument passed to the listen() method is a _callback function_
 of type 
@@ -294,7 +294,7 @@ the Event object also knows where the event occurred.
 
 The addToDoItem() function ignores the Event object passed to it.
 
-##Adding an element to the DOM tree {#add-elem}
+##在 DOM 树中添加一个元素 {#add-elem}
 
 The change event handler has the following code:
 
@@ -310,7 +310,7 @@ When the DOM changes, the browser re-renders the browser page.
 The effect, in our todo app, is that a new bullet item appears 
 in the to do list.
 
-##Styling the page elements {#about-css}
+##给页面元素应用样式 {#about-css}
 
 Let's take a look at the CSS file for this app.
 
@@ -332,7 +332,7 @@ This rule matches all \<li> elements in the
 element with the ID to-do-list, thus styling
 each item in the to do list.
 
-##Moving elements within the DOM tree {#moving-elements}
+##在 DOM 树中移动元素 {#moving-elements}
 
 Here's an example that shows how to move an element within the DOM.
 **Try it!** Form a word by clicking the letter tiles.
@@ -369,7 +369,7 @@ automatically removes it from its previous parent.
 <img class="scale-img-max" src="images/anagram-move.png"
      alt="The mouse click handler adds the button to the word, thus moving it">
 
-##Other resources
+##其他资源
 
 <ul>
   <li>
@@ -390,7 +390,7 @@ automatically removes it from its previous parent.
   </li>
 </ul>
 
-##What next?
+##接下来干啥？
 
 The next tutorial, [Remove DOM Elements](/docs/tutorials/remove-elements/),
 describes how to remove elements from the DOM and items off your todo list.
