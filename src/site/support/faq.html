@@ -15,9 +15,9 @@ has-permalinks: true
   as an early technology preview rather than keeping it under wraps until version 1.0, some important
   open questions remain. We hope to address them with upcoming work and experimentation, inside and
   outside of Google.
-  这里解答了很多我们曾经被问及的有关Dart的问题. 由于我们在1.0版本正式发布之前,只将Dart作为一个
-  早期的技术预览版发布,因此前期一些重要的问题依然保留下来.我们希望在未来的工作和实验中处理他们,
-  无论是在谷歌内部还是外部.
+  这里解答了很多我们曾经被问及的有关Dart的问题。由于我们在1.0版本正式发布之前，只将Dart作为一个
+  早期的技术预览版发布。因此前期一些重要的问题依然保留下来。我们希望在未来的工作和实验中处理他们。
+  无论是在谷歌内部还是外部。
 </p>
 
 <section id="contents">
@@ -27,10 +27,10 @@ has-permalinks: true
   <li><a href="#strategy" class="faq-topic">策略</a>
   <ol>
     <li><a href="#why-dart">为什么用 Dart?</a></li>
-    <li><a href="#why-fix-the-language">Dart语言是否是我们需要的用来弥补目前WEB开发的不足?</a></li>
+    <li><a href="#why-fix-the-language">Dart语言是否是我们需要的用来弥补目前WEB开发的不足？</a></li>
     <li><a href="#does-dart-divert-effort">Dart 能否替代基于 JavaScript 的 WEB 开发？</a></li>
     <li><a href="#will-dart-be-standardized">谷歌是否计划把 Dart 作为一门标准体系？</a></li>
-    <li><a href="#how-will-dart-take-input">到此,你们将怎么加强 Dart 的更新</a></li>
+    <li><a href="#how-will-dart-take-input">到此，你们将怎么加强 Dart 的更新</a></li>
     <li><a href="#why-not-designed-by-standards-body">为什么谷歌不在一开始就将 Dart 作为一个开放的标准发布？</a></li>
     <li><a href="#future-for-GWT"> GWT 的未来?</a></li>
     <li><a href="#why-not-multi-language-VM">谷歌为什么不开发一个包含 Dart 的多语言字节码虚拟机目标平台？</a></li>
@@ -42,41 +42,41 @@ has-permalinks: true
     <li><a href="#compare-to-java">Dart 跟 Java 的区别</a></li>
     <li><a href="#compare-to-closure">Dart 的语法结构与比 JavaScript 有哪些优势？</a></li>
     <li><a href="#compare-to-coffeescript">Dart 与 CoffeeScript 比较,优势在哪里？</a></li>
-    <li><a href="#typescript">谷歌是怎样看待 TypeScript 的?</a></li>
-    <li><a href="#compare-to-go">Dart 与 Go 会有联系么?</a></li>
-    <li><a href="#compare-to-everything-else">为什么 Dart 不像 Haskell / Smalltalk / Python / Scala / 等其他语言?</a></li>
+    <li><a href="#typescript">谷歌是怎样看待 TypeScript 的？</a></li>
+    <li><a href="#compare-to-go">Dart 与 Go 会有联系么？</a></li>
+    <li><a href="#compare-to-everything-else">为什么 Dart 不像 Haskell / Smalltalk / Python / Scala / 等其他语言？</a></li>
     <li><a href="#earth-shattering-syntactic-kaboom">为什么 Dart 的语法不做的更令人期待呢？</a></li>
     <li><a href="#is-it-a-dynamic-language">如果没有 eval() 方法或者不能在运行时给变量赋值, Dart 还能算是动态语言么？</a></li>
-    <li><a href="#can-add-reflection">Dart 会增加"反射"么?</a></li>
+    <li><a href="#can-add-reflection">Dart 会增加"反射"么？</a></li>
     <li><a href="#can-add-everything">Dart 会添加数组、模式匹配、非空类型、局部变量、可选的分号等元素？</a></li>
   </ol> </li>
 
   <li><a href="#types" class="faq-topic">类型</a>
   <ol>
-    <li><a href="#type-inference">Does Dart have type inference?</a></li>
-    <li><a href="#why-types-optional">Why are type annotations optional?</a></li>
-    <li><a href="#why-types-unsound">Why is the type system designed to be unsound?</a></li>
-    <li><a href="#sound-types-for-performance">But don't you need sound typing information to get high performance?</a></li>
-    <li><a href="#types-why-no-runtime-effect">Why do type annotations have no effect on the runtime behavior?</a></li>
-    <li><a href="#why-covariant-generics">Why are generics covariant?</a></li>
+    <li><a href="#type-inference">Dart 有类型推断么？</a></li>
+    <li><a href="#why-types-optional">为什么类型注释是可选的？</a></li>
+    <li><a href="#why-types-unsound">为什么类型系统设计的不健全？</a></li>
+    <li><a href="#sound-types-for-performance">不需要生命类型信息来提升性能么?</a></li>
+    <li><a href="#types-why-no-runtime-effect">为什么类型注释在运行时是无的？</a></li>
+    <li><a href="#why-covariant-generics">为什么泛型是协变的？</a></li>
   </ol> </li>
 
-  <li><a href="#tools" class="faq-topic">Usage and tools</a>
+  <li><a href="#tools" class="faq-topic">用法与工具</a>
   <ol>
-    <li><a href="#should-i-use-dart-yet">Should I write my web app in Dart?</a></li>
-    <li><a href="#interop-with-js-libs">How does Dart code interoperate with JavaScript libraries?</a></li>
-    <li><a href="#js-codebase-integration">I have a large JavaScript codebase.  How would I migrate it to Dart?</a></li>
-    <li><a href="#porting-from-GWT">I have a large application written in GWT. How do I port it to Dart?</a></li>
-    <li><a href="#what-browsers-supported">What browsers do you plan to support as JavaScript compilation targets?</a></li>
-    <li><a href="#what-browsers-have-dart">What browsers support Dart now?</a></li>
-    <li><a href="#hello-world-js-size">Why was the JavaScript output for "Hello world" so big?</a></li>
-    <li><a href="#debugging-output-js">How do I debug Dart code after it's been compiled to JavaScript?</a></li>
-    <li><a href="#what-input-compiles">Will any valid Dart code compile to JavaScript, or are there limitations?</a></li>
-    <li><a href="#json-support">Does Dart support JSON?</a></li>
-    <li><a href="#server-support">Can Dart run on the server?</a></li>
+    <li><a href="#should-i-use-dart-yet">我应该用 Dart 开发WEB应用程序么？</a></li>
+    <li><a href="#interop-with-js-libs">Dart 代码与 JavaScript 库是如何交互操作的？</a></li>
+    <li><a href="#js-codebase-integration">我前期开发了大量的 JavaScript 代码。怎样才能迁移到 Dart ？</a></li>
+    <li><a href="#porting-from-GWT">I have a large application written in GWT. How do I port it to Dart?我有一个在 GWT 环境中编写的大型应用程序，怎样才能与 Dart 对接？</a></li>
+    <li><a href="#what-browsers-supported">像 JavaScript 编译目标那样，哪些浏览器会被 Dart 支持？</a></li>
+    <li><a href="#what-browsers-have-dart">截至目前哪些浏览器支持 Dart ？</a></li>
+    <li><a href="#hello-world-js-size">为什么生成的输出“Hello world"的 JavaScript 代码那么大？</a></li>
+    <li><a href="#debugging-output-js">Dart 代码被编译成 JavaScript 代码后，我该怎么样调试？</a></li>
+    <li><a href="#what-input-compiles">任何 Dart 代码都可以编译成 JavaScript 代码么，有没有什么限制？</a></li>
+    <li><a href="#json-support">Dart 支持 JSON 么？</a></li>
+    <li><a href="#server-support">Dart 能在服务端运行么？</a></li>
   </ol> </li>
 
-  <li><a href="#acknowledgments" class="faq-topic">Acknowledgments</a></li>
+  <li><a href="#acknowledgments" class="faq-topic">鸣谢</a></li>
 </ol>
 </section> <!-- /#contents -->
 
