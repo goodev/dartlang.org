@@ -1,36 +1,36 @@
 ---
 layout: default
-title: "Define a Custom Element"
-description: "Create a custom HTML element using Polymer."
+title: "定义自定义 Element"
+description: "用 Polymer 创建一个自定义 HTML element 。"
 has-permalinks: true
 tutorial:
   id: polymer-intro
 next: fetchdata
-next-title: "Fetch Data Dynamically"
+next-title: "动态获取数据"
 prev: shared-pkgs
-prev-title: "Install Shared Packages"
+prev-title: "使用共享包"
 ---
 
 {% capture whats_the_point %}
 
-* Polymer.dart is the next evolution of Web UI.
-* Everything in Polymer.dart is an element.
-* Custom elements provide semantically meaningful encapsulation.
-* Use Polymer.dart to build custom elements.
-* Bind Dart data to HTML elements.
-* Declaratively bind event handlers to elements.
+* Polymer.dart 是下一代 Web UI 框架。
+* Polymer.dart 中的所有东西都是 element。
+* 自定义元素可以提供有意义的封装。
+* 用 Polymer.dart 来创建自定义元素。
+* 绑定 Dart 数据到 HTML element。
+* 声明式定义事件处理函数。
 
 {% endcapture %}
 
 {% capture sample_links %}
 
-<p> This tutorial features this example:</p>
+<p> 该教程用如下示例应用：</p>
 * stopwatch
 
 <p>
-Don't have the source code?
+还没有下载示例代码？
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  点击我下载。
 </a>
 
 {% endcapture %}
@@ -39,62 +39,61 @@ Don't have the source code?
 
 <div class="tute-target-title">
 <h1>{{page.title}}</h1>
-<h3>Create a custom HTML element using Polymer</h3>
+<h3>用 Polymer 创建一个自定义 HTML element</h3>
 </div>
 
-A custom element is an HTML element you can define yourself,
-encapsulating appearance and/or behavior
-within semantically meaningful HTML.
+自定义元素是你定义的一个 HTML 元素，
+使用 HTML 代码来封装元素外观
+和行为。
 
 <aside class="alert">
-<strong>Version Note:</strong> The code sample and the content
-of this tutorial are compatible with
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>.
+<strong>版本提示：</strong> 该示例中的代码和
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>版本
+兼容。
 </aside>
 
 <aside class="alert alert-info">
-  Custom elements are one feature of
+  自定义元素是 
 <a href="http://www.polymer-project.org/"
-   target="_blank">Polymer</a>,
-a new type of library for the web based on Web Components.
+   target="_blank">Polymer</a> 的众多特性之一，
+Polymer基于Shadow DOM、Custom Elements、MDV等最新浏览器特性，代表了下一代Web框架的方向：一切皆组件、尽量减少代码量、尽量减少框架限制。
 <a href="http://www.dartlang.org/polymer-dart/"
    target="_blank">Polymer.dart</a>
-is the Dart implementation of Polymer.
-(Note: Polymer supersedes Web UI.)
+ 是 Polymer 的 Dart 实现。
+(注意： Polymer 取代了 Web UI。)
 </aside>
 
-* [An example](#an-example)
-* [Installing Polymer.dart](#getting-polymer-dart) 
-* [Including Polymer.dart in your application](#bootstrap)
-* [Instantiating a custom element](#instantiating) 
-* [Defining a custom element](#define-element) 
-* [Providing a template for the custom element](#providing-a-template) 
-* [Providing a script for the custom element](#providing-a-script) 
-* [Overiding life-cycle methods](#life-cycle-methods)
-* [Using data binding](#data-binding) 
-* [Setting up event handlers declaratively](#event-handlers) 
-* [Styling a custom element](#scoped-css)
-* [Other resources](#other-resources)
-* [What next?](#what-next)
+* [一个例子](#an-example)
+* [安装 Polymer.dart](#getting-polymer-dart) 
+* [在项目中使用 Polymer.dart](#bootstrap)
+* [初始化一个 custom element](#instantiating) 
+* [定义一个 custom element](#define-element) 
+* [为 custom element 提供一个模板](#providing-a-template) 
+* [为 custom element 提供一个脚本](#providing-a-script) 
+* [重载生命周期函数](#life-cycle-methods)
+* [使用数据绑定](#data-binding) 
+* [用声明式方法来设置事件监听器](#event-handlers) 
+* [在 custom element 上应用样式](#scoped-css)
+* [其他资源](#other-resources)
+* [接下来干啥？](#what-next)
 
-##An example
+##一个例子
 
-In the example running below,
-the LemonChiffon area outlined in black
-is a custom element implemented using Polymer.
+在下面的示例中，
+柠檬色区域是用 Polymer 实现的 custom element（自定义元素）。
 
-<strong>Try it!</strong>
-Start and stop the stopwatch.
-Reset the stopwatch to 00:00 using the **Reset** button.
+<strong>动手试试！</strong>
+启动和停止该计时器。
+用 **Reset** 按钮来重置计时器为 00:00。
 
 <iframe class="running-app-frame"
         style="height:220px;width:230px;"
         src="examples/stopwatch/out/web/index.html">
 </iframe>
 
-To place this custom element on an HTML page,
-import the file with the custom element definition
-and use the name of the element as an HTML tag:
+要把该自定义元素放到 HTML 页面中，
+需要先把包含该自定义元素的文件导入到页面中，
+然后用自定义元素的名字作为一个 HTML 标签：
 
 {% prettify html %}
 <link rel="import" href="tute_stopwatch.html">
@@ -102,134 +101,134 @@ and use the name of the element as an HTML tag:
 <tute-stopwatch></tute-stopwatch>
 {% endprettify %}
 
-The counting text, the three buttons along with their actions,
-and the style are all contained within the custom element.
-The definition of the custom element encapsulates and
-hides the implementation details,
-which as the user of the element, you care nothing about.
+计时文本、三个按钮和其功能、以及定义该这些控件的样式
+都包含在自定义元素中。
+自定义元素的定义封装并隐藏了
+其实现细节，
+这样当你使用该元素的时候，无需关注其他内容。
 
-When you use developer tools to inspect the element,
-you see just the custom element's begin and end tags.
+当你用开发者工具审查该元素的时候，
+你只能看到自定义元素的开始和结束标签。
 
 <img class="scale-img-max" src="images/dev-tools-dom.png"
      alt="Custom element encapsulates its contents">
 
-With custom elements, you can easily create new kinds of elements
-that have semantically meaningful tags and that are easy to share,
-reuse, and read.
+用自定义元素，你可以很容易的创建语义标签，
+这些标签比较容易分享、重用
+和阅读。
 
-###Overview of the example files
+###示例文件概览
 
-Three main source files implement the Stopwatch example:
+有三个主要文件实现了 Stopwatch 示例：
 
 <dl>
   <dt>
     index.html
   </dt>
   <dd>
-    The primary HTML file for the app.
-    Includes the Polymer bootstrap script and instantiates the custom element.
+    该应用的主要 HTML 代码。
+    包含 Polymer 启动代码和初始化自定义元素。
   </dd>
   <dt>
     tute_stopwatch.html
   </dt>
   <dd>
-    The HTML code that defines the custom element.
+    定义自定义元素的 HTML 代码。
   </dd>
   <dt>
     tute_stopwatch.dart
   </dt>
   <dd>
-    The Dart class that implements the custom element.
+    实现自定义元素的 Dart 代码。
   </dd>
 </dl>
 
-The following diagram shows the structure of the example
-app and its use of custom elements.
+下图显示了示例应用的结构以及使用
+自定义元素。
 
 <img class="scale-img-max" src="images/connections.png"
      alt="The connections between Dart and HTML">
 
-##Installing Polymer.dart {#getting-polymer-dart}
+##安装 Polymer.dart {#getting-polymer-dart}
 
-To use the features provided by Polymer.dart,
-you need to install the Polymer package.
-If you are unfamiliar with installing packages,
-refer to
-<a href="/docs/tutorials/shared-pkgs/">Install Shared Packages</a>,
-which describes the process in detail.
+你需要先安装 Polymer 包才可以使用 
+Polymer.dart 提供的功能。
+如果你还不知道如何安装包，请
+参考
+<a href="/docs/tutorials/shared-pkgs/">安装共享包</a>
+一章。
 
-In brief, to install the Polymer package:
+简单来说，安装 Polymer 包过程如下：
 
-* In the application's `pubspec.yaml` file,
-add the package to the list of dependencies
-by adding the package name, `polymer`, to the list.
-YAML is whitespace-sensitive,
-so take care to indent the package name as shown:
+* 在应用的 `pubspec.yaml` 文件中添加
+一个依赖项，
+该依赖项的名字为 `polymer`
+ 包名。
+ YAML 格式对空格是敏感的，
+所以要注意空格的缩进：
 
   <img class="scale-img-max" src="images/sample-pubspec.png"
      alt="Sample pubspec file with polymer dependency">
 
-* Run `pub install`,
-which recursively installs the polymer.dart package
-and all the packages that it depends on.
-If you are using Dart Editor,
-when you save pubspec.yaml
-the editor automatically runs `pub install` for you.
-If you are using command line tools,
-you can run it with the command `pub install`.
+* 运行 `pub install`命令，
+该命令会递归的 安装 polymer.dart 包和其
+依赖的所有包。
+如果你使用 Dart 编辑器，
+当你保存 pubspec.yaml 文件的时候
+编辑器会自动运行 `pub install` 命令。
+如果你用命令行工具，
+你可以通过命令行运行  `pub install` 命令。
 
-##Including Polymer.dart in your application {#bootstrap}
+##在项目中使用 Polymer.dart {#bootstrap}
 
-To use Polymer.dart features such as custom elements,
-you need to include Polymer in both
-the HTML side and the Dart side of your app.
+要使用 Polymer.dart 的功能，例如 自定义元素，
+需要在 HTML 和 Dart 代码中都
+引入 Polymer 库。
 
-* In the primary HTML file for your app,
-import `package:polymer/init.dart` within a &lt;script&gt; tag
-in the &lt;head&gt; section.
-This script contains the `main()` function
-for the app and initializes Polymer.
+* 在你应用的主要 HTML 代码的 &lt;head&gt; 区域，
+使用  &lt;script&gt; 标签
+导入 `package:polymer/init.dart`。
+该脚本中包含了用于初始化 Polymer
+ 的 `main()` 函数。
 
   <img class="scale-img-max" src="images/init-script.png"
      alt="Include the Polymer init script">
 
-* In the primary HTML file for your app,
-include the `packages/browser/dart.js` bootstrap script
-in the &lt;head&gt; section.
+* 在你应用的主要 HTML 代码的 &lt;head&gt; 区域，
+引入 Dart 引导脚本 `packages/browser/dart.js`。
 
   <img class="scale-img-max" src="images/bootstrap-script.png"
      alt="Include the Polymer bootstrap script">
 
-* In your Dart code, import the Polymer library:
+* 在 Dart 代码中导入 Polymer 库：
 
   <img class="scale-img-max" src="images/polymer-library.png"
      alt="Import the Polymer library">
 
-##Instantiating a custom element {#instantiating}
+##初始化一个 custom element {#instantiating}
 
-To create an instance of a custom element,
-use the name of the custom element just as you would any normal HTML tag.
-In this example, the tag name is `tute-stopwatch`.
+和使用普通的 HTML 标签一样使用自定义元素的名字
+来初始化一个自定义元素。
+在该示例中，自定义元素的名字为 `tute-stopwatch`。
 
 <img class="scale-img-max" src="images/polymer-element-instantiation.png"
      alt="Instantiate a custom element with a custom tag">
 
-Using best practices,
-the custom element definition is in a separate file.
-Use `link [rel="import"]` to import the HTML definition file as shown.
+把自定义元素定义在一个单独的文件中
+是最佳方式。
+然后用 `link [rel="import"]` 来导入  HTML 定义文件。
 
-##Defining a custom element {#define-element} 
+##定义一个 custom element {#define-element} 
 
-The definition for the &lt;tute-stopwatch&gt; element is
-in tute_stopwatch.html.
-A custom element definition should be in its own
-source file so that it can be included by other files.
-An HTML file that contains the definition for a custom element
-does not need &lt;html&gt;, &lt;head&gt;, or &lt;body&gt; tags.
+在 tute_stopwatch.html 文件中定义了
+ &lt;tute-stopwatch&gt; 元素。
+自定义元素应该定义在自己的文件中，
+这样可以被其他文件引用。
+定义自定义元素的 HTML 文件不需要
+ &lt;html&gt;、 &lt;head&gt;、 和 &lt;body&gt; 标签。
 
-To define a custom element,
-use the &lt;polymer-element&gt; tag and provide a name.
+用 &lt;polymer-element&gt; 标签来定义
+一个自定义元素，并设置一个名字。
 
 {% prettify html %}
 <polymer-element name="tute-stopwatch">
@@ -237,19 +236,20 @@ use the &lt;polymer-element&gt; tag and provide a name.
 </polymer-element>
 {% endprettify %}
 
-A custom element name must have at least one hyphen (`-`).
-We advise using an identifiable prefix to 
-avoid naming conflicts with elements shared by others
-and to help identify the project from which the element originates.
-For example, for tutorial custom elements, we use the prefix `tute`.
+自定义元素的名字至少必须包含一个连字符 (`-`)。
+我们建议用一个可区分的前缀来避免
+名字冲突。
+一般该前缀代表该元素的来源，
+例如在该示例中的自定义元素，我们用
+ `tute`（tutorial 的前几个字符） 作为前缀。
 
-Within the &lt;polymer-element&gt; tag,
-you can provide a template (appearance) and a script (behavior).
-UI widgets, like our Stopwatch example,
-typically have both a template and a script,
-but neither is required.
-A custom element with a script and no template is purely functional.
-A custom element with a template and no script is purely visual.
+在 &lt;polymer-element&gt;  标签中，
+可以有模板和脚本分别控制元素的外观和行为。
+在 Stopwatch 示例中的 UI 控件中，
+同时包含模板和脚本代码，但是他们都不是
+必要的。
+一个只有脚本而没有模板的自定义元素只是提供了单纯的函数功能。
+一个只有模板而没有脚本的自定义元素只是提供了单纯的显示功能。
 
 {% prettify html %}
 <polymer-element name="tute-stopwatch">
@@ -264,100 +264,100 @@ A custom element with a template and no script is purely visual.
 <dl>
   <dt> &lt;template&gt; </dt>
   <dd>
-    Describes the custom element's structure&mdash;its user interface.
-    The template comprises any valid HTML code within the &lt;template&gt; tag.
-    When the custom element is instantiated,
-    the instance is created from the template.
-    The template can include CSS styles within a &lt;style&gt; tag.
+    定义了自定义元素的用户界面。
+    模板有在 &lt;template&gt; 标签内合法的 HTML 代码组成。
+当自定义元素初始化后，
+实例从模板中创建。
+模板还可以在  &lt;style&gt; 标签中包含 CSS 样式。
   </dd>
 
   <dt> &lt;script&gt; </dt>
-  <dd markdown="1"> Specifies a Dart script.
-    For custom elements, the Dart script is a Dart class
-    that implements the behavior of the element.
-    The class typically overrides some
-    life-cycle methods and provides event handlers
-    that join the UI with its programmatic behavior.
-    In this example, the script is in tute_stopwatch.dart.
+  <dd markdown="1"> 指定 Dart 脚本。
+  对于自定义元素来说，Dart 脚本就是实现了
+  自定义元素行为的 Dart 类。
+该类通常重载了一些
+生命周期函数并提供了
+一些事件监听器实现 来
+联合 UI 和行为。
+ 在该示例中，脚本位于 tute_stopwatch.dart 文件中。
   </dd>
 </dl>
 
-##Providing a template for the custom element {#providing-a-template}
+##为 custom element 提供一个模板 {#providing-a-template}
 
-Here's the template code for the tute-stopwatch element:
+下面是 tute-stopwatch 元素的模板：
 
 <img class="scale-img-max" src="images/template-code.png"
      alt="The template code for the tute-stopwatch element">
 
-The tute-stopwatch template uses a &lt;style&gt; tag, which is optional.
-These styles are scoped; they affect only
-the appearance of the custom element and the elements it contains.
-More about scoped CSS in [Styling a custom element](#scoped-css).
+tute-stopwatch 模板用了一个可选的  &lt;style&gt; 标签。
+该样式是局部的，只影响该
+自定义元素中的元素。
+[在 custom element 上应用样式](#scoped-css) 中介绍了局部样式的更多信息。
 
-The rest of the code within the &lt;template&gt; tag
-is normal HTML, with two exceptions:
+在 &lt;template&gt; 中的其他代码除了下面两个以外
+都是普通的 HTML 标签：
 
 |---|---|
-| `{``{``counter}}` | Uses a Polymer syntax to [bind Dart data](#data-binding) to the HTML page. The double curly braces are commonly known as a "double mustache". |
-| `on-click` | Uses Polymer [declarative event mapping](#event-handlers), which allows you to set up event handlers for a UI element. `on-click` sets up an event handler for mouse clicks. Polymer has mappings for other event types, such as `on-input` for changes to text fields. |
+| `{``{``counter}}` | 用 Polymer 语法来 [绑定 Dart 数据](#data-binding) 到 HTML 页面中，双大括号通常被称为 "double mustache"。 |
+| `on-click` | 使用 Polymer 的[声明式事件映射](#event-handlers) 来设置 UI 元素的事件处理函数。`on-click` 设置了一个鼠标点击的事件处理函数。Polymer 还有其他的事件映射类型，例如 `on-input` 用于文本内容改变事件。 |
 {: .table}
 
-Let's take a look at the structure of the Dart code
-before we get into the details of data binding, event handlers,
-and scoped CSS.
+在进入数据绑定、事件处理和局部 CSS 之前
+我们先看看
+ Dart 代码的基本结构。
 
-##Providing a script for the custom element {#providing-a-script}
+##为 custom element 提供一个脚本 {#providing-a-script}
 
-On the Dart side, a class implements the behavior of the custom element.
-You associate the Dart class with the custom element using the `@CustomTag`
-annotation and the name of the custom element.
+在 Dart 代码中，一个类实现了自定义元素的行为。
+使用 `@CustomTag` 注解来关联
+自定义元素和 Dart 类。
 
 <img class="scale-img-max" src="images/polymer-element-definition.png"
      alt="Two parts to a custom element definition">
 
-This diagram gives an overview of the TuteStopwatch class:
+下图概览了 TuteStopwatch 类：
 
 <img class="scale-img-max" src="images/dart-script-code.png"
      alt="The script code for the tute-stopwatch element">
 
-Any Dart class that backs a Polymer element must subclass PolymerElement.
+任何自定义 Polymer 元素的 Dart 类都必须是 PolymerElement 的子类。
 
 {% comment %}
 [xx: more about PolymerElement]
 {% endcomment %}
 
-The class can respond to life-cycle milestones
-by overriding [life-cycle methods](#life-cycle-methods).
-For example, the TuteStopwatch class overrides the `enteredView()`
-method&mdash;which is called when the element is inserted
-into the DOM&mdash;to initialize the app.
+通过重载 [生命周期](#life-cycle-methods)函数
+该类可以响应生命周期中的事件。
+例如，在 TuteStopwatch 类中重载了 `enteredView()` 函数 -- 该函数在
+元素插入到 DOM 中调用 -- 来初始化应用。
 
-The `start()` method is an event handler for the **Start** button.
-The event handler is declaratively connected to the button.
-Refer to [Setting up event handlers declaratively](#event-handlers) to see how.
+`start()` 函数是  **Start**  按钮的事件处理函数。
+事件处理函数通过声明式和按钮关联。
+参考 [用声明式方法来设置事件监听器](#event-handlers) 了解更多。
 
-##Overriding life-cycle methods {#life-cycle-methods}
+##重载生命周期函数 {#life-cycle-methods}
 
-A custom element has four life-cycle methods
-that it can override:
+一个自定义元素有四个生命周期函数可以被
+重载：
 
 |---|---|
-| `created()` | Called when an instance of a custom element is created. |
-| `enteredView()` | Called when an instance of a custom element is inserted into the DOM. |
-| `leftView()` | Called when an instance of a custom element is removed from the DOM. |
-| `attributeChanged()` | Called when an attribute, such as `class`, of an instance of the custom element is added, changed, or removed. |
+| `created()` | 当一个自定义元素实例被创建的时候调用 |
+| `enteredView()` | 当一个自定义元素的实例插入到 DOM 中时调用。 |
+| `leftView()` | 当一个自定义元素的实例从 DOM 中删除时调用。 |
+| `attributeChanged()` | 当一个自定义元素的属性改变的时候调用，例如 添加、修改或者删除一个 `class`。 |
 {: .table}
 
-You can override any of these life-cycle methods.
-The overriding method
-*must* call the super class method first.
+你可以重载以上任何函数。
+重载函数*必须*先调用
+父类函数。
 
-The Stopwatch app overrides the `enteredView()` method because it
-needs a reference to each of the three buttons
-so that it can enable and disable them.
-When a tute-stopwatch custom element is inserted into the DOM
-the buttons have been created, so the references to them
-will be available when the enteredView() method is called.
+由于需要三个按钮的引用来启用或者禁用他们，
+所以 Stopwatch 应用
+重载了 `enteredView()` 函数，
+当一个 tute-stopwatch 自定义元素插入到
+ DOM 中时，这些按钮就会被创建，然后当 enteredView() 被调用的时候
+ 这些按钮的引用就可用了。
 
 {% prettify dart %}
 void enteredView() {
@@ -371,84 +371,84 @@ void enteredView() {
 }
 {% endprettify %}
 
-The code uses _automatic node finding_, a Polymer feature,
-to get a reference to each button.
-Every node in a custom element that is tagged with an `id` attribute
-can be referenced by its ID using the syntax: `$['ID']`.
+上面的代码使用了 Polymer 提供的 _节点自动查找技术_来获取
+每个按钮的引用。
+一个自定义元素中的每个节点都有一个 `id` 属性，
+可以用 `$['ID']` 语法来引用该元素。
 
-##Using data binding {#data-binding}
+##使用数据绑定 {#data-binding}
 
-In the HTML definition of a custom element,
-use double curly brackets to embed Dart data into the webpage.
-In your Dart code, use the `@observable` annotation
-to mark the embedded data.
-Here, the data is a string called `counter`.
+在自定义元素的 HTML 定义中，
+使用双大括号在 网页代码中嵌入 Dart 代码。
+在 Dart 代码中，使用 `@observable` 注解来标记
+嵌入的数据。
+下面的数据字符串为 `counter`。
 
 <img class="scale-img-max" src="images/one-way-data-binding.png"
      alt="One-way data binding">
 
-The tute-stopwatch element uses a periodic
+tute-stopwatch 元素用一个定期的 
 <a href="https://api.dartlang.org/dart_async/Timer.html" target="_blank">Timer</a>
-to fire an event every second.
-When the Timer fires, it calls the `updateTimer()` method,
-which modifies the `counter` string.
-Polymer takes care of updating the HTML page with the new string.
+ 每隔一秒触发一个事件。
+ 当 Timer 触发的时候调用 `updateTimer()` 函数，
+ 该函数然后修改 `counter` 字符串。
+Polymer 负责用新的字符串更新 HTML 页面内容。
 
-This type of binding is called _one-way data binding_
-because the data can change only on the Dart side.
-Polymer also supports two-way data binding.
-In two-way data binding, when data changes on the HTML side&mdash;for example
-with an input element&mdash;the value in the Dart code changes to match.
-For more information about two-way binding,
-plus examples of using it with a variety of
-HTML5 widgets, check out the Forms tutorial section
-[Two-way data binding using Polymer](/docs/tutorials/forms/#binding-data).
+由于上面的数据只能在 Dart 代码中改变，
+所以这种数据绑定被称之为 _单向数据绑定_。
+Polymer 还支持双向数据绑定。
+在双向数据绑定中，当 HTML 中的数据改变的时候
+ Dart 代码中的值也会随之改变，例如
+ 输入框总的值发生了变化。
+关于双向数据绑定的更多信息以及如何使用各种
+ HTML5 控件，请查看表单教程中的
+[Polymer 的 双向数据绑定](/docs/tutorials/forms/#binding-data) 一节。
 
-You can use expressions within the double curly brackets.
+在双大括号中还可以用表达式。
 <a href="http://pub.dartlang.org/packages/polymer_expressions"
-   target="_blank">Polymer expressions</a>
-provide the default syntax. Examples of allowable expressions include:
+   target="_blank">Polymer 表达式</a>
+   提供了默认的语法。支持的表达式如下：
 
 |---|---|
-| `{``{``myObject.aProperty}}` | Property access. |
-| `{``{``!empty}}` | Operators, like the logical not operator. |
-| `{``{``myList[3]}}` | List indexing. |
-| `{``{``myFilter()}}` | Data filtering. |
+| `{``{``myObject.aProperty}}` | 访问对象的属性。 |
+| `{``{``!empty}}` | 操作符，例如逻辑非操作符。 |
+| `{``{``myList[3]}}` | List 索引。 |
+| `{``{``myFilter()}}` | 数据过滤。 |
 {: .table}
 
-##Setting up event handlers declaratively {#event-handlers}
+##用声明式方法来设置事件监听器 {#event-handlers}
 
-This example has three buttons, each
-with an event handler that is written in Dart,
-but attached to the button declaratively from HTML.
+该示例有三个按钮，每个都带有一个
+ Dart 代码的事件处理函数，这些函数
+ 通过在 HTML 中声明的方式添加到按钮中的。
 
 <img class="scale-img-max" src="images/click-handler.png"
      alt="Declaratively attach a click handler">
 
-In HTML, use the `on-click` attribute
-to attach a mouse click handler to an HTML element.
-The value of the attribute must be the name of a method
-in the class that implements the custom element.
-When the user clicks the button, the specified method is called
-with three parameters:
+在 HTML 代码中，用 `on-click` 属性来关联
+一个 HTML 元素的鼠标点击事件处理函数。
+该属性的值必须为实现该自定义元素类中的
+一个函数名字。
+当用户点击按钮的时候，使用如下三个参数调用
+指定的函数：
 
-* An
+* 一个
 <a href="https://api.dartlang.org/dart_html/Event.html" target="_blank">Event</a>
-that contains information about the event,
-such as its type and when it occurred.
+对象包含该事件的信息，例如
+事件类型和发生的时间。
 
-* The _detail_ object can provide additional, event-specific information.
+* _detail_ 对象提供了事件相关的更多信息。
 
-* The <a href="https://api.dartlang.org/dart_html/Node.html" target="_blank">Node</a>
-that fired the event&mdash;the **Start** button in this case.
+* <a href="https://api.dartlang.org/dart_html/Node.html" target="_blank">Node</a>
+对象为触发该事件的节点，在该示例中为 **Start** 按钮。
 
-You can attach event handlers for other kinds of events.
-For example, you can use `on-input` to handle events
-for input text elements when the text changes.
+你也可以关联其他类型的事件处理函数(事件监听器)。
+例如，可以用 `on-input` 来关联输入框的文本
+改变事件。
 
-Refer to
-[Declarative event mapping](http://www.polymer-project.org/polymer.html#declarative-event-mapping)
-for further details.
+参考
+[声明式事件映射](http://www.polymer-project.org/polymer.html#declarative-event-mapping)
+了解更多信息。
 
 {% comment %}
 ##Querying the shadow root {#in-the-shadows}
@@ -481,58 +481,57 @@ you are guaranteed to get the objects from within the custom element,
 not from anywhere else on the page.
 {% endcomment %}
 
-##Styling a custom element {#scoped-css} 
+##在 custom element 上应用样式 {#scoped-css} 
 
-You can optionally include CSS styles for your custom element
-that apply only to the contents of the custom element.
+你可以选择为自定义元素定义 CSS 样式，
+该样式仅仅用于该自定义元素。
 
 <img class="scale-img-max" src="images/css-styling.png"
      alt="Scoped CSS styling">
 
-The `@host` rule allows you to target and style an element internally,
-from within its definition.
-The `:scope` pseudo-class refers to the custom element itself.
-The only selectors that work within `@host` are those contained
-in the host element itself.
-So you don't need to worry about naming conflicts on the page.
-Any CSS selectors within the template need to be unique only within the template.
+`@host` 规则让你可以指定自定义元素中的
+一个内部元素。
+而 `:scope` 伪类代表自定义元素自己。
+`@host` 内的选择器只在自定义元素
+内起作用。
+所以你不用和网页中的其他元素担心命名冲突问题。
+自定义元素内的 CSS 选择器只要在元素内唯一即可。
 
-For further details about styling custom elements,
-refer to
-[A Guide to Styling Elements](http://www.polymer-project.org/articles/styling-elements.html)
+关于自定义元素 CSS 样式的更多信息
+请参考
+[自定义元素样式指南](http://www.polymer-project.org/articles/styling-elements.html)
 
-##Other resources
+##其他资源
 
-Use these other resources to learn more about Polymer:
+如下资源可以了解 Polymer 的更多信息：
 
-* The
+* 在
 <a href="http://www.dartlang.org/polymer-dart/"
-   target="_blank">Polymer.dart</a> homepage provides information
-   specific to the Dart port of the Polymer project.
+   target="_blank">Polymer.dart</a> 主页中提供了 Dart 移植
+   的 Polymer 项目的更多信息。
 
-* The Polymer project website
+* Polymer 项目网站
 <a href="http://www.polymer-project.org/"
    target="_blank">polymer-project.org</a>
-   contains information about the Polymer project as a whole.
+   中包含了关于 Polymer 项目的所有信息。
 
-##What next?
+##接下来干啥？
 
-[Two-way data binding with Polymer](/docs/tutorials/forms/#binding-data)
-in the tutorial about forms shows how to use two-way data binding
-with various types of input elements such as text fields, color pickers,
-and so on.
+[Polymer 中的双向数据绑定](/docs/tutorials/forms/#binding-data) 介绍
+了如何使用各种控件上的双向数据绑定，例如 文本控件、颜色
+选择控件 等等。
 
-Check out these other tutorial examples that use Polymer:
+参考下面几个使用 Polymer 的示例项目：
 
 * its_all_about_you
 * slambook
 * count_down
 
-The next tutorial,
-[Fetch Data Dynamically](/docs/tutorials/fetchdata/),
-shows you how to fetch data
-and use JSON to encode and decode
-that data.
+下一个教程中，
+[动态获取数据](/docs/tutorials/fetchdata/)将
+告诉你如何获取数据并处理
+ JSON 格式的
+ 数据。
 
 {% endcapture %}
 
