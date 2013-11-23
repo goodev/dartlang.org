@@ -1,35 +1,35 @@
 ---
 layout: default
-title: "Remove DOM Elements"
-description: "Remove a child element from the DOM"
+title: "删除 DOM 元素"
+description: "从 DOM 中删除一个子元素"
 has-permalinks: true
 tutorial:
   id: remove-elements
 next: shared-pkgs/
-next-title: "Install Shared Packages"
+next-title: "安装共享包"
 prev: add-elements/
-prev-title: "Add Elements to the DOM"
+prev-title: "在 DOM 中添加元素"
 ---
 
 {% capture whats_the_point %}
 
-* Use _element_.remove() to remove an element from the DOM.
-* Remove all children from an element with _element_.children.clear().
-* Function expressions are a convenient way to define single-use functions.
-* => is a shorthand syntax for defining functions that contain just one
-expression.
+* 使用 _element_.remove() 函数从 DOM 中删除一个元素。
+* 用 _element_.children.clear() 来清除一个元素的所有子元素。
+* 函数表达式是定义单一使用函数的便捷方式。
+* => 是定义只有一行代码函数的缩写
+形式。
 
 {% endcapture %}
 
 {% capture sample_links %}
 
-<p> This tutorial features this example:</p>
+<p> 该教材使用如下示例程序：</p>
 * todo_with_delete
 
 <p>
-Don't have the source code?
+如果你还没下载示例代码，点击
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  这里下载。
 </a>
 
 {% endcapture %}
@@ -38,62 +38,64 @@ Don't have the source code?
 
 <div class="tute-target-title">
 <h1>{{page.title}}</h1>
-<h3>Dynamically delete items from the browser page.</h3>
+<h3>动态的从网页删除元素。</h3>
 </div>
 
-This tutorial shows you how to delete elements from the DOM.
-A new and improved version of the todo app from
-[the previous tutorial](/docs/tutorials/add-elements/)
-now allows the user to delete items from the list
-either one at a time, or all at once.
+该教材演示如何从 DOM 中删除元素。
+从 [前一教程](/docs/tutorials/add-elements/) 的
+待办事项列表应用改进后的应用支持一次
+删除一个条目或者一次
+删除所有待办事项条目。
 
-* [Try the app](#try-app)
-* [Changing the appearance when cursor is over an element](#css-hover)
-* [Removing an element from the DOM tree](#remove-elem)
-* [Removing all child elements from an element](#remove-all-elem)
-* [About function expressions and =>](#about-function-expressions)
-* [Other resources](#other-resources)
-* [What next?](#what-next)
+* [玩一玩该应用](#try-app)
+* [当鼠标在一个元素上方的时候改变元素的外观](#css-hover)
+* [从 DOM 树中删除一个元素](#remove-elem)
+* [删除一个元素的所有子元素](#remove-all-elem)
+* [关于函数表达式和 =>](#about-function-expressions)
+* [其他资源](#other-resources)
+* [接下来干啥？](#what-next)
 
-##Try the app {#try-app}
+##玩一玩该应用 {#try-app}
 
-Below is a revised version
-of the todo app from the previous tutorial
-that allows you to delete items.
-Stop procrastinating and remove items from your to do list.
+下面是前一教程中的
+待办事项应用
+增强版，可以
+删除待办事项条目。
 
-**Try it!**
-Type in the input field and press the return key;
-a new item appears in the list.
-Enter a few more items.
-Point the mouse cursor at one of the items in the list;
-the item turns red and gets slightly larger.
-Click it and it disappears from the list.
-Use the **Delete All** button
-to remove all of the items in the list at once.
+**动手试试！**
+在输入框中输入文字然后按回车键会
+在 list 中添加一个新的条目。
+继续添加多少条目。
+然后把鼠标放到其中一个条目上，
+该条目会变为红色并且稍微有点变大了。
+点击条目会从列表中删除它。
+使用 **Delete All** 按钮从
+列表中删除所有的待办事项条目。
 
 <iframe class="running-app-frame"
         style="height:250px;width:300px;"
         src="examples/todo_with_delete/todo_with_delete.html">
 </iframe>
 
-The remaining sections describe
-key aspects of the code 
-added to the todo app for this tutorial.
-Specifically, they look at
-the Dart code that removes one or more elements from the DOM
-and the CSS code that makes the text red and larger.
+下面的内容将详细
+介绍该教程中的
+关键代码。
+特别是在 Dart 代码中
+如何删除一个或者多少 DOM 元素，
+以及如何用 CSS 规则来改变
+文字颜色并放大文字。
 
-##Changing the appearance when cursor is over an element {#css-hover}
+##当鼠标在一个元素上方的时候改变元素的外观 {#css-hover}
 
-As you saw, an item in the list turns red and gets bigger
-when the user points at it.
-The mouse cursor also changes shape.
-These visual clues are an important part of the user interface
-in this example because they are the only indication to the user
-that something will happen when the item is clicked.
+如上所示，当鼠标放到一个 list 条目的时候，
+该条目会变大并且文字变为红色。
+同时鼠标指针的形状也发生了变化。
+该视觉提示是用户界面体验非常重要的组成部分。
+在该示例中，提示用户当
+点击列表条目的时候
+会有情况发生。
 
-This behavior is coded in the todo_with_delete app's CSS file with this rule:
+该行为通过 todo_with_delete 应用中的 CSS 规则实现的：
 
 {% prettify dart %}
 #to-do-list li:hover {
@@ -103,60 +105,58 @@ This behavior is coded in the todo_with_delete app's CSS file with this rule:
 }
 {% endprettify %}
 
-We've used this CSS trick
-instead of providing a familiar user interface,
-such as a button with an 'X' on it,
-to keep the code simpler.
+我们使用该 CSS 技巧来
+替代常规的用户界面，
+这样可以保持代码比较
+简洁。
 
-##Removing an element from the DOM tree {#remove-elem}
+##从 DOM 树中删除一个元素 {#remove-elem}
 
-An element is removed from
-the DOM when it is removed from its parent's list of children.
-The
+当从一个元素的父节点中删除它的时候，
+该元素就从 DOM 树中删除了。
 <a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>
-class provides functions for finding an item in the list
-and removing it.
-But, in this case,
-using the element's remove() function
-is shorter and more concise than
-using functions from the List class.
+ 类提供了从列表中查找并删除一个元素
+ 的功能。
+但是在这里，用
+ element 的 remove() 函数
+ 更加短小清晰。
 
 <img class="scale-img-max" src="images/remove-element.png"
      alt="Use element.remove() to remove an element from the DOM">
 
-In the todo_with_delete app,
-the user clicks an item to delete it.
-This is achieved with one line of Dart code.
-When a new to do item is created,
-the code registers a mouse click handler on the new element.
-When the user clicks that new element,
-its event handler causes the element to remove itself from the DOM
-with remove().
+在 todo_with_delete 应用中，
+用户通过点击一个列表条目来删除它。
+该功能由一行 Dart 代码实现。
+当创建一个新的列表条目的时候，
+同时注册了一个鼠标点击事件监听器。
+当用户在该条目上点击鼠标的时候，
+事件监听器会调用该
+元素的 remove() 函数来从 DOM 树中删除它。
 
 <img class="scale-img-max" src="images/remove-element-code.png"
      alt="Registering an event handler to delete an item">
 
-When the element removes itself from the DOM,
-the browser re-renders the page,
-and the item disappears from the to do list.
+当一个元素从 DOM 树中把自己删除了，
+浏览器会重新渲染该页面，
+然后该元素就从网页上消失了。
 
-##Removing all child elements from an element {#remove-all-elem}
+##删除一个元素的所有子元素 {#remove-all-elem}
 
-When the user clicks the **Delete All** button,
-all elements are removed from the list.
+当用户点击 **Delete All** 按钮时，
+所有的列表条目都会被删除。
 
 <img class="scale-img-max" src="images/remove-all-elements.png"
      alt="Use element.children.clear() to remove all of an element's children">
 
-In this case, using the List class's clear() function
-yields the most concise code.
-Here's the code from the todo_with_delete app
-that implements the **Delete All** button.
+在上面示例中使用 List 类
+的 clear() 函数。
+下面是 todo_with_delete 应用中实现
+ **Delete All** 按钮的代码。 
 
 <ol>
 <li markdown="1">
-The HTML code creates a button with the ID delete-all.
-(The CSS styles it.)
+该 HTML 代码创建了一个 ID 为 delete-all 的按钮。
+(并且直接设置了 CSS 样式。)
 
 {% prettify dart %}
 <button id="delete-all" type="button" style="float:right"> Delete All </button>
@@ -165,11 +165,11 @@ The HTML code creates a button with the ID delete-all.
 </li>
 
 <li markdown="1">
-The Dart code gets the button element from the DOM
-using query() and the button's ID, #delete-all.
-The code registers a mouse click handler on the button;
-the handler removes all of the child elements from the to do list.
-Here is all of the Dart code related to the **Delete All** button.
+Dart 代码用 query() 函数（参数为 #delete-all ）从 DOM 中
+找到该按钮。
+然后在按钮上注册一个鼠标点击事件监听器，
+该监听器把列表中的所有子元素都删除了。
+下面是 **Delete All** 按钮相关的所有 Dart 代码。
 
 <img class="scale-img-max" src="images/remove-all-code.png"
      alt="Remove all child elements from an Element">
@@ -177,20 +177,20 @@ Here is all of the Dart code related to the **Delete All** button.
 </li>
 </ol>
 
-##About function expressions and => {#about-function-expressions}
+##关于函数表达式和 => {#about-function-expressions}
 
-The todo_with_delete app uses
-some interesting Dart syntax
-when adding an event listener to the **Delete All** button.
-The argument passed into the listen() function
-is an example of a _function expression_,
-which is a shorthand way of defining functions
-and it uses the => syntax to define the function concisely.
+todo_with_delete 应用使用了一些
+有趣的 Dart 语法来添加
+ **Delete All** 按钮的事件监听器。
+ listen() 函数的参数是一个
+  _function expression 函数表达式_ ，
+函数表达式是定义函数的缩写方式，
+并使用 => 语法来简洁的定义函数。
 
 <img class="scale-img-max" src="images/event-listener-exp.png"
      alt="A one-line function definition">
 
-It is equivalent to writing this:
+上面的代码等价于如下代码：
 
 {% prettify dart %}
 deleteAll.onClick.listen((e) {
@@ -198,7 +198,7 @@ deleteAll.onClick.listen((e) {
 });
 {% endprettify %}
 
-or even this:
+或者如下代码：
 
 {% prettify dart %}
 ...
@@ -213,46 +213,43 @@ void deleteAllElements(Event e) {
 ...
 {% endprettify %}
 
-Function expressions are often used
-when registering event handlers on an element
-and can extend over multiple lines.
-When registering event handlers,
-the function must be an EventListener.
-That is,
-it returns no value and takes an Event object as a parameter.
+函数表达式通常用于在一个
+元素上注册事件监听器。
+当注册事件监听器的时候，
+该函数必须为一个 EventListener，
+也就是说该函数类型要接受
+一个 Event 对象作为参数并没有
+返回值。
 
-##Other resources
+##其他资源
 
 <ul>
   <li>
-    Check out
+    不要忘了看看
     <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>,
-    where you'll find many recipes about manipulating the DOM
-    and using CSS.
-    The cookbook also has recipes about basic Dart data types,
-    such strings, lists, maps, and numbers.
+    <i class="icon-food"> </i> Dart Cookbook</a>，
+    这里具有很多操作 DOM 和使用 CSS 的技巧。
+	该书还介绍了 Dart 基本数据类型，例如
+  strings、 lists、 maps、 和 numbers。
   </li>
 
   <li>
-    You can find more information about the DOM and CSS in
-    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>,
-    which also provides thorough coverage of the Dart language, 
-    libraries, and tools.
+    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>
+    是覆盖了 Dart 语言、库和工具的一本书。
   </li>
 </ul>
 
-##What next? {#what-next}
+##接下来干啥？ {#what-next}
 
-* The next tutorial,
-[Install Shared Packages](/docs/tutorials/shared-pkgs),
-shows you how to use code written and shared by others.
+* 下一个教程，
+[安装共享包](/docs/tutorials/shared-pkgs)，
+告诉你如何使用其他人编写并共享的代码。
 
-* One of those packages is Polymer.dart,
-which makes manipulating the DOM even easier
-with data binding, templates, and declarative event handlers.
-Check out [Define a Custom Element](/docs/tutorials/polymer-intro)
-for an introduction to Polymer.
+* 其中一个包为 Polymer.dart，
+该包支持一些功能是操作 DOM 更加方便，例如
+数据绑定、模板以及声明式事件监听器。
+通过 [定义自定义 Element](/docs/tutorials/polymer-intro)
+ 来了解 Polymer。
 
 {% endcapture %}
 
