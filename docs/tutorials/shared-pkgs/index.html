@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Install Shared Packages | Dart: 结构化的web应用</title>
+  <title>安装共享包 | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Install Shared Packages | Dart: 结构化的web应用">
+  <meta itemprop="name" content="安装共享包 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Packages are bundles of source code, tools, and resources that help you to organize and share code">
+  <meta itemprop="description" content="包是帮助你共享代码的源代码、工具和资源的集合">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,10 @@
 	
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -204,12 +209,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/remove-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> Remove DOM Elements</a>
+        <a href="/docs/tutorials/remove-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> 删除 DOM 元素</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/polymer-intro/" class="pull-right">Define a Custom Element <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/polymer-intro/" class="pull-right">定义自定义 Element <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
     <hr />
@@ -227,9 +232,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="page-highlights">内容摘要</h4>
         
 <ul>
-  <li>Packages are awesome.</li>
-  <li>Packages are cool.</li>
-  <li>Share your code in packages, with all your friends at school.</li>
+  <li>包非常棒。</li>
+  <li>包也非常酷。</li>
+  <li>用包来和你的同事/同学分享你的代码。</li>
 </ul>
 
 
@@ -240,7 +245,7 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
         
 <p>
-Get the vector_math package and many others from:</p>
+从如下地址获取 vector_math 包和其他更多的包：</p>
 
 <ul>
   <li>
@@ -271,165 +276,165 @@ Get the vector_math package and many others from:</p>
 
     
 <div class="tute-target-title">
-<h1>Install Shared Packages</h1>
-<h3>Borrow and share code.</h3>
+<h1>安装共享包</h1>
+<h3>借用和分享代码。</h3>
 </div>
 
-<p>Now that you’re able to create and run a Dart application
-and have a basic understanding of DOM programming,
-you are ready to leverage code written by other programmers.
-Many interesting and useful packages of reusable Dart code
-are available at the
+<p>现在你已经了解了 DOM 编程的基本知识，
+也可以用创建并运行 Dart 应用程序了，
+是时候了解如何借用其他开发者编写的代码了。
+很多有用的、有趣的可重用的 Dart 代码
+包都在
 <a href="https://pub.dartlang.org/">pub.dartlang.org</a>
-repository.</p>
+资源库中。</p>
 
-<p>This tutorial shows you how to use <code>pub</code>—a package manager
-that comes with Dart—to
-install one of the packages in the repository,
-the vector_math package.
-You can follow these same steps to install any package hosted at
-<a href="https://pub.dartlang.org/">pub.dartlang.org</a>;
-just change the package name when you get to that step.
-This tutorial also describes some of the resources you can expect to find
-in a well-built package.</p>
+<p>该教材告诉你如何用 <code>pub</code> 工具 — Dart 中
+的包管理器 — 来
+安装资源库中的包，本教材用 vector_math 包
+示例。
+你可以用同样的步骤来安装
+<a href="https://pub.dartlang.org/">pub.dartlang.org</a> 中
+的其他包，只需要修改的包的名字即可。
+该教程还描述了如何在一个定义好
+的包中查找一些你需要的资源。</p>
 
 <ul>
-  <li><a href="#about-pubspec">About the pubspec.yaml file</a></li>
-  <li><a href="#name-dependencies">Name the package dependencies</a></li>
-  <li><a href="#install-dependencies">Install the package dependencies</a></li>
-  <li><a href="#about-packages">What did you get (and not get)?</a></li>
-  <li><a href="#use-package">Import libraries from a package</a></li>
-  <li><a href="#other-resources">Other resources</a></li>
-  <li><a href="#what-next">What next?</a></li>
+  <li><a href="#about-pubspec">关于 pubspec.yaml 文件</a></li>
+  <li><a href="#name-dependencies">定义包的依赖项</a></li>
+  <li><a href="#install-dependencies">安装包的依赖项</a></li>
+  <li><a href="#about-packages">你获取到哪些东西(以及哪些没有获取到)？</a></li>
+  <li><a href="#use-package">从包中导入库</a></li>
+  <li><a href="#other-resources">其他资源</a></li>
+  <li><a href="#what-next">接下来干啥？</a></li>
 </ul>
 
-<h2 id="about-pubspec">About the pubspec.yaml file</h2>
+<h2 id="about-pubspec">关于 pubspec.yaml 文件</h2>
 
-<p>To use an external package,
-your application must itself be a package.
-Any application with a valid pubspec.yaml file in its top-level directory
-is a package and can therefore use external packages.
-When you create an application using Dart Editor,
-Dart Editor automatically creates a <code>pubspec.yaml</code> file.</p>
+<p>要使用外部的包，
+你的应用首选要是一个包。
+任何在项目根目录中
+有一个合法  pubspec.yaml 文件的都是一个包，
+就可以使用外部包了。
+当用 Dart 编辑器创建应用的时候，
+Dart 编辑器会自动创建一个 <code>pubspec.yaml</code>文件。</p>
 
-<p>Start Dart Editor and create a new application with the name <code>vector_victor</code>.
-Double click pubspec.yaml to view its contents.</p>
+<p>用 Dart 编辑器创建一个名字为 <code>vector_victor</code> 的项目。
+打开 pubspec.yaml 文件查看其内容。</p>
 
 <p><img class="scale-img-max" src="images/victor-files.png" alt="Dart Editor with pubspec.yaml file" /></p>
 
-<p>The pubspec.yaml file contains the package specification written in YAML
-(visit <a href="https://pub.dartlang.org/doc/pubspec.html">Pubspec Format</a>
-for in-depth coverage).
-Dart Editor provides a user interface for editing the pubspec.yaml file
-so that you don’t have to worry about the YAML format.
-Or you can click the <strong>Source</strong> tab at the bottom of the Editor pane
-to edit the YAML code directly.
-Below is the pubspec.yaml file that was
-created for the vector_victor application.</p>
+<p>pubspec.yaml 文件用 YAML 
+(参考 <a href="https://pub.dartlang.org/doc/pubspec.html">Pubspec Format</a>
+深入了解) 格式定义了包的规范。
+Dart 编辑器提供了一个用户界面来编辑 pubspec.yaml 文件，这样你即使不了解 
+YAML 格式也没关系。
+或者你也可以点击编辑模板下放的  <strong>Source</strong> 标签来直接
+编辑 YAML 代码。
+下面是  vector_victor 应用的
+ pubspec.yaml 文件。</p>
 
 <p><img class="scale-img-max" src="images/pubspec.png" alt="The default pubspec.yaml file specifies name and description" /></p>
 
-<p>The package name is required.
-You’ll note that the pubspec.yaml file already
-lists a dependency on the browser package.
-Web applications that don’t use Polymer
-need the browser package.</p>
+<p>包名字是必须的。
+你可能已经发现  pubspec.yaml 文件已经
+列出了对 browser 包的依赖关系。
+不使用 Polymer 的 Web 应用需要使用
+ browser 包。</p>
 
-<h2 id="name-dependencies">Name the package dependencies</h2>
+<h2 id="name-dependencies">定义包的依赖项</h2>
 
-<p>To use an external library package,
-you need to add the package to your
-application’s list of <em>dependencies</em>
-in the pubspec.yaml file.
-Each item in the dependencies list
-specifies the name, and sometimes the version,
-of a package that your application uses.</p>
+<p>要使用外部包中的库，
+你需要先把该包添加到
+你应用 pubspec.yaml 文件中
+的 <em>dependencies 依赖项</em> 列表中。
+每个依赖项都指定了
+你的应用需要用到的
+包的名字和版本号。</p>
 
-<p>Let’s make the vector_victor application have a dependency 
-on the vector_math package,
-which is available at pub.dartlang.org.</p>
+<p>下面在 vector_victor 应用中添加
+一个依赖 vector_math 包的条目，
+vector_math 包在  pub.dartlang.org 资源库中。</p>
 
 <ul>
-  <li>Click the <strong>Add</strong> button in Dart Editor.</li>
+  <li>在 Dart 编辑器中点击 <strong>Add</strong> 按钮。</li>
 </ul>
 
 <p><img class="scale-img-max" src="images/dependencies-ui.png" alt="Click the add button to add a package dependency" /></p>
 
 <ul>
-  <li>Enter the name of the package in the popup window.</li>
+  <li>在弹出对话框中输入包的名字。</li>
 </ul>
 
 <p><img class="scale-img-max" src="images/add-dependency-window.png" alt="Enter the package name" /></p>
 
-<p>Dart Editor adds the package name to the list.</p>
+<p>Dart 编辑器在依赖项中添加该包。</p>
 
 <p><img class="scale-img-max" src="images/after-add.png" alt="The application is now dependent on vector_math" /></p>
 
-<p>Notice the <strong>Version</strong> field.
-<code>any</code> means that this application can use
-any version of the vector_math package.
-You could instead specify a particular version of the package.
-When versioning becomes important to your project,
-check out
-<a href="https://pub.dartlang.org/doc/versioning.html">
-Pub’s Versioning Philosophy
-</a>.</p>
+<p>注意 <strong>Version</strong> 输入框中的
+<code>any</code> 代表该应用可以使用任何版本的
+ vector_math 包。
+当你的项目依赖特定版本的包时，
+你可以指定一个具体的值，
+更多内容请参考 <a href="https://pub.dartlang.org/doc/versioning.html">
+Pub 包版本策略
+</a>。</p>
 
-<p>Here’s the new pubspec.yaml file:</p>
+<p>下面是修改后的 pubspec.yaml 文件：</p>
 
 <p><img class="scale-img-max" src="images/pubspec-vectormath.png" alt="Pubspec.yaml file with vector_math dependency" /></p>
 
 <p><a href="https://pub.dartlang.org/">pub.dartlang.org</a>
-is the primary public repository for Dart packages.
-<code>pub</code> automatically checks that
-website when resolving package dependencies.
-To use one of the packages from that site,
-you can specify it by its simple name,
-as we have done here.</p>
+是 Dart 包的主要公共资源库。
+<code>pub</code> 自动检测该网站来
+解决包依赖问题。
+要使用该网站的任何包，
+只需要指定该包的 名字即可，
+其他的你就无须关心了。</p>
 
-<h2 id="install-dependencies">Install the package dependencies</h2>
+<h2 id="install-dependencies">安装包的依赖项</h2>
 
-<p>In Dart Editor, save pubspec.yaml with <strong>File &gt; Save</strong>.
-When you save the file,
-Dart Editor automatically runs
-<a href="https://pub.dartlang.org/doc/pub-install.html">pub install</a>,
-which recursively installs the Dart libraries
-from the packages in the dependencies list.
-You can also select <strong>Pub Install</strong> from the <strong>Tools</strong> menu in Dart Editor.</p>
+<p>在 Dart 编辑器中，通过菜单 <strong>File &gt; Save</strong> 来保存 pubspec.yaml 文件。
+当保存该文件的时候，
+Dart 编辑器自动运行 
+<a href="https://pub.dartlang.org/doc/pub-install.html">pub install</a> 命令，
+该命令会自动安装项目依赖项中的
+所有 Dart 库和包。
+你也可以选择 Dart 编辑器 <strong>Tools</strong> 菜单中的  <strong>Pub Install</strong> 来安装。</p>
 
-<p>Pub puts the libraries in a directory called packages
-under the application’s top-level directory.
-Click the wee arrow to expand the packages directory.
-There you will find the vector_math directory,
-which links to the Dart libraries from the vector_math package.</p>
+<p>Pub 把依赖的库放到项目跟目录下名字为
+ packages 的目录中。
+点击 packages 目录前面的箭头来打开该目录。
+然后可以在里面找到 vector_math 目录，
+该目录引用了 vector_math 包中的 Dart 库。</p>
 
 <p><img class="scale-img-max" src="images/run-pub-install.png" alt="Pub Install finds and installs required packages" /></p>
 
-<p>Pub install works recursively;
-if the included package has dependencies, those packages are installed as well.</p>
+<p>Pub install 通过递归的方式来安装包，
+如果依赖的包也有其他依赖项，则这些依赖项也会被安装。</p>
 
-<p>Pub install creates a file called pubspec.lock,
-which identifies the specific versions of the packages that were installed.
-This helps to provide a stable development environment.
-Later you can modify the version constraints and use <code>pub update</code>
-to update to new versions as needed.</p>
+<p>Pub install 创建一个名字为 pubspec.lock 的文件，
+该文件指定了当前安装的包的具体版本号。
+这样可以帮助你提供一个稳定的开发环境。
+以后，你可以修改该版本号，然后运行 <code>pub update</code>
+ 来更新。</p>
 
-<h2 id="about-packages">What did you get (and not get)?</h2>
+<h2 id="about-packages">你获取到哪些东西(以及哪些没有获取到)？</h2>
 
-<p>Besides the Dart libraries,
-the vector_math package has other resources that might be useful to you
-that do not get installed into your application directory.
-Let’s take a step back for a moment to look at what
-you got and where it came from.</p>
+<p>除了 Dart 库以外，
+ vector_math 包还有其他有用的资源 并
+ 没有导入到你的项目目录。
+下面去看看导入的库中都有那些内容
+以及他们来自于何处。</p>
 
-<p>To see the contents of the vector_math package,
-visit the
+<p>要查看 vector_math 包的内容，
+请访问
 <a href="https://github.com/johnmccutchan/vector_math" target="_blank">
 Dart vector math repository
-</a>
-at github.
-Although many files and directories are in the repository,
-only one, <code>lib</code>, was installed when you ran pub install.</p>
+</a> 
+项目主页。
+尽管该项目中有很多文件和目录，
+当你运行 pub install 命令的时候只安装了  <code>lib</code> 目录。</p>
 
 <div>
   <hr />
@@ -438,9 +443,9 @@ only one, <code>lib</code>, was installed when you ran pub install.</p>
     <img class="scale-img-max" src="images/libraries-folder.png" alt="Dart libraries directory" />
     </div>
     <div class="col-md-7">
-      <em>Dart libraries</em>:
-      The lib directory contains one or more Dart libraries,
-      which can be imported into your Dart programs.
+      <em>Dart 库</em>:
+      lib 包含了一个或者多个 Drat 库，你可以在
+      你的 Dart 代码中使用他们。
     </div>
   </div>
   <hr />
@@ -450,13 +455,13 @@ only one, <code>lib</code>, was installed when you ran pub install.</p>
     </div>
     <div class="col-md-7">
       <em>Housekeeping files</em>:
-      When using a package written by someone else,
-      the README file is a good place to start.
-      It should contain important information about the package,
-      such as its intent, contents, samples, and instructions.
-      The LICENSE file provides copyright and rules-of-use information.
-      These files can be found at the package repository.
-      They are not installed when you install a package.
+      当使用其他人写的包时，
+      从 README 文件开始是个不错的主意。
+该文件包含了关于该包的重要信息，
+例如 该包用来干啥的、包含哪些内容、示例代码和结构文档等。
+ LICENSE 文件提供了该项目的许可信息。
+ 这些文件在包的项目中可以找到。
+ 当用 pub 安装的时候 这些文件并没有安装。
     </div>
   </div>
   <hr />
@@ -465,60 +470,58 @@ only one, <code>lib</code>, was installed when you ran pub install.</p>
     <img class="scale-img-max" src="images/other-folders.png" alt="Document, scripts, tests, and other resources" />
     </div>
     <div class="col-md-7">
-      <em>Other resources</em>:
-      Along with Dart libraries,
-      a package might also contain other resources 
-      such as example code, tests, scripts, and documentation.
-      If a package contains these resources,
-      they should be in the directories as specified in the pub
-<a href="https://pub.dartlang.org/doc/package-layout.html">conventions</a>.
+      <em>其他资源</em>:
+      一个 Dart 库可能还包含其他资源，
+      例如 示例代码、测试代码、
+      脚本文件和文档、
+  如果一个包包含这些资源，
+  他们应该分别位于特定的目录中，详情参考
+<a href="https://pub.dartlang.org/doc/package-layout.html">pub 包习惯用法</a>。
     </div>
   </div>
   <hr />
 </div>
 
-<h2 id="use-package">Import libraries from a package</h2>
+<h2 id="use-package">从包中导入库</h2>
 
-<p>Open the vector_math directory by clicking the little arrow.</p>
+<p>点击 vector_math 目录前面的箭头打开该目录。</p>
 
 <p><img class="scale-img-max" src="images/the-vectormath-library.png" alt="Finally, the vector_math library files" /></p>
 
-<p>The directory contains a Dart file called vector_math.dart,
-which you import into your Dart application,
-and a <code>src</code> directory,
-which contains the source code for the library.
-As with the SDK libraries,
-use the import directive to use code from an installed library.
-The Dart SDK libraries are built-in and
-are identified with the special dart: prefix.
-For external libraries installed by pub,
-use the <code>package:</code> prefix.</p>
+<p>该目录包含一个名字为 vector_math.dart 的 Dart 代码文件，
+该文件可以导入到你的项目中去，
+而 <code>src</code> 目录包含了该库的源代码。
+和使用 SDK 中的库一样，
+用 import 语句来导入已经安装的库的代码。
+Dart SDK 库是内置的并且用 dart: 作为前缀。
+对于已经安装的外部包，用
+ <code>package:</code> 前缀。</p>
 
 <pre class="prettyprint lang-dart">import 'package:vector_math/vector_math.dart';</pre>
 
-<p>Note that you specify the filename, not the library name.</p>
+<p>注意上面用的是文件名，而不是包名。</p>
 
-<h2 id="other-resources">Other resources</h2>
+<h2 id="section">其他资源</h2>
 
 <ul>
   <li>
-    Dart developers share packages at
-    <a href="https://pub.dartlang.org/">pub.dartlang.org</a>.
-    Look there for packages that might be useful to you,
-    or share your own Dart packages.
-    See the <a href="https://pub.dartlang.org/doc/">pub documentation</a>
-    to get started using and sharing packages.
+    Dart 开发者在
+    <a href="https://pub.dartlang.org/">pub.dartlang.org</a> 共享代码。
+    可以在这里查找你需要的库，或者分享你自己
+    的 Dart 包。
+    查看 <a href="https://pub.dartlang.org/doc/">pub 文档</a>
+    来开始使用和分享包。
   </li>
 </ul>
 
-<h2 id="what-next">What next?</h2>
+<h2 id="what-next">接下来干啥？</h2>
 
-<p>One package at pub.dartlang.org is Polymer.dart,
-which makes writing web applications easier
-with data binding, templates, and declarative event handlers.
-Check out the next tutorial,
-<a href="/docs/tutorials/polymer-intro">Define a Custom Element</a>,
-for an introduction to Polymer.</p>
+<p>在 pub.dartlang.org 有一个 Polymer.dart 包，
+该包提供了数据绑定、模板和声明式事件处理函数 等功能让开发 web 
+应用更加简单。
+在下一个教程
+<a href="/docs/tutorials/polymer-intro">定义自定义 Element</a>
+将简单介绍 Polymer。</p>
 
 
 
@@ -534,12 +537,12 @@ for an introduction to Polymer.</p>
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/remove-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> Remove DOM Elements</a>
+        <a href="/docs/tutorials/remove-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> 删除 DOM 元素</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/polymer-intro/" class="pull-right">Define a Custom Element <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/polymer-intro/" class="pull-right">定义自定义 Element <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
   </div> 
@@ -553,7 +556,18 @@ for an introduction to Polymer.</p>
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -610,6 +624,16 @@ for an introduction to Polymer.</p>
 
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 

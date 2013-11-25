@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Remove DOM Elements | Dart: 结构化的web应用</title>
+  <title>删除 DOM 元素 | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Remove DOM Elements | Dart: 结构化的web应用">
+  <meta itemprop="name" content="删除 DOM 元素 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Remove a child element from the DOM">
+  <meta itemprop="description" content="从 DOM 中删除一个子元素">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,10 @@
 	
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -204,12 +209,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/add-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> Add Elements to the DOM</a>
+        <a href="/docs/tutorials/add-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> 在 DOM 中添加元素</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/shared-pkgs/" class="pull-right">Install Shared Packages <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/shared-pkgs/" class="pull-right">安装共享包 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
     <hr />
@@ -227,11 +232,11 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="page-highlights">内容摘要</h4>
         
 <ul>
-  <li>Use <em>element</em>.remove() to remove an element from the DOM.</li>
-  <li>Remove all children from an element with <em>element</em>.children.clear().</li>
-  <li>Function expressions are a convenient way to define single-use functions.</li>
-  <li>=&gt; is a shorthand syntax for defining functions that contain just one
-expression.</li>
+  <li>使用 <em>element</em>.remove() 函数从 DOM 中删除一个元素。</li>
+  <li>用 <em>element</em>.children.clear() 来清除一个元素的所有子元素。</li>
+  <li>函数表达式是定义单一使用函数的便捷方式。</li>
+  <li>=&gt; 是定义只有一行代码函数的缩写
+形式。</li>
 </ul>
 
 
@@ -241,15 +246,15 @@ expression.</li>
         <h4 id="examples">示例</h4>
 
         
-<p> This tutorial features this example:</p>
+<p> 该教材使用如下示例程序：</p>
 <ul>
   <li>todo_with_delete</li>
 </ul>
 
 <p>
-Don't have the source code?
+如果你还没下载示例代码，点击
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  这里下载。
 </a>
 
 </p>
@@ -276,63 +281,65 @@ Don't have the source code?
 
     
 <div class="tute-target-title">
-<h1>Remove DOM Elements</h1>
-<h3>Dynamically delete items from the browser page.</h3>
+<h1>删除 DOM 元素</h1>
+<h3>动态的从网页删除元素。</h3>
 </div>
 
-<p>This tutorial shows you how to delete elements from the DOM.
-A new and improved version of the todo app from
-<a href="/docs/tutorials/add-elements/">the previous tutorial</a>
-now allows the user to delete items from the list
-either one at a time, or all at once.</p>
+<p>该教材演示如何从 DOM 中删除元素。
+从 <a href="/docs/tutorials/add-elements/">前一教程</a> 的
+待办事项列表应用改进后的应用支持一次
+删除一个条目或者一次
+删除所有待办事项条目。</p>
 
 <ul>
-  <li><a href="#try-app">Try the app</a></li>
-  <li><a href="#css-hover">Changing the appearance when cursor is over an element</a></li>
-  <li><a href="#remove-elem">Removing an element from the DOM tree</a></li>
-  <li><a href="#remove-all-elem">Removing all child elements from an element</a></li>
-  <li><a href="#about-function-expressions">About function expressions and =&gt;</a></li>
-  <li><a href="#other-resources">Other resources</a></li>
-  <li><a href="#what-next">What next?</a></li>
+  <li><a href="#try-app">玩一玩该应用</a></li>
+  <li><a href="#css-hover">当鼠标在一个元素上方的时候改变元素的外观</a></li>
+  <li><a href="#remove-elem">从 DOM 树中删除一个元素</a></li>
+  <li><a href="#remove-all-elem">删除一个元素的所有子元素</a></li>
+  <li><a href="#about-function-expressions">关于函数表达式和 =&gt;</a></li>
+  <li><a href="#other-resources">其他资源</a></li>
+  <li><a href="#what-next">接下来干啥？</a></li>
 </ul>
 
-<h2 id="try-app">Try the app</h2>
+<h2 id="try-app">玩一玩该应用</h2>
 
-<p>Below is a revised version
-of the todo app from the previous tutorial
-that allows you to delete items.
-Stop procrastinating and remove items from your to do list.</p>
+<p>下面是前一教程中的
+待办事项应用
+增强版，可以
+删除待办事项条目。</p>
 
-<p><strong>Try it!</strong>
-Type in the input field and press the return key;
-a new item appears in the list.
-Enter a few more items.
-Point the mouse cursor at one of the items in the list;
-the item turns red and gets slightly larger.
-Click it and it disappears from the list.
-Use the <strong>Delete All</strong> button
-to remove all of the items in the list at once.</p>
+<p><strong>动手试试！</strong>
+在输入框中输入文字然后按回车键会
+在 list 中添加一个新的条目。
+继续添加多少条目。
+然后把鼠标放到其中一个条目上，
+该条目会变为红色并且稍微有点变大了。
+点击条目会从列表中删除它。
+使用 <strong>Delete All</strong> 按钮从
+列表中删除所有的待办事项条目。</p>
 
 <iframe class="running-app-frame" style="height:250px;width:300px;" src="examples/todo_with_delete/todo_with_delete.html">
 </iframe>
 
-<p>The remaining sections describe
-key aspects of the code 
-added to the todo app for this tutorial.
-Specifically, they look at
-the Dart code that removes one or more elements from the DOM
-and the CSS code that makes the text red and larger.</p>
+<p>下面的内容将详细
+介绍该教程中的
+关键代码。
+特别是在 Dart 代码中
+如何删除一个或者多少 DOM 元素，
+以及如何用 CSS 规则来改变
+文字颜色并放大文字。</p>
 
-<h2 id="css-hover">Changing the appearance when cursor is over an element</h2>
+<h2 id="css-hover">当鼠标在一个元素上方的时候改变元素的外观</h2>
 
-<p>As you saw, an item in the list turns red and gets bigger
-when the user points at it.
-The mouse cursor also changes shape.
-These visual clues are an important part of the user interface
-in this example because they are the only indication to the user
-that something will happen when the item is clicked.</p>
+<p>如上所示，当鼠标放到一个 list 条目的时候，
+该条目会变大并且文字变为红色。
+同时鼠标指针的形状也发生了变化。
+该视觉提示是用户界面体验非常重要的组成部分。
+在该示例中，提示用户当
+点击列表条目的时候
+会有情况发生。</p>
 
-<p>This behavior is coded in the todo_with_delete app’s CSS file with this rule:</p>
+<p>该行为通过 todo_with_delete 应用中的 CSS 规则实现的：</p>
 
 <pre class="prettyprint lang-dart">#to-do-list li:hover {
   color: red;
@@ -340,93 +347,91 @@ that something will happen when the item is clicked.</p>
   cursor:pointer;
 }</pre>
 
-<p>We’ve used this CSS trick
-instead of providing a familiar user interface,
-such as a button with an ‘X’ on it,
-to keep the code simpler.</p>
+<p>我们使用该 CSS 技巧来
+替代常规的用户界面，
+这样可以保持代码比较
+简洁。</p>
 
-<h2 id="remove-elem">Removing an element from the DOM tree</h2>
+<h2 id="remove-elem">从 DOM 树中删除一个元素</h2>
 
-<p>An element is removed from
-the DOM when it is removed from its parent’s list of children.
-The
+<p>当从一个元素的父节点中删除它的时候，
+该元素就从 DOM 树中删除了。
 <a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>
-class provides functions for finding an item in the list
-and removing it.
-But, in this case,
-using the element’s remove() function
-is shorter and more concise than
-using functions from the List class.</p>
+ 类提供了从列表中查找并删除一个元素
+ 的功能。
+但是在这里，用
+ element 的 remove() 函数
+ 更加短小清晰。</p>
 
 <p><img class="scale-img-max" src="images/remove-element.png" alt="Use element.remove() to remove an element from the DOM" /></p>
 
-<p>In the todo_with_delete app,
-the user clicks an item to delete it.
-This is achieved with one line of Dart code.
-When a new to do item is created,
-the code registers a mouse click handler on the new element.
-When the user clicks that new element,
-its event handler causes the element to remove itself from the DOM
-with remove().</p>
+<p>在 todo_with_delete 应用中，
+用户通过点击一个列表条目来删除它。
+该功能由一行 Dart 代码实现。
+当创建一个新的列表条目的时候，
+同时注册了一个鼠标点击事件监听器。
+当用户在该条目上点击鼠标的时候，
+事件监听器会调用该
+元素的 remove() 函数来从 DOM 树中删除它。</p>
 
 <p><img class="scale-img-max" src="images/remove-element-code.png" alt="Registering an event handler to delete an item" /></p>
 
-<p>When the element removes itself from the DOM,
-the browser re-renders the page,
-and the item disappears from the to do list.</p>
+<p>当一个元素从 DOM 树中把自己删除了，
+浏览器会重新渲染该页面，
+然后该元素就从网页上消失了。</p>
 
-<h2 id="remove-all-elem">Removing all child elements from an element</h2>
+<h2 id="remove-all-elem">删除一个元素的所有子元素</h2>
 
-<p>When the user clicks the <strong>Delete All</strong> button,
-all elements are removed from the list.</p>
+<p>当用户点击 <strong>Delete All</strong> 按钮时，
+所有的列表条目都会被删除。</p>
 
 <p><img class="scale-img-max" src="images/remove-all-elements.png" alt="Use element.children.clear() to remove all of an element's children" /></p>
 
-<p>In this case, using the List class’s clear() function
-yields the most concise code.
-Here’s the code from the todo_with_delete app
-that implements the <strong>Delete All</strong> button.</p>
+<p>在上面示例中使用 List 类
+的 clear() 函数。
+下面是 todo_with_delete 应用中实现
+ <strong>Delete All</strong> 按钮的代码。 </p>
 
 <ol>
 <li>
-    <p>The HTML code creates a button with the ID delete-all.
-(The CSS styles it.)</p>
+    <p>该 HTML 代码创建了一个 ID 为 delete-all 的按钮。
+(并且直接设置了 CSS 样式。)</p>
 
     <pre class="prettyprint lang-dart">&lt;button id=&quot;delete-all&quot; type=&quot;button&quot; style=&quot;float:right&quot;&gt; Delete All &lt;/button&gt;</pre>
 
   </li>
 
 <li>
-    <p>The Dart code gets the button element from the DOM
-using query() and the button’s ID, #delete-all.
-The code registers a mouse click handler on the button;
-the handler removes all of the child elements from the to do list.
-Here is all of the Dart code related to the <strong>Delete All</strong> button.</p>
+    <p>Dart 代码用 query() 函数（参数为 #delete-all ）从 DOM 中
+找到该按钮。
+然后在按钮上注册一个鼠标点击事件监听器，
+该监听器把列表中的所有子元素都删除了。
+下面是 <strong>Delete All</strong> 按钮相关的所有 Dart 代码。</p>
 
     <p><img class="scale-img-max" src="images/remove-all-code.png" alt="Remove all child elements from an Element" /></p>
 
   </li>
 </ol>
 
-<h2 id="about-function-expressions">About function expressions and =&gt;</h2>
+<h2 id="about-function-expressions">关于函数表达式和 =&gt;</h2>
 
-<p>The todo_with_delete app uses
-some interesting Dart syntax
-when adding an event listener to the <strong>Delete All</strong> button.
-The argument passed into the listen() function
-is an example of a <em>function expression</em>,
-which is a shorthand way of defining functions
-and it uses the =&gt; syntax to define the function concisely.</p>
+<p>todo_with_delete 应用使用了一些
+有趣的 Dart 语法来添加
+ <strong>Delete All</strong> 按钮的事件监听器。
+ listen() 函数的参数是一个
+  <em>function expression 函数表达式</em> ，
+函数表达式是定义函数的缩写方式，
+并使用 =&gt; 语法来简洁的定义函数。</p>
 
 <p><img class="scale-img-max" src="images/event-listener-exp.png" alt="A one-line function definition" /></p>
 
-<p>It is equivalent to writing this:</p>
+<p>上面的代码等价于如下代码：</p>
 
 <pre class="prettyprint lang-dart">deleteAll.onClick.listen((e) {
   toDoList.children.clear();
 });</pre>
 
-<p>or even this:</p>
+<p>或者如下代码：</p>
 
 <pre class="prettyprint lang-dart">...
 void main() {
@@ -439,49 +444,46 @@ void deleteAllElements(Event e) {
 }
 ...</pre>
 
-<p>Function expressions are often used
-when registering event handlers on an element
-and can extend over multiple lines.
-When registering event handlers,
-the function must be an EventListener.
-That is,
-it returns no value and takes an Event object as a parameter.</p>
+<p>函数表达式通常用于在一个
+元素上注册事件监听器。
+当注册事件监听器的时候，
+该函数必须为一个 EventListener，
+也就是说该函数类型要接受
+一个 Event 对象作为参数并没有
+返回值。</p>
 
-<h2 id="other-resources">Other resources</h2>
+<h2 id="section">其他资源</h2>
 
 <ul>
   <li>
-    Check out
+    不要忘了看看
     <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>,
-    where you'll find many recipes about manipulating the DOM
-    and using CSS.
-    The cookbook also has recipes about basic Dart data types,
-    such strings, lists, maps, and numbers.
+    <i class="icon-food"> </i> Dart Cookbook</a>，
+    这里具有很多操作 DOM 和使用 CSS 的技巧。
+	该书还介绍了 Dart 基本数据类型，例如
+  strings、 lists、 maps、 和 numbers。
   </li>
 
   <li>
-    You can find more information about the DOM and CSS in
-    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>,
-    which also provides thorough coverage of the Dart language, 
-    libraries, and tools.
+    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>
+    是覆盖了 Dart 语言、库和工具的一本书。
   </li>
 </ul>
 
-<h2 id="what-next">What next?</h2>
+<h2 id="what-next">接下来干啥？</h2>
 
 <ul>
   <li>
-    <p>The next tutorial,
-<a href="/docs/tutorials/shared-pkgs">Install Shared Packages</a>,
-shows you how to use code written and shared by others.</p>
+    <p>下一个教程，
+<a href="/docs/tutorials/shared-pkgs">安装共享包</a>，
+告诉你如何使用其他人编写并共享的代码。</p>
   </li>
   <li>
-    <p>One of those packages is Polymer.dart,
-which makes manipulating the DOM even easier
-with data binding, templates, and declarative event handlers.
-Check out <a href="/docs/tutorials/polymer-intro">Define a Custom Element</a>
-for an introduction to Polymer.</p>
+    <p>其中一个包为 Polymer.dart，
+该包支持一些功能是操作 DOM 更加方便，例如
+数据绑定、模板以及声明式事件监听器。
+通过 <a href="/docs/tutorials/polymer-intro">定义自定义 Element</a>
+ 来了解 Polymer。</p>
   </li>
 </ul>
 
@@ -499,12 +501,12 @@ for an introduction to Polymer.</p>
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/add-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> Add Elements to the DOM</a>
+        <a href="/docs/tutorials/add-elements/"><i class="glyphicon glyphicon-chevron-left"> </i> 在 DOM 中添加元素</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/shared-pkgs/" class="pull-right">Install Shared Packages <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/shared-pkgs/" class="pull-right">安装共享包 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
   </div> 
@@ -518,7 +520,18 @@ for an introduction to Polymer.</p>
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -575,6 +588,16 @@ for an introduction to Polymer.</p>
 
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 

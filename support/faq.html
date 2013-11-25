@@ -1,14 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>FAQ | Dart: 结构化的web应用</title>
+  <title>FAQ | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="FAQ | Dart: 结构化的web应用">
+  <meta itemprop="name" content="FAQ | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
@@ -26,7 +28,10 @@
 	<link rel="author" href="/authors/eli-brandt.html">
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -195,74 +200,73 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
   <div class="container">
   	<div class="container sub-page">
     <article class="has-permalinks">
-    <h1>Frequently Asked Questions (FAQ)</h1>
-<em>Initially collected by Eli Brandt<br>
-Version 0.03, December 2012</em>
+    <h1>常见问题解答 (FAQ)</h1>
+<em>最初由 Eli Brandt 收集整理<br>
+版本 0.03, 2012 12月</em>
 
 <p>
-  This FAQ answers many of the questions we've been asked about Dart. However, because we released Dart
-  as an early technology preview rather than keeping it under wraps until version 1.0, some important
-  open questions remain. We hope to address them with upcoming work and experimentation, inside and
-  outside of Google.
+  这里解答了很多我们曾经被问及的有关Dart的问题。由于我们在1.0版本正式发布之前，只将Dart作为一个
+  早期的技术预览版发布。因此前期一些重要的问题依然保留下来。我们希望在未来的工作和实验中处理他们。
+  无论是在谷歌内部还是外部。
 </p>
 
 <section id="contents">
 
-<h3>Contents</h3>
+<h3>目录</h3>
 <ol id="faq-toc" class="toc">
-  <li><a href="#strategy" class="faq-topic">Strategy</a>
+  <li><a href="#strategy" class="faq-topic">策略</a>
   <ol>
-    <li><a href="#why-dart">Why Dart?</a></li>
-    <li><a href="#why-fix-the-language">Is the language really what needs to be fixed in web development?</a></li>
-    <li><a href="#does-dart-divert-effort">Is Dart going to divert community effort from JavaScript-based web development?</a></li>
-    <li><a href="#will-dart-be-standardized">Is Google planning to put Dart under the control of a standards body?</a></li>
-    <li><a href="#how-will-dart-take-input">Until that point, how will you be taking input on changes to Dart?</a></li>
-    <li><a href="#why-not-designed-by-standards-body">Why didn't Google make Dart an open standard right from the start?</a></li>
-    <li><a href="#future-for-GWT">What's the future for GWT?</a></li>
-    <li><a href="#why-not-multi-language-VM">Why didn't Google build a bytecode VM targetable by multiple languages including Dart?</a></li>
+    <li><a href="#why-dart">为什么用 Dart?</a></li>
+    <li><a href="#why-fix-the-language">Dart语言是否是我们需要的用来弥补目前WEB开发的不足？</a></li>
+    <li><a href="#does-dart-divert-effort">Dart 能否替代基于 JavaScript 的 WEB 开发？</a></li>
+    <li><a href="#will-dart-be-standardized">谷歌是否计划把 Dart 作为一门标准体系？</a></li>
+    <li><a href="#how-will-dart-take-input">到此，你们将怎么加强 Dart 的更新</a></li>
+    <li><a href="#why-not-designed-by-standards-body">为什么谷歌不在一开始就将 Dart 作为一个开放的标准发布？</a></li>
+    <li><a href="#future-for-GWT"> GWT 的未来?</a></li>
+    <li><a href="#why-not-multi-language-VM">谷歌为什么不开发一个包含 Dart 的多语言字节码虚拟机目标平台？</a></li>
   </ol> </li>
 
-  <li><a href="#language" class="faq-topic">Language</a>
+  <li><a href="#language" class="faq-topic">语言</a>
   <ol>
-    <li><a href="#compare-to-javascript">Isn't Dart a lot like JavaScript?</a></li>
-    <li><a href="#compare-to-java">Isn't Dart a lot like Java?</a></li>
-    <li><a href="#compare-to-closure">How does Dart compare with using the Closure compiler on JavaScript?</a></li>
-    <li><a href="#compare-to-coffeescript">How does Dart compare with CoffeeScript?</a></li>
-    <li><a href="#typescript">What does Google think of TypeScript?</a></li>
-    <li><a href="#compare-to-go">How does Dart relate to Go?</a></li>
-    <li><a href="#compare-to-everything-else">Why isn't Dart more like Haskell / Smalltalk / Python / Scala / other language?</a></li>
-    <li><a href="#earth-shattering-syntactic-kaboom">Why isn't Dart syntax more exciting?</a></li>
-    <li><a href="#is-it-a-dynamic-language">Is it really a dynamic language if it doesn't have eval() or adding fields to a value at run time?</a></li>
-    <li><a href="#can-add-reflection">Can Dart add reflection?</a></li>
-    <li><a href="#can-add-everything">Can Dart add tuples, pattern matching, non-nullable types, partial evaluation, optional semicolons, ...?</a></li>
+    <li><a href="#compare-to-javascript">Dart 跟 JavaScript 很像么?</a></li>
+    <li><a href="#compare-to-java">Dart 跟 Java 的区别</a></li>
+    <li><a href="#compare-to-closure">Dart 的语法结构与比 JavaScript 有哪些优势？</a></li>
+    <li><a href="#compare-to-coffeescript">Dart 与 CoffeeScript 比较,优势在哪里？</a></li>
+    <li><a href="#typescript">谷歌是怎样看待 TypeScript 的？</a></li>
+    <li><a href="#compare-to-go">Dart 与 Go 会有联系么？</a></li>
+    <li><a href="#compare-to-everything-else">为什么 Dart 不像 Haskell / Smalltalk / Python / Scala / 等其他语言？</a></li>
+    <li><a href="#earth-shattering-syntactic-kaboom">为什么 Dart 的语法不做的更令人期待呢？</a></li>
+    <li><a href="#is-it-a-dynamic-language">如果没有 eval() 方法或者不能在运行时给变量赋值, Dart 还能算是动态语言么？</a></li>
+    <li><a href="#can-add-reflection">Dart 会增加"反射"么？</a></li>
+    <li><a href="#can-add-everything">Dart 会添加数组、模式匹配、非空类型、局部变量、可选的分号等元素？</a></li>
   </ol> </li>
 
-  <li><a href="#types" class="faq-topic">Types</a>
+  <li><a href="#types" class="faq-topic">类型</a>
   <ol>
-    <li><a href="#type-inference">Does Dart have type inference?</a></li>
-    <li><a href="#why-types-optional">Why are type annotations optional?</a></li>
-    <li><a href="#why-types-unsound">Why is the type system designed to be unsound?</a></li>
-    <li><a href="#sound-types-for-performance">But don't you need sound typing information to get high performance?</a></li>
-    <li><a href="#types-why-no-runtime-effect">Why do type annotations have no effect on the runtime behavior?</a></li>
-    <li><a href="#why-covariant-generics">Why are generics covariant?</a></li>
+    <li><a href="#type-inference">Dart 有类型推断么？</a></li>
+    <li><a href="#why-types-optional">为什么类型注释是可选的？</a></li>
+    <li><a href="#why-types-unsound">为什么类型系统设计的不健全？</a></li>
+    <li><a href="#sound-types-for-performance">不需要生命类型信息来提升性能么?</a></li>
+    <li><a href="#types-why-no-runtime-effect">为什么类型注释在运行时是无的？</a></li>
+    <li><a href="#why-covariant-generics">为什么泛型是协变的？</a></li>
   </ol> </li>
 
-  <li><a href="#tools" class="faq-topic">Usage and tools</a>
+  <li><a href="#tools" class="faq-topic">用法与工具</a>
   <ol>
-    <li><a href="#should-i-use-dart-yet">Should I write my web app in Dart?</a></li>
-    <li><a href="#interop-with-js-libs">How does Dart code interoperate with JavaScript libraries?</a></li>
-    <li><a href="#js-codebase-integration">I have a large JavaScript codebase.  How would I migrate it to Dart?</a></li>
-    <li><a href="#porting-from-GWT">I have a large application written in GWT. How do I port it to Dart?</a></li>
-    <li><a href="#what-browsers-supported">What browsers do you plan to support as JavaScript compilation targets?</a></li>
-    <li><a href="#what-browsers-have-dart">What browsers support Dart now?</a></li>
-    <li><a href="#hello-world-js-size">Why was the JavaScript output for "Hello world" so big?</a></li>
-    <li><a href="#debugging-output-js">How do I debug Dart code after it's been compiled to JavaScript?</a></li>
-    <li><a href="#what-input-compiles">Will any valid Dart code compile to JavaScript, or are there limitations?</a></li>
-    <li><a href="#json-support">Does Dart support JSON?</a></li>
-    <li><a href="#server-support">Can Dart run on the server?</a></li>
+    <li><a href="#should-i-use-dart-yet">我应该用 Dart 开发WEB应用程序么？</a></li>
+    <li><a href="#interop-with-js-libs">Dart 代码与 JavaScript 库是如何交互操作的？</a></li>
+    <li><a href="#js-codebase-integration">我前期开发了大量的 JavaScript 代码。怎样才能迁移到 Dart ？</a></li>
+    <li><a href="#porting-from-GWT">I have a large application written in GWT. How do I port it to Dart?我有一个在 GWT 环境中编写的大型应用程序，怎样才能与 Dart 对接？</a></li>
+    <li><a href="#what-browsers-supported">像 JavaScript 编译目标那样，哪些浏览器会被 Dart 支持？</a></li>
+    <li><a href="#what-browsers-have-dart">截至目前哪些浏览器支持 Dart ？</a></li>
+    <li><a href="#hello-world-js-size">为什么生成的输出“Hello world"的 JavaScript 代码那么大？</a></li>
+    <li><a href="#debugging-output-js">Dart 代码被编译成 JavaScript 代码后，我该怎么样调试？</a></li>
+    <li><a href="#what-input-compiles">任何 Dart 代码都可以编译成 JavaScript 代码么，有没有什么限制？</a></li>
+    <li><a href="#json-support">Dart 支持 JSON 么？</a></li>
+    <li><a href="#server-support">Dart 能在服务端运行么？</a></li>
   </ol> </li>
 
-  <li><a href="#acknowledgments" class="faq-topic">Acknowledgments</a></li>
+  <li><a href="#acknowledgments" class="faq-topic">鸣谢</a></li>
 </ol>
 </section> <!-- /#contents -->
 
@@ -271,35 +275,35 @@ Version 0.03, December 2012</em>
 <section id="strategy">
 <h2>Strategy</h2>
 
-<h3 id="why-dart">Q. Why Dart?</h3>
+<h3 id="why-dart">问题：为什么选择 Dart ？</h3>
 
-<p>At Google we've written our share of web apps, and we've tried in many ways to make improvements to that development process, short of introducing a new language.  Now we think it's time to take that leap.  We designed Dart to be easy to write development tools for, well-suited to modern app development, and capable of high-performance implementations.</p>
+<p>在谷歌我们已经写出了很多优秀的WEB应用程序，我们通过各种方法努力改进其开发过程，但不尽如人意，我们发现缺少引入一门新的语言。现在时机到了。我们设计 Dart 是为了编写用于需要高的运行表现及适合最新应用开发的开发工具更容易。</p>
 
-<h3 id="why-fix-the-language">Q. Is the language really what needs to be fixed in web development?</h3>
+<h3 id="why-fix-the-language">问题：Dart语言能否弥补目前WEB开发不足？</h3>
 
-<p>We want to <a href="http://hyperboleandahalf.blogspot.com/2010/06/this-is-why-ill-never-be-adult.html">fix ALL the things</a>.  There's "Dart" the language, and then there's "Dart" the overall project.  The Dart <em>project</em> is betting that the language needs some changes, but we also want to <a href="/articles/improving-the-dom/">improve the DOM</a> and other libraries, and to improve the tools we use.</p>
+<p>我们希望能够<a href="http://hyperboleandahalf.blogspot.com/2010/06/this-is-why-ill-never-be-adult.html">弥补所有的不足</a>。这就是 Dart 语言以及 Dart 整个项目的目标。Dart <em>项目</em>认为WEB开发语言应该有所改变，但是同时我们也希望能够<a href="/articles/improving-the-dom/">提升DOM</a>和其他的类库以及改善目前我们正在使用的开发工具。</p>
 
-<p>At the same time, Google is also placing bets that JavaScript <em>can</em> be evolved as needed, and contributing to that work.  Google wants web development to be great, and if that happens with JavaScript, we're happy.</p>
+<p>同时，谷歌也认为 JavaScript <em>能</em>进一步被改进，并且积极的投入到这份工作中来。谷歌希望 WEB 开发变得更棒，如果这是由 JavaScript 带来的，我们同样会非常高兴。</p>
 
-<h3 id="does-dart-divert-effort">Q. Is Dart going to divert community effort from JavaScript-based web development?</h3>
+<h3 id="does-dart-divert-effort">问题：Dart 会转移那些以 JavaScript 为基础的WEB开发团体的工作么？</h3>
 
-<p>If people like Dart and use it, then to a certain extent, yes, but isn't this true of any improvement to existing web development?  Nothing is zero-effort to learn or 100% back-compatible to legacy browsers, so people use both new and old.  You might look at it this way: Google is putting significant effort behind both Dart and JavaScript, choosing to develop Dart while at the same time using JavaScript extensively, and working on JavaScript tools, implementation, and language spec.  We're doing both because we think Dart is worth it.</p>
+<p>如果人们喜欢 Dart 并且使用它，从某一方面来看，是的，但是任何一种对现有 WEB 开发的改进不都是这样么？完全重新开始或者100%兼容都不可取，所以人们一般旧的和新的一起用。你可以这样看：谷歌重在做有意义的尝试无论是基于 Dart 还是 JavaScript，选择发展中的 Dart同时继续广泛的使用 JavaScript 及其工具，实现，并且发展语言。我们同时都在做，因为我们认为 Dart 值得这么做。</p>
 
-<p>Server-side web programming finds room for many languages: does Python divert effort from Perl, and does Java undercut C++?  Again, to a certain extent, yes they do, but people generally consider that a healthy situation, better than if we all used a single programming language.  Multiple languages have allowed for faster change than any single language has achieved through a standards process.  Furthermore, languages coexist in different niches: does Groovy really compete directly with C++?  People face different engineering tradeoffs and choose different languages to meet them.  Ultimately, we think client-side developers should have this kind of flexibility.</p>
+<p>有很多语言用于 WEB 服务器开发：Python 转移了 Perl 的工作么， Java 取代了 C++ 么？再次，从某一方面来看，是的，但是人们通常考虑健康的环境，多语言好于我们只使用单门语言开发，多语言允许快速转换，这已经通过一种标准的过程取得了效果。此外，每种语言都有其自己的存在价值：Groovy 亦不是与 C++直接竞争。人们面对不同工程权衡，选择不同的语言来应对。最后，我们希望客户端开发者们也可以有这种灵活性。</p>
 
-<h3 id="will-dart-be-standardized">Q. Is Google planning to put Dart under the control of a standards body?</h3>
+<h3 id="will-dart-be-standardized">问题：谷歌打算把 Dart 语言交给标准团体控制么？</h3>
 
-<p>Yes, we hope to.  Once Dart reaches a certain level of maturity and acceptance, we expect that a standards process will be the next step.</p>
+<p>是的，我们希望那样。一旦 Dart 语言发展到一定程度并且被大众接受，我们期待标准化过程将作为下一步目标。</p>
 
-<h3 id="how-will-dart-take-input">Q. Until that point, how will you be taking input on changes to Dart?</h3>
+<h3 id="how-will-dart-take-input">问题：到这里，你们将怎样推进 Dart 的发展？</h3>
 
-<p>We plan to handle it like the V8 project.  We'll listen to feedback and issues, and we'll review patches from outside contributors.  A contributor with a good track record can become a committer to the repository.  Google engineers will also be working in the public repository, making visible changes.</p>
+<p>我们计划像控制 V8 项目那样控制 Dart。我们将聆听反馈和问题，并且我们将检查外界 Dart 贡献者的修改。 一个有着很好痕迹记录的贡献者将会为 Dart 仓库提交确认。谷歌工程师也将会在公共仓库中工作，进行可见的修改。</p>
 
-<h3 id="why-not-designed-by-standards-body">Q. Why didn't Google make Dart an open standard right from the start?</h3>
+<h3 id="why-not-designed-by-standards-body">问题：谷歌为什么不一开始就将 Dart 作为一个开放标准公布？</h3>
 
-<p>We're taking the usual route to get to an open-standard programming language: someone creates a coherent first version, people experiment with it, and we standardize later.  The open standard web platform has been known to add other pieces this way, where standardization follows after a vendor experiment: canvas, for example.  We understand that this route raises concerns, but we think it is sometimes useful, and in particular that it is useful for programming languages, where design by committee is risky.</p>
+<p>我们通过一般途径取得开放标准的程序语言：某人创建一个清晰的初版，人们尝试它，然后我们使其标准化。开放标准 WEB 平台以这种方式整合小的改进，经其他人的尝试后标准化就实现了：canvas就是一个例子。我们知道这种方式增加了大众参与，但是我们认为这种方式只在某些时候有用，特别的，作为一门编程语言，其由开放团队设计是有风险的。</p>
 
-<p>The most recent successful language designed by an open committee was Haskell, starting in 1990.  The most widely used was COBOL, followed by Ada.  It's not a common way to do language design.  Among dozens and dozens of major languages, six (give or take a couple of debatables) were designed this way.  (And one of those six was ALGOL-68.) </p>
+<p>Haskell是近期成功的被开放社区设计的变成语言，始于1990年。最广泛使用的是COBOL，从Ada演变而来。这不是一个程序语言设计的普通方式。在目前主要的编程语言中，只有六个（数字存在争议）是通过这种方式设计的（其中之一是 ALGOL-68)。</p>
 
 <h3 id="future-for-GWT">Q. What's the future for GWT?</h3>
 
@@ -530,7 +534,18 @@ We're currently aiming to support the following browsers:
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -587,6 +602,16 @@ We're currently aiming to support the following browsers:
 
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 

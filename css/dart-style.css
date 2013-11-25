@@ -1276,3 +1276,8 @@ dd{
 }
 
 .remark {display:none;}
+
+/* ***** baidu share ***** */
+.alignRight{
+	float:right;
+}

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Connect Dart &amp; HTML | Dart: 结构化的web应用</title>
+  <title>连接 Dart 和 HTML | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Connect Dart &amp; HTML | Dart: 结构化的web应用">
+  <meta itemprop="name" content="连接 Dart 和 HTML | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Shows basic scaffolding of a Dart web app">
+  <meta itemprop="description" content="演示 Dart web 应用的基本结构">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,10 @@
 	
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -204,12 +209,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/get-started/"><i class="glyphicon glyphicon-chevron-left"> </i> Get started</a>
+        <a href="/docs/tutorials/get-started/"><i class="glyphicon glyphicon-chevron-left"> </i> 开始</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/add-elements/" class="pull-right">Add Elements to the DOM <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/add-elements/" class="pull-right">在 DOM 中添加元素 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
     <hr />
@@ -227,12 +232,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="page-highlights">内容摘要</h4>
         
 <ul>
-  <li>The DOM models a browser page in a tree/node structure.</li>
-  <li>An HTML file hosts your Dart code in a browser page.</li>
-  <li>Use query() with an ID to get an element from the DOM.</li>
-  <li>Compile to JavaScript to run in any modern browser.</li>
-  <li>CSS selectors are patterns used to select matching elements in the DOM.</li>
-  <li>Use CSS rules to style elements.</li>
+  <li>DOM 模型通过树/节点结构来构成一个网页页面。</li>
+  <li>HTML 文件在浏览器中引入 Dart 代码。</li>
+  <li>使用 query() 函数 - 参数为元素ID - 来从 DOM 中查询元素。</li>
+  <li>编译为 JavaScript 可以在所有主流浏览器中运行。</li>
+  <li>可以用 CSS 选择器来选择 DOM 中匹配的元素。</li>
+  <li>用 CSS 规则来定义每个元素的外观样式。</li>
 </ul>
 
 
@@ -243,16 +248,16 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 
         
 <p>
-This tutorial features these examples:</p>
+本教程使用如下两个示例：</p>
 <ul>
   <li>mini</li>
   <li>mini_with_style</li>
 </ul>
 
 <p>
-Don't have the source code?
+还没有示例代码？
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  下载一份吧。
 </a>
 
 </p>
@@ -279,128 +284,128 @@ Don't have the source code?
 
     
 <div class="tute-target-title">
-<h1>Connect Dart &amp; HTML</h1>
-<h3>Write a mini Dart app.</h3>
+<h1>连接 Dart 和 HTML</h1>
+<h3>编写一个微型 Dart 应用。</h3>
 </div>
 
-<p>To write a Dart web app,
-you need to have basic understanding of
-several topics—the DOM tree, nodes, elements,
-HTML, Dart language and libraries,
-and Dart Editor.</p>
+<p>你需要一些背景知识才能
+开始编写 Dart web 应用，
+这些知识包括：
+ DOM 树、 节点、 元素、HTML、
+ Dart 语言和库以及 Dart 编辑器。</p>
 
-<p>The interdependencies are circular,
-but we have to begin somewhere,
-so we begin with a simple HTML file,
-which introduces the DOM tree and nodes.
-From there,
-you build a bare bones, stripped-down
-Dart application
-that contains just enough code to
-dynamically put text on the page from the Dart side.
-Though simple,
-this example shows you how to connect a Dart
-app to an HTML page and
-one way that a Dart app can interact with items on the page.
-These concepts
-provide the foundation
-for more interesting and useful web apps.</p>
+<p>这些内容是相互依赖的，
+但是我们总要先从某个地方开始，
+那么就从一个简单的 HTML 文件开始吧，
+在 HTML 文件中用到了 DOM 树和节点。
+这里，
+你将创建一个最简单的 Dart
+ 应用，该应用只包含了能
+ 从 Dart 程序把文字显示
+ 在网页上的代码。
+麻雀虽小五脏俱全，
+该示例像你演示了如何把 Dart 
+应用和 HTML 页面联系起来，
+以及 Dart 应用和网页元素交互的一种方式。
+这些概念是
+更复杂 web 应用的
+基础。</p>
 
 <ul>
-  <li><a href="#dom-intro">About the DOM</a></li>
-  <li><a href="#create-dart-app">Create a new Dart app</a></li>
-  <li><a href="#create-html">Edit the HTML file</a></li>
-  <li><a href="#about-html-code">About the HTML source code</a></li>
-  <li><a href="#dart-editor-happiness">Edit Dart source code</a></li>
-  <li><a href="#about-dart-code">About the Dart source code</a></li>
-  <li><a href="#summary">Summary of HTML and Dart connections</a></li>
-  <li><a href="#run-mini">Run the mini web app</a></li>
-  <li><a href="#add-css">Give the app some style with CSS</a></li>
-  <li><a href="#about-css-selectors">About CSS selectors</a></li>
-  <li><a href="#other-resources">Other resources</a></li>
-  <li><a href="#what-next">What next?</a></li>
+  <li><a href="#dom-intro">关于 DOM </a></li>
+  <li><a href="#create-dart-app">创建一个新的 Dart 应用</a></li>
+  <li><a href="#create-html">编辑 HTML 文件</a></li>
+  <li><a href="#about-html-code">关于 HTML 源代码</a></li>
+  <li><a href="#dart-editor-happiness">编辑 Dart 源代码</a></li>
+  <li><a href="#about-dart-code">关于 Dart 源代码</a></li>
+  <li><a href="#summary">总结 Dart 和 HTML 的关系</a></li>
+  <li><a href="#run-mini">运行这个微型 web 应用</a></li>
+  <li><a href="#add-css">使用 CSS 来给该应用设置一些样式</a></li>
+  <li><a href="#about-css-selectors">关于 CSS 选择器</a></li>
+  <li><a href="#other-resources">其他资源</a></li>
+  <li><a href="#what-next">接下来干啥？</a></li>
 </ul>
 
-<h2 id="dom-intro">About the DOM</h2>
+<h2 id="dom-intro">关于 DOM</h2>
 
-<p>The Document Object Model (DOM)
-represents the structure of a web document as a tree of nodes.
-When an HTML file is loaded into a browser,
-the browser interprets the HTML
-and displays the document in a window.
-The following diagram shows a simple HTML file and
-the resulting web browser page in Chrome.</p>
+<p>Document Object Model (DOM)
+ 代表 web 文档的树和节点结构。
+当一个 HTML 文件载入到浏览器中时，
+浏览器解析该 HTML 文件并
+在窗口中显示该文档。
+下图显示了一个简单的 HTML 文件和
+该文件在 Chrome 浏览器中的显示结果。</p>
 
 <p><img class="scale-img-max" src="images/simple-html.png" alt="A simple HTML file and its resulting web page" /></p>
 
-<p>HTML uses tags to describe the document.
-For example, the simple HTML code above
-uses the &lt;title&gt; tag for the page title,
-&lt;h1&gt; for a level-one header,
-and &lt;p&gt; for a paragraph.
-Some tags in the HTML code,
-such as
-&lt;head&gt; and &lt;body&gt;,
-are not visible on the web page,
-but do contribute to the structure of the document.</p>
+<p>HTML 用标签来描述文档。
+例如，上面的简单 HTML 代码用 &lt;title&gt; 
+标签来显示页面标题，
+&lt;h1&gt; 来显示一级标题，
+&lt;p&gt; 代表一个段落。
+在 HTML 中还有一些标签
+在浏览器中是不显示的，例如 
+&lt;head&gt; 和 &lt;body&gt; 
+标签，
+这些标签定义了文档的结构。</p>
 
-<p>In the DOM,
-the document object sits at the root of the tree
-(it has no parent).
-Different kinds of nodes in the tree
-represent different kinds of objects in the document.
-For example, the tree has page elements,
-text nodes, and attribute nodes.
-Here is the DOM tree for the simple HTML file above.</p>
+<p>在 DOM 中，
+文档对象位于一个根节点中，
+根节点没有父节点。
+不同的节点代表文档中
+不同的对象。
+例如，树中的 page 元素、
+text 节点、和 属性节点。
+下图是上面简单 HTML 文件的 DOM 树结构。</p>
 
 <p><img class="scale-img-max" src="images/simple-dom-tree.png" alt="The DOM tree for a simple HTML file" /></p>
 
-<p>Notice that some tags, such as the &lt;p&gt; paragraph tag,
-are represented by multiple nodes.
-The paragraph itself is an element node.
-The text within the paragraph is a text node
-(and in some cases, might be a subtree containing many nodes).
-And the ID is an attribute node.</p>
+<p>注意，有些标签通过多个节点来表示，
+例如 &lt;p&gt; 段落标签。
+段落自身为一个元素节点。
+里面的文字是一个 text 节点
+（在某些情况下，也可能是一个包含很多节点的子树）。
+ID 是属性节点。</p>
 
-<p>Except for the root node, each node in the tree has exactly one parent.
-Each node can have many children.</p>
+<p>除了根节点，树中的每个节点都只有一个父节点。
+每个节点可以有多个子节点。</p>
 
-<p>An HTML file defines the initial structure of a document.
-Dart or JavaScript can dynamically modify that document
-by adding, deleting, and modifying the nodes in the DOM tree.
-When the DOM is changed,
-the browser immediately re-renders the window.</p>
+<p>HTML 文件定义了文档的初始结构。
+Dart 或者 JavaScript 可以通过
+添加、删除、和修改节点来动态的修改文档结构。
+当 DOM 改变后，
+浏览器会立即重新渲染文档。</p>
 
 <p><img class="scale-img-max" src="images/dynamic-dart.png" alt="A Dart program can dynamically change the DOM" /></p>
 
-<p>The diagram shows a small Dart program that makes
-a modest change to the DOM by dynamically
-changing a paragraph’s text.
-A program could add and delete nodes,
-or even insert an entire sub-tree of nodes.</p>
+<p>该小段 Dart 代码演示了通过
+改变一个段落的文本内容
+来动态修改 DOM 模型。
+代码可以添加或者删除节点，
+甚至可以插入整个子树节点。</p>
 
-<h2 id="create-dart-app">Create a new Dart app</h2>
+<h2 id="create-dart-app">创建一个新的 Dart 应用</h2>
 
-<p>The application you write in this tutorial is a web application.
-Web applications use code from the <code>browser</code> package
-to run inside of a browser,
-so you need to start with the supporting files and packages
-even for the smallest web app.</p>
+<p>该教程中的应用为一个 web 应用。
+Web 应用使用 <code>browser</code> 包中的代码在浏览器
+中运行，
+因此即使是一个最小的 web 程序
+也需要从一些文件和包开始。</p>
 
-<p>In Dart Editor, create a new web application
-like you did in the previous tutorial,
-<a href="/docs/tutorials/get-started/">Get Started</a>.
-Name the app <code>mini</code>.</p>
+<p>在 Dart 编辑器中，按照
+<a href="/docs/tutorials/get-started/">开始</a>中
+介绍的一样创建一个新的 web 应用，
+命名为 <code>mini</code>。</p>
 
 <p><img class="scale-img-max" src="images/new-app-mini.png" alt="New Application dialog window" /></p>
 
-<h2 id="create-html">Edit the HTML file</h2>
+<h2 id="create-html">编辑 HTML 文件</h2>
 
-<p>When Dart Editor created the application,
-it created boilerplate HTML code.
-Double click <code>mini.html</code> to open it.
-Then replace the code with the following,
-simplied HTML.</p>
+<p>Dart 编辑器创建一个应用的时候，
+也会创建一些模板 HTML 代码。
+双击 <code>mini.html</code> 打开该文件。
+使用如下的代码替代该
+文件内容。</p>
 
 <pre class="prettyprint lang-html">&lt;!DOCTYPE html&gt;
 
@@ -418,205 +423,204 @@ simplied HTML.</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-<p>Finish your edits and save the file with <strong>File &gt; Save</strong>.</p>
+<p>通过菜单 <strong>File &gt; Save</strong> 来保存文件。</p>
 
-<h2 id="about-html-code">About the HTML source code</h2>
+<h2 id="about-html-code">关于 HTML 源代码</h2>
 
-<p>This HTML code is similar to the simple HTML code in the
-various diagrams earlier in this tutorial.
-Again, you can see the use of the &lt;head&gt;, &lt;title&gt;, &lt;body&gt;,
-and &lt;p&gt; tags.
-And there, in the paragraph tag,
-is an identifier “RipVanWinkle”.
-The Dart code you create in the next step uses this ID
-to get the paragraph element.</p>
+<p>上面的 HTML 代码看起来和之前教程
+中的代码有点类似。
+可以看到再次使用了 
+&lt;head&gt;、&lt;title&gt;、 &lt;body&gt;和 &lt;p&gt; 标签。 
+这里的段落标签有个名字为 
+“RipVanWinkle” 的 ID 属性。
+下一步创建的 Dart 代码将通过该 ID 来
+查找该段落元素。</p>
 
 <p><img class="scale-img-max" src="images/html-id.png" alt="Using an ID in HTML" /></p>
 
-<p>Notice the use of the <code>script</code> tag.
-The source for a script is provided by a client-side file.
-The HTML code above has two scripts.</p>
+<p>注意上面的 <code>script</code> 标签。
+上面的脚本来自于客户端文件。
+这里有两个脚本文件。
+<img class="scale-img-max" src="images/script-tags.png" alt="Including Dart apps in HTML" /></p>
 
-<p><img class="scale-img-max" src="images/script-tags.png" alt="Including Dart apps in HTML" /></p>
+<p>第一个脚本文件包含了 mini 应用的代码。
+ <code>type</code> 属性指定了该脚本的类型
+ 为 Dart 团队为 Dart 语言创建的
+ 新类型 <code>application/dart</code>。
+ 当前，只有 Dartium 浏览器支持 
+<code>application/dart</code> 类型。
+ <code>src</code> 属性告诉浏览器脚本文件的位置。
+这里的 Dart 代码为 <code>mini.dart</code>，
+下一步我们将创建这个文件。
+ Dart 代码文件应该和应用它的 HTML 文件放到同一个目录下。</p>
 
-<p>The first script includes your mini app.
-The <code>type</code> attribute specifies that the script has
-the type <code>application/dart</code>,
-which is a new type created by the Dart team.
-Currently, only the Dartium build of Chromium supports
-<code>application/dart</code>.
-The <code>src</code> attribute provides the URL to the source file of the script.
-In this case, it is the Dart source file <code>mini.dart</code>,
-which you provide in the next step.
-The Dart file should be in the same directory as its host HTML file.</p>
+<p>第二个 <code>script</code> 标签引用了
+一个负责启动 Dart VM 的引导程序，
+并且处理不支持 Dart 的浏览器。</p>
 
-<p>The second <code>script</code> tag is
-a bootstrap script that takes care of turning on the Dart VM,
-as well as compatibility with non-Dart browsers.</p>
+<h2 id="dart-editor-happiness">编辑 Dart 源代码</h2>
 
-<h2 id="dart-editor-happiness">Edit Dart source code</h2>
-
-<p>Open <code>mini.dart</code> and modify the source code
-to look like this:</p>
+<p>打开 <code>mini.dart</code> 文件并修改
+为如下代码：</p>
 
 <pre class="prettyprint lang-dart">import 'dart:html';
 void main() {
   query('#RipVanWinkle').text = 'Wake up, sleepy head!';
 }</pre>
 
-<h2 id="about-dart-code">About the Dart source code</h2>
+<h2 id="about-dart-code">关于 Dart 源代码</h2>
 
-<p>Let’s step through the code.</p>
+<p>来逐步看看这些代码。</p>
 
-<h3 id="importing-libraries">Importing libraries</h3>
+<h3 id="section">导入库</h3>
 
-<p>The import directive imports the specified library,
-making all of the classes and functions
-in that library
-available to your program.</p>
+<p>import 命令导入了一个特别的库，
+这样你的程序就可以使用
+这个库中的所有类
+和函数了。</p>
 
 <p><img class="scale-img-max" src="images/0-mini-code-walk-through.png" alt="Import Dart HTML library" /></p>
 
-<p>This program imports Dart’s HTML library,
-which contains key classes and functions for programming the DOM.
-Key classes include:</p>
+<p>这里导入了 Dart 的 HTML 库，
+该库包含了对 DOM 编程的关键类和函数。
+如下是一些关键的类：</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Dart class</th>
-      <th>Description</th>
+      <th>Dart 类</th>
+      <th>描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><a href="https://api.dartlang.org/dart_html/Node.html" target="_blank">Node</a></td>
-      <td>Implements a Dart Node.</td>
+      <td>实现一个 Dart 节点。</td>
     </tr>
     <tr>
       <td><a href="https://api.dartlang.org/dart_html/Element.html" target="_blank">Element</a></td>
-      <td>A subclass of Node, implements a web page element.</td>
+      <td>Node 的子类，实现了网页的元素。</td>
     </tr>
     <tr>
       <td><a href="https://api.dartlang.org/dart_html/Document.html" target="_blank">Document</a></td>
-      <td>Another subclass of Node. Implements the document object.</td>
+      <td>Node 的另外一个子类，实现了 document 对象。</td>
     </tr>
   </tbody>
 </table>
 
-<p>The Dart core library contains another useful class,
-<a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>,
-a parameterized class that can specify the type of its members.
-An instance of Element keeps its list of child Elements
-in a List&lt;Element&gt;.</p>
+<p>Dart core 库中包含了另外一个常用的类，
+<a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>，
+是一个可以指定成员类型的泛型类。
+在 List&lt;Element&gt; 中来保存 
+Element 的对象。</p>
 
-<h3 id="using-the-query-function">Using the query() function</h3>
+<h3 id="query-">使用 query() 函数</h3>
 
-<p>This app’s main() function contains a single
-line of code that is a little like a run-on sentence
-with multiple things happening one after another.
-Let’s deconstruct it.</p>
+<p>该 应用的 main() 函数包含了一行
+代码，这行代码一步一步的执行了
+多个操作。下面就来
+拆解该行代码。</p>
 
-<p>query() is a top-level function provided by the Dart HTML library
-that gets an Element object from the DOM.</p>
+<p>query() 是由 Dart HTML 库提供的顶级函数，
+该函数从 DOM 中获取一个 Element 对象。</p>
 
 <p><img class="scale-img-max" src="images/3-mini-code-walk-through.png" alt="An example of querying for a DOM object by its ID" /></p>
 
-<p>The argument to query(), a string,
-is a CSS selector that identifies the object.
-Most commonly CSS selectors specify classes, identifiers, or attributes.
-We’ll look at these in a little more detail later,
-when we add a CSS file to the mini app.
-In this case RipVanWinkle is the unique ID for a paragraph element
-declared in the HTML file
-and #RipVanWinkle specifies that ID.</p>
+<p>query() 的参数为一个字符串，
+该字符串为一个 CSS 选择器来指定要查询的对象。
+常用的 CSS 选择器有 类选择器、ID 选择器和属性选择器。
+后面当我们使用 CSS 文件的时候
+再来详细看看这些选择器。
+上例中 RipVanWinkle 是 HTML 文件中
+段落的唯一 ID，
+#RipVanWinkle 指定了该 ID。</p>
 
 <p><img class="scale-img-max" src="images/2-mini-code-walk-through.png" alt="ID attribute from HTML file" /></p>
 
-<p>Another useful function for getting elements from the DOM
-is queryAll(),
-which returns multiple Element objects via
-a list of elements—List<element>&mdash;all
-of which match the provided selector.</element></p>
+<p>另外一个从 DOM 中查找元素的常用函数为
+queryAll()，
+该函数便利 DOM 树并返回
+所有符合条件的 Element 对象，
+返回结果为 List<element> 对象。</element></p>
 
-<h3 id="setting-the-text-of-an-element">Setting the text of an Element</h3>
+<h3 id="element-">设置 Element 的文本内容</h3>
 
-<p>In the DOM, the text of a page element is contained
-in a child node, specifically, a Text node.
-In the following diagram,
-the node containing the string
+<p>在 DOM 中， 页面元素的文本内容包含
+在一个文本子节点中。
+在下图中，
+包含字符串
 “RipVanWinkle paragraph.”
-is a text node.</p>
+的节点为文本节点。</p>
 
 <p><img class="scale-img-max" src="images/paragraph-dom.png" alt="DOM tree for a paragraph element" /></p>
 
-<p>More complex text,
-such as text with style changes or
-embedded links and images,
-would be represented with a subtree of text nodes and other objects.</p>
+<p>复杂的文字，
+例如 带有样式的文字或者
+中间嵌有链接和图片的文字，
+将由文本节点的子树和其他对象组成。</p>
 
-<p>In Dart,
-you can simply use the Element <code>text</code> property,
-which has a getter
-that walks the subtree of nodes for you and extracts their text.</p>
+<p>在 Dart 中，
+你可以简单的用 Element 的 <code>text</code> 属性
+来获取文本，
+该属性会遍历该节点的所有子节点来提取里面的文字。</p>
 
 <p><img class="scale-img-max" src="images/4-mini-code-walk-through.png" alt="Text node child of the paragraph" /></p>
 
-<p>However, if the text node has styles (and thus a subtree),
-getting text and then setting it immediately is likely
-to change the DOM, as a result of losing subtree information.
-Often, as with our RipVanWinkle example,
-this simplification has no adverse effects.</p>
+<p>但是在带有样式的文本节点中，
+获取文本然后立即设置一个文本很有
+可能会改变 DOM 树结构，
+会导致丢失一些文本子节点信息。
+在上面这个 RipVanWinkle 示例中并没有这种情况发生。</p>
 
-<p>The assignment operator (=) sets the text
-of the Element returned by the query() function
-to the string “Wake up, sleepy head!”.</p>
+<p>赋值操作符 (=) 设置 query() 
+函数返回的 Element 的
+文本内容为
+ “Wake up, sleepy head!” 字符串。</p>
 
 <p><img class="scale-img-max" src="images/5-mini-code-walk-through.png" alt="Set the text node, thereby changing the text on the page" /></p>
 
-<p>This causes the browser to immediately re-render
-the browser page containing this app, thus
-dynamically displaying the text on the browser page.</p>
+<p>这样就导致了浏览器立即
+重新渲染该页面，
+这样就动态的更新了浏览器页面的内容。</p>
 
-<h2 id="summary">Summary of HTML and Dart connections</h2>
+<h2 id="summary">总结 Dart 和 HTML 的关系</h2>
 
-<p>This diagram summarizes the connections
-between <code>mini.dart</code> and <code>mini.html</code>.</p>
+<p>下图总结了 <code>mini.dart</code> 和 <code>mini.html</code> 之间
+的联系。</p>
 
 <p><img class="scale-img-max" src="images/dart-html-connect.png" alt="The connection between the HTML file and the Dart file" /></p>
 
-<h2 id="run-mini">Run the mini web app</h2>
+<h2 id="run-mini">运行这个微型 web 应用</h2>
 
-<p>In Dart Editor,
-select <code>mini.html</code> and then click the Run button
-<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.
-Dart Editor invokes Dartium
-and loads <code>mini.html</code> in it.
-Below is mini app running in a frame.
-The app displays the text provided by Dart code,
-namely “Wake up, sleepy head!”,
-not the text provided in the HTML file.</p>
+<p>在 Dart 编辑器中，
+选择 <code>mini.html</code> 然后点击 Run 按钮
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" /> 来运行该应用。
+Dart 编辑器将调用 Dartium 来
+加载 <code>mini.html</code> 文件。
+下面是在一个 frame 中运行该 mini 应用。
+显示了由 Dart 代码提供的文本
+ “Wake up, sleepy head!” 而不是
+在 HTML 文件中设置的文本。</p>
 
 <iframe class="running-app-frame" style="height:150px;width:300px;" src="examples/mini/mini.html">
 </iframe>
 
-<p>The Dart web app changed
-the text in the browser window dynamically at runtime.
-Of course, placing text on a browser page
-and doing nothing else
-could be accomplished with straight HTML.
-This little app only shows you how to make a connection
-from a Dart app to a browser page.</p>
+<p>Dart web 应用在浏览器中
+动态的修改文本内容。
+上例只是一个
+简单的示例 Dart 代码
+如何工作，
+以及 Dart 代码如何
+和浏览器页面直接相互关联。</p>
 
-<h2 id="add-css">Give the app some style with CSS</h2>
+<h2 id="add-css">使用 CSS 来给该应用设置一些样式</h2>
 
-<p>Most HTML uses cascading style sheets (CSS) to define <em>styles</em>
-that control the appearance of page elements.
-Let’s customize the CSS for the mini app.</p>
+<p>大多数的 HTML 使用 cascading style sheets (CSS) 来定义控制页面
+元素_样式_的规则。
+下面我们也来自定义一个 mini 应用的 CSS 文件。</p>
 
-<p>In Dart Editor, edit the file named <code>mini.css</code>
-and replace the contents of the file with
-the following CSS code:</p>
+<p>在 Dart 编辑器中，修改名字为 <code>mini.css</code> 的文件，
+替换后的内容如下：</p>
 
 <pre class="prettyprint lang-dart">#RipVanWinkle {
   font-size: 20px;
@@ -627,164 +631,157 @@ the following CSS code:</p>
   color: Yellow;  
 }</pre>
 
-<p>This defines a style
-for the page element
-with the ID RipVanWinkle.
-To use this style sheet,
-edit <code>mini.html</code> and add the line shown in bold below:</p>
+<p>上面的 CSS 代码定义了
+ID 为 RipVanWinkle 的
+元素样式。
+编辑 <code>mini.html</code> 文件在里面添加如下
+一行代码来使用该 CSS 文件。</p>
 
 <p><img class="scale-img-max" src="images/html-with-css.png" alt="HTML with CSS" /></p>
 
-<p>Save your files and run the app again.</p>
+<p>保存文件，并再次运行该应用。</p>
 
-<p>Below is the revised mini app,
-which is slightly more colorful
-but still neither interactive nor interesting.</p>
+<p>下面是新的应用界面，
+具有一点点色彩，但是
+仍然不具有互动性也不吸引人。</p>
 
 <iframe class="running-app-frame" style="height:150px;width:300px;" src="examples/mini_with_style/mini_with_style.html">
 </iframe>
 
-<h2 id="about-css-selectors">About CSS selectors</h2>
+<h2 id="about-css-selectors">关于 CSS 选择器</h2>
 
-<p>IDs, classes, and other information about elements
-are established in HTML.
-Your Dart code can use this information
-to get elements using a CSS selector—a pattern
-used to select matching elements in the DOM.
-CSS selectors allow the CSS, HTML, and Dart code
-to refer to the same objects.
-Commonly, a selector specifies an ID,
-an HTML element type,
-a class, or an attribute.
-Selectors can also be nested.</p>
+<p>在 HTML 中
+有 ID、 class、 和其他信息 组成。
+你的 Dart 代码可以用这些信息来
+组成查询元素的 CSS 选择器 - 
+CSS 选择器是一个从 DOM 中查询匹配元素的模式。
+CSS 选择器让 CSS 、 HTML、 和 Dart 代码可以
+引用同一个对象。
+通常，一个选择器指定了一个 ID、
+、HTML 元素类型、
+类、或者一个属性。
+选择器也可以嵌套。</p>
 
-<p>CSS selectors are important in Dart programs
-because you use them with query() and queryAll()
-to get matching elements from the DOM.
-Most often Dart programs use ID selectors with query()
-and class selectors with queryAll().</p>
+<p>在 Dart 程序中 CSS 选择器非常重要，
+因为你可以用他们作为参数来调用函数  query() 或者 queryAll() 
+从 DOMO 中查询匹配的元素。</p>
 
-<p>Here are some examples of CSS selectors:</p>
+<p>下面是 CSS 选择器的一些实例：</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Selector type</th>
-      <th>Example</th>
-      <th>Description</th>
+      <th>选择器类型</th>
+      <th>示例</th>
+      <th>描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>ID selector</td>
+      <td>ID 选择器</td>
       <td>#RipVanWinkle</td>
-      <td>Matches a single, unique element</td>
+      <td>匹配一个唯一的元素</td>
     </tr>
     <tr>
-      <td>HTML element</td>
+      <td>HTML 元素</td>
       <td>p</td>
-      <td>Matches all paragraphs</td>
+      <td>匹配所有段落</td>
     </tr>
     <tr>
-      <td>HTML element</td>
+      <td>HTML 元素</td>
       <td>h1</td>
-      <td>Matches all level-one headers</td>
+      <td>匹配所有一级标题</td>
     </tr>
     <tr>
       <td>Class</td>
       <td><em>.classname</em></td>
-      <td>Matches all items with the class <em>classname</em></td>
+      <td>匹配所有类名字为 <em>classname</em> 的元素</td>
     </tr>
     <tr>
-      <td>Asterisk</td>
+      <td>星号</td>
       <td>*</td>
-      <td>Matches all elements</td>
+      <td>匹配所有元素</td>
     </tr>
     <tr>
-      <td>Attribute</td>
+      <td>属性</td>
       <td>input[type=”button”]</td>
-      <td>Matches all button input elements</td>
+      <td>匹配所有 button 输入元素</td>
     </tr>
   </tbody>
 </table>
 
 <aside class="alert">
-  <strong>Tip:</strong>
-As you saw,
-mini app used a CSS selector,
-the ID #RipVanWinkle,
-even when there was no CSS file.
-You do not need a CSS file for a Dart program.
-Nor do you need a CSS file to use CSS selectors.
-CSS selectors are established in the HTML file
-and used by the Dart program 
-to select matching elements.
+  <strong>小提示：</strong>
+如上所见，
+即便没有 CSS 文件，
+mini 应用也可以使用了 ID
+选择器 -  #RipVanWinkle。
+在 Dart 程序中无需使用 CSS 文件。
+要使用 CSS 文件也无需 CSS 文件。
+CSS 选择器在 HTML 文件中存在，
+Dart 代码用来选择匹配的元素。
 </aside>
 
-<p>Let’s look at the CSS code for mini app.
-The CSS file for the mini app has one CSS rule in it.
-A CSS rule has two main parts: a selector and a set of declarations.</p>
+<p>来看看 mini 应用的 CSS 代码。
+mini 应用的 CSS 代码包含一个 CSS 规则。
+CSS 规则包含两个主要部分：一个选择器和一组定义语句。</p>
 
 <p><img class="scale-img-max" src="images/css-rule-explained.png" alt="The parts of a CSS rule" /></p>
 
-<p>In mini app, the selector #RipVanWinkle is an ID selector,
-as signaled by the hash tag (#);
-it matches a single, unique element with the specified ID,
-our now tired RipVanWinkle paragraph element.
-RipVanWinkle is the ID in the HTML file.
-It is referred to in the CSS file and in the Dart code
-using a hash tag(#).
-Classnames are specified in the HTML file without a period (.)
-and referred to in the CSS file and in Dart code with a period (.).</p>
+<p>在 mini 应用中 选择器 #RipVanWinkle 是一个 ID 选择器，
+由 # 符号开头；
+该选择器匹配 ID 为指定值的单一元素，
+这里为 RipVanWinkle 段落元素。
+RipVanWinkle 是 HTML 文件中的元素 ID。
+在 CSS 文件和 Dart 代码中用 # 符号
+引用。
+类名在 HTML 文件中是通过 圆点(.) 符号定义的，
+在 CSS 文件和 Dart 代码中也是通过 圆点(.) 符号引用的。</p>
 
-<p>Between the curly brackets of a CSS rule is
-a list of declarations,
-each of which ends in a semi-colon (;).
-Each declaration specifies a property and its value.
-Together the set of declarations define the <em>style sheet</em>
-for all matching elements.
-The style sheet is used to set the appearance
-of the matching element(s) on the web page.</p>
+<p>在花括号里面是一些 CSS 定义语句，
+每个由分号(;)结尾。
+每个语句指定了属性和值。
+这些语句一起定义了所有匹配属性的
+<em>style sheet(样式表)</em>。
+样式表设置网页中匹配元素的外观样式。</p>
 
 <p><img class="scale-img-max" src="images/css-property-value.png" alt="A declaration specifies an attribute and its value" /></p>
 
-<p>The CSS rule for the RipVanWinkle paragraph
-specifies several properties;
-for example, it sets the text color to Yellow.</p>
+<p>用于 RipVanWinkle 段落的 CSS 规则
+指定了几个属性，例如 设置了文本颜色为
+黄色。</p>
 
-<h2 id="other-resources">Other resources</h2>
+<h2 id="section-1">其他资源</h2>
 
 <ul>
   <li>
     <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>
-    provides thorough coverage of the Dart language, libraries, and tools.
-    If a topic is not covered explicitly here,
-    you can find the information you need there.
+    覆盖了 Dart 语言、库和工具的一本书。
+    如果这里没有涉及到的主题，
+    你可以在该书中找到。
   </li>
   <li>
-    <a href="/docs/dart-up-and-running/contents/ch04-tools-editor.html">Dart Editor</a>,
-    an excerpt from <em>Dart: Up and Running</em>,
-    provides details about using Dart Editor.
-    The excerpt includes, for example,
-    how to use Dart Editor's power features such as autocompletion and refactoring,
-    how to set up different run-time environments, and so on.
+    <a href="/docs/dart-up-and-running/contents/ch04-tools-editor.html">Dart 编辑器</a>，
+    节选自 <em>Dart: Up and Running</em> 一书，
+    详细介绍了 Dart 编辑器的功能。
+包含 如何使用 Dart 编辑器的主要功能：
+代码完成、重构、设置运行环境等。
   </li>
   <li>
-    Also, check out
+    不要忘了看看
     <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>,
-    where you'll find many recipes about
-    manipulating the DOM and using CSS.
-    The cookbook also has recipes about basic Dart data types,
-    such strings, lists, maps, and numbers.
+    <i class="icon-food"> </i> Dart Cookbook</a>，
+    这里具有很多操作 DOM 和使用 CSS 的技巧。
+	该书还介绍了 Dart 基本数据类型，例如
+  strings、 lists、 maps、 和 numbers。
   </li>
 </ul>
 
-<h2 id="what-next">What next?</h2>
+<h2 id="section-2">接下来干啥？</h2>
 
-<p>The next tutorial, <a href="/docs/tutorials/add-elements/">Add Elements to the DOM</a>,
-shows you how to dynamically change the HTML page
-by adding elements to the DOM.</p>
+<p>在下一个教程中，<a href="/docs/tutorials/add-elements/">在 DOM 中添加元素</a>，
+将告诉你如何通过在 DOM 中添加元素
+来动态的修改 HTML 页面。</p>
 
 
 
@@ -800,12 +797,12 @@ by adding elements to the DOM.</p>
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/get-started/"><i class="glyphicon glyphicon-chevron-left"> </i> Get started</a>
+        <a href="/docs/tutorials/get-started/"><i class="glyphicon glyphicon-chevron-left"> </i> 开始</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/add-elements/" class="pull-right">Add Elements to the DOM <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/add-elements/" class="pull-right">在 DOM 中添加元素 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
   </div> 
@@ -819,7 +816,18 @@ by adding elements to the DOM.</p>
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -876,6 +884,16 @@ by adding elements to the DOM.</p>
 
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 

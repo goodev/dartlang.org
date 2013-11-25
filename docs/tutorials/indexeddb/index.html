@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Use IndexedDB | Dart: 结构化的web应用</title>
+  <title>使用 IndexedDB | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Use IndexedDB | Dart: 结构化的web应用">
+  <meta itemprop="name" content="使用 IndexedDB | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Use IndexedDB for persistence and offline capability for your app.">
+  <meta itemprop="description" content="使用 IndexedDB 来保存数据或者提供离线功能。">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,10 @@
 	
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -204,12 +209,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/forms/"><i class="glyphicon glyphicon-chevron-left"> </i> Get Input from a Form</a>
+        <a href="/docs/tutorials/forms/"><i class="glyphicon glyphicon-chevron-left"> </i> 从表单中获取数据</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/" class="pull-right">Home <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/" class="pull-right">教程主页 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
     <hr />
@@ -227,13 +232,13 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="page-highlights">内容摘要</h4>
         
 <ul>
-  <li>IndexedDB is a new standard for client-side storage in modern web browsers.</li>
-  <li>Client-side storage provides persistence, offline capability,
-and other advantages.</li>
-  <li>IndexedDB lets you store significant amounts of structured data.</li>
-  <li>Indices allow for high performance searches.</li>
-  <li>The dart:indexed_db library provides the API for IndexedDB for Dart apps.</li>
-  <li>Save and retrieve data in IndexedDB using key-value pairs.</li>
+  <li>IndexedDB 是现代浏览器用于客户端存储的新标准。</li>
+  <li>客户端存储提供了持久化、离线能力
+和其他优势。</li>
+  <li>IndexedDB 可以让你保存大量的结构化数据。</li>
+  <li>索引支持高性能的查找。</li>
+  <li>dart:indexed_db 库提供了在 Dart 应用中使用 IndexedDB 的 API。</li>
+  <li>使用key-value 对来从 IndexedDB 获取数据，或者保存到 IndexedDB 中。</li>
 </ul>
 
 
@@ -243,15 +248,15 @@ and other advantages.</li>
         <h4 id="examples">示例</h4>
 
         
-<p> This tutorial features this example:</p>
+<p> 该教程用如下示例：</p>
 <ul>
   <li>count_down</li>
 </ul>
 
 <p>
-Don't have the source code?
+如果你还没有下载示例代码。
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  点击我下载。
 </a>
 
 </p>
@@ -278,325 +283,326 @@ Don't have the source code?
 
     
 <div class="tute-target-title">
-<h1>Use IndexedDB</h1>
-<h3>Save data on the client.</h3>
+<h1>使用 IndexedDB</h1>
+<h3>在客户端保存数据。</h3>
 </div>
 
-<p>Browsers provide several ways for your apps to store data on the client side.
-One storage option is IndexedDB—a
-web standard supported by
-<a href="http://caniuse.com/#feat=indexeddb" target="_blank">many browsers</a>.
-IndexedDB provides an implementation of an indexed database,
-in which each record is identified by a unique index or key,
-making data retrieval speedy.
-You can store large amounts of structured data,
-such as images, arrays, maps, and objects using IndexedDB.
-The standard does not specify size limits for
-individual data items or for the database itself,
-but browsers may impose storage limits.</p>
+<p>浏览器提供了多种在客户端保存数据的方式。
+其他一种存储方式为 IndexedDB—
+被
+<a href="http://caniuse.com/#feat=indexeddb" target="_blank">很多浏览器</a> 支持的一种标准存储方式。
+IndexedDB 提供了一个索引数据库的实现。
+IndexedDB 中每个记录通过唯一的索引或者主键标示，
+这样查找数据非常高效。
+你可以在 IndexedDB 中保存大量结构化数据，
+例如 图片、数组、map以及对象 等。
+标准并没有限制每个记录的大小
+或者每个数据库的大小，
+但是 浏览器自己可能会有存储大小的限制。</p>
 
-<p>IndexedDB provides several advantages.
-Your apps</p>
+<p>IndexedDB 有多中优势。
+使用 IndexedDB 你的应用</p>
 
 <ul>
-  <li>can have full functionality even if a network connection is not available.</li>
-  <li>can cache data and restore state between invocations.</li>
-  <li>won’t lose data if the network connection is interrupted.</li>
-  <li>generate less network traffic.</li>
-  <li>perform better because data management happens on the local computer
-rather than over the Internet.</li>
+  <li>即使在没有网络情况下也可以使用所有功能。</li>
+  <li>可以在断网情况下缓存数据和恢复状态。</li>
+  <li>在网络连接中断的情况下不丢失数据。</li>
+  <li>需要较少的网络流量。</li>
+  <li>由于数据管理在本地处理而不是通过网络，所有
+性能会好很多。</li>
 </ul>
 
 <aside class="alert alert-info">
-  <p><strong>Note:</strong>
-Some browsers don’t yet support IndexedDB.
-Check
-<a href="http://caniuse.com/#feat=indexeddb" target="_blank">caniuse.com</a>
-for up-to-date information.
-Your app can check programmatically
-if the current platform supports IndexedDB
-and adjust accordingly.</p>
+  <p><strong>注意：</strong>
+有些浏览器还不支持 IndexedDB。
+在
+<a href="http://caniuse.com/#feat=indexeddb" target="_blank">caniuse.com</a> 
+有一些新的统计数据。
+你可以在代码中检查
+浏览器是否支持 IndexedDB，
+如果不支持提供备选方案。</p>
 </aside>
 
-<p>This tutorial shows you how to use
-<a href="https://api.dartlang.org/dart_indexed_db.html" target="_blank">dart:indexed_db</a>
-to store data to and retrieve data from the browser’s IndexedDB.</p>
+<p>该教材介绍如何用 
+<a href="https://api.dartlang.org/dart_indexed_db.html" target="_blank">dart:indexed_db</a> 库
+   来在浏览器的 IndexedDB 中保存和查询数据。</p>
 
 <ul>
-  <li><a href="#run-the-app">Run the app</a></li>
-  <li><a href="#the-basics">About the app: The basics</a></li>
-  <li><a href="#details-about-indexeddb">Details about IndexedDB</a></li>
-  <li><a href="#import-indexeddb">Importing the IndexedDB library</a></li>
-  <li><a href="#checking-indexeddb">Checking for IndexedDB support</a></li>
-  <li><a href="#opening-indexeddb">Creating and opening a database</a></li>
-  <li><a href="#creating-object-store">Creating an object store</a></li>
-  <li><a href="#using-a-name-index">Using a name index</a></li>
-  <li><a href="#using-transactions">Using transactions</a></li>
-  <li><a href="#adding-data">Adding data</a></li>
-  <li><a href="#removing-data">Removing data</a></li>
-  <li><a href="#clearing-all-data">Clearing all data</a></li>
-  <li><a href="#getting-data">Using a cursor to get all the records</a></li>
-  <li><a href="#other-resources">Other resources</a></li>
-  <li><a href="#what-next">What next?</a></li>
+  <li><a href="#run-the-app">运行应用</a></li>
+  <li><a href="#the-basics">关于该应用的基本知识</a></li>
+  <li><a href="#details-about-indexeddb">关于 IndexedDB 的详细介绍</a></li>
+  <li><a href="#import-indexeddb">导入 IndexedDB 库</a></li>
+  <li><a href="#checking-indexeddb">检查是否支持 IndexedDB</a></li>
+  <li><a href="#opening-indexeddb">创建并打开数据库</a></li>
+  <li><a href="#creating-object-store">创建一个对象存储</a></li>
+  <li><a href="#using-a-name-index">使用名字索引</a></li>
+  <li><a href="#using-transactions">使用事物</a></li>
+  <li><a href="#adding-data">添加数据</a></li>
+  <li><a href="#removing-data">删除数据</a></li>
+  <li><a href="#clearing-all-data">清空数据</a></li>
+  <li><a href="#getting-data">用 cursor 查询所有数据</a></li>
+  <li><a href="#other-resources">其他资源</a></li>
+  <li><a href="#what-next">接下来干啥？</a></li>
 </ul>
 
-<h2 id="run-the-app">Run the app</h2>
+<h2 id="run-the-app">运行应用</h2>
 
-<p>The <code>count_down</code> app below maintains a list of milestones
-and displays a countdown timer for each one.</p>
+<p>下面的 <code>count_down</code> 应用维护了一些里程碑事件
+并为每个事件显示一个倒计时功能。</p>
 
-<p><strong>Try it!</strong>
-Enter the name, date, and time of a milestone—your
-birthday, for example—and click the plus (<strong>+</strong>) button.
-The app starts a countdown timer
-and displays the amount of time remaining until the milestone occurs.
-The app updates the display every second.</p>
+<p><strong>动手试试！</strong>
+输入每个里程碑的名字、日期和时间然后点击加号
+(<strong>+</strong>)  按钮。
+应用显示该里程碑发生时间的倒计时
+和名字。
+每隔一秒该应用更新一下显示的数据。</p>
 
-<p>Close this browser window and reload
-<a href="index.html#run-the-app">this page</a>.
-The milestone you created still exists
-because the app stored it in an IndexedDB in the browser.</p>
+<p>由于该程序用浏览器的 IndexedDB 保存数据，
+所以关闭浏览器页面，然后再次打开
+<a href="index.html#run-the-app">该页面</a>。
+你创建的里程碑事件依然存在。</p>
 
-<p>Use the minus (<strong>-</strong>) button to the right of a milestone
-to delete that milestone.
-Use the <strong>Clear</strong> button to delete all the milestones.</p>
+<p>使用里程碑右边的减号(<strong>-</strong>) 按钮
+来删除该事件。
+用 <strong>Clear</strong> 按钮来删除所有的事件。</p>
 
 <iframe class="running-app-frame" style="height:400px;width:600px;" src="examples/count_down/out/web/count_down.html">
 </iframe>
 
 <aside class="alert">
-<strong>Version Note:</strong> The count_down app
-is compatible with
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>.
+<strong>版本提示：</strong> count_down 
+应用和 
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>
+版本兼容。
 </aside>
 
-<h3 id="using-developer-tools-to-look-at-the-database">Using developer tools to look at the database</h3>
+<h3 id="section">用开发者工具查看数据库</h3>
 
-<p>You can use the browser’s developer tools
-to explore the IndexedDB databases used by your apps.
-In Chrome, select <strong>View &gt; Developer &gt; Developer Tools</strong>,
-then choose <strong>Resources</strong> from the tabs along the top of the window.
-The following diagram shows the database
-for the count_down app with two milestones.</p>
+<p>你可以用浏览器开发者工具来查看
+你的应用使用的 IndexedDB 数据库。
+在 Chrome中，通过 <strong>View &gt; Developer &gt; Developer Tools</strong> 菜单，
+然后选择打开窗口的 <strong>Resources</strong> tab 页。
+下图显示了有两条里程碑
+事件的 count_down 应用的数据库。</p>
 
-<p>The count_down app has a single database named <code>milestoneDB</code>.
-and within it, a single object store named <code>milestoneStore</code>.
-In this example, each record in the object store
-is a milestone stored as a Map.
-The index, called <code>name_index</code>, associates each milestone
-name with a database key allowing for searches by milestone name.</p>
+<p>count_down 应用有个名字为 <code>milestoneDB</code> 的数据库。
+在该数据库中有一个名字为 <code>milestoneStore</code> 的对象存储。
+在该示例中，每个对象存储中的记录都是一个
+里程碑 map。
+名字为 <code>name_index</code> 的索引和每个里程碑的名字关联，
+该索引支持按照里程碑的名字来搜索数据。</p>
 
 <p><img class="scale-img-max" src="images/devtools-intro.png" alt="Using Dev Tools to view indexed databases" /></p>
 
-<h2 id="the-basics">About the app: The basics</h2>
+<h2 id="the-basics">关于该应用的基本知识</h2>
 
-<p>The count_down app uses a Model, View, View-model (MVVM) structure.</p>
+<p>count_down 应用使用了一个 Model（模型）、 View（视图）、 View-model (MVVM) 结构。</p>
 
 <p><img class="scale-img-max" src="images/MVVM-simple.png" alt="Structure of the count_down app" /></p>
 
 <ul>
   <li>
-    <p>The <strong>View-model</strong>, in the center of the diagram,
-connects the View and the Model,
-using UI and Timer events
-to make changes to the Model.
-The MilestoneApp class is the primary class
-that implements the View-Model—it
-manages the timer,
-and implements the app’s business logic,
-which manages the information exchange between the Model and the View.</p>
+    <p>上图中间的 <strong>View-model</strong> 连接 
+模型和视图。
+使用 UI 和 Timer 事件来修改 
+模型。
+MilestoneApp 类是实现了View-Model 功能的
+主要类，
+该类管理 Timer并实现
+应用的业务逻辑
+（负责模型和视图的信息交换）。</p>
   </li>
   <li>
-    <p>The <strong>View</strong> provides the user interface for the app.
-Two custom elements implement the View in the count_down app:
-CountDownComponent describes the user interface for the app as a whole,
-and MilestoneComponent describes the UI for an individual milestone.
-These components inform the View-model of UI events.</p>
+    <p><strong>View</strong> 实现了该应用的用户界面。
+count_down 应用总有两个自定义元素实现了视图：
+CountDownComponent 描述了整个应用的用户界面，
+MilestoneComponent 描述了每个独立里程碑的用户界面。
+当用户界面发生事件的时候，这些控件通知 View-model。 </p>
   </li>
   <li>
-    <p>The <strong>Model</strong> contains and manages the data.
-The Model,
-implemented by the MilestoneStore class,
-manages a list of Milestone objects in memory
-and keeps an IndexedDB in sync with the list,
-saving the milestone data persistently.
-The View-model queries the Model upon initialization
-and uses Polymer data-bindings to keep the View in sync.
-Also, it uses Timer events to trigger updates in the Model.</p>
+    <p><strong>Model</strong> 包含并管理数据。
+MilestoneStore 类实现了
+模型，
+在内存中管理一个里程碑对象列表，
+并且保持 IndexedDB 和列表同步，
+持久化的保存里程碑数据。
+View-model 查询模型来初始化数据，
+并用 Polymer 的数据绑定技术来和视图同步。
+并且还使用了 Timer 事件来触发模型更新。</p>
   </li>
 </ul>
 
-<h3 id="the-libraries-used-by-the-countdown-app">The libraries used by the count_down app</h3>
+<h3 id="countdown-">count_down 应用使用的库</h3>
 
-<p>The count_down app uses the following libraries:</p>
+<p>count_down 应用使用如下库：</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Library</th>
-      <th>Description</th>
+      <th>库</th>
+      <th>描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td><a href="https://api.dartlang.org/dart_indexed_db.html" target="_blank">dart:indexed_db</a></td>
-      <td>Save data into an indexed database for persistence and offline capability</td>
+      <td>保存数据到索引数据库</td>
     </tr>
     <tr>
       <td><a href="https://api.dartlang.org/dart_async.html" target="_blank">dart:async</a></td>
-      <td>Perform tasks asynchronously</td>
+      <td>执行异步操作</td>
     </tr>
     <tr>
       <td><a href="https://api.dartlang.org/dart_core.html" target="_blank">dart:core</a></td>
-      <td>Use DateTime and Duration to manage time-related tasks</td>
+      <td>用 DateTime 和 Duration 来管理时间相关的任务</td>
     </tr>
     <tr>
       <td><a href="https://api.dartlang.org/polymer.html" target="_blank">Polymer</a></td>
-      <td>Create UIs with custom elements and data binding.</td>
+      <td>实现自定义元素和数据绑定</td>
     </tr>
   </tbody>
 </table>
 
-<p>This tutorial explains the Dart API for IndexedDB used by the count_down app.</p>
+<p>该教程介绍了 count_down 应用中使用的 IndexedDB API。</p>
 
 <aside class="alert alert-info">
-  <p><strong>Note:</strong>
-This tutorial does not cover Futures or Polymer.
-For information about Futures,
-see
-<a href="/articles/using-future-based-apis/">Using Future Based APIs</a>
-and 
-<a href="/articles/futures-and-error-handling/">Futures and Error Handling</a>.
-For information about Polymer,
-refer to <a href="/docs/tutorials/polymer-intro/">Define a Custom Element</a>.</p>
+  <p><strong>注意：</strong>
+该教程没有介绍 Future 和 Polymer。
+关于 Future 请
+参考
+<a href="/articles/using-future-based-apis/">使用 Future API</a>
+和
+<a href="/articles/futures-and-error-handling/">Future 和错误处理</a>。
+关于 Polymer，请参考
+ <a href="/docs/tutorials/polymer-intro/">定义一个自定义元素</a>。</p>
 
 </aside>
 
-<h2 id="details-about-indexeddb">Details about IndexedDB</h2>
+<h2 id="indexeddb-">关于 IndexedDB 的详细介绍</h2>
 
-<p>Some important facts you need to know about IndexedDB:</p>
+<p>关于 IndexedDB 有些你需要知道的事实：</p>
 
 <ul>
   <li>
-    <p>Each origin (host, protocol, and port) has its own set of databases.
-A unique name identifies each database within an origin.
-IndexedDB has a same-origin policy,
-which requires that the database and the app be from the same origin.</p>
+    <p>每个源 (主机、协议和端口) 都有自己的数据库。
+在一个源中使用唯一的名字来区分每个数据库。
+IndexedDB 具有同源策略，
+每个应用和数据库具有相同的源（同一个网站）。</p>
   </li>
   <li>
-    <p>A <em>database</em> is identified by a name and version number.
-A database can have only one version at a time.</p>
+    <p>一个 <em>数据库</em> 通过名字和版本号识别。
+一次一个数据库只能有一个版本。</p>
   </li>
   <li>
-    <p>An <em>object store</em> is identified by a unique name.
-You can create an object store only during an “upgrade needed” event.
-You store data in records in an object store.
-A database can have multiple named object stores.</p>
+    <p>一个 <em>对象存储</em> 通过唯一的名字来识别。
+只能在 “upgrade needed” 事件中创建对象存储。
+在对象存储中保存数据记录。
+一个数据库可以有多个命名对象存储。</p>
   </li>
   <li>
-    <p>A <em>transaction</em> provides reliable data access
-and data modification on a database.
-All interactions with the data in the database must happen within
-the scope of a transaction.</p>
+    <p>一个 <em>事物</em> 提供了数据库可靠
+的数据查询和修改操作。
+所有对数据的操作都必须在
+事物范围内。</p>
   </li>
   <li>
-    <p>A <em>record</em> is a key-value pair,
-where the key is a unique identifier for the corresponding data value.
-You can set your own keys
-or you can have the object store create them for you.</p>
+    <p>一个 <em>记录</em> 是一个 key-value 对，
+key 是该数据记录的唯一访问标示符。
+你可以自己设置 key 也可以
+让对象存储为你创建。</p>
   </li>
   <li>
-    <p>An <em>index</em> is a specialized object store that
-maps database keys to the key field in the saved object.
-Using an index is optional.</p>
+    <p>一个 <em>索引(index)</em> 是一个特殊的对象存储，
+在保存的数据 key 值和 数据库的 key 之间做映射。
+索引是可选的。</p>
   </li>
   <li>
-    <p>An app may use multiple databases,
-each of which may have multiple object stores,
-each of which may have multiple records.</p>
+    <p>一个应用可以使用多个数据库。
+每个数据库可以有多个对象存储，
+每个对象存储可以有多个记录。</p>
   </li>
 </ul>
 
 <p><img class="scale-img-max" src="images/generaldatabase.png" alt="Indexed Databases in general" /></p>
 
-<h3 id="indexeddb-in-the-countdown-app">IndexedDB in the count_down app</h3>
+<h3 id="countdown--indexeddb">count_down 应用中的 IndexedDB</h3>
 
-<p>The count_down app uses one database,
-named <code>milestoneDB</code> with the version number <code>1</code>,
-and one object store named <code>milestoneStore</code>.
-The app stores a milestone object as a Map;
-both the key and the value in the map are strings.
-The <code>milestoneName</code> field is the unique name of the milestone.
-The <code>happensOn</code> field is the date and time concatenated together.
-This is enough information to restore the state of the app
-when it’s restarted.</p>
+<p>count_down 应用使用一个名字为
+ <code>milestoneDB</code> 的数据库，版本号为 <code>1</code>。
+ 里面有一个名字为 <code>milestoneStore</code> 的对象存储。
+ 该应用把里程碑对象保存为一个 Map，
+ Map 中的 key 和 value 都是字符串。
+<code>milestoneName</code> 字段是里程碑的唯一名字。
+ <code>happensOn</code> 字段是否日期加上时间的值。
+当该应用重新打开的时候，
+这些字段可以恢复应用的状态。</p>
 
 <p><img class="scale-img-max" src="images/database.png" alt="Indexed Database in the count_down app" /></p>
 
-<p>Because the milestone names are unique,
-the app could use them as primary keys in the database.
-Instead, for illustration purposes,
-the app uses a primary key generated by the database.
-You can see this in the Developer Tools window:</p>
+<p>因为里程碑的名字是唯一的，
+应用可以用该名字作为数据库的 key。
+然而，处于演示目的该应用使用了
+一个由数据库生成的主键作为 key。
+在开发者工具窗口中可以发现该主键：</p>
 
 <p><img class="scale-img-max" src="images/devtools-details.png" alt="Milestone objects in the object store" /></p>
 
-<h2 id="import-indexeddb">Importing the IndexedDB library</h2>
+<h2 id="import-indexeddb">导入 IndexedDB 库</h2>
 
-<p>To use the Dart IndexedDB API,
-your app must import the IndexedDB library
-provided with the Dart SDK:</p>
+<p>要使用 Dart IndexedDB API 必须
+先导入 IndexedDB 
+库：</p>
 
 <pre class="prettyprint lang-dart">import 'dart:indexed_db';</pre>
 
-<h2 id="checking-indexeddb">Checking for IndexedDB support</h2>
+<h2 id="checking-indexeddb">检查是否支持 IndexedDB</h2>
 
-<p>Use the getter <code>supported</code> from the IdbFactory class
-to determine if IndexedDB is supported.</p>
+<p>使用 IdbFactory 类的 <code>supported</code> getter 函数
+来判断浏览器是否支持 IndexedDB。</p>
 
 <pre class="prettyprint lang-dart">bool idbAvailable = IdbFactory.supported;</pre>
 
-<p>If <code>supported</code> is false, your app could</p>
+<p>如果 <code>supported</code> 值为 false，你可以</p>
 
 <ul>
-  <li>throw an exception and quit,</li>
-  <li>use an alternative API,
-such as <code>window.localStorage</code>,
-for client-side storage,</li>
-  <li>run anyway, sacrificing persistence and offline capability,</li>
-  <li>or, like the count_down app, disable the UI and display an error message.</li>
+  <li>抛出异常并退出应用</li>
+  <li>使用其他的 API，
+例如用于客户端存储的
+ <code>window.localStorage</code></li>
+  <li>继续运行，不启用本地持久化和离线功能</li>
+  <li>或者 和 count_down 应用一样， 禁用 UI 控件并显示错误信息。</li>
 </ul>
 
-<h2 id="opening-indexeddb">Creating and opening a database</h2>
+<h2 id="opening-indexeddb">创建并打开数据库</h2>
 
-<p>Use <code>window.indexedDB.open()</code> to create a new database
-or to open an existing database.
-Whether it opens or creates the database
-depends on the name and version number you pass in as parameters.</p>
+<p>用 <code>window.indexedDB.open()</code> 来创建新的数据库或者
+打开一个已经存在的数据库。
+根据你名字和版本参数来判断
+是否打开或者创建数据库。</p>
 
 <ul>
   <li>
-    <p>To open a database,
-use the name and current version number
-of an existing database.</p>
+    <p>要打开一个数据库，
+使用当前存在数据库的名字
+和版本号。</p>
   </li>
   <li>
-    <p>To update to a new version,
-call open() with the name of an existing database
-and a higher version number.
-(A database can have only one version at a time;
-it can’t exist in multiple versions at once.)
-This fires an upgrade needed event.</p>
+    <p>要更新数据库到新的版本，
+用高版本号和已经存在的名字
+作为参数调用 open() 函数。
+(一个数据库同时只能存在一个
+版本)
+同时该操作会触发一个 upgrade needed（需要升级） 事件。</p>
   </li>
   <li>
-    <p>To create a completely new database,
-open it with a new, unique name.
-This also fires an upgrade needed event.</p>
+    <p>要创建一个全新数据库，
+用新的名字打开数据库即可。
+同时也会触发需要升级事件。</p>
   </li>
 </ul>
 
-<p>Here’s the function in the MilestoneStore class
-that creates and opens the database:</p>
+<p>下面是 MilestoneStore 类中创建和
+打开数据库的代码：</p>
 
 <pre class="prettyprint lang-dart">Future open() {
   return window.indexedDB.open('milestoneDB',
@@ -605,26 +611,27 @@ that creates and opens the database:</p>
     .then(_loadFromDB);
 }</pre>
 
-<p>The first two parameters indicate the name and version of the
-database to open.
-The first time the count_down app runs from a particular origin,
-<code>milestoneDB</code> version 1 gets created and opened.
-The next time the app runs from that same origin,
-the database is simply opened.</p>
+<p>前两个参数代表数据库的名字
+和版本号。
+第一次运行 count_down 应用的时候，
+版本号为 1 的 <code>milestoneDB</code> 数据库被创建。 
+下次再次运行该应用的时候，
+数据库直接被打开。</p>
 
-<p>The third parameter, <code>onUpgradeNeeded</code>,
-provides a callback function that gets called
-when an upgrade needed event is fired,
-which happens when a new database is created
-or the version of a database is updated.
-This gives your app an opportunity to create an object store.
-The only place you can create an object store
-is within an upgrade needed event.
-You <em>must</em> have an object store to add records to the database.
-The next section covers how to create an object store.</p>
+<p>第三个参数 <code>onUpgradeNeeded</code> 是需要升级事件
+的回调函数。
+当新数据创建或者
+数据库版本增加的时候
+会触发该事件。
+在这个回调函数中可以创建新的
+对象存储。
+你只能在需要升级事件中来创建
+对象存储。
+要保存数据，你_必须_ 有一个对象存储。
+下一届介绍如何创建对象存储。</p>
 
-<p>The following flow chart describes the logic of the
-<code>window.indexedDB.open()</code> function.</p>
+<p>下面的流程图概述了 <code>window.indexedDB.open()</code> 函数
+的执行逻辑。</p>
 
 <p><img class="scale-img-max" src="images/flowchart.png" alt="Logic flow of database creation" /></p>
 
@@ -640,9 +647,9 @@ Using cursors,
 <code>_loadFromDB()</code> reads all the milestones 
 from the database and populates the app.
 The details are covered in
-<a href="#getting-data">Using a cursor to get all the records</a>.</p>
+<a href="#getting-data">用 cursor 查询所有数据</a>.</p>
 
-<h2 id="creating-object-store">Creating an object store</h2>
+<h2 id="creating-object-store">创建一个对象存储</h2>
 
 <p>When a new database
 is created,
@@ -688,7 +695,7 @@ which saves you the trouble of ensuring unique keys.</p>
 
 <p>Finally, <code>_initializeDatabase</code> creates a name index.</p>
 
-<h2 id="using-a-name-index">Using a name index</h2>
+<h2 id="section-1">使用名字索引</h2>
 
 <p>An index provides a lookup table.
 You can associate a primary key with a field in the stored objects.
@@ -726,7 +733,7 @@ if you try to add a milestone with the same name as another,
 it is this index that causes the add() to fail.</li>
 </ul>
 
-<h2 id="using-transactions">Using transactions</h2>
+<h2 id="using-transactions">使用事物</h2>
 
 <p>All database operations must be performed
 within a
@@ -813,7 +820,7 @@ Generally, the count_down app uses this callback function
 to keep the list of milestones in sync with the database.</li>
 </ul>
 
-<h2 id="adding-data">Adding data</h2>
+<h2 id="section-2">添加数据</h2>
 
 <p>Here’s the code that adds a new record to the database.</p>
 
@@ -852,7 +859,7 @@ the count_down app adds the milestone to the list in memory
 and the Future returns with the new milestone object
 (and the View-model starts the Timer).</p>
 
-<h2 id="removing-data">Removing data</h2>
+<h2 id="section-3">删除数据</h2>
 
 <p>Here’s the code that removes a key-value pair from a database.</p>
 
@@ -880,7 +887,7 @@ The task it needs to do,
 namely to remove the milestone from the list in memory,
 can occur when the transaction completes.</p>
 
-<h2 id="clearing-all-data">Clearing all data</h2>
+<h2 id="section-4">清空数据</h2>
 
 <p>Use the <code>clear</code> method on the object store to remove all records.</p>
 
@@ -891,7 +898,7 @@ return transaction.completed.then((_) {
   milestones.clear();
 });</pre>
 
-<h2 id="getting-data">Using a cursor to get all the records</h2>
+<h2 id="getting-data">用 cursor 查询所有数据</h2>
 
 <p>When the app starts,
 if there’s an existing database
@@ -966,13 +973,13 @@ Use <code>cursor.value</code> to get the value for that record.</p>
 
 <p>The _loadFromDB method returns a Future that returns the length of the stream.</p>
 
-<h2 id="other-resources">Other resources</h2>
+<h2 id="section-5">其他资源</h2>
 
 <ul>
-  <li> For information about Futures, see
-  <a href="/articles/using-future-based-apis/">Using Future Based APIs</a>
-  and 
-  <a href="/articles/futures-and-error-handling/">Futures and Error Handling</a>.
+  <li> 关于 Future 的更多信息请查看
+  <a href="/articles/using-future-based-apis/">使用 Future  APIs</a>
+  和
+  <a href="/articles/futures-and-error-handling/">Future 和错误处理</a>。
   </li>
   <li>
   For information about Polymer,
@@ -980,11 +987,11 @@ Use <code>cursor.value</code> to get the value for that record.</p>
   </li>
 </ul>
 
-<h3 id="what-next">What next?</h3>
+<h3 id="section-6">接下来干啥？</h3>
 
-<p>You’ve completed the tutorials!
-Check out the Dart
-<a href="/samples/">code samples</a> and <a href="/articles/">articles</a>.</p>
+<p>你已经完成了 Dart 教程！
+继续查看 Dart
+<a href="/samples/">示例代码</a> 和 <a href="/articles/">开发者文章</a>吧。</p>
 
 
 
@@ -1000,12 +1007,12 @@ Check out the Dart
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/forms/"><i class="glyphicon glyphicon-chevron-left"> </i> Get Input from a Form</a>
+        <a href="/docs/tutorials/forms/"><i class="glyphicon glyphicon-chevron-left"> </i> 从表单中获取数据</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/" class="pull-right">Home <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/" class="pull-right">教程主页 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
   </div> 
@@ -1019,7 +1026,18 @@ Check out the Dart
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -1076,6 +1094,16 @@ Check out the Dart
 
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 

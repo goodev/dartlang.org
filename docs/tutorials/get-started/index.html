@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Get Started | Dart: 结构化的web应用</title>
+  <title>开始 | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Get Started | Dart: 结构化的web应用">
+  <meta itemprop="name" content="开始 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Get Dart and run two Dart applications">
+  <meta itemprop="description" content="下载 Dart 并运行两个示例程序">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,10 @@
 	
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -204,12 +209,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/"><i class="glyphicon glyphicon-chevron-left"> </i> Home</a>
+        <a href="/docs/tutorials/"><i class="glyphicon glyphicon-chevron-left"> </i> 教程主页</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/connect-dart-html/" class="pull-right">Connect Dart &amp; HTML <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/connect-dart-html/" class="pull-right">连接 Dart 和 HTML <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
     <hr />
@@ -227,12 +232,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="page-highlights">内容摘要</h4>
         
 <ul>
-  <li>The Dart bundle has development tools, APIs, and samples.</li>
-  <li>You can use Dart for web apps and command-line apps.</li>
-  <li>Run Dart web apps directly in Dartium.</li>
-  <li>Compile Dart apps to JavaScript for other browsers.</li>
-  <li>All Dart apps have a main() function.</li>
-  <li>Dart supports top-level functions.</li>
+  <li>下载的 Dart 包包含了开发工具、API文档和示例程序。</li>
+  <li>Dart 可以用于开发命令行程序和 web 程序。</li>
+  <li>在 Dartium 浏览器可以直接运行 Dart 程序。</li>
+  <li>把 Dart 编译为 JavaScript 可以在其他浏览器中运行。</li>
+  <li>所有的 Dart 应用都有一个 main() 函数。</li>
+  <li>Dart 支持顶级函数。</li>
 </ul>
 
 
@@ -242,8 +247,8 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="examples">示例</h4>
 
         
-<p>This tutorial features two examples
-provided by Dart Editor:</p>
+<p>该教材使用 Dart 编辑器提供的
+两个示例程序：</p>
 
 <ul>
   <li>helloworld</li>
@@ -273,38 +278,37 @@ provided by Dart Editor:</p>
 
     
 <div class="tute-target-title">
-<h1>Get Started</h1>
-<h3>Get Dart. Run two apps.</h3>
+<h1>开始</h1>
+<h3>下载 Dart并运行两个示例程序。</h3>
 </div>
 
-<p>This tutorial gets you ready
-to begin writing web apps in Dart.
-Here you will download the Dart software,
-and use Dart Editor to
-create and run two small applications.</p>
+<p>该教材告诉你如何开始用
+Dart 编写 web 应用。
+下面可以下载 Dart 软件，
+然后用 Dart 编辑器来创建并
+运行两个小程序。</p>
 
 <ul>
-  <li><a href="#download-dart">Download the Dart software bundle</a></li>
-  <li><a href="#what-did-you-get">What did you get?</a></li>
-  <li><a href="#start-dart-editor">Start Dart Editor</a></li>
-  <li><a href="#what-is-app">About Dart applications</a></li>
-  <li><a href="#create-cmd-line">Create a command-line app</a></li>
-  <li><a href="#run-cmd-line">Run a command-line app</a></li>
-  <li><a href="#create-web-app">Create a web app</a></li>
-  <li><a href="#run-web-app">Run a web app</a></li>
-  <li><a href="#source-files">About the HTML, CSS, and Dart triumvirate</a></li>
-  <li><a href="#top-level-functions">About main() and other top-level functions</a></li>
-  <li><a href="#file-names">About file naming conventions</a></li>
-  <li><a href="#other-resources">Other resources</a></li>
-  <li><a href="#what-next">What next?</a></li>
+  <li><a href="#download-dart">下载 Dart 软件包</a></li>
+  <li><a href="#what-did-you-get">下载的软件包中都有什么？</a></li>
+  <li><a href="#start-dart-editor">启动 Dart 编辑器</a></li>
+  <li><a href="#what-is-app">关于 Dart 应用</a></li>
+  <li><a href="#create-cmd-line">创建一个命令行应用</a></li>
+  <li><a href="#run-cmd-line">运行命令行应用</a></li>
+  <li><a href="#create-web-app">创建一个 web 应用</a></li>
+  <li><a href="#run-web-app">运行 web 应用</a></li>
+  <li><a href="#source-files">关于 HTML、CSS、 和 Dart </a></li>
+  <li><a href="#top-level-functions">关于 main() 和其他顶级函数</a></li>
+  <li><a href="#file-names">关于文件命名规范</a></li>
+  <li><a href="#other-resources">其他资源</a></li>
+  <li><a href="#what-next">下一步干啥？</a></li>
 </ul>
 
-<h2 id="download-dart">Download the Dart software bundle</h2>
+<h2 id="download-dart">下载 Dart 软件包</h2>
 
-<p>Get Dart.
-The Dart download includes <a href="/tools/editor/">Dart Editor</a>,
-which you’ll be using
-throughout this tutorial.</p>
+<p>下载 Dart。
+下载的软件包含了该教材使用的
+ <a href="/tools/editor/">Dart Editor</a>。</p>
 
 <div align="center">
   <div class="editor download-buttons">
@@ -373,8 +377,7 @@ throughout this tutorial.</p>
 </div>
 
 <p class="os-choices">
-  The Dart tools
-  work in recent versions of
+  Dart 工具支持当前的 OS 系统
   <span class="nowrap">
 <input type="radio" name="osChoices" id="windows" />
 <label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
@@ -389,19 +392,19 @@ throughout this tutorial.</p>
 <input type="radio" name="osChoices" id="macos" />
 <label class="os-choice" for="macos">Mac</label>.
 </span>
-
+ 
 </p>
 
 <aside class="alert alert-info">
-  <b>Note:</b> The Dart tools <b>do not support Windows XP</b>.
+  <b>注意：</b> Dart 工具 <b>不支持 Windows XP</b>。
 </aside>
 
-<h2 id="what-did-you-get">What did you get?</h2>
+<h2 id="what-did-you-get">下载的软件包中都有什么？</h2>
 
-<p>Unzip the file.
-The resulting directory,
-your <em>Dart installation directory</em>,
-contains the following:</p>
+<p>解压下载的软件。
+解压后的根目录为
+<em>Dart 安装目录</em>，
+包含如下工具：</p>
 
 <div>
   <hr />
@@ -410,12 +413,12 @@ contains the following:</p>
     <img class="scale-img-max" src="images/dart-editor-icon.png" width="77" height="93" alt="Dart Editor" />
     </div>
     <div class="col-md-7">
-    Dart Editor is a powerful,
-    lightweight, open source editor.
-    With it you can create and edit files,
-    manage the files and directories for your project,
-    look up APIs, debug your code,
-    and control runtime conditions using named launches.
+    Dart Editor 是一个强大的，
+    轻量的、开源编辑器。
+    使用 Dart 编辑器可以创建和编辑文件，
+    管理项目中的文件和目录，
+    查看 API 还可以调试代码，
+    以及使用命名启动器来控制运行环境。
     </div>
   </div>
   <hr />
@@ -424,11 +427,11 @@ contains the following:</p>
     <img class="scale-img-max" src="images/chromium.png" width="81" height="89" alt="Dartium, a special Chromium build" />
     </div>
     <div class="col-md-7">
-    This is a special build of the Chromium web browser, 
-    called Dartium, that has the Dart VM (virtual machine) embedded.
-    You can run your apps directly in this browser,
-    or use Dart Editor to do it for you,
-    thereby streamlining the build-test cycle.
+    这是 Chromium 浏览器的一个定制版，
+     被昵称为 Dartium，包含了一个 Dart 虚拟机(VM)。
+     你可以在这个浏览器中直接运行 Dart 程序，
+     也可以用 Dart 编辑器来启动 Dartium，这样
+     可以简化开发-测试周期。
     </div>
   </div>
   <hr />
@@ -437,12 +440,12 @@ contains the following:</p>
     <img class="scale-img-max" src="images/dart-sdk-directory.png" width="86" height="94" alt="dart-sdk directory" />
     </div>
     <div class="col-md-7">
-    The dart-sdk directory contains the Dart software development kit.
-    Here you will find Dart libraries, such as dart:core and dart:html,
-    that define APIs useful to all apps.
-    Within, the bin directory contains several useful command-line tools,
-    such as the Dart-to-JavaScript compiler,
-    and the command-line version of the Dart VM.
+    dart-sdk 目录包含了 Dart 软件开发包。
+    这里有 Dart 库，例如 dart:core 和 dart:html，
+    这些库定义了很多有用的 API。
+    在里面的 bin 目录包含了几个有用的命令行工具，
+    例如 Dart-to-JavaScript 编译器、
+    和命令行版本的 Dart VM。
     </div>
   </div>
   <hr />
@@ -451,10 +454,10 @@ contains the following:</p>
     <img class="scale-img-max" src="images/samples-directory.png" width="81" height="91" alt="samples directory" />
     </div>
     <div class="col-md-7">
-    The samples directory contains the complete source code
-    for several Dart web applications.
-    You can experiment with
-    these examples in Dart Editor.
+    samples 目录包含几个 Dart web 应用的
+    所有代码。
+    你可以在 Dart 编辑器中
+    来查看这些示例应用。
     </div>
   </div>
   <hr />
@@ -463,449 +466,457 @@ contains the following:</p>
     <img class="scale-img-max" src="images/and-the-rest.png" width="81" height="71" alt="more directories" />
     </div>
     <div class="col-md-7">
-    You might notice some other directories
-    in the Dart installation directory.
-    You can ignore them for now. 
+    在 Dart 安装目录中还有其他一些
+    目录，但是
+    现在你可以忽略他们。
     </div>
   </div>
   <hr />
 </div>
 
-<h2 id="start-dart-editor">Start Dart Editor</h2>
+<h2 id="start-dart-editor">启动 Dart 编辑器</h2>
 
-<p>Invoke Dart Editor by double-clicking its icon
-in your Dart installation directory
-<img class="scale-img-max" src="/imgs/Dart_Logo_21.png" width="21" height="21" alt="Dart Editor icon" />.</p>
+<p>在 Dart 安装目录中双击 Dart 编辑器的图标
+<img class="scale-img-max" src="/imgs/Dart_Logo_21.png" width="21" height="21" alt="Dart Editor icon" />
+     就可以启动编辑器了。</p>
 
-<p>Dart Editor displays its Welcome Page
-in a tab in the <strong>Editor pane</strong>.
-The following diagram highlights
-some of the features of the editor.</p>
+<p>Dart 编辑器在<strong>Editor pane</strong> tab 页中
+显示一个欢迎界面。
+下图高亮标注了编辑器的一些
+主要功能。</p>
 
 <p><img class="scale-img-max" src="images/dart-editor-items.png" alt="Dart Editor's basic features" /></p>
 
-<dl>
-  <dt>Send feedback button</dt>
-  <dd>Allows you to share bugs and requests
-directly with the Dart Editor team
-as well as the larger Dart team.</dd>
-  <dt>Search field</dt>
-  <dd>Searches every file in your <strong>Files view</strong> for the entered text.
-Results for text searches are displayed in a <strong>Search view</strong>.
-Within that view,
-double-click a file to see it in the <strong>Editor pane</strong>.
-All occurrences of the search string in the <strong>Editor pane</strong> are highlighted.</dd>
-  <dt>Run button</dt>
-  <dd>Runs the application associated with the file
-that is currently selected in the <strong>Files view</strong>.</dd>
-  <dt>New application button</dt>
-  <dd>Creates a directory and, within it,
-the files for a new application.
-Alternatively, you can use the
-<strong>File &gt; New Application</strong> menu item
-or the <strong>Create an application</strong> button
-on the Welcome page.</dd>
-  <dt>Files view</dt>
-  <dd>Shows a hierarchical view of your Dart applications
-and their associated files.
-Double-click a file in the <strong>Files view</strong> to see its contents
-in the <strong>Editor pane</strong>.
-If you single-click a file in the <strong>Files view</strong>,
-the file is selected,
-but not necessarily displayed in the <strong>Editor pane</strong>.
-You must double-click the file.</dd>
-  <dt>Editor pane</dt>
-  <dd>Provides the basic editing functionality you’d expect,
-plus features such as Dart code completion,
-API browsing, and support for refactoring.
-The first time you use Dart Editor,
-it shows the Welcome Page in the Editor pane,
-which provides quick access to Dart resources
-and some nifty samples.
-The Welcome Page is also available under the <strong>Tools</strong> menu.</dd>
-  <dt>Problems pane</dt>
-  <dd>Displays warning and error messages.</dd>
-</dl>
+<p>Send feedback button(发送反馈按钮)
+： 可以让你直接向 Dart 编辑器团队和 
+和 整个 Dart 团队提 Bug 
+和新功能。</p>
+
+<p>Search field(搜索输入框)
+：搜索 <strong>Files view</strong> 中的每个文件。
+在 <strong>Search view</strong> 中显示结果。
+在搜索结果视图中，
+双击一个文件可以在 <strong>Editor pane</strong> 打开文件。
+在 <strong>Editor pane</strong> 中所有符合搜索结果的字符串都被高亮显示了。</p>
+
+<p>Run button(运行按钮)
+： 运行当前在 <strong>Files view</strong> 中选中
+的应用或文件。</p>
+
+<p>New application button(创建应用按钮)
+：创建一个新项目，
+一个目录和常用的文件。
+另外，你也可以用
+<strong>File &gt; New Application</strong> 菜单或者
+在欢迎界面的 <strong>Create an application</strong> 
+按钮来创建应用。</p>
+
+<p>Files view(文件视图)
+：显示 Dart 应用的结构化视图和
+相关的文件。
+在 <strong>Files view</strong> 中双击文件可以在
+ <strong>Editor pane</strong> 中打开。
+如果在 <strong>Files view</strong> 中单击一个文件，
+则会选中该文件，
+但是不会在 <strong>Editor pane</strong> 中打开。
+要打开文件你必需双击文件。</p>
+
+<p>Editor pane(编辑面板)
+：提供了常用的编辑功能，
+和 Dart 代码完成功能、 
+API 浏览功能、并且支持代码重构。
+第一次使用编辑器的时候，会在编辑面板中显示
+一个欢迎界面，
+在欢迎界面可以迅速的访问一些 Dart 资源和
+示例项目。
+通过 <strong>Tools</strong> 菜单可以打开欢迎界面。</p>
+
+<p>Problems pane(问题面板)
+：显示警告和错误信息。</p>
 
 <aside class="alert alert-info">
-<b> Problems? </b>
-See <a href="/tools/editor/troubleshoot.html">Troubleshooting Dart Editor</a>.
+<b> 遇到问题了？ </b>
+参考 <a href="/tools/editor/troubleshoot.html">Dart 编辑器问题指南</a>。
 </aside>
 
-<h2 id="what-is-app">About Dart applications</h2>
+<h2 id="what-is-app">关于 Dart 应用</h2>
 
-<p>At minimum, a Dart application has</p>
+<p>一个 Dart 应用至少包含如下文件：</p>
 
 <ul>
-  <li>one Dart source file—a
-file with the .dart suffix that contains Dart code</li>
-  <li>one top-level main() function.
-This is the entry point for your application.</li>
+  <li>一个 Dart 代码文件—
+一个以 .dart 结尾的文件，里面包含 Dart 代码</li>
+  <li>一个顶级 main() 函数。
+这是应用程序的入口。</li>
 </ul>
 
-<p>There are two kinds of Dart applications:
-command-line applications and web applications.
-A command-line application is a standalone program
-that you run in the Dart VM from the command-line in a terminal window.
-Web applications are hosted on a web page and run in a browser
-(either directly in a browser that supports Dart
-or by compiling to JavaScript).</p>
+<p>有两种 Dart 应用：
+命令行应用和 web 应用。
+命令行程序是一个独立的可以在 Dart VM 运行的
+程序。
+web 应用嵌入一个网页中并在
+浏览器中运行（直接在支持 Dart 的浏览器中运行或者
+编译为 JavaScript 运行）。</p>
 
-<h3 id="command-line-applications">Command-line applications</h3>
+<h3 id="section">命令行应用</h3>
 
-<p>Dart command-line applications
-run standalone from the command-line,
-independent of a web browser.
-Command-line apps are often used
-to provide server-side support to a web app,
-but they can also be scripts.</p>
+<p>Dart 命令行应用独立运行
+在命令行虚拟机中，和
+网页浏览器无关。
+命令行应用通常用来
+提供服务器端支持，
+当然也可以是脚本文件。</p>
 
-<p>The Dart VM runs Dart code directly without intermediate compilation.</p>
+<p>Dart VM 无需中间编译而直接运行 Dart 代码。</p>
 
 <p><img class="scale-img-max" src="images/dartvm-cmd-line.png" alt="Run a command-line application without compilation" /></p>
 
-<p>Conveniently, you can run command-line apps
-directly in Dart Editor with the click of the Run button
-<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.
-Alternatively,
-use the Dart VM tool
-in the <code>dart-sdk/bin</code> directory in your Dart installation directory.</p>
+<p>你可以在 Dart 编辑器中点击 Run 按钮
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />
+来直接运行命令行应用。
+也可以用
+位于 <code>dart-sdk/bin</code>
+目录的 Dart VM 工具
+来运行。</p>
 
-<h3 id="web-applications">Web applications</h3>
+<h3 id="web-">Web 应用</h3>
 
-<p>Dart web applications run inside of a browser page.
-In addition to a Dart file,
-a web app requires an HTML file to host the app.
-Often, a web app provides the client-side
-user interface for a server.</p>
+<p>Dart web 应用在浏览器中运行。
+除了 Dart 文件外，
+web 应用还需要 HTML 文件来嵌入 Dart 代码。
+通常， web 应用为服务器端提供了客户端
+的用户界面。</p>
 
-<p>You can run your Dart web app from Dart Editor
-by clicking the Run button
-<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.
-By default, Dart Editor will invoke Dartium,
-which has the Dart VM embedded in it,
-and loads your HTML file,
-which in turn loads your app.</p>
+<p>你可以在 Dart 编辑器中点击 Run 按钮
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />
+来运行 Dart web程序。
+默认 Dart 编辑器将会用 Dartium
+来运行你的程序。
+Dartium 包含了一个 Dart VM可以直接
+运行 Dart 代码。</p>
 
 <p><img class="scale-img-max" src="images/dartvm-web-app.png" alt="Run a web application directly in a Dart-savvy browser" /></p>
 
-<p>If you want to see your web app in a browser
-that does not yet support Dart,
-you can compile your Dart code to JavaScript
-using the Dart-to-JavaScript compiler,
-which is in the <code>dart-sdk/bin</code> directory in your Dart installation directory.
-You then load the resulting JavaScript file
-into your browser of choice.
-Dart Editor provides a convenient menu option for
-running web apps as JavaScript.</p>
+<p>如果你想在不支持 Dart VM 的浏览器中
+查看你的 web 应用，你可以
+用 Dart-to-JavaScript 工具
+把 Dart 代码编译为 Javascript 代码，
+该编译器在 <code>dart-sdk/bin</code> 目录中。
+然后在你的浏览器中运行 JavaScript 代码。
+Dart 编辑器提供了
+一种便利方式用 
+JavaScript 来运行 web 应用。</p>
 
 <p><img class="scale-img-max" src="images/dartvm-js.png" alt="Run a web application by compiling to JavaScript" /></p>
 
-<p>The rest of this tutorial steps you through
-creating and running first a command-line application
-and then a web application.</p>
+<p>该教材剩下部分将
+分别创建和运行一个命令行应用
+和一个 web 应用。</p>
 
-<h2 id="create-cmd-line">Create a command-line app</h2>
+<h2 id="create-cmd-line">创建命令行应用</h2>
 
-<p>In Dart Editor, choose <strong>File-&gt;New Application</strong> from the menu
-or click the New Application button
-<img class="scale-img-max" src="images/newapp.png" width="17" height="16" alt="New App button" />.
-A dialog appears that looks like this:</p>
+<p>在 Dart 编辑器中选择 <strong>File-&gt;New Application</strong> 菜单，
+或者点击 New Application 按钮
+<img class="scale-img-max" src="images/newapp.png" width="17" height="16" alt="New App button" />。
+然后会出现一个对话框，如下所示：</p>
 
 <p><img class="scale-img-max" src="images/new-helloworld.png" alt="Create a new command-line application" /></p>
 
 <ol>
 <li>
-    <p>Type <code>helloworld</code> in the <strong>Application Name</strong> text field.
-By convention, application names are lowercase.
-This name is used for the app’s directory
-and the basename for the files it creates.</p>
+    <p>在 <strong>Application Name</strong> 中输入 <code>helloworld</code> 。
+通常应用的名字都是小写字母。
+该名字为应用的根目录
+和主程序文件的名字。</p>
   </li>
 
 <li>
-    <p>Type or browse to the directory where you want to save the files.
-By default, Dart Editor creates a new directory named <code>dart</code>
-in your home directory.</p>
+    <p>选择你要保存项目的目录。
+默认情况下，Dart 编辑器在用户目录下
+创建一个名字为 <code>dart</code> 的目录。</p>
   </li>
 
 <li>
-    <p>Select <strong>Generate sample content</strong>.
-Dart Editor generates sample code
-appropriate for the type of application you are creating.
-For a command-line application,
-the sample code implements the standard ‘Hello World’ program.</p>
+    <p>选中 <strong>Generate sample content</strong> 选项。
+Dart 编辑器将生成所选应用
+类型的一些基础文件。
+对于一个命令行应用，
+将生成一个标准的 ‘Hello World’ 代码。</p>
   </li>
 
 <li>
-    <p>Select <strong>Command-line application</strong> from the list.</p>
+    <p>从列表中选择 <strong>Command-line application</strong> 。</p>
   </li>
 
 <li>
-    <p>Click <strong>Finish</strong>.</p>
+    <p>点击 <strong>Finish</strong> 按钮。</p>
   </li>
 </ol>
 
-<p>Dart Editor creates a directory for the application
-and boilerplate files for a small command-line app.
-The <strong>Files view</strong> displays
-the file hierarchy for the application.</p>
+<p>Dart 编辑器为该项目创建了一个目录和一些
+命令行应用的基础代码。
+ <strong>Files view</strong> 显示了该应用的
+ 文件结构。</p>
 
 <p><img class="scale-img-max" src="images/helloworld-files.png" alt="Dart Editor with new command-line app files" /></p>
 
-<p>Some of the files and directories in the helloworld application
-include the following:</p>
+<p>在 helloworld 应用中包含如下
+目录和文件：</p>
 
-<dl>
-  <dt>helloworld</dt>
-  <dd>Contains boilerplate files and directories for a
-simple command-line app.</dd>
-  <dt>pubspec.yaml</dt>
-  <dd>Declares which libraries
-your application needs.
-The <code>packages</code> directories contain those libraries.
-The <code>pubspec.lock</code> file specifies the version numbers
-of the libraries on which the application depends.</dd>
-  <dt>bin</dt>
-  <dd>Contains the source files for the application.
-The main source file for this example is <code>helloworld.dart</code>.</dd>
-  <dt>helloworld.dart</dt>
-  <dd>Contains the Dart source code for this app.</dd>
-</dl>
+<p>helloworld
+：包含了一个简单命令行应用的基础目录
+和代码文件。</p>
 
-<p>The <strong>Editor pane</strong> shows
-the contents of <code>helloworld.dart</code>.
-The program prints
-‘Hello, World!’ to the standard output stream
-using the print() function,
-which is provided by the dart:core library.
-The functions and objects defined in the core library
-are automatically available to all Dart applications.</p>
+<p>pubspec.yaml
+：声明你应用
+需要的库。
+ <code>packages</code> 目录包含这里声明的库。
+ <code>pubspec.lock</code> 指定了这些库
+ 的版本号。</p>
 
-<h2 id="run-cmd-line">Run a command-line app</h2>
+<p>bin
+： 包含该应用的源代码。
+该示例的主要代码文件为 <code>helloworld.dart</code> 。</p>
 
-<p>To run the helloworld app from Dart Editor:</p>
+<p>helloworld.dart
+： 包含该应用的 Dart 代码。</p>
+
+<p><strong>Editor pane</strong> 界面
+显示了 <code>helloworld.dart</code> 文件的内容。
+该程序用 dart:core 库提供的
+  print() 函数
+在标准输出窗口
+中打印 ‘Hello, World!’。
+core 库定义的函数和对象自动
+导入到所有 Dart 项目中。</p>
+
+<h2 id="run-cmd-line">运行命令行应用</h2>
+
+<p>如何在 Dart 编辑器中运行：</p>
 
 <ul>
-  <li>Select the helloworld.dart file in the <strong>Files view</strong>.</li>
-  <li>Click the Run button
-<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.</li>
+  <li>在 <strong>Files view</strong> 中选中 helloworld.dart 文件。</li>
+  <li>点击 Run 按钮
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />。</li>
 </ul>
 
-<p>Dart Editor opens a new panel,
-called the <strong>Output view</strong>,
-and displays the output of the helloworld app.</p>
+<p>Dart 编辑器打开一个名字为
+<strong>Output view</strong> 的窗口
+来显示 helloworld 应用的输出内容。</p>
 
 <p><img class="scale-img-max" src="images/helloworld-output.png" alt="Dart Editor with helloworld output view" /></p>
 
-<h2 id="create-web-app">Create a web app</h2>
+<h2 id="create-web-app">创建一个 Web 应用</h2>
 
-<p>Now let’s create a web application.
-As you did when creating a command-line application,
-click the <strong>New Application</strong> button
-<img class="scale-img-max" src="images/newapp.png" width="17" height="16" alt="New App button" />.
-Name the application <code>clickme</code>.
-This time you are creating a web app,
-so select <strong>Web application</strong> from the list
-in the New Application dialog window:</p>
+<p>现在来创建个 Web 应用。
+和创建命令行应用一样，
+点击 <strong>New Application</strong> 按钮
+<img class="scale-img-max" src="images/newapp.png" width="17" height="16" alt="New App button" />。
+应用名称设置为 <code>clickme</code>。
+这次由于要创建 Web 应用，
+所以选择 <strong>Web application</strong> 
+选项：</p>
 
 <p><img class="scale-img-max" src="images/new-click-me.png" alt="Create a new web application" /></p>
 
-<p>Dart Editor creates the directory and files needed
-for a boilerplate web application.</p>
+<p>Dart 编辑器自动创建
+ Web 应用需要的基础代码和目录。</p>
 
 <p><img class="scale-img-max" src="images/click-me-files.png" alt="Dart Editor with new web application files" /></p>
 
-<p>As before, the directory is named after your application.
-So is the Dart source file that contains the main() function.
-In addition, Dart Editor creates an HTML file that hosts the app.</p>
+<p>如前所述，Dart 编辑器创建一个项目名称的目录，
+和一个包含 main() 函数的 Dart 代码文件。
+同时， 编辑器还创建了一个用来引用 Dart 代码的 HTML 文件。</p>
 
-<p>The main() function in the clickme app
-contains Dart code 
-that puts text on the browser page
-and registers an <em>event handler</em>—a function
-that responds to user-generated events like a mouse click.
-This code uses API defined in the dart:html library.</p>
+<p>clickme 应用的 main() 函数
+中包含了 具有如下功能的Dart 代码：
+把文本显示在网页上，并
+注册一个 <em>event handler</em> — 一个
+函数用来响应用户触发的事件，例如
+点击鼠标。
+该代码用了 dart:html 库中的 API。</p>
 
-<p>In the next tutorial,
-you will build a mini app from scratch,
-creating the Dart source, the HTML source,
-and the CSS source yourself.
-Afterward, you can re-visit the code for clickme.</p>
+<p>在下一个教程中，
+你会从头开始创建一个小型应用，
+从创建 Dart 代码到 HTML 代码和 
+CSS 代码。
+然后可以再来看看 clickme 应用中的代码。</p>
 
-<h2 id="run-web-app">Run a web app</h2>
+<h2 id="run-web-app">运行 Web 应用</h2>
 
-<p>To run the clickme app from Dart Editor:</p>
+<p>如何在 Dart 编辑器中运行 clickme 应用：</p>
 
 <ul>
-  <li>Select <code>clickme.html</code>.</li>
-  <li>Click the Run button
-<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />.</li>
+  <li>选中 <code>clickme.html</code>。</li>
+  <li>点击 Run 按钮
+<img class="scale-img-max" src="images/run.png" width="16" height="16" alt="Run button" />。</li>
 </ul>
 
-<p>Dart Editor invokes Dartium providing it with
-the URL for the clickme app’s HTML file.
-Dartium loads the clickme app’s HTML file
-and the embedded app, which looks like this:</p>
+<p>Dart 编辑器用 clickme 应用中
+HTML 文件的地址来在 Dartium 
+中运行。
+Dartium 加载 clickme 应用的  HTML 文件和
+嵌入的 Dart 应用，
+结果如下所示：</p>
 
 <iframe class="running-app-frame" style="height:510px;width:500px;" src="examples/clickme/clickme.html">
 </iframe>
 
-<h3 id="run-as-javascript">Run as JavaScript</h3>
+<h3 id="javascript-">作为 JavaScript 运行</h3>
 
-<p>You can run Dart web applications in other browsers
-by compiling to JavaScript.
-Dart Editor provides a convenient menu option for doing so.
-Right click on <code>clickme.html</code>
-and select <strong>Run as JavaScript</strong> from the menu.</p>
+<p>把 Dart 应用编译为 JavaScript 可以在
+其他浏览器中运行。
+Dart 编辑器提供了一个编辑的选项来实现该功能。
+右键点击 <code>clickme.html</code> 文件，
+选择 <strong>Run as JavaScript</strong> 选项即可。</p>
 
 <p><img class="scale-img-max" src="images/run-as-javascript-screenshot.png" alt="Run a web app as JavaScript" /></p>
 
-<p>Dart Editor compiles the app to JavaScript and
-invokes your default browser,
-which runs the app.</p>
+<p>Dart 编辑器把该应用编译为 JavaScript 并且
+调用你系统默认的浏览器来
+运行该应用。</p>
 
-<h2 id="source-files">About the HTML, CSS and Dart triumvirate</h2>
+<h2 id="source-files">关于 HTML、 CSS 和 Dart</h2>
 
-<p>Typically three files—an HTML file, a Dart file,
-and a CSS file—together implement a Dart web application.
-Each is written in a different language
-and each is responsible for a different aspect of the program:</p>
+<p>通常 HTML 文件、 Dart 文件和
+ CSS 文件一起实现一个 Dart web 应用。
+每个文件都用不同的语言来编写，
+并且每个文件的职责都不同：</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Language</th>
-      <th>Purpose</th>
+      <th>语言</th>
+      <th>目的</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>HTML</td>
-      <td>Describes the content of the document (the page elements in the document and the structure)</td>
+      <td>描述文档的内容(文档和结构中的页面元素)</td>
     </tr>
     <tr>
       <td>CSS</td>
-      <td>Governs the appearance of page elements</td>
+      <td>控制页面元素的显示方式</td>
     </tr>
     <tr>
       <td>Dart</td>
-      <td>Implements the interactivity and dynamic behavior of the program</td>
+      <td>实现程序的交互和动态行为</td>
     </tr>
   </tbody>
 </table>
 
-<p>HTML is a language for describing web pages.
-Using tags, HTML sets up the initial page structure,
-puts elements on the page,
-and embeds any scripts for page interactivity.
-HTML sets up the initial document tree
-and specifies element types, classes, and IDs,
-which allow HTML, CSS, and Dart programs to refer to the same elements.</p>
+<p>HTML 是一种描述网页的语言。
+HTML 用标签来设置初始界面框架，
+把元素放到页面中，
+同时把用户负责交互的脚本引入到页面中。
+HTML 设置好初始的文档树结构和设置
+元素的类型、class、和ID，
+这样 HTML、CSS 和 Dart 代码可以引用同一个元素。</p>
 
-<p>CSS, which stands for Cascading Style Sheets, describes the appearance
-of the elements within a document.
-CSS controls many aspects of formatting:
-type face, font size, color, background color,
-borders, margins, and alignment, to name a few.</p>
+<p>CSS是 Cascading Style Sheets 的缩写，定义了文档中
+元素的显示样子。
+CSS 控制了很多格式化的内容：
+字体、文字大小、颜色、背景颜色、
+边框、边距、以及对其方式等。</p>
 
-<p>Dart code is embedded into an HTML file as a script.
-A Dart program can
-respond to events such as mouse clicks,
-manipulate the elements on a web page dynamically,
-and can save information.</p>
+<p>Dart 代码作为脚本文件嵌入到  HTML 文件中。
+一个 Dart 程序可以响应事件，
+例如 鼠标点击；也可以动态
+的改变网页元素和保存
+信息。</p>
 
-<h2 id="top-level-functions">About main() and other top-level functions</h2>
+<h2 id="top-level-functions">关于  main() 和顶级函数</h2>
 
-<p>Dart lets you define <em>top-level</em> functions,
-that is, functions that are not encapsulated within a class or object.
-All apps have at least one top-level function,
-namely the main() function.</p>
+<p>Dart 允许你定义 <em>top-level(顶级)</em> 函数，
+顶级函数不属于任何类和对象。
+每个应用都最少有一个名字为
+main() 的顶级函数。</p>
 
-<p>The two apps you’ve seen in this tutorial have other top-level functions.
-The Hello World example calls print(),
-a top-level function defined in dart:core.
-And the clickme app defines a top-level function called reverseText().</p>
+<p>该示例中的应用都有其他的顶级函数。
+ Hello World  示例中的 print()函数
+ 是定义在 dart:core 中的顶级函数。
+ clickme应用定义了一个名字为 reverseText() 的顶级函数。</p>
 
-<p>A function declaration
-has two parts: a <em>signature</em> and a <em>body</em>.</p>
+<p>一个函数由两部分：
+<em>signature(签名)</em> 和 <em>body(代码主题)</em>。</p>
 
 <p><img class="scale-img-max" src="images/function-parts.png" alt="Two parts of a function, the signature and the body" /></p>
 
-<p>The signature sets the function name,
-the data type of its return value,
-and the number and type of its input arguments.</p>
+<p>签名包含函数的名字、
+返回值的类型、
+和接收的参数个数和类型。</p>
 
 <p><img class="scale-img-max" src="images/signature-parts.png" alt="The parts of a function signature" /></p>
 
-<p>The body is the code that defines the function’s behavior.
-It usually appears between curly braces ({<em>code</em>}).
-If the body is a single expression, then you
-can skip the braces and use the =&gt; shorthand:</p>
+<p>代码主题是定义了函数行为的代码。
+通常位于花括号  ({<em>code</em>}) 之间。
+如果代码主题是一个单一表达式，则
+可以省略花括号用 =&gt; 缩写形式：</p>
 
 <pre class="prettyprint lang-dart">double milesToKM(double miles) =&gt; miles/0.62;</pre>
 
-<p>The milesToKM() function performs a simple arithmetic calculation
-and returns the result.</p>
+<p>milesToKM() 函数执行一个简单的数学运算并且
+返回结果。</p>
 
-<p>This function takes a single argument.
-Functions can take multiple arguments,
-in which case the arguments are set apart by commas.</p>
+<p>该函数接收一个参数。
+如果函数有多少参数，
+则由逗号分隔。</p>
 
-<h2 id="file-names">About file naming conventions</h2>
+<h2 id="file-names">关于命名规范</h2>
 
-<p>When creating an application with Dart Editor,
-you are asked to provide an application name.
-By convention, application names,
-and thus, the related files and directories, are lowercase.</p>
+<p>当在 Dart 编辑器中创建应用的时候，
+要求你提供应用的名字。
+通常，应用的名字和相关
+的目录和文件都是小写字母。</p>
 
-<p>As you saw,
-Dart Editor uses the application name for:</p>
+<p>如你所见，
+Dart 编辑器把应用的名字用于如下地方：</p>
 
 <ul>
-  <li>the name of the app’s directory</li>
-  <li>the basename of the main Dart file
-(the Dart file that contains the main() function)</li>
-  <li>the basename of the primary HTML file</li>
-  <li>the basename of the primary CSS file</li>
+  <li>应用的目录</li>
+  <li>Dart 主文件的文件名
+(包含 main() 函数的文件)</li>
+  <li>主 HTML 文件的文件名</li>
+  <li>主 CSS 文件的文件名</li>
 </ul>
 
-<p>You should also follow these conventions
-when creating applications outside of Dart Editor.</p>
+<p>当你不用 Dart 编辑器创建项目的时候，
+你也应该遵守这些约定。</p>
 
-<h2 id="other-resources">Other resources</h2>
+<h2 id="section-1">其他资源</h2>
 
 <ul>
   <li>
-    <a href="/docs/dart-up-and-running/contents/ch04-tools-editor.html">Dart Editor</a>,
-    an excerpt from
-    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>,
-    provides details about using Dart Editor.
-    The excerpt includes, for example,
-    how to set up run-time environments,
-    how to use power features such as autocompletion,
-    debugging, refactoring,
-    and so on.
+    来自于
+    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>一书的
+    <a href="/docs/dart-up-and-running/contents/ch04-tools-editor.html">Dart 编辑器</a>
+    详细介绍了如何使用 Dart 编辑器。
+	内容包含如何设置运行环境、如何用代码
+	自动完成功能、如何调试
+	程序、如何重构、
+	等等。
   </li>
   <li>
-    The <a href="/docs/">Programmer's Guide</a>
-    points you to docs, articles,
-    and other resources to help you as you create,
-    test, and deploy Dart code.
+    The <a href="/docs/">开发者指南</a>
+    介绍了帮助你创建、测试和部署 Dart
+    代码的文档、文章和
+    其他资源。
   </li>
 </ul>
 
-<h2 id="what-next">What next?</h2>
+<h2 id="section-2">接下来干啥？</h2>
 
 <ul>
   <li>
-    <p>Get the code for all of the Dart tutorials samples.
+    <p>下载所有 Dart 教程的示例代码，
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-Download the ZIP file</a>, unzip it,
-and open <code>dart-tutorials-samples</code> in Dart Editor.</p>
+ 下载示例代码压缩包</a>，然后解压并在
+ Dart 编辑器中打开 <code>dart-tutorials-samples</code>。</p>
   </li>
   <li>
-    <p>Go to the next tutorial, <a href="/docs/tutorials/connect-dart-html/">Connect Dart &amp; HTML</a>,
-which steps you through writing a tiny web app from scratch.</p>
+    <p>进入下一个教程 <a href="/docs/tutorials/connect-dart-html/">连接 Dart 和 HTML</a>，
+该教程将手把手教你如何从头开始创建一个小型 web 应用。</p>
   </li>
 </ul>
 
@@ -923,12 +934,12 @@ which steps you through writing a tiny web app from scratch.</p>
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/"><i class="glyphicon glyphicon-chevron-left"> </i> Home</a>
+        <a href="/docs/tutorials/"><i class="glyphicon glyphicon-chevron-left"> </i> 教程主页</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/connect-dart-html/" class="pull-right">Connect Dart &amp; HTML <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/connect-dart-html/" class="pull-right">连接 Dart 和 HTML <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
   </div> 
@@ -942,7 +953,18 @@ which steps you through writing a tiny web app from scratch.</p>
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -1005,6 +1027,16 @@ which steps you through writing a tiny web app from scratch.</p>
 <script defer src="/js/editor-version.js"></script>
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Product">
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Add Elements to the DOM | Dart: 结构化的web应用</title>
+  <title>在 DOM 中添加元素 | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Add Elements to the DOM | Dart: 结构化的web应用">
+  <meta itemprop="name" content="在 DOM 中添加元素 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="You have an Element object, now what?">
+  <meta itemprop="description" content="你有一个 Element 对象，然后呢？">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +28,10 @@
 	
 	
 	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+  <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,16 +61,13 @@
 
 </script>
 -->
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
-</script>
 
 
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script>
   
 
+<!-- 
 	window.___gcfg = {lang: 'en'};
 	(function()
 	{var po = document.createElement("script");
@@ -73,8 +75,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
 	var s = document.getElementsByTagName("script")[0];
 	s.parentNode.insertBefore(po, s);
 	})();
+-->
   </script>
-
+<!-- 
   <script>
     window.twttr = (function (d,s,id) {
       var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -83,9 +86,10 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
       return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
   </script>
+-->
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
-
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         
@@ -180,8 +184,9 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
                 <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
               </form>
             </li>
-            <li><a href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
-            <li><a href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -204,12 +209,12 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/connect-dart-html/"><i class="glyphicon glyphicon-chevron-left"> </i> Connect Dart &amp; HTML</a>
+        <a href="/docs/tutorials/connect-dart-html/"><i class="glyphicon glyphicon-chevron-left"> </i> 连接 Dart 和 HTML</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/remove-elements/" class="pull-right">Remove DOM Elements <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/remove-elements/" class="pull-right">删除 DOM 元素 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
     <hr />
@@ -227,11 +232,11 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="page-highlights">内容摘要</h4>
         
 <ul>
-  <li>In Dart, page elements are of type Element.</li>
-  <li>An Element knows its parent.</li>
-  <li>An Element keeps its children in a List&lt;Element&gt;.</li>
-  <li>Change the DOM by adding or removing children of elements.</li>
-  <li>Respond to user input with an EventListener.</li>
+  <li>在 Dart 中，页面元素都是 Element 类型。</li>
+  <li>一个 Element 知道它的父节点。</li>
+  <li>一个 Element 在 List&lt;Element&gt; 中保存所有子节点。</li>
+  <li>通过添加删除子元素来修改 DOM 结构。</li>
+  <li>通过 EventListener 来响应用户输入。</li>
 </ul>
 
 
@@ -241,16 +246,16 @@ document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3
         <h4 id="examples">示例</h4>
 
         
-<p> This tutorial features these examples:</p>
+<p> 该教程使用如下两个示例应用：</p>
 <ul>
   <li>todo</li>
   <li>anagram</li>
 </ul>
 
 <p>
-Don't have the source code?
+还没有示例代码？
 <a href="https://github.com/dart-lang/dart-tutorials-samples/archive/master.zip">
-  Download it.
+  点击下载。
 </a>
 
 </p>
@@ -277,215 +282,214 @@ Don't have the source code?
 
     
 <div class="tute-target-title">
-<h1>Add Elements to the DOM</h1>
-<h3>Dynamically add items to the browser page.</h3>
+<h1>在 DOM 中添加元素</h1>
+<h3>动态的在网页中添加元素</h3>
 </div>
 
-<p>As you learned in the previous tutorial,
-the DOM represents the structure
-of a web page document using a simple tree structure.
-Each node in the tree represents an item on the page.
-Each node in the tree keeps track of both
-its parent and its children.
-In Dart, the
+<p>在前面的教程你中学到了
+ DOM 通过简单的树形结构
+ 来代表网页文档结构。
+树中的每个节点都代表页面的一个元素。
+每个节点都知道它的父节点和
+所有子节点。
+在 Dart 中，
 <a href="https://api.dartlang.org/dart_html/Node.html" target="_blank">Node</a>
-class contains the methods and properties
-that implement a node’s tree functionality.</p>
+类包含了实现节点树功能的
+函数和属性。</p>
 
-<p>HTML page elements are one kind of node that can be in the DOM tree.
-They have a rectangular area on the page and can receive events.
-Examples of elements include
-heading elements, paragraph elements, table elements,
-button elements, and so on.</p>
+<p>HTML 页面元素是 DOM 树中的一种节点。
+他们在页面上占据一个矩形框，并且可以接收事件。
+标题、段落、表格、
+按钮 等都是
+页面元素的示例。</p>
 
-<p>In Dart,
-elements are implemented by the
+<p>在 Dart 中，元素
+由
 <a href="https://api.dartlang.org/dart_html/Element.html" target="_blank">Element</a>
-class, which is a subclass of Node.
-Because the nodes you care about most are usually elements,
-this tutorial focuses on Element,
-rather than on Node.</p>
+类实现，该类是 Node 的子类。
+由于你通常只关心元素节点，所以
+该教程主要介绍 Element 类，而
+不是 Node 类。</p>
 
 <ul>
-  <li><a href="#copy-app">Copy and run the todo app</a></li>
-  <li><a href="#tree-structure">About parent and child Elements in Dart</a></li>
-  <li><a href="#html-code">Setting up the page in HTML</a></li>
-  <li><a href="#dart-code">Getting an element from the DOM</a></li>
-  <li><a href="#event-handler">Registering an event handler</a></li>
-  <li><a href="#about-event-listeners">About EventListener functions</a></li>
-  <li><a href="#add-elem">Adding an element to the DOM tree</a></li>
-  <li><a href="#about-css">Styling the page elements</a></li>
-  <li><a href="#moving-elements">Moving elements within the DOM tree</a></li>
-  <li><a href="#other-resources">Other resources</a></li>
-  <li><a href="#what-next">What next?</a></li>
+  <li><a href="#copy-app">复制并运行 todo 应用</a></li>
+  <li><a href="#tree-structure">关于 Dart 中的父和子元素</a></li>
+  <li><a href="#html-code">设置 HTML 页面</a></li>
+  <li><a href="#dart-code">从 DOM 中获取一个元素</a></li>
+  <li><a href="#event-handler">注册一个事件监听器</a></li>
+  <li><a href="#about-event-listeners">关于 EventListener 函数</a></li>
+  <li><a href="#add-elem">在 DOM 树中添加一个元素</a></li>
+  <li><a href="#about-css">给页面元素应用样式</a></li>
+  <li><a href="#moving-elements">在 DOM 树中移动元素</a></li>
+  <li><a href="#other-resources">其他资源</a></li>
+  <li><a href="#what-next">接下来干啥？</a></li>
 </ul>
 
-<h2 id="copy-app">Copy and run the todo app</h2>
+<h2 id="copy-app">复制并运行 todo 应用</h2>
 
-<p>In this tutorial, you will be working with a sample web app
-that is a partial implementation of a todo list.
-This program dynamically changes the DOM,
-and therefore the web page,
-by adding elements to the DOM tree.</p>
+<p>在该教程中，将使用一个简单的
+待办事项 web 应用来演示。
+该应用动态的修改 DOM，
+通过在 DOM 中添加元素来
+修改网页界面。</p>
 
-<p><strong>Try it!</strong> Type in the text field and press return.
-The app adds an item to the list.
-Enter a few items into the input field:</p>
+<p><strong>动手试试！</strong> 在下面的输入框输入文字然后按回车键。
+该应用会在列表中添加一个条目。
+你可以通过输入框添加多个条目：</p>
 
 <iframe class="running-app-frame" style="height:250px;width:300px;" src="examples/todo/todo.html">
 </iframe>
 
-<p>This is the beginning of an app to manage a list of things to do.
-Right now, this app is for procrastinators only
-because the program can only add items to your to do list
-but not remove them.</p>
+<p>这是一个待办事项应用的起始功能。
+目前该应用只实现了添加条目的功能，
+还无法删除条目。</p>
 
-<h2 id="tree-structure">About parent and child Elements in Dart</h2>
+<h2 id="tree-structure">关于 Dart 中的父和子元素</h2>
 
-<p>The Node class in Dart implements the basic treeing behavior
-for nodes in the Dart DOM.
-The Element class is a subclass of Node that implements
-the behavior specific to page element nodes.
-For example,
-an element knows the width and height of
-its enclosing rectangle on the page
-and it can receive events.</p>
+<p>Node 类实现了 DOM 节点的
+基本行为。
+Element 类是 Node 的子类，
+该类实现了页面元素节点相关的行为。
+例如，
+一个元素知道它在网页中
+的宽度和高度，并且可以
+接收事件。</p>
 
-<p>You can manipulate the DOM tree by adding and deleting nodes.
-However, many Dart apps are concerned only with page elements.
-So for convenience and code simplicity,
-the Element class implements API
-for interacting with
-a subset of the DOM that includes
-only the nodes that are Elements.
-You can work with a virtual tree of Elements
-rather than the more complex tree of Nodes.
-This tutorial shows you how to manipulate the
-DOM through the Element class.</p>
+<p>你可以通过添加和删除节点来操控 DOM 树。
+但是，大多数的 Dart 应用只关心页面元素。
+所以，为了方便和让代码看起来更简单，
+Element 类实现了和 DOM 一些节点交互
+的一些 API。
+你可以操作一个虚拟的 Element 树来简化代码
+编写，而不是用一个复杂的 Node 树。
+该教程通过 Element 来演示
+如何操控 DOM。</p>
 
-<p>An Element has a parent Element
-and maintains references to its child Elements in a list.</p>
+<p>一个 Element 有一个父 Element 和一些
+子 Element，这些子 Element 通过一个 list 保存。</p>
 
 <p><img class="scale-img-max" src="images/relationships.png" alt="An element with multiple child elements and a parent element" /></p>
 
-<p>An Element has at most one parent Element.
-An Element’s parent is final and cannot be changed.
-So you cannot move an Element by changing its parent.
-Get an Element’s parent with the getter <code>parent</code>.
-For example, if you have an Element with the name <code>anElement</code>
-you would refer to its parent element with <code>anElement.parent</code>.</p>
+<p>每个 Element 最多只有一个父 Element 。
+ Element 的父节点是不可修改的(带有 final 修饰符)。
+所以你无法通过改变 Element 的父节点来移动它。
+通过 getter <code>parent</code> 函数来获取 Element 的父节点。
+例如，如果你有一个名字为 <code>anElement</code>的 Element ，
+你可以通过 <code>anElement.parent</code> 来查找该元素
+的父 Element 对象。</p>
 
 <p><img class="scale-img-max" src="images/parent-reference.png" alt="Dart code reference to anElement's parent" /></p>
 
-<p>An Element maintains references to its child elements in a list.
+<p>一个 Element 用一个 list 来保存所有子 Element 。
 <a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>
-is a class in the dart:core library
-that implements an indexable collection with a length.
-A list can be of fixed size or extendable.</p>
+是 dart:core 库中的一个类，
+该类实现了一个可索引的集合。
+list 可以是固定大小的也可以是可动态扩展的。</p>
 
-<p>List is an example of a <em>generic</em> (or <em>parameterized</em>) type—a type
-that can declare formal type parameters.
-This means that a list can be declared
-to contain only objects of a particular type.
-For example:</p>
+<p>List 是 <em>generic(泛型)</em> (或者 <em>parameterized 可参数化</em>)类型 — 
+可以定义参数的统一类型。
+这意味着一个 list 可以定义为只能
+存放特定类型的对象。
+例如：</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>List declaration</th>
-      <th>List description</th>
+      <th>List 声明</th>
+      <th>List 描述</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>List&lt;String&gt;</td>
-      <td>list of strings</td>
+      <td>只能存放 string 的 list</td>
     </tr>
     <tr>
       <td>List&lt;int&gt;</td>
-      <td>list of integers</td>
+      <td>只能存放整数的 list</td>
     </tr>
     <tr>
       <td>List&lt;Element&gt;</td>
-      <td>list of elements</td>
+      <td>只能存放  Element 的 list</td>
     </tr>
   </tbody>
 </table>
 
-<p>An Element maintains references to its child element in a List&lt;Element&gt;,
-which your Dart code can refer to with the getter <code>children</code>.
-The List class has various methods and operators
-whereby you can refer to each child Element individually,
-iterate over the list, and add and remove elements.</p>
+<p>一个  Element  通过 List&lt;Element&gt; 来维护它所有的子节点，
+在 Dart 代码中是通过  Element 的 getter <code>children</code> 函数来获取的。
+List 类有各种函数和操作符可以让你
+索引每个 Element 、遍历 list或者
+添加和删除 Element 。</p>
 
 <p><img class="scale-img-max" src="images/child-references.png" alt="Dart code references to anElement's list of children and individual child Elements" /></p>
 
-<p>You can change the tree structure by adding children to
-and removing children from an Element’s list of children.</p>
+<p>你可以通过添加或者删除子节点 list 中的
+ Element 来修改树结构。</p>
 
 <p><img class="scale-img-max" src="images/add-element.png" alt="Add a child element" /></p>
 
-<p>When you change an Element or its child Elements in your Dart program,
-you change the DOM and therefore the web page.
-The browser re-renders the page automatically.</p>
+<p>当你在 Dart 代码中改变一个 Element 或者 Element 的子节点时候，
+你同时也改变了 DOM 树，然后 web 页面也跟着修改了。
+浏览器会自动重新渲染改变过的页面。</p>
 
-<h2 id="html-code">Setting up the page in HTML</h2>
+<h2 id="html-code">设置 HTML 页面</h2>
 
-<p>Let’s take a look at the todo app
-to see how it dynamically
-adds an element to the DOM
-and displays a new item in the list of things to do.</p>
+<p>下面来看看这个
+待办事项应用是如何
+动态的添加元素
+到 DOM 树中的。</p>
 
-<p>The HTML code for the todo app sets up the initial HTML page,
-and thereby the initial DOM tree.
-You could get the same results using Dart code,
-but it’s usually better to define the primary page elements
-in HTML code (easier to read, quicker to load).</p>
+<p>待办事项应用的 HTML 代码设置了初始的界面和
+ DOM 树。
+你可以通过使用 Dart 代码来实现相同的结果，
+但是在 HTML 中定义界面的初始代码是更好的选择
+（更加易懂，加载更快）。</p>
 
 <p><img class="scale-img-max" src="images/todo-html.png" alt="todo app and its corresponding HTML code" /></p>
 
-<p>The following diagram shows a partial DOM tree for the todo app.</p>
+<p>下图显示了待办事项应用部分 DOM 树。</p>
 
 <p><img class="scale-img-max" src="images/todo-dom.png" alt="The todo app and part of its DOM tree" /></p>
 
-<p>Of interest are the two page elements that have IDs:
-<code>to-do-input</code> and <code>to-do-list</code>.
-The first identifies the &lt;input&gt; element into which the user types.
-The second identifies the &lt;ul&gt; (unordered list) element
-containing the task items.
-Dart code adds elements to this list
-whenever the user enters text into the input element.</p>
+<p>重点关注 ID 为
+<code>to-do-input</code> 和 <code>to-do-list</code> 这两个页面元素。
+第一个定义了用户输入的 &lt;input&gt; 元素。
+第二个定义了包含待办事项条目
+的 &lt;ul&gt; (无序列表)元素。 
+当用户在输入框中输入文字并按回车键后，
+Dart 代码在 list 中添加一个元素。</p>
 
-<h2 id="dart-code">Getting an element from the DOM</h2>
+<h2 id="dart-code">从 DOM 中获取一个元素</h2>
 
-<p>The following diagram shows
-the Dart code for the todo app.</p>
+<p>下图显示了待办事项应用的
+ Dart 代码。</p>
 
 <p><img class="scale-img-max" src="images/todo-dart.png" alt="todo app and its corresponding Dart code" /></p>
 
-<p>The main() function uses dart:html’s top-level query()
-function to get the interesting elements from the DOM.
-Because calling query() isn’t free,
-if a program refers to an element more than once
-it should stash a reference to the element.</p>
+<p>在 main() 函数中用 dart:html 库中的 query() 函数
+来从 DOM 中查询感兴趣的元素。
+由于调用 query() 函数是需要代价的，
+如果代码中不只一次使用同一个元素，
+则应该用一个变量来保存该元素的应用，
+避免每次调用 query() 函数来查找。</p>
 
-<p>This program stashes a reference
-to the input element
-in a top-level variable called <code>toDoInput</code>.
-The unordered list
-is in the top-level variable <code>toDoList</code>.</p>
+<p>上面的代码用一个顶级变量 <code>toDoInput</code>
+来保存输入框元素
+对象。
+用一个顶级变量 <code>toDoList</code> 来
+保存一个无序列表元素对象。</p>
 
-<p>Note the types of these variables: InputElement and UListElement.
-These are both subclasses of Element.
-The dart:html library has dozens of Element subclasses,
-many of which correspond to certain HTML tags.
-This program uses three:</p>
+<p>注意这两个变量的类型：InputElement 和 UListElement。
+他们两个都是  Element 的子类。
+ dart:html 中有几十个  Element 的子类，
+ 大部分的类都代表对应的 HTML 标签。
+ 上面的代码用到三个标签：</p>
 
 <table class="table">
   <thead>
     <tr>
-      <th>HTML tag</th>
-      <th>Dart class</th>
+      <th>HTML 标签</th>
+      <th>Dart 类</th>
     </tr>
   </thead>
   <tbody>
@@ -504,148 +508,141 @@ This program uses three:</p>
   </tbody>
 </table>
 
-<h2 id="event-handler">Registering an event handler</h2>
+<h2 id="event-handler">注册一个事件监听器</h2>
 
-<p>When a user enters text into the input field,
-a <em>change</em> event fires,
-indicating that the value in the input field has just changed.
-The todo app defines a function, addToDoItem(),
-that can handle these change events.
-The following code connects addToDoItem() to the input field:</p>
+<p>当用户在输入框输入文本后，
+触发一个 <em>change 改变</em> 事件，
+该事件表明输入框中的值改变了。
+待办事项应用定义了一个函数 addToDoItem() 来
+处理该改变事件。
+下图说明了 addToDoItem() 函数和输入框改变事件的关系：</p>
 
 <p><img class="scale-img-max" src="images/event-handler-todo.png" alt="Add an event handler to the toDoInput element" /></p>
 
-<p>Rather than dissect this busy line of code,
-think of it as a Dart idiom
-for adding an event handler to an Element.</p>
+<p>也可以把上面的代码
+想象成 Dart 中在 Element 上注册
+事件处理函数的习惯用法。</p>
 
 <p><img class="scale-img-max" src="images/event-handler-idiom.png" alt="Dart idiom: Add an event handler to an Element" /></p>
 
-<p>A change event is just one of many different types of events
-that an input element can generate.
-For example, you can use <code>click</code> to handle mouse clicks,
-or <code>keyDown</code> for when the user presses a key on the keyboard.</p>
+<p>改变事件只是输入框能触发的
+众多事件中的一种。
+例如，你可以用 <code>click</code> 来处理鼠标点击事件，
+也可以用 <code>keyDown</code> 来处理键盘按下某个键的事件。</p>
 
-<h2 id="about-event-listeners">About EventListener functions</h2>
+<h2 id="about-event-listeners">关于 EventListener 函数</h2>
 
-<p>The argument passed to the listen() method is a <em>callback function</em>
-of type 
-<a href="https://api.dartlang.org/dart_html/EventListener.html" target="_blank">EventListener</a>.
-EventListener is a typedef defined in the dart:html library as follows:</p>
+<p>listen() 函数的参数是类型为 
+<a href="https://api.dartlang.org/dart_html/EventListener.html" target="_blank">EventListener</a> 
+的_回调函数_。
+EventListener 在 dart:html 库中用 typedef 定义的：</p>
 
 <pre class="prettyprint lang-dart">typedef void EventListener(Event event)</pre>
 
-<p>As you can see, an EventListener returns no value (void) and takes an
+<p>如上所见，一个 EventListener 没有返回值并且接收一个 
 <a href="https://api.dartlang.org/dart_html/Event.html" target="_blank">Event</a>
-object as an argument.
-Any function with this signature is an EventListener.
-Based on its signature, the addToDoItem() function is an EventListener.</p>
+ 对象作为参数。
+任何具有该签名的函数都是一个 EventListener。
+根据该签名信息，addToDoItem() 函数就是一个 EventListener。</p>
 
 <pre class="prettyprint lang-dart">void addToDoItem(Event e) { ... }</pre>
 
-<p>The Event object passed into an EventListener function
-carries information about the Event that occurred.
-For example, the Event object knows which Element fired the event,
-and when.
-For location-specific events such as mouse clicks,
-the Event object also knows where the event occurred.</p>
+<p>EventListener 函数的 Event 参数对象包含了
+发送该事件的 Event 对象。
+例如， Event 对象知道那个元素何时触发了该
+事件。
+对于位置相关的事件，例如 鼠标点击，
+Event 对象还知道事件发生在哪里。</p>
 
-<p>The addToDoItem() function ignores the Event object passed to it.</p>
+<p>addToDoItem() 函数忽略了 Event 参数对象。</p>
 
-<h2 id="add-elem">Adding an element to the DOM tree</h2>
+<h2 id="add-elem">在 DOM 树中添加一个元素</h2>
 
-<p>The change event handler has the following code:</p>
+<p>该事件处理函数的代码如下：</p>
 
 <p><img class="scale-img-max" src="images/add-element-code.png" alt="The addToDoItem() function explained" /></p>
 
-<p>The final line of code is where the DOM gets changed.</p>
+<p>最后一行代码是修改 DOM 树的代码。</p>
 
-<p>An Element keeps references to all of its children in a list called <code>children</code>.
-By adding and removing elements to and from this list,
-the code changes the DOM.
-When the DOM changes, the browser re-renders the browser page.
-The effect, in our todo app, is that a new bullet item appears 
-in the to do list.</p>
+<p>Element 用一个名字为 <code>children</code> 的 list 来保存所有的子节点。
+从该 list 中添加或者删除元素就可以
+修改 DOM。
+当 DOM 改变后， 浏览器就会重新渲染页面。
+在待办事项应用中的效果就是一个新的列表
+条目出现了。</p>
 
-<h2 id="about-css">Styling the page elements</h2>
+<h2 id="about-css">给页面元素应用样式</h2>
 
-<p>Let’s take a look at the CSS file for this app.</p>
+<p>再来看看该应用的 CSS 文件。</p>
 
 <p><img class="scale-img-max" src="images/css-code.png" alt="The effect of CSS styles" /></p>
 
-<p>This code uses three different kinds of CSS selectors.
-The first is an HTML element selector that matches the &lt;body&gt; element
-and sets some basic style attributes,
-such as the background color,
-for the entire page.
-Next in the file are two ID selectors:
-#to-do-input controls the appearance of the input field
-and #to-do-list sets the appearance of the unordered list element
-in general.
-The elements in the list are controlled by the final rule,
-which uses both an ID selector and an HTML selector.
-This rule matches all &lt;li&gt; elements in the
-element with the ID to-do-list, thus styling
-each item in the to do list.</p>
+<p>上面的代码用了三种不同的选择器。
+第一个是匹配 &lt;body&gt; 元素的 HTML 元素选择器，
+设置了一些基础的样式属性，例如
+整个网页的背景颜色。
+后面是两个 ID 选择器：
+#to-do-input 控制输入框的样式，
+ #to-do-list 控制无序列表
+ 的样式。
+最后一个 CSS 规则控制 无序列表中每个
+条目的样式，该 CSS 规则用了 ID 选择器和 HTML 选择器。
+该规则匹配所有位于 ID 为 to-do-list 元素中的
+ &lt;li&gt; 元素。</p>
 
-<h2 id="moving-elements">Moving elements within the DOM tree</h2>
+<h2 id="moving-elements">在 DOM 树中移动元素</h2>
 
-<p>Here’s an example that shows how to move an element within the DOM.
-<strong>Try it!</strong> Form a word by clicking the letter tiles.</p>
+<p>下面是一个如何在 DOM 中移动元素的示例。
+<strong>动手试试！</strong> 点击一个单词中的字母。</p>
 
 <iframe class="running-app-frame" style="height:400px;width:400px;" src="examples/anagram/anagram.html">
 </iframe>
 
-<p>When the program starts,
-it creates one button element for each of seven
-randomly selected letters.
-The program adds each button to a DOM element—a simple
-&lt;div&gt; element identified by the CSS selector <code>letterpile</code>—with
-a call to letterpile.children.add().</p>
+<p>当该程序启动的时候，
+为七个随机生成的字母创建七个 button 元素。
+Dart 代码 letterpile.children.add() 
+把这七个元素添加到一个
+ ID 为 <code>letterpile</code> 的 &lt;div&gt; 元素中。</p>
 
 <p><img class="scale-img-max" src="images/anagram-newletters.png" alt="Dart code populates the letter pile with buttons" /></p>
 
-<p>Each button element in the letter pile
-has a mouse click handler called moveLetter().
-If the button is in the letterpile,
-the mouse click handler moves the button to the end of the word.
-If the button is in the word,
-the mouse click handler moves the button back to the letter pile.</p>
+<p>每个 button 元素都添加了一个
+ moveLetter() 函数用来处理鼠标点击事件。
+如果 button 在 letterpile 中，
+鼠标点击事件就把该 button 放到 word 的最后，
+如果 button 在 word 中，
+则鼠标点击事件就把该 button 重新放到 letterpile 中。</p>
 
-<p>To move the button from the letter pile to the word or back,
-the code simply adds the button to a DOM element
-that is different from the button’s current parent.
-Because an element can have only one parent,
-adding the button to a different parent
-automatically removes it from its previous parent.</p>
+<p>要实现把 button 移来移去，
+代码只需要把 button 添加到不同的 DOM 元素中即可。
+由于每个元素只有一个父节点，
+当添加一个元素到其他元素中时，会
+自动删除该元素的当前父节点。</p>
 
 <p><img class="scale-img-max" src="images/anagram-move.png" alt="The mouse click handler adds the button to the word, thus moving it" /></p>
 
-<h2 id="other-resources">Other resources</h2>
+<h2 id="section">其他资源</h2>
 
 <ul>
   <li>
-    Check out
+    不要忘了看看
     <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>,
-    where you'll find many recipes about manipulating the DOM
-    and using CSS.
-    The cookbook also has recipes about basic Dart data types,
-    such strings, lists, maps, and numbers.
+    <i class="icon-food"> </i> Dart Cookbook</a>，
+    这里具有很多操作 DOM 和使用 CSS 的技巧。
+	该书还介绍了 Dart 基本数据类型，例如
+  strings、 lists、 maps、 和 numbers。
   </li>
 
   <li>
-    You can find more information about the DOM and CSS in
-    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>,
-    which also provides thorough coverage of the Dart language, 
-    libraries, and tools.
+    <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>
+    是覆盖了 Dart 语言、库和工具的一本书。
   </li>
 </ul>
 
-<h2 id="what-next">What next?</h2>
+<h2 id="section-1">接下来干啥？</h2>
 
-<p>The next tutorial, <a href="/docs/tutorials/remove-elements/">Remove DOM Elements</a>,
-describes how to remove elements from the DOM and items off your todo list.</p>
+<p>在下一个教程中，<a href="/docs/tutorials/remove-elements/">删除 DOM 元素</a> 将
+描述如何从 DOM 中删除元素（从待办事项列表中删除一条）。</p>
 
 
 
@@ -661,12 +658,12 @@ describes how to remove elements from the DOM and items off your todo list.</p>
         <a href="/docs/tutorials/"><img src="/docs/tutorials/images/tute-home.png" width="36" /></a>
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/connect-dart-html/"><i class="glyphicon glyphicon-chevron-left"> </i> Connect Dart &amp; HTML</a>
+        <a href="/docs/tutorials/connect-dart-html/"><i class="glyphicon glyphicon-chevron-left"> </i> 连接 Dart 和 HTML</a>
       </div>
       <div class="col-md-3">
       </div>
       <div class="col-md-3">
-        <a href="/docs/tutorials/remove-elements/" class="pull-right">Remove DOM Elements <i class="glyphicon glyphicon-chevron-right"> </i> </a>
+        <a href="/docs/tutorials/remove-elements/" class="pull-right">删除 DOM 元素 <i class="glyphicon glyphicon-chevron-right"> </i> </a>
       </div>
     </div> 
   </div> 
@@ -680,7 +677,18 @@ describes how to remove elements from the DOM and items off your todo list.</p>
   </div>
 </div>
 
-
+	<!-- Baidu Button BEGIN -->
+	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
+	<span class="bds_more">分享到：</span>
+	<a class="bds_qzone"></a>
+	<a class="bds_tsina"></a>
+	<a class="bds_tqq"></a>
+	<a class="bds_renren"></a>
+	<a class="bds_t163"></a>
+	<a class="shareCount"></a>
+	</div>
+	<!-- Baidu Button END -->
+	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -737,6 +745,16 @@ describes how to remove elements from the DOM and items off your todo list.</p>
 
 
 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
 </body>
 </html>
 
