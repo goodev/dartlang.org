@@ -718,8 +718,8 @@ _loadFromDB 函数返回一个 Future， 该 Future 返回了读取数据的条�
   <a href="/articles/futures-and-error-handling/">Future 和错误处理</a>。
   </li>
   <li>
-  For information about Polymer,
-  read <a href="/docs/tutorials/polymer-intro">Define a Custom Element</a>.
+  关于 Polymer 的信息，请参考
+    <a href="/docs/tutorials/polymer-intro">定义自定义元素</a>。
   </li>
 </ul>
 
