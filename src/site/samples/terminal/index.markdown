@@ -1,6 +1,6 @@
 ---
 layout: default
-title: A Terminal Emulator that Uses the FileSystem APIs
+title: 使用 FileSystem APIs 的终端模拟器
 live_example_url: example/index.html
 
 header:
@@ -9,20 +9,18 @@ header:
 
 ## {{ page.title }}
 
-This sample ports the example used in
-[this HTML5Rocks
-article](http://www.html5rocks.com/en/tutorials/file/filesystem/#toc-samples-terminal)
-by Eric Bidelman about using the FileSystem APIs.
+该示例移植于 Eric Bidelman 写的
+[如何 使用 FileSystem APIs ](http://www.html5rocks.com/en/tutorials/file/filesystem/#toc-samples-terminal)
+的文章中的示例。
 
-This app replicates common UNIX filesystem operations such as cd, mkdir,
-rm, open, and cat using the FileSystem API.
+该示例用 FileSystem API 模拟了 UNIX 系统的文件系统操作命令，例如 cd, mkdir,
+rm, open, 和  cat。
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/terminal).
+[查看源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/terminal).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

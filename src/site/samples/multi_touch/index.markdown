@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Multi Touch
+title: 多点触摸
 live_example_url: example/index.html
 
 header:
@@ -9,17 +9,16 @@ header:
 
 ## {{ page.title }}
 
-This sample demonstrates the use of multi touch gestures. View the sample on a
-mobile device or a laptop such as the Chrome Pixel that supports touch
-gestures and experiment with drawing with multiple fingers.
+演示如何使用多点触摸手势。
+当在移动设备运行该示例的时候，
+支持多点触摸，用多个手指来画画。
 
-Read the
-[source](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fmulti_touch).
+[查看源代码](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fmulti_touch).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/)
+查看所有 [示例](/samples/)。
 

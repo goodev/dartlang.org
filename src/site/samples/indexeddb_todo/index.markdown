@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Simple Todo App using IndexedDB
+title: 使用 IndexedDB 的 todo 应用
 live_example_url: example/index.html
 header:
   css: ["/samples/samples.css"]
@@ -8,14 +8,14 @@ header:
 
 ## {{ page.title }}
 
-Store and retrieve data using IndexedDB.
+用 IndexedDB 来保存数据和查询数据。
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/indexeddb).
+查看
+[源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/indexeddb)。
 
 <iframe class="running-app-frame"
         style="height:300px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

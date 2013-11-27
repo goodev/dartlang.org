@@ -9,27 +9,26 @@ header:
 
 ## {{ page.title }}
 
-A simple example of using WebSockets for communication.
+如何使用 WebSockets 通信的示例。
 
-You can learn about the basics of WebSockets by reading the
-[Introducing WebSockets: Bringing Sockets to the Web](http://www.html5rocks.com/en/tutorials/file/filesystem/)
-article on HTML5Rocks.
+阅读
+[介绍 WebSockets: 在 Web 中使用 Sockets](http://www.html5rocks.com/en/tutorials/file/filesystem/)
+文章可以了解 WebSockets 的相关内容。
 
-WebSocket is a protocol providing full-duplex communications channels over a
-single TCP connection.
+WebSocket 是一个通过单个 TCP 连接实现双向
+通道的协议。
 
-This example opens a WebSocket connection to an echo server
-(`ws://echo/websocket.org`), sends data to the server, and then displays the
-response on the web page.
+该示例打开一个连接到反馈服务器
+(`ws://echo/websocket.org`) 的 WebSocket 连接。
+发送数据并在页面中显示反馈内容。
 
-You can open the example in Dart Editor and run it by clicking `index.html`.
+在 Dart 编辑器中打开该项目，选中 `index.html` 来运行.
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/websockets/basics).
+[查看源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/websockets/basics).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

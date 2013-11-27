@@ -3,39 +3,39 @@ col1:
     heading: polymer.dart
     anchor: polymer_dart
     screenshot: tracker.png
-    caption: "Tracker: A task management tool"
+    caption: "Tracker：一个任务管理工具"
     link: tracker/
     examples:
       -
-        title: Defining a custom element
+        title: 定义一个自定义元素
         explanation_url: /docs/tutorials/polymer-intro
         tryit_url: stopwatch/
         source_url: https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/stopwatch
-        description: Install Polymer, define and use a simple custom element.
+        description: 安装 Polymer， 定义和使用一个自定义 custom element。
       -
-        title: Searchable List
+        title: 具有搜索功能的 List
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/searchable_list/README.md
         tryit_url: searchable_list/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/searchable_list/README.md
-        description: Use data binding to make any list searchable.
+        description: 使用数据绑定来构造可搜索 List
       -
-        title: Get input from a form
+        title: 从表单收集数据
         explanation_url: /docs/tutorials/forms
         tryit_url: slambook/
         source_url: https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/slambook
-        description: Use data binding to work with form data in Polymer.
+        description: 在 Polymer 中使用表单和数据绑定。
       -
         title: TodoMVC
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/third_party/todomvc/README.md
         tryit_url: todomvc/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/third_party/todomvc/
-        description: A Polymer implementation of the the canonical todo app.
+        description: 用 Polymer 实现的一个简易 todo 应用。
       -
-        title: A task management tool
+        title: 任务管理工具
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/tracker/README.md
         tryit_url: tracker/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/tracker/
-        description: A full Polymer app with multiple custom elements.
+        description: 一个完全用 Polymer 创建的应用，使用了多个自定义元素。
   -
     heading: angular.dart
     anchor: angular_dart
@@ -48,29 +48,29 @@ col1:
         explanation_url: https://github.com/angular/angular.dart.tutorial/wiki/Creating-your-first-Angular-app
         tryit_url: helloworld/
         source_url: https://github.com/angular/angular.dart/tree/master/demo/helloworld
-        description: A first app with Angular and Dart.
+        description: Angular 和 Dart 介绍。
       -
         title: Todo
         explanation_url: https://github.com/angular/angular.dart/tree/master/demo/todo#angulardarts-todo-demo
         tryit_url: angular_todo/
         source_url: https://github.com/angular/angular.dart/tree/master/demo/todo
-        description: A todo implementation in Angular and Dart.
+        description: 用 Angular 和 Dart 实现的一个 todo 应用。
       -
         title: Bouncing balls
         explanation_url: https://github.com/angular/angular.dart/tree/master/demo/bouncing_balls
         source_url: https://github.com/angular/angular.dart/tree/master/demo/bouncing_balls
-        description: Advanced demo with Controllers, Directives and Dependency Injection. Uses advanced features like scope and zone.
+        description: 使用 Controllers、 Directives 和 Dependency Injection 的高级示例。使用了 scope 和 zone 等高级功能。
       -
-        title: Recipe book tutorial app
+        title: 菜谱示例应用
         explanation_url: https://github.com/angular/angular.dart.tutorial#welcome-to-the-angulardart-tutorial
         tryit_url: recipe_book/
         source_url: https://github.com/angular/angular.dart.tutorial
-        description: Part Six of a multipart Angular Dart tutorial.
+        description: 包含了六个 Angular Dart 教程。
   -
-    heading: Using JavaScript from Dart
+    heading: 在 Dart 中使用 JavaScript 
     anchor: using_javascript_from_dart
     screenshot: google_maps.png
-    caption: "Using the JavaScript API with dart:js: Google Maps"
+    caption: "通过 dart:js 使用 Google Maps JavaScript API"
     link: google_maps/
     examples:
       -
@@ -78,45 +78,45 @@ col1:
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/google_maps/README.md
         tryit_url: google_maps/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/google_maps/
-        description: Using the Google Maps JavaScript API with the dart:js library.
+        description: 通过 dart:js 使用 Google Maps JavaScript API。
       -
-        title: Using the Google Charts Visualization API
+        title: 使用 Google Charts Visualization API
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/gauge/README.md
         tryit_url: gauge/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/gauge/
-        description: Intermediate level app that shows the use of JavaScript and Dart interoperability.
+        description: 介绍如何混合使用 JavaScript 和 Dart 的一个应用。
       -
-        title: Fetching data using JSONP
+        title: 用 JSONP 获取数据
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/jsonp/README.md
         tryit_url: jsonp/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/jsonp/
-        description: Use JSONP to see the GitHub repos for dart-lang.
+        description: 用 JSONP 来查看 GitHub 中的 dart-lang 项目。
 
   -
-    heading: Working with the I/O library
+    heading: 使用 I/O 库
     anchor: io
     screenshot: search.png
-    caption: "Dartiverse Search: A search app using HttpServer and WebSockets"
+    caption: "Dartiverse Search：使用 HttpServer 和 WebSockets 创建的搜索应用"
     link: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/google_maps/
     examples:
       -
-        title: Searching files for content
+        title: 搜索文件内容
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dgrep/README.md
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dgrep
-        description: A short app that shows how to work with file and directories asynchronously.
+        description: 一个小示例演示如何异步搜索文件和目录。
       -
-        title: Concatenating files
+        title: 合并文件
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dcat/README.md
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dcat
-        description: Use streams to read files and process I/O.
+        description: 用 stream 来读取文件和处理 I/O。
       -
-        title: A search app using HttpServer and WebSockets
-        title: "Dartiverse Search: A search app using HttpServer and WebSockets"
+        title: 使用 HttpServer 和 WebSockets 创建的搜索应用
+        title: "Dartiverse Search: 使用 HttpServer 和 WebSockets 创建的搜索应用"
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dartiverse_search/readme.txt
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dartiverse_search
-        description: A full app with a server and a client to search for Dart on  StackOverflow and GitHub.
+        description: 一个从 StackOverflow 和 GitHub 搜索 Dart 的应用，包含服务器和客户端。
   -
-    heading: Animation and graphics
+    heading: 动画和图像特效
     anchor: animation_and_graphics
     screenshot: stagexl.png
     caption: "FlipBook: Sprite sheet animations with StageXL"
@@ -127,50 +127,50 @@ col1:
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/speed/animations#working-with-requestanimationframe
         tryit_url: raf/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/speed/animations
-        description: A sample that demonstrates the correct way to use rAF.
+        description: 正确使用 rAF 的示例。
       -
-        title: 2D solar system animation
+        title: 2D 太阳系动画
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/solar/README.md
         tryit_url: solar/
         source_url: https://github.com/dart-lang/bleeding_edge/tree/master/dart/samples/solar
-        description: A solar system implementation using Canvas.
+        description: 用 Canvas 实现的太阳系。
 
       -
-        title: 3D solar system animation
+        title: 3D 太阳系动画
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/webgl/solar3d#3d-solar-system-simulation
         tryit_url: solar3d/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/webgl/solar3d
-        description: A solar system implementation using WebGL.
+        description: 用 WebGL 实现的太阳系。
       -
-        title: Using image filters with canvas
+        title: 在 canvas 中使用图像滤镜
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/canvas/imagefilters#using-image-filters-with-canvas
         tryit_url: imagefilters/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/canvas/imagefilters
-        description: Process pixels, run simple filters, and modify an image using convolution filters.
+        description: 处理像素、运行简单的滤镜、并使用 convolution 滤镜修改图像。
       -
-        title: "Shaped masks with StageXL"
+        title: "StageXL 遮罩"
         explanation_url: https://github.com/bp74/StageXL_Samples/tree/master/web/mask#mask
         tryit_url: http://www.stagexl.org/samples/mask/
         source_url: https://github.com/bp74/StageXL_Samples/tree/master/web/mask
-        description: Simple demo showing flowers and the effect when different masks are applied.
+        description: 演示各种遮罩的花朵示例。
       -
         title: "Sprite sheet animations with StageXL"
         explanation_url: https://github.com/bp74/StageXL_Samples/tree/master/web/flipbook#flipbook
         tryit_url: http://www.stagexl.org/samples/flipbook/
         source_url: https://github.com/bp74/StageXL_Samples/tree/master/web/flipbook
-        description: Initialize the StageXL Stage, and the RenderLoop. Use the FlipBook class to play sprite sheet animations.
+        description: 初始化 StageXL 舞台和 RenderLoop。使用 FlipBook 类执行 sprite sheet 动画。
       -
-        title: "Adobe Flash game ported to HTML5 using StageXL"
+        title: "用 StageXL 把 Adobe Flash 游戏移植到 HTML5"
         explanation_url: https://github.com/bp74/StageXL_Samples/tree/master/web/escape#escape
         tryit_url: http://www.stagexl.org/samples/escape/
         source_url: https://github.com/bp74/StageXL_Samples/tree/master/web/escape
-        description: From Flash to HTML5, with similarity between ActionScript and Dart making it easy to convert AS3 files to Dart.
+        description: 从 Flash 到 HTML5，由于 ActionScript 和 Dart 非常类似，所以很容易从 AS3 文件移植到 Dart。
 
   -
-    heading: HTML5 persistence
+    heading: HTML5 存储
     anchor: html5_persistence
     screenshot: terminal.png
-    caption: "Terminal: A terminal emulator that uses FileSystem APIs"
+    caption: "Terminal: 使用 FileSystem API 的命令行终端。"
     link: terminal/
     examples:
       -
@@ -178,37 +178,37 @@ col1:
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/localstorage/basics#localstorage-101
         tryit_url: localstorage/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/localstorage/basics
-        description: A dead-simple example that uses LocalStorage.
+        description:使用 LocalStorage 的一个示例。
       -
-        title: Simple todo app using IndexedDB
+        title: 使用 IndexedDB 的简单 todo 示例
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/indexeddb/todo#simple-todo-app-using-indexeddb
         tryit_url: indexeddb_todo/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/indexeddb
-        description: A todo app which persists data using IndexedDB.
+        description: 一个把数据保存到 IndexedDB 的 todo 应用。
       -
-        title: Storing and retrieving data using IndexedDB
+        title: 用 IndexedDB 保存数据和查询数据
         explanation_url: /docs/tutorials/indexeddb/
         tryit_url: countdown/
         source_url: https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/count_down
-        description: Create milestones and count down to them. Uses IndexedDB to store the milestones.
+        description: 创建里程碑和倒计时并在 IndexedDB 中保存里程碑。
       -
-        title: Exploring the FileSystem APIs
+        title: 探索 FileSystem API 
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/filesystem#exploring-the-filesystem-apis
         tryit_url: filesystem/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/filesystem
-        description: Read, write, and navigate to a sandboxed section of your local file system.
+        description: 读写一个虚拟的本地文件系统。
       -
-        title: A terminal emulator that uses the FileSystem APIs
+        title: 使用 FileSystem API 的命令行终端
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/terminal#a-terminal-emulator-that-uses-the-filesystem-apis
         tryit_url: terminal/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/terminal
-        description: A Unix terminal in the web that manipulates the local file system.
+        description: 管理本地文件的 web Unix 终端。
 
   -
-    heading: Other HTML5 APIs
+    heading: 其他 HTML5 APIs
     anchor: other_html5_apis
     screenshot: files.png
-    caption: "Using the Files API"
+    caption: "使用 Files API"
     link: dndfiles/
 
     examples:
@@ -217,93 +217,93 @@ col1:
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/websockets/basics#websockets-101
         tryit_url: websockets/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/websockets/basics
-        description: Example that opens a WebSocket connection to an echo server, and sends and receives data.
+        description: 用 WebSocket 连接一个反馈服务器，发送并接受数据。
       -
-        title: Basic HTML5 drag and drop
+        title: HTML5 基础拖拽操作
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/dnd/basics#basic-drag-and-drop
         tryit_url: dnd/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/dnd/basics
-        description: A simple demo of HTML5 Drag and Drop to move elements on a page.
+        description: 简单的 HTML5 拖拽操作示例。
       -
-        title: Using Application Cache
+        title: 使用 Application Cache
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/appcache/beginner#using-application-cache
         tryit_url: appcache/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/appcache/beginner
-        description: Use Application Cache to tell the browser which files it should cache and make available to offline users.
+        description: 用 Application Cache 告诉浏览器那些文件可以缓存在本地以供离线使用。
       -
-        title: Basic geolocation example
+        title: 简单的 geolocation 示例
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/geolocation/trip_meter#trip-meter-a-basic-geolocaton-example
         tryit_url: geolocation/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/geolocation/trip_meter
-        description: Calculate the distance traveled between locations.
+        description: 计算两个地点的距离。
 
       -
-        title: Getting started with Web Audio API
+        title: 开始使用 Web Audio API
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/webaudio/intro#getting-started-with-web-audio-api
         tryit_url: webaudio/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/webaudio/intro
-        description: Sample that shows processing and synthesizing audio using the Web Audio API.
+        description: 用 Web Audio API 来处理和合成语音。
       -
-        title: Using the Files API
+        title: 使用 Files API
         explanation_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/dndfiles#using-the-file-api
         tryit_url: dndfiles/
         source_url: https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/dndfiles
-        description: Select a file using a form input, or using drag and drop, and monitor progress while uploading a file.
+        description: 用 文件 input 元素选择文件或者通过拖拽的方式选择文件，并监控文件上传进度。
 
   -
-    heading: Touch events
+    heading: 点击事件
     anchor: touch_events
     screenshot: swipe.png
-    caption: "Swipe: Touch gestures and CSS 3D transforms"
+    caption: "Swipe: 点击手势和  CSS 3D 变换"
     link: swipe/
     examples:
       -
-        title: Touch gestures and CSS 3D transforms
+        title: 点击手势和  CSS 3D 变换
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/swipe/README.md
         tryit_url: swipe/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/swipe/
-        description: Sample that uses touch gestures and CSS 3D transforms to spin a palindrome on the page.
+        description: 使用 点击手势和  CSS 3D 变换的简单示例。
       -
-        title: Multi touch
+        title: 多点触摸
         explanation_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/multi_touch/README.md
         tryit_url: multi_touch/
         source_url: https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/multi_touch/
-        description: Fingerpainting with multiple touch points.
+        description: 多点触摸的手指画画示例。
 
   -
-    heading: Web programming fundamentals
+    heading: Web 编程基础
     anchor: web_programming_fundamentals
     screenshot: anagrams.png
-    caption: "Anagrams: Moving elements within the DOM tree"
+    caption: "Anagrams: 在 DOM 树中移动元素"
     link: anagram/
     examples:
       -
-        title: Adding elements to the DOM
+        title: 在 DOM 中添加元素
         explanation_url: /docs/tutorials/add-elements/
         tryit_url: todo/
         source_url: https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/todo
-        description: "A todo app using the dart:html library."
+        description: "使用 dart:html 的一个 todo 应用"
       -
-        title: Moving elements within the DOM tree
+        title: 在 DOM 树中移动元素
         explanation_url: /docs/tutorials/add-elements/#moving-elements
         tryit_url: anagram/
         source_url: https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/anagram
-        description: "Build anagrams: a DOM manipulation demo."
+        description: "Build anagrams: 一个 DOM 操作示例。"
       -
-        title: Removing elements from the DOM
+        title: 从 DOM 中删除元素
         explanation_url: /docs/tutorials/remove-elements
         tryit_url: todo_with_delete/
         source_url: https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/todo_with_delete
-        description: A todo app with a delete option.
+        description: 具有删除功能的 todo 应用。
       -
-        title: Working with JSON
+        title: 使用 JSON
         explanation_url: /docs/tutorials/fetchdata/#about-json
         source_url: /docs/tutorials/fetchdata/#about-json
         tryit_url: /docs/tutorials/fetchdata/#about-json
-        description: A sample app that shows JSON data obtained from a form.
+        description: 使用 JSON 的示例。
       -
-        title: Fetching data dynamically
+        title: 动态获取数据
         explanation_url: /docs/tutorials/fetchdata/#about-uris
         source_url: /docs/tutorials/fetchdata/#about-uris
         tryit_url: /docs/tutorials/fetchdata/#about-uris
-        description: Using HttpRequest to fetch data.
+        description: 用 HttpRequest 获取数据。

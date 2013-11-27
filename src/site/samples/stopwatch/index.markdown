@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Defining a Custom Element
+title: 定义自定义元素
 live_example_url: /docs/tutorials/polymer-intro/examples/stopwatch/out/web/index.html
 header:
   css: ["/samples/samples.css"]
@@ -8,29 +8,28 @@ header:
 
 ## {{ page.title }}
 
-Start and stop the stopwatch. Reset the stopwatch to 00:00 using the Reset
-button.
+启动和停止计时器。用 Reset 按钮重置
+计时器为 00:00.
 
-This example shows how to implement a custom element using Polymer.
+该示例介绍如何实现 Polymer 的自定义元素。
 
-In this example, the stopwatch is a custom element. The definition of a custom
-element encapsulates and hides the implementation details. With custom
-elements, you can easily create new kinds of elements that have semantically
-meaningful tags and that are easy to share, reuse, and read. For example, to
-put a stopwatch element on the page, you write:
+计时文本、三个按钮和其功能、以及定义该这些控件的样式
+都包含在自定义元素中。
+自定义元素的定义封装并隐藏了
+其实现细节，
+这样当你使用该元素的时候，无需关注其他内容。使用的时候只需要引用自定义元素名字即可：
 
 `<tute-stopwatch></tute-stopwatch>`
 
-The counting text is a String in Dart that changes dynamically based on a
-Timer. Polymer’s one-way data binding feature keeps the UI in sync with the
-data as it changes.
+计时器文本通过 Polymer 的数据绑定和 Dart 
+变量绑定在一起。
 
-Declarative event handler binding lets you set up event handlers for UI
-elements on the HTML-side.
+声明式事件绑定可以让你在 HTML 端设置
+事件的处理函数。
 
-Read this [tutorial](/docs/tutorials/polymer-intro) for
-more detail, or read the
-[source](https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/stopwatch).
+详细信息参考该[教程](/docs/tutorials/polymer-intro)，
+或者
+[查看源代码](https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/stopwatch).
 
 
 <iframe class="running-app-frame"
@@ -38,4 +37,4 @@ more detail, or read the
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

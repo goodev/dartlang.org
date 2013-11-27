@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Google Maps: Using the JavaScript API with dart:js"
+title: "Google Maps: 用  dart:js 库操作 JavaScript API"
 live_example_url: example/index.html
 
 header:
@@ -9,24 +9,24 @@ header:
 
 ## {{ page.title }}
 
-This code derives from a Google Maps JavaScript API
+该示例代码来自于 Google Maps JavaScript API 
 [Hello World]( https://developers.google.com/maps/documentation/javascript/tutorial#HelloWorld)
-example. The example uses the `dart:js` library for Dart and JavaScript
-interoperability.
+示例。该示例使用 `dart:js` 库来
+操作 JavaScript 代码。
 
-See the
-[original
-example](https://developers.google.com/maps/documentation/javascript/examples/map-simple).
+查看
+[原
+示例代码](https://developers.google.com/maps/documentation/javascript/examples/map-simple)。
 
-Read the [dart:js API
-docs](http://api.dartlang.org/docs/releases/latest/dart_js.html).
+查看 [dart:js API
+文档](http://api.dartlang.org/docs/releases/latest/dart_js.html)。
 
-Read the
-[source](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fgoogle_maps).
+查看
+[示例代码](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fgoogle_maps)。
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/)
+查看所有 [示例](/samples/)。

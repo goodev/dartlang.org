@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dart Code Samples"
+title: "Dart 代码示例"
 header:
   css: ["/samples/samples.css"]
 has_permalinks: true

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Searchable List
+title: 可搜索 List
 live_example_url: example/index.html
 
 header:
@@ -9,30 +9,30 @@ header:
 
 ## {{ page.title }}
 
-This simple application shows the use of a custom element where list data is
-searchable. The demonstrates the following parts of Polymer:
+该示例介绍如何用自定义元素创建可搜索的列表。
+该示例演示了 Polymer 的如下特性：
 
-* defining custom elements
-* the `<template>` tag
-* HTML imports
-* data binding
+* 定义自定义元素
+* `<template>` 标签
+* HTML 导入指令 
+* 数据绑定
 
 
-The `<searchable-list>` element uses data binding to implement search.
-See the `searchable_list.html` and the `searchable_list.dart` files for the
-code.
+`<searchable-list>` 元素使用数据绑定实现搜索操作。
+查看 `searchable_list.html` 和 `searchable_list.dart` 中
+的代码。
 
-The `SearchableList` class uses three variables in the search implementation:
+`SearchableList` 类用三个变量实现搜索：
 
-* `data` stores all the data in the list
-* `searchParam` stores the search parameter
-* `results` stores the elements of `data` that match the search paramater
+* `data` 保存列表中的所有数据
+* `searchParam` 保存搜索参数
+* `results`保存 `data` 中符合搜索条件的数据
 
-When the user types in the search input, the `search()` method triggers, and
-the value of `results` is updated.  Since `results` is an observable variable,
-its representation in the UI automatically updates as its contents change.
+当用户在输入框中输入内容，触发  `search()` 函数，然后更新
+ `results` 的值。 由于  `results` 是一个 observable 变量，
+该变量的 UI 也自动更新。
 
-Here is the minimal code for required to implement search
+下面是实现搜索的最少代码
 (`searchable_list.dart`):
 
     search() {
@@ -41,17 +41,17 @@ Here is the minimal code for required to implement search
       results.addAll(data.where((d) => d.toLowerCase().contains(lower)));
     }
 
-Any changes to `searchParam` trigger  `search()`. Here is the code for that
-(the `enteredView()` method in `searchable_list.dart`):
+任何 `searchParam` 的改变都会触发  `search()`。
+下面是触发改变的代码
+(  `searchable_list.dart` 中的 `enteredView()` 函数):
 
     onPropertyChange(this, #searchParam, search);
 
-Read the
-[source](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fsearchable_list).
+[查看源代码](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fsearchable_list).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/)
+查看所有 [示例](/samples/)。

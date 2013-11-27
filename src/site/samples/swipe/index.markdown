@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Touch Gestures and CSS 3D Transforms
+title: 触摸手势和 CSS 3D 变换
 live_example_url: example/swipe.html
 
 header:
@@ -9,17 +9,17 @@ header:
 
 ## {{ page.title }}
 
-This sample uses touch gestures and CSS 3D transforms to display a figure made
-up of a well known palindrome.
-If you are using a keyboard, spin the figure with the left and
-right arrow keys. On touch devices, use swipe gestures.
+用触摸手势和 CSS 3D 变换实现一个滑动操作动画。
+如果在触摸设备
+可以左右滑动屏幕，
+如果是非触摸设备，则可以用
+键盘左右箭头来查看效果。
 
-Read the
-[source](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fswipe).
+[查看源代码](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fswipe).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/)
+查看所有 [示例](/samples/)。

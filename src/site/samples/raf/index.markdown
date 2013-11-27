@@ -8,18 +8,18 @@ header:
 
 ## {{ page.title }}
 
-This sample ports the example used in
-[this HTML5Rocks article](http://www.html5rocks.com/en/tutorials/speed/animations/)
-by Paul Lewis about correctly using requestAnimationFrame for your animations.
+该示例移植于 
+Paul Lewis 写的
+[如何正确使用 requestAnimationFrame ](http://www.html5rocks.com/en/tutorials/speed/animations/)
+一文。
 
-Use the up and down keys on your keyboard to activate the animation.
+使用键盘上下导航键来启动该动画。
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/speed/animations).
+[查看源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/speed/animations).
 
 <iframe class="running-app-frame"
         style="height:400px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using the Google Charts Visualization API
+title: 使用 Google Charts Visualization API
 live_example_url: example/gauge.html
 
 header:
@@ -9,17 +9,17 @@ header:
 
 ## {{ page.title }}
 
-This code derives from the Google Charts JavaScript API
+该代码来源于  Google Charts JavaScript API 的
 [Gauge Visualization](
 https://developers.google.com/chart/interactive/docs/gallery/gauge#Example)
-examples. The example uses the `dart:js` library for Dart and JavaScript
-interoperability.
+示例。 该示例用 `dart:js` 库演示如何混合使用 
+ Dart 和 JavaScript。
 
-Read the [dart:js API
-docs](http://api.dartlang.org/docs/releases/latest/dart_js.html).
+参考 [dart:js API
+文档](http://api.dartlang.org/docs/releases/latest/dart_js.html)。
 
-Read the
-[source](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fgauge).
+参考
+[源代码](https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fgauge)。
 
 <iframe class="running-app-frame"
         style="height:600px;width:100%;"
@@ -27,4 +27,4 @@ Read the
         align="middle">
 </iframe>
 
-See all [samples](/samples/)
+查看所有 [示例](/samples/)。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Recipe Book Tutorial App
+title: 菜谱示例应用
 live_example_url: example/web/index.html
 header:
   css: ["/samples/samples.css"]
@@ -8,9 +8,9 @@ header:
 
 ## {{ page.title }}
 
-An example from the Angular Dart Tutorial. The tutorial has several parts. Be
-sure to
-[check out all the examples](https://github.com/dart-lang/bleeding_edge/tree/master/dart/samples/tracker/).
+一个介绍 Angular Dart 的教程。该教程包含六个部分。
+在
+[这里](https://github.com/dart-lang/bleeding_edge/tree/master/dart/samples/tracker/) 查看每个教程。
 
 
 <iframe class="running-app-frame"
@@ -18,4 +18,4 @@ sure to
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

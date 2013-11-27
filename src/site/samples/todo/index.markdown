@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Adding Elements to the DOM
+title: 在 DOM 中添加元素
 live_example_url: /docs/tutorials/add-elements/examples/todo/todo.html
 header:
   css: ["/samples/samples.css"]
@@ -8,21 +8,15 @@ header:
 
 ## {{ page.title }}
 
-Enter text in the input field and press return.
+演示如何通过代码在 DOM 中添加元素。
 
-This app shows how to programmatically add an element to the DOM.
-
-In this example, when you press return, the event handler for the input
-field creates a new <li> element and adds it to an existing <ul> list in the
-DOM tree. When the DOM tree changes, the web page refreshes.
-
-Read this [tutorial](/docs/tutorials/add-elements/) for
-more detail, or read the
-[source](https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/todo).
+详细信息参考该 [教程](/docs/tutorials/add-elements/)，
+或者
+[查看源代码](https://github.com/dart-lang/dart-tutorials-samples/tree/master/web/todo).
 
 <iframe class="running-app-frame"
         style="height:400px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

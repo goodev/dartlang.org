@@ -8,14 +8,14 @@ header:
 
 ## {{ page.title }}
 
-A simple first app with Angular and Dart.
+介绍 Angular 和 Dart 的示例。
 
-Read the
-[source](https://github.com/angular/angular.dart/tree/master/demo/bouncing_balls)
+查看
+[源代码](https://github.com/angular/angular.dart/tree/master/demo/bouncing_balls)
 
 <iframe class="running-app-frame"
         style="height:600px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tracker: A Task Management Tool"
+title: "Tracker: 一个任务管理工具"
 live_example_url: example/index.html
 header:
   css: ["/samples/samples.css"]
@@ -8,10 +8,9 @@ header:
 
 ## {{ page.title }}
 
-Create, update, and delete tasks. Built using Polymer Dart.
+用 Polymer Dart 创建的支持 添加、更新、删除任务的应用。
 
-Read the
-[source](https://github.com/dart-lang/bleeding_edge/tree/master/dart/samples/tracker/)
+[查看源代码](https://github.com/dart-lang/bleeding_edge/tree/master/dart/samples/tracker/)
 
 
 <iframe class="running-app-frame"
@@ -19,4 +18,4 @@ Read the
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

@@ -8,10 +8,10 @@ header:
 
 ## {{ page.title }}
 
-A simple first app with Angular and Dart.
+使用 Angular 和 Dart 的一个简单示例。
 
-Read the
-[source](https://github.com/angular/angular.dart/tree/master/demo/helloworld)
+查看
+[源代码](https://github.com/angular/angular.dart/tree/master/demo/helloworld)
 
 
 <iframe class="running-app-frame"
@@ -19,4 +19,4 @@ Read the
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

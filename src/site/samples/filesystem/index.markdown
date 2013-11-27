@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Exploring the FileSystem APIs
+title: 探索 FileSystem APIs
 live_example_url: example/index.html
 
 header:
@@ -9,16 +9,16 @@ header:
 
 ## {{ page.title }}
 
-This sample ports the example used in
-[this HTML5Rocks article](http://www.html5rocks.com/en/tutorials/file/filesystem/)
-by Eric Bidelman about using the FileSystem APIs.
+移植 Eric Bidelman  的文章
+[ FileSystem APIs ](http://www.html5rocks.com/en/tutorials/file/filesystem/)
+中的示例应用。
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/filesystem).
+查看
+[源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/file/filesystem)。
 
 <iframe class="running-app-frame"
         style="height:400px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/)
+查看所有 [示例](/samples/)。

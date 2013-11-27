@@ -9,20 +9,19 @@ header:
 
 ## {{ page.title }}
 
-A port of an example used in the
+移植 Ernest Delgado 发表的文章
 [HTML5 Video](http://www.html5rocks.com/en/tutorials/video/basics/)
-article by Ernest Delgado, originally published on HTML5Rocks.
+中的示例。
 
-The example shows how to use the `<video>` tag with different video formats.
+该示例演示了如何在 `<video>` 标签中使用不同格式的视频。
 
-You can open the example in Dart Editor and run it by clicking `index.html`.
+在 Dart 编辑器中打开该项目，选中 `index.html` 来运行.
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/video/basics).
+[查看源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/video/basics).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Image Filters with Canvas
+title: 在 Canvas 中使用 滤镜
 live_example_url: example/index.html
 
 header:
@@ -9,22 +9,22 @@ header:
 
 ## {{ page.title }}
 
-A port of the examples used in the
-[Image Filters with Canvas](http://www.html5rocks.com/en/tutorials/canvas/imagefilters/)
-article by Ilmari Heikkinen, originally published on HTML5Rocks.
+移植 Ilmari Heikkinen 发表在 HTML5Rocks 的
+[在 Canvas 中使用 滤镜](http://www.html5rocks.com/en/tutorials/canvas/imagefilters/)
+一文中的代码。
 
-The article describes how to use image filters with an HTML5 Canvas element.
-It explains how to process pixels, run simple filters, and blur,
-sharpen and emboss an image using convolution filters.
+文章介绍了如何在 HTML5 Canvas 中使用滤镜。
+介绍了如何处理像素、应用简单的滤镜和模糊 等
+图片滤镜效果。
 
-You can open the example in Dart Editor and run it by clicking `index.html`.
+在 Dart 编辑器中打开该项目，选中 `index.html` 来运行。
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/canvas/imagefilters).
+查看
+[源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/canvas/imagefilters).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using the Notifications API
+title: 使用 Notifications API
 live_example_url: example/index.html
 
 header:
@@ -9,23 +9,22 @@ header:
 
 ## {{ page.title }}
 
-A simple example showing use of the Notifications API. To find out more about
-this API, read the
+演示如何使用 Notifications API
+。关于该 API 的详细信息，参考 
+Ernest Delgado 在 HTML5Rocks 发表的文章
 [Using the Notifications
-API](http://www.html5rocks.com/en/tutorials/notifications/quick) article by
-Ernest Delgado, originally published on HTML5Rocks.
+API](http://www.html5rocks.com/en/tutorials/notifications/quick)。
 
-The Notifications API allows you to display notifications to the user for
-given events, both passively (new emails, tweets, or calendar events) and on
-user interactions.
+Notifications API 可以给用户显示一个通知。
+用户可以
+操作该通知。
 
-You can open the example in Dart Editor and run it by clicking `index.html`.
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/notifications/quick).
+在 Dart 编辑器中打开该项目，选中 `index.html` 来运行.
+[查看源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/notifications/quick).
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。

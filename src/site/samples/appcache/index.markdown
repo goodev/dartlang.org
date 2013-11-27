@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Application Cache
+title: 使用 Application Cache
 live_example_url: example/index.html
 
 header:
@@ -9,31 +9,32 @@ header:
 
 ## {{ page.title }}
 
-A simple example to show the use of the Application Cache interface.
+如何使用 Application Cache 接口的示例。
 
-For a thorough exploration of this topic, read
-[A Beginner's Guide to Using the Application
-Cache](http://www.html5rocks.com/en/tutorials/appcache/beginner/),
-an article by Eric Bidelman originally published on HTML5Rocks.
+关于该主题的详细信息，请参考
+[Application
+Cache 上手指南](http://www.html5rocks.com/en/tutorials/appcache/beginner/)，
+这是由 Eric Bidelman 发表在  HTML5Rocks 的文章。
 
-Application Cache allows you to specify which files the browser should cache
-and make available to offline users. Your app will
-load and work correctly, even if the user presses the refresh button while
-offline.
+Application Cache 可以告诉浏览器那些文件需要缓存
+以便离线使用。这样，
+即便用户在离线情况下点击刷新按钮
+你的应用依然能够正常使用。
 
-You can open the example in Dart Editor and run it by clicking `index.html`.
+你可以在 Dart 编辑器打开该示例，选中  `index.html` 来运行。
 
-To see this example in action, make changes to `index.html` and then reload
-the app. Your changes don't show up because the browser displays a cached
-version of `index.html`. Next, change the date or version number in
-appcache.mf, and reload once more. You'll be prompted to load the new version.
+要查看该示例的效果，则修改 `index.html` 文件并重新打开该
+应用。由于浏览器用了缓存版本的 `index.html` 所以
+你的修改内容并没有显示出来。然后在
+appcache.mf 中修改版本和日期并再次运行该应用。
+现在就会加载新版本的网页了。
 
-Read the
-[source](https://github.com/dart-lang/dart-samples/tree/master/web/html5/appcache/beginner).
+查看
+[源代码](https://github.com/dart-lang/dart-samples/tree/master/web/html5/appcache/beginner)。
 
 <iframe class="running-app-frame"
         style="height:500px;width:100%;"
         src="{{page.live_example_url}}">
 </iframe>
 
-See all [samples](/samples/).
+查看所有 [示例](/samples/)。
