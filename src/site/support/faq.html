@@ -124,14 +124,14 @@ ANSWER: no. :( It's a common problem but not one I'd thought about fixing. If we
 
 <p>观看我们的谷歌 I/O 2012座谈会 <a href="http://www.youtube.com/watch?v=VOf27ez_Hvg">Google Web Toolkit 的历史与未来</a> 获得更多信息。
 
-<h3 id="why-not-multi-language-VM">Q. Why didn't Google build a bytecode VM targetable by multiple languages including Dart?</h3>
+<h3 id="why-not-multi-language-VM">谷歌为什么不开发一个多语言（包括Dart)的字节码虚拟机？</h3>
 
-<p>Each approach has advantages and disadvantages, but we feel that in the context of Dart it made sense to build a language-specific VM for the following reasons:</p>
+<p>每一种方法都有长处和短处，但是我们感觉创建一个Dart专用的虚拟机作为Dart的运行环境更合理，主要有以下原因：</p>
 <ul>
-<li>Google already works on a multi-language bytecode: <a href="https://developers.google.com/native-client/overview#distributing-an-application">LLVM bitcode in PNaCl</a>.</li>
-<li>Even if a bytecode VM is specialized for Dart, a language VM will be simpler and faster because it can work under stronger assumptions&mdash;for instance, a structured control flow.  These assumptions make the implementation cleaner and optimizations easier.</li>
-<li>A general-purpose bytecode VM would be even larger and slower, as it generalizes assumptions and adds functionality that for Dart is dead code: for example, multithreading with a shared heap.</li>
-<li>No bytecode VM is truly general-purpose; they all make assumptions that privilege some class of languages.  A language VM leaves more room to improve the VM and make deep changes to optimization of the language. Some Dart engineers wrote <a href="/articles/why-not-bytecode/">an article</a> talking about the VM question in more detail.</li>
+<li>谷歌已经拥有一门多语言字节码<a href="https://developers.google.com/native-client/overview#distributing-an-application">底层虚拟机（使用位码的PNaCl）</a>.</li>
+<li>如果 Dart 被单语言字节码虚拟机所支持将有很大好处, 单语言虚拟机将更简单更快，因为它可以专门为该语言进行优化&mdash;例如，一个结构化控制流。这些专门的优化使得实现回收器和优化器更加简单。</li>
+<li>一个通用的字节码虚拟机将会很大很慢，因为它包括了很多假设和额外的功能，这些对Dart都是没用的：例如，多线程共享堆。</li>
+<li>没有字节码虚拟机是真正通用的；他们都假定给某些种类的语言以特权。单语言虚拟机有更多的空间来提升性能，并能深入优化。请详见 Dart 工程师写的关于虚拟机问题的<a href="/articles/why-not-bytecode/">相关文章</a></li>
 </ul>
 
 </section> <!-- /#strategy -->
