@@ -1,17 +1,17 @@
 ---
 layout: default
-title: "Presentations, Videos, and Slides"
-description: "Watch videos and review slides from presentations about the Dart web programming language and tools."
+title: "视频、演讲和幻灯片"
+description: "观看 Dart 语言和工具演讲的视频和幻灯片。"
 js:
 - url: /js/slides-analytics.js
   defer: true
 snippet_img: imgs/dart-today-and-beyond.jpg
 ---
 
-# Dart Presentations
+# Dart 演讲
 
-Watch videos and review slides from presentations about Dart.
-You can also watch our 5-minute video tutorials, [Dart Tips](/dart-tips/).
+观看 Dart 语言演讲视频和幻灯片。
+你还可以观看五分钟 [ Dart 技巧视频](/dart-tips/)。
 
 {% injectdata presos slides/presentations.yaml %}
 
@@ -29,15 +29,18 @@ You can also watch our 5-minute video tutorials, [Dart Tips](/dart-tips/).
     <div class="caption">
       <h4 class="title">{{ preso.title }}</h4>
       <p>
-        by {{ preso.presenters | array_to_sentence_string }}<br>
-        from {{ preso.event }}, {{ preso.date }}
+        作者： {{ preso.presenters | array_to_sentence_string }}<br>
+        来源： {{ preso.event }}, {{ preso.date }}
       </p>
       <p class="buttons">
         {% if preso.video %}
-        <a href="{{ preso.video }}" target="_blank" class="btn btn-primary"><i class="glyphicon glyphicon-film"> </i> Watch</a>
+        <a href="{{ preso.video }}" target="_blank" class="btn btn-primary"><i class="glyphicon glyphicon-film"> </i> 观看</a>
         {% endif %}
         {% if preso.slides %}
-        <a href="{{ preso.slides }}" target="_blank" class="btn btn-primary"><i class="glyphicon glyphicon-picture"> </i> Slides</a>
+        <a href="{{ preso.slides }}" target="_blank" class="btn btn-primary"><i class="glyphicon glyphicon-picture"> </i> 幻灯片</a>
+        {% endif %}
+        {% if preso.ovideo %}
+        <a href="{{ preso.ovideo }}" target="_blank" class="btn btn-primary"><i class="glyphicon glyphicon-film"> </i> 来源</a>
         {% endif %}
       </p>
     </div>
