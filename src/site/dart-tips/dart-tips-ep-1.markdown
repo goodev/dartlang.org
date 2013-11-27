@@ -4,7 +4,7 @@ title: "A Simple Dart Script - Dart Tips, Ep 1"
 description: "Welcome to Dart Tips, the video series that teaches you all
 about Dart. In our first episode, we show you a simple Dart script and get you
 comfortable with reading Dart code."
-snippet_img: //i.ytimg.com/vi/g09UVKyYfIs/0.jpg
+snippet_img: //dartpic.goodev.org/dartlang/vi/g09UVKyYfIs/0.jpg
 rel:
   author: seth-ladd
 ---

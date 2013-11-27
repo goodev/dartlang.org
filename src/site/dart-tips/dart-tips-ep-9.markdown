@@ -2,7 +2,7 @@
 layout: default
 title: "Exceptions - Dart Tips, Ep 9"
 description: "Learn how to gracefully handle exceptions and errors in Dart. Don't get caught off guard the next time you run into an error, learn more about try, catch, finally, and throw."
-snippet_img: //i.ytimg.com/vi/J94I70uqr6w/0.jpg
+snippet_img: //dartpic.goodev.org/dartlang/vi/J94I70uqr6w/0.jpg
 rel:
   author: seth-ladd
 ---

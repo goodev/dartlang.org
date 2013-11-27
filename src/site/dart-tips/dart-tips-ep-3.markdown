@@ -2,7 +2,7 @@
 layout: default
 title: "Variables - Dart Tips, Ep 3"
 description: "Dart is optionally typed, so variables can have type annotations. You can also mark variables as final to ensure they will point to one and only one object. Watch this episode to learn more about variables in Dart."
-snippet_img: //i.ytimg.com/vi/_td6qXi_GmA/0.jpg
+snippet_img: //dartpic.goodev.org/dartlang/vi/_td6qXi_GmA/0.jpg
 rel:
   author: seth-ladd
 ---

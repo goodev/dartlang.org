@@ -2,7 +2,7 @@
 layout: default
 title: "Control Flow Statements - Dart Tips, Ep 8"
 description: "Take back control and learn more about Dart's control flow statements. All the greatest hits are here: if, while, for, and switch. Plus, this video shows you a helpful tweak that should make web developers quite happy."
-snippet_img: //i.ytimg.com/vi/XdqZdsdzD2A/0.jpg
+snippet_img: //dartpic.goodev.org/dartlang/vi/XdqZdsdzD2A/0.jpg
 rel:
   author: seth-ladd
 ---
