@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Dart Tips: Short Video Tutorials about Dart"
-description: "Super short video intros to Dart language and library features."
+title: "Dart 小技巧： 通过短视频介绍 Dart"
+description: "介绍 Dart 语言和库的超级短视频"
 ---
 
 {% injectdata tips dart-tips/episodes.yaml %}
 
-# Dart Tips: Short Video Tutorials
+# Dart 小技巧： 通过短视频介绍 Dart
 
-Sometimes, you only have 5 minutes. Watch super short introductions to
-Dart language and library topics.
+有时候，你只有五分钟可用时间。通过观看超级短视频
+来学习 Dart 语言和库。
 
 {% for episode in page.tips.episodes %}
 
@@ -32,5 +32,5 @@ Dart language and library topics.
 
 <a href="http://marakana.com"><img src="imgs/marakana-logo.png" alt="Marakana Logo"></a>
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作
+了该系列视频。
