@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Troubleshooting Dart Editor"
-description: "Installing and running Dart Editor is easy. Except when it isn't."
+title: "解决 Dart 编辑器遇到的问题"
+description: "安装和使用 Dart 编辑器是很容易的。除非遇到问题！"
 js:
 - url: /js/os-switcher.js
   defer: true
@@ -11,68 +11,68 @@ js:
 
 <section>
 <p class="os-choices">
-Find solutions to
-<a href="/tools/editor/">Dart Editor</a> problems for
-{% include os-choices.html %}
-If we missed something, please
-<a href="/support/">let us know</a>.
+一些 
+<a href="/tools/editor/">Dart 编辑器</a> 在
+{% include os-choices.html %} 系统上的问题及解决方式。
+如果漏掉了什么内容，请
+<a href="/support/">告诉我们</a>。
 </p>
 
-<h4> Contents </h4>
+<h4> 目录 </h4>
 <ol class="toc">
-  <li> <a href="#download-dart-editor">Getting your system architecture</a> </li>
-  <li> <a href="#launch-dart-editor">Launching Dart Editor</a> </li>
-  <li> <a href="#dartium">Launching Dartium</a> </li>
-  <li> <a href="#eclipse">Using Eclipse</a> </li>
-  <li> <a href="#clear">Clearing all settings</a> </li>
-  <li> <a href="#bugs">Other known issues</a> </li>
+  <li> <a href="#download-dart-editor">了解你的系统架构</a> </li>
+  <li> <a href="#launch-dart-editor">启动 Dart 编辑器</a> </li>
+  <li> <a href="#dartium">启动 Dartium</a> </li>
+  <li> <a href="#eclipse">使用 Eclipse</a> </li>
+  <li> <a href="#clear">清空所有设置</a> </li>
+  <li> <a href="#bugs">其他已知问题</a> </li>
 </ol>
 
 <section>
 
   <section id="download-dart-editor">
-  <h2> Getting your system architecture </h2>
+  <h2> 了解你的系统架构 </h2>
 
   <div class="linux">
     <p>
-    If you don't know whether you have 32-bit or 64-bit Linux,
-    use the command <code>uname -a</code>.
-    If <code>64</code> is in the output,
-    you have 64-bit Linux;
-    otherwise, you have 32-bit Linux.
+    如果你不知道你的系统是 32-bit 还是  64-bit 的 Linux，
+  使用命令 <code>uname -a</code>。
+  如果输出的内容包含  <code>64</code>，则你是
+  64-bit Linux；
+  否则你就是 32-bit Linux。
     </p>
   </div>
 
   <div class="macos">
     <p>
-    Almost all Mac OS X systems have a 64-bit OS,
-    so we recommend using the 64-bit Dart Editor.
-    If you encounter problems,
-    try the <a href="#mac-32bit">32-bit version</a>.
+    几乎所有的 Mac OS X 系统都是 64-bit 的，
+    所有我们推荐你用 64-bit Dart 编辑器。
+如果你遇到了问题，
+则尝试下 <a href="#mac-32bit">32-bit 版本</a>。
     </p>
   </div>
 
   <div class="windows">
     <p>
-    If you don't know whether you have 32-bit or 64-bit Windows, see
-    <a href="http://windows.microsoft.com/en-US/windows7/32-bit-and-64-bit-Windows-frequently-asked-questions">Microsoft's support site</a>.
+    如果你不知道你是 32-bit 还是 64-bit Windows，参考
+    <a href="http://windows.microsoft.com/en-US/windows7/32-bit-and-64-bit-Windows-frequently-asked-questions">Microsoft 的支持站点</a>。
     </p>
   </div>
 
   </section>
 
   <section id="launch-dart-editor">
-  <h2> Launching Dart Editor </h2>
+  <h2> 启动 Dart 编辑器 </h2>
 
 <div class="windows">
 
   <p>
   Your Java version should have the same bit width as
-  your Dart Editor version.
-  For example, if you're using a 64-bit Dart Editor,
+  your Dart 编辑器 version.
+  For example, if you're using a 64-bit Dart 编辑器,
   then you should use 64-bit Java.
   Otherwise, you might see a message like this
-  when you try to launch Dart Editor:
+  when you try to launch Dart 编辑器:
   </p>
 
 <pre>
@@ -89,7 +89,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
   <section id="linux-32bit">
   <p>
   If you're using 64-bit Linux but have 32-bit Java libraries,
-  Dart Editor won't work.
+  Dart 编辑器 won't work.
   </p>
 
   <p>
@@ -108,7 +108,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
 <div class="macos">
 
   <p>
-  A few things can go wrong when launching Dart Editor on a Mac:
+  A few things can go wrong when launching Dart 编辑器 on a Mac:
   </p>
 
   <ul>
@@ -130,7 +130,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
 
   <p>
   If you're running Mac OS 10.8 (Mountain Lion),
-  your computer might refuse to start Dart Editor
+  your computer might refuse to start Dart 编辑器
   because it's not from the Mac App Store or an identified developer.
   Until we fix this problem
   (<a href="http://code.google.com/p/dart/issues/detail?id=5088">bug
@@ -146,8 +146,8 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
 
   <p>
   The easiest workaround:
-  When launching Dart Editor for the first time,
-  don't double-click the Dart Editor icon.
+  When launching Dart 编辑器 for the first time,
+  don't double-click the Dart 编辑器 icon.
   Instead, right-click (or Ctl+click) it to bring up a context menu,
   and choose <b>Open</b>.
   Then, in the dialog that comes up, click <b>Open</b>.
@@ -159,8 +159,8 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
   In the <b>General</b> tab under
   <b>Allow applications downloaded from:</b>,
   choose <b>Anywhere</b>.
-  You should now be able to start Dart Editor.
-  Once you've run Dart Editor,
+  You should now be able to start Dart 编辑器.
+  Once you've run Dart 编辑器,
   you can change the preference back to its previous setting.
   </p>
   </section>
@@ -169,7 +169,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
   <h3>"DartEditor.app" is damaged (64-bit only)</h3>
 
   <p>
-  Sometimes when you try to launch a new, 64-bit build of Dart Editor,
+  Sometimes when you try to launch a new, 64-bit build of Dart 编辑器,
   Mac OS X incorrectly displays a corruption warning:
   </p>
 
@@ -181,17 +181,17 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
   <p>
   The workaround is to download and install the
   <a class="download-link" data-bits="32" data-os="macos" data-build="integration" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-macos-ia32.zip">
-  32-bit version of Dart Editor</a>.
+  32-bit version of Dart 编辑器</a>.
   </p>
 
   <section id="java-install">
   <h3>Java installation failure</h3>
 
   <p>
-  When you try to run Dart Editor but don't have a Java SE 6 runtime,
-  Dart Editor offers to install Java for you.
+  When you try to run Dart 编辑器 but don't have a Java SE 6 runtime,
+  Dart 编辑器 offers to install Java for you.
   If the installation doesn't work,
-  you can either restart Dart Editor or
+  you can either restart Dart 编辑器 or
   <a href="http://support.apple.com/kb/DL1572">install Java yourself</a>.
   </p>
 
@@ -202,7 +202,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
 
   <p>
   If you use Sophos Anti-Virus,
-  Dart Editor (like most Java applications)
+  Dart 编辑器 (like most Java applications)
   starts up 10-15 times slower than normal.
 
   <p>
@@ -231,7 +231,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
 
   <p>
   If you're using one of the increasingly rare 32-bit Macs,
-  you can't launch the 64-bit version of Dart Editor.
+  you can't launch the 64-bit version of Dart 编辑器.
   Instead, you see a warning like this:
   </p>
 
@@ -245,7 +245,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
   <p>
   The fix: Download and install the
   <a class="download-link" data-bits="32" data-os="macos" data-build="integration" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/darteditor-macos-ia32.zip">
-  32-bit version of Dart Editor</a>.
+  32-bit version of Dart 编辑器</a>.
   </p>
 
   </section>
@@ -256,7 +256,7 @@ Failed to load the JNI shared library "C:\Program Files(x86)\Java\jre6\\bin\clie
   <h3>Specifying the Java runtime</h3>
 
   <p>
-  If necessary, you can specify the Java runtime that Dart Editor uses.
+  If necessary, you can specify the Java runtime that Dart 编辑器 uses.
   Go to your Dart installation directory and
   add the following two lines to <code>DartEditor.ini</code>
   immediately <b>before</b> the existing
@@ -299,7 +299,7 @@ c:\\bin\\java_jdk1.7.0\\bin\\javaw.exe
 
     <p>
     By default,
-    when you click Dart Editor's Run button
+    when you click Dart 编辑器's Run button
     <img src="images/run.png" alt="Run" width="16" height="16"
     style="vertical-align:top">,
     your web app runs in Dartium.
@@ -310,9 +310,9 @@ c:\\bin\\java_jdk1.7.0\\bin\\javaw.exe
 
     <p>
     The fix: <a href="/tools/editor/#download">Download</a> and install a new version of
-    <b>Dart Editor</b>.
+    <b>Dart 编辑器</b>.
     You'll get an updated version of Dartium, plus the
-    <a href="http://news.dartlang.org/search/label/editor">latest improvements to Dart Editor</a>.
+    <a href="http://news.dartlang.org/search/label/editor">latest improvements to Dart 编辑器</a>.
     Alternatively, download a new version of
     <a href="/tools/dartium/">Dartium</a>
     and substitute it for the copy that's in your
@@ -324,16 +324,16 @@ c:\\bin\\java_jdk1.7.0\\bin\\javaw.exe
   <h2>Using Eclipse</h2>
 
   <p>
-  If Dart Editor and Eclipse
+  If Dart 编辑器 and Eclipse
   share the same <code>workspace</code> directory,
   they'll save conflicting settings,
   resulting in warnings and errors from both
-  Dart Editor and Eclipse.
+  Dart 编辑器 and Eclipse.
   </p>
 
   <p>
   The fix: Don't use the same workspace for
-  Dart Editor and any other Eclipse-based software.
+  Dart 编辑器 and any other Eclipse-based software.
   </p>
 </section>
 
@@ -341,15 +341,15 @@ c:\\bin\\java_jdk1.7.0\\bin\\javaw.exe
   <h2> Clearing all settings </h2>
 
   <p>
-  Dart Editor settings are in a platform-dependent directory,
-  so you don't lose them when you update Dart Editor.
+  Dart 编辑器 settings are in a platform-dependent directory,
+  so you don't lose them when you update Dart 编辑器.
   If your settings become corrupted
   or you want to see the new user experience,
   delete the settings directory.
   </p>
 
   <p>
-    The following table shows where Dart Editor settings are saved.
+    The following table shows where Dart 编辑器 settings are saved.
   </p>
 
   <table>
@@ -380,17 +380,17 @@ c:\\bin\\java_jdk1.7.0\\bin\\javaw.exe
     </p>
     
     <ul>
-      <li> <a href="https://code.google.com/p/dart/issues/detail?id=10363#c6">Dart Editor crashes</a>
+      <li> <a href="https://code.google.com/p/dart/issues/detail?id=10363#c6">Dart 编辑器 crashes</a>
 	  on specific versions of Linux. </li>
 
-      <li> <a href="https://code.google.com/p/dart/issues/detail?id=13819">Dart Editor top-level menu problems</a>
+      <li> <a href="https://code.google.com/p/dart/issues/detail?id=13819">Dart 编辑器 top-level menu problems</a>
         on specific versions of Linux. </li>
     </ul>
   </div>
   
   <p>
-  <b><a href="https://code.google.com/p/dart/issues/list?can=2&q=label:Area-Editor&sort=-id">Dart Editor issues</a></b>
-  lists all of the known bugs in Dart Editor.
+  <b><a href="https://code.google.com/p/dart/issues/list?can=2&q=label:Area-Editor&sort=-id">Dart 编辑器 issues</a></b>
+  lists all of the known bugs in Dart 编辑器.
   </p>
 
   </blockquote>
