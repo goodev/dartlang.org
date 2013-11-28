@@ -9,8 +9,10 @@ rel:
 
 # {{ page.title }}
 
+<!-- 
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/_td6qXi_GmA" 
 frameborder="0" allowfullscreen></iframe>
+-->
 
 [Back to all Dart Tips episodes](/dart-tips/).
 

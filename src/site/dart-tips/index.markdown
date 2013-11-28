@@ -20,7 +20,7 @@ description: "介绍 Dart 语言和库的超级短视频"
     <a href="{{ link }}"><img style="margin-top:25px; box-shadow: 5px 5px 10px #CCC; width:100%" src="{{episode.thumbnail}}"></a>
   </div>
   <div class="col-md-10">
-    <h3><a href="{{ link }}">Ep. {{ episode.num }}: {{ episode.subtitle }}</a></h3>
+    <h3><a href="{{ link }}">第{{ episode.num }}集： {{ episode.subtitle }}</a></h3>
     
     <p>{{ episode.description }}</p>
 
