@@ -157,14 +157,14 @@ Dart 的目标是比 JavaScript 更快，更规则，并且更适合大型程序
 
 <p>好吧， Java 是静态类型绑定的，Dart是动态类型绑定的。Dart拥有可选的静态类型绑定注释，而在 Java 中他们是一种规定。对此这两门语言内在存在着巨大的不同。Dart 是一种 curly-brace 语言，它与 Java 共有一些关键字，像<code>extends</code>、<code>final</code>,因此我们能够理解为什么人们把这两门语言做比较。事实上，我们喜欢明确的、熟悉的语法,学起来会很简单，即使这不能让人感到兴奋。</p>
 
-<h3 id="compare-to-closure">Q. How does Dart compare with using the Closure compiler on JavaScript?</h3>
+<h3 id="compare-to-closure">问题：Dart 与使用闭包函数编译程序的 JavaScript 对比</h3>
 
-<p>The idea of optional type annotations is similar.  Dart's are nicer syntactically.</p>
+<p>可选类型注释的想法相类似。Dart 在语法结构上很漂亮。</p>
 
-<p>Compare the following Closure compiler code:</p>
+<p>比较下面的闭包函数编译程序代码：</p>
 
 {% prettify dart %}
-// Closure compiler code
+// 闭包编译程序代码
 
 /**
  * @param {String} name
@@ -177,10 +177,10 @@ makeGreeting = function(name) {
 }
 {% endprettify %}
 
-<p>With the following Dart code:</p>
+<p>以下是 Dart 程序代码：</p>
 
 {% prettify dart %}
-// Dart code
+// Dart 代码
 
 String MakeGreeting(String name) {
   String greeting = 'hello $name';
@@ -188,13 +188,13 @@ String MakeGreeting(String name) {
 }
 {% endprettify %}
 
-<p>If you are using Closure and can switch to Dart, you will probably enjoy the change.</p>
+<p>如果你正在使用闭包函数并希望转换到 Dart上来，你将会喜欢这种改变。</p>
 
-<h3 id="compare-to-coffeescript">Q. How does Dart compare with CoffeeScript?</h3>
+<h3 id="compare-to-coffeescript">问题：Dart 与 CoffeeScript 比较</h3>
 
-<p>Both Dart and CoffeeScript are inspired by JavaScript, and both can be translated back to it.  They make different choices, particularly in the flavor of their syntax.  As a language we think it's fair to say that Dart differs semantically from JavaScript more than CoffeeScript does; that may result in a less line-for-line translation, but we believe Dart-generated JavaScript can have excellent size and speed.</p>
+<p>Dart 和 CoffeeScript 都是受 JavaScript 的启迪，并且都能被转换成 JavaScript 的代码。他们是两种不同的选择，尤其在语法风格方面。作为一门语言，公平的说 Dart 与 JavaScript对比比 CoffeeScript 与 JavaScript 对比在语义上改变更大；这将导致更少的一行一行转换，即使这样我们仍坚信 Dart生成的 JavaScript 代码将会更精简并且更快。</p>
 
-<p>If you like CoffeeScript for its more structured feel than raw JavaScript, you may like Dart's optional static type annotations.</p>
+<p>如果你喜欢 CoffeeScript 因为它比原生的 JavaScript更结构化，那么你将会喜欢 Dart 的可选静态类型注释。</p>
 
 <h3 id="typescript">Q. What does Google think of TypeScript?</h3>
 
