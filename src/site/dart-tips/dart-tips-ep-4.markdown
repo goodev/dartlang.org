@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Strings, Numbers, Booleans, Oh My! - Dart Tips, Ep 4"
-description: "The trifecta of built-in types is strings, numbers, and booleans. Watch this episode to learn how to initialize them with literals, the difference between ints and doubles, and what is truthy and falsely in Dart."
+title: "Strings、Numbers、Booleans、哦 天哪！ - Dart 技巧， 第四集"
+description: "三种常用的内置类型为 strings、numbers、 和 booleans。通过该视频来学习如何使用字母字面量来初始化这些类型，以及 int 和 double 的区别、true 和 false 的区别。 "
 snippet_img: //dartpic.goodev.org/dartlang/vi/-LmD0hghGjo/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/-LmD0hghGjo" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODEzNDk2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd and welcome to this episode of Dart Tips. Today we sharpen our understanding of Dart's basic built-in types. The building blocks of any program, Dart has support for numbers, strings, and booleans. They are all objects, you can initialize them from literal values, and you can't get very far without them. Let's get started!
 
@@ -153,7 +154,7 @@ Thanks for watching the show. My name is Seth Ladd, and as we say here on Dart T
 
 <a href="http://marakana.com"><img src="imgs/marakana-logo.png" alt="Marakana Logo"></a>
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

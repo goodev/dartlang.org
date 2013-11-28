@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Collections In Dart - Dart Tips, Ep 5"
-description: "Dart comes with lists, queues, maps, and sets out of the box. Watch this episode to learn how to pick the right collection class for the job. Fun tip: did you know that the Dart language spec doesn't use the word 'array'?"
+title: "Dart 中的集合 - Dart 技巧， 第五集"
+description: "Dart 内置支持 lists、queues、 maps、 和 sets。该集视频介绍如何使用正确的集合类型。你可以知道，在 Dart 语言规范中并没有使用到 'array' 这个词哦？"
 snippet_img: //dartpic.goodev.org/dartlang/vi/fh1Cztaw9tI/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/fh1Cztaw9tI" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0NzYw/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi! My name is Seth Ladd and welcome to Dart Tips. Fun little fact, the Dart language spec doesn't mention the word 'array'. Fret not, my happy Dartisans, Dart has many ways to store and retrieve collections of objects. Out of the box, Dart supports four types of collections with full-featured APIs: lists, maps, queues, and sets. Unordered, ordered, random access, or by a key, you'll find it in the Dart core libraries. Let's get started.
 
@@ -163,7 +164,7 @@ Thanks for watching, my name is Seth Ladd, and as we say here on Dart Tips, stay
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

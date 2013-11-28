@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Functions Are Fun, Pt 2 - Dart Tips, Ep 7"
-description: "Functions are true objects in Dart. Watch this video to learn more about nested functions, functions as arguments, and lexical closures. Get ready for more FUNctional tips in Dart!"
+title: "有趣的函数 第二部分 - Dart 技巧， 第七集"
+description: "在 Dart 中 函数也是对象。这集介绍 嵌套函数、参数函数、和闭包。 学习 Dart 函数更有趣的部分！  "
 snippet_img: //dartpic.goodev.org/dartlang/vi/RJujzs2ts4s/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/RJujzs2ts4s" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODEzOTMy/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd and welcome to this episode of Dart Tips. Today we continue our tour of the fundamentals of Functions by looking at functions as objects, nested functions, functions are arguments, and lexical closures. Get ready for more FUNctional tips about functions in Dart, right now. Let's get started.
 
@@ -193,7 +194,7 @@ Thanks for watching this episode of Dart Tips. My name is Seth Ladd, and as we s
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "A Simple Dart Script - Dart Tips, Ep 1"
-description: "Welcome to Dart Tips, the video series that teaches you all
-about Dart. In our first episode, we show you a simple Dart script and get you
-comfortable with reading Dart code."
+title: "一个简单的 Dart 脚本 - Dart 技巧， 第一集"
+description: "欢迎观看 Dart 技巧系列短视频，
+该系列视频将告诉你所有关于 Dart 的技巧。
+在第一集中介绍简单的   Dart 脚本，来熟悉下 Dart 代码。"
 snippet_img: //dartpic.goodev.org/dartlang/vi/g09UVKyYfIs/0.jpg
 rel:
   author: seth-ladd
@@ -15,12 +15,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/g09UVKyYfIs" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0NzU2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, I'm Seth Ladd, and welcome to our first episode of Dart Tips. Throughout this series, I'll teach you all about the Dart language and libraries in short, easy to watch videos. To kick things off, here is a quick orientation to a simple Dart script.
 
@@ -69,7 +70,7 @@ Thanks for watching. My name is Seth Ladd, and as we say here on Dart Tips, stay
 
 <a href="http://marakana.com"><img src="imgs/marakana-logo.png" alt="Marakana Logo"></a>
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Functions Are Fun, Pt 1 - Dart Tips, Ep 6"
-description: "Functions are the basic building blocks for any app. Dart supports top-level functions, optional parameters, default parameter values, and more. Watch this episode to learn about the basics of functions in Dart."
+title: "有趣的函数 第一部分- Dart 技巧， 第六集"
+description: "每个应用中 函数都是基础组成部分。Dart 支持顶级函数、可选参数、默认参数值 等等。 这集介绍 Dart 函数的基本内容。 "
 snippet_img: //dartpic.goodev.org/dartlang/vi/DWtvhdJkiRE/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/DWtvhdJkiRE" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0MTUy/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi my name is Seth Ladd and welcome to this episode of Dart Tips. This is part
 one in a series about Functions, the stalwart and trusty building blocks of any
@@ -289,7 +290,7 @@ Thanks for watching, my name is Seth Ladd, and as we say here on Dart Tips, stay
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

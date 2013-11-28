@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Runtime Modes - Dart Tips, Ep 2"
-description: "Dart runs fast in production mode, and runs with type assertions in checked mode. Learn about Dart's two runtime modes and when to use each of them for maximum developer feedback and speed."
+title: "运行模式 - Dart 技巧， 第二集"
+description: "Dart 在产品模式下运行很快，运行在检测模式（checked mode）下具有类型断言。 学习 Dart 的两种运行模式，以及何时选择何种模式来运行。"
 snippet_img: //dartpic.goodev.org/dartlang/vi/CfRFixQTJWA/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/CfRFixQTJWA" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODEzMzk2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, I'm Seth Ladd and this is Dart Tips. Today we're going to talk about the different runtime modes of Dart. Dart apps can run in a virtual machine, named not surprisingly the Dart VM, and Dart apps can be compiled to JavaScript to run in modern browsers. For this episode, I am going to focus on the Dart VM and its two runtime modes: a speed-obsessed production mode and a developer friendly checked mode. Let's get started!
 
@@ -96,7 +97,7 @@ Thanks for watching. My name is Seth Ladd, and as we say here on Dart Tips, stay
 
 <a href="http://marakana.com"><img src="imgs/marakana-logo.png" alt="Marakana Logo"></a>
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

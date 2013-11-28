@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Variables - Dart Tips, Ep 3"
-description: "Dart is optionally typed, so variables can have type annotations. You can also mark variables as final to ensure they will point to one and only one object. Watch this episode to learn more about variables in Dart."
+title: "变量 - Dart 技巧， 第三集"
+description: "Dart 类型是可选的，所以变量可以有类型声明。也可以用 final 修饰变量从而保证该变量不被修改。观看该集了解 Dart 变量详细信息。"
 snippet_img: //dartpic.goodev.org/dartlang/vi/_td6qXi_GmA/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/_td6qXi_GmA" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODEzNDky/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd and today on Dart Tips we continue our tour of the Dart language by taking a look at Variables. Think of a variable as a nickname you give to an object. Instead of referring to an object by some formal computer generated serial number, like A 3 2 6 C D 2 5 A, you can instead give it a meaningful name like "password" or "response code" or "home address". Once the object has a nickname, you can refer to it, ask it questions, or retrieve its data. Dart's variables are certainly familiar and easy to learn, but there are a few cool features like optional types to show off. Let's get started.
 
@@ -114,7 +115,7 @@ Thanks for watching. My name is Seth Ladd, and as we say here on Dart Tips, stay
 
 <a href="http://marakana.com"><img src="imgs/marakana-logo.png" alt="Marakana Logo"></a>
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

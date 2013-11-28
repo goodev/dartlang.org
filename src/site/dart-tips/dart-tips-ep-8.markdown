@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Control Flow Statements - Dart Tips, Ep 8"
-description: "Take back control and learn more about Dart's control flow statements. All the greatest hits are here: if, while, for, and switch. Plus, this video shows you a helpful tweak that should make web developers quite happy."
+title: "控制流语句 - Dart 技巧， 第八集"
+description: "学习 Dart 的控制流语句。关于 if、 while、 for、 和 switch。另外视频中还介绍了一种在 Web 开发中非常有用的技巧。 "
 snippet_img: //dartpic.goodev.org/dartlang/vi/XdqZdsdzD2A/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/XdqZdsdzD2A" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0NTI4/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd, and welcome to this episode of Dart Tips. Today, we take back control and look at Dart's control flow statements. All the greatest hits are here: if, while, for, and switch. Plus, I'll show you a helpful tweak that should make web developers quite happy. Join us right now, on Dart Tips.
 
@@ -247,7 +248,7 @@ I hope you enjoyed this tour of Dart's control flow statements. Thanks for watch
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

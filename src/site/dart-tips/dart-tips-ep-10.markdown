@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Classes: Setters & Getters - Dart Tips, Ep 10"
-description: "Dart is a pure class-based object oriented language. In this first video covering classes in Dart, learn more about how getters and setters help you scale Dart code from simple fields to richer encapsulation."
+title: "Classes: Setters & Getters - Dart 技巧， 第十集"
+description: "Dart 是基于类的面向对象语言。这集第一次介绍 Dart 中的类。学习如何使用 getters 和 setters 来实现变量的可扩展性封装。"
 snippet_img: //dartpic.goodev.org/dartlang/vi/2woBWdBQ4Ro/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/2woBWdBQ4Ro" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0Mjk2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd, and welcome to this episode of Dart Tips! We made it
 to classes! Class-based object oriented programming is an extremely common and
@@ -187,7 +188,7 @@ here on Dart Tips, stay sharp!
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

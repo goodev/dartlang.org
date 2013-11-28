@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Exceptions - Dart Tips, Ep 9"
-description: "Learn how to gracefully handle exceptions and errors in Dart. Don't get caught off guard the next time you run into an error, learn more about try, catch, finally, and throw."
+title: "异常处理 - Dart 技巧， 第九集"
+description: "学习 Dart 如何优雅的处理异常和错误。当下次再遇到错误的时候，不要吓的措手不及。学习 try、 catch、 finally、 和 throw。  "
 snippet_img: //dartpic.goodev.org/dartlang/vi/J94I70uqr6w/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/J94I70uqr6w" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0MDc2/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd and today on Dart Tips we talk about Exceptions. You
 know, those errors that bubble up from deep within the bowels of your program
@@ -221,7 +222,7 @@ Thanks for watching, I'm Seth Ladd, and as we say here on Dart Tips: stay sharp!
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Classes: Constructors - Dart Tips, Ep 11"
-description: "Dart offers many types of constructors, including an implementation of the factory pattern. Learn more about constructors, field initialization, named constructors, and factory constructors in Dart."
+title: "Classes: 构造函数 - Dart 技巧， 第十一集"
+description: "Dart 提供了多种构造函数，并且包含一种实现工厂模式的构造函数。学习 构造函数、变量初始化、命名构造函数、和 工厂构造函数。"
 snippet_img: //dartpic.goodev.org/dartlang/vi/k2R_HwZzogQ/0.jpg
 rel:
   author: seth-ladd
@@ -13,12 +13,13 @@ rel:
 <iframe class="dart-tips-video" src="//www.youtube.com/embed/k2R_HwZzogQ" 
 frameborder="0" allowfullscreen></iframe>
 -->
+<embed class="dart-tips-video" src="http://player.youku.com/player.php/sid/XNjQwODE0NDUy/v.swf" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash" />
 
-[Back to all Dart Tips episodes](/dart-tips/).
+[返回 Dart 短视频技巧首页](/dart-tips/).
 
 <hr>
 
-### Transcript
+### 文字稿
 
 Hi, my name is Seth Ladd, and welcome to this episode of Dart Tips! Today we
 talk about Constructors. Fun fact! You can build a constructor in Dart that
@@ -304,7 +305,7 @@ sharp!
 
 <img src="imgs/marakana-logo.png" alt="Marakana Logo">
 
-Our thanks go out to [Marakana](http://www.marakana.com) for producing this
-video series.
+非常感谢 [Marakana](http://www.marakana.com) 制作该系列短视频。
 
-[Back to all Dart Tips episodes](/dart-tips/).
+
+[返回 Dart 短视频技巧首页](/dart-tips/).
