@@ -1,9 +1,11 @@
 --- 
 layout: default
 title: "Polymer.dart"
-description: "Standards-based web components:
-custom elements, templates,
-and data binding for Dart web apps. A Dart port of Polymer."
+description: "基于标准的 web 组件：
+用于 Dart web 应用的
+自定义元素、模板、
+和数据绑定。
+Dart 版本的 Polymer。"
 has-permalinks: true
 ---
 
@@ -52,10 +54,11 @@ hr {
 <div class="jumbotron">
       <h1> {{page.title}} </h1>
       <p>
-        Build structured, encapsulated, client-side web apps with Dart and
-        web components.<br>
-        <em>A Dart port of
-        <a href="http://www.polymer-project.org">Polymer</a>.</em>
+      用 Dart 和 web 组件创建结构化的、可封装的、客户
+      端 web 应用。
+        <br>
+        <em>一个 Dart 版本的
+        <a href="http://www.polymer-project.org">Polymer</a>。</em>
       </p>
 </div>
 
@@ -74,10 +77,10 @@ hr {
 
 <div class="col-md-8" markdown="1">
 
-## Features
+## 特性
 
-Polymer.dart is a port of _Polymer Foundation_
-and _Polymer Core_.
+Polymer.dart 移植了 _Polymer Foundation_
+和 _Polymer Core_。
 
 <div class="row features">
 
@@ -85,10 +88,10 @@ and _Polymer Core_.
 
 <i class="icon icon-code"> </i>
 
-<h2 class="no-permalink">Custom tags</h2>
+<h2 class="no-permalink">自定义标签</h2>
 
-Design your own HTML tags to encapsulate
-style, structure, and behavior.
+设计你自己的 HTML 标签来封装 样式、结
+构和行为。
 
 </div>
 
@@ -96,9 +99,9 @@ style, structure, and behavior.
 
 <i class="icon icon-exchange"> </i>
 
-<h2 class="no-permalink">Data binding</h2>
+<h2 class="no-permalink">数据绑定</h2>
 
-Create live, two-way bindings between Dart objects and DOM nodes.
+创建 Dart 对象和 DOM 节点之间的实时双向数据绑定。
 
 </div>
 
@@ -106,9 +109,9 @@ Create live, two-way bindings between Dart objects and DOM nodes.
 
 <i class="icon icon-check"> </i>
 
-<h2 class="no-permalink">Standards</h2>
+<h2 class="no-permalink">标准</h2>
 
-Use emerging web standards, today.
+今天就使用新兴的 web 标准。
 
 </div>
 
@@ -116,22 +119,22 @@ Use emerging web standards, today.
 
 <hr>
 
-## Examples
+## 示例
 
-Along with this code, check out the Dart tutorial
-[Define a Custom Element](/docs/tutorials/polymer-intro/).
-It shows you how to define, implement, and instantiate
-a custom element.
+在查看下面代码的同时，记得看看 Dart 教程
+[定义一个自定义元素](/docs/tutorials/polymer-intro/)。
+该教程告诉你如何定义、实现和初始化
+一个自定义元素。
 
-### Custom elements
+### 自定义元素
 
-Extend the lexicon of HTML with your own custom elements.
+使用自定义元素扩展 HTML 标签。
 
-This sample shows a simple custom element. More advanced custom elements
-can contain their own styles, custom behavior, attributes,
-data binding, and more.  
+该示例显示了一个简单的自定义元素。高级的自定义元素
+可以包含样式、自定义行为、属性、数据绑定以及更多
+功能。
 
-This HTML code defines a custom element:
+下面的 HTML 代码定义了一个自定义元素：
 
 {% prettify html %}{% raw %}
 <!-- hello_world.html -->
@@ -142,7 +145,7 @@ This HTML code defines a custom element:
 </polymer-element>
 {% endraw %}{% endprettify %}
 
-This HTML code _uses_ the custom element:
+下面的 HTML 代码_使用_ 了自定义元素：
 
 {% prettify html %}
 <head>
@@ -157,14 +160,14 @@ This HTML code _uses_ the custom element:
 {% endprettify %}
 
 
-### Data binding
+### 数据绑定
 
-Synchronize DOM nodes and object models using live, two-way data binding.
+使用实时的双向数据绑定来同步 DOM 节点和对象模型的数据。
 
-In this sample, the `count` field of `ClickCounterElement` is
-bound to the `{% raw %}{{count}}{% endraw %}` placeholder in the custom
-element's `<template>`. When the `count` field changes, the text also
-changes.
+该示例中，`ClickCounterElement` 的 `count` 变量绑定
+到自定义元素 `<template>` 的 `{% raw %}{{count}}{% endraw %}` 中。
+当 `count` 的值改变的时候， 元素的文本也跟着
+改变。
 
 {% prettify html %}{% raw %}
 <polymer-element name="click-counter">
@@ -193,14 +196,14 @@ class ClickCounterElement extends PolymerElement {
 {% endprettify %}
 
 
-### Custom attributes
+### 自定义属性（attributes）
 
-Use attributes to configure the custom element.
+用属性来配置自定义元素。
 
-In this sample, the `count` field of `ClickCounterElement` is
-bound to the `{% raw %}{{count}}{% endraw %}` placeholder in the custom
-element's `<template>`. When the `count` field changes, the text also
-changes.
+该示例中，`VolumeNobElement` 的 `volume` 变量绑定
+到自定义元素 `<template>` 的 `{% raw %}{{volume}}{% endraw %}` 中。
+当 `volume` 的值改变的时候， 元素的文本也跟着
+改变。
 
 {% prettify html %}{% raw %}
 <polymer-element name="volume-nob">
@@ -224,19 +227,19 @@ class VolumeNobElement extends PolymerElement {
 }
 {% endprettify %}
 
-Crank the volume like this:
+可以通过如下自定义属性来初始化  volume 的值：
 
 {% prettify html %}
 <volume-nob volume="11"></volume-nob>
 {% endprettify %}
 
 
-### Template conditionals
+### 条件模板
 
-Control the UI with declarative conditionals in templates.
+通过在模板中声明式条件来控制 UI。
 
-Template conditionals are part of the data binding infrastructure. If
-`count` changes, the templates are automatically re-evaluated.
+条件模板是数据绑定的一部分。
+如果 `count` 值变了，模板自动重新计算。
 
 {% prettify html %}{% raw %}
 <polymer-element name="click-counter">
@@ -270,14 +273,14 @@ class ClickCounterElement extends PolymerElement {
 {% endprettify %}
 
 
-### Template loops
+### 模板循环
 
-Loop through a collection, instantiating a template for every item in the
-collection.
+遍历一个集合，为每个集合的元素应用
+一个模板。
 
-Template loops are part of the data binding infrastructure. If an item is
-added or removed from `fruits`, the contents of `<ul>` are automatically
-updated.
+模板循环是数据绑定的一部分。
+如果从 `fruits` 中删除或者添加元素，
+`<ul>` 的内容会自动更新。
 
 {% prettify html %}{% raw %}
 <polymer-element name="fav-fruits">
@@ -305,9 +308,9 @@ class FavFruitsElement extends PolymerElement {
 }
 {% endprettify %}
 
-### Extending DOM elements
+### 扩展 DOM 元素
 
-Subclass real DOM elements.
+继承真正的 DOM 元素。
 
 {% prettify html %}{% raw %}
 <polymer-element name="fancy-button" [[highlight]]extends="button"[[/highlight]]>
@@ -337,11 +340,12 @@ class FancyButton [[highlight]]extends ButtonElement with Polymer, Observable[[/
 <button [[highlight]]is="fancy-button"[[/highlight]]></button>
 {% endraw %}{% endprettify %}
 
-### Packaging
+### Packaging 包
 
-Reuse and share custom elements with
-[pub](https://www.dartlang.org/docs/dart-up-and-running/contents/ch04-tools-pub.html),
-the Dart package manager.
+通过
+[pub](https://www.dartlang.org/docs/dart-up-and-running/contents/ch04-tools-pub.html)
+来分享和重用自定义元素，
+pub 为 Dart package manager(包管理器)。
 
 {% prettify bash %}{% raw %}
 > pub install fancy_button
@@ -358,41 +362,42 @@ the Dart package manager.
 {% endraw %}{% endprettify %}
 
 
-### More sample code
+### 更多示例代码
 
-You can find lots and lots of snippets and
-[sample code for polymer.dart](https://github.com/sethladd/dart-polymer-dart-examples).
-Learn how to
-[bind to a checkbox](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/bind_to_checkbox),
-[nest templates](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/nested_templates),
-[call a method on a custom element](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/call_method_on_custom_element),
-and much more. Please [let us know](https://github.com/sethladd/dart-polymer-dart-examples/issues?state=open) if you have a request for a sample.
+在
+[polymer.dart 示例代码中](https://github.com/sethladd/dart-polymer-dart-examples)
+可以看到很多很多示例代码。
+学习如何
+[绑定到 checkbox](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/bind_to_checkbox)、
+[嵌套模板](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/nested_templates)、
+[在自定义元素调用函数](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/call_method_on_custom_element)、
+以及更多内容。 如果你需要一个新的示例，请 [告诉我们](https://github.com/sethladd/dart-polymer-dart-examples/issues?state=open) 。
 
 <hr>
 
-## Installation
+## 安装
 
-Get polymer.dart from [pub](http://pub.dartlang.org),
-the Dart package hosting service. Add the following to
-your `pubspec.yaml` file:
+用 [pub](http://pub.dartlang.org) 来
+安装 polymer.dart。
+在 `pubspec.yaml` 中添加如下代码即可：
 
     dependencies:
       polymer: any
 
-Then, run `pub install` to download the package and link it into your app.
+然后，运行 `pub install` 来下载该库并在代码中使用。
 
-View the [polymer.dart pub page](http://pub.dartlang.org/packages/polymer)
-to learn more.
+查看 [polymer.dart pub 页面](http://pub.dartlang.org/packages/polymer)
+了解更多内容。
 
 <hr>
 
-## Tools
+## 工具
 
-Polymer.dart offers a linter that reports syntax or usage warnings.
-The linter can be connected to Dart Editor to display warnings directly
-at the source.
+Polymer.dart 提供一个工具 linter 来报告语法和用法警告。
+linter 可以和 Dart 编辑器关联起来并直接
+的 代码中显示警告。
 
-Create a `build.dart` file at the root of your project:
+在项目根目录中创建一个 `build.dart` 文件：
 
 {% prettify dart %}
 import 'package:polymer/builder.dart';
@@ -403,70 +408,69 @@ void main() {
 }
 {% endprettify %}
 
-Dart Editor runs `build.dart` after a file is saved, and
-displays warnings from the linter.
+当保存文件的时候，Dart 编辑器运行  `build.dart` 并显示来自于
+linter 的警告信息。
 
 <img src="polymer-warning-in-editor.png">
 
 <hr>
 
-## Upgrading from Web UI
+## 从 Web UI 升级
 
-Polymer.dart is the next evolution of Web UI.
+Polymer.dart 是 Web UI 的下一次革命。
 
-[Upgrading to polymer.dart from Web UI](upgrading-to-polymer-from-web-ui.html)
-provides a non-exhaustive set of tips to help you upgrade.
-
-<hr>
-
-## Compatibility
-
-Polymer.dart is tested against IE9, IE10, Safari 6, latest Chrome,
-latest Firefox, and latest Chrome for Android.
-
-The Dart team collaborates with the Polymer team to
-ensure that polymer.dart elements and polyfills
-(code that implements features not yet built into a web browser)
-are fully compatible with Polymer.
+[从  Web UI 升级到 polymer.dart ](upgrading-to-polymer-from-web-ui.html)
+提供了一些提示来帮助你升级。
 
 <hr>
 
-## Support
+## 兼容性
 
-We actively encourage your feedback and questions.
+Polymer.dart 在 IE9、 IE10、 Safari 6、最新的 Chrome、
+最新的 Firefox、 和最新的 Android 版 Chrome 上测试通过。
 
-* Ask your [how-to questions][so] on StackOverflow
-* Join the [general discussion about polymer.dart][web-ui-list] on our mailing
-  list
-* Send [feedback on the web components family of specifications][polymer-dev-list]
-  to the polymer-dev mailing list
-  (Not Dart specific.)
-* Please file [bugs and feature requests][dartbug] for polymer.dart
+Dart 团队和 Polymer 团队相互协作一起保证 polymer.dart
+元素和 polyfills
+(目前还没包含在浏览器中的特性)
+能够完全兼容 Polymer。
 
 <hr>
 
-## Source code
+## 支持
 
-Polymer.dart is open source. You can view the source to polymer.dart,
-and its many component packages, at [dart.googlecode.com/](https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/pkg/).
-[Get the source](https://code.google.com/p/dart/wiki/GettingTheSource)
-to inspect the code and contribute patches.
+我们非常期待你的建议和反馈。
+
+* 在 StackOverflow 上询问 [如何办之类的问题][so] 。
+* 加入我们的 [关于 polymer.dart 的日常讨论][web-ui-list] 
+  邮件列表。
+* 给 polymer-dev 邮件列表来 [反馈 web 组件的相关问题][polymer-dev-list]
+  (该邮件列表和 Dart 无关)。
+* 给 polymer.dart 提 [Bug 和功能请求][dartbug] 。
 
 <hr>
 
-## Status
+## 源代码
 
-Polymer.dart is a work in progress, just like Polymer.
+Polymer.dart 是开源的。你可以在
+[dart.googlecode.com/](https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/pkg/) 中
+查看 polymer.dart 代码和很多组件代码。
+[下载代码](https://code.google.com/p/dart/wiki/GettingTheSource)
+来深入研究并贡献补丁。
+
+<hr>
+
+## 状态
+
+Polymer.dart 和 Polymer 一样还在开发中。
 
 ### Web UI parity
 
-Web UI is the precursor to polymer.dart. We believe Polymer.dart
-is at feature-parity with Web UI.
+Web UI 是 polymer.dart 的先驱。
+我们认为 Polymer.dart 和 Web UI 在功能上是同等的。
 
 ### Polymer parity
 
-One of our goals is to make all of Polymer available
-to Dart developers.
+我们的目标是让所有的 Polymer 功能都可以在 Dart 中使用。
 
 | Feature | Parity with Polymer
 |--
@@ -486,23 +490,21 @@ to Dart developers.
 
 <hr>
 
-## Tutorials
+## 教程
 
-[Define a Custom Element](/docs/tutorials/polymer-intro/),
-part of the
-[Dart tutorials](/docs/tutorials/),
-provides a detailed introduction to using Polymer.dart to create
-custom elements.
-You can also check out the other
-[examples](/docs/tutorials/polymer-intro/#what-next)
-in the tutorials that use Polymer.
-
+来自 [Dart 教程](/docs/tutorials/) 的 
+[定义一个自定义元素](/docs/tutorials/polymer-intro/)，
+介绍了如何使用  Polymer.dart 开发自定义
+元素的介绍。
+你也可以查看教程中的其他
+ Polymer 
+[示例](/docs/tutorials/polymer-intro/#what-next)
+。
 <hr>
 
-## Additional reading
+## 附加读物
 
-The cultured Dartisan studies the specifications and articles that cover
-the lower-level primitives and features of the polymer.dart libraries.
+下面是 polymer.dart 库的一些延伸性资料。阅读这些资料有利于你掌握 polymer.dart。
 
 ### Polymer
 
@@ -510,14 +512,14 @@ the lower-level primitives and features of the polymer.dart libraries.
 * Watch the [Hello, Polymer!](http://www.youtube.com/watch?v=irGDN5Ysi_A)
   video featuring some of the lead members of Polymer.
 
-### Articles
+### 文章
 
 * [HTML5Rocks - Shadow DOM 101](http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/)
 * [HTML5Rocks - Shadow DOM 201: CSS and Styling](http://www.html5rocks.com/tutorials/webcomponents/shadowdom-201/)
 * [HTML5Rocks - Shadow DOM 301: Advanced Concepts & DOM APIs](http://www.html5rocks.com/tutorials/webcomponents/shadowdom-301/)
 * [Custom elements - defining new elements in HTML](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/)
 
-### Specifications
+### 规范
 
 Much of polymer.dart is built upon new and emerging web specifications.
 Polymer.dart offers polyfills for the following features.
