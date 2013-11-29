@@ -8,7 +8,6 @@
   
   <title>使用 IndexedDB | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="使用 IndexedDB | Dart: 用于创建结构化的web应用">
   
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -635,35 +634,35 @@ key 是该数据记录的唯一访问标示符。
 
 <p><img class="scale-img-max" src="images/flowchart.png" alt="Logic flow of database creation" /></p>
 
-<p>Because creating and opening a database can take time,
-<code>window.indexedDB.open()</code> returns a Future object,
-which runs asynchronously and returns a value, the database object,
-sometime in the future.
-The database object is returned to a callback function
-registered with <code>then()</code>.
-In this example,
-the callback function is called <code>_loadFromDB()</code>.
-Using cursors,
-<code>_loadFromDB()</code> reads all the milestones 
-from the database and populates the app.
-The details are covered in
-<a href="#getting-data">用 cursor 查询所有数据</a>.</p>
+<p>由于创建和打开数据库需要时间，所以
+<code>window.indexedDB.open()</code> 函数返回一个 Future 对象，
+这样打开操作将异步运行，
+当完成打开数据库时，返回一个数据库对象。
+数据库对象可以在 <code>then()</code> 函数注册
+的回调函数中获取。
+上面示例中的回调函数
+为 <code>_loadFromDB()</code> 。
+<code>_loadFromDB()</code> 使用 cursor 来读取
+所有的里程碑记录
+并设置应用数据。
+读取数据在
+<a href="#getting-data">用 cursor 查询所有数据</a> 中介绍。</p>
 
 <h2 id="creating-object-store">创建一个对象存储</h2>
 
-<p>When a new database
-is created,
-it contains no object stores.
-The only place you can create an object store
-is during an upgrade needed event.
-Fortunately, an upgrade needed event is
-fired when a new database
-(or a new version of a database)
-is created.</p>
+<p>新创建的
+数据库并
+不包含对象存储。
+只有在需要升级事件中
+才能创建对象存储。
+当创建新数据库或者
+创建新版本的数据库
+的时候会触发
+需要升级事件。</p>
 
-<p>The callback function for upgrade needed events
-in the count_down app is <code>_initializeDatabase</code>.
-This function creates an object store and an index.</p>
+<p>在 count_down 示例中需要升级事件
+的回调函数为  <code>_initializeDatabase</code> 。
+该函数创建了一个对象存储和 索引。</p>
 
 <pre class="prettyprint lang-dart">static const String MILESTONE_STORE = 'milestoneStore';
 static const String NAME_INDEX = 'name_index';
@@ -677,191 +676,188 @@ void _initializeDatabase(VersionChangeEvent e) {
       unique: true);
 }</pre>
 
-<p>The code gets the database object from the
-VersionChangeEvent object that is passed into the
-callback function as an argument.</p>
+<p>上面的代码用回调函数
+的参数 VersionChangeEvent 来获取
+数据库对象。</p>
 
-<p>Use the Database object’s <code>createObjectStore()</code> method
-to create a new object store with the given name.
-Each object store must have a unique name.
-The count_down app uses one object store called <code>milestoneStore</code>.
-All the countdown milestones are stored and retrieved
-in this object store.</p>
+<p>用数据库对象的 <code>createObjectStore()</code> 函数
+来创建新的对象存储。
+每个对象存储都需要有个唯一的名字。
+count_down 应用中对象存储的名字为 <code>milestoneStore</code>。
+所有的倒计时里程碑记录都从该
+对象存储中读取和保存在该对象存储中。</p>
 
-<p>The code sets <code>autoIncrement</code> on the object store to true.
-When autoIncrement is true,
-the database generates unique, primary keys for you,
-which saves you the trouble of ensuring unique keys.</p>
+<p>该代码还设置了 对象存储 的 <code>autoIncrement</code> 属性为 true。
+当 <code>autoIncrement</code> 为 true 的时候，
+数据库会自动生成一个唯一的主键，
+这样你就不用关心唯一主键的问题了。</p>
 
-<p>Finally, <code>_initializeDatabase</code> creates a name index.</p>
+<p>最后，<code>_initializeDatabase</code> 还创建了一个名字索引。</p>
 
 <h2 id="section-1">使用名字索引</h2>
 
-<p>An index provides a lookup table.
-You can associate a primary key with a field in the stored objects.
-In the example,
-the index associates a primary key with the milestoneName field.</p>
+<p>一个索引提供一个查找表。
+可以关联对象存储的主键和一个字段。
+在该示例中，
+索引把主键和 milestoneName 字段关联。</p>
 
 <p><img class="scale-img-max" src="images/devtools-with-index.png" alt="Use an index to allow for searches on a field in the objects" /></p>
 
-<p>Using an index provides two benefits:</p>
+<p>索引提供如下两个优点：</p>
 
 <ul>
-  <li>you can search on a field in the object instead of by primary key,</li>
-  <li>and you can use the index to ensure the value of the field is unique.</li>
+  <li>可以搜索索引的字段而不是主键</li>
+  <li>用索引保证该字段的值为唯一的</li>
 </ul>
 
-<p>The count_down app creates an index at the same
-time it creates the object store:
-during an upgrade needed event,
-which is the
-the only time you can create an index.</p>
+<p>count_down 应用在需要升级事件中
+创建对象存储的同时
+创建索引，这也是
+唯一可以创建索引的地方。</p>
 
 <pre class="prettyprint lang-dart">static const String NAME_INDEX = 'name_index';
 ...
 objectStore.createIndex(NAME_INDEX, 'milestoneName', unique: true);</pre>
 
-<p>The createIndex method takes three parameters:</p>
+<p>createIndex 函数由三个参数：</p>
 
 <ul>
-  <li>the name of the index, here ‘name_index’. This must be unique.</li>
-  <li>the <em>key path</em>, which indicates the field in the stored object to index.</li>
-  <li>unique, a boolean value.
-When true, the index ensures that the milestone name is unique.
-In the count_down app,
-if you try to add a milestone with the same name as another,
-it is this index that causes the add() to fail.</li>
+  <li>索引表的名字，这里为 ‘name_index’， 需要是唯一的，</li>
+  <li>存储对象中需要索引的_字段名字_，</li>
+  <li>unique 一个布尔值。
+当为 true 的时候， 索引将保证里程碑的名字是唯一的。
+在 count_down 应用中，如果你
+尝试添加一个同名的事件，
+则索引的限制会导致 add() 函数调用失败。</li>
 </ul>
 
 <h2 id="using-transactions">使用事物</h2>
 
-<p>All database operations must be performed
-within a
-<a href="https://api.dartlang.org/dart_indexedDb/Transaction.html" target="_blank">Transaction</a>.</p>
+<p>所有的数据库操作
+都需要在同一个
+<a href="https://api.dartlang.org/dart_indexedDb/Transaction.html" target="_blank">Transaction 事务</a> 中完成。</p>
 
 <aside class="alert alert-info">
-  <p><strong>Important: About the life-cycle of a transaction</strong></p>
+  <p><strong>重要：关于事务的生命周期</strong></p>
 
-  <p>The life-cycle of a transaction is as follows:</p>
+  <p>事务的生命周期如下：</p>
 
   <ul>
-    <li>Open a transaction.</li>
-    <li>Place requests on the transaction and register callbacks.</li>
-    <li>When there are no more requests
-and the last callback finishes, the transaction completes.</li>
+    <li>打开一个事务。</li>
+    <li>在事务中发起请求和注册回调函数。</li>
+    <li>当没有请求并且所有的回调函数返回
+的时候，事务结束。</li>
   </ul>
 
-  <p>So, a transaction remains alive until all requests are complete and
-the final callback completes.
-You can keep a transaction alive by placing a new request
-within a callback.</p>
+  <p>所以，只有当所有的请求完成并且
+所有的回调函数完成后事务才结束。
+你可以用一个新的请求和
+回调函数来保持事务打开。</p>
 
-  <p><strong>A good rule:</strong>
-During the scope of a transaction,
-perform only database-related tasks
-to avoid crazy, mind-boggling bugs related to the DOM event loop.</p>
+  <p><strong>一个好的建议：</strong>
+在事务范围内，
+只执行和数据库相关的任务来
+避免阻塞 DOM 事件循环。</p>
 
 </aside>
 
-<p>Get a transaction from the Database object,
-which in the count_app is named <code>_db</code>.</p>
+<p>在 count_app 应用的 <code>_db</code> 数据库对象中
+获取一个事务。</p>
 
 <pre class="prettyprint lang-dart">Transaction t = _db.transaction(storeNameOrNames, mode);</pre>
 
-<p>The first argument to <code>transaction()</code> is the scope of the transaction.
-In the count_down app,
-the scope is always <code>milestoneStore</code>,
-the lone object store in the database,
-but you could specify multiple object stores.
-For efficiency, you should specify only the stores you need.</p>
+<p><code>transaction()</code> 函数的第一个参数为事务的范围。
+在 count_down 应用中，
+事务的范围为
+唯一的一个对象存储 <code>milestoneStore</code>，
+你可以指定多个对象存储。
+为了执行的效率，你应该只指定需要的对象存储。</p>
 
-<p>The second argument is a string that specifies the mode;
-it can be <code>readwrite</code> or <code>readonly</code> or <code>versionchange</code>.
-The count_down app uses only readwrite and readonly transactions.
-Use readwrite transactions only when necessary:
-readonly transactions are more efficient,
-and you can run multiple readonly transactions
-concurrently on overlapping scopes,
-but only one readwrite transaction.</p>
+<p>第二个参数设置了类型，
+可以为 <code>readwrite</code> 、 <code>readonly</code> 、 <code>versionchange</code> 类型。
+count_down 应用只使用了 readwrite 和 readonly 类型事务。
+只有必要的时候才使用 readwrite 类型，readonly 类型比较高效率
+并且同时可以运行多个 readonly 事务，而
+一次只能运行一个 readwrite 事务。</p>
 
-<p>Once you’ve created a transaction,
-you can perform one or more operations
-using that transaction.
-Database operations can take time,
-so the work is performed off of the main UI thread and
-results are provided via Futures.
-Each operation uses a Future,
-which completes when the operation is complete.
-The transaction itself also uses a Future,
-which completes when all operations on the transaction complete.</p>
+<p>创建一个事务后，
+就可以用该事务执行
+一个或者多个操作。
+数据库操作需要时间，
+所以执行的操作是非主 UI 线程中执行
+并通过 Future 来返回结果。
+每个操作都使用一个
+ Future 对象。
+事务本身也使用一个 Future，
+当所有的事务操作完成后事务本身才完成。</p>
 
-<p>For example,
-you might use one transaction to add multiple records to an object store.
-Each add is a separate operation and uses a separate Future.
-The following diagram shows the logic flow
-of a program that adds three records to a database.
-When all three add operations complete,
-the transaction completes.</p>
+<p>例如，
+你可以用一个事务往对象存储中添加多条记录。
+每个添加操作都是一个独立的操作并用独立的 Future。
+下图为添加三条记录
+的流程图。
+当三个操作都完成后，
+该事务就结束了。</p>
 
 <p><img class="scale-img-max" src="images/futures-flow.png" alt="Transactions, object store operations, and futures" /></p>
 
-<p>Many database transactions follow this pattern:</p>
+<p>很多数据库事务都遵守如下规则：</p>
 
 <ul>
-  <li>Create a transaction on an object store.</li>
-  <li>Perform one or more operations using the transaction.</li>
-  <li>Use the operation’s callback function
-to perform a task when the operation completes successfully.
-For example, when adding records to a database,
-you can get the key generated by the database for the added record.</li>
-  <li>Use the <code>transaction.completed</code> callback function
-to perform a task when all the operations complete successfully.
-Generally, the count_down app uses this callback function
-to keep the list of milestones in sync with the database.</li>
+  <li>在对象存储上创建事务。</li>
+  <li>使用事务执行一个或多个操作。</li>
+  <li>当需要在事务成功完成的时候
+执行其他操作，则可以用回调函数。
+例如，当在数据库中添加记录的时候，
+你可以在记录添加完成后获取该记录的主键。</li>
+  <li>如果要在事务所有操作都成功完成后执行其他操作，
+则可以用 <code>transaction.completed</code> 回调函数。
+在 count_down 应用中，
+用该回调函数来保持和里程碑列表同步数据。</li>
 </ul>
 
 <h2 id="section-2">添加数据</h2>
 
-<p>Here’s the code that adds a new record to the database.</p>
+<p>下面是在数据库中添加记录的代码：</p>
 
 <p><img class="scale-img-max" src="images/add-operation.png" alt="Adding a record to an IndexedDB" /></p>
 
-<p>The code creates a new Milestone object and converts it to a Map,
-then creates a new readwrite Transaction on the object store.</p>
+<p>上面的代码创建新的 Milestone 对象并转换为 Map，
+然后在对象存储上创建一个 readwrite 事务。</p>
 
-<p>Then, to add the milestone Map to the database,
-the code calls the <code>add()</code> method on the object store.
-and registers a callback function using <code>then()</code>.
-Because the object store was created with <code>autoIncrement: true</code>,
-adding a record to the database automatically creates
-a unique primary key for the new record.
-This key is returned as a parameter to the callback function.</p>
+<p>然后调用对象存储的 <code>add()</code> 函数来
+添加里程碑 Map 到数据库中，
+同时用 <code>then()</code> 注册了一个回调函数。
+由于该对象存储用 <code>autoIncrement: true</code> 参数创建，
+当添加记录的时候，数据库
+会自动创建一个唯一的主键。
+该主键的值作为回调函数的参数返回。</p>
 
-<p>Finally, the code registers a callback function
-for the transaction.</p>
+<p>最后，代码在事务上注册了
+一个回调函数。</p>
 
-<p>When the add operation has been performed on the database,
-the Future related to the add operation completes
-and the callback function is called with the auto-generated key.
-The count_down app saves the key in the Milestone object.</p>
+<p>当数据库上的添加操作完成时， 
+和 添加操作相关的 Future 也完成后，
+会用生成的主键调用回调函数。
+count_down 应用保存该主键到 Milestone 对象中。</p>
 
-<p>At this point,
-it is important to note that although the add operation is complete,
-the transaction is not!
-Any changes made to the database by the operation
-are not available until the transaction completes.</p>
+<p>这时，
+需要注意，虽然添加操作完成了，
+但是该事务还没完成！
+只有事务完成了，对数据库
+所做的修改才可见。</p>
 
-<p>When all operations on a transaction complete,
-in this case, a single add operation,
-the transaction completes and its callback function is called.
-In the transaction’s callback function,
-the count_down app adds the milestone to the list in memory
-and the Future returns with the new milestone object
-(and the View-model starts the Timer).</p>
+<p>当事务中的所有操作完成后，
+上面的示例中为一个添加操作，
+事务完成并调用其回调函数。
+在事务的回调函数中，
+count_down 应用把 milestone 添加到
+列表的内存引用中，Future 返回新添加
+的 milestone 对象。</p>
 
 <h2 id="section-3">删除数据</h2>
 
-<p>Here’s the code that removes a key-value pair from a database.</p>
+<p>下面是从数据库中删除数据的代码：</p>
 
 <pre class="prettyprint lang-dart">var transaction = _db.transaction(MILESTONE_STORE, 'readwrite');
 transaction.objectStore(MILESTONE_STORE).delete(milestone.dbKey);
@@ -871,25 +867,27 @@ return transaction.completed.then((_) {
   milestones.remove(milestone);
 });</pre>
 
-<p>Again the code creates a readwrite transaction on a named object store.
-To delete a key-value pair, the mode must be readwrite.
-Use the <code>delete()</code> method on the object store to delete a key-value pair.
-Specify the key as the argument to delete().</p>
+<p>上面的代码再次创建了一个 readwrite 事务。
+要删除数据，事务类型必需为 readwrite 。
+用对象存储的 <code>delete()</code> 函数并用要
+删除数据的主键作为参数来删除数据。</p>
 
-<p>When the transaction completes successfully,
-the count_down app can safely remove the milestone from the list in
-local memory and stop the timer, if necessary.</p>
+<p>当事务完成后，
+count_down 应用就可以从
+列表中删除 milestone 对象了，
+如有必要就停止该对象的 Timer。</p>
 
-<p>Note that this code
-does not specify a callback function for the delete operation,
-only for the transaction.
-The task it needs to do,
-namely to remove the milestone from the list in memory,
-can occur when the transaction completes.</p>
+<p>注意上面的代码并
+没有设置删除操作的
+回调函数，只设置了
+事务的回调函数。
+当事务完成的时候，
+可以执行从 list 中
+删除 milestone 的操作。</p>
 
 <h2 id="section-4">清空数据</h2>
 
-<p>Use the <code>clear</code> method on the object store to remove all records.</p>
+<p>用对象存储的 <code>clear</code> 函数清空所有数据。</p>
 
 <pre class="prettyprint lang-dart">var transaction = _db.transaction(MILESTONE_STORE, 'readwrite');
 transaction.objectStore(MILESTONE_STORE).clear();
@@ -900,17 +898,17 @@ return transaction.completed.then((_) {
 
 <h2 id="getting-data">用 cursor 查询所有数据</h2>
 
-<p>When the app starts,
-if there’s an existing database
-and that database has milestones,
-the count_down app reads
-the records from the database
-and initializes the internal list of milestones
-from that information.</p>
+<p>当应用开始的时候，
+如果已经有数据库存在了，
+则 count_down应用就从
+已经存在的数据库中读取
+数据并
+用读取的数据来
+初始化里程碑表。</p>
 
-<p>The <code>_loadFromDB()</code> method
-gets called after the database has been successfully opened.
-It is within this method that the database is read.</p>
+<p>当数据库成功打开后会
+调用 <code>_loadFromDB()</code> 函数。
+在该函数中读取数据库的数据。</p>
 
 <pre class="prettyprint lang-dart">Future _loadFromDB(Database db) {
   _db = db;
@@ -929,49 +927,51 @@ It is within this method that the database is read.</p>
   });
 }</pre>
 
-<p>Because getting records does not modify the database,
-this transaction is readonly.</p>
+<p>由于读数据并不需要修改数据库，所有这里用
+ readonly 类型事务。</p>
 
-<p>You can use a
+<p>可以用 
 <a href="https://api.dartlang.org/dart_indexedDb/Cursor.html" target="_blank">Cursor</a>
-object to step through the records in the database one by one,
-creating a Milestone object for each.
-The object store uses a stream to fire an event for each record
-retrieved from the database.
-By listening on the stream,
-your code can be notified for each record read.
-The count_down app creates a corresponding Milestone object
-in the internal list in memory for each database record retrieved.</p>
+对象来一步一步从
+数据库中遍历数据。
+然后为每条记录创建一个 Milestone 对象。
+对象存储使用 stream 来触发每条
+记录的事件。
+通过监听 stream ， 你的
+代码
+可以
+监听每条记录的读取。</p>
 
-<p>Open a cursor on a transaction’s object store with <code>openCursor</code>.
-The cursor indicates the current position in the database.
-The count_down app opens a cursor and sets the optional
-<code>autoAdvance</code> argument to true.
-This means that after reading a record from the database
-and returning its value,
-the cursor advances automatically to the next record.
-If you don’t use autoAdvance, 
-your code has to use the <code>next()</code> method
-to advance the cursor to the next record.</p>
+<p>用对象存储的 <code>openCursor</code> 函数来打开一个 Cursor。
+Cursor 记录了当前数据在数据库中的位置。
+count_down 应用用可选的参数 <code>autoAdvance</code> 来打开
+一个 Cursor。
+该参数为 true 说明当读取完一条
+记录后，Cursor 会自动的移到
+下一条记录。
+如果不设置 autoAdvance 参数，
+则每次需要自己调用 <code>next()</code> 
+函数来移动 Cursor 到下一条数据库记录。</p>
 
 <p><img class="scale-img-max" src="images/cursoradvance.png" alt="Advance the cursor with autoAdvance or cursor.next" /></p>
 
-<p>The openCursor() method returns a stream on which you can listen for events.
-Here,
-the stream is a broadcast stream,
-so the app can listen both for read events
-and for a final count of records retrieved.</p>
+<p>openCursor() 返回一个可以监听的 stream。
+这里的 stream 为
+一个 broadcast stream（广播流）。
+所以应用可以监听读取事件
+和最终读取了多少记录。</p>
 
-<p>For each record retrieved from the database,
-an event fires and the callback function is called.
-A
+<p>每次读取一个记录的时候都会
+触发事件和回调函数。
+在该示例中，一个名字
+为 <code>cursor</code> 的
 <a href="https://api.dartlang.org/dart_indexedDb/CursorWithValue.html" target="_blank">CursorWithValue</a>
-object, named <code>cursor</code> in this example,
-is passed to the callback function.
-Use <code>cursor.key</code> to get the key for the record just retrieved.
-Use <code>cursor.value</code> to get the value for that record.</p>
+对象作为参数来
+调用回调函数。
+用 <code>cursor.key</code> 来获取读取记录的主键。
+用 <code>cursor.value</code> 来获取读取记录的内容。</p>
 
-<p>The _loadFromDB method returns a Future that returns the length of the stream.</p>
+<p>_loadFromDB 函数返回一个 Future， 该 Future 返回了读取数据的条数。</p>
 
 <h2 id="section-5">其他资源</h2>
 
@@ -982,8 +982,8 @@ Use <code>cursor.value</code> to get the value for that record.</p>
   <a href="/articles/futures-and-error-handling/">Future 和错误处理</a>。
   </li>
   <li>
-  For information about Polymer,
-  read <a href="/docs/tutorials/polymer-intro">Define a Custom Element</a>.
+  关于 Polymer 的信息，请参考
+    <a href="/docs/tutorials/polymer-intro">定义自定义元素</a>。
   </li>
 </ul>
 
@@ -1026,18 +1026,6 @@ Use <code>cursor.value</code> to get the value for that record.</p>
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -1099,11 +1087,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

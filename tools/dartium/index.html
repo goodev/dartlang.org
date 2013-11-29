@@ -8,13 +8,12 @@
   
   <title>Dartium | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="Dartium | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Download and use Dartium, a build of Chromium with an embedded Dart VM.">
+  <meta itemprop="description" content="下载并使用 Dartium，一个带有 Dart VM 的 Chromium">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -205,7 +204,7 @@
     <div class="col-md-6">
       <h1> Dartium </h1>
       <p>
-        Chromium with the Dart VM
+        带有 Dart VM 的 Chromium
       </p>
     </div>
     <div class="col-md-6">
@@ -217,40 +216,38 @@
 
 
 <p>
-Dartium is a special build of Chromium that includes the Dart VM.
-Using Dartium means you don't have to compile your code to JavaScript
-until you're ready to test on other browsers.
-To learn about other tools you can use for Dart development,
-see <a href="/tools/">Tools for Dart</a>.
+Dartium 是一个带有 Dart VM 的 Chromium。
+使用 Dartium 你无需把 Dart 代码编译为 JavaScript 就可以
+在浏览器中测试应用。
+关于开发 Dart 应用的其他工具，
+参考 <a href="/tools/">Dart 相关工具</a>。
 </p>
 
 <aside class="alert alert-warning">
-  <strong>Warning:</strong>
-  This browser is a technical preview,
-  and it might have security and stability issues.
-
-  <b>Do not use Dartium as your primary browser!</b>
+  <strong>警告：</strong>
+    Dartium 是开发者预览版，可能包含安全和稳定性问题。
+    不要用 Dartium 作为你的日常使用浏览器！
 </aside>
 
 <p>
   <a href="/docs/dart-up-and-running/contents/ch04-tools-dartium.html" class="btn">
     <i class="icon-book"></i>
-    Learn how to use Dartium
+    如何使用 Dartium
   </a>
 </p>
 
 
 <section>
-<h2 id="download"> Getting Dartium </h2>
+<h2 id="download"> 下载 Dartium </h2>
 
 <p>
-  If you have an up-to-date version of
-  <a href="/tools/editor/">Dart Editor</a>,
-  you already have Dartium.
+  如果你下载了最新版本的 
+  <a href="/tools/editor/">Dart 编辑器</a>，
+  则里面已经包含了  Dartium。
 </p>
 
 <p class="os-choices">
-  Or you can download the latest release of Dartium for
+ 或者你可以单独下载用于
   <span class="nowrap">
 <input type="radio" name="osChoices" id="windows">
 <label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
@@ -266,6 +263,7 @@ see <a href="/tools/">Tools for Dart</a>.
 <label class="os-choice" for="macos">Mac</label>.
 </span>
 
+  的最新版本的 Dartium。
 </p>
 
 <p>
@@ -294,34 +292,33 @@ see <a href="/tools/">Tools for Dart</a>.
 </p>
 
 <aside class="alert alert-info">
-  <strong>Note:</strong>
-  The Dartium binary <b>expires</b> within a month.
-  When that happens,
-  you'll need to download a new copy
-  if you want to continue using Dartium.
+  <strong>注意：</strong>
+  Dartium 执行版本每隔<b>一个月就过期了</b> 。
+	当你的 Dartium 过期后，
+	需要重新下载一个才能继续使用 
+	Dartium。
 </aside>
 </section>
 
-<h2 id="install"> Installing Dartium </h2>
+<h2 id="install"> 安装 Dartium </h2>
 
 <p>
-  You don’t usually need to do anything special to install Dartium:
-  just unarchive the ZIP file.
-  If you want Dart Editor to launch a particular copy of Dartium,
-  then put that copy inside the <code>dart-sdk</code> directory
-  of your Dart Editor installation directory,
-  replacing its original copy of Chromium.
+只需要解压下载的压缩文件即可。
+如果你想让 Dart 编辑器使用一个特定版本的
+ Dartium，
+ 则把解压后的文件复制到 <code>dart-sdk</code> 目录或者
+ Dart 编辑器的安装目录来替换以前的 Chromium 即可。
 </p>
 
 
-<h2 id="bugs"> Filing bugs and feature requests </h2>
+<h2 id="bugs"> 提交 Bug 和新特性 </h2>
 
 <p>
-  To file a bug, use the
-  <a href="https://code.google.com/p/dart/issues/entry?template=Defect%20report%20for%20Dartium">Dartium issue template</a>.
-  To see existing issues,
-  go to the
-  <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-Dartium">Dartium issue list</a>.
+  用 
+  <a href="https://code.google.com/p/dart/issues/entry?template=Defect%20report%20for%20Dartium">Dartium 问题模板</a>
+  来提交问题。
+  要查询已知问题，访问
+  <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-Dartium">Dartium 问题列表</a>。
 </p>
 
 
@@ -332,18 +329,6 @@ see <a href="/tools/">Tools for Dart</a>.
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -407,11 +392,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

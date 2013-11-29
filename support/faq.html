@@ -8,7 +8,6 @@
   
   <title>FAQ | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="FAQ | Dart: 用于创建结构化的web应用">
   
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -303,56 +302,56 @@
 
 <p>我们通过一般途径取得开放标准的程序语言：某人创建一个清晰的初版，人们尝试它，然后我们使其标准化。开放标准 WEB 平台以这种方式整合小的改进，经其他人的尝试后标准化就实现了：canvas就是一个例子。我们知道这种方式增加了大众参与，但是我们认为这种方式只在某些时候有用，特别的，作为一门编程语言，其由开放团队设计是有风险的。</p>
 
-<p>Haskell是近期成功的被开放社区设计的变成语言，始于1990年。最广泛使用的是COBOL，从Ada演变而来。这不是一个程序语言设计的普通方式。在目前主要的编程语言中，只有六个（数字存在争议）是通过这种方式设计的（其中之一是 ALGOL-68)。</p>
+<p>Haskell是近期成功的被开放社区设计的编程语言，始于1990年。最广泛使用的是COBOL，从Ada演变而来。这不是一个程序语言设计的普通方式。在目前主要的编程语言中，只有六个（数字存在争议）是通过这种方式设计的（其中之一是 ALGOL-68)。</p>
 
-<h3 id="future-for-GWT">Q. What's the future for GWT?</h3>
+<h3 id="future-for-GWT">问题：谷歌将如何看待 GWT 的未来 ？</h3>
 
-<p>Bruce Johnson <a href="http://googlewebtoolkit.blogspot.com/2011/11/gwt-and-dart.html">posted on the GWT blog</a> (with further comments <a href="https://plus.google.com/117487419861992917007/posts/6YWpsHpqMqZ">on Plus</a>): "Dart and GWT both share the goal of enabling structured web programming. In fact, many of the same engineers who brought you GWT are working on Dart. We view Dart as an ambitious evolution of GWT's mission to make web apps better for end users, and we're optimistic about its potential. As Dart evolves and becomes ready for prime time, we anticipate working closely with the GWT developer community to explore Dart."</p>
+<p>Bruce Johnson <a href="http://googlewebtoolkit.blogspot.com/2011/11/gwt-and-dart.html">发表在 GWT 的博客</a> (更进一步的评论在 <a href="https://plus.google.com/117487419861992917007/posts/6YWpsHpqMqZ"> Google+</a>)： "Dart 和 GWT 都以发展结构化 WEB 编程为目标。事实上，很多开发 GWT 的工程师已经参与到 Dart 项目中来。我们把 Dart 当作 GWT 使命（使网页应用更好的服务于终端用户）的革命性推进 ，并且我们看到了它的潜能。在 Dart 不断发展并准备好迎接其黄金时代，我们预测利用 GWT 的开发团队将会乐于探索 Dart。"</p>
 
-<p>"Meanwhile, rest assured that GWT will continue to be a productive and reliable way to build the most ambitious web apps&mdash;and even games like Angry Birds. Key projects within Google rely on GWT every day, and we plan to continue improving (and open-sourcing) GWT based on their real-world needs."</p>
+<p>"同时，其他确定的是 GWT 将会继续成为开发优秀 WEB 应用（或者其他像愤怒的小鸟这样的游戏）富有创造性、可靠的途径。谷歌的关键项目一直很依靠 GWT 。并且我们计划继续根据世界范围内的需求改进 GWT（并保持开源）。"</p>
 
-<p>Watch our Google I/O 2012 talk <a href="http://www.youtube.com/watch?v=VOf27ez_Hvg">The History and Future of Google Web Toolkit</a> to learn more.
+<p>观看我们的谷歌 I/O 2012座谈会 <a href="http://www.youtube.com/watch?v=VOf27ez_Hvg">Google Web Toolkit 的历史与未来</a> 获得更多信息。
 
-<h3 id="why-not-multi-language-VM">Q. Why didn't Google build a bytecode VM targetable by multiple languages including Dart?</h3>
+<h3 id="why-not-multi-language-VM">谷歌为什么不开发一个多语言（包括Dart)的字节码虚拟机？</h3>
 
-<p>Each approach has advantages and disadvantages, but we feel that in the context of Dart it made sense to build a language-specific VM for the following reasons:</p>
+<p>每一种方法都有长处和短处，但是我们感觉创建一个Dart专用的虚拟机作为Dart的运行环境更合理，主要有以下原因：</p>
 <ul>
-<li>Google already works on a multi-language bytecode: <a href="https://developers.google.com/native-client/overview#distributing-an-application">LLVM bitcode in PNaCl</a>.</li>
-<li>Even if a bytecode VM is specialized for Dart, a language VM will be simpler and faster because it can work under stronger assumptions&mdash;for instance, a structured control flow.  These assumptions make the implementation cleaner and optimizations easier.</li>
-<li>A general-purpose bytecode VM would be even larger and slower, as it generalizes assumptions and adds functionality that for Dart is dead code: for example, multithreading with a shared heap.</li>
-<li>No bytecode VM is truly general-purpose; they all make assumptions that privilege some class of languages.  A language VM leaves more room to improve the VM and make deep changes to optimization of the language. Some Dart engineers wrote <a href="/articles/why-not-bytecode/">an article</a> talking about the VM question in more detail.</li>
+<li>谷歌已经拥有一门多语言字节码<a href="https://developers.google.com/native-client/overview#distributing-an-application">底层虚拟机（使用位码的PNaCl）</a>.</li>
+<li>如果 Dart 被单语言字节码虚拟机所支持将有很大好处, 单语言虚拟机将更简单更快，因为它可以专门为该语言进行优化&mdash;例如，一个结构化控制流。这些专门的优化使得实现回收器和优化器更加简单。</li>
+<li>一个通用的字节码虚拟机将会很大很慢，因为它包括了很多假设和额外的功能，这些对Dart都是没用的：例如，多线程共享堆。</li>
+<li>没有字节码虚拟机是真正通用的；他们都假定给某些种类的语言以特权。单语言虚拟机有更多的空间来提升性能，并能深入优化。请详见 Dart 工程师写的关于虚拟机问题的<a href="/articles/why-not-bytecode/">相关文章</a></li>
 </ul>
 
 </section> <!-- /#strategy -->
 
 <section id="language">
-<h2>Language</h2>
+<h2>语言</h2>
 
-<h3 id="compare-to-javascript">Q. Isn't Dart a lot like JavaScript?</h3>
+<h3 id="compare-to-javascript">问题：Dart 和 JavaScript 很像么？</h3>
 
-<p>Yes and no.  The Dart project thinks that JavaScript can use some changes for more productive software engineering, smarter editors and development environments, and web apps that are as beautiful and pleasing as the best client apps can be.  On the other hand, we don't think everything needs to change, and why change what isn't broken?</p>
+<p>既是也不是。Dart 项目认为 JavaScript 能做一些改变以提供更具创造性的软件编程能力、更聪明的编辑器和开发环境，以及促使 WEB 应用程序将会向客户端应用程序一样漂亮及令人喜欢。另外，我们不认为所有都需要改变，没必要就不需要变，不是么？</p>
 
-<p>Dart, like JavaScript, is a dynamically typed language.  It adds optional compile-time type annotations to help you catch errors earlier.  It takes out a few features of JavaScript, such as prototypes and the global object: this should streamline the VM, enable faster execution, and make it easier to do code completion and refactoring.  And Dart adds some goodies.  To name a few:</p>
+<p>Dart，像 JavaScript 一样是一门动态类型绑定语言。它添加了可选的编译时类型声明帮助你及早的发现问题。它去除了 JavaScript 的某些特性，例如原型机制和全局对象：这将简化虚拟机提高执行速度，并且使得代码实现和重构更加容易。Dart 添加了许多优秀的功能。例举如下：</p>
 <ul>
-<li>User-defined operator methods.  We like the lightweight, readable code these give for <a href="/articles/improving-the-dom/">our DOM interface</a>.</li>
-<li>Lightweight syntax for anonymous functions.  You use them a lot in web programming; now they look great.  And they come with correct binding of <code>this</code> and full block-level lexical scoping, no gotchas.</li>
+<li>用户自定义的操作方法。我们用轻量的、易读的代码更新了 <a href="/articles/improving-the-dom/">DOM 接口。</a>.</li>
+<li>匿名函数语法更轻量级化。你在 WEB 开发中经常使用他们；现在他们看起来更棒了。他们为<code>this</code>提供了正确的约束条件和全部的block-level 词汇范围，no gotchas。</li>
 </ul>
 
 <p>
-Dart aims to be like JavaScript, but faster, more regular, and more scalable to large programs.
+Dart 的目标是比 JavaScript 更快，更规则，并且更适合大型程序开发。
 </p>
 
-<h3 id="compare-to-java">Q. Isn't Dart a lot like Java?</h3>
+<h3 id="compare-to-java">问题：Dart 跟 Java 很像么？</h3>
 
-<p>Well, Java is statically typed, and Dart is dynamically typed.  Dart has optional static type annotations, where in Java they are required.  To us these are big differences in the nature of the two languages.  But Dart is a curly-brace language, and it shares some keywords with Java, such as <code>extends</code> and <code>final</code>, so we can see why people make the comparison.  Honestly, we like having a straightforward and familiar syntax that's easy to pick up, even if that means it's less exciting.</p>
+<p>好吧， Java 是静态类型绑定的，Dart是动态类型绑定的。Dart拥有可选的静态类型绑定注释，而在 Java 中他们是一种规定。对此这两门语言内在存在着巨大的不同。Dart 是一种 curly-brace 语言，它与 Java 共有一些关键字，像<code>extends</code>、<code>final</code>,因此我们能够理解为什么人们把这两门语言做比较。事实上，我们喜欢明确的、熟悉的语法,学起来会很简单，即使这不能让人感到兴奋。</p>
 
-<h3 id="compare-to-closure">Q. How does Dart compare with using the Closure compiler on JavaScript?</h3>
+<h3 id="compare-to-closure">问题：Dart 与使用闭包函数编译程序的 JavaScript 对比</h3>
 
-<p>The idea of optional type annotations is similar.  Dart's are nicer syntactically.</p>
+<p>可选类型注释的想法相类似。Dart 在语法结构上很漂亮。</p>
 
-<p>Compare the following Closure compiler code:</p>
+<p>比较下面的闭包函数编译程序代码：</p>
 
-<pre class="prettyprint lang-dart">// Closure compiler code
+<pre class="prettyprint lang-dart">// 闭包编译程序代码
 
 /**
  * @param {String} name
@@ -364,58 +363,58 @@ makeGreeting = function(name) {
   return greeting;
 }</pre>
 
-<p>With the following Dart code:</p>
+<p>以下是 Dart 程序代码：</p>
 
-<pre class="prettyprint lang-dart">// Dart code
+<pre class="prettyprint lang-dart">// Dart 代码
 
 String MakeGreeting(String name) {
   String greeting = 'hello $name';
   return greeting;
 }</pre>
 
-<p>If you are using Closure and can switch to Dart, you will probably enjoy the change.</p>
+<p>如果你正在使用闭包函数并希望转换到 Dart上来，你将会喜欢这种改变。</p>
 
-<h3 id="compare-to-coffeescript">Q. How does Dart compare with CoffeeScript?</h3>
+<h3 id="compare-to-coffeescript">问题：Dart 与 CoffeeScript 比较</h3>
 
-<p>Both Dart and CoffeeScript are inspired by JavaScript, and both can be translated back to it.  They make different choices, particularly in the flavor of their syntax.  As a language we think it's fair to say that Dart differs semantically from JavaScript more than CoffeeScript does; that may result in a less line-for-line translation, but we believe Dart-generated JavaScript can have excellent size and speed.</p>
+<p>Dart 和 CoffeeScript 都是受 JavaScript 的启迪，并且都能被转换成 JavaScript 的代码。他们是两种不同的选择，尤其在语法风格方面。作为一门语言，公平的说 Dart 与 JavaScript对比比 CoffeeScript 与 JavaScript 对比在语义上改变更大；这将导致更少的一行一行转换，即使这样我们仍坚信 Dart生成的 JavaScript 代码将会更精简并且更快。</p>
 
-<p>If you like CoffeeScript for its more structured feel than raw JavaScript, you may like Dart's optional static type annotations.</p>
+<p>如果你喜欢 CoffeeScript 因为它比原生的 JavaScript更结构化，那么你将会喜欢 Dart 的可选静态类型注释。</p>
 
-<h3 id="typescript">Q. What does Google think of TypeScript?</h3>
+<h3 id="typescript">问题：谷歌是怎么考虑 TypeScript 的？</h3>
 
-<p>TypeScript and Dart have similar goals; they make building large-scale web applications easier. However, their approaches are fairly different. TypeScript maintains backwards compatability with JavaScript, whereas Dart purposely made a break from certain parts of JavaScript’s syntax and semantics in order to eradicate large classes of bugs and to improve performace. The web has suffered from too little choice for too long, and we think that both Dart and TypeScript are pointing to a brighter future for web developers! You can read a <a href="http://news.dartlang.org/2012/10/the-dart-team-welcomes-typescript.html">more complete response</a> on our blog.</p>
+<p>应用程序的开发。然而，他们采用的方法却完全不同。TypeScript 对 JavaScript 保持后向兼容，然而 Dart 对 JavaScript 的语法及语义做了一定的改变，以根除众多种类的缺陷，并且可以提升性能。web 开发一直只有很少的选择，我们认为 Dart 和 TypeScript 都把目标定为 web 开发者拥有更好的未来！你可以访问我们的博客阅览 <a href="http://news.dartlang.org/2012/10/the-dart-team-welcomes-typescript.html">更多完成的答复</a></p>
 
-<h3 id="compare-to-go">Q. How does Dart relate to Go?</h3>
+<h3 id="compare-to-go">问题：Dart 与 Go 关系？</h3>
 
-<p>Dart and Go are both language projects started at Google, but they are independent and have different goals.  As a result, they make different choices, and the languages have very different natures, even while we all try to learn from each others' work.</p>
+<p>都是谷歌启动的语言项目，但是他们是不相干的，并且有各自的目标。这就导致他们作出不同的选择，两门语言有着非常不同的特点，即使我们都尽量去向对方项目组学习。</p>
 
-<h3 id="compare-to-everything-else">Q. Why isn't Dart more like Haskell / Smalltalk / Python / Scala / other language?</h3>
+<h3 id="compare-to-everything-else">问题：为什么 Dart 不模仿 Haskell / Smalltalk / Python / Scala / 或其他语言？</h3>
 
-<p>Various reasons, depending on the language being asked about.</p>
+<p>各种各样的原因，由具体的语言而定：</p>
 
-<p>For languages that are quite different from JavaScript: it's important for Dart to compile to efficient JavaScript.  Our experience in GWT is that if the source language is too different from JavaScript, it creates some cases where complex output code is needed to emulate the source language's behavior.  This can cause performance to vary in ways that are not transparent to the programmer.</p>
+<p>对那些与 JavaScript 大有不同的语言：能将 Dart 代码编译成 JavaScript 代码是非常重要的。我们在 GWT 中得到的经验是如果源语言代码如果与 JavaScript 代码差异性太大，它将创建几种情况，这时就需要创建复杂的转换代码，用以模仿源语言代码的行为。这可能导致运行出现偏差，并且开发人员极难发现。</p>
 
-<p>For languages that are less mainstream: we expect that modeling Dart on these would, on the whole, hurt our adoption.  Our team includes fans of these languages, and if we thought Dart could take up our favorite cool language features and push them to widespread adoption we might be tempted, but really we think we've got our hands full introducing a new language at all.</p>
+<p>对于那些非主流的语言：我们预测如果 Dart 模仿他们将会导致很难推进其发展。我们的团队拥有这些语言的粉丝，我们可能会受到引诱：采用那些很酷的语言的特点的话，并且将他们深入到语言的发展之中，但是事实上我们认为发明这样的新语言是很费力的。</p>
 
-<p>For languages that are "more dynamic" than Dart: Dart deliberately trades off some of this arbitrary runtime modification for the goal of better performance and tools.</p>
+<p>对于那些比 Dart 更动态的语言：Dart 谨慎的移除了这种随意的运行时修改，以带来更好的性能和优秀的工具。</p>
 
-<h3 id="earth-shattering-syntactic-kaboom">Q. Why isn't Dart syntax more exciting?</h3>
+<h3 id="earth-shattering-syntactic-kaboom">问题：为什么 Dart 的语法不那么令人兴奋？</h3>
 
-<p>We did throw in some nice syntactic features such as <code>this.</code> constructor args, but we'd agree that Dart chooses familiarity over excitement.  One team member's personal testimonial: "I wish it had a little more razzle dazzle but I can't deny that literally on my first day of writing Dart code, I was productive in it."</p>
+<p>我们添加了一下优秀的语法特征，例如<code>this.</code>构造器参数，但是我们一致赞同 Dart 选择熟悉的语法更好。下面是一个团队成员个人见证：“我希望 Dart 拥有更多酷炫的特点，但是我不能否认当我开始用它写代码起，我是很有成效的。”</p>
 
-<h3 id="is-it-a-dynamic-language">Q. Is it really a dynamic language if it doesn't have eval() or adding fields to a value at run time?</h3>
+<h3 id="is-it-a-dynamic-language">问题：如果没有 eval()函数和运行时动态类型绑定，Dart 还能算是动态语言么？</h3>
 
-<p>Dart as initially released didn't have anything like these, but future versions of Dart will look at adding dynamic features of this sort.  The feature set won't match up exactly with the features in your question, but we hope to serve very much the same purposes.  When we see what gets added, then everyone can decide how they classify the language.</p>
+<p>作为最初发布的版本没有这些特点，但Dart的未来版本将考虑添加这样的动态特性。可能不会原封不动的添加问题中提到的特点，但我们希望能提供相类似的功能。当我们看到这些功能被添加后，那么每个人都可以确定这门语言的分类。</p>
 
-<p>What's important to us is that what you want to do with a dynamic language, you can do with Dart and not feel cramped.  You should be able to design your system without interference from static rules, and to modify the live system during development and sometimes at run time.</p>
+<p>对我们重要的是你想要用一门动态语言实现什么，并且你可以用 Dart 实现而不感到受约束。你应该能够设计自己的系统，而不会受静态规则的干扰，并在开发或运行过程中进行动态的修改。</p>
 
-<p>So, for example, Dart isn't likely to support evaluating a string as code in the current context, but it may support loading that code dynamically into a new isolate.  Dart isn't likely to support adding fields to a value, but it may (through a mirror system) support adding fields to a class, and you can effectively add methods using <code>noSuchMethod()</code>.  Using these features will have a runtime cost; it's important to us to minimize the cost for programs that don't use them.</p>
+<p>因此，举例来说，Dart 是不太可能支持在当前的运行环境中求一个字符串的数值的，但是它可以支持动态加载那种代码到一个新的分离物。dart 是不太可能支持为一个实例值添加字段，但它可能会（通过一个反射系统）支持将字段添加到一个类，并且你可以用<code>noSuchMethod()</code>来添加方法。使用这些功能将会增加运行时的成本，不使用他们进而最小化程序的资源消耗对我们是非常重要的。</p>
 
-<p>This area is still under development, so we welcome your thoughts on what you need from runtime dynamism.</p>
+<p>这个地方还没有进行开发，所以我们欢迎你提出需要的关于运行时动态特征的想法。</p>
 
-<h3 id="can-add-reflection">Q. Can Dart add reflection?</h3>
+<h3 id="can-add-reflection">问题：Dart会添加反射么？</h3>
 
-<p>We are currently in the process of adding reflection support using the <a href="/articles/reflection-with-mirrors/">mirrors API</a>.</p>
+<p>我们目前正在进行添加反射功能的开发，它使用<a href="/articles/reflection-with-mirrors/">mirrors API</a>。</p>
 
 <h3 id="can-add-everything">Q. Can Dart add tuples, pattern matching, non-nullable types, partial evaluation, optional semicolons, ...?</h3>
 
@@ -534,18 +533,6 @@ We're currently aiming to support the following browsers:
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -607,11 +594,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

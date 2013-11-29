@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Searchable List | Dart: 用于创建结构化的web应用</title>
+  <title>可搜索 List | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Searchable List | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="可搜索 List | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -200,35 +199,35 @@
   <div class="container">
   	<div class="container sub-page">
     <article>
-    <h2 id="searchable-list">Searchable List</h2>
+    <h2 id="list">可搜索 List</h2>
 
-<p>This simple application shows the use of a custom element where list data is
-searchable. The demonstrates the following parts of Polymer:</p>
-
-<ul>
-  <li>defining custom elements</li>
-  <li>the <code>&lt;template&gt;</code> tag</li>
-  <li>HTML imports</li>
-  <li>data binding</li>
-</ul>
-
-<p>The <code>&lt;searchable-list&gt;</code> element uses data binding to implement search.
-See the <code>searchable_list.html</code> and the <code>searchable_list.dart</code> files for the
-code.</p>
-
-<p>The <code>SearchableList</code> class uses three variables in the search implementation:</p>
+<p>该示例介绍如何用自定义元素创建可搜索的列表。
+该示例演示了 Polymer 的如下特性：</p>
 
 <ul>
-  <li><code>data</code> stores all the data in the list</li>
-  <li><code>searchParam</code> stores the search parameter</li>
-  <li><code>results</code> stores the elements of <code>data</code> that match the search paramater</li>
+  <li>定义自定义元素</li>
+  <li><code>&lt;template&gt;</code> 标签</li>
+  <li>HTML 导入指令 </li>
+  <li>数据绑定</li>
 </ul>
 
-<p>When the user types in the search input, the <code>search()</code> method triggers, and
-the value of <code>results</code> is updated.  Since <code>results</code> is an observable variable,
-its representation in the UI automatically updates as its contents change.</p>
+<p><code>&lt;searchable-list&gt;</code> 元素使用数据绑定实现搜索操作。
+查看 <code>searchable_list.html</code> 和 <code>searchable_list.dart</code> 中
+的代码。</p>
 
-<p>Here is the minimal code for required to implement search
+<p><code>SearchableList</code> 类用三个变量实现搜索：</p>
+
+<ul>
+  <li><code>data</code> 保存列表中的所有数据</li>
+  <li><code>searchParam</code> 保存搜索参数</li>
+  <li><code>results</code>保存 <code>data</code> 中符合搜索条件的数据</li>
+</ul>
+
+<p>当用户在输入框中输入内容，触发  <code>search()</code> 函数，然后更新
+ <code>results</code> 的值。 由于  <code>results</code> 是一个 observable 变量，
+该变量的 UI 也自动更新。</p>
+
+<p>下面是实现搜索的最少代码
 (<code>searchable_list.dart</code>):</p>
 
 <pre><code>search() {
@@ -238,19 +237,19 @@ its representation in the UI automatically updates as its contents change.</p>
 }
 </code></pre>
 
-<p>Any changes to <code>searchParam</code> trigger  <code>search()</code>. Here is the code for that
-(the <code>enteredView()</code> method in <code>searchable_list.dart</code>):</p>
+<p>任何 <code>searchParam</code> 的改变都会触发  <code>search()</code>。
+下面是触发改变的代码
+(  <code>searchable_list.dart</code> 中的 <code>enteredView()</code> 函数):</p>
 
 <pre><code>onPropertyChange(this, #searchParam, search);
 </code></pre>
 
-<p>Read the
-<a href="https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fsearchable_list">source</a>.</p>
+<p><a href="https://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fsamples%2Fsearchable_list">查看源代码</a>.</p>
 
 <iframe class="running-app-frame" style="height:500px;width:100%;" src="example/index.html">
 </iframe>
 
-<p>See all <a href="/samples/">samples</a></p>
+<p>查看所有 <a href="/samples/">示例</a>。</p>
 
     </article>
     
@@ -259,18 +258,6 @@ its representation in the UI automatically updates as its contents change.</p>
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -332,11 +319,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Build.dart and the Dart Editor Build System | Dart: 用于创建结构化的web应用</title>
+  <title>Build.dart 和 Dart 编辑器 Build 系统 | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Build.dart and the Dart Editor Build System | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="Build.dart 和 Dart 编辑器 Build 系统 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Customize your Dart Editor build with build.dart.">
+  <meta itemprop="description" content="使用 build.dart 来改变 Dart 编辑器 build 过程。">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -200,29 +199,28 @@
   <div class="container">
   	<div class="container sub-page">
     <article>
-    <h1 id="builddart-and-the-dart-editor-build-system">Build.dart and the Dart Editor Build System</h1>
+    <h1 id="builddart--dart--build-">Build.dart 和 Dart 编辑器 Build 系统</h1>
 
-<p>Build.dart is a simple build script convention
-that lets you add behavior to the Dart Editor build system.
-If the root of a Dart Editor project has a script named <code>build.dart</code>,
-that script is invoked during a build
-with information about the changed files.
-You can use build.dart to post-process changed files,
-generate other files,
-or drive other aspects of the build system.  </p>
+<p>Build.dart 是一个简单的 build 脚本，可以在 Dart 编辑器
+build 系统中添加自定义行为。
+如果 Dart 编辑器项目根目录中有名字为 <code>build.dart</code> 的脚本文件，
+则在 build 的时候会调用该文件。
+你可以使用 build.dart 来处理修改过的文件，
+生成其他文件，
+或者 修改 build 系统的其他行为。</p>
 
 <div class="col-md-3">
   <div class="bs-sidebar hidden-print affix-top" role="complementary">
 
 <ol class="toc nav bs-sidenav" id="markdown-toc">
   <li><a href="#flags">Flags</a></li>
-  <li><a href="#an-example">An example</a></li>
-  <li><a href="#the-machine-interface">The machine interface</a>    <ol>
-      <li><a href="#errors-warnings-and-informational-messages">Errors, warnings, and informational messages</a></li>
-      <li><a href="#file-mappings">File mappings</a></li>
+  <li><a href="#section">一个示例</a></li>
+  <li><a href="#machine-">machine 接口</a>    <ol>
+      <li><a href="#errors-warnings">Errors、 warnings、和其他信息</a></li>
+      <li><a href="#file-">File 映射</a></li>
     </ol>
   </li>
-  <li><a href="#more-examples">More examples</a></li>
+  <li><a href="#section-1">更多示例</a></li>
 </ol>
 
   </div>
@@ -233,59 +231,62 @@ or drive other aspects of the build system.  </p>
 
   <h2 id="flags">Flags</h2>
 
-  <p>Dart Editor can invoke build.dart with
-any of the following command-line flags:</p>
+  <p>Dart 编辑器 可以使用如下标记来
+调用 build.dart ：</p>
 
-  <dl>
-    <dt><code>--changed=&lt;filename&gt;</code></dt>
-    <dd>Specifies a file that changed and should be rebuilt.
-One instance of the <code>--changed</code> flag is passed in for every changed file.</dd>
-    <dt><code>--removed=&lt;filename&gt;</code></dt>
-    <dd>Specifies a file that was removed and might affect the build.
-One instance of the <code>--removed</code> flag is passed in for every deleted file.</dd>
-    <dt><code>--clean</code></dt>
-    <dd>Requests that the build.dart script delete all generated files
-and reset any saved state.
-No other flags are passed in,
-except for <code>--machine</code>.</dd>
-    <dt><code>--full</code></dt>
-    <dd>Requests a full build;
-no incremental information is available.</dd>
-    <dt><code>--machine</code></dt>
-    <dd>Requests the build.dart script
-to print rich JSON error messages to the standard output (stdout),
-so that Dart Editor can interpret the messages.</dd>
-    <dt><code>--deploy</code></dt>
-    <dd>Creates a directory containing the files needed to deploy this
-application to a server.
-Used only for the <a href="/polymer-dart">Polymer.dart</a>
-linter and build tool.
-You can find more information in the polymer library file
-<a href="https://code.google.com/p/dart/source/browse/trunk/dart/pkg/polymer/lib/builder.dart">builder.dart</a>.</dd>
-  </dl>
+  <p><code>--changed=&lt;filename&gt;</code>
+：指定一个文件修改过了，需要重新 build。
+    对于每个修改过的文件，都会指定 <code>--changed</code> 标记。</p>
 
-  <p>Currently, the editor always passes the <code>--machine</code> flag
-into the build script.
-The other flags include either a single <code>--full</code> flag,
-a single <code>--clean</code> flag,
-or one or more <code>--changed</code> and <code>--removed</code> flags.</p>
+  <p><code>--removed=&lt;filename&gt;</code>
+：指定该文件被删除了，可能影响 build 过程。
+   对于每个删除的文件 都会指定 <code>--removed</code> 标记。</p>
 
-  <p>If a build script returns a non-zero exit code,
-all the stdout and stderr produced by the script
-is displayed in the Console view.
-Zero exit codes do <em>not</em> display any output;
-build.dart is usually called many times a minute,
-and having the Console view always scrolling output
-would be distracting to the user.</p>
+  <p><code>--clean</code>
+： 请求 build.dart 脚本删除所有生成的文件，
+  并重置所有保存的设置。
+  除了<code>--machine</code> 不用
+  设置其他标记。</p>
 
-  <p>Any changes that build.dart makes within a directory named <code>out</code>
-are <em>not</em> fed back into build.dart using <code>--changed</code> flags.
-Any other changed or created files <em>are</em> fed back.</p>
+  <p><code>--full</code>
+： 请求重新 build，
+  所有的增量 build 都失效。</p>
 
-  <h2 id="an-example">An example</h2>
+  <p><code>--machine</code>
+： 请求  build.dart 在 标准输出(stdout) 打印
+  JSON 格式的错误信息，
+  这样在 Dart 编辑器中可以显示这些信息。</p>
 
-  <p>Here is a sample build.dart file
-that processes all .foo files into .foobar files.</p>
+  <p><code>--deploy</code>
+：创建一个目录，里面包含把该应用部署到服务器的
+   文件。
+  只用于 <a href="/polymer-dart">Polymer.dart</a>
+  linter 和 build 工具。
+  在 polymer library 的
+  <a href="https://code.google.com/p/dart/source/browse/trunk/dart/pkg/polymer/lib/builder.dart">builder.dart</a>
+  中可以查看更多信息。</p>
+
+  <p>当前，编辑器总是
+指定 <code>--machine</code> 标记。
+其他标记，例如 一个<code>--full</code>、 一个 <code>--clean</code>、一个或者多个 <code>--changed</code> 和 <code>--removed</code> 标记
+都可以指定。</p>
+
+  <p>如果 build 脚本返回非零的退出代码，
+则脚本生成的所有 stdout 和 stderr 都
+会显示在控制台视图中。
+零退出代码 <em>不会</em> 显示任何输出信息，
+build.dart 通常会调用多少，
+如果不停的在控制台视图显示
+滚动信息则会干扰用户。</p>
+
+  <p>build.dart 在名字为 <code>out</code> 目录中所做的改动
+使用 <code>--changed</code> 标记_不会_ 反馈到 build.dart 中。
+其他的文件改动或创建文件 <em>都会</em> 反馈。</p>
+
+  <h2 id="section">一个示例</h2>
+
+  <p>下面是一个把所有 .foo 文件处理为 .foobar 文件
+的 build.dart 脚本。</p>
 
   <pre class="prettyprint lang-dart">import 'dart:io';
 
@@ -310,46 +311,45 @@ void _processFile(String file) {
   }
 }</pre>
 
-  <h2 id="the-machine-interface">The machine interface</h2>
+  <h2 id="machine-">machine 接口</h2>
 
-  <p>Sometimes the build.dart script needs to
-get information back to the editor.
-The general mechanism for doing this is
-for the editor to scrape the stdout from build.dart,
-looking for well-formed messages.
-When Dart Editor starts build.dart,
-it passes in a <code>--machine</code> flag
-indicating that the editor is looking for
-well-formed messages.</p>
+  <p>有时 build.dart 脚本需要反馈信息
+给编辑器。script needs to
+编辑器通常通过扫描 build.dart 输出
+到 stdout 的特定
+内容来实现该功能。
+当 Dart 编辑器 启动 build.dart 的时候，
+会指定一个 <code>--machine</code> 标记说明
+编辑器需要特定格式的信息。</p>
 
-  <p>Well-formed messages follow these rules:</p>
-
-  <ul>
-    <li>Each message is on its own line.</li>
-    <li>Each message is formed as a JSON RPC command/method call.</li>
-    <li>Each message is wrapped in square brackets.</li>
-  </ul>
-
-  <p>The next sections give examples of two kinds of messages:</p>
+  <p>特定格式的信息遵守如下规则：</p>
 
   <ul>
-    <li>Errors, warnings, and informational messages</li>
-    <li>File mappings</li>
+    <li>每个信息都独立位于一行。</li>
+    <li>每个信息都格式化为 JSON RPC 命令/函数 。</li>
+    <li>每个消息都在方括号中。</li>
   </ul>
 
-  <h3 id="errors-warnings-and-informational-messages">Errors, warnings, and informational messages</h3>
+  <p>下面显示两种类型信息：</p>
 
-  <p>As build.dart processes input files,
-it might call out some input files as badly formed,
-using <strong>error</strong> or <strong>warning</strong> messages.
-You can also generate informational (<strong>info</strong>) messages—for
-example, scraping TODO messages from user code.
-The editor uses these messages
-to create markers for the given file and line combination,
-and it displays the messages in the Problems view.</p>
+  <ul>
+    <li>Errors、 warnings、和其他信息</li>
+    <li>File 映射</li>
+  </ul>
 
-  <p>Here is an example of stdout
-that contains error and warning messages:</p>
+  <h3 id="errors-warnings">Errors、 warnings、和其他信息</h3>
+
+  <p>当 build.dart 处理输入文件的时候，
+使用 <strong>error</strong> 或者 <strong>warning</strong> 消息来显示
+一些错误格式的文件。
+也可以生成一般 (<strong>info</strong>) 信息，
+例如，扫描用户代码中的 TODO 信息。
+编辑器用这些信息来标记
+文件和代码行，
+并且在 问题视图 中显示这些信息。</p>
+
+  <p>下面是 stdout 中包含
+ error 和  warning 信息的示例：</p>
 
   <pre class="prettyprint lang-json">[{&quot;method&quot;:&quot;error&quot;,&quot;params&quot;:{&quot;file&quot;:&quot;foo.html&quot;,&quot;line&quot;:23,&quot;message&quot;:&quot;no ID found&quot;}}]
 
@@ -357,66 +357,64 @@ that contains error and warning messages:</p>
 
 [{&quot;method&quot;:&quot;error&quot;,&quot;params&quot;:{&quot;file&quot;:&quot;foo.html&quot;,&quot;line&quot;:23,&quot;message&quot;:&quot;no ID found&quot;,&quot;charStart&quot;=123,&quot;charEnd&quot;=130}}]</pre>
 
-  <p>The JSON RPC method name for these messages
-can be <strong>error</strong>, <strong>warning</strong>, or <strong>info</strong>.
-The parameters are:</p>
+  <p>JSON RPC 函数名字可以为
+ <strong>error</strong>、 <strong>warning</strong>、或者 <strong>info</strong>。
+参数为：</p>
 
-  <dl>
-    <dt>file</dt>
-    <dd>An absolute or script relative file path</dd>
-    <dt>line</dt>
-    <dd>The line with the error or warning (1-based)</dd>
-    <dt>message</dt>
-    <dd>A message to display to the user</dd>
-    <dt>charStart</dt>
-    <dd>The starting position of the error from the beginning of the file (0-based)</dd>
-    <dt>charEnd</dt>
-    <dd>The ending position of the error from the beginning of the file (0-based)</dd>
-  </dl>
+  <p>file
+： 相对的或者绝对的脚本文件名</p>
 
-  <p>The charStart and charEnd parameters are optional but encouraged.
-Including them allows the editor to provide
-nice tooltip help for the error or warning.</p>
+  <p>line
+：错误或者警告的行数，从 1 开始。</p>
 
-  <h3 id="file-mappings">File mappings</h3>
+  <p>message
+： 显示给用户的信息。</p>
 
-  <p>When a build.dart script generates an output file from an input file,
-the script can tell the editor about this mapping.</p>
+  <p>charStart
+： 文件出错的字符开始位置，从 0 开始。</p>
+
+  <p>charEnd
+： 文件出错的字符结束位置，从 0 开始。</p>
+
+  <p>charStart 和 charEnd 参数是可选的，但是建议提供。
+包含这两个信息，编辑器可以提供友好的
+ tooltip 信息来显示 错误和警告。</p>
+
+  <h3 id="file-">File 映射</h3>
+
+  <p>当 build.dart 脚本从输入文件生成输出文件的时候，
+脚本可以告诉编辑器这些文件之间的映射关系。</p>
 
   <aside class="alert alert-info">
-    <p><strong>Note:</strong>
-Not all mappings need to be reported to the editor—just
-the ones where the mapping is semantically important to the user
-and special editor behavior is desired.</p>
+    <p><strong>注意：</strong>
+并不是所有的映射关系都需要告诉编辑器，
+只有一些对用户非常重要的映射才需要。</p>
   </aside>
 
-  <p>When you specify a file mapping,
-Dart Editor redirects HTTP requests
-and replaces launch attempts
-so that they use the mapped-to file.
-For example,
-if you map <code>index.html</code> to <code>out/index.html</code>,
-Dart Editor redirects HTTP requests from <code>index.html</code> to <code>out/index.html</code>,
-and it replaces the user’s attempt to launch <code>index.html</code>
-with a launch of <code>out/index.html</code>.</p>
+  <p>当指定文件映射的时候，
+Dart 编辑器 重定向 HTTP 请求并
+使用映射的文件。
+例如，
+如果你把 <code>index.html</code> 映射到 <code>out/index.html</code>，
+Dart 编辑器把请求 <code>index.html</code> 文件的请求重定向为  <code>out/index.html</code>，
+并启动 <code>out/index.html</code> 文件来替代 <code>index.html</code>。</p>
 
-  <p>Here’s an example of mapping foo.html to out/foo.html:</p>
+  <p>下面是一个示例把 foo.html 映射到  out/foo.html：</p>
 
   <pre class="prettyprint lang-json">[{&quot;method&quot;:&quot;mapping&quot;,&quot;params&quot;:{&quot;from&quot;:&quot;foo.html&quot;,&quot;to&quot;:&quot;out/foo.html&quot;}}]</pre>
 
-  <p>The JSON RPC method name for a file mapping is <strong>mapping</strong>.
-The parameters are:</p>
+  <p>文件映射的 JSON RPC 函数名字为 <strong>mapping</strong>。
+参数为：</p>
 
-  <dl>
-    <dt>from</dt>
-    <dd>An absolute or script relative file path</dd>
-    <dt>to</dt>
-    <dd>An absolute or script relative file path</dd>
-  </dl>
+  <p>from
+：相对于脚本或者绝对的 文件路径。</p>
 
-  <h2 id="more-examples">More examples</h2>
+  <p>to
+：相对于脚本或者绝对的 文件路径。</p>
 
-  <p>You might find the following examples of build files helpful:</p>
+  <h2 id="section-1">更多示例</h2>
+
+  <p>如下代码对于理解 build.dart 文件可能会有帮助：</p>
 
   <ul>
     <li><a href="https://code.google.com/p/dart/source/browse/trunk/dart/samples/build_dart/build.dart">dart/samples/build_dart/build.dart</a></li>
@@ -436,18 +434,6 @@ The parameters are:</p>
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -509,11 +495,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

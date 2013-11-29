@@ -8,13 +8,12 @@
   
   <title>Polymer.dart | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="Polymer.dart | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Standards-based web components: custom elements, templates, and data binding for Dart web apps. A Dart port of Polymer.">
+  <meta itemprop="description" content="基于标准的 web 组件： 用于 Dart web 应用的 自定义元素、模板、 和数据绑定。 Dart 版本的 Polymer。">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -245,10 +244,11 @@ hr {
 <div class="jumbotron">
       <h1> Polymer.dart </h1>
       <p>
-        Build structured, encapsulated, client-side web apps with Dart and
-        web components.<br />
-        <em>A Dart port of
-        <a href="http://www.polymer-project.org">Polymer</a>.</em>
+      用 Dart 和 web 组件创建结构化的、可封装的、客户
+      端 web 应用。
+        <br />
+        <em>一个 Dart 版本的
+        <a href="http://www.polymer-project.org">Polymer</a>。</em>
       </p>
 </div>
 
@@ -259,34 +259,34 @@ hr {
     <div class="sidenav" data-spy="affix" data-offset-top="250">
 
 <ol class="toc nav nav-list" id="markdown-toc">
-  <li><a href="#features">Features</a></li>
-  <li><a href="#examples">Examples</a>    <ol>
-      <li><a href="#custom-elements">Custom elements</a></li>
-      <li><a href="#data-binding">Data binding</a></li>
-      <li><a href="#custom-attributes">Custom attributes</a></li>
-      <li><a href="#template-conditionals">Template conditionals</a></li>
-      <li><a href="#template-loops">Template loops</a></li>
-      <li><a href="#extending-dom-elements">Extending DOM elements</a></li>
-      <li><a href="#packaging">Packaging</a></li>
-      <li><a href="#more-sample-code">More sample code</a></li>
+  <li><a href="#section">特性</a></li>
+  <li><a href="#section-1">示例</a>    <ol>
+      <li><a href="#section-2">自定义元素</a></li>
+      <li><a href="#section-3">数据绑定</a></li>
+      <li><a href="#attributes">自定义属性（attributes）</a></li>
+      <li><a href="#section-4">条件模板</a></li>
+      <li><a href="#section-5">模板循环</a></li>
+      <li><a href="#dom-">扩展 DOM 元素</a></li>
+      <li><a href="#packaging-">Packaging 包</a></li>
+      <li><a href="#section-6">更多示例代码</a></li>
     </ol>
   </li>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#tools">Tools</a></li>
-  <li><a href="#upgrading-from-web-ui">Upgrading from Web UI</a></li>
-  <li><a href="#compatibility">Compatibility</a></li>
-  <li><a href="#support">Support</a></li>
-  <li><a href="#source-code">Source code</a></li>
-  <li><a href="#status">Status</a>    <ol>
+  <li><a href="#section-7">安装</a></li>
+  <li><a href="#section-8">工具</a></li>
+  <li><a href="#web-ui-">从 Web UI 升级</a></li>
+  <li><a href="#section-9">兼容性</a></li>
+  <li><a href="#section-10">支持</a></li>
+  <li><a href="#section-11">源代码</a></li>
+  <li><a href="#section-12">状态</a>    <ol>
       <li><a href="#web-ui-parity">Web UI parity</a></li>
       <li><a href="#polymer-parity">Polymer parity</a></li>
     </ol>
   </li>
-  <li><a href="#tutorials">Tutorials</a></li>
-  <li><a href="#additional-reading">Additional reading</a>    <ol>
+  <li><a href="#section-13">教程</a></li>
+  <li><a href="#section-14">附加读物</a>    <ol>
       <li><a href="#polymer">Polymer</a></li>
-      <li><a href="#articles">Articles</a></li>
-      <li><a href="#specifications">Specifications</a></li>
+      <li><a href="#section-15">文章</a></li>
+      <li><a href="#section-16">规范</a></li>
     </ol>
   </li>
 </ol>
@@ -297,10 +297,10 @@ hr {
 
   <div class="col-md-8">
 
-    <h2 id="features">Features</h2>
+    <h2 id="section">特性</h2>
 
-    <p>Polymer.dart is a port of <em>Polymer Foundation</em>
-and <em>Polymer Core</em>.</p>
+    <p>Polymer.dart 移植了 <em>Polymer Foundation</em>
+和 <em>Polymer Core</em>。</p>
 
     <div class="row features">
 
@@ -308,10 +308,10 @@ and <em>Polymer Core</em>.</p>
 
 <i class="icon icon-code"> </i>
 
-<h2 class="no-permalink">Custom tags</h2>
+<h2 class="no-permalink">自定义标签</h2>
 
-Design your own HTML tags to encapsulate
-style, structure, and behavior.
+设计你自己的 HTML 标签来封装 样式、结
+构和行为。
 
 </div>
 
@@ -319,9 +319,9 @@ style, structure, and behavior.
 
 <i class="icon icon-exchange"> </i>
 
-<h2 class="no-permalink">Data binding</h2>
+<h2 class="no-permalink">数据绑定</h2>
 
-Create live, two-way bindings between Dart objects and DOM nodes.
+创建 Dart 对象和 DOM 节点之间的实时双向数据绑定。
 
 </div>
 
@@ -329,9 +329,9 @@ Create live, two-way bindings between Dart objects and DOM nodes.
 
 <i class="icon icon-check"> </i>
 
-<h2 class="no-permalink">Standards</h2>
+<h2 class="no-permalink">标准</h2>
 
-Use emerging web standards, today.
+今天就使用新兴的 web 标准。
 
 </div>
 
@@ -339,22 +339,22 @@ Use emerging web standards, today.
 
     <hr />
 
-    <h2 id="examples">Examples</h2>
+    <h2 id="section-1">示例</h2>
 
-    <p>Along with this code, check out the Dart tutorial
-<a href="/docs/tutorials/polymer-intro/">Define a Custom Element</a>.
-It shows you how to define, implement, and instantiate
-a custom element.</p>
+    <p>在查看下面代码的同时，记得看看 Dart 教程
+<a href="/docs/tutorials/polymer-intro/">定义一个自定义元素</a>。
+该教程告诉你如何定义、实现和初始化
+一个自定义元素。</p>
 
-    <h3 id="custom-elements">Custom elements</h3>
+    <h3 id="section-2">自定义元素</h3>
 
-    <p>Extend the lexicon of HTML with your own custom elements.</p>
+    <p>使用自定义元素扩展 HTML 标签。</p>
 
-    <p>This sample shows a simple custom element. More advanced custom elements
-can contain their own styles, custom behavior, attributes,
-data binding, and more.  </p>
+    <p>该示例显示了一个简单的自定义元素。高级的自定义元素
+可以包含样式、自定义行为、属性、数据绑定以及更多
+功能。</p>
 
-    <p>This HTML code defines a custom element:</p>
+    <p>下面的 HTML 代码定义了一个自定义元素：</p>
 
     <pre class="prettyprint lang-html">&lt;!-- hello_world.html --&gt;
 &lt;polymer-element name=&quot;<code class="nocode highlight">hello-world</code>&quot; noscript&gt;
@@ -363,7 +363,7 @@ data binding, and more.  </p>
   &lt;/template&gt;
 &lt;/polymer-element&gt;</pre>
 
-    <p>This HTML code <em>uses</em> the custom element:</p>
+    <p>下面的 HTML 代码_使用_ 了自定义元素：</p>
 
     <pre class="prettyprint lang-html">&lt;head&gt;
   &lt;link rel=&quot;import&quot; href=&quot;<code class="nocode highlight">hello_world.html</code>&quot;&gt;
@@ -375,14 +375,14 @@ data binding, and more.  </p>
   <code class="nocode highlight">&lt;hello-world&gt;&lt;/hello-world&gt;</code>
 &lt;/body&gt;</pre>
 
-    <h3 id="data-binding">Data binding</h3>
+    <h3 id="section-3">数据绑定</h3>
 
-    <p>Synchronize DOM nodes and object models using live, two-way data binding.</p>
+    <p>使用实时的双向数据绑定来同步 DOM 节点和对象模型的数据。</p>
 
-    <p>In this sample, the <code>count</code> field of <code>ClickCounterElement</code> is
-bound to the <code>{{count}}</code> placeholder in the custom
-element’s <code>&lt;template&gt;</code>. When the <code>count</code> field changes, the text also
-changes.</p>
+    <p>该示例中，<code>ClickCounterElement</code> 的 <code>count</code> 变量绑定
+到自定义元素 <code>&lt;template&gt;</code> 的 <code>{{count}}</code> 中。
+当 <code>count</code> 的值改变的时候， 元素的文本也跟着
+改变。</p>
 
     <pre class="prettyprint lang-html">&lt;polymer-element name=&quot;click-counter&quot;&gt;
   &lt;template&gt;
@@ -406,14 +406,14 @@ class ClickCounterElement extends PolymerElement {
   }
 }</pre>
 
-    <h3 id="custom-attributes">Custom attributes</h3>
+    <h3 id="attributes">自定义属性（attributes）</h3>
 
-    <p>Use attributes to configure the custom element.</p>
+    <p>用属性来配置自定义元素。</p>
 
-    <p>In this sample, the <code>count</code> field of <code>ClickCounterElement</code> is
-bound to the <code>{{count}}</code> placeholder in the custom
-element’s <code>&lt;template&gt;</code>. When the <code>count</code> field changes, the text also
-changes.</p>
+    <p>该示例中，<code>VolumeNobElement</code> 的 <code>volume</code> 变量绑定
+到自定义元素 <code>&lt;template&gt;</code> 的 <code>{{volume}}</code> 中。
+当 <code>volume</code> 的值改变的时候， 元素的文本也跟着
+改变。</p>
 
     <pre class="prettyprint lang-html">&lt;polymer-element name=&quot;volume-nob&quot;&gt;
   &lt;template&gt;
@@ -433,16 +433,16 @@ class VolumeNobElement extends PolymerElement {
   VolumeNobElement.created() : super.created();
 }</pre>
 
-    <p>Crank the volume like this:</p>
+    <p>可以通过如下自定义属性来初始化  volume 的值：</p>
 
     <pre class="prettyprint lang-html">&lt;volume-nob volume=&quot;11&quot;&gt;&lt;/volume-nob&gt;</pre>
 
-    <h3 id="template-conditionals">Template conditionals</h3>
+    <h3 id="section-4">条件模板</h3>
 
-    <p>Control the UI with declarative conditionals in templates.</p>
+    <p>通过在模板中声明式条件来控制 UI。</p>
 
-    <p>Template conditionals are part of the data binding infrastructure. If
-<code>count</code> changes, the templates are automatically re-evaluated.</p>
+    <p>条件模板是数据绑定的一部分。
+如果 <code>count</code> 值变了，模板自动重新计算。</p>
 
     <pre class="prettyprint lang-html">&lt;polymer-element name=&quot;click-counter&quot;&gt;
   &lt;template&gt;
@@ -471,14 +471,14 @@ class ClickCounterElement extends PolymerElement {
   }
 }</pre>
 
-    <h3 id="template-loops">Template loops</h3>
+    <h3 id="section-5">模板循环</h3>
 
-    <p>Loop through a collection, instantiating a template for every item in the
-collection.</p>
+    <p>遍历一个集合，为每个集合的元素应用
+一个模板。</p>
 
-    <p>Template loops are part of the data binding infrastructure. If an item is
-added or removed from <code>fruits</code>, the contents of <code>&lt;ul&gt;</code> are automatically
-updated.</p>
+    <p>模板循环是数据绑定的一部分。
+如果从 <code>fruits</code> 中删除或者添加元素，
+<code>&lt;ul&gt;</code> 的内容会自动更新。</p>
 
     <pre class="prettyprint lang-html">&lt;polymer-element name=&quot;fav-fruits&quot;&gt;
   &lt;template&gt;
@@ -502,9 +502,9 @@ class FavFruitsElement extends PolymerElement {
   FavFruitsElement.created() : super.created();
 }</pre>
 
-    <h3 id="extending-dom-elements">Extending DOM elements</h3>
+    <h3 id="dom-">扩展 DOM 元素</h3>
 
-    <p>Subclass real DOM elements.</p>
+    <p>继承真正的 DOM 元素。</p>
 
     <pre class="prettyprint lang-html">&lt;polymer-element name=&quot;fancy-button&quot; <code class="nocode highlight">extends=&quot;button&quot;</code>&gt;
   &lt;template&gt;
@@ -528,11 +528,12 @@ class FancyButton <code class="nocode highlight">extends ButtonElement with Poly
 
     <pre class="prettyprint lang-html">&lt;button <code class="nocode highlight">is=&quot;fancy-button&quot;</code>&gt;&lt;/button&gt;</pre>
 
-    <h3 id="packaging">Packaging</h3>
+    <h3 id="packaging-">Packaging 包</h3>
 
-    <p>Reuse and share custom elements with
-<a href="https://www.dartlang.org/docs/dart-up-and-running/contents/ch04-tools-pub.html">pub</a>,
-the Dart package manager.</p>
+    <p>通过
+<a href="https://www.dartlang.org/docs/dart-up-and-running/contents/ch04-tools-pub.html">pub</a>
+来分享和重用自定义元素，
+pub 为 Dart package manager(包管理器)。</p>
 
     <pre class="prettyprint lang-bash">&gt; pub install fancy_button</pre>
 
@@ -544,42 +545,43 @@ the Dart package manager.</p>
   &lt;button <code class="nocode highlight">is=&quot;fancy-button&quot;</code>&gt;Click me!&lt;/button&gt;
 &lt;/body&gt;</pre>
 
-    <h3 id="more-sample-code">More sample code</h3>
+    <h3 id="section-6">更多示例代码</h3>
 
-    <p>You can find lots and lots of snippets and
-<a href="https://github.com/sethladd/dart-polymer-dart-examples">sample code for polymer.dart</a>.
-Learn how to
-<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/bind_to_checkbox">bind to a checkbox</a>,
-<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/nested_templates">nest templates</a>,
-<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/call_method_on_custom_element">call a method on a custom element</a>,
-and much more. Please <a href="https://github.com/sethladd/dart-polymer-dart-examples/issues?state=open">let us know</a> if you have a request for a sample.</p>
+    <p>在
+<a href="https://github.com/sethladd/dart-polymer-dart-examples">polymer.dart 示例代码中</a>
+可以看到很多很多示例代码。
+学习如何
+<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/bind_to_checkbox">绑定到 checkbox</a>、
+<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/nested_templates">嵌套模板</a>、
+<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/call_method_on_custom_element">在自定义元素调用函数</a>、
+以及更多内容。 如果你需要一个新的示例，请 <a href="https://github.com/sethladd/dart-polymer-dart-examples/issues?state=open">告诉我们</a> 。</p>
 
     <hr />
 
-    <h2 id="installation">Installation</h2>
+    <h2 id="section-7">安装</h2>
 
-    <p>Get polymer.dart from <a href="http://pub.dartlang.org">pub</a>,
-the Dart package hosting service. Add the following to
-your <code>pubspec.yaml</code> file:</p>
+    <p>用 <a href="http://pub.dartlang.org">pub</a> 来
+安装 polymer.dart。
+在 <code>pubspec.yaml</code> 中添加如下代码即可：</p>
 
     <pre><code>dependencies:
   polymer: any
 </code></pre>
 
-    <p>Then, run <code>pub install</code> to download the package and link it into your app.</p>
+    <p>然后，运行 <code>pub install</code> 来下载该库并在代码中使用。</p>
 
-    <p>View the <a href="http://pub.dartlang.org/packages/polymer">polymer.dart pub page</a>
-to learn more.</p>
+    <p>查看 <a href="http://pub.dartlang.org/packages/polymer">polymer.dart pub 页面</a>
+了解更多内容。</p>
 
     <hr />
 
-    <h2 id="tools">Tools</h2>
+    <h2 id="section-8">工具</h2>
 
-    <p>Polymer.dart offers a linter that reports syntax or usage warnings.
-The linter can be connected to Dart Editor to display warnings directly
-at the source.</p>
+    <p>Polymer.dart 提供一个工具 linter 来报告语法和用法警告。
+linter 可以和 Dart 编辑器关联起来并直接
+的 代码中显示警告。</p>
 
-    <p>Create a <code>build.dart</code> file at the root of your project:</p>
+    <p>在项目根目录中创建一个 <code>build.dart</code> 文件：</p>
 
     <pre class="prettyprint lang-dart">import 'package:polymer/builder.dart';
 
@@ -588,72 +590,71 @@ void main() {
   build(entryPoints: ['web/index.html']);
 }</pre>
 
-    <p>Dart Editor runs <code>build.dart</code> after a file is saved, and
-displays warnings from the linter.</p>
+    <p>当保存文件的时候，Dart 编辑器运行  <code>build.dart</code> 并显示来自于
+linter 的警告信息。</p>
 
     <p><img src="polymer-warning-in-editor.png" /></p>
 
     <hr />
 
-    <h2 id="upgrading-from-web-ui">Upgrading from Web UI</h2>
+    <h2 id="web-ui-">从 Web UI 升级</h2>
 
-    <p>Polymer.dart is the next evolution of Web UI.</p>
+    <p>Polymer.dart 是 Web UI 的下一次革命。</p>
 
-    <p><a href="upgrading-to-polymer-from-web-ui.html">Upgrading to polymer.dart from Web UI</a>
-provides a non-exhaustive set of tips to help you upgrade.</p>
-
-    <hr />
-
-    <h2 id="compatibility">Compatibility</h2>
-
-    <p>Polymer.dart is tested against IE9, IE10, Safari 6, latest Chrome,
-latest Firefox, and latest Chrome for Android.</p>
-
-    <p>The Dart team collaborates with the Polymer team to
-ensure that polymer.dart elements and polyfills
-(code that implements features not yet built into a web browser)
-are fully compatible with Polymer.</p>
+    <p><a href="upgrading-to-polymer-from-web-ui.html">从  Web UI 升级到 polymer.dart </a>
+提供了一些提示来帮助你升级。</p>
 
     <hr />
 
-    <h2 id="support">Support</h2>
+    <h2 id="section-9">兼容性</h2>
 
-    <p>We actively encourage your feedback and questions.</p>
+    <p>Polymer.dart 在 IE9、 IE10、 Safari 6、最新的 Chrome、
+最新的 Firefox、 和最新的 Android 版 Chrome 上测试通过。</p>
+
+    <p>Dart 团队和 Polymer 团队相互协作一起保证 polymer.dart
+元素和 polyfills
+(目前还没包含在浏览器中的特性)
+能够完全兼容 Polymer。</p>
+
+    <hr />
+
+    <h2 id="section-10">支持</h2>
+
+    <p>我们非常期待你的建议和反馈。</p>
 
     <ul>
-      <li>Ask your <a href="http://stackoverflow.com/tags/dart">how-to questions</a> on StackOverflow</li>
-      <li>Join the <a href="https://groups.google.com/a/dartlang.org/forum/#!forum/web-ui">general discussion about polymer.dart</a> on our mailing
-list</li>
-      <li>Send <a href="https://groups.google.com/forum/?fromgroups=#!forum/polymer-dev">feedback on the web components family of specifications</a>
-to the polymer-dev mailing list
-(Not Dart specific.)</li>
-      <li>Please file <a href="http://dartbug.com/new">bugs and feature requests</a> for polymer.dart</li>
+      <li>在 StackOverflow 上询问 <a href="http://stackoverflow.com/tags/dart">如何办之类的问题</a> 。</li>
+      <li>加入我们的 <a href="https://groups.google.com/a/dartlang.org/forum/#!forum/web-ui">关于 polymer.dart 的日常讨论</a> 
+邮件列表。</li>
+      <li>给 polymer-dev 邮件列表来 <a href="https://groups.google.com/forum/?fromgroups=#!forum/polymer-dev">反馈 web 组件的相关问题</a>
+(该邮件列表和 Dart 无关)。</li>
+      <li>给 polymer.dart 提 <a href="http://dartbug.com/new">Bug 和功能请求</a> 。</li>
     </ul>
 
     <hr />
 
-    <h2 id="source-code">Source code</h2>
+    <h2 id="section-11">源代码</h2>
 
-    <p>Polymer.dart is open source. You can view the source to polymer.dart,
-and its many component packages, at <a href="https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/pkg/">dart.googlecode.com/</a>.
-<a href="https://code.google.com/p/dart/wiki/GettingTheSource">Get the source</a>
-to inspect the code and contribute patches.</p>
+    <p>Polymer.dart 是开源的。你可以在
+<a href="https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/pkg/">dart.googlecode.com/</a> 中
+查看 polymer.dart 代码和很多组件代码。
+<a href="https://code.google.com/p/dart/wiki/GettingTheSource">下载代码</a>
+来深入研究并贡献补丁。</p>
 
     <hr />
 
-    <h2 id="status">Status</h2>
+    <h2 id="section-12">状态</h2>
 
-    <p>Polymer.dart is a work in progress, just like Polymer.</p>
+    <p>Polymer.dart 和 Polymer 一样还在开发中。</p>
 
     <h3 id="web-ui-parity">Web UI parity</h3>
 
-    <p>Web UI is the precursor to polymer.dart. We believe Polymer.dart
-is at feature-parity with Web UI.</p>
+    <p>Web UI 是 polymer.dart 的先驱。
+我们认为 Polymer.dart 和 Web UI 在功能上是同等的。</p>
 
     <h3 id="polymer-parity">Polymer parity</h3>
 
-    <p>One of our goals is to make all of Polymer available
-to Dart developers.</p>
+    <p>我们的目标是让所有的 Polymer 功能都可以在 Dart 中使用。</p>
 
     <table class="table">
       <thead>
@@ -716,23 +717,21 @@ to Dart developers.</p>
 
     <hr />
 
-    <h2 id="tutorials">Tutorials</h2>
+    <h2 id="section-13">教程</h2>
 
-    <p><a href="/docs/tutorials/polymer-intro/">Define a Custom Element</a>,
-part of the
-<a href="/docs/tutorials/">Dart tutorials</a>,
-provides a detailed introduction to using Polymer.dart to create
-custom elements.
-You can also check out the other
-<a href="/docs/tutorials/polymer-intro/#what-next">examples</a>
-in the tutorials that use Polymer.</p>
-
+    <p>来自 <a href="/docs/tutorials/">Dart 教程</a> 的 
+<a href="/docs/tutorials/polymer-intro/">定义一个自定义元素</a>，
+介绍了如何使用  Polymer.dart 开发自定义
+元素的介绍。
+你也可以查看教程中的其他
+ Polymer 
+<a href="/docs/tutorials/polymer-intro/#what-next">示例</a>
+。</p>
     <hr />
 
-    <h2 id="additional-reading">Additional reading</h2>
+    <h2 id="section-14">附加读物</h2>
 
-    <p>The cultured Dartisan studies the specifications and articles that cover
-the lower-level primitives and features of the polymer.dart libraries.</p>
+    <p>下面是 polymer.dart 库的一些延伸性资料。阅读这些资料有利于你掌握 polymer.dart。</p>
 
     <h3 id="polymer">Polymer</h3>
 
@@ -742,7 +741,7 @@ the lower-level primitives and features of the polymer.dart libraries.</p>
 video featuring some of the lead members of Polymer.</li>
     </ul>
 
-    <h3 id="articles">Articles</h3>
+    <h3 id="section-15">文章</h3>
 
     <ul>
       <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/">HTML5Rocks - Shadow DOM 101</a></li>
@@ -751,7 +750,7 @@ video featuring some of the lead members of Polymer.</li>
       <li><a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">Custom elements - defining new elements in HTML</a></li>
     </ul>
 
-    <h3 id="specifications">Specifications</h3>
+    <h3 id="section-16">规范</h3>
 
     <p>Much of polymer.dart is built upon new and emerging web specifications.
 Polymer.dart offers polyfills for the following features.</p>
@@ -785,18 +784,6 @@ to instantiate document fragments with identical contents.</dd>
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -858,11 +845,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

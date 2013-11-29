@@ -218,7 +218,7 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/books/books/</loc>
-        <lastmod>2013-11-19T13:08:50+08:00</lastmod>
+        <lastmod>2013-11-29T15:44:12+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/codelabs/darrrt/codelabs/darrrt/</loc>
@@ -226,51 +226,51 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-1.html</loc>
-        <lastmod>2013-11-19T13:08:25+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-10.html</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-11.html</loc>
-        <lastmod>2013-11-19T13:08:51+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-2.html</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-3.html</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-4.html</loc>
-        <lastmod>2013-11-19T13:08:40+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-5.html</loc>
-        <lastmod>2013-11-19T13:08:47+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-6.html</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-7.html</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-8.html</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:04+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/dart-tips-ep-9.html</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-28T18:55:04+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/dart-tips/dart-tips/</loc>
-        <lastmod>2013-11-19T13:08:44+08:00</lastmod>
+        <lastmod>2013-11-28T11:49:54+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/docs/cookbook/docs/cookbook/</loc>
@@ -430,7 +430,7 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/docs/tutorials/indexeddb/docs/tutorials/indexeddb/</loc>
-        <lastmod>2013-11-25T10:35:27+08:00</lastmod>
+        <lastmod>2013-11-25T20:10:31+08:00</lastmod>
     </url>
     <url>
         <loc>
@@ -458,157 +458,157 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/performance/performance/</loc>
-        <lastmod>2013-11-19T13:08:21+08:00</lastmod>
+        <lastmod>2013-11-29T13:33:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/polymer-dart/polymer-dart/</loc>
-        <lastmod>2013-11-19T13:08:28+08:00</lastmod>
+        <lastmod>2013-11-29T16:53:47+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/polymer-dart/polymer-dart/upgrading-to-polymer-from-web-ui.html
         </loc>
-        <lastmod>2013-11-19T13:08:45+08:00</lastmod>
+        <lastmod>2013-11-29T17:27:32+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/anagram/samples/anagram/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T18:01:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/angular_todo/samples/angular_todo/</loc>
-        <lastmod>2013-11-19T13:08:47+08:00</lastmod>
+        <lastmod>2013-11-27T18:02:22+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/appcache/samples/appcache/</loc>
-        <lastmod>2013-11-19T13:08:40+08:00</lastmod>
+        <lastmod>2013-11-27T18:10:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/bouncing_balls/samples/bouncing_balls/</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-11-27T18:11:10+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/countdown/samples/countdown/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T18:16:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/dnd/samples/dnd/</loc>
-        <lastmod>2013-11-19T13:08:32+08:00</lastmod>
+        <lastmod>2013-11-27T18:19:47+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/dndfiles/samples/dndfiles/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T18:22:08+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/filesystem/samples/filesystem/</loc>
-        <lastmod>2013-11-19T13:08:48+08:00</lastmod>
+        <lastmod>2013-11-27T18:23:21+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/gauge/samples/gauge/</loc>
-        <lastmod>2013-11-19T13:08:40+08:00</lastmod>
+        <lastmod>2013-11-27T18:24:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/geolocation/samples/geolocation/</loc>
-        <lastmod>2013-11-19T13:08:33+08:00</lastmod>
+        <lastmod>2013-11-27T18:28:37+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/google_maps/samples/google_maps/</loc>
-        <lastmod>2013-11-19T13:08:23+08:00</lastmod>
+        <lastmod>2013-11-27T18:33:24+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/helloworld/samples/helloworld/</loc>
-        <lastmod>2013-11-19T13:08:36+08:00</lastmod>
+        <lastmod>2013-11-27T18:33:51+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/imagefilters/samples/imagefilters/</loc>
-        <lastmod>2013-11-19T13:08:33+08:00</lastmod>
+        <lastmod>2013-11-27T18:36:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/samples/</loc>
-        <lastmod>2013-11-19T13:08:36+08:00</lastmod>
+        <lastmod>2013-11-27T17:01:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/indexeddb_todo/samples/indexeddb_todo/</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-11-27T18:36:48+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/jsonp/samples/jsonp/</loc>
-        <lastmod>2013-11-19T13:08:42+08:00</lastmod>
+        <lastmod>2013-11-27T18:39:06+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/localstorage/samples/localstorage/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T18:40:12+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/multi_touch/samples/multi_touch/</loc>
-        <lastmod>2013-11-19T13:08:49+08:00</lastmod>
+        <lastmod>2013-11-27T18:41:05+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/notifications/samples/notifications/</loc>
-        <lastmod>2013-11-19T13:08:49+08:00</lastmod>
+        <lastmod>2013-11-27T18:43:41+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/raf/samples/raf/</loc>
-        <lastmod>2013-11-19T13:08:39+08:00</lastmod>
+        <lastmod>2013-11-27T18:45:02+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/recipe_book/samples/recipe_book/</loc>
-        <lastmod>2013-11-19T13:08:49+08:00</lastmod>
+        <lastmod>2013-11-27T18:45:55+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/searchable_list/samples/searchable_list/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T18:50:32+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/slambook/samples/slambook/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T18:53:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/solar/samples/solar/</loc>
-        <lastmod>2013-11-19T13:08:28+08:00</lastmod>
+        <lastmod>2013-11-27T18:53:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/solar3d/samples/solar3d/</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-11-27T18:54:14+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/stopwatch/samples/stopwatch/</loc>
-        <lastmod>2013-11-19T13:08:47+08:00</lastmod>
+        <lastmod>2013-11-27T18:57:55+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/swipe/samples/swipe/</loc>
-        <lastmod>2013-11-19T13:08:35+08:00</lastmod>
+        <lastmod>2013-11-27T19:01:00+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/terminal/samples/terminal/</loc>
-        <lastmod>2013-11-19T13:08:21+08:00</lastmod>
+        <lastmod>2013-11-27T19:02:38+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/todo/samples/todo/</loc>
-        <lastmod>2013-11-19T13:08:51+08:00</lastmod>
+        <lastmod>2013-11-27T19:03:24+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/todomvc/samples/todomvc/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T19:04:32+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/todo_with_delete/samples/todo_with_delete/</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-11-27T19:04:06+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/tracker/samples/tracker/</loc>
-        <lastmod>2013-11-19T13:08:24+08:00</lastmod>
+        <lastmod>2013-11-27T19:05:04+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/video/samples/video/</loc>
-        <lastmod>2013-11-19T13:08:49+08:00</lastmod>
+        <lastmod>2013-11-27T19:05:57+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/webaudio/samples/webaudio/</loc>
-        <lastmod>2013-11-19T13:08:36+08:00</lastmod>
+        <lastmod>2013-11-27T19:08:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/samples/websockets/samples/websockets/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-27T19:10:20+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/search.html</loc>
@@ -632,11 +632,11 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/slides/slides/</loc>
-        <lastmod>2013-11-19T13:08:46+08:00</lastmod>
+        <lastmod>2013-11-26T19:27:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/support/support/faq.html</loc>
-        <lastmod>2013-11-25T10:35:27+08:00</lastmod>
+        <lastmod>2013-11-29T17:28:15+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/support/support/</loc>
@@ -644,43 +644,43 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/dartium/tools/dartium/home.html</loc>
-        <lastmod>2013-11-19T13:08:18+08:00</lastmod>
+        <lastmod>2013-11-29T11:45:34+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/dartium/tools/dartium/</loc>
-        <lastmod>2013-11-19T13:08:36+08:00</lastmod>
+        <lastmod>2013-11-29T11:51:55+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/eclipse-plugin/tools/eclipse-plugin/</loc>
-        <lastmod>2013-11-19T13:08:36+08:00</lastmod>
+        <lastmod>2013-11-29T12:38:49+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/editor/tools/editor/build.html</loc>
-        <lastmod>2013-11-19T13:08:35+08:00</lastmod>
+        <lastmod>2013-11-29T11:40:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/editor/tools/editor/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-28T20:12:31+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/editor/tools/editor/troubleshoot.html</loc>
-        <lastmod>2013-11-19T13:08:20+08:00</lastmod>
+        <lastmod>2013-11-29T11:07:20+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/tools/</loc>
-        <lastmod>2013-11-19T13:08:43+08:00</lastmod>
+        <lastmod>2013-11-28T19:18:59+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/tools/private-files.html</loc>
-        <lastmod>2013-11-19T13:08:33+08:00</lastmod>
+        <lastmod>2013-11-28T19:34:45+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/sdk/tools/sdk/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-29T12:50:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tools/webstorm/tools/webstorm/</loc>
-        <lastmod>2013-11-19T13:08:48+08:00</lastmod>
+        <lastmod>2013-11-29T13:04:03+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/tos.html</loc>

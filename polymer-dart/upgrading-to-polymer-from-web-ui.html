@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Upgrading to Polymer.dart from Web UI | Dart: 用于创建结构化的web应用</title>
+  <title>从 Web UI 升级到 Polymer.dart  | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Upgrading to Polymer.dart from Web UI | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="从 Web UI 升级到 Polymer.dart  | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Learn tips for upgrading your Web UI app to Polymer.dart.">
+  <meta itemprop="description" content="学习一些升级 Web UI 到 Polymer.dart 的一些提示">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -200,90 +199,83 @@
   <div class="container">
   	<div class="container sub-page">
     <article class="has-permalinks">
-    <h1 id="upgrading-to-polymerdart-from-web-ui">Upgrading to Polymer.dart from Web UI</h1>
+    <h1 id="web-ui--polymerdart">从 Web UI 升级到 Polymer.dart</h1>
 
-<p>Here is a non-exhaustive list of tips for developers upgrading from
-Web UI to <a href="/polymer-dart/">polymer.dart</a>.</p>
+<p>这里是一些从 Web UI 升级到  <a href="/polymer-dart/">polymer.dart</a> 的一些开发者建议，并不完善。</p>
 
-<p>Do you have other tips for upgrading? Please send us a
+<p>如果你有任何升级建议，请给我们发送一个
+该页面的
 <a href="https://github.com/dart-lang/dartlang.org">pull request</a>
-for this page, or email your tips to
-<a href="https://groups.google.com/a/dartlang.org/forum/#!forum/web-ui">web-ui@dartlang.org</a>.
-Thanks in advance!</p>
+，或者发送你的建议到
+<a href="https://groups.google.com/a/dartlang.org/forum/#!forum/web-ui">web-ui@dartlang.org</a>。
+先谢谢您的支持！</p>
 
-<h3 id="getting-started">Getting Started</h3>
+<h3 id="section">开始</h3>
 
 <ul>
-  <li>We recommend creating a component for your “application” HTML page.
-Polymer believes that everything is a component.
+  <li>我们建议为你的 “application” HTML 页面创建一个组件。
+Polymer 认为任何东西都是一个组件。
     <ul>
-      <li>This enables Polymer-style event binding, which only works inside a
-polymer-element’s template.</li>
-      <li>This also sets up data binding to your component’s fields, and turns on
-<a href="http://pub.dartlang.org/packages/polymer_expressions">Polymer Expressions</a>
-in bindings.</li>
+      <li>这样可以使用 Polymer风格 的事件绑定，该功能只能在 
+polymer元素 模板中使用。</li>
+      <li>这样也设置了元素的数据绑定，并且启用了
+<a href="http://pub.dartlang.org/packages/polymer_expressions">Polymer 表达式</a>
+功能。</li>
     </ul>
   </li>
   <li>
-    <p>You can place <code>&lt;template&gt;</code> elements on the main HTML page, but they will <em>not</em>
-be bound to the main library’s scope. Polymer.dart does not support binding
-to a library scope, but you can instantiate a template by setting the
+    <p>你可以把 <code>&lt;template&gt;</code> 元素放到 main HTML 页面中，当他们并 <em>不会</em>
+绑定到 main 库作用域中。Polymer.dart 不支持绑定到库作用域，
+但是通过在 Dart 对象上设置
 <a href="http://api.dartlang.org/docs/releases/latest/dart_html/Element.html#model">model</a>
-to a Dart object.</p>
+你可以初始化一个模板。</p>
 
-    <p>The template of a polymer element <em>will</em> be instantiate automatically with
-itself as the model, providing convenient access to its fields, exactly like
-Web UI.</p>
+    <p>polymer 元素的模板 <em>将会</em> 自动初始化为模型，
+和 Web UI 一样提供了访问其内容的便利方法。</p>
   </li>
-  <li>To create an app that works when compiled to JavaScript, you need to first
-build it. See the
-<a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/deploy_to_javascript">deploy_to_javascript</a>
-and its <code>build.dart</code> file. Notice the <code>--deploy</code> argument.</li>
+  <li>要使应用编译为 JavaScript ，你需要先 build 应用。
+参考 <a href="https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/deploy_to_javascript">deploy_to_javascript</a>
+和它的 <code>build.dart</code> 文件。注意 <code>--deploy</code> 参数。</li>
 </ul>
 
-<h3 id="custom-elements">Custom Elements</h3>
+<h3 id="section-1">自定义元素</h3>
 
 <ul>
   <li>
-    <p>Use <code>&lt;polymer-element&gt;</code> instead of <code>&lt;element&gt;</code>.</p>
+    <p>用 <code>&lt;polymer-element&gt;</code> 替代 <code>&lt;element&gt;</code>。</p>
   </li>
   <li>
-    <p>The <code>extends</code> attribute on polymer-element is optional. If you use it,
-you should use the form of <code>&lt;div is="my-element"&gt;</code>. If you omit the
-<code>extends</code> attribute, you are safe to use <code>&lt;my-element&gt;</code>.</p>
+    <p>polymer-element 元素的 <code>extends</code> 属性是可选的。如果
+你使用了该元素，则应该使用 <code>&lt;div is="my-element"&gt;</code> 这种格式；如果你没有用
+<code>extends</code> 属性，则可以直接使用 <code>&lt;my-element&gt;</code>。</p>
 
-    <p>If you extend a DOM element, you must also extend that element type
-in your Dart class for the custom element.</p>
+    <p>如果你继承了 DOM 元素，则实现自定义元素的 Dart 类也需要继承对应的
+元素类型。</p>
   </li>
   <li>
-    <p>The <code>constructor</code> attribute on polymer-element is no longer used.</p>
+    <p>polymer-element 的 <code>constructor</code> 属性已经失效。</p>
   </li>
   <li>
-    <p>If your custom element does not have a corresponding Dart class,
-put a <code>noscript</code> attribute on <code>&lt;polymer-element&gt;</code>.</p>
+    <p>如果你的自定义元素没有对应的 Dart 类，
+在 <code>&lt;polymer-element&gt;</code> 元素中添加一个 <code>noscript</code> 属性。</p>
   </li>
   <li>
-    <p>The Dart class for the custom element must <em>registered</em>.
-An easy way to register your class is to use the
-<code>@CustomTag('element-name')</code> annotation.
-Alternatively, you can register it manually by calling
-<code>registerPolymerElement</code>.</p>
+    <p>自定义元素的 Dart 类必需 <em>注册过</em>。
+用 <code>@CustomTag('element-name')</code> 注解可以很方便的注册 Dart 类。
+你也可以手工的调用函数 <code>registerPolymerElement</code> 来注册。</p>
   </li>
   <li>
-    <p>You <strong>must</strong> call <code>super.created()</code> in your <code>created()</code> named constructor.
-It is recommended to call the super methods
-from <code>enteredView</code> and <code>leftView</code> as well, if you
-are inheriting from another custom element.</p>
+    <p>在 <code>created()</code> 命名构造函数中 <strong>必需</strong> 调用 <code>super.created()</code> 。
+ 如果你在继承其他自定义元素， 
+在 <code>enteredView</code> 和 <code>leftView</code> 也推荐调用 super 函数。</p>
   </li>
   <li>
-    <p>Go through <code>shadowRoot</code> to find nodes inside of your custom element.
-If the node has an ID, you can use “automatic node finding” like
-this: <code>$['the-id']</code> (which returns the element).</p>
+    <p>用 <code>shadowRoot</code> 来查找你自定义元素内的节点。
+如果节点具有 ID 属性，则可以用 <code>$['the-id']</code> 这种”自动节点查找”方式来查找。</p>
   </li>
   <li>
-    <p>The <code>apply-author-styles</code> attribute (which used to be on the
-<code>&lt;polymer-element&gt;</code> tag)
-is now retrieved as a getter property on the class for the custom element.
+    <p><code>&lt;polymer-element&gt;</code>的 <code>apply-author-styles</code> 属性
+现在有个 getter 可以获取 CSS 样式内容了：
 e.g.:</p>
 
     <p>class MyElement extends PolymerElement {
@@ -292,75 +284,72 @@ e.g.:</p>
   }</p>
   </li>
   <li>
-    <p>Declarative event handing only works inside of a custom element.
-Also, instead of <code>on-click="doFoo()"</code>, drop the parens and use
-‘on-click=”{{doFoo}}”’.</p>
+    <p>声明式事件处理方式只能在自定义元素内使用。
+另外 也可以用  ‘on-click=”{{doFoo}}”’. 来替代 <code>on-click="doFoo()"</code>。</p>
   </li>
   <li>
-    <p>Hyphenated custom attributes are no longer supported. You can now
-write: <code>&lt;foo-bar myPropertyName=""&gt;</code>.</p>
+    <p>不再支持带有连字号的自定义属性。 你现在可以用
+： <code>&lt;foo-bar myPropertyName=""&gt;</code>。</p>
   </li>
 </ul>
 
-<h3 id="data-binding">Data Binding</h3>
+<h3 id="section-2">数据绑定</h3>
 
 <ul>
   <li>
-    <p>Objects <strong>must</strong> be Observable to have changes detected. See the
-<a href="http://api.dartlang.org/docs/releases/latest/observe.html">observe</a>
-library for more information.</p>
+    <p>对象要检测改变事件 <strong>必需</strong> 实现 Observable。
+查看 <a href="http://api.dartlang.org/docs/releases/latest/observe.html">observe</a>
+库了解详情。</p>
   </li>
   <li>
-    <p>Data binding expressions are now
-<a href="http://pub.dartlang.org/packages/polymer_expressions">Polymer Expressions</a>
-instead of Dart expressions. Polymer Expressions are a powerful data binding
-language which offers null safety and convenient filterting operations.</p>
+    <p>现在用 
+<a href="http://pub.dartlang.org/packages/polymer_expressions">Polymer 表达式</a>
+替代绑定数据中的 Dart 表达式。 Polymer 表达式 是更强大的数据绑定语言，
+其提供了便利的过滤操作和 null 值的安全使用。</p>
   </li>
   <li>
-    <p>Getters are no longer observable. Instead, use
-<a href="http://api.dartlang.org/docs/releases/latest/observe.html#onPropertyChange">onPropertyChange</a> and
+    <p>Getters 不再是 observable 了的。需要在  <code>created</code> 回调函数中用
+<a href="http://api.dartlang.org/docs/releases/latest/observe.html#onPropertyChange">onPropertyChange</a> 和
 <a href="http://api.dartlang.org/docs/releases/latest/observe.html#notifyProperty">notifyProperty</a>
-in the <code>created</code> callback to let the system know that the computed getter has
-changed whenever its dependencies have changed. You can use other helpers from
-the observe library too, such as
+来让系统知道该值已经改变了。你可以使用 observe 库中的其他辅助功能，
+例如，
 <a href="http://api.dartlang.org/docs/releases/latest/observe/PathObserver.html">PathObserver</a>
-and <a href="http://api.dartlang.org/docs/releases/latest/observe/ListPathObserver.html">ListPathObserver</a>.</p>
+和 <a href="http://api.dartlang.org/docs/releases/latest/observe/ListPathObserver.html">ListPathObserver</a>.</p>
   </li>
   <li>
-    <p>The name of the modified
+    <p>修改的
 <a href="http://api.dartlang.org/docs/releases/latest/observe/PropertyChangeRecord.html#field">field</a>
-is now a Symbol instead of a String.</p>
+的名字现在为 Symbol ，而不是 String 了。</p>
   </li>
   <li>
-    <p>Null is treated as false in <code>template if</code> expressions.
-Non-null and non-false values are treated as true.
-There are known issues with this, please track
-<a href="https://code.google.com/p/dart/issues/detail?id=13044">issue 13044</a>.</p>
+    <p>在 <code>template if</code> 表达式中 Null 为 false。
+Non-null 和 non-false 值为 true。
+关于该问题有还有 Bug，请查看
+<a href="https://code.google.com/p/dart/issues/detail?id=13044">issue 13044</a>。</p>
   </li>
   <li>
-    <p>The <code>iterate</code> attribute no longer exists on template, use <code>repeat</code> instead.</p>
+    <p>使用 <code>repeat</code> 属性替代模板中的 <code>iterate</code> 属性。</p>
   </li>
   <li>
-    <p>Polymer.dart does not support the <code>instantiate</code> attribute on the template
-tag. To instantiate a template, simply bind a model to it, and ensure the
-template has a <code>bind</code> attribute.</p>
+    <p>Polymer.dart 不支持模板标签的 <code>instantiate</code> 属性。
+要初始化一个模板，只要绑定其模型即可，需要确保模板有个 <code>bind</code> 属性。</p>
 
-    <p>If you were using <code>instantiate</code> with a conditional, use <code>if</code>.</p>
+    <p>用 <code>if</code> 替代条件中的 <code>instantiate</code> 。</p>
   </li>
-  <li>All data binding expressions in Polymer.dart require ``, including
-template <code>if</code> and <code>repeat</code>.
+  <li>Polymer.dart 中的所有数据绑定表达式都需要 ``，
+模板中的<code>if</code> 和 <code>repeat</code> 也需要。
     <ul>
-      <li>Old Web UI: <code>template instantiate="some boolean"</code>.</li>
-      <li>New Polymer.dart: <code>template if=""</code>.</li>
+      <li>旧的 Web UI: <code>template instantiate="some boolean"</code>.</li>
+      <li>新的 Polymer.dart: <code>template if=""</code>.</li>
     </ul>
   </li>
-  <li>You no longer need <code>bind-</code> when binding to an input field. Instead, do this:
+  <li>当绑定到 input 元素的时候，不需要使用 <code>bind-</code>了，使用如下方式：
 <code>&lt;input type="text" value=""&gt;</code>.</li>
 </ul>
 
-<h3 id="tips-from-the-community">Tips from the community</h3>
+<h3 id="section-3">来做社区的建议</h3>
 
-<p>Matthew Butler shared some tips for upgrading from Web UI to Polymer.</p>
+<p>Matthew Butler 分享了一些从 Web UI 升级到 Polymer 的建议。</p>
 
 <ul>
   <li><a href="http://blog.butlermatt.me/?p=13">Upgrading from Web UI to Polymer, part 1</a></li>
@@ -374,18 +363,6 @@ template <code>if</code> and <code>repeat</code>.
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -447,11 +424,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 

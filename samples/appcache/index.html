@@ -6,11 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Using Application Cache | Dart: 用于创建结构化的web应用</title>
+  <title>使用 Application Cache | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
-  <meta name="baidu-site-verification" content="da779426693d8f9a3be30d07947f52ba"/>
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Using Application Cache | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="使用 Application Cache | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
@@ -157,7 +156,7 @@
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
-                <li><a href="/dart-tips/">Dart 技巧视频</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
@@ -186,7 +185,7 @@
             </li>
             <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
             <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
-            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-gplus"><img src="/imgs/weibo.png"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
           </ul>
         </div><!-- /.nav-collapse -->
 
@@ -200,34 +199,35 @@
   <div class="container">
   	<div class="container sub-page">
     <article>
-    <h2 id="using-application-cache">Using Application Cache</h2>
+    <h2 id="application-cache">使用 Application Cache</h2>
 
-<p>A simple example to show the use of the Application Cache interface.</p>
+<p>如何使用 Application Cache 接口的示例。</p>
 
-<p>For a thorough exploration of this topic, read
-<a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/">A Beginner’s Guide to Using the Application
-Cache</a>,
-an article by Eric Bidelman originally published on HTML5Rocks.</p>
+<p>关于该主题的详细信息，请参考
+<a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/">Application
+Cache 上手指南</a>，
+这是由 Eric Bidelman 发表在  HTML5Rocks 的文章。</p>
 
-<p>Application Cache allows you to specify which files the browser should cache
-and make available to offline users. Your app will
-load and work correctly, even if the user presses the refresh button while
-offline.</p>
+<p>Application Cache 可以告诉浏览器那些文件需要缓存
+以便离线使用。这样，
+即便用户在离线情况下点击刷新按钮
+你的应用依然能够正常使用。</p>
 
-<p>You can open the example in Dart Editor and run it by clicking <code>index.html</code>.</p>
+<p>你可以在 Dart 编辑器打开该示例，选中  <code>index.html</code> 来运行。</p>
 
-<p>To see this example in action, make changes to <code>index.html</code> and then reload
-the app. Your changes don’t show up because the browser displays a cached
-version of <code>index.html</code>. Next, change the date or version number in
-appcache.mf, and reload once more. You’ll be prompted to load the new version.</p>
+<p>要查看该示例的效果，则修改 <code>index.html</code> 文件并重新打开该
+应用。由于浏览器用了缓存版本的 <code>index.html</code> 所以
+你的修改内容并没有显示出来。然后在
+appcache.mf 中修改版本和日期并再次运行该应用。
+现在就会加载新版本的网页了。</p>
 
-<p>Read the
-<a href="https://github.com/dart-lang/dart-samples/tree/master/web/html5/appcache/beginner">source</a>.</p>
+<p>查看
+<a href="https://github.com/dart-lang/dart-samples/tree/master/web/html5/appcache/beginner">源代码</a>。</p>
 
 <iframe class="running-app-frame" style="height:500px;width:100%;" src="example/index.html">
 </iframe>
 
-<p>See all <a href="/samples/">samples</a>.</p>
+<p>查看所有 <a href="/samples/">示例</a>。</p>
 
     </article>
     
@@ -236,18 +236,6 @@ appcache.mf, and reload once more. You’ll be prompted to load the new version.
   </div>
 </div>
 
-	<!-- Baidu Button BEGIN -->
-	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare alignRight">
-	<span class="bds_more">分享到：</span>
-	<a class="bds_qzone"></a>
-	<a class="bds_tsina"></a>
-	<a class="bds_tqq"></a>
-	<a class="bds_renren"></a>
-	<a class="bds_t163"></a>
-	<a class="shareCount"></a>
-	</div>
-	<!-- Baidu Button END -->
-	
   <footer class="footer container-full">
     <div class="container">
       <div class="row">
@@ -309,11 +297,14 @@ var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " 
 document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
 </script>
 
-<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=590574" ></script>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
-document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
 </script>
+<!-- Baidu Button END -->
 </body>
 </html>
 
