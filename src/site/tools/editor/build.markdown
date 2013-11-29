@@ -1,83 +1,82 @@
 ---
 layout: default
-title: "Build.dart and the Dart Editor Build System"
-description: "Customize your Dart Editor build with build.dart."
+title: "Build.dart 和 Dart 编辑器 Build 系统"
+description: "使用 build.dart 来改变 Dart 编辑器 build 过程。"
 has-permalinks: false
 ---
 
 # {{page.title}} 
 
-Build.dart is a simple build script convention
-that lets you add behavior to the Dart Editor build system.
-If the root of a Dart Editor project has a script named `build.dart`,
-that script is invoked during a build
-with information about the changed files.
-You can use build.dart to post-process changed files,
-generate other files,
-or drive other aspects of the build system.  
+Build.dart 是一个简单的 build 脚本，可以在 Dart 编辑器
+build 系统中添加自定义行为。
+如果 Dart 编辑器项目根目录中有名字为 `build.dart` 的脚本文件，
+则在 build 的时候会调用该文件。
+你可以使用 build.dart 来处理修改过的文件，
+生成其他文件，
+或者 修改 build 系统的其他行为。
 
 {% include toc.html %}
 
 
 ## Flags
 
-Dart Editor can invoke build.dart with
-any of the following command-line flags:
+Dart 编辑器 可以使用如下标记来
+调用 build.dart ：
 
 `--changed=<filename>`
-: Specifies a file that changed and should be rebuilt.
-  One instance of the `--changed` flag is passed in for every changed file.
+：指定一个文件修改过了，需要重新 build。
+    对于每个修改过的文件，都会指定 `--changed` 标记。
 
 `--removed=<filename>`
-: Specifies a file that was removed and might affect the build.
-  One instance of the `--removed` flag is passed in for every deleted file.
+：指定该文件被删除了，可能影响 build 过程。
+   对于每个删除的文件 都会指定 `--removed` 标记。
 
 `--clean`
-: Requests that the build.dart script delete all generated files
-  and reset any saved state.
-  No other flags are passed in,
-  except for `--machine`.
+： 请求 build.dart 脚本删除所有生成的文件，
+  并重置所有保存的设置。
+  除了`--machine` 不用
+  设置其他标记。
 
 `--full`
-: Requests a full build;
-  no incremental information is available.
+： 请求重新 build，
+  所有的增量 build 都失效。
 
 `--machine`
-: Requests the build.dart script
-  to print rich JSON error messages to the standard output (stdout),
-  so that Dart Editor can interpret the messages.
+： 请求  build.dart 在 标准输出(stdout) 打印
+  JSON 格式的错误信息，
+  这样在 Dart 编辑器中可以显示这些信息。
 
 `--deploy`
-: Creates a directory containing the files needed to deploy this
-  application to a server.
-  Used only for the <a href="/polymer-dart">Polymer.dart</a>
-  linter and build tool.
-  You can find more information in the polymer library file
-  [builder.dart](https://code.google.com/p/dart/source/browse/trunk/dart/pkg/polymer/lib/builder.dart).
+：创建一个目录，里面包含把该应用部署到服务器的
+   文件。
+  只用于 <a href="/polymer-dart">Polymer.dart</a>
+  linter 和 build 工具。
+  在 polymer library 的
+  [builder.dart](https://code.google.com/p/dart/source/browse/trunk/dart/pkg/polymer/lib/builder.dart)
+  中可以查看更多信息。
 
-Currently, the editor always passes the `--machine` flag
-into the build script.
-The other flags include either a single `--full` flag,
-a single `--clean` flag,
-or one or more `--changed` and `--removed` flags.
+当前，编辑器总是
+指定 `--machine` 标记。
+其他标记，例如 一个`--full`、 一个 `--clean`、一个或者多个 `--changed` 和 `--removed` 标记
+都可以指定。
 
-If a build script returns a non-zero exit code,
-all the stdout and stderr produced by the script
-is displayed in the Console view.
-Zero exit codes do _not_ display any output;
-build.dart is usually called many times a minute,
-and having the Console view always scrolling output
-would be distracting to the user.
+如果 build 脚本返回非零的退出代码，
+则脚本生成的所有 stdout 和 stderr 都
+会显示在控制台视图中。
+零退出代码 _不会_ 显示任何输出信息，
+build.dart 通常会调用多少，
+如果不停的在控制台视图显示
+滚动信息则会干扰用户。
 
-Any changes that build.dart makes within a directory named `out`
-are _not_ fed back into build.dart using `--changed` flags.
-Any other changed or created files _are_ fed back.
+build.dart 在名字为 `out` 目录中所做的改动
+使用 `--changed` 标记_不会_ 反馈到 build.dart 中。
+其他的文件改动或创建文件 _都会_ 反馈。
 
 
-## An example
+## 一个示例
 
-Here is a sample build.dart file
-that processes all .foo files into .foobar files.
+下面是一个把所有 .foo 文件处理为 .foobar 文件
+的 build.dart 脚本。
 {% comment %}
 NOTE: This sample is based on
 https://code.google.com/p/dart/source/browse/trunk/dart/samples/build_dart_simple/build.dart
@@ -88,42 +87,41 @@ https://code.google.com/p/dart/source/browse/trunk/dart/samples/build_dart_simpl
 {% endprettify %}
 
 
-## The machine interface
+## machine 接口
 
-Sometimes the build.dart script needs to
-get information back to the editor.
-The general mechanism for doing this is
-for the editor to scrape the stdout from build.dart,
-looking for well-formed messages.
-When Dart Editor starts build.dart,
-it passes in a `--machine` flag
-indicating that the editor is looking for
-well-formed messages.
+有时 build.dart 脚本需要反馈信息
+给编辑器。script needs to
+编辑器通常通过扫描 build.dart 输出
+到 stdout 的特定
+内容来实现该功能。
+当 Dart 编辑器 启动 build.dart 的时候，
+会指定一个 `--machine` 标记说明
+编辑器需要特定格式的信息。
 
-Well-formed messages follow these rules:
+特定格式的信息遵守如下规则：
 
-* Each message is on its own line.
-* Each message is formed as a JSON RPC command/method call.
-* Each message is wrapped in square brackets.
+* 每个信息都独立位于一行。
+* 每个信息都格式化为 JSON RPC 命令/函数 。
+* 每个消息都在方括号中。
 
-The next sections give examples of two kinds of messages:
+下面显示两种类型信息：
 
-* Errors, warnings, and informational messages
-* File mappings
+* Errors、 warnings、和其他信息
+* File 映射
 
-### Errors, warnings, and informational messages
+### Errors、 warnings、和其他信息
 
-As build.dart processes input files,
-it might call out some input files as badly formed,
-using **error** or **warning** messages.
-You can also generate informational (**info**) messages—for
-example, scraping TODO messages from user code.
-The editor uses these messages
-to create markers for the given file and line combination,
-and it displays the messages in the Problems view.
+当 build.dart 处理输入文件的时候，
+使用 **error** 或者 **warning** 消息来显示
+一些错误格式的文件。
+也可以生成一般 (**info**) 信息，
+例如，扫描用户代码中的 TODO 信息。
+编辑器用这些信息来标记
+文件和代码行，
+并且在 问题视图 中显示这些信息。
 
-Here is an example of stdout
-that contains error and warning messages:
+下面是 stdout 中包含
+ error 和  warning 信息的示例：
 
 {% prettify json %}
 [{"method":"error","params":{"file":"foo.html","line":23,"message":"no ID found"}}]
@@ -133,71 +131,68 @@ that contains error and warning messages:
 [{"method":"error","params":{"file":"foo.html","line":23,"message":"no ID found","charStart"=123,"charEnd"=130}}]
 {% endprettify %}
 
-The JSON RPC method name for these messages
-can be **error**, **warning**, or **info**.
-The parameters are:
+JSON RPC 函数名字可以为
+ **error**、 **warning**、或者 **info**。
+参数为：
 
 file
-: An absolute or script relative file path
+： 相对的或者绝对的脚本文件名
 
 line
-: The line with the error or warning (1-based)
+：错误或者警告的行数，从 1 开始。
 
 message
-: A message to display to the user
+： 显示给用户的信息。
 
 charStart
-: The starting position of the error from the beginning of the file (0-based)
+： 文件出错的字符开始位置，从 0 开始。
 
 charEnd
-: The ending position of the error from the beginning of the file (0-based)
+： 文件出错的字符结束位置，从 0 开始。
 
-The charStart and charEnd parameters are optional but encouraged.
-Including them allows the editor to provide
-nice tooltip help for the error or warning.
+charStart 和 charEnd 参数是可选的，但是建议提供。
+包含这两个信息，编辑器可以提供友好的
+ tooltip 信息来显示 错误和警告。
 
 
-### File mappings
+### File 映射
 
-When a build.dart script generates an output file from an input file,
-the script can tell the editor about this mapping.
+当 build.dart 脚本从输入文件生成输出文件的时候，
+脚本可以告诉编辑器这些文件之间的映射关系。
 
 <aside class="alert alert-info" markdown="1">
-**Note:**
-Not all mappings need to be reported to the editor—just
-the ones where the mapping is semantically important to the user
-and special editor behavior is desired.
+**注意：**
+并不是所有的映射关系都需要告诉编辑器，
+只有一些对用户非常重要的映射才需要。
 </aside>
 
-When you specify a file mapping,
-Dart Editor redirects HTTP requests
-and replaces launch attempts
-so that they use the mapped-to file.
-For example,
-if you map `index.html` to `out/index.html`,
-Dart Editor redirects HTTP requests from `index.html` to `out/index.html`,
-and it replaces the user’s attempt to launch `index.html`
-with a launch of `out/index.html`.
+当指定文件映射的时候，
+Dart 编辑器 重定向 HTTP 请求并
+使用映射的文件。
+例如，
+如果你把 `index.html` 映射到 `out/index.html`，
+Dart 编辑器把请求 `index.html` 文件的请求重定向为  `out/index.html`，
+并启动 `out/index.html` 文件来替代 `index.html`。
 
-Here's an example of mapping foo.html to out/foo.html:
+下面是一个示例把 foo.html 映射到  out/foo.html：
 
 {% prettify json %}
 [{"method":"mapping","params":{"from":"foo.html","to":"out/foo.html"}}]
 {% endprettify %}
 
-The JSON RPC method name for a file mapping is **mapping**.
-The parameters are:
+文件映射的 JSON RPC 函数名字为 **mapping**。
+参数为：
 
 from
-: An absolute or script relative file path
+：相对于脚本或者绝对的 文件路径。
 
 to
-: An absolute or script relative file path
+：相对于脚本或者绝对的 文件路径。
 
 
-## More examples
+## 更多示例
 
-You might find the following examples of build files helpful:
+如下代码对于理解 build.dart 文件可能会有帮助：
 
 * [dart/samples/build_dart/build.dart](https://code.google.com/p/dart/source/browse/trunk/dart/samples/build_dart/build.dart)
 * Web UI: 
