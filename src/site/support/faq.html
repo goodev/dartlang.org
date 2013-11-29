@@ -214,23 +214,23 @@ String MakeGreeting(String name) {
 
 <p>对于那些比 Dart 更动态的语言：Dart 谨慎的移除了这种随意的运行时修改，以带来更好的性能和优秀的工具。</p>
 
-<h3 id="earth-shattering-syntactic-kaboom">Q. Why isn't Dart syntax more exciting?</h3>
+<h3 id="earth-shattering-syntactic-kaboom">问题：为什么 Dart 的语法不那么令人兴奋？</h3>
 
-<p>We did throw in some nice syntactic features such as <code>this.</code> constructor args, but we'd agree that Dart chooses familiarity over excitement.  One team member's personal testimonial: "I wish it had a little more razzle dazzle but I can't deny that literally on my first day of writing Dart code, I was productive in it."</p>
+<p>我们添加了一下优秀的语法特征，例如<code>this.</code>构造器参数，但是我们一致赞同 Dart 选择熟悉的语法更好。下面是一个团队成员个人见证：“我希望 Dart 拥有更多酷炫的特点，但是我不能否认当我开始用它写代码起，我是很有成效的。”</p>
 
-<h3 id="is-it-a-dynamic-language">Q. Is it really a dynamic language if it doesn't have eval() or adding fields to a value at run time?</h3>
+<h3 id="is-it-a-dynamic-language">问题：如果没有 eval()函数和运行时动态类型绑定，Dart 还能算是动态语言么？</h3>
 
-<p>Dart as initially released didn't have anything like these, but future versions of Dart will look at adding dynamic features of this sort.  The feature set won't match up exactly with the features in your question, but we hope to serve very much the same purposes.  When we see what gets added, then everyone can decide how they classify the language.</p>
+<p>作为最初发布的版本没有这些特点，但Dart的未来版本将考虑添加这样的动态特性。可能不会原封不动的添加问题中提到的特点，但我们希望能提供相类似的功能。当我们看到这些功能被添加后，那么每个人都可以确定这门语言的分类。</p>
 
-<p>What's important to us is that what you want to do with a dynamic language, you can do with Dart and not feel cramped.  You should be able to design your system without interference from static rules, and to modify the live system during development and sometimes at run time.</p>
+<p>对我们重要的是你想要用一门动态语言实现什么，并且你可以用 Dart 实现而不感到受约束。你应该能够设计自己的系统，而不会受静态规则的干扰，并在开发或运行过程中进行动态的修改。</p>
 
-<p>So, for example, Dart isn't likely to support evaluating a string as code in the current context, but it may support loading that code dynamically into a new isolate.  Dart isn't likely to support adding fields to a value, but it may (through a mirror system) support adding fields to a class, and you can effectively add methods using <code>noSuchMethod()</code>.  Using these features will have a runtime cost; it's important to us to minimize the cost for programs that don't use them.</p>
+<p>因此，举例来说，Dart 是不太可能支持在当前的运行环境中求一个字符串的数值的，但是它可以支持动态加载那种代码到一个新的分离物。dart 是不太可能支持为一个实例值添加字段，但它可能会（通过一个反射系统）支持将字段添加到一个类，并且你可以用<code>noSuchMethod()</code>来添加方法。使用这些功能将会增加运行时的成本，不使用他们进而最小化程序的资源消耗对我们是非常重要的。</p>
 
-<p>This area is still under development, so we welcome your thoughts on what you need from runtime dynamism.</p>
+<p>这个地方还没有进行开发，所以我们欢迎你提出需要的关于运行时动态特征的想法。</p>
 
-<h3 id="can-add-reflection">Q. Can Dart add reflection?</h3>
+<h3 id="can-add-reflection">问题：Dart会添加反射么？</h3>
 
-<p>We are currently in the process of adding reflection support using the <a href="/articles/reflection-with-mirrors/">mirrors API</a>.</p>
+<p>我们目前正在进行添加反射功能的开发，它使用<a href="/articles/reflection-with-mirrors/">mirrors API</a>。</p>
 
 <h3 id="can-add-everything">Q. Can Dart add tuples, pattern matching, non-nullable types, partial evaluation, optional semicolons, ...?</h3>
 
