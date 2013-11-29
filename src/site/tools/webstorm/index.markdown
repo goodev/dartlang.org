@@ -1,81 +1,78 @@
 ---
 layout: default
-title: "Dart plugin for WebStorm, IntelliJ IDEA, PhpStorm, PyCharm, and RubyMine"
-description: "Use Dart with a variety of IDEs and editors from JetBrains."
+title: "用于  WebStorm、 IntelliJ IDEA、 PhpStorm、 PyCharm、 和 RubyMine 的 Dart 插件"
+description: "在 JetBrains 的各种 IDE 中使用 Dart 插件"
 has-permalinks: false
 ---
 
-# Dart plugin from JetBrains
+# JetBrain 的 Dart 插件
 
-## For WebStorm, IntelliJ IDEA, PhpStorm, PyCharm, and RubyMine
+## 用于  WebStorm、 IntelliJ IDEA、 PhpStorm、 PyCharm、 和 RubyMine 的 Dart 插件
 
-The [Dart plugin][plugin] for [WebStorm][ws] JavaScript IDE offers advanced support
-for the Dart language. This plugin is also available for other IntelliJ
-Platform-based IDEs: IntelliJ IDEA, PhpStorm, PyCharm, and RubyMine. It provides
-intelligent coding assistance for Dart and allows developers to debug, run and
-test Dart applications right in the IDE.
+给 [WebStorm][ws] JavaScript IDE 提供的 [Dart 插件][plugin] 支持了
+Dart 语言。该插件还支持 IntelliJ 平台的 IDE：包
+含 IntelliJ IDEA、 PhpStorm、 PyCharm、 和 RubyMine。
+这些 IDE 提供了智能的代码辅助并且可以让开发者直接在 IDE中 调试、运行和测试 Dart 应用。
 
-For developers looking for a more complete development experience with Dart,
-WebStorm and other JetBrains IDEs provide integration with VCS, configurable
-deployment, and a smart code editor with support for a wide range of
-technologies for web development.
+对于寻找完整的开发功能的开发者，
+WebStorm 和其他 JetBrains IDE 提供了和 VCS 的集成，支持可配置的部署，
+以及 支持 Web 开发的编辑器。
 
-## Plugin Features
+## 插件功能
 
-### Intelligent syntax highlighting and code completion
+### 智能语法高亮和代码辅助
 
-IDE understands Dart syntax and automatically provides appropriate code
-completion. Custom settings can be added for the formatting and highlighting of
-Dart code:
+IDE 理解 Dart 语法并自动提供合适的代码辅助。
+支持自定义格式化和
+高亮 Dart 代码：
 
 ![Code completion](imgs/1completion.png)
 
-### Debugging Dart web apps with Dartium
+### 用 Dartium 调试 Dart web 应用
 
-Start debugging Dart web apps in just one click from the file context menu. The
-IDE will start Dartium and give you access to the full-featured debugger.
+只需点击一次文件的上下文菜单就可以调试 Dart web 应用。
+IDE 支持启动 Dartium 并可以访问调试器的全部功能。
 
 ![Debugging](imgs/2debug.png)
 
-### Package management
+### Package 管理
 
-Use the pub tool without leaving the IDE: Upgrade Dependencies and Build actions
-are available in the context menu of the pubspec.yaml file:
+在 IDE 中直接使用 pub：在 pubspec.yaml 文件上下文菜单中包含
+更新依赖项和 build 行为：
 
 ![Package management](imgs/3dependencies.png)
 
-### Smart refactorings
+### 智能重构
 
-Smart refactorings for Dart allow you to do safe rename, extract methods,
-variables and constants:
+智能重构可以让你安全的重命名、提取函数、变
+量和常量：
 
 ![Refactoring](imgs/4refactoring.png)
 
-### Code navigation
+### 代码导航
 
-Powerful code navigation features in the IDE include: Go to declaration and Find
-usages for classes, variables, methods and functions, Go to implementation, Go
-to symbol, Go to Class, and Structure view:
+在 IDE 中包含强大的代码导航功能：跳到定义位置；查找类、
+变量、函数、方法的调用位置；跳到实现位置；
+跳到符号定义位置；跳到类和查看结构化视图：
 
 ![Code navigation](imgs/5navigation.png)
 
-### Code validation and quick-fix options
+### 代码验证和快速修复提示
 
-The static code analyzer will detect errors in your code on the fly and suggest
-quick-fix options:
+代码静态分析工具可以检测错误信息并且提供修复建议：
 
 ![Code analysis](imgs/6analyzer.png)
 
-### Dart-to-JS compiler
+### Dart-to-JS 编译器
 
-Compilation of Dart code to JavaScript is available from the Dart file context
-menu. As an additional option you can select code minification:
+在 Dart 代码文件上下文菜单中包含转换为 JavaScript 的
+选项。同时还可以选择压缩代码：
 
 ![Compile Dart to JavaScript](imgs/7dart2js.png)
 
-### Dart unit test support
+### Dart 单元测试
 
-IDE provides support for Dart unit testing:
+IDE 支持 Dart 单元测试：
 
 ![Unit tests](imgs/8dartunit.png)
 

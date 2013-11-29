@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dart SDK"
-description: "Dart libraries and command-line tools."
+description: "Dart 库和命令行工具。"
 has-permalinks: false
 js:
 - url: /js/os-switcher.js
@@ -13,7 +13,7 @@ js:
     <div class="col-md-6">
       <h1> {{page.title}} </h1>
       <p>
-        Tools and libraries for Dart development
+      Dart 库和命令行工具
       </p>
     </div>
     <div class="col-md-6">
@@ -24,25 +24,24 @@ js:
 </div>
 
 <p>
-The Dart SDK has the libraries and command-line tools
-that you need to develop Dart applications.
-To learn about other tools you can use for Dart development,
-see <a href="/tools/">Tools for Dart</a>.
+Dart SDK 包含了你需要开发 Dart 应用的
+库和命令行工具。
+要查看 Dart 开发可用的工具，请访问
+see <a href="/tools/">Dart工具页面</a>。
 </p>
 
-<h2 id="download"> Getting the SDK </h2>
+<h2 id="download"> 下载 SDK </h2>
 
 <p>
-If you have an up-to-date version of
-<a href="/tools/editor/">Dart Editor</a>,
-you already have the SDK.
-It's in the <code>dart-sdk</code> subdirectory
-of the Dart installation directory.
+如果你使用了最新的 
+<a href="/tools/editor/">Dart 编辑器</a>，
+则里面已经包含了 SDK。
+在 Dart 目录的 <code>dart-sdk</code> 子目录中。
 </p>
 
 <p class="os-choices">
-If you don't want Dart Editor,
-you can download just the SDK. It is available for
+如果你不想使用 Dart 编辑器，
+你可以只下载 SDK。 SDK 支持这些系统
 {% include os-choices.html %}
 </p>
 
@@ -51,14 +50,13 @@ you can download just the SDK. It is available for
 </p>
 
 <p>
-Or be on the <b>dev channel</b> to receive new features a few weeks earlier than users on the stable channel
+通过 <b>开发通道</b> 可以下载正在开发的 SDK，该 SDK 不稳定并且包含一些新的功能，下载地址：
 {% for sdk in site.custom.downloads.binaries %}
 
 <span class="{{ sdk.os }}">
-  latest dev channel build of the
   <a href="{{ site.custom.downloads.dartarchive-dev-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-x64-release.{{ sdk.ext }}">
     {{ sdk.name }} 64-bit SDK</a>
-  or the
+  或者 
   <a href="{{ site.custom.downloads.dartarchive-dev-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-ia32-release.{{ sdk.ext }}">
     {{ sdk.name }} 32-bit SDK</a>.
 </span>
@@ -66,61 +64,61 @@ Or be on the <b>dev channel</b> to receive new features a few weeks earlier than
 {% endfor %}
 </p>
 
-<h2 id="contents"> What's in the SDK </h2>
+<h2 id="contents"> SDK 包含那些内容 </h2>
 
 <p>
-The SDK directory includes a <code>lib</code> directory for the
-<a href="/docs/dart-up-and-running/contents/ch03.html">Dart libraries</a>
-and a <code>bin</code> directory that has these command-line tools:
+SDK 目录中包含了一个 <code>lib</code> 目录，
+该目录包含了 
+<a href="/docs/dart-up-and-running/contents/ch03.html">Dart libraries</a> 中的库；
+还有一个 <code>bin</code> 目录包含了一些命令行工具：
 </p>
 
 <div class="row">
   <div class="col-md-4">
     <dt> <a href="/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html">dart</a> </dt>
-      <dd>The standalone VM </dd>
+      <dd>独立的 Dart VM </dd>
     <dt> <a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a> </dt>
-      <dd>The Dart-to-JavaScript compiler </dd>
+      <dd> Dart-to-JavaScript 编译器 </dd>
   </div>
   <div class="col-md-4">
     <dt> <a href="/docs/dart-up-and-running/contents/ch04-tools-dart_analyzer.html">dartanalyzer</a> </dt>
-      <dd>The static analyzer </dd>
+      <dd>静态分析工具 </dd>
     <dt> <a href="/docs/dart-up-and-running/contents/ch04-tools-dartdoc.html">dartdoc</a> </dt>
-      <dd>The API documentation generator </dd>
+      <dd>API 文档生成工具 </dd>
   </div>
   <div class="col-md-4">
     <dt> <a href="http://pub.dartlang.org">pub</a> </dt>
-      <dd>The Dart package manager </dd>
+      <dd>Dart 包管理器 </dd>
   </div>
 </div>
 
 <p></p>
 
 <p>
-For more information about the SDK, see its
+更多 SDK 的信息，请参考 
 <a href="https://raw.github.com/dart-lang/bleeding_edge/master/dart/README.dart-sdk">README file</a>.
 </p>
 
-<h2 id="install"> Installing the SDK </h2>
+<h2 id="install"> 安装 SDK </h2>
 
 <p>
-  Unzip the SDK download file.
-  You probably also should set a couple of environment variables,
-  so that using the tools is as easy as possible.
+ 解压下载的 SDK 文件即可。
+ 如果要方便的使用这些工具，
+ 可能还需要设置一些环境变量。
 </p>
 
-<h3 id="dart_sdk"> Setting environment variables </h2>
+<h3 id="dart_sdk"> 设置环境变量 </h2>
 
 <p>
-Some scripts depend on
-having the DART_SDK environment variable set.
-Also, you'll probably want to put the
-SDK <code>bin</code> directory in your path.
+一些脚本依赖于一个 DART_SDK 的环境变量。
+同时，你也应该把 SDK 的 <code>bin</code>  目录
+放到系统的 path 中。
 </p>
 
 <p>
-How you set the DART_SDK and PATH environment variables
-depends on your platform.
-Here's an example for the Bash shell on Mac or Linux:
+不同的系统设置 DART_SDK 和 PATH 环境变量的
+方式不一样。
+下面是 Mac 和 Linux 的 Bash 设置脚本：
 </p>
 
 <pre>
@@ -130,31 +128,31 @@ PATH=$PATH:$DART_SDK/bin
 
 
 
-<h2 id="bugs"> Filing bugs and feature requests </h2>
+<h2 id="bugs"> 提交 Bug 和新特性</h2>
 
 <p>
-  To see existing issues or create a new one,
-  go to <a href="http://dartbug.com">dartbug.com</a>.
-  Here are some handy searches:
+  创建 Bug 或者查看已有 Bug 请访问
+   <a href="http://dartbug.com">dartbug.com</a>。
+   下面是一些常用的搜索条件：
 </p>
 
 <ul>
   <li> <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-VM">
-    dart (VM) issues
+    dart (VM) 问题
   </a> </li>
   <li> <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-Dart2JS">
-    dart2js issues
+    dart2js 问题
   </a> </li>
   <li> <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-Analyzer">
-    dartanalyzer issues
+    dartanalyzer 问题
   </a> </li>
   <li> <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-DartDoc">
-    dartdoc issues
+    dartdoc 问题
   </a> </li>
   <li> <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-Pub">
-    pub issues
+    pub 问题
   </a> </li>
   <li> <a href="https://code.google.com/p/dart/issues/list?can=2&amp;q=label%3AArea-SDK">
-    issues for the SDK as a whole
+    SDK 的所有问题
   </a> </li>
 </ul>
