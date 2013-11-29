@@ -1,80 +1,73 @@
 ---
 layout: default
-title: "Upgrading to Polymer.dart from Web UI"
-description: "Learn tips for upgrading your Web UI app to Polymer.dart."
+title: "从 Web UI 升级到 Polymer.dart "
+description: "学习一些升级 Web UI 到 Polymer.dart 的一些提示"
 has-permalinks: true
 ---
 
 # {{ page.title }}
 
-Here is a non-exhaustive list of tips for developers upgrading from
-Web UI to [polymer.dart](/polymer-dart/).
+这里是一些从 Web UI 升级到  [polymer.dart](/polymer-dart/) 的一些开发者建议，并不完善。
 
-Do you have other tips for upgrading? Please send us a
+如果你有任何升级建议，请给我们发送一个
+该页面的
 [pull request](https://github.com/dart-lang/dartlang.org)
-for this page, or email your tips to
-[web-ui@dartlang.org](https://groups.google.com/a/dartlang.org/forum/#!forum/web-ui).
-Thanks in advance!
+，或者发送你的建议到
+[web-ui@dartlang.org](https://groups.google.com/a/dartlang.org/forum/#!forum/web-ui)。
+先谢谢您的支持！
 
-### Getting Started
+### 开始
 
-* We recommend creating a component for your "application" HTML page.
-  Polymer believes that everything is a component.
-  - This enables Polymer-style event binding, which only works inside a
-    polymer-element's template.
-  - This also sets up data binding to your component's fields, and turns on
-    [Polymer Expressions](http://pub.dartlang.org/packages/polymer_expressions)
-    in bindings.
+* 我们建议为你的 "application" HTML 页面创建一个组件。
+  Polymer 认为任何东西都是一个组件。
+  - 这样可以使用 Polymer风格 的事件绑定，该功能只能在 
+    polymer元素 模板中使用。
+  - 这样也设置了元素的数据绑定，并且启用了
+    [Polymer 表达式](http://pub.dartlang.org/packages/polymer_expressions)
+    功能。
 
-* You can place `<template>` elements on the main HTML page, but they will *not*
-  be bound to the main library's scope. Polymer.dart does not support binding
-  to a library scope, but you can instantiate a template by setting the
+* 你可以把 `<template>` 元素放到 main HTML 页面中，当他们并 *不会*
+  绑定到 main 库作用域中。Polymer.dart 不支持绑定到库作用域，
+  但是通过在 Dart 对象上设置
   [model](http://api.dartlang.org/docs/releases/latest/dart_html/Element.html#model)
-  to a Dart object.
+  你可以初始化一个模板。
   
-  The template of a polymer element *will* be instantiate automatically with
-  itself as the model, providing convenient access to its fields, exactly like
-  Web UI.
+  polymer 元素的模板 *将会* 自动初始化为模型，
+  和 Web UI 一样提供了访问其内容的便利方法。
 
-* To create an app that works when compiled to JavaScript, you need to first
-  build it. See the
-  [deploy_to_javascript](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/deploy_to_javascript)
-  and its `build.dart` file. Notice the `--deploy` argument.
+* 要使应用编译为 JavaScript ，你需要先 build 应用。
+  参考 [deploy_to_javascript](https://github.com/sethladd/dart-polymer-dart-examples/tree/master/web/deploy_to_javascript)
+  和它的 `build.dart` 文件。注意 `--deploy` 参数。
 
-### Custom Elements
+### 自定义元素
 
-* Use `<polymer-element>` instead of `<element>`.
+* 用 `<polymer-element>` 替代 `<element>`。
 
-* The `extends` attribute on polymer-element is optional. If you use it,
-  you should use the form of `<div is="my-element">`. If you omit the
-  `extends` attribute, you are safe to use `<my-element>`.
+* polymer-element 元素的 `extends` 属性是可选的。如果
+  你使用了该元素，则应该使用 `<div is="my-element">` 这种格式；如果你没有用
+  `extends` 属性，则可以直接使用 `<my-element>`。
 
-  If you extend a DOM element, you must also extend that element type
-  in your Dart class for the custom element.
+  如果你继承了 DOM 元素，则实现自定义元素的 Dart 类也需要继承对应的
+  元素类型。
 
-* The `constructor` attribute on polymer-element is no longer used.
+*  polymer-element 的 `constructor` 属性已经失效。
 
-* If your custom element does not have a corresponding Dart class,
-  put a `noscript` attribute on `<polymer-element>`.
+* 如果你的自定义元素没有对应的 Dart 类，
+  在 `<polymer-element>` 元素中添加一个 `noscript` 属性。
 
-* The Dart class for the custom element must _registered_.
-  An easy way to register your class is to use the
-  `@CustomTag('element-name')` annotation.
-  Alternatively, you can register it manually by calling
-  `registerPolymerElement`.
+* 自定义元素的 Dart 类必需 _注册过_。
+  用 `@CustomTag('element-name')` 注解可以很方便的注册 Dart 类。
+  你也可以手工的调用函数 `registerPolymerElement` 来注册。
 
-* You **must** call `super.created()` in your `created()` named constructor.
-  It is recommended to call the super methods
-  from `enteredView` and `leftView` as well, if you
-  are inheriting from another custom element.
+* 在 `created()` 命名构造函数中 **必需** 调用 `super.created()` 。
+ 如果你在继承其他自定义元素， 
+  在 `enteredView` 和 `leftView` 也推荐调用 super 函数。
 
-* Go through `shadowRoot` to find nodes inside of your custom element.
-  If the node has an ID, you can use "automatic node finding" like
-  this: `$['the-id']` (which returns the element).
+* 用 `shadowRoot` 来查找你自定义元素内的节点。
+  如果节点具有 ID 属性，则可以用 `$['the-id']` 这种"自动节点查找"方式来查找。
 
-* The `apply-author-styles` attribute (which used to be on the
-  `<polymer-element>` tag)
-  is now retrieved as a getter property on the class for the custom element.
+* `<polymer-element>`的 `apply-author-styles` 属性
+  现在有个 getter 可以获取 CSS 样式内容了：
   e.g.:
 
     class MyElement extends PolymerElement {
@@ -82,61 +75,58 @@ Thanks in advance!
        // ...
     }
 
-* Declarative event handing only works inside of a custom element.
-  Also, instead of `on-click="doFoo()"`, drop the parens and use
-  {% raw %}'on-click="{{doFoo}}"'.{% endraw %}
+* 声明式事件处理方式只能在自定义元素内使用。
+  另外 也可以用  {% raw %}'on-click="{{doFoo}}"'.{% endraw %} 来替代 `on-click="doFoo()"`。
 
-* Hyphenated custom attributes are no longer supported. You can now
-  write: `<foo-bar myPropertyName="{{expr}}">`.
+* 不再支持带有连字号的自定义属性。 你现在可以用
+  ： `<foo-bar myPropertyName="{{expr}}">`。
 
-### Data Binding
+### 数据绑定
 
-* Objects **must** be Observable to have changes detected. See the
-  [observe](http://api.dartlang.org/docs/releases/latest/observe.html)
-  library for more information.
+* 对象要检测改变事件 **必需** 实现 Observable。
+  查看 [observe](http://api.dartlang.org/docs/releases/latest/observe.html)
+  库了解详情。
 
-* Data binding expressions are now
-  [Polymer Expressions](http://pub.dartlang.org/packages/polymer_expressions)
-  instead of Dart expressions. Polymer Expressions are a powerful data binding
-  language which offers null safety and convenient filterting operations.
+* 现在用 
+  [Polymer 表达式](http://pub.dartlang.org/packages/polymer_expressions)
+  替代绑定数据中的 Dart 表达式。 Polymer 表达式 是更强大的数据绑定语言，
+  其提供了便利的过滤操作和 null 值的安全使用。
 
-* Getters are no longer observable. Instead, use
-  [onPropertyChange](http://api.dartlang.org/docs/releases/latest/observe.html#onPropertyChange) and
+* Getters 不再是 observable 了的。需要在  `created` 回调函数中用
+  [onPropertyChange](http://api.dartlang.org/docs/releases/latest/observe.html#onPropertyChange) 和
   [notifyProperty](http://api.dartlang.org/docs/releases/latest/observe.html#notifyProperty)
-  in the `created` callback to let the system know that the computed getter has
-  changed whenever its dependencies have changed. You can use other helpers from
-  the observe library too, such as
+  来让系统知道该值已经改变了。你可以使用 observe 库中的其他辅助功能，
+  例如，
   [PathObserver](http://api.dartlang.org/docs/releases/latest/observe/PathObserver.html)
-  and [ListPathObserver](http://api.dartlang.org/docs/releases/latest/observe/ListPathObserver.html).
+  和 [ListPathObserver](http://api.dartlang.org/docs/releases/latest/observe/ListPathObserver.html).
 
-* The name of the modified
+* 修改的
   [field](http://api.dartlang.org/docs/releases/latest/observe/PropertyChangeRecord.html#field)
-  is now a Symbol instead of a String.
+  的名字现在为 Symbol ，而不是 String 了。
 
-* Null is treated as false in `template if` expressions.
-  Non-null and non-false values are treated as true.
-  There are known issues with this, please track
-  [issue 13044](https://code.google.com/p/dart/issues/detail?id=13044).
+* 在 `template if` 表达式中 Null 为 false。
+  Non-null 和 non-false 值为 true。
+  关于该问题有还有 Bug，请查看
+  [issue 13044](https://code.google.com/p/dart/issues/detail?id=13044)。
 
-* The `iterate` attribute no longer exists on template, use `repeat` instead.
+* 使用 `repeat` 属性替代模板中的 `iterate` 属性。
 
-* Polymer.dart does not support the `instantiate` attribute on the template
-  tag. To instantiate a template, simply bind a model to it, and ensure the
-  template has a `bind` attribute.
+* Polymer.dart 不支持模板标签的 `instantiate` 属性。
+  要初始化一个模板，只要绑定其模型即可，需要确保模板有个 `bind` 属性。
 
-  If you were using `instantiate` with a conditional, use `if`.
+  用 `if` 替代条件中的 `instantiate` 。
 
-* All data binding expressions in Polymer.dart require `{{ }}`, including
-  template `if` and `repeat`.
-  - Old Web UI: `template instantiate="some boolean"`.
-  - New Polymer.dart: `template if="{{some boolean}}"`.
+* Polymer.dart 中的所有数据绑定表达式都需要 `{{ }}`，
+  模板中的`if` 和 `repeat` 也需要。
+  - 旧的 Web UI: `template instantiate="some boolean"`.
+  - 新的 Polymer.dart: `template if="{{some boolean}}"`.
 
-* You no longer need `bind-` when binding to an input field. Instead, do this:
+* 当绑定到 input 元素的时候，不需要使用 `bind-`了，使用如下方式：
   `<input type="text" value="{{foo}}">`.
 
-### Tips from the community
+### 来做社区的建议
 
-Matthew Butler shared some tips for upgrading from Web UI to Polymer.
+Matthew Butler 分享了一些从 Web UI 升级到 Polymer 的建议。
 
 * [Upgrading from Web UI to Polymer, part 1](http://blog.butlermatt.me/?p=13)
 * [Upgrading from Web UI to Polymer, part 2](http://blog.butlermatt.me/?p=35)
