@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Books about Dart
-description: Read all about it! Here's a collection of books about Dart.
+title: Dart 相关图书
+description: 下面是关于 Dart 图书的整理。
 ---
 
-# Books on Dart
+# Dart 相关图书
 
-Here's a collection of books about Dart.
-[Let us know](http://dartbug.com/new) if you see a book missing.
+下面是关于 Dart 图书的集合。
+如果你发现新的图书，[请告诉我们](http://dartbug.com/new) 。
 
 {% injectdata books books/books.yaml %}
 
@@ -18,7 +18,7 @@ Here's a collection of books about Dart.
   </div>
   <div class="col-md-9">
     <h3 class="title"><a href="{{ book.link }}">{{ book.title }}</a></h3>
-    <h4 class="authors">Written by {{ book.authors || array_to_sentence_string }}</h4>
+    <h4 class="authors">作者： {{ book.authors || array_to_sentence_string }}</h4>
     <p>{{ book.desc }}</p>
   </div>
 </div>
