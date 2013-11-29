@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Dart Style Guide"
+title: "Dart 代码风格指南"
 rel:
   author: bob-nystrom
-description: "Follow these guidelines for consistent, readable Dart code."
+description: "遵守这些风格指南来编写一致的易读的 Dart 代码。"
 has-permalinks: true
 article:
   written_on: 2011-10-01
@@ -15,72 +15,72 @@ article:
 
 # {{ page.title }}
 
-<em>Written by Bob Nystrom<br />
-<time pubdate date="2011-10-27">October 2011</time>
-(updated October 2013)
+<em>作者： Bob Nystrom<br />
+译者： 云在千峰<br />
+<time pubdate date="2011-10-27">2011 十月</time>
+(2013 十月 更新)
 </em>
 
-As we build up an ecosystem of Dart code, it's helpful if it follows a
-consistent coding style. A dedicated style guide for Dart helps us make
-the most of the features unique to the language and makes it easier for
-users to collaborate.
+当建造一个 Dart 代码生态的时候，如果都使用一致的代码风格则比较容易使用。
+Dart 需要一个专业的风格指南来帮助我们设计语言独特的特性，并且大家协作
+起来
+更加方便。
 
-There will likely be things you disagree with in this guide. As the author,
-there are things even I disagree with. I hope you'll agree that consistency is
-often worth more than our individual preferences.
+在该指南中很有可能有些内容你并不同意。作为作者，其中
+的有些内容我自己都不同意。我希望你能明白，代码的一致性比我们
+自己的偏好更加重要。
 
-Keep in mind that, like many things with Dart, this guide isn't carved in
-stone. As the language evolves and we gain experience with it, our style
-will evolve too. This means that there will inevitably be code that doesn't
-follow the latest style, or places where the style guide is ambiguous or
-open-ended. Bear with us and it will get better as the language and its
-libraries settle down.
+在心中记住一点，和 Dart 中的很多内容一样，该风格指南并不是一成不变的。
+随着语言的演进和逐步的使用 Dart，我们的风格指南也会进化。
+这就意味着，不可避免的会有些代码不符合最新的风格指南，
+或者有些地方风格指南是含糊不清的或者尚未定论的。
+请耐心的等待我们一会，随着 Dart 语言和库逐步的文档，
+这些内容会逐渐完善的。
 
-## How to read this
+## 如何阅读该指南
 
-This guide is broken into a couple of sections roughly working from the macro
-scale down to the micro. Sections contain a list of guidelines. Each one starts
-with one of four words:
+该指南从宏观到微观大概的分为几个部分。
+每个部分都包含一些风格指南。
+每个都依如下四个词语开始：
 
-* **DO** guidelines describe practices that should always be followed. There
-will almost never be a valid reason to stray from them.
+* **确保** 指南说明应该总是遵守该风格。
+从来没有适当的理由不遵守这些风格。
 
-* **DON'T** guidelines are the converse: things that are almost never a good
-idea. You'll note there are few of these here. Guidelines like these in
-other languages help to avoid the pitfalls that appear over time. Dart is
-new enough that we can just fix those pitfalls directly instead of putting
-up ropes around them.
+* **不要** 指南恰恰相反：这样做从来不是一种好注意。
+你会发现有一些这种建议。其他语言的这种指南
+都是经过长时间的积累来发现的一些陷阱。
+Dart 是新的语言，所以我们直接修复这些陷阱并
+避免使用它们。
 
-* **PREFER** guidelines are practices that you *should* follow. However, there
-may be circumstances where it makes sense to do otherwise. Just make sure
-you understand the full implications of ignoring the guideline when you
-do.
+* **推荐** 指南是一些你 *应该* 遵守的实践。然而，
+有些情况下按照其他的方式做可能也有道理。当你不
+遵守这些指南的时候，确保你自己知道你在做什么。
 
-* **AVOID** guidelines are the dual to "prefer": stuff you shouldn't do but
-where there may be good reasons to on rare occasions.
+* **避免** 指南是推荐的反义词：你不应该这么做，
+但是很少情况下或许有这么做的理由。
 
-This sounds like the style police are going to beat down your door if you don't
-have your laces tied correctly. Things aren't that bad. Most of the guidelines
-here are common sense and we're all reasonable people. The goal, as always, is
-nice, readable and maintainable code.
+听上去这些就像如果你不系好你的鞋带，警察
+就会找上门来一样。然而事实上并没有这么糟糕。
+大部分的风格指南都是常见的情况，并且我们也是讲道理的凡人。我们的目标总是一样的：
+编写出优雅的、可读的和可维护的代码。
 
-## Types
+## 类型
 
-#### AVOID creating classes that contain only static members.
+#### 避免 创建只包含静态成员的类
 
-In Java and C#, all members must be in a class. In those languages, you
-occasionally encounter classes that are basically namespaces: just bags of
-static members. Dart, like Python and JavaScript, doesn't have this limitation.
-You are free to define variables and functions at the top level.
+在 Java 和 C# 中，所有的成员必需位于类中。在这些语言中，
+你有时只是用这些类作为命名空间：只是用来保存一些静态成员。
+Dart - 有点类似 Python 和 JavaScript -  并没有这些限制。
+你可以随意的在顶级代码中定义变量和函数。
 
-Name collisions, when they occur, can be avoided by importing a library using a
-prefix. The advantage to this is that when collisions *don't* occur (which only
-the *user* of a library knows, not the creator), the user doesn't have to fully
-qualify the name at every callsite.
+通过导入包并使用前缀可以避免命名冲突的问题。
+这个优点是，当命名冲突*没有*发生的时候（只有
+*使用*该库的人知道，库的创建者并不知情），用户不需要
+在任何调用的地方都完全引用全称。
 
-This doesn't mean you shouldn't have *any* static members, but it should be rare
-to create classes that have *only* static members. Instead, those should be
-libraries. Most classes should represent things you can construct.
+这并不意味着你不应该有*任何*的静态成员，
+但是创建一个*只有*静态成员的类是非常少见的。
+相反，这些应该是库。大部分的类应该代表你要构造的东西。
 
 <div class="good">
 {% prettify dart %}
@@ -104,13 +104,13 @@ class GeometryUtils {
 {% endprettify %}
 </div>
 
-#### AVOID defining a one-member abstract class when a simple function will do.
+#### 避免 定义只有一个成员的抽象类，如果一个简单的函数可以实现该功能。
 
-Unlike Java, Dart has first-class functions, closures, and a nice light syntax
-for using them. If all you need is something like a callback, just use a
-function. If you're defining an class and it only has a single abstract member
-with a meaningless name like `call` or `invoke`, there is a good chance you
-just want a function.
+和 Java 不一样，Dart 支持 first-class（类等）函数、闭包、和使用它们的优雅轻量的语法。
+如果你只需要一个回调函数，只需要用一个函数即可。
+如果你定义一个只包含一个成员的抽象类，并且该类的成员名字为
+没有业务意义的 `call` 或者 `invoke`，这通常意味着
+你只要使用一个函数即可。
 
 <div class="good">
 {% prettify dart %}
@@ -126,16 +126,15 @@ abstract class Predicate {
 {% endprettify %}
 </div>
 
-## Members
+## 成员
 
-#### DO use constructors instead of static methods to create instances.
+#### 确保 使用构造函数而不是静态函数来创建实例
 
 
-Constructors are invoked using `new` or `const` which communicates clearly at
-the callsite that an object is being created. Named constructors and factory
-constructors in Dart give you all of the flexibility of static methods in other
-languages, while still allowing the callsite to appear like a regular
-constructor invocation.
+使用 `new` 或者 `const` 来调用构造函数，在调用的时候就清楚的知道
+一个对象会被创建。Dart 中的命名构造函数和工厂构造函数
+为你提供了其他语言静态函数提供的功能，对于调用者而言
+和调用常规的构造函数类似。
 
 <div class="good">
 {% prettify dart %}
@@ -159,12 +158,12 @@ class Point {
 {% endprettify %}
 </div>
 
-#### DO use `;` instead of `{}` for empty constructor bodies.
+#### 确保 使用 `;` 来替代 `{}` 作为空构造函数的函数体
 
 
-In Dart, a constructor with an empty body can be terminated with just a
-semicolon. This is *required* for const constructors. For consistency and
-brevity, other constructors should also do this.
+在 Dart 中，一个空内容的构造函数可以只用一个分号结尾。
+const(常量) 构造函数*需要*这样。
+为了一致性和简洁性，其他空构造函数也应该这样。
 
 <div class="good">
 {% prettify dart %}
@@ -184,22 +183,22 @@ class Point {
 {% endprettify %}
 </div>
 
-#### DO place the `super()` call last in a constructor initialization list.
+#### 确保 把 `super()`放到构造函数初始化列表后面调用
 
 
-Field initializers are evaluated in the order that they appear in the
-constructor initialization list. If you place a `super()` call in the middle of
-an initializer list, the superclass's initializers will be evaluated right then
-before evaluating the rest of the subclass's initializers.
+域（Field）初始化是按照他们出现在构造函数初始化列表的顺序计算值的。
+如果你在初始化列表中间调用了 `super()`，则
+父类的初始化会在子类的初始化还没执行完的时候
+立即执行。
 
-What it *doesn't* mean is that the superclass's *constructor body* will be
-executed then. That always happens after all initializers are run regardless of
-where `super()` appears. It's vanishingly rare that the order of initializers
-matters, so the placement of `super()` in the list almost never matters either.
+这并*不意味着*父类的*构造函数体*也会执行。
+构造函数体只会在所有的初始化代码执行完后执行，而不论你把 `super()` 放到哪里调用。
+通常不会出现初始化循序的问题，所以把 `super()` 放到
+初始化列表中也不会出现啥大的问题。
 
-Getting in the habit of placing it last improves consistency, visually
-reinforces when the superclass's constructor body is run, and may help
-performance.
+习惯上把它放到最后可以提高代码一致性和视觉上强调
+父类构造函数体执行的顺序，也可能有利于
+提高性能。
 
 <div class="good">
 {% prettify dart %}
@@ -217,20 +216,19 @@ View(Style style, List children)
 {% endprettify %}
 </div>
 
-#### DO use a getter for operations that conceptually access a property.
+#### 确保 使用 getter 来执行概念上像访问一个属性的操作
 
 
-If the name of the method starts with `get` or is an adjective like `visible` or
-`empty` that's a sign you're better off using a getter. More specifically, you
-should use a getter instead of a method when it:
+如果函数的名字以 `get` 开头，或者一个形容词，例如 `visible` 或者
+`empty` ，这通常是使用 getter 的标志。更具体的，
+当如下情况时，应该使用 getter 来替代函数：
 
-  * **Does not take any arguments.**
-  * **Returns a value.**
-  * **Is side-effect free.** Invoking a getter shouldn't change any
-  externally-visible state (caching internally or lazy initialization is
-  OK). Invoking the same getter repeatedly should return the same value
-  unless the object is explicitly changed between calls.
-  * **Is fast.** Users expect expressions like `foo.bar` to execute quickly.
+  * **没有任何参数。**
+  * **返回一个值。**
+  * **没有副作用。** 调用 getter 不应该改变任何外部可见的
+  状态（内部缓存和延时初始化是可以的）。
+  重复的调用 getter 应该返回同样的值，除非该对象在调用之间明显的被修改过了。
+  * **非常快。** 用户期待像 `foo.bar` 这种操作应该执行很快。
 
 <div class="good">
 {% prettify dart %}
@@ -248,20 +246,20 @@ window.refresh;                      // doesn't return a value
 {% endprettify %}
 </div>
 
-#### DO use a setter for operations that conceptually change a property.
+#### 确保 用一个 setter 来执行概念上像设置一个属性的操作
 
 
-If the name of the method starts with `set` that's often a sign that it could be
-a setter. More specifically, use a setter instead of a method when it:
+如果函数的名字以 `set` 开头，通常意味着该函数是一个 setter。
+更具体的，当如下情况发生应该用 setter 替代 函数：
 
-  * **Takes a single argument.**
-  * **Changes some state in the object.**
-  * **Has a corresponding getter.** It feels weird for users to have state that
-  they can modify but not see. (The converse is not true; it's fine to have
-  getters that don't have setters.)
-  * **Is idempotent.** Calling the same setter twice with the same value
-  should do nothing the second time.
-  * **Is fast.** Users expect expressions like `foo.bar = value` to execute quickly.
+  * **需要一个参数。**
+  * **改变对象的一些状态。**
+  * **有一个对应的 getter。** 对于用户来说，只能修改而不可见的状态是非常奇怪的。
+   (反正则不一样，只有 getter 没有 setter 是
+   可以理解的。)
+  * **是幂等（idempotent）的。** 用同样的值调用同一个 setter 两次，第二次
+  调用应该没有任何效果。
+  * **非常快。** 对于像 `foo.bar = value` 这种操作，用户认为应该非常快。
 
 <div class="good">
 {% prettify dart %}
