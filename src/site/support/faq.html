@@ -244,39 +244,39 @@ String MakeGreeting(String name) {
 <section id="types">
 <h2>类型</h2>
 
-<h3 id="type-inference">Q. Does Dart have type inference?</h3>
+<h3 id="type-inference">问题：Dart 拥有类型推断么？</h3>
 
-<p>Type inferencing is not something specified by the language specification, but it is something that implementations are free to do. It's important to remember that Dart has a dynamic type system, so type inferencing doesn't play the same role as it does in languages such as Haskell. However, Dart Editor does do some type inferencing, such as when you use var for local variables. We expect that the Dart VM and dart2js will use type inferencing when it's useful for performance or for other reasons.</p>
+<p>类型推断不是一门语言的标准，但是它是一种自由的实现。了解 Dart 拥有动态类型系统是很重要的，但是 Dart 类型推断跟其他语言（像 Haskell）的意义不同。然而，Dart 的编辑器确实做了一些类型推断，例如当你为本地的变量使用 var 。如果对提升性能有用、或者其他原因，我们期待 Dart 虚拟机和 Dart2js 能够使用类型推断。</p>
 
-<h3 id="why-types-optional">Q. Why are type annotations optional?</h3>
+<h3 id="why-types-optional">问题：为什么类型注释是可选的？</h3>
 
-<p>We want to maintain the feel of a dynamically typed language, which is familiar to web developers. Mandatory types don't fit with that goal.</p>
+<p>我们希望保持 WEB 开发人员熟悉的那种动态类型语言的感觉。强制类型注释不符合这个目标。</p>
 
-<h3 id="why-types-unsound">Q. Why is the type system designed to be unsound?</h3>
+<h3 id="why-types-unsound">问题：为什么类型系统设计的不够健全？</h3>
 
-<p>Rather than using a full, static type system, Dart has a dynamic type system with optional static type annotations. Our main goals for the types are to support tooling and documentation. We want to build a pragmatic tool that helps web programmers without getting in their way.  In particular, we want our static warnings to be optimistic rather than to complain about dynamically typed code that may be valid and correctly written, such as "downcast" assignments.  Because Dart <i>execution</i> is always type-safe, we can let some unsound cases get through the static warnings and be caught at run time instead.</p>
+<p>与完全的静态类型系统相比，Dart 拥有一个可选静态注释的动态类型系统。我们这么设计的主要目的是支持工具和文档。我们希望创建一个实用的工具来帮助 WEB 开发人员更顺利的进行开发。特别的，我们希望静态警告可以最优化，而不是动态类型代码是正确的却仍被警告，例如“向下转型”。由于 Dart 执行是类型安全的，我们可以让一些不健全的情况避开静态警告，而在运行时来捕获他们。</p>
 
-<p>Typical object-oriented languages let you downcast, which also introduces unsoundness into the type system and may result in a runtime type error.  In Dart, we choose to allow downcasts without a syntax to mark them.</p>
+<p>典型的面向对象的语言允许向下转型，这仍给类型系统带来不健全并可能导致运行时错误。在 Dart ，我们选择允许不用语法标注的向下转型。</p>
 
-<h3 id="sound-types-for-performance">Q. But don't you need sound typing information to get high performance?</h3>
+<h3 id="sound-types-for-performance">问题：但是你们不需要使用健全的类型信息来提升性能么？</h3>
 
-<p>Sound types can help with performance but aren't essential. What we need are uniform, simple semantics.</p>
+<p>Sound types 能够提升性能，但并不是必须的。我们需要规则、简单的语义。</p>
 
-<h3 id="types-why-no-runtime-effect">Q. Why do type annotations have no effect on the runtime behavior?</h3>
+<h3 id="types-why-no-runtime-effect">问题：为什么类型注释对运行时行为没有任何影响？</h3>
 
-<p>If type annotations affect the runtime, programs will change their behavior as programmers add type information, even though the logic remains unchanged. The normal mode of development is to gradually add types for documentation and validation, and if that changes what the program does, programmers have no stable foundation to work on. This is especially true given that types could be inaccurate.</p>
+<p>如果类型注释影响运行时，当用户添加类型信息的时候程序将改变自己的行为，即使程序逻辑仍然保持不变。正常的开发模式是逐步的记录文档并确认，而如果改变了程序的行为，开发人员就没有稳定的基础进行工作了，尤其是在类型可能有错误的情况下。</p>
 
-<p>In addition, this policy helps us and others add additional type-checking tools that implement different policies without unforeseen interactions with the runtime.</p>
+<p>除此之外，这种策略帮助我们和其他有类型检查功能的工具实现不同的策略避免运行时意外的影响。</p>
 
-<h3 id="why-covariant-generics">Q. Why are generics covariant?</h3>
+<h3 id="why-covariant-generics">问题：为什么泛型是协变的？</h3>
 
-<p>Covariant generics fit a common intuition that programmers have, and very often this intuition is correct, such as in the common "read-only" use of a generic.  Although this intuition isn't always correct, Dart doesn't need it to be.  Dart has already chosen optimistic static checking, so why not continue down that path and allow covariant uses of generics to pass static type checking?</p>
+<p>协变的泛型符合开发人员的直觉，而这种直接经常是正确的，例如“只读”的一般用法。尽管这种直觉并不总是正确的，Dart 也不需要它总是正确的。Dart 已经选择了最优化的类型检查，所以为什么我们不继续并允许泛型可以协变来传递绕过静态类型检查？</p>
 
-<p>Where covariant generics are too optimistic, Dart's type-safe execution allows the static warnings to be optimistic without being dangerous.  Although covariance can be pessimistic too, we think it will be rare that people run into that, and and there's a simple workaround for any pessimism.</p>
+<p>Dart 的类型安全的执行体系允许静态警告以优化而不会带来危险。尽管协变也可能导致问题，但是我们认为那种情况很难发生，而且处理这些问题也会很简单。</p>
 
-<p>We are familiar with a variety of ways that languages try to mark or infer variance.  We don't think any of them are suitable for Dart, where we want type annotations to be optional and unobtrusive: it wouldn't fit to <em>require</em> marking, and we feel that variance inference systems add too much complexity for their benefit in Dart.</p>
+<p>我们对语言标记或者暗示不一致的很多种方式都很熟悉。我们认为没有一种现存的方式适合 Dart，所以我们希望类型注释是可选的并且不唐突：<em>强制</em>的标记是不合适的，并且我们感觉推断体系添加了太多的复杂度，得不偿失。</p>
 
-<p>Again, we're trying to be pragmatic, and we think the outcome is reasonable.</p>
+<p>再一次，我们希望更加的实用，而我们认为这样的结果是合理的。</p>
 </section> <!-- /#types -->
 
 <section id="tools">
