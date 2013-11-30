@@ -1,7 +1,7 @@
 (function() {
   function loadAndDisplayPosts() {
     var container = document.getElementById("feed-posts");
-    var feed = new google.feeds.Feed("http://news.dartlang.org/feeds/posts/default");
+    var feed = new google.feeds.Feed("http://dartnews.sinaapp.com/?feed=atom");
 		var MAX_POSTS = 1;
     feed.load(function(result) {
       if (!result.error) {
@@ -12,7 +12,7 @@
           a.setAttribute('href', entry.link);
           a.appendChild(document.createTextNode(entry.title));
           var p = document.createElement("p");
-          p.appendChild(document.createTextNode("news.dartlang.org"));
+          p.appendChild(document.createTextNode("news.dartlang.cc"));
           p.innerHTML+="&nbsp;&nbsp;&nbsp;";
           p.appendChild(a);
           container.appendChild(p);
