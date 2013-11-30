@@ -268,19 +268,18 @@ button.visible = false;
 {% endprettify %}
 </div>
 
-#### AVOID wrapping fields in getters and setters just to be "safe".
+#### 避免 只是为了"安全"而为一个变量提供 getter 和 setter 函数
 
 
-In Java and C#, it's common to hide all fields behind getters and setters (or
-properties in C#), even if the implementation just forwards to the field. That
-way, if you ever need to do more work in those members, you can without needing
-to touch the callsites. This is because calling a getter method is different
-than accessing a field in Java, and accessing a property isn't binary-compatible
-with accessing a raw field in C#.
+在 Java 和 C#中，把所有的成员变量用 getter 和 setter 函数隐藏起来是很常见的。
+大部分情况下 getter 和 setter 的实现只是赋值和返回该值。
+因为 Java 中的成员变量和 getter 函数是不一样的，
+所以
+如果你只是用来访问该成员变量，你无法直接调用成员变量。
 
-Dart doesn't have this limitation. Fields and getters/setters are completely
-indistinguishable. You can expose a field in a class and later wrap it in a
-getter and setter without having to touch any code that uses that field.
+Dart 没有这个限制。Dart 中的成员变量和 getter/setter 是完全难以区分的。
+你可以先暴露一个成员变量让其他人访问，而后你发现需要做些操作的时候，
+你可以添加一个该变量的 getter 和 setter，但是调用方式依然不变。
 
 <div class="good">
 {% prettify dart %}
@@ -302,12 +301,12 @@ class Box {
 {% endprettify %}
 </div>
 
-#### PREFER using a public final field instead of a private field with a public getter.
+#### 推荐 使用一个 public final 成员变量来替代一个带有 getter的 私有变量
 
 
-If you have a field that outside code should be able to see but not assign to
-(and you don't need to set it outside of the constructor), a simple solution
-that works in many cases is to just mark it `final`.
+如果你有一个成员变量，外部的代码可以看到该变量但是无法修改其值
+（你也无须在构造函数以外设置该变量的值），
+大多数情况下都适用的一种方式就是把该变量设置为 `final` 的。
 
 <div class="good">
 {% prettify dart %}
@@ -326,12 +325,12 @@ class Box {
 {% endprettify %}
 </div>
 
-#### CONSIDER using `=>` to define members whose body returns the result of a single expression.
+#### 推荐 使用 `=>` 来定义函数体只是返回单个表达式的函数
 
 
-In addition to using `=>` for function expressions, Dart also lets you define
-members with them. They are a good fit for simple members that just calculate
-and return a value.
+在函数表达式中使用 `=>` ，你还可以定义局部变量。
+这种语法特别适合只有一个简单的变量并返回其
+计算结果。
 
 <div class="good">
 {% prettify dart %}
@@ -341,17 +340,17 @@ containsValue(String value) => getValues().contains(value);
 {% endprettify %}
 </div>
 
-Members that don't fit on one line can still use `=>`, but if you find yourself
-cramming a single expression into several continued lines, it is probably
-cleaner to just use a curly body with an explicit `return`.
+并非只有一行代码的函数体才能用 `=>`， 但是如果
+你发现一个表达式需要用多行显示的时候，为了代码清晰的考虑，
+最好还是用花括号和 `return` 语句来实现函数体。
 
-#### AVOID boolean arguments unless their meaning is completely obvious.
+#### 避免 使用没有实际意义的布尔参数
 
 
-Unlike other types, booleans are usually used in literal form. Things like
-numbers are usually wrapped in named constants, but we usually just pass around
-`true` and `false` directly. That can make callsites unreadable if it isn't
-clear what the boolean represents:
+和其他类型不同，布尔值通常用于字面格式（literal form）。
+数字等通常用命名常量引用，而布尔值通常都是直接用
+`true` 和 `false` 。如果该布尔值在函数调用的地方不能
+清晰的表达其代表的意义，则可能导致代码可读性降低：
 
 <div class="bad">
 {% prettify dart %}
@@ -361,8 +360,8 @@ new ListBox(false, true, true);
 {% endprettify %}
 </div>
 
-Instead, consider using named arguments, named constructors, or named constants
-to clarify what the call is doing.
+作为替代方案，可以考虑使用命名参数、命名构造函数或者命名常量来
+明确表达代码的意义。
 
 <div class="good">
 {% prettify dart %}
@@ -372,21 +371,21 @@ new ListBox(scroll: true, showScrollbars: true);
 {% endprettify %}
 </div>
 
-## Type annotations
+## 类型注解
 
-#### PREFER providing type annotations on public APIs.
+#### 推荐 在公开的 API 上提供类型
 
 
-Type annotations are important documentation for how a library should be used.
-Annotating the parameter and return types of public methods and functions helps
-users understand what the API expects and what it provides.
+类型是一个库如何使用的重要文档。
+给参数和返回值提供类型可以帮助
+用户理解该 API 的参数和提供的功能。
 
-If, however, a public API does accept any type, or accepts a range of values
-that Dart's type system cannot express, then it is acceptable to leave that
-untyped.
+如果，一个公共 API 可以接受任何类型、或者一些 Dart 类型系统无法表达的值，则
+可以保持该 API 参数为
+无类型的。
 
-For code internal to a library (either private, or things like nested functions)
-annotate where you feel it helps, but don't feel that you *must* provide them.
+对于内部代码或者内部库，如果你感觉类型对理解代码
+有帮助，则你可以提供类型，但是请记住，类型并*不是*必须的。
 
 <div class="bad">
 {% prettify dart %}
@@ -396,8 +395,8 @@ install(id, destPath) {
 {% endprettify %}
 </div>
 
-Here, it's unclear what `id` is. A string? And what is `destPath`? A string or a
-`File` object? Is this method synchronous or asynchronous?
+这里， `id` 是何类型并不明确。一个 string？ 而 `destPath` 又是啥？一个 string 
+或者一个 `File` 对象？ 该函数是同步的还是异步的？
 
 <div class="good">
 {% prettify dart %}
@@ -407,16 +406,16 @@ Future<bool> install(PackageId id, String destPath) {
 {% endprettify %}
 </div>
 
-With types, all of this is clarified.
+通过类型，这些疑问就消失了。
 
-#### PREFER using `var` without a type annotation for local variables.
+#### 推荐 用 `var` 修饰局部变量
 
 
-Method bodies in modern code tend to be short, and the types of local variables
-are almost always trivially inferrable from the initializing expression, so
-explicit type annotations are usually just visual noise. Decent editors can
-infer the type of local variables and still provide the auto-complete and
-tooling support you expect.
+现在流行的编码中，函数体都是非常短小的，而局部变量的类型通常
+通过表达式就可以推断出来而无需明确注明。
+所有明确的类型注解通常看起来比较碍眼。
+聪明的编辑器可以从表达式中判断局部变量的类型并且
+提供代码自动完成和你期望的代码建议。
 
 <div class="good">
 {% prettify dart %}
@@ -444,24 +443,24 @@ Map<int, List<Person>> groupByZip(Iterable<Person> people) {
 {% endprettify %}
 </div>
 
-#### PREFER using `double` or `int` instead of `num` for parameter type annotations in performance sensitive code.
+#### 推荐 在性能敏感的地方使用  `double` 或者 `int` 来替代 `num` 作为参数类型
 
-Monomorphic call sites (sites that have stable input types)
-can be optimized much easier than polymorphic call sites (sites that have
-varying input types).
+单一调用入口（参数具有明确的类型）
+比多态调用入口（参数具有多种类型）
+要更容易优化。
 
-Whenever you can, pick a specific number type for your type annotation.
-Explicitly say `double` or `int` to help your users pass in a consistent type
-to your function or method.
+如果可以，就为你的参数类型提供具体的数字类型。
+明确的指明 `double` 或者 `int` 帮助你的用户用一致的
+参数来调用你的函数或者方法。
 
-When you use `num` as a type annotation, you are saying "either an int or
-a double can go here." This ambiguity it harder for Dart runtimes to optimize.
+当用 `num` 作为类型的时候，意味着 "要么是 int 要么就是 double"。
+Dart 运行环境无法优化这个不确定的参数。
 
-#### DON'T type annotate initializing formals.
+#### 不要 为初始化构造函数提供类型
 
 
-If a constructor parameter is using `this.` to initialize a field, then the type
-of the parameter is understood to be the same type as the field.
+如果构造函数的参数用 `this.` 来初始化成员变量，
+则参数类型是和成员变量的类型一样。
 
 <div class="good">
 {% prettify dart %}
@@ -481,13 +480,13 @@ class Point {
 {% endprettify %}
 </div>
 
-#### AVOID annotating types on function expressions.
+#### 避免 在方法表达式提供类型
 
 
-The value of function expressions is their brevity. If a function is complex
-enough that types are needed to understand it, it should probably be a function
-statement or a method. Conversely, if it is short enough to be an expression, it
-likely doesn't need types.
+方法表达式的值是非常简洁的。如果方法复杂到需要类型才能理解，
+则通常应该用方法声明或者函数来实现。
+相反，如果方法简洁到可以用一个表达式表示，
+则通常意味着不需要类型。
 
 <div class="good">
 {% prettify dart %}
@@ -503,12 +502,12 @@ var names = people.map((Person person) {
 {% endprettify %}
 </div>
 
-#### AVOID annotating with `dynamic` when not required.
+#### 避免 在不需要的地方用 `dynamic`
 
 
-In most places in Dart, a type annotation can be omitted, in which case the type
-will automatically be `dynamic`. Thus, omitting the type annotation entirely is
-semantically equivalent but more terse.
+Dart 的大部分地方都可以忽略类型，这样该类型就是 `dynamic` 的。
+所有，省略类型就语义上等同于 `dynamic` 并且
+看起来更简洁。
 
 <div class="good">
 {% prettify dart %}
@@ -530,19 +529,18 @@ dynamic lookUpOrDefault(String name, Map map, dynamic defaultValue) {
 {% endprettify %}
 </div>
 
-#### DO annotate with `Object` instead of `dynamic` to indicate any object is accepted.
+#### 确保 在可以使用任何对象的地方用 `Object` 来替代 `dynamic` 
 
 
-Some operations will work with any possible object. For example, a log method
-could take any object and call `toString()` on it. Two types in Dart permit all
-objects: `Object` and `dynamic`. However, they convey two different things.
+有些操作可以在任何对象上执行。例如，一个日志函数
+可以调用任何对象的 `toString()`。Dart 中有两种类型都运行所有对象：
+  `Object` 和 `dynamic`。然而，他们表达了不同的意思。
 
-The `Object` annotation says "I accept any object, and I only require it to have
-the methods that `Object` itself defines."
+`Object` 类型说明： "我可以接受任意对象，并且我只
+期望该对象具有 `Object` 中定义的函数。"
 
-A `dynamic` type annotation means that no type annotation can express what
-objects you actually allow. (Or maybe one could, but you don't care to write
-it.)
+而 `dynamic` 类型则意味着，没有恰当的类型可以代买
+你需要的参数类型。 (或者有一种类型可以，但是你懒得写出来。)
 
 <div class="good">
 {% prettify dart %}
@@ -560,13 +558,13 @@ bool convertToBool(arg) {
 {% endprettify %}
 </div>
 
-## Names
+## 命名
 
-#### DO name types using `UpperCamelCase`.
+#### 确保 用 `UpperCamelCase` 风格来命名
 
 
-Classes and typedefs should capitalize the first letter of each word (including
-the first word), and use no separators.
+类和 typedef 定义的名字的首字母应该大写，并且
+没有分隔符。
 
 <div class="good" markdown="1">
 {% prettify dart %}
@@ -582,12 +580,12 @@ typedef num Adder(num x, num y);
 {% endprettify %}
 </div>
 
-#### DO name constants using `ALL_CAPS_WITH_UNDERSCORES`.
+#### 确保 常量使用大写字母和下划线 （`ALL_CAPS_WITH_UNDERSCORES`）风格命名
 
 
-Constants&mdash;variables declared using `const`&mdash;are special in Dart
-because they can be used in constant expressions, unlike `final` variables. To
-clarify this, they are given their own naming style.
+常量&mdash;用 `const` 修饰的变量&mdash; 在 Dart 中是特殊的，
+和 `final` 不一样，他们可以用于常量表达式中。
+为了明确该行为，他们用自己特有的命名风格。
 
 <div class="good">
 {% prettify dart %}
@@ -613,12 +611,12 @@ class Dice {
 {% endprettify %}
 </div>
 
-#### DO name other identifiers using `lowerCamelCase`.
+#### 确保 其他的标示符都用 `lowerCamelCase` 格式命名
 
 
-Class members, top-level definitions, variables, parameters, and named
-parameters should capitalize the first letter of each word *except* the first
-word, and use no separators.
+类成员变量、顶级定义、变量、参数和命名参数都应该以该格式命名，并
+不用
+分隔符。
 
 <div class="good">
 {% prettify dart %}
@@ -632,17 +630,16 @@ align(clearItems) {
 {% endprettify %}
 </div>
 
-#### DO name libraries and source files using `lowercase_with_underscores`.
+#### 确保 用 `lowercase_with_underscores` 格式命名文件名和库名
 
 
-Some file systems are not case-sensitive, so many projects require filenames to
-be all lowercase. Using a separate character allows names to still be readable
-in that form. Using underscores as the separator ensures that the name is still
-a valid Dart identifier, which may be helpful if the language later supports
-symbolic imports.
+一些文件系统对大小写不敏感，所有大部分的项目都要求文件名字为小写字母。
+使用分隔符可以让文件名更具可读性。
+使用下划线作为分隔符说明该名字为合法的 Dart 标示符，在需要
+支持文件导入的时候会用到。
 
 <div class="good" markdown="1">
-Good:
+好的命名示例：
 
 * `slider_menu.dart`
 * `file_system.dart`
@@ -650,21 +647,21 @@ Good:
 </div>
 
 <div class="bad" markdown="1">
-Bad:
+坏的命名示例：
 
 * `SliderMenu.dart`
 * `filesystem.dart`
 * `library peg-parser;`
 </div>
 
-#### DO capitalize acronyms and abbreviations longer than two letters like words.
+#### 确保 首字母单词缩写和大于两个字符的缩写词按照单词来对待
 
 
-Capitalized acronyms can be harder to read, and are ambiguous when you have
-multiple adjacent acronyms. Given the name `HTTPSFTPConnection`, there's no way
-to tell if that's an HTTPS FTP connection or an HTTP SFTP one.
+大写的字母缩略词比较难读，并且当有多个相邻的缩略词的时候比较
+难以区分。类似于 `HTTPSFTPConnection` 的名字无法知道
+到底是一个 HTTPS FTP connection 还是一个 HTTP SFTP connection。
 
-To avoid this, acronyms are capitalized like regular words, except for
+为了避免这种情况，缩略词按照一个单词对待，但是两个字母的缩略词除外。
 two-letter ones.
 
 <div class="good">
@@ -688,13 +685,13 @@ Id
 {% endprettify %}
 </div>
 
-## Comments
+## 注释
 
-#### DO comment members and types using doc-style comments.
+#### 确保 用 doc-style 注释来为成员变量和类型提供注释
 
 
-Dart supports two syntaxes of doc comments. Line doc comments start each line
-with `///`:
+Dart 支持两种类型文档注释。单行注释
+用 `///` 开始：
 
 <div class="good">
 {% prettify dart %}
@@ -709,7 +706,7 @@ void parse(List options) {
 {% endprettify %}
 </div>
 
-Block doc comments start with `/**`, end with `*/` and can span multiple lines:
+块注释用 `/**` 开始，用 `*/` 结尾可以跨行：
 
 <div class="good">
 {% prettify dart %}
@@ -722,11 +719,11 @@ void parse(List options) {
 {% endprettify %}
 </div>
 
-Within a doc comment, you can use [markdown][] for formatting.
+在文档注释中，你可以用 [markdown][] 语法来格式。
 
 [markdown]: http://daringfireball.net/projects/markdown/
 
-#### DO use line comments for everything else.
+#### 确保 其他非文档注释用单行注释
 
 
 <div class="good">
@@ -747,11 +744,11 @@ greet(name) {
 {% endprettify %}
 </div>
 
-#### DO capitalize and punctuate comments like sentences.
+#### 确保 按照普通的语句来些注释，大写字母开头并且添加标点符号。
 
 
-This doesn't mean that the comment must always be a complete sentence, though it
-usually should. "Returns the number of items." is an acceptable comment.
+这并不意味着，注释必须为一个完整的语句。
+"Returns the number of items." 是一个可以接受的注释。
 
 <div class="good">
 {% prettify dart %}
@@ -765,12 +762,12 @@ usually should. "Returns the number of items." is an acceptable comment.
 {% endprettify %}
 </div>
 
-#### DO use square brackets in doc comments for identifiers that are in scope.
+#### 确保 在文档注释中用方括号包围当前作用域的标示符
 
 
-If you surround things like variable, method or type names in square brackets,
-then documentation generators can look up the name and cross-link the two
-together.
+如果用方括号包围变量、函数名字和类型，
+文档生成器会生成一个连接来查看
+该名字的定义。
 
 <div class="good">
 {% prettify dart %}
@@ -781,12 +778,11 @@ num greatestRoll(Dice a, Dice b) => max(a.roll(), b.roll());
 {% endprettify %}
 </div>
 
-#### DO describe method signatures in the prose of the documentation comment.
+#### 确保 用散文的方式来提供函数描述文档注释
 
 
-
-Other languages use verbose tags and sections to describe what the parameters
-and returns of a method are.
+其他语言用冗长的标签和分块来描述什么是
+参数和该函数返回啥。
 
 <div class="bad">
 {% prettify dart %}
@@ -805,8 +801,8 @@ Flag addFlag(String name, String abbr) {
 {% endprettify %}
 </div>
 
-The convention in Dart is to just integrate that into the description of the
-method and highlight parameters using square brackets.
+在 Dart 的习惯用法是 在描述中集成参数和返回值的类型并用方括号
+来高亮这些参数。
 
 <div class="good">
 {% prettify dart %}
@@ -821,42 +817,41 @@ Flag addFlag(String name, String abbr) {
 {% endprettify %}
 </div>
 
-## Whitespace
+## 空白
 
-Like many languages, Dart ignores whitespace. However, *humans* don't. Having a
-consistent whitespace style helps ensure that human readers see code the same
-way the compiler does.
+和其他很多语言一样， Dart 忽略空白。但是，*人类*却不忽略空白。
+用一个一直的空白风格可以帮助人类和编译器一样
+理解代码。
 
-#### DON'T use tabs.
+#### 不要 用 tab
 
 
-Using spaces for formatting ensures the code looks the same in everyone's
-editor. It also makes sure it looks the same when posted to blogs, or on code
-sites like [Google Code][] or [GitHub][].
+用空格来格式化代码，这样在每个人的编辑器中看起来都一样。
+这样当在博客中或者其他网站发表代码的时候也能保持格式一样。例如 例如 [Google Code][] 或者 [GitHub][]。
 
 [google code]: http://code.google.com/projecthosting/
 [github]: http://github.com
 
-Modern editors emulate the behavior of tabs while inserting spaces, giving you
-the easy editing of tabs and the consistency of spaces.
+流行的编辑器会用空格来替代 tab，让你编辑 tab 比较方便并
+保持留白的一致性。
 
-#### AVOID lines longer than 80 characters.
-
-
-Readability studies show that long lines of text are harder to read because your
-eye has to travel farther when moving to the beginning of the next line. This is
-why newspapers and magazines use multiple columns of text.
-
-If you really find yourself wanting lines longer than 80 characters, our
-experience is that your code is likely too verbose and could be a little more
-compact. Do you really need to call that class
-`AbstractWidgetFactoryManagerBuilder`?
-
-#### DO place the operator on the preceding line in a multi-line expression.
+#### 避免 大于 80 个字符的代码行
 
 
-There are valid arguments for both styles but most of our code seems to go this
-way, and consistency matters most.
+阅读研究发现，人类在阅读比较长的文本的时候，无法快速的跳转到下一行。
+这就是为啥 报纸 和杂志 都使用多列的
+文本布局。
+
+如果你真的需要用大于 80 个字符的行，
+我们的经验告诉你，你的代码应该是太冗长了，应该可以更加简练些。
+你真的愿意
+使用 `AbstractWidgetFactoryManagerBuilder` 这个类吗？
+
+#### 确保 在多行表达式的地方把操作符放到前面一行的末尾
+
+
+放到前面一行还是后面一行都是合法的，但是为了一致性考虑
+我们的代码都是把操作符放到前面一行。
 
 <div class="good">
 {% prettify dart %}
@@ -868,7 +863,7 @@ if (isDeepFried ||
 {% endprettify %}
 </div>
 
-Note that this includes `=>` as well:
+注意： `=>` 也复合该约定：
 
 <div class="good">
 {% prettify dart %}
@@ -884,11 +879,11 @@ bobLikes()
 {% endprettify %}
 </div>
 
-#### DO place the `.` on the next line in a multi-line expression.
+#### 确保 把 `.` 放到多行表达式的下一行的开头
 
 
-This supercedes the previous rule. Unlike other operators, if you split an
-expression on a `.`, then put that at the beginning of the second line.
+该约定紧接前面一条规则。和其他操作符不一样，如果你用一个
+ `.` 来分隔表达式，则把 `.` 放到下一行的开头。
 
 <div class="good">
 {% prettify dart %}
@@ -897,7 +892,7 @@ someVeryLongVariable.withAVeryLongProperty
 {% endprettify %}
 </div>
 
-#### DO indent block bodies two spaces.
+#### 确保用两个空格来缩进代码块
 
 
 <div class="good">
@@ -908,7 +903,7 @@ if (condition) {
 {% endprettify %}
 </div>
 
-#### DO indent continued lines with at least four spaces.
+#### 确保 最少用四个空格来缩进跨行的代码
 
 
 <div class="good">
@@ -918,7 +913,7 @@ someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
 {% endprettify %}
 </div>
 
-You may indent more than four spaces to line things up if you like:
+如果你喜欢下面的风格，则可以用更多的空格来缩进：
 
 <div class="good">
 {% prettify dart %}
@@ -927,11 +922,11 @@ someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
 {% endprettify %}
 </div>
 
-#### DON'T indent lines that are continued with a function expression.
+#### 不要 缩进一个方法表达式的延续
 
 
-The one exception to the above rule is function expressions used within larger
-expressions, like being passed to methods. These are formatted like so:
+上面一条规则的一个例外情况就是当在一个大的表达式中使用方法表达式的时候，
+和提供函数参数一样，他们使用下面的方式来格式化：
 
 <div class="good">
 {% prettify dart %}
@@ -949,7 +944,7 @@ new Future.delayed(const Duration(seconds:1), () {
 {% endprettify %}
 </div>
 
-#### DO place the opening curly brace (`{`) on the same line as what it follows.
+#### 确保 把开始的花括号 (`{`) 放到它所属的同一行结尾
 
 
 <div class="good">
@@ -966,10 +961,10 @@ class Foo {
 {% endprettify %}
 </div>
 
-#### DO use curly braces for all flow control structures.
+#### 确保 在所有的控制流语句中用花括号
 
 
-Doing so avoids the [dangling else][] problem.
+这样可以避免 [dangling else][]（悬空 else） 问题。
 
 [dangling else]: http://en.wikipedia.org/wiki/Dangling_else
 
@@ -991,8 +986,8 @@ else
 {% endprettify %}
 </div>
 
-There is one exception to this: short `if` statements with no `else` clause that
-fit on one line may omit the braces.
+当然，也有一个特例，就是当 `if` 非常短并且没有 `else` 语句，还
+可以在一行显示的时候。
 
 <div class="good">
 {% prettify dart %}
@@ -1000,7 +995,7 @@ if (arg == null) return defaultValue;
 {% endprettify %}
 </div>
 
-#### DO indent switch cases two spaces and case bodies four spaces.
+#### 确保 用两个空格缩进 switch cases 并用四个空格缩进 case 块
 
 
 <div class="good">
@@ -1017,14 +1012,13 @@ switch (fruit) {
 {% endprettify %}
 </div>
 
-#### DO use spaces around binary and ternary operators, after commas, and not around unary operators.
+#### 确保 在二元和三元操作符之间和冒号后面用空格，不要在一元操作符后面用空格
 
 
 
-Note that `<` and `>` are considered binary operators when used as expressions,
-but not for specifying generic types. Both `is` and `is!` are considered single
-binary operators. However, the `.` used to access members is not and should
-*not* have spaces around it.
+注意： `<` 和 `>` 在表达式中被认为是二元操作符，但是对于泛型类型除外。
+ `is` 和 `is!` 被认为是一个二元操作符。
+ 用户访问成员的 `.` 不应该用空格分隔。
 
 <div class="good">
 {% prettify dart %}
@@ -1044,7 +1038,7 @@ if (obj is !SomeType) print('not SomeType');
 {% endprettify %}
 </div>
 
-#### DO place spaces around `in`, and after each `;` in a loop.
+#### 确保 在每个 `in` 之间和循环中的 `;` 后面使用空格
 
 
 <div class="good">
@@ -1059,11 +1053,11 @@ for (final item in collection) {
 {% endprettify %}
 </div>
 
-#### DO use a space after flow-control keywords.
+#### 确保 在控制流关键字后面用一个空格
 
 
-This is unlike function and method calls, which do *not* have a space between
-the name and the opening parenthesis.
+和函数和方法调用不一样。
+调用函数和方法则不需要使用空格分隔。
 
 <div class="good">
 {% prettify dart %}
@@ -1079,10 +1073,10 @@ try {
 {% endprettify %}
 </div>
 
-#### DON'T use a space after `(`, `[`, and `{`, or before `)`, `]`, and `}`.
+#### 不要 在 `(`、 `[`、  `{` 之后和 `)`、 `]`、 `}` 之前用空格
 
 
-Also, do not use a space when using `<` and `>` for generic types.
+同样，当 `<` 和 `>` 用作泛型的时候 ，也不加空格。
 
 <div class="good">
 {% prettify dart %}
@@ -1090,7 +1084,7 @@ var numbers = <int>[1, 2, (3 + 4)];
 {% endprettify %}
 </div>
 
-#### DO use a space before `{` in function and method bodies.
+#### 确保 在函数和方法体的 `{` 之前加一个空格
 
 
 This is an exception to the above rule. When a `{` is used after a parameter
@@ -1113,7 +1107,7 @@ getEmptyFn(a){
 {% endprettify %}
 </div>
 
-#### DO format constructor initialization lists with each field on its own line.
+#### 确保 每行只放一个构造函数初始化列表语句
 
 
 <div class="good">
@@ -1127,11 +1121,11 @@ MyClass()
 {% endprettify %}
 </div>
 
-Note that the `:` should be wrapped to the next line and indented four spaces.
-Fields should all line up (so all but the first field end up indented six
-spaces).
+注意 `:` 应该放到下一行代码前面并用四个空格缩进。
+每个成员变量应该对齐（除了第一个变量以外，其他的变量都用六个空格
+缩进）。
 
-#### DO use a space around `:` in named parameters and after `:`  for a named argument.
+#### 确保 在命名参数的`:` 后面使用一个空格
 
 
 <div class="good">
@@ -1155,7 +1149,7 @@ new ListBox(showScrollbars : true);
 {% endprettify %}
 </div>
 
-#### DO use a spaces around `=` in optional positional parameters.
+#### 确保 在可选参数 `=` 赋值前后用一个空格
 
 
 <div class="good">
@@ -1180,7 +1174,7 @@ class HttpServer {
 {% endprettify %}
 </div>
 
-#### DO use four spaces for method cascades
+#### 确保 在函数级联调用的时候 使用空格缩进
 
 
 <div class="good">
