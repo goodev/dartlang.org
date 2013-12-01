@@ -1,7 +1,7 @@
 --- 
 layout: article
-title: "Mixins in Dart"
-description: "Mixins let you implement functionality once and use it in multiple classes."
+title: "Dart 混入（Mixins）"
+description: "Mixins 让你实现一次就可在多个类中使用"
 rel:
     author: gilad-bracha
 has-permalinks: true
@@ -14,62 +14,52 @@ article:
 
 # {{ page.title }}
 
-_Written by Gilad Bracha <br>
-December 2012_ (Revised November 2013)
+_作者：Gilad Bracha <br>
+ 2012 12月_ (2013 11月修订)
 
-This document describes mixins in Dart.
-The semantics are deliberately restricted in several ways,
-so as to reduce disruption to our existing implementations,
-while allowing future evolution toward a full-fledged mixin implementation.
-This restricted version already provides considerable value.
+[Mixins 原文](http://www.dartlang.org/articles/mixins/)。
 
-## Basic concepts
+该文章介绍了 Dart 中的 mixins 功能。
+为了减少对现有实现的破坏，
+在语义上从多方面做了限制，
+但是还允许朝完整的 mixin 实现发展。
+这个限制版本的实现已经提供了相当大的价值。
 
-If you are familiar with the academic literature on mixins
-you can probably skip this section.
-Otherwise, please do read it,
-as it defines important concepts and notation.
-Those wishing to delve deeply into the topic can start with this paper:
-[Mixins in Strongtalk](http://www.bracha.org/mixins-paper.pdf).
+## 基本概念
 
-In a language supporting classes and inheritance,
-a class implicitly defines a _mixin_.
-The mixin is usually implicit—it is defined by the class body,
-and constitutes the delta between the class and its superclass.
-The class is in fact a _mixin application_—the
-result of applying its implicitly defined mixin to its superclass. 
+如果你已经熟悉关于 mixins 的论文了，
+你可以跳过该部分。
+否则，请看看这些重要的基本概念。
+如果想深入研究请参考
+[Mixins in Strongtalk](http://www.bracha.org/mixins-paper.pdf)。
 
-The term _mixin application_ comes from
-a close analogy with _function application_.
-Mathematically, a mixin _M_ can be seen as a function
-from superclass to subclass:
-feed _M_ a superclass _S_, and a new subclass of _S_ is returned.
-This is often written as _M |> S_ in the research literature.
+在支持类和继承的语言中，
+类已经隐式的定义了一个 _mixin_。
+mixin 由类的函数来定义，包含了类和其父类的区别。
+类其实是一个 _mixin application_。
 
-Based on the notion of function application,
-one can define function composition.
-The concept carries through to mixin composition;
-we define the composition of mixins
-<em>M<sub>1</sub></em> and <em>M<sub>2</sub></em>,
-written <em>M<sub>1</sub></em> * <em>M<sub>2</sub></em>, as:
+名词 _mixin application_ 来自于 _function application_ 的类比。
+在数学上，一个 mixin _M_ 可以看作一个从父类到子类的函数：
+给 _M_ 提供一个父类 _S_，返回一个 _S_ 类的新子类。
+在学术报告中通常记为：_M |> S_。
+
+基于 function application 的概念可以定义一个 function composition。
+这个概念贯穿 mixin composition；定义一个  mixins
+<em>M<sub>1</sub></em> 和 <em>M<sub>2</sub></em> 的 composition，
+记为 <em>M<sub>1</sub></em> * <em>M<sub>2</sub></em>：即
 <em>(M<sub>1</sub> * M<sub>2</sub>) |> S =
-M<sub>1</sub> |> (M<sub>2</sub> |> S)</em>.
+M<sub>1</sub> |> (M<sub>2</sub> |> S)</em>。
 
-Functions are useful because
-they can be applied to different arguments. 
-Likewise mixins.
-The mixin implicitly defined by a class
-is usually applied only once,
-to the superclass given in the class declaration.
-To allow mixins to be applied to different superclasses,
-we need to be able to either
-declare mixins independently of any particular superclass,
-or alternately,
-to extricate the implicit mixin of a class
-and reuse it outside its original declaration.
-That is what we propose to do below.
+由于方法可以应用不同的参数，所以方法非常有用。
+而 mixins 也一样。
+类定义的 隐式 mixin 通常在该类的父类中使用一次。
+要使 mixin 应用到不同的父类中，
+可以有两种方式：
+在任意父类以外独立定义 mixin，
+或者，提取一个类定义的隐式 mixin 并在其定义之外重用。
+下面的部分来介绍第二种情况。
 
-## Syntax and semantics
+## 词法和语法
 
 Mixins are implicitly defined via ordinary class declarations.
 In principle, every class defines a mixin that can be extracted from it.
