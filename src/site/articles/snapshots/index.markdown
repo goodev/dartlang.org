@@ -1,9 +1,9 @@
 ---
 layout: article
-title: "Snapshots in Dart"
+title: "Dart 快照"
 rel:
   author: siva-annamalai
-description: "Learn how snapshots can help your apps start up faster."
+description: "学习如何用快照提高你的应用启动速度"
 has-permalinks: true
 article:
   written_on: 2013-02-13
@@ -14,150 +14,133 @@ article:
 
 # {{ page.title }}
 
-<em>Written by Siva Annamalai <br />
-<time pubdate date="2013-02-13">February 2013</time>
+<em>作者： Siva Annamalai <br />
+<time pubdate date="2013-02-13">2013 2月</time>
 </em>
 
-This article talks about snapshots in Dart—both
-what they are and how they can make Dart apps start up faster.
-If you write command-line apps,
-you should be able to improve their startup time
-by generating your own snapshots,
-following the instructions in this article.
+这篇文章介绍了什么是 Dart 快照，已经快照如何
+让 Dart 应用启动更块。
+如果你在编写命令行应用，
+通过生成自己的快照可以大幅的提高应用的启动时间。
+这篇文章将告诉你如何生成自己的应用。
 
-If you write web apps, you don’t need to do anything:
-browsers with the Dart VM can snapshot your app automatically.
-The next time your web app runs,
-the browser can retrieve the snapshot from the browser cache
-and use it to start your app faster.
+如果你在编写 web 应用，你无须做任何操作：
+带有 Dart VM 的虚拟机将自动为你的应用生成快照。
+当你的应用下次运行的时候，
+浏览器从缓存中获取快照并使用该快照来启动你的应用。
 
-## What is a snapshot?
+## 什么是快照？
 
-A snapshot is a sequence of bytes
-that represents a serialized form
-of one or more Dart objects.
-This representation closely corresponds to
-the way these Dart objects are represented
-in an isolate’s heap in memory.
+快照是一个或多个 Dart 对象
+序列化后的
+字节流。
+快照和 Dart 对象在
+孤立（isolate）内存堆
+中的数据很相近。
 
-The Dart VM uses snapshots for two main reasons:
+Dart VM 主要在两方面用快照：
 
-* **Speeding up initial startup time**
-  for an application.
-  A snapshot of the core libraries and application script
-  typically contains preparsed data for
-  the core libraries and the application script.
-  This means it is not necessary to parse and tokenize
-  the libraries and script during startup.
+* **加速应用的初次启动时间**。
+  一个核心库和应用脚本的快照通常包含
+  了库和应用程序的解析过的数据。
+  这样，当应用启动的时候就无需
+  再次解析和语法分析了。
 
-* **Passing objects**
-  from one isolate to another isolate.
- 
-The Dart VM uses the following kinds of snapshots:
+* 从一个 isolate **传递对象**
+    到另外一个 isolate。
 
-* A **full snapshot**,
-  which is a complete representation of
-  an isolate’s heap after it is initialized.
-  This is used by the Dart VM for
-  fast startup and initialization of
-  the entire Dart core library and other libraries
-  such as dart:uri, dart:io, dart:utf, dart:json, dart:isolate, and so on.
+Dart VM 使用如下类型的快照： 
 
-* A **script snapshot**,
-  which is a complete representation of
-  an application script in an isolate’s heap
-  after the script is loaded into the isolate,
-  but before the script starts executing.
-  This is used by the Dart VM for
-  fast startup and initialization of applications.
-  For example, the script that starts dart2js
-  uses a pre-created script snapshot of the dart2js application.
+* 一个代表 isolate 堆
+    初始化后
+    的 **完整快照**。
+    Dart VM 使用这种类型快照来
+    加速启动和初始化整个 Dart 核心库和
+    其他库，例如：dart:uri、 dart:io、 dart:utf、 dart:json、 dart:isolate 等。
 
-* An **object snapshot**.
-  Messaging from one isolate to another
-  is implemented in the Dart VM by
-  creating a snapshot of the Dart object
-  that needs to be sent to the other isolate.
+* 一个代表 isolate 堆中应用脚本载入完成并未
+    开始执行时候数据的 **脚本快照**。
+    该类型快照用来快速启动和初始化
+    一个应用。
+    例如：用来启动 dart2js 的脚本用了一个
+    预先创建的 dart2js 应用的脚本快照。
+
+* 一个**对象快照**。
+    从一个 isolate 到另外一个 isolate 的消息传递。
+    在 Dart VM 中会创建一个需要传递对象的对象快照。
 
 
-## How the browser can use snapshots
+## 浏览器如何使用快照
 
-A browser that contains the Dart VM uses
-a full snapshot for fast startup and initialization
-of the main Dart isolate.
-This snapshot contains the entire Dart core library and other libraries
-such as dart:uri, dart:utf, dart:json, dart:isolate, and dart:html.
+包含 Dart VM 的浏览器使用用来加速应用启动和初始化
+的完整快照。
+该快照包含整个 Dart 核心库和其他常用的库，
+例如：
+ dart:uri、 dart:utf、 dart:json、 dart:isolate、 和 dart:html。
 
-In addition, the browser could potentially generate
-a script snapshot of an application that has been loaded
-and cache it in the browser cache.
-This cached script snapshot could then be used for
-subsequent reloads of the application for faster application startup.
+另外，浏览器还可以缓存一个应用的脚本快照，当下次打开
+应用的时候载入该缓存的快照来加速应用的启动。
 
 
-## How to generate and use script snapshots
+## 如何生成和使用脚本快照
 
-You can generate and use script snapshots using the Dart VM (dart).
+用 Dart VM 可以生成和使用脚本快照。
 
 <aside class="alert alert-info" markdown="1">
-**Note:**
-Don't bother creating a script
-snapshot for a program that you're going to run
-just a few times.
-A script snapshot is useful only for deployed applications
-where the cost of creating the snapshot
-is amortized over many launches.
+**注意：**
+对于只运行几次的程序，
+你无需给他们创建快照。
+脚本快照只对部署的应用有用，
+可以加速该应用的启动时间。
 </aside>
 
-To generate a script snapshot,
-use dart with the `--snapshot` option.
-You can use the `--package_root` option
-to specify the location of packages used in imports
-(`import 'package:...'`).
+用 dart 的 `--snapshot` 选项来生成
+脚本快照。
+还可以用 `--package_root` 选项来指定
+通过 import 使用的包的位置(`import 'package:...'`)。
 
 <pre>
 dart <em>[</em>--package_root=<em>path]</em> --snapshot=<em>out-file</em> <em>dart-script-file</em>
 </pre>
 
-The `--snapshot` option writes
-a script snapshot of _dart-script-file_ to _out-file_.
-For example, the following command creates
-a snapshot of the Dart script `dart2js.dart`,
-putting it into a file called `dart2js.snapshot`.
+`--snapshot` 选项把一个 _dart-script-file_ 
+的脚本快照写入到  _out-file_ 中。
+例如，下面的命令创建了 `dart2js.dart` 脚本的快照，
+并把创建的快照保存到 `dart2js.snapshot` 文件中。
 
 {% prettify sh %}
 dart --snapshot=dart2js.snapshot \ 
     dart-sdk/lib/dart2js/lib/_internal/compiler/implementation/dart2js.dart
 {% endprettify %}
 
-To execute a script from its snapshot,
-specify the snapshot file on the command line:
+要从快照中执行脚本，
+在命令行上指定脚本的文件即可：
 
 <pre>
 dart <em>snapshot-file</em> <em>args</em>
 </pre>
 
-Any _args_ you specify are passed to the script.
-For example, you can run dart2js like this,
-passing `myscript.dart -oout.js` as command-line arguments to dart2js:
+指定的任意 _args_ 都会传递给脚本。
+例如，你可以用 `myscript.dart -oout.js` 作为命令行参数
+来执行 dart2js：
 
 {% prettify sh %}
 dart dart2js.snapshot myscript.dart -oout.js
 {% endprettify %}
 
-## How to generate full snapshots
+## 如何生成完整快照
 
-Read this section if you’re working on
-one of the rare projects that embed the Dart VM (for example, Dartium).
-The gen_snapshot tool writes a full snapshot
-(corelibs, dart:uri, dart:io, dart:utf, dart:json, dart:isolate, ...)
-to _out-file_:
+如果你在实现一个嵌入到 Dart VM 中的项目（例如 Dartium）
+，则请阅读这部分内容。 gen_snapshot 工具
+将生成一个完整快照
+（包含 核心库、dart:uri、 dart:io、 dart:utf、 dart:json、 dart:isolate 等 ）
+到 _out-file_ 中：
 
 <pre>
 gen_snapshot <em>[options]</em> --snapshot=<em>out-file</em>
 </pre>
 
-You can use the following _options_:
+支持如下 _options_:
 
 <table class="table">
   <tr style="text-align:left">
@@ -168,7 +151,7 @@ You can use the following _options_:
       --package_root=<em>path</em>
     </td>
     <td>
-      Specifies the location of packages used in imports
+      指定 import 导入的库的根目录
       (<code>import 'package:...'</code>).</td>
   </tr>
   <tr>
@@ -176,17 +159,18 @@ You can use the following _options_:
       --url_mapping=<em>mapping</em>
     </td>
     <td>
-      Provides a URL mapping on the command line for URI resolution
-      during library imports.</td>
+      在导入库的时候提供一个用于解析 URI 的 URL 映射。
+    </td>
   </tr>
 </table>
 
 
-## Summary
+## 总结
 
-You can find more information about snapshots
-and how they are implemented by browsing the files in the
-[dart/runtime/vm directory](http://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fruntime%2Fvm).
-Start by looking for "Snapshot" in
-[snapshot.h](http://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/runtime/vm/snapshot.h).
-Note that the code might move as the implementation changes.
+通过
+[dart/runtime/vm directory](http://code.google.com/p/dart/source/browse/#svn%2Fbranches%2Fbleeding_edge%2Fdart%2Fruntime%2Fvm)
+可以发现更多关于快照的信息和快照如何实现的。
+在
+[snapshot.h](http://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/runtime/vm/snapshot.h)
+中查找 "Snapshot" 。
+注意：当实现变化的时候，代码可能会移到别的目录。
