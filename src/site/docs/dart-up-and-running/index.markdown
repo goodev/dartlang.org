@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dart: Up and Running"
+title: "Dart: 启动和运行"
 description: "Excerpts from the O'Reilly book."
 ---
 
@@ -14,31 +14,30 @@ description: "Excerpts from the O'Reilly book."
     width="190" height="250" />
   </a>
 </div>
-_Dart: Up and Running_
-is published by O'Reilly and reproduced on dartlang.org with permission.
-Its content is licensed under the
+_Dart: 启动和运行_
+由 O'Reilly 出版 ， dartlang.org 获得了内容使用许可。
+内容许可在：
 [Creative Commons Attribution-Noncommercial-No Derivative Works 3.0
 United States License](http://creativecommons.org/licenses/by-nc-nd/3.0/us/)
-(CC BY-NC-ND).
+(CC BY-NC-ND)。
 
-You can download [code samples](https://github.com/dart-lang/dart-up-and-running-book/tree/master/code) and other book files from the
-[GitHub project](https://github.com/dart-lang/dart-up-and-running-book).
+你可以下载 [样例代码](https://github.com/dart-lang/dart-up-and-running-book/tree/master/code) 或从这里下载书内其他的文件
+[GitHub 上的项目](https://github.com/dart-lang/dart-up-and-running-book).
 
-For purchase information, see the
-[O'Reilly book page](http://shop.oreilly.com/product/0636920025719.do).
-To find other books about Dart, see [Books on Dart](/books/).
+购书相关, 请查看
+[O'Reilly 书页面](http://shop.oreilly.com/product/0636920025719.do).
+寻找其他关于 Dart 的书， 查看 [Dart 相关书籍](/books/).
 
 
-#### Contents
+#### 内容
 
-1. [Foreword](contents/foreword.html)
-1. [Preface](contents/preface.html)
-   (including [Content Updates](contents/preface.html#preface-updates)
-   since the book was published)
-1. [Chapter 1. Quick Start](contents/ch01.html)
-1. [Chapter 2. A Tour of the Dart Language](contents/ch02.html)
-1. [Chapter 3. A Tour of the Dart Libraries](contents/ch03.html)
-1. [Chapter 4. Tools](contents/ch04.html)
-1. [Chapter 5. Walkthrough: Dart Chat](contents/ch05.html)
+1. [序言](contents/foreword.html)
+1. [前言](contents/preface.html)
+   (包含从书出版后的[内容更新](contents/preface.html#preface-updates)
+   )
+1. [第一章. 快速开始](contents/ch01.html)
+1. [第二章. Dart 语言概述](contents/ch02.html)
+1. [第三章. Dart 类库概述](contents/ch03.html)
+1. [第四章. 工具](contents/ch04.html)
+1. [第五章. 学习样例: Dart 聊天室](contents/ch05.html)
 {:.toc}
-
