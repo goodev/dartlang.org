@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Dart Cookbook"
-description: "Recipes and prescriptions for using Dart."
+description: "使用 Dart 的妙方。"
 has-permalinks: true
 ---
 
@@ -13,58 +13,58 @@ has-permalinks: true
 <div class="bs-sidebar hidden-print affix-top" role="complementary">
 {::options parse_block_html="false" /}  
 
-## Contents
+## 目录
 
 1. [Strings](#strings)
-    1. [Concatenating strings](#concatenating-strings)
-    1. [Interpolating expressions inside strings](#interpolating-expressions-inside-strings)
-    1. [Handling special characters within strings](#handling-special-characters-within-strings)
-    1. [Incrementally building a string using a StringBuffer](#incrementally-building-a-string-using-a-stringbuffer)
-    1. [Determining whether a string is empty](#determining-whether-a-string-is-empty)
-    1. [Removing leading and trailing whitespace](#removing-leading-and-trailing-whitespace)
-    1. [Changing string case](#changing-string-case)
-    1. [Handling extended characters that are composed of multiple code units](#handling-extended-characters-that-are-composed-of-multiple-code-units)
-    1. [Converting between characters and numerical codes](#converting-between-characters-and-numerical-codes)
-    1. [Calculating the length of a string](#calculating-the-length-of-a-string)
-    1. [Processing a string one character at a time](#processing-a-string-one-character-at-a-time)
-    1. [Splitting a string into substrings](#splitting-a-string-into-substrings)
-    1. [Determining whether a string contains another string](#determining-whether-a-string-contains-another-string)
-    1. [Finding matches of a regular expression](#finding-matches-of-a-regular-expression)
-    1. [Substituting strings using regular expressions](#substituting-strings-using-regular-expressions)
+    1. [连接字符串](#concatenating-strings)
+    1. [字符串插值](#interpolating-expressions-inside-strings)
+    1. [处理字符串中的特殊字符](#handling-special-characters-within-strings)
+    1. [用 StringBuffer 来创建字符串](#incrementally-building-a-string-using-a-stringbuffer)
+    1. [判断字符串是否为空](#determining-whether-a-string-is-empty)
+    1. [删除开头和结尾的空格字符](#removing-leading-and-trailing-whitespace)
+    1. [改变字符大小写](#changing-string-case)
+    1. [处理由多个字符单元组成的扩展字符](#handling-extended-characters-that-are-composed-of-multiple-code-units)
+    1. [在字符和字符编码之间转换](#converting-between-characters-and-numerical-codes)
+    1. [计算字符串的长度](#calculating-the-length-of-a-string)
+    1. [一次一个字符地处理字符串](#processing-a-string-one-character-at-a-time)
+    1. [把字符串分割为子字符串](#splitting-a-string-into-substrings)
+    1. [检测一个字符串是否包含另外一个字符串](#determining-whether-a-string-contains-another-string)
+    1. [查找匹配正则表达式的字符串](#finding-matches-of-a-regular-expression)
+    1. [用正则表达式替换字符串](#substituting-strings-using-regular-expressions)
 1. [Lists](#lists)
-    1. [Creating a fixed length list](#creating-a-fixed-length-list)
-    1. [Creating an immutable List](#creating-an-immutable-list)
-    1. [Creating a list and initializing it with default values](#creating-a-list-and-initializing-it-with-default-values)
-    1. [Copying a list](#copying-a-list)
-    1. [Appending items to a list](#appending-items-to-a-list)
+    1. [创建固定长度的 List](#creating-a-fixed-length-list)
+    1. [创建不可变的 List](#creating-an-immutable-list)
+    1. [创建一个用默认值初始化的 List](#creating-a-list-and-initializing-it-with-default-values)
+    1. [复制一个 List](#copying-a-list)
+    1. [在 List 中添加内容](#appending-items-to-a-list)
 1. [Numbers](#numbers)
-    1. [Converting a string to a number](#converting-a-string-to-a-number)
-    1. [Converting a number to a string](#converting-a-number-to-a-string)
+    1. [把字符串转换为数字](#converting-a-string-to-a-number)
+    1. [把数字转换为字符串](#converting-a-number-to-a-string)
 1. [JSON](#json)
-    1. [Encoding JSON](#encoding-json)
-    1. [Decoding JSON](#decoding-json)
+    1. [编码为 JSON 格式](#encoding-json)
+    1. [解析 JSON 格式](#decoding-json)
 1. [URIs](#uris)
-    1. [Encoding and decoding fully qualified URIs](#encoding-and-decoding-fully-qualified-uris)
-    1. [Parsing URIs](#parsing-uris)
-    1. [Building URIs](#building-uris)
-1. [Testing](#testing)
-    1. [Running only a single test](#running-only-a-single-test)
-    1. [Filtering which tests are run](#filtering-which-tests-are-run)
-    1. [Running code before and after each test](#running-code-before-and-after-each-test)
-    1. [Testing synchronous exceptions](#testing-synchronous-exceptions)
-    1. [Testing for double equality](#testing-for-double-equality)
+    1. [编码和解码完整的 URI](#encoding-and-decoding-fully-qualified-uris)
+    1. [解析 URI](#parsing-uris)
+    1. [创建 URI](#building-uris)
+1. [测试](#测试)
+    1. [只运行一个测试](#running-only-a-single-test)
+    1. [过滤要运行的测试](#filtering-which-tests-are-run)
+    1. [在测试前后运行代码](#running-code-before-and-after-each-test)
+    1. [测试同步异常](#测试-synchronous-exceptions)
+    1. [测试双精度数字相等](#测试-for-double-equality)
 1. [HTML DOM](#html-dom)
-    1. [Using CSS selectors to find DOM elements](#using-css-selectors-to-find-dom-elements)
-    1. [Using CSS selectors within a limited scope](#using-css-selectors-within-a-limited-scope)
-    1. [Traversing the DOM starting from a particular element](#traversing-the-dom-starting-from-a-particular-element)
-    1. [Creating DOM elements](#creating-dom-elements)
-    1. [Inserting child elements inside an existing DOM element](#inserting-child-elements-inside-an-existing-dom-element)
-    1. [Inserting elements before or after an existing DOM element](#inserting-elements-before-or-after-an-existing-dom-element)
-    1. [Cloning DOM elements](#cloning-dom-elements)
-    1. [Replacing DOM elements](#replacing-dom-elements)
-    1. [Removing an element from the DOM](#removing-an-element-from-the-dom)
-    1. [Getting and setting DOM element attributes](#getting-and-setting-dom-element-attributes)
-    1. [Getting and setting element style properties](#getting-and-setting-element-style-properties)
+    1. [用 CSS 选择器查找 DOM 元素](#using-css-selectors-to-find-dom-elements)
+    1. [在一个限定的范围内使用 CSS 选择器](#using-css-selectors-within-a-limited-scope)
+    1. [从一个特定的元素来便利 DOM](#traversing-the-dom-starting-from-a-particular-element)
+    1. [创建 DOM 元素](#creating-dom-elements)
+    1. [在 DOM 元素中添加一个子元素](#inserting-child-elements-inside-an-existing-dom-element)
+    1. [在 DOM 元素前后插入子元素](#inserting-elements-before-or-after-an-existing-dom-element)
+    1. [复制 DOM 元素](#cloning-dom-elements)
+    1. [替换 DOM 元素](#replacing-dom-elements)
+    1. [从 DOM 中删除元素](#removing-an-element-from-the-dom)
+    1. [获取和设置 DOM 元素的属性](#getting-and-setting-dom-element-attributes)
+    1. [获取和设置元素样式属性](#getting-and-setting-element-style-properties)
 1. [Web UI](#web-ui)
     1. [Using a Dart expression inside HTML](#using-a-dart-expression-inside-html)
     1. [Observing a Dart variable for changes](#observing-a-dart-variable-for-changes)
@@ -82,22 +82,21 @@ has-permalinks: true
 
 ## Strings
 
-### Concatenating strings
+### 连接字符串
 
-#### Problem
+#### 面对的问题
 
-You want to concatenate strings in Dart. 
+你想在 Dart 中连接字符串。
 
-#### Solution
+#### 解决的方式
 
-Use the `+` operator:
+用 `+` 操作符：
 
 {% prettify dart %}
 var fact = 'Dart ' + 'is ' + 'fun!'; // 'Dart is fun!'
 {% endprettify %}
 
-You can use the `+` operator to concatenate single-line and multi-line
-strings:
+你可以用 `+` 操作符来连接单行和多行字符串：
 
 {% prettify dart %}
 var funnyGuys = 'Dewey ' + 'Cheatem' + 
@@ -105,15 +104,15 @@ var funnyGuys = 'Dewey ' + 'Cheatem' +
 Howe'''; // 'Dewey Cheatem and\n Howe'
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
-You can also use adjacent string literals:
+你还可以把字符串字面量放到一起：
 
 {% prettify dart %}
 var fact = 'Dart '  'is '  'fun!'; // 'Dart is fun!'
 {% endprettify %}
 
-Adjacent literals work over multiple lines:
+字符串字面量放到一起的用法也支持多行字符串：
 
 {% prettify dart %}
 var fact = 'Dart '
@@ -122,63 +121,60 @@ var fact = 'Dart '
 {% endprettify %}
 
 
-If the string fragments you wish to concatenate are already in a list, use
-`join()`:
+如果你要连接的字符串片段已经在一个 List 中了，则可以用 List 的
+`join()` 函数：
 
 {% prettify dart %}
 var film = ['The', 'Big', 'Lebowski'].join(' '); // 'The Big Lebowski'
 {% endprettify %}
 
-If you want to incrementally build a longish string from its parts, a
-StringBuffer works more efficiently than string concatenation (see
-_Incrementally building a string efficiently using a StringBuffer_, below).
+如果你需要从多个片段创建一个很长很长的字符串，则用
+StringBuffer 会更加高效（查看下面的 _用 StringBuffer 来创建字符串_）。
 
-You can also use string interpolation (see _Interpolating expressions inside
-strings_, below).
+还可以用字符串插值功能。
 
 
-### Interpolating expressions inside strings
+### 字符串插值
 
-#### Problem
+#### 面对的问题
 
-You want to embed Dart code inside strings.
+你想在字符串中嵌入 Dart 表达式的值。
 
-#### Solution
+#### 解决的方式
 
-You can put the value of an expression inside a string by using
-$\{expression}.
+通过使用 $\{表达式} 语法你可以把表达式的值放到一个字符串中。
 
 {% prettify dart %}
 var favFood = 'sushi';
 var whatDoILove = 'I love ${favFood.toUpperCase()}'; // 'I love SUSHI'
 {% endprettify %}
 
-You can skip the \{} if the expression is an identifier:
+如果表达式只是一个标识符，则可以省略 \{}：
 
 {% prettify dart %}
 var whatDoILove = 'I love $favFood'; // 'I love sushi'
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
-The interpolated string, `'string ${expression}` is equivalent to the
-concatenation of the strings `string` and `expression.toString()`.
-Consider this code:
+`'string ${expression}`  和 `string` + `expression.toString()`
+具有同样的效果。
+例如：
 
 {% prettify dart %}
 var four = 4;
 var seasons = 'The $four seasons'; // 'The 4 seasons'
 {% endprettify %}
 
-This is functionally equivalent to the following:
+在功能上和如下代码一样：
 
 {% prettify dart %}
 var seasons = 'The ' + 4.toString() + ' seasons';
 // 'The 4 seasons'
 {% endprettify %}
 
-You should consider implementing a `toString()` method for classes that you
-define. Here's what happens if you don't:
+你应该考虑给你的类实现一个 `toString()` 函数。
+如果没有，则会发生如下情况：
 
 {% prettify dart %}
 class Point {
@@ -190,8 +186,8 @@ var point = new Point(3, 4);
 print('Point: $point'); // "Point: Instance of 'Point'"
 {% endprettify %}
 
-Probably not what you wanted. Here is the same example with an explicit
-`toString()`:
+这个结果或许不是你所期望的。下面是定义了 `toString()` 后的
+示例：
 
 {% prettify dart %}
 class Point {
@@ -203,15 +199,15 @@ class Point {
 print('Point: $point'); // 'Point: x: 3, y: 4'
 {% endprettify %}
 
-### Handling special characters within strings
+### 处理字符串中的特殊字符
 
-#### Problem
+#### 面对的问题
 
-You want to put newlines, dollar signs, or other special characters in strings.
+你想在字符串中加入 换行符、美元符号和其他特殊的字符。
 
-#### Solution
+#### 解决的方式
 
-Prefix special characters with a `\`.
+在特殊字符前面加一个 `\`。
 
 {% prettify dart %}
   print('Wile\nCoyote'); 
@@ -219,32 +215,32 @@ Prefix special characters with a `\`.
   // Coyote
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
-Dart designates a few characters as special, and these can be escaped:
+Dart 有一些特殊用途的字符，这些字符可以通过转义方式使用：
 
-* \n for newline, equivalent to \x0A.
-* \r for carriage return, equivalent to \x0D.
-* \f for form feed, equivalent to \x0C.
-* \b for backspace, equivalent to \x08.
-* \t for tab, equivalent to \x09.
-* \v for vertical tab, equivalent to \x0B.
+* \n 换行符，和 \x0A 一样。
+* \r 回车，和  \x0D 一样。
+* \f 换页符，和 \x0C 一样。
+* \b 退格， 和 \x08 一样。
+* \t 制表符， 和 \x09 一样。
+* \v 垂直制表符， 和 \x0B 一样。
 
-If you prefer, you can use `\x` or `\u` notation to indicate the special
-character:
+如果你喜欢的话，可以用 `\x` 或者 `\u` 的方式来
+使用特殊字符：
 
 {% prettify dart %}
 print('Wile\x0ACoyote');   // Same as print('Wile\nCoyote')
 print('Wile\u000ACoyote'); // Same as print('Wile\nCoyote') 
 {% endprettify %}
 
-You can also use `\u{}` notation:
+还可以用 `\u{}` 方式：
 
 {% prettify dart %}
 print('Wile\u{000A}Coyote'); // same as print('Wile\nCoyote')
 {% endprettify %}
 
-You can also escape the `$` used in string interpolation:
+也可以转义字符串插值表达式中的 `$`：
 
 {% prettify dart %}
 var superGenius = 'Wile Coyote';
@@ -252,34 +248,32 @@ print('$superGenius and Road Runner');  // 'Wile Coyote and Road Runner'
 print('\$superGenius and Road Runner'); // '$superGenius and Road Runner'
 {% endprettify %}
 
-If you escape a non-special character, the `\` is ignored:
+如果你把 `\` 用着一个不是特殊字符前面，则不起作用：
 
 {% prettify dart %}
 print('Wile \E Coyote'); // 'Wile E Coyote'
 {% endprettify %}
 
-##### Raw strings
+##### 原始字符串
 
-You can turn off string interpolation by using raw strings. Prefix the starting
-quote of a string with `r` to make a regular string into a raw string:
+你可以用原始字符串来关闭字符串插值的功能。
+在字符串引号前面添加一个 `r` 来创建一个原始字符串：
 
 {% prettify dart %}
 print(r'Wile \E Coyote');               // 'Wile \E Coyote'
 print(r'$superGenius and Road Runner'); // '$superGenius and Road Runner'
 {% endprettify %}
 
-Special characters and the `$` symbol are stripped of any special meaning in raw
-strings.
+特殊字符和 `$` 符号在原始字符串中只代表普通的字符。
 
 
-### Incrementally building a string using a StringBuffer
+### 用 StringBuffer 创建增量字符串
 
-#### Problem
+#### 面对的问题
 
-You want to collect string fragments and combine them in an efficient
-manner.
+你想用更高效的方式来组合字符片段。
 
-#### Solution
+#### 解决的方式
 
 Use a StringBuffer to programmatically generate a string. Consider this code
 below for assembling a series of urls from fragments:
@@ -315,7 +309,7 @@ String assembleUrlsUsingStringBuffer(entries) {
 A StringBuffer collects string fragments, but does not generate a new string
 until `toString()` is called. 
 
-#### Discussion
+#### 延伸讨论
 
 Using a StringBuffer is vastly more efficient than concatenating fragments
 at each step: Consider this rewrite of the above code:
@@ -361,12 +355,12 @@ var beatles = sb.toString(); // 'The Beatles:\nJohn, Paul, George, and Ringo!'
 
 ### Determining whether a string is empty
 
-#### Problem
+#### 面对的问题
 
 You want to know whether a string is empty. You tried `if (string) {...}`, but
 that did not work.
 
-#### Solution
+#### 解决的方式
 
 Use `string.isEmpty`:
 
@@ -388,7 +382,7 @@ var space = ' ';
 print(space.isEmpty); // false
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 Don't use `if (string)` to test the emptiness of a string. In Dart, all objects
 except the boolean true evaluate to false, so `if(string)` is always false. You
@@ -398,12 +392,12 @@ in checked mode.
 
 ### Removing leading and trailing whitespace
 
-#### Problem
+#### 面对的问题
 
 You want to remove spaces, tabs, and other whitespace from the beginning and
 end of strings.
 
-#### Solution
+#### 解决的方式
 
 Use `string.trim()`:
 
@@ -431,11 +425,11 @@ var newString = string.replaceFirst(new RegExp(r'\s+$'), ''); // '\n\r\f\t\v X'
 
 ### Changing string case
 
-#### Problem
+#### 面对的问题
 
 You want to change the case of strings.
 
-#### Solution
+#### 解决的方式
 
 Use String's `toUpperCase()` and `toLowerCase()` methods: 
 
@@ -467,14 +461,14 @@ If a character's case does not change when using `toUpperCase()` and
 form.
 
 
-### Handling extended characters that are composed of multiple code units
+### 处理由多个字符单元组成的扩展字符
 
-#### Problem
+#### 面对的问题
 
 You want to use emoticons and other special symbols that don't fit into 16
 bits. How can you create such strings and use them correctly in your code? 
 
-#### Solution
+#### 解决的方式
 
 You can create an extended character using `'\u{}'` syntax:
 
@@ -482,7 +476,7 @@ You can create an extended character using `'\u{}'` syntax:
 var clef = '\u{1D11E}'; // 𝄞
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 Most UTF-16 strings are stored as two-byte (16 bit) code sequences.
 Since two bytes can only contain the 65,536 characters in the 0x0 to 0xFFFF
@@ -540,16 +534,16 @@ print(subject.runes.map((rune) => new String.fromCharCode(rune)).toList());
 {% endprettify %}
 
 
-### Converting between characters and numerical codes
+### 在字符和字符编码之间转换
 
-#### Problem
+#### 面对的问题
 
 You want to convert string characters into numerical codes and vice versa.
 You want to do this because sometimes you need to compare characters in a string
 to numerical values coming from another source. Or, maybe you want to split a
 string and then operate on each character.
 
-#### Solution
+#### 解决的方式
 
 Use the `runes` getter to get a string's code points:
 
@@ -614,14 +608,14 @@ Creating a string with only one half of a surrogate pair is permitted,
 but not recommended.
 
 
-### Calculating the length of a string
+### 计算字符串的长度
 
-#### Problem
+#### 面对的问题
 
 You want to get the length of a string, but are not sure how to calculate the
 length correctly when working with variable length Unicode characters.
 
-#### Solution
+#### 解决的方式
 
 Use `string.runes.length` to get the number of characters in a string.
 
@@ -641,7 +635,7 @@ clef.runes.length;             // 1
 music.runes.length             // 5
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 You can directly use a string's `length` property (minus `runes`). This returns
 the string's code unit length. Using `string.length` produces the same length
@@ -680,13 +674,13 @@ the 'é' is constructed using a different number of runes. This makes it
 impossible to know the length of these strings by just looking at them.
 
 
-### Processing a string one character at a time
+### 一次一个字符地处理字符串
 
-#### Problem
+#### 面对的问题
 
 You want to do something with each character in a string.
 
-#### Solution
+#### 解决的方式
 
 Map the results of calling `string.split('')`:
 
@@ -732,13 +726,13 @@ extended characters that are composed of multiple code units_ recipe for
 special considerations when working with extended strings.
 
 
-### Splitting a string into substrings
+### 把字符串分割为子字符串
 
-#### Problem
+#### 面对的问题
 
 You want to split a string into substrings using a delimiter or a pattern.
 
-#### Solution
+#### 解决的方式
 
 Use the `split()` method with a string or a RegExp as an argument.
 
@@ -779,13 +773,13 @@ registered to transform the matched and unmatched substrings before the
 substrings are joined together again.
 
 
-### Determining whether a string contains another string
+### 检测一个字符串是否包含另外一个字符串
 
-#### Problem
+#### 面对的问题
 
 You want to find out whether a string is the substring of another string.
 
-#### Solution
+#### 解决的方式
 
 Use `string.contains()`:
 
@@ -800,9 +794,9 @@ You can use a second argument to specify where in the string to start looking:
 print(fact.contains('Dart', 2)); // False
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
-The String class provides a couple of shortcuts for testing whether a
+The String class provides a couple of shortcuts for 测试 whether a
 string is a substring of another:
 
 {% prettify dart %}
@@ -824,14 +818,14 @@ var found = new RegExp(r'ar[et]').hasMatch(string);
 //  True, 'art' and 'are' match.
 {% endprettify %}
 
-### Finding matches of a regular expression
+### 查找匹配正则表达式的字符串
 
-#### Problem
+#### 面对的问题
 
 You want to use RegExp to match a pattern in a string, and want to be
 able to access the matches.
 
-#### Solution
+#### 解决的方式
 
 Construct a regular expression using the RegExp class, and find matches
 using the `allMatches()` method:
@@ -843,7 +837,7 @@ List matches = regExp.allMatches(neverEatingThat);
 print(matches.map((match) => match.group(0)).toList()); // ['fox', 'box']
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 You can query the object returned by `allMatches()` to find out the
 number of matches:
@@ -865,14 +859,14 @@ print(regExp.stringMatch(neverEatingThat));         // 'fox'
 print(regExp.stringMatch('I like bagels and lox')); // null
 {% endprettify %}
 
-### Substituting strings using regular expressions
+### 用正则表达式替换字符串
 
-#### Problem
+#### 面对的问题
 
 You want to match substrings within a string and make substitutions
 based on the matches.
 
-#### Solution
+#### 解决的方式
 
 Construct a regular expression using the RegExp class and make
 replacements using `replaceAll()` method:
@@ -906,14 +900,14 @@ print(newString); // 'I like IKE but I ♡ LUCY'
 
 ## Lists
 
-### Creating a fixed length list
+### 创建固定长度的 List
 
-#### Problem
+#### 面对的问题
 
 You want to create a list but don't want to allow it's size to be
 changed.
 
-#### Solution
+#### 解决的方式
 
 Pass the list size as an argument to the List constructor. This creates a
 fixed-length list:
@@ -940,16 +934,16 @@ print(fixedList); // ['red', 'green', 'blue']
 {% endprettify %}
 
 
-### Creating an immutable List
+### 创建不可变的 List
 
-#### Problem
+#### 面对的问题
 
 Because you want to protect your data from being accidentally overwritten, you
 want to use a list that cannot be changed after it is created.  You don't want
 anyone to be able to modify list elements, add new elements, or remove
 existing elments.
 
-#### Solution
+#### 解决的方式
 
 Create an immutable list using the reserved word 'const':
 
@@ -1001,14 +995,14 @@ colors.hashCode == rgb.hashCode; // true
 {% endprettify %}
 
 
-### Creating a list and initializing it with default values
+### 创建一个用默认值初始化的 List
 
-#### Problem
+#### 面对的问题
 
 You want to create a new list and want to assign defalt values at every position
 when the list is created.
 
-#### Solution
+#### 解决的方式
 
 Use the `List.generate()` constructor. Pass it a function that generates the
 fill value: 
@@ -1040,7 +1034,7 @@ The code above generates a 3 X 3 grid:
 print(grid); // [[0, 1, 2], [1, 2, 3], [2, 3, 4]]
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 You will optionally use the `List.filled()` constructor to create a list and
 initialize it with default values:
@@ -1060,13 +1054,13 @@ If these restrictions are not important to your code, you can use
 `List.filled()` instead of `List.generate()`.
 
 
-### Copying a list
+### 复制一个 List
 
-#### Problem
+#### 面对的问题
 
 You want to create a new list with the elements of another list.
 
-#### Solution
+#### 解决的方式
 
 Use the `List.from()` constructor and pass the original list as an argument:
 
@@ -1075,7 +1069,7 @@ var fruit1 = ['orange', 'banana', 'mango'];
 var fruit2 = new List.from(fruit1);
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 The `List.from()` constructor creates a new, independent list:
 
@@ -1150,14 +1144,14 @@ vowelsFixed.removeLast(); // UnsupportedError
 {% endprettify %}
 
 
-### Appending items to a list
+### 在 List 中添加内容
 
-#### Problem
+#### 面对的问题
 
 You want to add items to the end of a list, and want to know the most
 efficient way to do so.
 
-#### Solution
+#### 解决的方式
 
 To add one item at a time to a list, use `add()`:
 
@@ -1201,20 +1195,20 @@ for (var i = 0; i < moreNames.length; i++) {
 print(names); ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']
 {% endprettify %}
 
-Appending items to a list by increasing the list length first is generally more
+在 List 中添加内容 by increasing the list length first is generally more
 efficient than using `add()` or `addAll()`.
 
 
 
 ## Numbers
 
-### Converting a string to a number
+### 把字符串转换为数字
 
-#### Problem
+#### 面对的问题
 
 You want to parse a string and convert it to a number.
 
-#### Solution
+#### 解决的方式
 
 Use `int.parse` to convert a string to an int:
 
@@ -1258,13 +1252,13 @@ Both `int.parse` and `double.parse` throw a FormatException if they are passed
 invalid arguments.
 
 
-### Converting a number to a string
+### 把数字转换为字符串
 
-#### Problem
+#### 面对的问题
 
 You want to convert a number to a string.
 
-#### Solution
+#### 解决的方式
 
 Use `toString()` for a no-frills number to string conversion:
 
@@ -1328,13 +1322,13 @@ You can read the API documentation for the dart:json library at
 http://api.dartlang.org/docs/releases/latest/dart_json.html.
 
 
-### Encoding JSON
+### 编码为 JSON 格式
 
-#### Problem
+#### 面对的问题
 
 You want to convert a Dart object into JSON.
 
-#### Solution
+#### 解决的方式
 
 Use the `stringify()` function to encode a Dart object into a JSON-formatted
 string.
@@ -1425,13 +1419,13 @@ void main() {
 }
 {% endprettify %}
 
-### Decoding JSON
+### 解析 JSON 格式
 
-#### Problem
+#### 面对的问题
 
 You want to convert a JSON string into a Dart object.
 
-#### Solution
+#### 解决的方式
 
 Use `parse()` to decode a JSON-encoded string into a Dart object:
 
@@ -1485,7 +1479,7 @@ import 'dart:uri';
 {% endprettify %}
 
 
-### Encoding and decoding fully qualified URIs
+### 编码和解码完整的 URI
 
 
 Use `encodeUri()` to encode a fully qualified URI:
@@ -1542,13 +1536,13 @@ decodeUriComponent(encodedParams) == params; // true
 {% endprettify %}
 
 
-### Parsing URIs
+### 解析 URI
 
-#### Problem
+#### 面对的问题
 
 You want to access the parts of a URI.
 
-#### Solution
+#### 解决的方式
 
 The properties of a URI created using the `Uri()` constructor can be directly
 accessed in the following manner: 
@@ -1579,7 +1573,7 @@ var uri = new Uri('http://example.org:8080/content/a.html#intro');
 uri.origin;     // 'http://example.org:8080'
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 The Uri class treats all URs that do not explicitly begin with a scheme as
 relative:
@@ -1622,13 +1616,13 @@ try {
 {% endprettify %}
 
 
-### Building URIs
+### 创建 URI
 
-#### Problem
+#### 面对的问题
 
 You want to build URIs from individual parts.
 
-#### Solution
+#### 解决的方式
 
 Use the `Uri.fromComponents()` constructor to build up a URI from individual
 parts:
@@ -1657,18 +1651,18 @@ print(uri.toString(); // '//content/a.html'
 You should remove the leading '//' before using the URI.
 
 
-## Testing
+## 测试
 
-### Running only a single test
+### 只运行一个测试
 
-#### Problem
+#### 面对的问题
 
 You want to run just a single test.  Maybe it is the test you are
 currently working on and want to make that pass before running all your tests.
 Or, perhaps it is a failing test that you want to explore in the debugger,
 without dealing with the noise from other tests. 
 
-#### Solution
+#### 解决的方式
 
 To isolate a test, change `test()` to `solo_test()`.
 
@@ -1706,16 +1700,16 @@ unittest-suite-success
 {% endprettify %}
 
 
-### Filtering which tests are run
+### 过滤要运行的测试
 
-#### Problem
+#### 面对的问题
 
 You want to run just a subset of all your tests. Maybe you've divided up your
 tests into `group()`s and want to run the tests for one or more group. Or
 perhaps you carefully placed certain keywords in your test descriptions, and
 want to run only tests whose desciption contains a specific keyword.
 
-#### Solution
+#### 解决的方式
 
 Use the `filterTests()` function provided by the Unittest library. This
 function takes a String or RegExp argument and matches it against each test
@@ -1829,14 +1823,14 @@ unittest-suite-success
 The keyword argument is optional. If you omit it, all tests in the file run.
 
 
-### Running code before and after each test
+### 在测试前后运行代码
 
-#### Problem
+#### 面对的问题
 
 You want initialization code to run before each test, and cleanup code to run
 after each test, but want to avoid code duplication.
 
-#### Solution
+#### 解决的方式
 
 Within each `group()`, call `setUp()` for initialization and `tearDown()` for
 cleanup. The function passed as an argument to `setUp()` runs before each
@@ -1963,19 +1957,19 @@ group('test Point with nested setUp()', () {
 });
 {% endprettify %}
 
-You can fix this problem by assigning each nested `group()` its own `setUp()`
+You can fix this 面对的问题 by assigning each nested `group()` its own `setUp()`
 and `tearDown()`.
 
 
-### Testing synchronous exceptions
+### 测试同步异常
 
-#### Problem
+#### 面对的问题
 
 You want to test exceptions in your code. You want to know if some code returns
 normally, or if it throws. Or, you want to test that a specific error is raised,
 and that the error message is correct. 
 
-#### Solution
+#### 解决的方式
 
 The Matcher library, bundled together with the Unittest package, provides
 several handy assertion shortcuts that you can use in your tests. 
@@ -2016,7 +2010,7 @@ expect(() => throw new StateError('functions called in the wrong order'),
 {% endprettify %}
 
 You can also use the `throwsA()` and `predicate()` functions for more granular
-testing of exceptions.
+测试 of exceptions.
 
 The `predicate()` function returns a Matcher based on an assertion about the
 error object:
@@ -2049,16 +2043,16 @@ expect(() => throw new RangeError('out of range'),
 {% endprettify %}
 
 
-### Testing for double equality
+### 测试双精度数字相等
 
-#### Problem
+#### 面对的问题
 
 Arithmetic involving doubles is inexact. You want to compare two doubles to
 determine if they are acceptably close.
 
-#### Solution 
+#### 解决的方式 
 
-Use the `closeTo()` matcher for testing approximate numerical equality:
+Use the `closeTo()` matcher for 测试 approximate numerical equality:
 
 {% prettify dart %}
 closeTo(value, delta)
@@ -2083,13 +2077,13 @@ expect(point1.distanceTo(point2)), closeTo(7.28, .001));
 
 ## HTML DOM
 
-### Using CSS selectors to find DOM elements
+### 用 CSS 选择器查找 DOM 元素
 
-#### Problem
+#### 面对的问题
 
 You want to find DOM elements on a web page.
 
-#### Solution
+#### 解决的方式
 
 Use the top-level `query()` and `queryAll()` functions provided by the
 `dart:html` library. Both functions take CSS selectors as arguments. The
@@ -2162,7 +2156,7 @@ selectors to find DOM elements:
 For a comprehensive list of selectors that you can use for querying, see
 http://www.w3.org/TR/css3-selectors/[The CSS Selector Specification guide].
 
-#### Discussion
+#### 延伸讨论
 
 Calling `queryAll()` returns a list of DOM elements:
 
@@ -2234,13 +2228,13 @@ Other recipes in this chapter show how you can create elements and insert them
 into the DOM, and how to modify existing DOM elements.
 
 
-### Using CSS selectors within a limited scope
+### 在一个限定的范围内使用 CSS 选择器
 
-#### Problem
+#### 面对的问题
 
 You want to find elements that are contained by a particular element.
 
-#### Solution
+#### 解决的方式
 
 Call the `query()` or `queryAll()` methods on a DOM element. Invoking one of
 these methods on an element restricts the scope of the query to that
@@ -2283,14 +2277,14 @@ Note the use of `queryAll()` as a top-level function in the code above. Used
 in this manner, `queryAll()` is scoped to the entire document.
 
 
-### Traversing the DOM starting from a particular element
+### 从一个特定的元素来便利 DOM
 
-#### Problem
+#### 面对的问题
 
 You have a reference to a DOM element and want to locate its ancestor,
 sibling, and descendant elements within the DOM structure.
 
-#### Solution
+#### 解决的方式
 
 The dart:html API provides methods for DOM traversal based on your current
 position in the DOM.
@@ -2374,13 +2368,13 @@ print(nextSiblings(knees).first.text); // 'Toes'
 {% endprettify %}
 
 
-### Creating DOM elements
+### 创建 DOM 元素
 
-#### Problem
+#### 面对的问题
 
 You want to create new DOM elements.
 
-#### Solution
+#### 解决的方式
 
 The dart:html library provides several ways to create new DOM elements.
 
@@ -2450,13 +2444,13 @@ Note that creating an element does not insert it into the DOM. Other recipes
 in this chapter discuss different ways in which you can add elements to the DOM.
 
 
-### Inserting child elements inside an existing DOM element
+### 在 DOM 元素中添加一个子元素
 
-#### Problem
+#### 面对的问题
 
 You want to insert one or more elements inside an existing DOM element.
 
-#### Solution
+#### 解决的方式
 
 Get the list of the DOM element's children, and add new child elements to that
 list.                                                                            
@@ -2578,11 +2572,11 @@ Six banana
 
 ### Inserting elements adjacent to an existing DOM element
 
-#### Problem
+#### 面对的问题
 
 You want to insert an element before or after another element.
 
-#### Solution
+#### 解决的方式
 
 Use an element's `insertAdjacentElement()` method to insert another element
 immediately before or immediately after it. Or, use the `insertBefore()` method.
@@ -2668,13 +2662,13 @@ void main() {
 {% endprettify %}
 
 
-### Cloning DOM elements
+### 复制 DOM 元素
 
-#### Problem
+#### 面对的问题
 
 You want to duplicate a DOM element.
 
-#### Solution
+#### 解决的方式
 
 Call the `clone()` method on the element.
 
@@ -2841,13 +2835,13 @@ document.body.append(content.clone(true));
 {% endprettify %}
 
 
-### Replacing DOM elements
+### 替换 DOM 元素
 
-#### Problem
+#### 面对的问题
 
 You want to replace one or more DOM elements with other elements.
 
-#### Solution
+#### 解决的方式
 
 Call the `replaceWith()` method on a DOM element and pass to it the new
 element as an argument.
@@ -2902,13 +2896,13 @@ the \<input\>:
 {% endprettify %}
 
 
-### Removing an element from the DOM
+### 从 DOM 中删除元素
 
-#### Problem
+#### 面对的问题
 
 You want to find an element and remove it from the DOM structure. 
 
-#### Solution
+#### 解决的方式
 
 Call the `remove()` method on the element. Doing so removes it from the DOM.
 
@@ -2964,7 +2958,7 @@ void main() {
 }
 {% endprettify %}
 
-#### Discussion
+#### 延伸讨论
 
 Using `remove()` works well if you have a reference to the DOM element you
 want to remove. But sometimes, you have a reference to the element's
@@ -3001,13 +2995,13 @@ element.children.clear();
 {% endprettify %}
 
 
-### Getting and setting DOM element attributes
+### 获取和设置 DOM 元素的属性
 
-#### Problem
+#### 面对的问题
 
 You have a DOM element and want to get or set the value of its attributes.
 
-#### Solution
+#### 解决的方式
 
 Most attributes have a corresponding property that you can use to get or set
 the attribute value. You can also use the an element's `attributes` map. In
@@ -3087,13 +3081,13 @@ print(element.attributes['id']);       // null
 {% endprettify %}
 
 
-### Getting and setting element style properties
+### 获取和设置元素样式属性
 
-#### Problem
+#### 面对的问题
 
 You want to get and set an element's CSS style properties.
 
-#### Solution
+#### 解决的方式
 
 You have three options:
  
@@ -3220,6 +3214,11 @@ element.style
 
 ## Web UI
 
+<aside class="alert alert-danger" markdown="1">
+<strong>Web UI 已经不建议使用了。</strong>
+从 0.5 版本之后，推荐用 [Polymer.dart](/polymer-dart/)
+来替代 Web UI。（译者注： 由于 Web UI 废弃了，所以不再浪费人力翻译了，见谅！）
+</aside>
 The Web UI package provides web components and templates to help you write web
 applications at scale.
 
@@ -3294,11 +3293,11 @@ compiled file.
 
 ### Using a Dart expression inside HTML
 
-#### Problem
+#### 面对的问题
 
 You want to inject the value of a Dart expression in your markup.
 
-#### Solution
+#### 解决的方式
 
 Place the Dart expression within `{{'{{'}} }}`. At runtime, the Web UI framework
 evaluates the expression, and injects the result into the HTML.  Commonly used
@@ -3362,13 +3361,13 @@ live in other recipes in this chapter.
 
 ### Observing a Dart variable for changes
 
-#### Problem
+#### 面对的问题
 
 You want to sync a variable and its display. Every time the variable's value
 changes, you want its display to automatically change. You want this to happen
 without a page refresh, and without having to do any manual DOM manipulation.
 
-#### Solution
+#### 解决的方式
 
 Add an `@observable` declaration right before you define the variable:
 
@@ -3483,13 +3482,13 @@ Here is the entire script:
 
 ### Creating a bidirectional binding using text elements
 
-#### Problem
+#### 面对的问题
 
 You are using a text field (text input or textarea) to set the value of a Dart
 variable. You want that variable to be modified in real time, without a page
 refresh.
 
-#### Solution
+#### 解决的方式
 
 First, make the variable observable:
 
@@ -3594,13 +3593,13 @@ Here is the entire script:
 
 ### Creating a binding using radio buttons
 
-#### Problem
+#### 面对的问题
 
 You want to use radio buttons to allow a user to select a single value from a
 set of choices. You want to bind the value of the selected radio button to a
 Dart variable.
 
-#### Solution
+#### 解决的方式
 
 First, make the Dart variable used to store the value of the radio button
 observable:
@@ -3666,13 +3665,13 @@ radio button with that value:
 
 ### Creating bindings for booleans using checkboxes
 
-#### Problem
+#### 面对的问题
 
 You want to use a checkbox to store the value of a boolean object. And because
 you have parts of your UI dependent on that boolean object, you want its value
 to update automatically as a user checks or unchecks the checkbox.
 
-#### Solution
+#### 解决的方式
 
 Make the boolean observable:
 
@@ -3831,14 +3830,14 @@ new Student('12345678', false, true);
 
 ### Selecting multiple items from a list of checkboxes using data binding
 
-#### Problem
+#### 面对的问题
 
 You want to use checkboxes to allow a user to select multiple values from a
 set of choices. You want to keep track of the checkboxes that are checked
 by the user, and want live updates in the UI every time the user checks or
 unchecks a checkbox.
 
-#### Solution
+#### 解决的方式
 
 Create a map to keep track of the checked state of the checkboxes. Make the
 checkbox values the map keys, and assign each key a boolean value. Assign `true`
