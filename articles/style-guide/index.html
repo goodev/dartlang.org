@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Dart Style Guide | Dart: 用于创建结构化的web应用</title>
+  <title>Dart 代码风格指南 | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Dart Style Guide | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="Dart 代码风格指南 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Follow these guidelines for consistent, readable Dart code.">
+  <meta itemprop="description" content="遵守这些风格指南来编写一致的易读的 Dart 代码。">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 	
 	<link rel="author" href="/authors/bob-nystrom.html">
 	
-	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+	<link rel="alternate" type="application/atom+xml" href="http://dartnews.sinaapp.com/?feed=atom" title="Atom feed">
   <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
   -->
@@ -203,13 +203,13 @@
   <div class="bs-sidebar hidden-print affix-top" role="complementary">
 
 <ol class="toc nav bs-sidenav" id="markdown-toc">
-  <li><a href="#how-to-read-this">How to read this</a></li>
-  <li><a href="#types">Types</a></li>
-  <li><a href="#members">Members</a></li>
-  <li><a href="#type-annotations">Type annotations</a></li>
-  <li><a href="#names">Names</a></li>
-  <li><a href="#comments">Comments</a></li>
-  <li><a href="#whitespace">Whitespace</a></li>
+  <li><a href="#section">如何阅读该指南</a></li>
+  <li><a href="#section-1">类型</a></li>
+  <li><a href="#section-4">成员</a></li>
+  <li><a href="#section-9">类型注解</a></li>
+  <li><a href="#section-12">命名</a></li>
+  <li><a href="#section-14">注释</a></li>
+  <li><a href="#section-19">空白</a></li>
 </ol>
 
   </div>
@@ -218,81 +218,81 @@
   <p><!-- Start of content -->
 	</p>
 
-  <h1 id="dart-style-guide">Dart Style Guide</h1>
+  <h1 id="dart-">Dart 代码风格指南</h1>
 
-  <p><em>Written by Bob Nystrom<br />
-<time pubdate="" date="2011-10-27">October 2011</time>
-(updated October 2013)
+  <p><em>作者： Bob Nystrom<br />
+译者： 云在千峰<br />
+<time pubdate="" date="2011-10-27">2011 十月</time>
+(2013 十月 更新)
 </em></p>
 
-  <p>As we build up an ecosystem of Dart code, it’s helpful if it follows a
-consistent coding style. A dedicated style guide for Dart helps us make
-the most of the features unique to the language and makes it easier for
-users to collaborate.</p>
+  <p>当建造一个 Dart 代码生态的时候，如果都使用一致的代码风格则比较容易使用。
+Dart 需要一个专业的风格指南来帮助我们设计语言独特的特性，并且大家协作
+起来
+更加方便。</p>
 
-  <p>There will likely be things you disagree with in this guide. As the author,
-there are things even I disagree with. I hope you’ll agree that consistency is
-often worth more than our individual preferences.</p>
+  <p>在该指南中很有可能有些内容你并不同意。作为作者，其中
+的有些内容我自己都不同意。我希望你能明白，代码的一致性比我们
+自己的偏好更加重要。</p>
 
-  <p>Keep in mind that, like many things with Dart, this guide isn’t carved in
-stone. As the language evolves and we gain experience with it, our style
-will evolve too. This means that there will inevitably be code that doesn’t
-follow the latest style, or places where the style guide is ambiguous or
-open-ended. Bear with us and it will get better as the language and its
-libraries settle down.</p>
+  <p>在心中记住一点，和 Dart 中的很多内容一样，该风格指南并不是一成不变的。
+随着语言的演进和逐步的使用 Dart，我们的风格指南也会进化。
+这就意味着，不可避免的会有些代码不符合最新的风格指南，
+或者有些地方风格指南是含糊不清的或者尚未定论的。
+请耐心的等待我们一会，随着 Dart 语言和库逐步的文档，
+这些内容会逐渐完善的。</p>
 
-  <h2 id="how-to-read-this">How to read this</h2>
+  <h2 id="section">如何阅读该指南</h2>
 
-  <p>This guide is broken into a couple of sections roughly working from the macro
-scale down to the micro. Sections contain a list of guidelines. Each one starts
-with one of four words:</p>
+  <p>该指南从宏观到微观大概的分为几个部分。
+每个部分都包含一些风格指南。
+每个都依如下四个词语开始：</p>
 
   <ul>
     <li>
-      <p><strong>DO</strong> guidelines describe practices that should always be followed. There
-will almost never be a valid reason to stray from them.</p>
+      <p><strong>确保</strong> 指南说明应该总是遵守该风格。
+从来没有适当的理由不遵守这些风格。</p>
     </li>
     <li>
-      <p><strong>DON’T</strong> guidelines are the converse: things that are almost never a good
-idea. You’ll note there are few of these here. Guidelines like these in
-other languages help to avoid the pitfalls that appear over time. Dart is
-new enough that we can just fix those pitfalls directly instead of putting
-up ropes around them.</p>
+      <p><strong>不要</strong> 指南恰恰相反：这样做从来不是一种好注意。
+你会发现有一些这种建议。其他语言的这种指南
+都是经过长时间的积累来发现的一些陷阱。
+Dart 是新的语言，所以我们直接修复这些陷阱并
+避免使用它们。</p>
     </li>
     <li>
-      <p><strong>PREFER</strong> guidelines are practices that you <em>should</em> follow. However, there
-may be circumstances where it makes sense to do otherwise. Just make sure
-you understand the full implications of ignoring the guideline when you
-do.</p>
+      <p><strong>推荐</strong> 指南是一些你 <em>应该</em> 遵守的实践。然而，
+有些情况下按照其他的方式做可能也有道理。当你不
+遵守这些指南的时候，确保你自己知道你在做什么。</p>
     </li>
     <li>
-      <p><strong>AVOID</strong> guidelines are the dual to “prefer”: stuff you shouldn’t do but
-where there may be good reasons to on rare occasions.</p>
+      <p><strong>避免</strong> 指南是推荐的反义词：你不应该这么做，
+但是很少情况下或许有这么做的理由。</p>
     </li>
   </ul>
 
-  <p>This sounds like the style police are going to beat down your door if you don’t
-have your laces tied correctly. Things aren’t that bad. Most of the guidelines
-here are common sense and we’re all reasonable people. The goal, as always, is
-nice, readable and maintainable code.</p>
+  <p>听上去这些就像如果你不系好你的鞋带，警察
+就会找上门来一样。然而事实上并没有这么糟糕。
+大部分的风格指南都是常见的情况，并且我们也是讲道理的凡人。我们的目标总是一样的：
+编写出优雅的、可读的和可维护的代码。</p>
 
-  <h2 id="types">Types</h2>
+  <h2 id="section-1">类型</h2>
 
-  <h4 id="avoid-creating-classes-that-contain-only-static-members">AVOID creating classes that contain only static members.</h4>
+  <h4 id="section-2">避免 创建只包含静态成员的类</h4>
 
-  <p>In Java and C#, all members must be in a class. In those languages, you
-occasionally encounter classes that are basically namespaces: just bags of
-static members. Dart, like Python and JavaScript, doesn’t have this limitation.
-You are free to define variables and functions at the top level.</p>
+  <p>在 Java 和 C# 中，所有的成员必需位于类中。在这些语言中，
+你有时只是用这些类作为命名空间：只是用来保存一些静态成员。
+Dart - 有点类似 Python 和 JavaScript -  并没有这些限制。
+你可以随意的在顶级代码中定义变量和函数。</p>
 
-  <p>Name collisions, when they occur, can be avoided by importing a library using a
-prefix. The advantage to this is that when collisions <em>don’t</em> occur (which only
-the <em>user</em> of a library knows, not the creator), the user doesn’t have to fully
-qualify the name at every callsite.</p>
+  <p>通过导入包并使用前缀可以避免命名冲突的问题。
+这个优点是，当命名冲突<em>没有</em>发生的时候（只有
+<em>使用</em>该库的人知道，库的创建者并不知情），用户不需要
+在任何调用的地方都完全引用全称。</p>
 
-  <p>This doesn’t mean you shouldn’t have <em>any</em> static members, but it should be rare
-to create classes that have <em>only</em> static members. Instead, those should be
-libraries. Most classes should represent things you can construct.</p>
+  <p>这并不意味着你不应该有<em>任何</em>的静态成员，
+但是创建一个<em>只有</em>静态成员的类是非常少见的。
+相反，这些应该是库。大部分的类应该代表你要构造的东西。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">library utils;
@@ -312,13 +312,13 @@ class GeometryUtils {
 }</pre>
   </div>
 
-  <h4 id="avoid-defining-a-one-member-abstract-class-when-a-simple-function-will-do">AVOID defining a one-member abstract class when a simple function will do.</h4>
+  <h4 id="section-3">避免 定义只有一个成员的抽象类，如果一个简单的函数可以实现该功能。</h4>
 
-  <p>Unlike Java, Dart has first-class functions, closures, and a nice light syntax
-for using them. If all you need is something like a callback, just use a
-function. If you’re defining an class and it only has a single abstract member
-with a meaningless name like <code>call</code> or <code>invoke</code>, there is a good chance you
-just want a function.</p>
+  <p>和 Java 不一样，Dart 支持 first-class（类等）函数、闭包、和使用它们的优雅轻量的语法。
+如果你只需要一个回调函数，只需要用一个函数即可。
+如果你定义一个只包含一个成员的抽象类，并且该类的成员名字为
+没有业务意义的 <code>call</code> 或者 <code>invoke</code>，这通常意味着
+你只要使用一个函数即可。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">typedef bool Predicate(item);</pre>
@@ -330,15 +330,14 @@ just want a function.</p>
 }</pre>
   </div>
 
-  <h2 id="members">Members</h2>
+  <h2 id="section-4">成员</h2>
 
-  <h4 id="do-use-constructors-instead-of-static-methods-to-create-instances">DO use constructors instead of static methods to create instances.</h4>
+  <h4 id="section-5">确保 使用构造函数而不是静态函数来创建实例</h4>
 
-  <p>Constructors are invoked using <code>new</code> or <code>const</code> which communicates clearly at
-the callsite that an object is being created. Named constructors and factory
-constructors in Dart give you all of the flexibility of static methods in other
-languages, while still allowing the callsite to appear like a regular
-constructor invocation.</p>
+  <p>使用 <code>new</code> 或者 <code>const</code> 来调用构造函数，在调用的时候就清楚的知道
+一个对象会被创建。Dart 中的命名构造函数和工厂构造函数
+为你提供了其他语言静态函数提供的功能，对于调用者而言
+和调用常规的构造函数类似。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Point {
@@ -358,11 +357,11 @@ constructor invocation.</p>
 }</pre>
   </div>
 
-  <h4 id="do-use--instead-of--for-empty-constructor-bodies">DO use <code>;</code> instead of <code>{}</code> for empty constructor bodies.</h4>
+  <h4 id="section-6">确保 使用 <code>;</code> 来替代 <code>{}</code> 作为空构造函数的函数体</h4>
 
-  <p>In Dart, a constructor with an empty body can be terminated with just a
-semicolon. This is <em>required</em> for const constructors. For consistency and
-brevity, other constructors should also do this.</p>
+  <p>在 Dart 中，一个空内容的构造函数可以只用一个分号结尾。
+const(常量) 构造函数<em>需要</em>这样。
+为了一致性和简洁性，其他空构造函数也应该这样。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Point {
@@ -378,21 +377,21 @@ brevity, other constructors should also do this.</p>
 }</pre>
   </div>
 
-  <h4 id="do-place-the-super-call-last-in-a-constructor-initialization-list">DO place the <code>super()</code> call last in a constructor initialization list.</h4>
+  <h4 id="super">确保 把 <code>super()</code>放到构造函数初始化列表后面调用</h4>
 
-  <p>Field initializers are evaluated in the order that they appear in the
-constructor initialization list. If you place a <code>super()</code> call in the middle of
-an initializer list, the superclass’s initializers will be evaluated right then
-before evaluating the rest of the subclass’s initializers.</p>
+  <p>域（Field）初始化是按照他们出现在构造函数初始化列表的顺序计算值的。
+如果你在初始化列表中间调用了 <code>super()</code>，则
+父类的初始化会在子类的初始化还没执行完的时候
+立即执行。</p>
 
-  <p>What it <em>doesn’t</em> mean is that the superclass’s <em>constructor body</em> will be
-executed then. That always happens after all initializers are run regardless of
-where <code>super()</code> appears. It’s vanishingly rare that the order of initializers
-matters, so the placement of <code>super()</code> in the list almost never matters either.</p>
+  <p>这并<em>不意味着</em>父类的<em>构造函数体</em>也会执行。
+构造函数体只会在所有的初始化代码执行完后执行，而不论你把 <code>super()</code> 放到哪里调用。
+通常不会出现初始化循序的问题，所以把 <code>super()</code> 放到
+初始化列表中也不会出现啥大的问题。</p>
 
-  <p>Getting in the habit of placing it last improves consistency, visually
-reinforces when the superclass’s constructor body is run, and may help
-performance.</p>
+  <p>习惯上把它放到最后可以提高代码一致性和视觉上强调
+父类构造函数体执行的顺序，也可能有利于
+提高性能。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">View(Style style, List children)
@@ -406,20 +405,19 @@ performance.</p>
       _children = children {</pre>
   </div>
 
-  <h4 id="do-use-a-getter-for-operations-that-conceptually-access-a-property">DO use a getter for operations that conceptually access a property.</h4>
+  <h4 id="getter-">确保 使用 getter 来执行概念上像访问一个属性的操作</h4>
 
-  <p>If the name of the method starts with <code>get</code> or is an adjective like <code>visible</code> or
-<code>empty</code> that’s a sign you’re better off using a getter. More specifically, you
-should use a getter instead of a method when it:</p>
+  <p>如果函数的名字以 <code>get</code> 开头，或者一个形容词，例如 <code>visible</code> 或者
+<code>empty</code> ，这通常是使用 getter 的标志。更具体的，
+当如下情况时，应该使用 getter 来替代函数：</p>
 
   <ul>
-    <li><strong>Does not take any arguments.</strong></li>
-    <li><strong>Returns a value.</strong></li>
-    <li><strong>Is side-effect free.</strong> Invoking a getter shouldn’t change any
-  externally-visible state (caching internally or lazy initialization is
-  OK). Invoking the same getter repeatedly should return the same value
-  unless the object is explicitly changed between calls.</li>
-    <li><strong>Is fast.</strong> Users expect expressions like <code>foo.bar</code> to execute quickly.</li>
+    <li><strong>没有任何参数。</strong></li>
+    <li><strong>返回一个值。</strong></li>
+    <li><strong>没有副作用。</strong> 调用 getter 不应该改变任何外部可见的
+  状态（内部缓存和延时初始化是可以的）。
+  重复的调用 getter 应该返回同样的值，除非该对象在调用之间明显的被修改过了。</li>
+    <li><strong>非常快。</strong> 用户期待像 <code>foo.bar</code> 这种操作应该执行很快。</li>
   </ul>
 
   <div class="good">
@@ -434,20 +432,20 @@ DateTime timeStamp = DateTime.now;   // returns different value each call
 window.refresh;                      // doesn't return a value</pre>
   </div>
 
-  <h4 id="do-use-a-setter-for-operations-that-conceptually-change-a-property">DO use a setter for operations that conceptually change a property.</h4>
+  <h4 id="setter-">确保 用一个 setter 来执行概念上像设置一个属性的操作</h4>
 
-  <p>If the name of the method starts with <code>set</code> that’s often a sign that it could be
-a setter. More specifically, use a setter instead of a method when it:</p>
+  <p>如果函数的名字以 <code>set</code> 开头，通常意味着该函数是一个 setter。
+更具体的，当如下情况发生应该用 setter 替代 函数：</p>
 
   <ul>
-    <li><strong>Takes a single argument.</strong></li>
-    <li><strong>Changes some state in the object.</strong></li>
-    <li><strong>Has a corresponding getter.</strong> It feels weird for users to have state that
-  they can modify but not see. (The converse is not true; it’s fine to have
-  getters that don’t have setters.)</li>
-    <li><strong>Is idempotent.</strong> Calling the same setter twice with the same value
-  should do nothing the second time.</li>
-    <li><strong>Is fast.</strong> Users expect expressions like <code>foo.bar = value</code> to execute quickly.</li>
+    <li><strong>需要一个参数。</strong></li>
+    <li><strong>改变对象的一些状态。</strong></li>
+    <li><strong>有一个对应的 getter。</strong> 对于用户来说，只能修改而不可见的状态是非常奇怪的。
+   (反正则不一样，只有 getter 没有 setter 是
+   可以理解的。)</li>
+    <li><strong>是幂等（idempotent）的。</strong> 用同样的值调用同一个 setter 两次，第二次
+  调用应该没有任何效果。</li>
+    <li><strong>非常快。</strong> 对于像 <code>foo.bar = value</code> 这种操作，用户认为应该非常快。</li>
   </ul>
 
   <div class="good">
@@ -455,18 +453,17 @@ a setter. More specifically, use a setter instead of a method when it:</p>
 button.visible = false;</pre>
   </div>
 
-  <h4 id="avoid-wrapping-fields-in-getters-and-setters-just-to-be-safe">AVOID wrapping fields in getters and setters just to be “safe”.</h4>
+  <h4 id="getter--setter-">避免 只是为了”安全”而为一个变量提供 getter 和 setter 函数</h4>
 
-  <p>In Java and C#, it’s common to hide all fields behind getters and setters (or
-properties in C#), even if the implementation just forwards to the field. That
-way, if you ever need to do more work in those members, you can without needing
-to touch the callsites. This is because calling a getter method is different
-than accessing a field in Java, and accessing a property isn’t binary-compatible
-with accessing a raw field in C#.</p>
+  <p>在 Java 和 C#中，把所有的成员变量用 getter 和 setter 函数隐藏起来是很常见的。
+大部分情况下 getter 和 setter 的实现只是赋值和返回该值。
+因为 Java 中的成员变量和 getter 函数是不一样的，
+所以
+如果你只是用来访问该成员变量，你无法直接调用成员变量。</p>
 
-  <p>Dart doesn’t have this limitation. Fields and getters/setters are completely
-indistinguishable. You can expose a field in a class and later wrap it in a
-getter and setter without having to touch any code that uses that field.</p>
+  <p>Dart 没有这个限制。Dart 中的成员变量和 getter/setter 是完全难以区分的。
+你可以先暴露一个成员变量让其他人访问，而后你发现需要做些操作的时候，
+你可以添加一个该变量的 getter 和 setter，但是调用方式依然不变。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Box {
@@ -484,11 +481,11 @@ getter and setter without having to touch any code that uses that field.</p>
 }</pre>
   </div>
 
-  <h4 id="prefer-using-a-public-final-field-instead-of-a-private-field-with-a-public-getter">PREFER using a public final field instead of a private field with a public getter.</h4>
+  <h4 id="public-final--getter-">推荐 使用一个 public final 成员变量来替代一个带有 getter的 私有变量</h4>
 
-  <p>If you have a field that outside code should be able to see but not assign to
-(and you don’t need to set it outside of the constructor), a simple solution
-that works in many cases is to just mark it <code>final</code>.</p>
+  <p>如果你有一个成员变量，外部的代码可以看到该变量但是无法修改其值
+（你也无须在构造函数以外设置该变量的值），
+大多数情况下都适用的一种方式就是把该变量设置为 <code>final</code> 的。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Box {
@@ -503,11 +500,11 @@ that works in many cases is to just mark it <code>final</code>.</p>
 }</pre>
   </div>
 
-  <h4 id="consider-using--to-define-members-whose-body-returns-the-result-of-a-single-expression">CONSIDER using <code>=&gt;</code> to define members whose body returns the result of a single expression.</h4>
+  <h4 id="section-7">推荐 使用 <code>=&gt;</code> 来定义函数体只是返回单个表达式的函数</h4>
 
-  <p>In addition to using <code>=&gt;</code> for function expressions, Dart also lets you define
-members with them. They are a good fit for simple members that just calculate
-and return a value.</p>
+  <p>在函数表达式中使用 <code>=&gt;</code> ，你还可以定义局部变量。
+这种语法特别适合只有一个简单的变量并返回其
+计算结果。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">get width =&gt; right - left;
@@ -515,16 +512,16 @@ bool ready(num time) =&gt; minTime == null || minTime &lt;= time;
 containsValue(String value) =&gt; getValues().contains(value);</pre>
   </div>
 
-  <p>Members that don’t fit on one line can still use <code>=&gt;</code>, but if you find yourself
-cramming a single expression into several continued lines, it is probably
-cleaner to just use a curly body with an explicit <code>return</code>.</p>
+  <p>并非只有一行代码的函数体才能用 <code>=&gt;</code>， 但是如果
+你发现一个表达式需要用多行显示的时候，为了代码清晰的考虑，
+最好还是用花括号和 <code>return</code> 语句来实现函数体。</p>
 
-  <h4 id="avoid-boolean-arguments-unless-their-meaning-is-completely-obvious">AVOID boolean arguments unless their meaning is completely obvious.</h4>
+  <h4 id="section-8">避免 使用没有实际意义的布尔参数</h4>
 
-  <p>Unlike other types, booleans are usually used in literal form. Things like
-numbers are usually wrapped in named constants, but we usually just pass around
-<code>true</code> and <code>false</code> directly. That can make callsites unreadable if it isn’t
-clear what the boolean represents:</p>
+  <p>和其他类型不同，布尔值通常用于字面格式（literal form）。
+数字等通常用命名常量引用，而布尔值通常都是直接用
+<code>true</code> 和 <code>false</code> 。如果该布尔值在函数调用的地方不能
+清晰的表达其代表的意义，则可能导致代码可读性降低：</p>
 
   <div class="bad">
     <pre class="prettyprint lang-dart">new Task(true);
@@ -532,8 +529,8 @@ new Task(false);
 new ListBox(false, true, true);</pre>
   </div>
 
-  <p>Instead, consider using named arguments, named constructors, or named constants
-to clarify what the call is doing.</p>
+  <p>作为替代方案，可以考虑使用命名参数、命名构造函数或者命名常量来
+明确表达代码的意义。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">new Task.oneShot();
@@ -541,20 +538,20 @@ new Task.repeating();
 new ListBox(scroll: true, showScrollbars: true);</pre>
   </div>
 
-  <h2 id="type-annotations">Type annotations</h2>
+  <h2 id="section-9">类型注解</h2>
 
-  <h4 id="prefer-providing-type-annotations-on-public-apis">PREFER providing type annotations on public APIs.</h4>
+  <h4 id="api-">推荐 在公开的 API 上提供类型</h4>
 
-  <p>Type annotations are important documentation for how a library should be used.
-Annotating the parameter and return types of public methods and functions helps
-users understand what the API expects and what it provides.</p>
+  <p>类型是一个库如何使用的重要文档。
+给参数和返回值提供类型可以帮助
+用户理解该 API 的参数和提供的功能。</p>
 
-  <p>If, however, a public API does accept any type, or accepts a range of values
-that Dart’s type system cannot express, then it is acceptable to leave that
-untyped.</p>
+  <p>如果，一个公共 API 可以接受任何类型、或者一些 Dart 类型系统无法表达的值，则
+可以保持该 API 参数为
+无类型的。</p>
 
-  <p>For code internal to a library (either private, or things like nested functions)
-annotate where you feel it helps, but don’t feel that you <em>must</em> provide them.</p>
+  <p>对于内部代码或者内部库，如果你感觉类型对理解代码
+有帮助，则你可以提供类型，但是请记住，类型并<em>不是</em>必须的。</p>
 
   <div class="bad">
     <pre class="prettyprint lang-dart">install(id, destPath) {
@@ -562,8 +559,8 @@ annotate where you feel it helps, but don’t feel that you <em>must</em> provid
 }</pre>
   </div>
 
-  <p>Here, it’s unclear what <code>id</code> is. A string? And what is <code>destPath</code>? A string or a
-<code>File</code> object? Is this method synchronous or asynchronous?</p>
+  <p>这里， <code>id</code> 是何类型并不明确。一个 string？ 而 <code>destPath</code> 又是啥？一个 string 
+或者一个 <code>File</code> 对象？ 该函数是同步的还是异步的？</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">Future&lt;bool&gt; install(PackageId id, String destPath) {
@@ -571,15 +568,15 @@ annotate where you feel it helps, but don’t feel that you <em>must</em> provid
 }</pre>
   </div>
 
-  <p>With types, all of this is clarified.</p>
+  <p>通过类型，这些疑问就消失了。</p>
 
-  <h4 id="prefer-using-var-without-a-type-annotation-for-local-variables">PREFER using <code>var</code> without a type annotation for local variables.</h4>
+  <h4 id="var-">推荐 用 <code>var</code> 修饰局部变量</h4>
 
-  <p>Method bodies in modern code tend to be short, and the types of local variables
-are almost always trivially inferrable from the initializing expression, so
-explicit type annotations are usually just visual noise. Decent editors can
-infer the type of local variables and still provide the auto-complete and
-tooling support you expect.</p>
+  <p>现在流行的编码中，函数体都是非常短小的，而局部变量的类型通常
+通过表达式就可以推断出来而无需明确注明。
+所有明确的类型注解通常看起来比较碍眼。
+聪明的编辑器可以从表达式中判断局部变量的类型并且
+提供代码自动完成和你期望的代码建议。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">Map&lt;int, List&lt;Person&gt;&gt; groupByZip(Iterable&lt;Person&gt; people) {
@@ -603,23 +600,23 @@ tooling support you expect.</p>
 }</pre>
   </div>
 
-  <h4 id="prefer-using-double-or-int-instead-of-num-for-parameter-type-annotations-in-performance-sensitive-code">PREFER using <code>double</code> or <code>int</code> instead of <code>num</code> for parameter type annotations in performance sensitive code.</h4>
+  <h4 id="double--int--num-">推荐 在性能敏感的地方使用  <code>double</code> 或者 <code>int</code> 来替代 <code>num</code> 作为参数类型</h4>
 
-  <p>Monomorphic call sites (sites that have stable input types)
-can be optimized much easier than polymorphic call sites (sites that have
-varying input types).</p>
+  <p>单一调用入口（参数具有明确的类型）
+比多态调用入口（参数具有多种类型）
+要更容易优化。</p>
 
-  <p>Whenever you can, pick a specific number type for your type annotation.
-Explicitly say <code>double</code> or <code>int</code> to help your users pass in a consistent type
-to your function or method.</p>
+  <p>如果可以，就为你的参数类型提供具体的数字类型。
+明确的指明 <code>double</code> 或者 <code>int</code> 帮助你的用户用一致的
+参数来调用你的函数或者方法。</p>
 
-  <p>When you use <code>num</code> as a type annotation, you are saying “either an int or
-a double can go here.” This ambiguity it harder for Dart runtimes to optimize.</p>
+  <p>当用 <code>num</code> 作为类型的时候，意味着 “要么是 int 要么就是 double”。
+Dart 运行环境无法优化这个不确定的参数。</p>
 
-  <h4 id="dont-type-annotate-initializing-formals">DON’T type annotate initializing formals.</h4>
+  <h4 id="section-10">不要 为初始化构造函数提供类型</h4>
 
-  <p>If a constructor parameter is using <code>this.</code> to initialize a field, then the type
-of the parameter is understood to be the same type as the field.</p>
+  <p>如果构造函数的参数用 <code>this.</code> 来初始化成员变量，
+则参数类型是和成员变量的类型一样。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Point {
@@ -635,12 +632,12 @@ of the parameter is understood to be the same type as the field.</p>
 }</pre>
   </div>
 
-  <h4 id="avoid-annotating-types-on-function-expressions">AVOID annotating types on function expressions.</h4>
+  <h4 id="section-11">避免 在方法表达式提供类型</h4>
 
-  <p>The value of function expressions is their brevity. If a function is complex
-enough that types are needed to understand it, it should probably be a function
-statement or a method. Conversely, if it is short enough to be an expression, it
-likely doesn’t need types.</p>
+  <p>方法表达式的值是非常简洁的。如果方法复杂到需要类型才能理解，
+则通常应该用方法声明或者函数来实现。
+相反，如果方法简洁到可以用一个表达式表示，
+则通常意味着不需要类型。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">var names = people.map((person) =&gt; person.name);</pre>
@@ -652,11 +649,11 @@ likely doesn’t need types.</p>
 });</pre>
   </div>
 
-  <h4 id="avoid-annotating-with-dynamic-when-not-required">AVOID annotating with <code>dynamic</code> when not required.</h4>
+  <h4 id="dynamic">避免 在不需要的地方用 <code>dynamic</code></h4>
 
-  <p>In most places in Dart, a type annotation can be omitted, in which case the type
-will automatically be <code>dynamic</code>. Thus, omitting the type annotation entirely is
-semantically equivalent but more terse.</p>
+  <p>Dart 的大部分地方都可以忽略类型，这样该类型就是 <code>dynamic</code> 的。
+所有，省略类型就语义上等同于 <code>dynamic</code> 并且
+看起来更简洁。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">lookUpOrDefault(String name, Map map, defaultValue) {
@@ -674,18 +671,17 @@ semantically equivalent but more terse.</p>
 }</pre>
   </div>
 
-  <h4 id="do-annotate-with-object-instead-of-dynamic-to-indicate-any-object-is-accepted">DO annotate with <code>Object</code> instead of <code>dynamic</code> to indicate any object is accepted.</h4>
+  <h4 id="object--dynamic">确保 在可以使用任何对象的地方用 <code>Object</code> 来替代 <code>dynamic</code></h4>
 
-  <p>Some operations will work with any possible object. For example, a log method
-could take any object and call <code>toString()</code> on it. Two types in Dart permit all
-objects: <code>Object</code> and <code>dynamic</code>. However, they convey two different things.</p>
+  <p>有些操作可以在任何对象上执行。例如，一个日志函数
+可以调用任何对象的 <code>toString()</code>。Dart 中有两种类型都运行所有对象：
+  <code>Object</code> 和 <code>dynamic</code>。然而，他们表达了不同的意思。</p>
 
-  <p>The <code>Object</code> annotation says “I accept any object, and I only require it to have
-the methods that <code>Object</code> itself defines.”</p>
+  <p><code>Object</code> 类型说明： “我可以接受任意对象，并且我只
+期望该对象具有 <code>Object</code> 中定义的函数。”</p>
 
-  <p>A <code>dynamic</code> type annotation means that no type annotation can express what
-objects you actually allow. (Or maybe one could, but you don’t care to write
-it.)</p>
+  <p>而 <code>dynamic</code> 类型则意味着，没有恰当的类型可以代买
+你需要的参数类型。 (或者有一种类型可以，但是你懒得写出来。)</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">// Accepts any object.
@@ -701,12 +697,12 @@ bool convertToBool(arg) {
 }</pre>
   </div>
 
-  <h2 id="names">Names</h2>
+  <h2 id="section-12">命名</h2>
 
-  <h4 id="do-name-types-using-uppercamelcase">DO name types using <code>UpperCamelCase</code>.</h4>
+  <h4 id="uppercamelcase-">确保 用 <code>UpperCamelCase</code> 风格来命名</h4>
 
-  <p>Classes and typedefs should capitalize the first letter of each word (including
-the first word), and use no separators.</p>
+  <p>类和 typedef 定义的名字的首字母应该大写，并且
+没有分隔符。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class SliderMenu {
@@ -720,11 +716,11 @@ class HttpRequest {
 typedef num Adder(num x, num y);</pre>
   </div>
 
-  <h4 id="do-name-constants-using-allcapswithunderscores">DO name constants using <code>ALL_CAPS_WITH_UNDERSCORES</code>.</h4>
+  <h4 id="allcapswithunderscores">确保 常量使用大写字母和下划线 （<code>ALL_CAPS_WITH_UNDERSCORES</code>）风格命名</h4>
 
-  <p>Constants—variables declared using <code>const</code>—are special in Dart
-because they can be used in constant expressions, unlike <code>final</code> variables. To
-clarify this, they are given their own naming style.</p>
+  <p>常量—用 <code>const</code> 修饰的变量— 在 Dart 中是特殊的，
+和 <code>final</code> 不一样，他们可以用于常量表达式中。
+为了明确该行为，他们用自己特有的命名风格。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">const PI = 3.14;
@@ -746,11 +742,11 @@ class Dice {
 }</pre>
   </div>
 
-  <h4 id="do-name-other-identifiers-using-lowercamelcase">DO name other identifiers using <code>lowerCamelCase</code>.</h4>
+  <h4 id="lowercamelcase-">确保 其他的标示符都用 <code>lowerCamelCase</code> 格式命名</h4>
 
-  <p>Class members, top-level definitions, variables, parameters, and named
-parameters should capitalize the first letter of each word <em>except</em> the first
-word, and use no separators.</p>
+  <p>类成员变量、顶级定义、变量、参数和命名参数都应该以该格式命名，并
+不用
+分隔符。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">var item;
@@ -762,16 +758,15 @@ align(clearItems) {
 }</pre>
   </div>
 
-  <h4 id="do-name-libraries-and-source-files-using-lowercasewithunderscores">DO name libraries and source files using <code>lowercase_with_underscores</code>.</h4>
+  <h4 id="lowercasewithunderscores-">确保 用 <code>lowercase_with_underscores</code> 格式命名文件名和库名</h4>
 
-  <p>Some file systems are not case-sensitive, so many projects require filenames to
-be all lowercase. Using a separate character allows names to still be readable
-in that form. Using underscores as the separator ensures that the name is still
-a valid Dart identifier, which may be helpful if the language later supports
-symbolic imports.</p>
+  <p>一些文件系统对大小写不敏感，所有大部分的项目都要求文件名字为小写字母。
+使用分隔符可以让文件名更具可读性。
+使用下划线作为分隔符说明该名字为合法的 Dart 标示符，在需要
+支持文件导入的时候会用到。</p>
 
   <div class="good">
-    <p>Good:</p>
+    <p>好的命名示例：</p>
 
     <ul>
       <li><code>slider_menu.dart</code></li>
@@ -781,7 +776,7 @@ symbolic imports.</p>
   </div>
 
   <div class="bad">
-    <p>Bad:</p>
+    <p>坏的命名示例：</p>
 
     <ul>
       <li><code>SliderMenu.dart</code></li>
@@ -790,13 +785,13 @@ symbolic imports.</p>
     </ul>
   </div>
 
-  <h4 id="do-capitalize-acronyms-and-abbreviations-longer-than-two-letters-like-words">DO capitalize acronyms and abbreviations longer than two letters like words.</h4>
+  <h4 id="section-13">确保 首字母单词缩写和大于两个字符的缩写词按照单词来对待</h4>
 
-  <p>Capitalized acronyms can be harder to read, and are ambiguous when you have
-multiple adjacent acronyms. Given the name <code>HTTPSFTPConnection</code>, there’s no way
-to tell if that’s an HTTPS FTP connection or an HTTP SFTP one.</p>
+  <p>大写的字母缩略词比较难读，并且当有多个相邻的缩略词的时候比较
+难以区分。类似于 <code>HTTPSFTPConnection</code> 的名字无法知道
+到底是一个 HTTPS FTP connection 还是一个 HTTP SFTP connection。</p>
 
-  <p>To avoid this, acronyms are capitalized like regular words, except for
+  <p>为了避免这种情况，缩略词按照一个单词对待，但是两个字母的缩略词除外。
 two-letter ones.</p>
 
   <div class="good">
@@ -816,12 +811,12 @@ HTTPRequest
 Id</pre>
   </div>
 
-  <h2 id="comments">Comments</h2>
+  <h2 id="section-14">注释</h2>
 
-  <h4 id="do-comment-members-and-types-using-doc-style-comments">DO comment members and types using doc-style comments.</h4>
+  <h4 id="doc-style-">确保 用 doc-style 注释来为成员变量和类型提供注释</h4>
 
-  <p>Dart supports two syntaxes of doc comments. Line doc comments start each line
-with <code>///</code>:</p>
+  <p>Dart 支持两种类型文档注释。单行注释
+用 <code>///</code> 开始：</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">/// Parses a set of option strings. For each option:
@@ -834,7 +829,7 @@ void parse(List options) {
 }</pre>
   </div>
 
-  <p>Block doc comments start with <code>/**</code>, end with <code>*/</code> and can span multiple lines:</p>
+  <p>块注释用 <code>/**</code> 开始，用 <code>*/</code> 结尾可以跨行：</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">/**
@@ -845,9 +840,9 @@ void parse(List options) {
 }</pre>
   </div>
 
-  <p>Within a doc comment, you can use <a href="http://daringfireball.net/projects/markdown/">markdown</a> for formatting.</p>
+  <p>在文档注释中，你可以用 <a href="http://daringfireball.net/projects/markdown/">markdown</a> 语法来格式。</p>
 
-  <h4 id="do-use-line-comments-for-everything-else">DO use line comments for everything else.</h4>
+  <h4 id="section-15">确保 其他非文档注释用单行注释</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">greet(name) {
@@ -863,10 +858,10 @@ void parse(List options) {
 }</pre>
   </div>
 
-  <h4 id="do-capitalize-and-punctuate-comments-like-sentences">DO capitalize and punctuate comments like sentences.</h4>
+  <h4 id="section-16">确保 按照普通的语句来些注释，大写字母开头并且添加标点符号。</h4>
 
-  <p>This doesn’t mean that the comment must always be a complete sentence, though it
-usually should. “Returns the number of items.” is an acceptable comment.</p>
+  <p>这并不意味着，注释必须为一个完整的语句。
+“Returns the number of items.” 是一个可以接受的注释。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">// Remove the last item from the collection.</pre>
@@ -876,11 +871,11 @@ usually should. “Returns the number of items.” is an acceptable comment.</p>
     <pre class="prettyprint lang-dart">// remove the last item from the collection</pre>
   </div>
 
-  <h4 id="do-use-square-brackets-in-doc-comments-for-identifiers-that-are-in-scope">DO use square brackets in doc comments for identifiers that are in scope.</h4>
+  <h4 id="section-17">确保 在文档注释中用方括号包围当前作用域的标示符</h4>
 
-  <p>If you surround things like variable, method or type names in square brackets,
-then documentation generators can look up the name and cross-link the two
-together.</p>
+  <p>如果用方括号包围变量、函数名字和类型，
+文档生成器会生成一个连接来查看
+该名字的定义。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">import 'dart:math';
@@ -889,10 +884,10 @@ together.</p>
 num greatestRoll(Dice a, Dice b) =&gt; max(a.roll(), b.roll());</pre>
   </div>
 
-  <h4 id="do-describe-method-signatures-in-the-prose-of-the-documentation-comment">DO describe method signatures in the prose of the documentation comment.</h4>
+  <h4 id="section-18">确保 用散文的方式来提供函数描述文档注释</h4>
 
-  <p>Other languages use verbose tags and sections to describe what the parameters
-and returns of a method are.</p>
+  <p>其他语言用冗长的标签和分块来描述什么是
+参数和该函数返回啥。</p>
 
   <div class="bad">
     <pre class="prettyprint lang-dart">/**
@@ -909,8 +904,8 @@ Flag addFlag(String name, String abbr) {
 }</pre>
   </div>
 
-  <p>The convention in Dart is to just integrate that into the description of the
-method and highlight parameters using square brackets.</p>
+  <p>在 Dart 的习惯用法是 在描述中集成参数和返回值的类型并用方括号
+来高亮这些参数。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">/**
@@ -923,36 +918,35 @@ Flag addFlag(String name, String abbr) {
 }</pre>
   </div>
 
-  <h2 id="whitespace">Whitespace</h2>
+  <h2 id="section-19">空白</h2>
 
-  <p>Like many languages, Dart ignores whitespace. However, <em>humans</em> don’t. Having a
-consistent whitespace style helps ensure that human readers see code the same
-way the compiler does.</p>
+  <p>和其他很多语言一样， Dart 忽略空白。但是，<em>人类</em>却不忽略空白。
+用一个一直的空白风格可以帮助人类和编译器一样
+理解代码。</p>
 
-  <h4 id="dont-use-tabs">DON’T use tabs.</h4>
+  <h4 id="tab">不要 用 tab</h4>
 
-  <p>Using spaces for formatting ensures the code looks the same in everyone’s
-editor. It also makes sure it looks the same when posted to blogs, or on code
-sites like <a href="http://code.google.com/projecthosting/">Google Code</a> or <a href="http://github.com">GitHub</a>.</p>
+  <p>用空格来格式化代码，这样在每个人的编辑器中看起来都一样。
+这样当在博客中或者其他网站发表代码的时候也能保持格式一样。例如 例如 <a href="http://code.google.com/projecthosting/">Google Code</a> 或者 <a href="http://github.com">GitHub</a>。</p>
 
-  <p>Modern editors emulate the behavior of tabs while inserting spaces, giving you
-the easy editing of tabs and the consistency of spaces.</p>
+  <p>流行的编辑器会用空格来替代 tab，让你编辑 tab 比较方便并
+保持留白的一致性。</p>
 
-  <h4 id="avoid-lines-longer-than-80-characters">AVOID lines longer than 80 characters.</h4>
+  <h4 id="section-20">避免 大于 80 个字符的代码行</h4>
 
-  <p>Readability studies show that long lines of text are harder to read because your
-eye has to travel farther when moving to the beginning of the next line. This is
-why newspapers and magazines use multiple columns of text.</p>
+  <p>阅读研究发现，人类在阅读比较长的文本的时候，无法快速的跳转到下一行。
+这就是为啥 报纸 和杂志 都使用多列的
+文本布局。</p>
 
-  <p>If you really find yourself wanting lines longer than 80 characters, our
-experience is that your code is likely too verbose and could be a little more
-compact. Do you really need to call that class
-<code>AbstractWidgetFactoryManagerBuilder</code>?</p>
+  <p>如果你真的需要用大于 80 个字符的行，
+我们的经验告诉你，你的代码应该是太冗长了，应该可以更加简练些。
+你真的愿意
+使用 <code>AbstractWidgetFactoryManagerBuilder</code> 这个类吗？</p>
 
-  <h4 id="do-place-the-operator-on-the-preceding-line-in-a-multi-line-expression">DO place the operator on the preceding line in a multi-line expression.</h4>
+  <h4 id="section-21">确保 在多行表达式的地方把操作符放到前面一行的末尾</h4>
 
-  <p>There are valid arguments for both styles but most of our code seems to go this
-way, and consistency matters most.</p>
+  <p>放到前面一行还是后面一行都是合法的，但是为了一致性考虑
+我们的代码都是把操作符放到前面一行。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">if (isDeepFried ||
@@ -962,7 +956,7 @@ way, and consistency matters most.</p>
 }</pre>
   </div>
 
-  <p>Note that this includes <code>=&gt;</code> as well:</p>
+  <p>注意： <code>=&gt;</code> 也复合该约定：</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">bobLikes() =&gt;
@@ -974,17 +968,17 @@ way, and consistency matters most.</p>
     =&gt; isDeepFried || (hasPieCrust &amp;&amp; !vegan) || containsBacon;</pre>
   </div>
 
-  <h4 id="do-place-the--on-the-next-line-in-a-multi-line-expression">DO place the <code>.</code> on the next line in a multi-line expression.</h4>
+  <h4 id="section-22">确保 把 <code>.</code> 放到多行表达式的下一行的开头</h4>
 
-  <p>This supercedes the previous rule. Unlike other operators, if you split an
-expression on a <code>.</code>, then put that at the beginning of the second line.</p>
+  <p>该约定紧接前面一条规则。和其他操作符不一样，如果你用一个
+ <code>.</code> 来分隔表达式，则把 <code>.</code> 放到下一行的开头。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">someVeryLongVariable.withAVeryLongProperty
     .aMethodOnThatObject();</pre>
   </div>
 
-  <h4 id="do-indent-block-bodies-two-spaces">DO indent block bodies two spaces.</h4>
+  <h4 id="section-23">确保用两个空格来缩进代码块</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">if (condition) {
@@ -992,24 +986,24 @@ expression on a <code>.</code>, then put that at the beginning of the second lin
 }</pre>
   </div>
 
-  <h4 id="do-indent-continued-lines-with-at-least-four-spaces">DO indent continued lines with at least four spaces.</h4>
+  <h4 id="section-24">确保 最少用四个空格来缩进跨行的代码</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
     wrappedToNextLine);</pre>
   </div>
 
-  <p>You may indent more than four spaces to line things up if you like:</p>
+  <p>如果你喜欢下面的风格，则可以用更多的空格来缩进：</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
                                      wrappedToNextLine);</pre>
   </div>
 
-  <h4 id="dont-indent-lines-that-are-continued-with-a-function-expression">DON’T indent lines that are continued with a function expression.</h4>
+  <h4 id="section-25">不要 缩进一个方法表达式的延续</h4>
 
-  <p>The one exception to the above rule is function expressions used within larger
-expressions, like being passed to methods. These are formatted like so:</p>
+  <p>上面一条规则的一个例外情况就是当在一个大的表达式中使用方法表达式的时候，
+和提供函数参数一样，他们使用下面的方式来格式化：</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">new Future.delayed(const Duration(seconds:1), () {
@@ -1023,7 +1017,7 @@ expressions, like being passed to methods. These are formatted like so:</p>
     });</pre>
   </div>
 
-  <h4 id="do-place-the-opening-curly-brace--on-the-same-line-as-what-it-follows">DO place the opening curly brace (<code>{</code>) on the same line as what it follows.</h4>
+  <h4 id="section-26">确保 把开始的花括号 (<code>{</code>) 放到它所属的同一行结尾</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Foo {
@@ -1037,9 +1031,9 @@ expressions, like being passed to methods. These are formatted like so:</p>
 }</pre>
   </div>
 
-  <h4 id="do-use-curly-braces-for-all-flow-control-structures">DO use curly braces for all flow control structures.</h4>
+  <h4 id="section-27">确保 在所有的控制流语句中用花括号</h4>
 
-  <p>Doing so avoids the <a href="http://en.wikipedia.org/wiki/Dangling_else">dangling else</a> problem.</p>
+  <p>这样可以避免 <a href="http://en.wikipedia.org/wiki/Dangling_else">dangling else</a>（悬空 else） 问题。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">if (true) {
@@ -1055,14 +1049,14 @@ else
   print('opposite day!');</pre>
   </div>
 
-  <p>There is one exception to this: short <code>if</code> statements with no <code>else</code> clause that
-fit on one line may omit the braces.</p>
+  <p>当然，也有一个特例，就是当 <code>if</code> 非常短并且没有 <code>else</code> 语句，还
+可以在一行显示的时候。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">if (arg == null) return defaultValue;</pre>
   </div>
 
-  <h4 id="do-indent-switch-cases-two-spaces-and-case-bodies-four-spaces">DO indent switch cases two spaces and case bodies four spaces.</h4>
+  <h4 id="switch-cases--case-">确保 用两个空格缩进 switch cases 并用四个空格缩进 case 块</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">switch (fruit) {
@@ -1076,12 +1070,11 @@ fit on one line may omit the braces.</p>
 }</pre>
   </div>
 
-  <h4 id="do-use-spaces-around-binary-and-ternary-operators-after-commas-and-not-around-unary-operators">DO use spaces around binary and ternary operators, after commas, and not around unary operators.</h4>
+  <h4 id="section-28">确保 在二元和三元操作符之间和冒号后面用空格，不要在一元操作符后面用空格</h4>
 
-  <p>Note that <code>&lt;</code> and <code>&gt;</code> are considered binary operators when used as expressions,
-but not for specifying generic types. Both <code>is</code> and <code>is!</code> are considered single
-binary operators. However, the <code>.</code> used to access members is not and should
-<em>not</em> have spaces around it.</p>
+  <p>注意： <code>&lt;</code> 和 <code>&gt;</code> 在表达式中被认为是二元操作符，但是对于泛型类型除外。
+ <code>is</code> 和 <code>is!</code> 被认为是一个二元操作符。
+ 用户访问成员的 <code>.</code> 不应该用空格分隔。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">a = 1 + 2 / (3 * -b);
@@ -1097,7 +1090,7 @@ d= condition?b:object.method(a,b,c);
 if (obj is !SomeType) print('not SomeType');</pre>
   </div>
 
-  <h4 id="do-place-spaces-around-in-and-after-each--in-a-loop">DO place spaces around <code>in</code>, and after each <code>;</code> in a loop.</h4>
+  <h4 id="in---">确保 在每个 <code>in</code> 之间和循环中的 <code>;</code> 后面使用空格</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">for (var i = 0; i &lt; 100; i++) {
@@ -1109,10 +1102,10 @@ for (final item in collection) {
 }</pre>
   </div>
 
-  <h4 id="do-use-a-space-after-flow-control-keywords">DO use a space after flow-control keywords.</h4>
+  <h4 id="section-29">确保 在控制流关键字后面用一个空格</h4>
 
-  <p>This is unlike function and method calls, which do <em>not</em> have a space between
-the name and the opening parenthesis.</p>
+  <p>和函数和方法调用不一样。
+调用函数和方法则不需要使用空格分隔。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">while (foo) {
@@ -1126,15 +1119,15 @@ try {
 }</pre>
   </div>
 
-  <h4 id="dont-use-a-space-after---and--or-before---and-">DON’T use a space after <code>(</code>, <code>[</code>, and <code>{</code>, or before <code>)</code>, <code>]</code>, and <code>}</code>.</h4>
+  <h4 id="section-30">不要 在 <code>(</code>、 <code>[</code>、  <code>{</code> 之后和 <code>)</code>、 <code>]</code>、 <code>}</code> 之前用空格</h4>
 
-  <p>Also, do not use a space when using <code>&lt;</code> and <code>&gt;</code> for generic types.</p>
+  <p>同样，当 <code>&lt;</code> 和 <code>&gt;</code> 用作泛型的时候 ，也不加空格。</p>
 
   <div class="good">
     <pre class="prettyprint lang-dart">var numbers = &lt;int&gt;[1, 2, (3 + 4)];</pre>
   </div>
 
-  <h4 id="do-use-a-space-before--in-function-and-method-bodies">DO use a space before <code>{</code> in function and method bodies.</h4>
+  <h4 id="section-31">确保 在函数和方法体的 <code>{</code> 之前加一个空格</h4>
 
   <p>This is an exception to the above rule. When a <code>{</code> is used after a parameter
 list in a function or method, there should be a space between it and the <code>)</code>
@@ -1152,7 +1145,7 @@ ending the parameters.</p>
 }</pre>
   </div>
 
-  <h4 id="do-format-constructor-initialization-lists-with-each-field-on-its-own-line">DO format constructor initialization lists with each field on its own line.</h4>
+  <h4 id="section-32">确保 每行只放一个构造函数初始化列表语句</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">MyClass()
@@ -1163,11 +1156,11 @@ ending the parameters.</p>
 }</pre>
   </div>
 
-  <p>Note that the <code>:</code> should be wrapped to the next line and indented four spaces.
-Fields should all line up (so all but the first field end up indented six
-spaces).</p>
+  <p>注意 <code>:</code> 应该放到下一行代码前面并用四个空格缩进。
+每个成员变量应该对齐（除了第一个变量以外，其他的变量都用六个空格
+缩进）。</p>
 
-  <h4 id="do-use-a-space-around--in-named-parameters-and-after---for-a-named-argument">DO use a space around <code>:</code> in named parameters and after <code>:</code>  for a named argument.</h4>
+  <h4 id="section-33">确保 在命名参数的<code>:</code> 后面使用一个空格</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class ListBox {
@@ -1186,7 +1179,7 @@ main() {
 new ListBox(showScrollbars : true);</pre>
   </div>
 
-  <h4 id="do-use-a-spaces-around--in-optional-positional-parameters">DO use a spaces around <code>=</code> in optional positional parameters.</h4>
+  <h4 id="section-34">确保 在可选参数 <code>=</code> 赋值前后用一个空格</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class HttpServer {
@@ -1206,7 +1199,7 @@ class HttpServer {
 }</pre>
   </div>
 
-  <h4 id="do-use-four-spaces-for-method-cascades">DO use four spaces for method cascades</h4>
+  <h4 id="section-35">确保 在函数级联调用的时候 使用空格缩进</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">var list = new List()
@@ -1227,7 +1220,7 @@ class HttpServer {
 
 	
 	<ul class="pager">
-	  <li><a href="/articles/">More articles about Dart <i class="glyphicon glyphicon-chevron-up"></i></a></li>
+	  <li><a href="/articles/">关于 Dart 的更多文章 <i class="glyphicon glyphicon-chevron-up"></i></a></li>
 	 </ul>
 	 
 

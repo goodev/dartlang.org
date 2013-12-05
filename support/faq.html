@@ -26,7 +26,7 @@
 	
 	<link rel="author" href="/authors/eli-brandt.html">
 	
-	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+	<link rel="alternate" type="application/atom+xml" href="http://dartnews.sinaapp.com/?feed=atom" title="Atom feed">
   <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
   -->
@@ -416,113 +416,114 @@ String MakeGreeting(String name) {
 
 <p>我们目前正在进行添加反射功能的开发，它使用<a href="/articles/reflection-with-mirrors/">mirrors API</a>。</p>
 
-<h3 id="can-add-everything">Q. Can Dart add tuples, pattern matching, non-nullable types, partial evaluation, optional semicolons, ...?</h3>
+<h3 id="can-add-everything">问题：Dart是否会添加元组，模式匹配，非空类型，partial evaluation，optional semicolons...？</h3>
 
-<p>The language is not finished yet.  It might be able to include your feature, although it can't include everything.  Some features don't fit the basic nature of the language, and some don't play well with other features.  Simplicity is the single most important gift we all can give to future programmers.</p>
+<p>这么语言还没有完成。尽管它不能满足所有的需求，但是它可能会增加你提到的这些特性。上诉一些特性不符合这门语言的基本风格，还有一些不能与其他的特点很好的兼容。我们能给与未来开发者最大的礼物是简单易用。</p>
 
-<p>Please look at the <a href="http://code.google.com/p/dart/issues/list">list of Dart issues</a> to see if your request is already there, and add a new issue if not.  Make a thoughtful argument for your feature.  Sample code with and without your feature is good evidence; a sizeable codebase that shows the need is even better evidence.</p>
+<p>这类问题请查看<a href="http://code.google.com/p/dart/issues/list">Dart 已答问题列表</a>，欢迎你在那里提问。将你关于新特点的想法告诉我们。建议列举相关案例代码，用大量代码展示需求的重要性会更好。</p>
 
-<p>Please don't be surprised if the Dart designers say "no" by default, especially for now.  It's far more painful to remove a language feature than to add it, so Dart is likely to add the most obvious features first, and then revisit the next tier later.  And there simply are more possible language features in the world that can fit into any single language without making a total hash of it.   But we do very much appreciate suggestions and evidence.  We hope you'll see our appreciation through careful design choices and fair communication about them.</p>
+<p>如果 Dart 设计人员拒绝了你的建议请不要见怪，特别是目前。移除一个特性比添加一个特性更痛苦，必须谨慎对待，所以 Dart 更需要先添加那些显著需要的特性，后续再考虑其他的。有很多合适的语言特性可以添加到一门单独的语言中而不会把它弄得很杂乱。但是我们仍然非常感谢你的建议和论证。我们希望你可以看到我们谨慎用心的设计选择和公平公开的讨论。</p>
 </section> <!-- /#language -->
 
 <section id="types">
-<h2>Types</h2>
+<h2>类型</h2>
 
-<h3 id="type-inference">Q. Does Dart have type inference?</h3>
+<h3 id="type-inference">问题：Dart 拥有类型推断么？</h3>
 
-<p>Type inferencing is not something specified by the language specification, but it is something that implementations are free to do. It's important to remember that Dart has a dynamic type system, so type inferencing doesn't play the same role as it does in languages such as Haskell. However, Dart Editor does do some type inferencing, such as when you use var for local variables. We expect that the Dart VM and dart2js will use type inferencing when it's useful for performance or for other reasons.</p>
+<p>类型推断不是一门语言的标准，但是它是一种自由的实现。了解 Dart 拥有动态类型系统是很重要的，但是 Dart 类型推断跟其他语言（像 Haskell）的意义不同。然而，Dart 的编辑器确实做了一些类型推断，例如当你为本地的变量使用 var 。如果对提升性能有用、或者其他原因，我们期待 Dart 虚拟机和 Dart2js 能够使用类型推断。</p>
 
-<h3 id="why-types-optional">Q. Why are type annotations optional?</h3>
+<h3 id="why-types-optional">问题：为什么类型注释是可选的？</h3>
 
-<p>We want to maintain the feel of a dynamically typed language, which is familiar to web developers. Mandatory types don't fit with that goal.</p>
+<p>我们希望保持 WEB 开发人员熟悉的那种动态类型语言的感觉。强制类型注释不符合这个目标。</p>
 
-<h3 id="why-types-unsound">Q. Why is the type system designed to be unsound?</h3>
+<h3 id="why-types-unsound">问题：为什么类型系统设计的不够健全？</h3>
 
-<p>Rather than using a full, static type system, Dart has a dynamic type system with optional static type annotations. Our main goals for the types are to support tooling and documentation. We want to build a pragmatic tool that helps web programmers without getting in their way.  In particular, we want our static warnings to be optimistic rather than to complain about dynamically typed code that may be valid and correctly written, such as "downcast" assignments.  Because Dart <i>execution</i> is always type-safe, we can let some unsound cases get through the static warnings and be caught at run time instead.</p>
+<p>与完全的静态类型系统相比，Dart 拥有一个可选静态注释的动态类型系统。我们这么设计的主要目的是支持工具和文档。我们希望创建一个实用的工具来帮助 WEB 开发人员更顺利的进行开发。特别的，我们希望静态警告可以最优化，而不是动态类型代码是正确的却仍被警告，例如“向下转型”。由于 Dart 执行是类型安全的，我们可以让一些不健全的情况避开静态警告，而在运行时来捕获他们。</p>
 
-<p>Typical object-oriented languages let you downcast, which also introduces unsoundness into the type system and may result in a runtime type error.  In Dart, we choose to allow downcasts without a syntax to mark them.</p>
+<p>典型的面向对象的语言允许向下转型，这仍给类型系统带来不健全并可能导致运行时错误。在 Dart ，我们选择允许不用语法标注的向下转型。</p>
 
-<h3 id="sound-types-for-performance">Q. But don't you need sound typing information to get high performance?</h3>
+<h3 id="sound-types-for-performance">问题：但是你们不需要使用健全的类型信息来提升性能么？</h3>
 
-<p>Sound types can help with performance but aren't essential. What we need are uniform, simple semantics.</p>
+<p>Sound types 能够提升性能，但并不是必须的。我们需要规则、简单的语义。</p>
 
-<h3 id="types-why-no-runtime-effect">Q. Why do type annotations have no effect on the runtime behavior?</h3>
+<h3 id="types-why-no-runtime-effect">问题：为什么类型注释对运行时行为没有任何影响？</h3>
 
-<p>If type annotations affect the runtime, programs will change their behavior as programmers add type information, even though the logic remains unchanged. The normal mode of development is to gradually add types for documentation and validation, and if that changes what the program does, programmers have no stable foundation to work on. This is especially true given that types could be inaccurate.</p>
+<p>如果类型注释影响运行时，当用户添加类型信息的时候程序将改变自己的行为，即使程序逻辑仍然保持不变。正常的开发模式是逐步的记录文档并确认，而如果改变了程序的行为，开发人员就没有稳定的基础进行工作了，尤其是在类型可能有错误的情况下。</p>
 
-<p>In addition, this policy helps us and others add additional type-checking tools that implement different policies without unforeseen interactions with the runtime.</p>
+<p>除此之外，这种策略帮助我们和其他有类型检查功能的工具实现不同的策略避免运行时意外的影响。</p>
 
-<h3 id="why-covariant-generics">Q. Why are generics covariant?</h3>
+<h3 id="why-covariant-generics">问题：为什么泛型是协变的？</h3>
 
-<p>Covariant generics fit a common intuition that programmers have, and very often this intuition is correct, such as in the common "read-only" use of a generic.  Although this intuition isn't always correct, Dart doesn't need it to be.  Dart has already chosen optimistic static checking, so why not continue down that path and allow covariant uses of generics to pass static type checking?</p>
+<p>协变的泛型符合开发人员的直觉，而这种直接经常是正确的，例如“只读”的一般用法。尽管这种直觉并不总是正确的，Dart 也不需要它总是正确的。Dart 已经选择了最优化的类型检查，所以为什么我们不继续并允许泛型可以协变来传递绕过静态类型检查？</p>
 
-<p>Where covariant generics are too optimistic, Dart's type-safe execution allows the static warnings to be optimistic without being dangerous.  Although covariance can be pessimistic too, we think it will be rare that people run into that, and and there's a simple workaround for any pessimism.</p>
+<p>Dart 的类型安全的执行体系允许静态警告以优化而不会带来危险。尽管协变也可能导致问题，但是我们认为那种情况很难发生，而且处理这些问题也会很简单。</p>
 
-<p>We are familiar with a variety of ways that languages try to mark or infer variance.  We don't think any of them are suitable for Dart, where we want type annotations to be optional and unobtrusive: it wouldn't fit to <em>require</em> marking, and we feel that variance inference systems add too much complexity for their benefit in Dart.</p>
+<p>我们对语言标记或者暗示不一致的很多种方式都很熟悉。我们认为没有一种现存的方式适合 Dart，所以我们希望类型注释是可选的并且不唐突：<em>强制</em>的标记是不合适的，并且我们感觉推断体系添加了太多的复杂度，得不偿失。</p>
 
-<p>Again, we're trying to be pragmatic, and we think the outcome is reasonable.</p>
+<p>再一次，我们希望更加的实用，而我们认为这样的结果是合理的。</p>
 </section> <!-- /#types -->
 
 <section id="tools">
-<h2>Usage and tools</h2>
+<h2>用法与工具</h2>
 
-<h3 id="should-i-use-dart-yet">Q. Should I write my web app in Dart?</h3>
+<h3 id="should-i-use-dart-yet">问题：我应该采用 Dart 来开发网页应用么？</h3>
 
-<p>We'd love for you to try Dart and give us feedback.  If your web app is something that needs to be ultra stable, we recommend waiting until Dart is more mature.  However, if you're willing to follow our <a href="http://news.dartlang.org/">blog</a> and update your code in response to breaking changes we occasionally make, you may find that Dart is a really exciting community to be a part of!</p>
+<p>我们很高兴你能使用 Dart 并反馈建议给我们。如果你要开发的网页应用需要极高的稳定性，我们建议等到 Dart 再成熟一些再采用。然而，如果你能关注我们的<a href="http://news.dartlang.org/">博客</a>，并且上传你的代码来偶尔让我们作出一些改变，你会发现成为 Dart 团队的一员是很令人兴奋的。</p>
 
-<h3 id="interop-with-js-libs">Q. How does Dart code interoperate with JavaScript libraries?</h3>
+<h3 id="interop-with-js-libs">问题：Dart 代码是如何与 JavaScript 类库交互运行的？</h3>
 
-<p>Although Dart and JavaScript are completely separate languages with potentially separate VMs, they can interoperate. See <a href="/articles/js-dart-interop/">this article</a> to learn how.</p>
+<p>尽管 Dart 和 JavaScript是拥有不同虚拟机的完全不同的语言，但是他们可以交互运行。查看<a href="/articles/js-dart-interop/">这篇文章</a>了解更多。</p>
 
-<h3 id="js-codebase-integration">Q. I have a large JavaScript codebase.  How would I migrate it to Dart?</h3>
+<h3 id="js-codebase-integration">问题：我以前编写过大量的JavaScript代码。我怎样才能把他们迁移到 Dart 中？</h3>
 
-<p>Try migrating one major feature at a time, and use the <a href="/articles/js-dart-interop/">JavaScript interoperability library</a> only when necessary.</p>
+<p>试着一次迁移一个主要的功能模块, 并在仅当需要的时候使用 <a href="/articles/js-dart-interop/">JavaScript 协同运行类库</a> 。</p>
 
-<h3 id="porting-from-GWT">Q. I have a large application written in GWT. How do I port it to Dart?</h3>
+<h3 id="porting-from-GWT">问题：我有用 GWT 开发的一个大型应用程序。怎样才能为 Dart 开放接口？</h3>
 
-<p>Java and Dart are syntactically similar, so this might be easier than you think. You can rely on Dart Editor to flag any syntax problems. Alternatively, you may consider porting one feature at a time to Dart and using the <a href="/articles/js-dart-interop/">JavaScript interoperability library</a> as the common middle ground. Be sure to watch our Google I/O 2012 talk <a href="http://www.youtube.com/watch?v=EvACKPBo_R8">Migrating Code from GWT to Dart</a>, but keep in mind that it predates our JavaScript interoperability library.</p>
+<p>Java 和 Dart 在语法结构上是相似的，所以这将会比你想象的要简单。你可以使用 Dart 编辑器标示出任何语法问题。另一种选择，你可以考虑一次对接一个功能模块，并用<a href="/articles/js-dart-interop/">JavaScript 协同运行类库</a>作为中间件。看一下2013谷歌 I/O 大会<a href="http://www.youtube.com/watch?v=EvACKPBo_R8"> 将 GWT 代码迁移到 Dart</a>，但是要注意这段视频是在 JavaScript 协同运行类库发布之前发布的。</p>
 
-<h3 id="what-browsers-supported">Q. What browsers do you support as JavaScript compilation targets?</h3>
+<h3 id="what-browsers-supported">问题：哪些 JavaScript 支持的浏览器会被 Dart 支持？</h3>
 
-We're currently aiming to support the following browsers:
+我们当前计划支持下列浏览器:
 <ul>
-<li>Internet Explorer, versions 9 and 10.</li>
-<li>Firefox, latest version.</li>
-<li>Chrome, latest version.</li>
-<li>Safari for desktop, version 6.</li>
+<li>Internet Explorer, 版本 9 、 10。</li>
+<li>Firefox, 最新版。</li>
+<li>Chrome, 最新版。</li>
+<li>Safari 桌面版, 版本 6。</li>
 </ul>
 
-<h3 id="what-browsers-have-dart">Q. What browsers support Dart now?</h3>
+<h3 id="what-browsers-have-dart">问题：截至到目前有哪些浏览器支持 Dart 了？</h3>
 
-<p>As of December 2012, no production browsers can execute Dart code unless it's first compiled to JavaScript. However, the <a href="/tools/editor/">Dart Editor</a> ships with a version of Chromium (called Dartium) that has the Dart VM integrated into it. Dartium not only executes Dart code natively, but it also has really good interoperability with Dart Editor so that you can debug your Dart applications directly from within Dart Editor.</p>
+<p>截至到2012年12月，还没有浏览器直接支持 Dart，只能把 Dart 代码转换成 JavaScript代码运行。然而，<a href="/tools/editor/">Dart 编辑器</a>装载了一个Chromium (名称是：Dartium)，它已经整合了 Dart 虚拟机。Dartium 不仅能执行 Dart 代码，它与 Dart 编辑器的兼容性很好，你可以在 Dart 编辑器中直接调试 Dart 应用程序。</p>
 
-<h3 id="hello-world-js-size">Q. Why was the JavaScript output for "Hello world" so big?</h3>
+<h3 id="hello-world-js-size">问题：为什么输出“你好世界”的 Dart 转 JavaScript 后的代码文件那么大？</h3>
 
-<p>Dart was young. At the launch of Dart, our initial goal was to generate functional JavaScript from Dart code.</p>
+<p>Dart 刚刚发布。在开始阶段，我们的初始目标是 Dart 代码转 JavaScript 生成的代码能够正确的被执行。</p>
 
-<p>Since the initial launch, we've created an improved compiler, dart2js, written in Dart. This compiler aims to be compliant with the language specification, and will continue to be optimized for performance. The dart2js compiler generates significantly smaller JavaScript output than the launch version of dartc (the original Dart-to-JavaScript compiler).</p>
+<p>后续阶段，我们创建了一个改进的编译程序，dart2js ，它是用 Dart 开发的。这个编译程序的目标是使代码转换符合语言规范，并会不断的优化以提升性能。dart2js 编译程序生成相当小的 JavaScript 代码（比 dartc ：最初的Dart-to-JavaScript 编译程序,生成的代码要小很多）。</p>
 
-<h3 id="debugging-output-js">Q. How do I debug Dart code after it's been compiled to JavaScript?</h3>
+<h3 id="debugging-output-js">问题：如果 Dart 代码被转换成 JavaScript 代码了，我该怎样进行调试？</h3>
 
 <p>dart2js now generates <a href="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">source maps</a>, so you can debug Dart code in browsers that don't support the Dart VM. However, even in rare cases where you must inspect the raw JavaScript, it's fairly debuggable using the browser's normal JavaScript development tools.</p>
+dart2js 目前支持生成<a href="http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/">资源映射</a>，因此你可以在那些不支持 Dart 虚拟机的浏览器中调试 Dart 代码。然而，在极少的情况下你必须检查生成的 JavaScript 代码，使用普通的 JavaScript 开发工具也能清楚的调试它们。
 
-<h3 id="what-input-compiles">Q. Will any valid Dart code compile to JavaScript, or are there limitations?</h3>
+<h3 id="what-input-compiles">问题：是所有的 Dart 代码都能转换为 JavaScript 代码么？有没有什么限制？</h3>
 
-<p>Yes.  We intend for any valid Dart code to compile to JavaScript.  Of course, there are some libraries that will only run on the server because they don't make sense in a browser context.</p>
+<p>是的。我们的目标是所有的 Dart 代码都可以转换成 JavaScript 代码。当然，除了有一些只能在服务器上运行的类库，在浏览器中运行他们没有什么意义。</p>
 
-<h3 id="json-support">Q. Does Dart support JSON?</h3>
+<h3 id="json-support">问题：Dart 支持 JSON 么？</h3>
 
-<p>Yes.  See the <a href="http://api.dartlang.org/docs/bleeding_edge/dart_json/JSON.html">JSON</a> class in the standard library.</p>
+<p>是的，可以在标准类库中查看<a href="http://api.dartlang.org/docs/bleeding_edge/dart_json/JSON.html">JSON</a>类的相关信息。</p>
 
-<h3 id="server-support">Q. Can Dart run on the server?</h3>
+<h3 id="server-support">问题：Dart可以在服务器端运行么？</h3>
 
-<p>Yes.  The dart:io library is aimed at server-side code that runs on the standalone Dart VM. dart:io uses an asynchronous programming model inspired by node.js, EventMachine, and Twisted. See <a href="/articles/io/">An Introduction to the dart:io Library</a> to learn more.</p>
+<p>是的。dart:io 库的目标就是在服务器端运行，它们是在单独的 Dart 虚拟机上运行的。dart:io 使用一种异步变成模型，设计思路来自 node.js，EventMachine 和 Twisted。查看<a href="/articles/io/">dart:io 类库的介绍</a>获得更多的信息。</p>
 </section> <!-- /#tools -->
 
 <section id="acknowledgements">
-<h2>Acknowledgments</h2>
+<h2>感谢</h2>
 
-<p>Thanks to users who asked questions, and to many Googlers who contributed questions, answers, and improvements: Mukesh Agrawal, Lars Bak, Adam Barth, Shannon -jj Behrens, Gilad Bracha, Paul Brauner, David Carlson, Patrick Doyle, Matthias Ernst, Nicolas Geoffray, Dan Grove, William Hesse, Bruce Johnson, Seth Ladd, Patrick Linehan, Florian Loitsch, John Messerly, Srdjan Mitrovic, Anton Muhin, Bob Nystrom, Jack Palevich, David Rochberg, Matt Shulman, Joel Webber, and Brian Wilkerson.</p>
+<p>谢谢所有提问的人，同样感谢提出问题、解答问题、优化改进的谷歌工作人员：Mukesh Agrawal, Lars Bak, Adam Barth, Shannon -jj Behrens, Gilad Bracha, Paul Brauner, David Carlson, Patrick Doyle, Matthias Ernst, Nicolas Geoffray, Dan Grove, William Hesse, Bruce Johnson, Seth Ladd, Patrick Linehan, Florian Loitsch, John Messerly, Srdjan Mitrovic, Anton Muhin, Bob Nystrom, Jack Palevich, David Rochberg, Matt Shulman, Joel Webber, 以及 Brian Wilkerson。</p>
 
 </section>
 

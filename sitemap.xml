@@ -2,143 +2,143 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://www.dartlang.org/articles/benchmarking/articles/benchmarking/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/creating-streams/articles/creating-streams/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/dart-unit-tests/articles/dart-unit-tests/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/doc-comment-guidelines/articles/doc-comment-guidelines/
         </loc>
-        <lastmod>2013-11-19T13:08:44+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/embedding-in-html/articles/embedding-in-html/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/emulating-functions/articles/emulating-functions/
         </loc>
-        <lastmod>2013-11-19T13:08:40+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:17+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/event-loop/articles/event-loop/</loc>
-        <lastmod>2013-11-19T13:08:48+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/feet-wet-streams/articles/feet-wet-streams/</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/futures-and-error-handling/articles/futures-and-error-handling/
         </loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/idiomatic-dart/articles/idiomatic-dart/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/improving-the-dom/articles/improving-the-dom/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/articles/</loc>
-        <lastmod>2013-11-19T13:08:13+08:00</lastmod>
+        <lastmod>2013-11-29T19:25:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/io/articles/io/</loc>
-        <lastmod>2013-11-19T13:08:49+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/json-web-service/articles/json-web-service/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/mixins/articles/mixins/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/mocking-with-dart/articles/mocking-with-dart/</loc>
-        <lastmod>2013-11-19T13:08:52+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/native-extensions-for-standalone-dart-vm/articles/native-extensions-for-standalone-dart-vm/
         </loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/numeric-computation/articles/numeric-computation/
         </loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/optional-types/articles/optional-types/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/reflection-with-mirrors/articles/reflection-with-mirrors/
         </loc>
-        <lastmod>2013-11-19T13:08:48+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/simd/articles/simd/</loc>
-        <lastmod>2013-11-19T13:08:51+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/snapshots/articles/snapshots/</loc>
-        <lastmod>2013-11-19T13:08:46+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/style-guide/articles/style-guide/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/using-future-based-apis/articles/using-future-based-apis/
         </loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/web-ui/articles/web-ui/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/web-ui/articles/web-ui/spec.html</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/web-ui/articles/web-ui/summary.html</loc>
-        <lastmod>2013-11-19T13:08:46+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/web-ui/articles/web-ui/tools.html</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/why-dart-types/articles/why-dart-types/</loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/articles/why-not-bytecode/articles/why-not-bytecode/</loc>
-        <lastmod>2013-11-19T13:08:44+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dartlang.org/articles/writing-unit-tests-for-pub-packages/articles/writing-unit-tests-for-pub-packages/
         </loc>
-        <lastmod>2013-11-19T13:08:38+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/authors/authors/bob-nystrom.html</loc>
@@ -274,7 +274,7 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/docs/cookbook/docs/cookbook/</loc>
-        <lastmod>2013-11-19T13:08:22+08:00</lastmod>
+        <lastmod>2013-12-05T20:30:28+08:00</lastmod>
     </url>
     <url>
         <loc>
@@ -364,7 +364,7 @@
         <loc>
             http://www.dartlang.org/docs/dart-up-and-running/contents/docs/dart-up-and-running/contents/foreword.html
         </loc>
-        <lastmod>2013-11-19T13:08:25+08:00</lastmod>
+        <lastmod>2013-12-05T19:43:24+08:00</lastmod>
     </url>
     <url>
         <loc>
@@ -376,15 +376,15 @@
         <loc>
             http://www.dartlang.org/docs/dart-up-and-running/contents/docs/dart-up-and-running/contents/preface.html
         </loc>
-        <lastmod>2013-11-19T13:08:25+08:00</lastmod>
+        <lastmod>2013-12-05T19:43:24+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/docs/dart-up-and-running/docs/dart-up-and-running/</loc>
-        <lastmod>2013-11-19T13:08:34+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/docs/docs/</loc>
-        <lastmod>2013-11-20T11:23:32+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/docs/spec/docs/spec/</loc>
@@ -636,7 +636,7 @@
     </url>
     <url>
         <loc>http://www.dartlang.org/support/support/faq.html</loc>
-        <lastmod>2013-11-29T17:28:15+08:00</lastmod>
+        <lastmod>2013-12-02T20:04:16+08:00</lastmod>
     </url>
     <url>
         <loc>http://www.dartlang.org/support/support/</loc>

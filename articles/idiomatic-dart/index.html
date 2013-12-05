@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Idiomatic Dart | Dart: 用于创建结构化的web应用</title>
+  <title>Dart 习惯用法 | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Idiomatic Dart | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="Dart 习惯用法 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Learn how to write code that looks and feels like Dart.">
+  <meta itemprop="description" content="学习如何编写看起来像 Dart 的代码。">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 	
 	<link rel="author" href="/authors/bob-nystrom.html">
 	
-	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+	<link rel="alternate" type="application/atom+xml" href="http://dartnews.sinaapp.com/?feed=atom" title="Atom feed">
   <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
   -->
@@ -203,27 +203,27 @@
   <div class="bs-sidebar hidden-print affix-top" role="complementary">
 
 <ol class="toc nav bs-sidenav" id="markdown-toc">
-  <li><a href="#constructors">Constructors</a>    <ol>
-      <li><a href="#automatic-field-initialization">Automatic field initialization</a></li>
-      <li><a href="#named-constructors">Named constructors</a></li>
-      <li><a href="#factory-constructors">Factory constructors</a></li>
+  <li><a href="#section">构造函数</a>    <ol>
+      <li><a href="#section-1">自动的成员初始化</a></li>
+      <li><a href="#section-2">命名构造函数</a></li>
+      <li><a href="#section-3">工厂构造函数</a></li>
     </ol>
   </li>
-  <li><a href="#functions">Functions</a>    <ol>
-      <li><a href="#one-line-methods">One-line methods</a></li>
-      <li><a href="#function-types-and-aliases">Function types and aliases</a></li>
+  <li><a href="#functions">方法(Functions)</a>    <ol>
+      <li><a href="#section-4">一行代码的函数</a></li>
+      <li><a href="#section-5">方法类型和别名</a></li>
     </ol>
   </li>
-  <li><a href="#type-annotations">Type annotations</a></li>
-  <li><a href="#fields-getters-and-setters">Fields, getters, and setters</a></li>
-  <li><a href="#top-level-definitions">Top-level definitions</a></li>
-  <li><a href="#dependency-injection">Dependency injection</a></li>
-  <li><a href="#strings-and-interpolation">Strings and interpolation</a></li>
-  <li><a href="#operators">Operators</a></li>
-  <li><a href="#equality">Equality</a></li>
-  <li><a href="#numbers">Numbers</a></li>
+  <li><a href="#section-6">类型定义</a></li>
+  <li><a href="#getters-setters">成员变量、 getters、和 setters</a></li>
+  <li><a href="#top-level">顶级（Top-level）定义</a></li>
+  <li><a href="#section-7">依赖注入</a></li>
+  <li><a href="#section-8">字符串和插值</a></li>
+  <li><a href="#section-9">操作符</a></li>
+  <li><a href="#section-10">相等判断</a></li>
+  <li><a href="#section-11">数字</a></li>
   <li><a href="#futures">Futures</a></li>
-  <li><a href="#comments">Comments</a></li>
+  <li><a href="#section-12">注释</a></li>
 </ol>
 
   </div>
@@ -232,42 +232,45 @@
   <p><!-- Start of content -->
 	</p>
 
-  <h1 id="idiomatic-dart">Idiomatic Dart</h1>
+  <h1 id="dart-">Dart 习惯用法</h1>
 
-  <p><em>Written by Bob Nystrom<br />
-October 2011
-(updated March 2013)</em></p>
+  <p><em>作者： Bob Nystrom<br />
+译者：云在千峰<br />
+2011 10月
+(2013 3月更新)</em></p>
 
-  <p>Dart was designed to look and feel familiar if you’re coming from other
-languages, in particular Java and JavaScript. If you try hard enough, you can
-use Dart just like it was one of those languages. If you try <em>really</em> hard, you
-may even be able to turn it into Fortran, but you’ll be missing out on what’s
-unique and fun about Dart.</p>
+  <p>Dart 设计的时候就借鉴了其他语言，如果你用过其他语言 – 特别是 Java 和 JavaScript – 
+就可以发现 Dart 看起来比较熟悉。
+如果你努力尝试的话，你可以完全按照这些语言来用 Dart；
+如果你_再努力尝试下_的话，你也可以按照 Fortran 的方式来用 Dart，
+但是如果这样的话，就丧失了 Dart 的独特性和趣味性了。</p>
 
-  <p>This article will help teach you to write code that’s uniquely suited for Dart.
-Since the language is still evolving, many of the idioms here are changing too.
-There are places in the language where we still aren’t sure what the best
-practice is yet. (Maybe you can help us.) But here are some pointers that will
-hopefully kick your brain out of Java or JavaScript mode, and into Dart.</p>
+  <p>这篇文章介绍如何编写独特适合 Dart 的代码。
+由于该应用仍然还在进化，很多习惯语法也在发生变化。
+仍然有一些地方我们目前还不确定如何做是最好的。（也许
+你可以帮助我们。）
+但是，这里的一些观点也许会让你从 Java 或者 JavaScript 中摆脱出来并为之眼前一亮，
+从而进入到 Dart 世界。</p>
 
   <aside class="alert alert-info">
-    <p><strong>Note</strong>:
-  This article is not intended to teach you the basics of programming with Dart.
-  If you are new to Dart, we recommend that you first explore the
-  <a href="/docs/dart-up-and-running/">Language Tour</a>.</p>
+    <p><strong>注意</strong>：
+ 该文章并不是要告诉你 Dart 编程的基本内容。
+ 如果你还没接触过 Dart ，我们推荐你先
+ 看看
+  <a href="/docs/dart-up-and-running/">Dart 语言概览</a>。</p>
   </aside>
 
-  <h2 id="constructors">Constructors</h2>
+  <h2 id="section">构造函数</h2>
 
-  <p>We’ll start this article the way every object starts its life: with
-constructors. Every object will be constructed at some point, and defining
-constructors is an important part of making a usable class. Dart has a few
-interesting ideas here.</p>
+  <p>先从构造函数开始。每个对象都是在某个地方创建的，
+定义构造函数是一个对象的重要组成部分。
+关于构造函数，Dart 有一些很有趣
+的观点。</p>
 
-  <h3 id="automatic-field-initialization">Automatic field initialization</h3>
+  <h3 id="section-1">自动的成员初始化</h3>
 
-  <p>First up is getting rid of some tedium. Many constructors simply take their
-arguments and assign them to fields, like:</p>
+  <p>首先就是去除一些繁琐的初始化过程。
+很多构造函数都是简单的把参数赋值给成员变量，例如：</p>
 
   <pre class="prettyprint lang-dart">class Point {
   num x, y;
@@ -277,25 +280,24 @@ arguments and assign them to fields, like:</p>
   }
 }</pre>
 
-  <p>So we’ve got to type <code>x</code> <em>four</em> times here just to initialize a field. Lame. We
-can do better:</p>
+  <p>这里为了给一个变量赋值，我们不得不写_四_次 <code>x</code>。真无聊啊！在 Dart 中，
+我们做的更好：</p>
 
   <pre class="prettyprint lang-dart">class Point {
   num x, y;
   Point(this.x, this.y);
 }</pre>
 
-  <p>If an argument has <code>this.</code> before it in a constructor argument list, the field
-with that name will automatically be initialized with that argument’s value.
-This example shows another little feature too: if a constructor body is
-completely empty, you can just use a semicolon (<code>;</code>) instead of <code>{}</code>.</p>
+  <p>如果构造函数的参数名字之前带有 <code>this.</code>，则对应的成员变量会用该参数的值
+自动初始化。
+该示例还演示了其他一个小特性：
+如果构造函数体是空的，你可以用一个分号 (<code>;</code>) 来替代 <code>{}</code>。</p>
 
-  <h3 id="named-constructors">Named constructors</h3>
+  <h3 id="section-2">命名构造函数</h3>
 
-  <p>Like most dynamically-typed languages, Dart doesn’t support overloading. With
-methods, this isn’t much of a limitation because you can always use a different
-name, but constructors aren’t so lucky. To alleviate that, Dart lets you define
-<em>named constructors</em>:</p>
+  <p>和其他很多动态类型语言一样， Dart 不支持重载（overloading）。
+针对函数来说，不支持重载不是问题，你可以选择另外一个名字。但是 构造函数就没这么幸运了。
+为了弥补该不足之处， Dart 让你可以定义_命名构造函数_：</p>
 
   <pre class="prettyprint lang-dart">import 'dart:math';
 
@@ -309,8 +311,8 @@ class Point {
   }
 }</pre>
 
-  <p>Here our Point class has three constructors, a normal one and two named ones.
-You can use them like so:</p>
+  <p>上面的 Point 类有三个构造函数，一个普通的和两个命名构造函数。
+你可以这样使用他们：</p>
 
   <pre class="prettyprint lang-dart">import 'dart:math';
 
@@ -320,21 +322,21 @@ main() {
   var c = new Point.polar(PI, 4.0);
 }</pre>
 
-  <p>Note that we’re still using <code>new</code> here when we invoke the named constructor. It
-isn’t just a static method.</p>
+  <p>注意，当调用命名构造函数的时候，我们依然用 <code>new</code> 关键字。
+他们不只是一个静态函数。</p>
 
-  <h3 id="factory-constructors">Factory constructors</h3>
+  <h3 id="section-3">工厂构造函数</h3>
 
-  <p>There are a couple of design patterns floating around related to <em>factories.</em>
-They come into play when you need an instance of some class, but you want to be
-a little more flexible than just hard-coding a call to a constructor for some
-concrete type. Maybe you want to return a previously cached instance if you have
-one, or maybe you want to return an object of a different type.</p>
+  <p>有很多关于_工厂_的设计模式。
+当你需要一个类的实例而又不想绑定到具体的实现中去（想要
+一些灵活性），则可以用到这些模式。
+例如 已经缓存了一个实例了，则就使用缓存的示例；
+或者你想用一个不同类型的实现。</p>
 
-  <p>Dart supports that without requiring you to change what it looks like when you
-create the object. Instead, you can define a <em>factory constructor</em>. When you
-<em>call</em> it, it looks like a regular constructor. But the implementation is free
-to do anything it wants. For example:</p>
+  <p>当用 Dart 创建对象的时候，
+Dart 无需改变调用代码就支持工厂模式。
+例如，你可以定义一个_工厂构造函数_。当_调用_该函数的时候，
+用起来就和一般的构造函数一样。但是，该构造函数的实现可以做任意事情。例如：</p>
 
   <pre class="prettyprint lang-dart">class Symbol {
   final String name;
@@ -357,90 +359,90 @@ to do anything it wants. For example:</p>
   Symbol._internal(this.name);
 }</pre>
 
-  <p>Here we have a class that defines symbols. A symbol is like a string but we
-guarantee that there will only be one symbol with a given name in existence at
-any point in time. This lets you safely compare two symbols for equality just by
-testing that they’re the same object.</p>
+  <p>上面是一个定义符号的类。一个符号就像一个字符串，但是我们确保
+对于同样的名字只有一个符号对象存在。
+这样你可以只用比较两个符号是否是同一个对象就可以知道他们
+是否相同。</p>
 
-  <p>The default (unnamed) constructor here is prefixed with <code>factory</code>. That tells
-Dart that this is a factory constructor. When it’s invoked, it will <em>not</em> create
-a new object. (There is no <code>this</code> inside a factory constructor.) Instead, you
-are expected to create an instance and explicitly return it. Here, we look for a
-previously cached symbol with the given name and reuse it if we found it.</p>
+  <p>这个默认的构造函数用 <code>factory</code> 来修饰。
+这样 Dart 就知道该函数为一个 工厂构造函数。 当调用该函数的时候，它_不会_创建
+一个新的对象（在工厂构造函数内没有 <code>this</code> 变量）。相反，
+你需要自己创建一个对象并返回。这里查找之前缓存的对象，
+如果发现已经存在了就返回查找到的实例。</p>
 
-  <p>What’s cool is that the <em>caller</em> never sees this. They just do:</p>
+  <p>比较酷的是，_调用者_不知道这一切。他们只是这样调用：</p>
 
   <pre class="prettyprint lang-dart">var a = new Symbol('something');
 var b = new Symbol('something');
 
 assert(identical(a, b)); // true!</pre>
 
-  <p>The second call to <code>new</code> will return the previously cached object. This is nice
-because it means that if we don’t need a factory constructor at first, but later
-realize we do, we won’t have to change all of our existing code that’s calling
-<code>new</code> to instead call some static method.</p>
+  <p>第二个 <code>new</code> 只会返回前面缓存的对象。
+该特性比较好的是，如果一开始我们不知道需要一个工厂构造函数，
+而后面我们发现我们需要这样做的时候，我们只需要把
+该构造函数设置为工厂构造函数即可，而不需要修改调用者的代码。</p>
 
-  <h2 id="functions">Functions</h2>
+  <h2 id="functions">方法(Functions)</h2>
 
-  <p>Like most modern languages, Dart features first-class functions with full
-closures and a lightweight syntax. Functions are objects just like any other,
-and you shouldn’t hesitate to use them freely.</p>
+  <p>和许多新型的语言一样， Dart 的类等方法（first-class function）完全支持
+闭包并使用轻量级的语法。方法和其他东西一样都是对象，
+你应该毫不犹豫的使用他们。</p>
 
-  <p>Dart has three notations for creating functions:</p>
+  <p>Dart 有三种创建方法的方式：</p>
 
   <ul>
-    <li>named functions</li>
-    <li>anonymous functions with statement bodies</li>
-    <li>expression bodies, also known as <em>arrow functions</em></li>
+    <li>命名方法</li>
+    <li>具有方法体的匿名方法</li>
+    <li>表达式方法，通常称之为 <em>arrow functions（箭头方法）</em></li>
   </ul>
 
-  <p>The named form looks like this:</p>
+  <p>命名方法看起来如下：</p>
 
   <pre class="prettyprint lang-dart">bool isShouting(String message) {
   return (message.toUpperCase() == message);
 }</pre>
 
-  <p>The above example looks similar to functions or methods
-found in C or Java. You can call functions in the usual way:</p>
+  <p>上面的代码看起来和 Java C 语言中的函数没啥区别。
+你可以用常用的方式来调用方法：</p>
 
   <pre class="prettyprint lang-dart">print(isShouting(&quot;I'M JUST VERY EXCITED&quot;)); // true</pre>
 
-  <p>In Dart, functions are objects, so you can pass them as arguments:</p>
+  <p>在 Dart 中，方法是对象，所以你可以把他们当做参数来传递：</p>
 
   <pre class="prettyprint lang-dart">var messages = ['hello', 'DART IS FUN'];
 var shouts = messages.where(isShouting).toList();
 
 print(shouts); // ['DART IS FUN']</pre>
 
-  <p>If you don’t need to give a name to a function, there is an anonymous form, too.
-It looks like a named function, but without a name or return type.
-Here is an example:</p>
+  <p>如果你无须给方法命名，则可以用匿名方法。
+看起来和命名方法类似，但是没有名字和返回值类型。
+下面是一个示例：</p>
 
   <pre class="prettyprint lang-dart">var shouts2 = messages.where((m) {
   return (m.toUpperCase() == m);
 }).toList();</pre>
 
-  <p>Finally, if you need a really lightweight function that just evaluates
-and returns a single expression, there’s <code>=&gt;</code>:</p>
+  <p>最后，如果你只需要执行一个表达式并返回一个值，则可以使用轻量
+级语法 <code>=&gt;</code>：</p>
 
   <pre class="prettyprint lang-dart">var shouts3 = messages.where((m) =&gt; m.toUpperCase() == m).toList();</pre>
 
-  <p>A parenthesized argument list followed by <code>=&gt;</code> and a single expression
-creates a function that takes those arguments, and returns the result of the
-expression.</p>
+  <p>一个圆括号包围的参数列表，后面跟着一个  <code>=&gt;</code> 和一个表达式。
+这样就创建了一个使用这些参数的方法，并
+返回该表达式的值。</p>
 
-  <p>In practice, we find ourselves preferring arrow functions whenever possible
-since they’re terse but still easy to spot thanks to <code>=&gt;</code>. We use anonymous
-functions frequently for event handlers and callbacks.</p>
+  <p>在实际工作中，由于箭头方法很简洁并且 <code>=&gt;</code> 很容易识别， 我们发现我们非常喜欢箭头
+方法。
+我们经常把匿名方法用作 事件处理函数和回调函数。</p>
 
-  <p>Read more about
-<a href="/docs/dart-up-and-running/contents/ch02.html#functions">functions in Dart</a>.</p>
+  <p>更多信息，参考
+<a href="/docs/dart-up-and-running/contents/ch02.html#functions">Dart 中的方法</a>。</p>
 
-  <h3 id="one-line-methods">One-line methods</h3>
+  <h3 id="section-4">一行代码的函数</h3>
 
-  <p>Dart has one more trick up its sleeve that is one of my favorite features of the
-language: you can also use <code>=&gt;</code> for defining members. Sure, you <em>could</em> do
-this:</p>
+  <p>Dart 还有一个我非常喜欢的特性：
+可以用 <code>=&gt;</code> 来定义函数。
+当然你_可以_这样做：</p>
 
   <pre class="prettyprint lang-dart">class Rectangle {
   num width, height;
@@ -454,7 +456,7 @@ this:</p>
   }
 }</pre>
 
-  <p>But why do that when you can just do:</p>
+  <p>但是当你可以这样干的时候，为啥还那样呢？</p>
 
   <pre class="prettyprint lang-dart">class Rectangle {
   num width, height;
@@ -462,26 +464,26 @@ this:</p>
   num area() =&gt; width * height;
 }</pre>
 
-  <p>We find arrow functions are great for defining simple getters and other one-
-liner methods that calculate or access some property of an object.</p>
+  <p>我们发现箭头函数非常适合 getter 和其他只有一行
+代码的函数。</p>
 
-  <h3 id="function-types-and-aliases">Function types and aliases</h3>
+  <h3 id="section-5">方法类型和别名</h3>
 
-  <p>As a reminder, Dart allows you to pass a function as an argument to another
-function. Here is an example:</p>
+  <p>不要忘记了， Dart 可以把方法当做参数。
+下面是一个示例：</p>
 
   <pre class="prettyprint lang-dart">List&lt;num&gt; filterNumbers(List&lt;num&gt; numbers, bool filter(num x)) {
   return numbers.where(filter).toList();
 }</pre>
 
-  <p>While the above code works, it would be nice to extract extra type information
-about <code>filter</code>. As it is written, you can’t ask what kind of function
-filter is. That is, you can’t say <code>if (filter is bool filter(num x))</code>.
-Also, the syntax is a bit noisy in the signature for <code>filterNumbers</code>.</p>
+  <p>上面的代码是正确的，如果可以把 <code>filter</code> 的类型提取出来则看起来会比较简洁。
+当些代码的时候，你不知道过滤方法的参数类型。所有，你
+没法说 <code>if (filter is bool filter(num x))</code>。
+另外，用 <code>filterNumbers</code> 则显得有点复杂。</p>
 
-  <p>To help clean up function signatures, and to provide a bit more type
-information about functions, you can use a <em>typedef</em>.
-A typedef essentially provides an alias for a function signature.</p>
+  <p>为了提供简洁的方法签名，并提供更多的类型信息，你可以用_typedef<em>。
+一个 _typedef</em> 本质上为
+一个方法签名提供了一个别名。</p>
 
   <pre class="prettyprint lang-dart">typedef bool Filter(num x);
 
@@ -489,11 +491,11 @@ List&lt;num&gt; filterNumbers(List&lt;num&gt; numbers, Filter filter) {
   return numbers.where(filter).toList();
 }</pre>
 
-  <p>Now you can easily ask <code>if (filter is Filter)</code>.</p>
+  <p>现在，你可以用 <code>if (filter is Filter)</code>了。</p>
 
-  <p>Whenever you create a field that’s set to a function value, use a typedef to
-specify that function’s signature. The following example is from Dart’s Web UI
-library:</p>
+  <p>无论何时创建一个能接受方法的变量时，都可以用 
+typedef 来定义方法的签名。
+下面的示例来自于 Dart Web UI 库：</p>
 
   <pre class="prettyprint lang-dart">/** Function to set up the contents of a conditional template. */
 typedef void ConditionalBodySetup(ConditionalTemplate template);
@@ -511,9 +513,18 @@ class ConditionalTemplate extends PlaceholderTemplate {
 
   ...</pre>
 
-  <h2 id="type-annotations">Type annotations</h2>
+  <h2 id="section-6">类型定义</h2>
 
-  <p>Why do this:</p>
+  <p>如果你可以这样写代码：</p>
+
+  <pre class="prettyprint lang-dart">// Dart
+
+String MakeGreeting(String name) {
+  String greeting = 'hello $name';
+  return greeting;
+}</pre>
+
+  <p>为什么还要这样写呢？</p>
 
   <pre class="prettyprint lang-javascript">// JavaScript w/ Closure compiler
 
@@ -527,32 +538,23 @@ makeGreeting = function(name) {
   return greeting;
 }</pre>
 
-  <p>When you can do this:</p>
+  <p>Dart 是可选类型语言，这意味着用户不用总是
+需要处处检测类型就可以运行代码了。使用类型当做
+“内置的文档”可以帮助你的同事或者工具理解你的
+代码。</p>
 
-  <pre class="prettyprint lang-dart">// Dart
+  <p>一般来说， <strong>在你代码的”暴露不用” 使用类型</strong>。
+如果其他的开发者需要用到你的接口，则用类型注解。
+这样他们会感激你的。</p>
 
-String MakeGreeting(String name) {
-  String greeting = 'hello $name';
-  return greeting;
-}</pre>
+  <p>在函数内部，该规则是比较灵活的。如果你想用类型就用吧，
+如果团队代码风格允许的话，你也可以只用 <code>var</code>。
+即使你用 <code>var</code> ，智能的编辑器和静态分析工具也能
+为你提供一些代码建议。</p>
 
-  <p>Dart is an optionally typed language, which means developers don’t need
-to fight ceremonial type checkers just to get their code to run. Use type
-annotations as “inline documentation” to help your fellow developers and
-tools.</p>
-
-  <p>Generally speaking, <strong>use type annotations on the “surface area” of your code</strong>.
-If another developer is going to see the interface, use type annotations.
-Your friends will thank you.</p>
-
-  <p>Inside of methods, the rules are a bit more flexible. Use type annotations
-when you want to, but feel free to use <code>var</code> if your team’s style guide
-permits it. A good editor or analyzer should perform useful type inference
-even if var is used.</p>
-
-  <p>It’s perfectly fine to omit a type annotation if you need to express something
-the type system can’t naturally express. For example, if your method takes
-an integer or a Duration, you can simply use <code>var</code>.</p>
+  <p>如果，你想表达一些系统类型无法表达的东西时， 你可以完全忽略类型。
+例如，如果你的函数既可以接收 整数 也可以接收一个 Duration，则
+你可以把参数类型设置为 <code>var</code>。</p>
 
   <pre class="prettyprint lang-dart">/// This method used to only take an [int] but now it takes a [Duration] or
 /// [int]. Use of [int] is deprecated, please use [Duration].
@@ -566,18 +568,18 @@ calculateTimePeriod(var duration) {
   }
 }</pre>
 
-  <p>This is a common practice used while an API is evolving. Once the evolution is
-complete, you can add a specific type annotation.</p>
+  <p>在 API 进化中这是常见的场景。当 API 确定后，你
+可以确定其类型了。</p>
 
-  <p>Learn more about <a href="/articles/optional-types/">Dart’s optional static typing</a>.</p>
+  <p>更多信息参考 <a href="/articles/optional-types/">Dart 可选静态类型</a>。</p>
 
-  <h2 id="fields-getters-and-setters">Fields, getters, and setters</h2>
+  <h2 id="getters-setters">成员变量、 getters、和 setters</h2>
 
-  <p>Speaking of properties, Dart uses your standard <code>object.someProperty</code> syntax for
-working with them. That’s how most languages work when <code>someProperty</code> is an
-actual field on the class, but Dart also allows you to define methods that look
-like property access but execute whatever code you want. As in other languages,
-these are called <em>getters</em> and <em>setters</em>. Here’s an example:</p>
+  <p>Dart 用标准的 <code>object.someProperty</code> 语法来访问
+成员变量。在大部分语言中，当  <code>someProperty</code>是该对象的真实成员变量的时候才有效，
+但是 Dart 也允许你定义看起来和访问成员变量一样的函数。
+在其他语言中，这些函数被称之为 <em>getters</em> 和 <em>setters</em>。
+下面是一个示例：</p>
 
   <pre class="prettyprint lang-dart">class Rectangle {
   num left, top, width, height;
@@ -590,10 +592,10 @@ these are called <em>getters</em> and <em>setters</em>. Here’s an example:</p>
       set bottom(num value) =&gt; top = value - height;
 }</pre>
 
-  <p>Here we have a Rectangle class with four actual fields, <code>left</code>, <code>top</code>, <code>width</code>,
-and <code>height</code>. It also has getters and setters to define two more logical
-properties: <code>right</code> and <code>bottom</code>. If you’re using the class, there is no visible
-difference between a “real” field and getters and setters:</p>
+  <p>这里定义了一个 Rectangle 类，该类有四个成员变量 - <code>left</code>、 <code>top</code>、 <code>width</code>、
+和 <code>height</code>。该类还使用 getters 和 setters 定义了另外两个虚拟成员变量：
+<code>right</code> 和 <code>bottom</code>。在使用这个类的时候，
+你不知道”真实”成员变量和 getters 、 setters 有啥区别：</p>
 
   <pre class="prettyprint lang-dart">var rect = new Rectangle(3, 4, 20, 15);
 print(rect.left);
@@ -601,22 +603,20 @@ print(rect.bottom);
 rect.top = 6;
 rect.right = 12;</pre>
 
-  <p>This blurring the line between fields and getters/setters is fundamental to the
-language. The clearest way to think of it is that fields <em>are</em> just getters and
-setters with default implementations. This means that you can do fun stuff like
-override an inherited getter with a field and vice versa. If an interface
-defines a getter, you can implement it by simply having a field with the same
-name and type. If the field is mutable (not <code>final</code>) it can implement a setter
-that an interface requires.</p>
+  <p>这种模糊了成员变量和 getters/setters 之间界限的机制是该语言的基础。
+理解该机制比较清楚的观点是：成员变量_只是_ getters/setters 的默认实现。
+这样，你可以实现一些有趣的功能，例如 用一个变量来重写一个继承的 getter。
+如果一个接口定义了一个 getter 函数，则你可以用一个同样名字和类型 成员变量 来重写该函数。
+如果变量是可变的（没有 <code>final</code>），则还可以实现一个 setter 函数。</p>
 
-  <p>In practice, what this means is that you don’t have to insulate your fields by
-defensively hiding them behind boilerplate getters and setters like you would in
-Java or C#. If you have some exposed property, feel free to make it a public
-field. If you don’t want it to be modified, just make it <code>final</code>.</p>
+  <p>在实际应用中，你无须只是为了隐藏成员变量而为他们提供一个无聊的 getters 和 setters 函数，
+例如 Java 和 C# 就是
+这样的。
+如果你有一些需要暴露的成员变量，可以直接设置为 public 的。如果
+你不想让其他人修改，则设置为 <code>final</code> 的。 </p>
 
-  <p>Later, if you need to do some validation or other work, you can always replace
-that field with a getter and setter. If we wanted our Rectangle class to make
-sure it always has a non-negative size, we could change it to:</p>
+  <p>以后，如果你想做一些验证或者其他功能，你可以把该成员变量替换为 getter 和 setter。
+例如，如果我们希望 Rectangle 类没有负的尺寸， 则我们可以这样修改代码：</p>
 
   <pre class="prettyprint lang-dart">class Rectangle {
   num left, top;
@@ -643,17 +643,15 @@ sure it always has a non-negative size, we could change it to:</p>
 
 }</pre>
 
-  <p>And now we’ve modified the class to do some validation without having to touch
-any of the existing code that was already using it.</p>
+  <p>这样我们修改了该类来实现一些验证功能，而无需修改任何使用该类的
+代码。</p>
 
-  <h2 id="top-level-definitions">Top-level definitions</h2>
+  <h2 id="top-level">顶级（Top-level）定义</h2>
 
-  <p>Dart is a “pure” object-oriented language in that everything you can place in a
-variable is a real object (no mutant “primitives”) and every object is an
-instance of some class. It’s not a <em>dogmatic</em> OOP language though. You aren’t
-required to place everything you define inside some class. Instead, you are free
-to define functions, variables, and even getters and setters at the top level if
-you want.</p>
+  <p>Dart 是一个 “纯” 面向对象语言，可以放到变量的任意值都是对象（”primitives” 除外），
+并且任意对象都是某个类的实例。Dart 不是一个_dogmatic（教条式）_的面向对象语言。
+不需要把任何东西都定义到一个类中。你可以随意的定义
+顶级方法、函数、变量、甚至 getter 和 setter。</p>
 
   <pre class="prettyprint lang-dart">import 'dart:math';
 
@@ -670,22 +668,20 @@ main() {
   print(today);
 }</pre>
 
-  <p>Even in languages that don’t require you to place everything inside a class or
-object, like JavaScript, it’s still common to do so as a form of namespacing:
-top-level definitions with the same name could inadvertently collide. To address
-that, Dart has a library system that allows you to import definitions from other
-libraries with a prefix applied to disambiguate it. That means you shouldn’t
-<em>need</em> to defensively squirrel your definitions inside classes.</p>
+  <p>在一些你不需要把任意定义都放到类中的语言中，例如 JavaScript，通常也需要
+定义一个命名空间：防止具有相同名字的顶级定义会冲突。
+为了解决该问题， Dart 实现了一个可以带有前缀名称导入的库系统。
+这样你就_无需_防御性的把你的函数定义到一个类中了。</p>
 
-  <p>The most common example of a top-level function is <code>main()</code>. If you work with
-the DOM, the familiar <code>document</code> and <code>window</code> “variables” are actually top-level
-getters in Dart. The project used to have a Math class, but we moved all
-functionality from that class to top-level methods inside the dart:math library.</p>
+  <p>最常见的顶级函数就是 <code>main()</code>。如果你使用 DOM，
+像 <code>document</code> 和 <code>window</code> 这些”变量”都是定义在 Dart 的顶级 getter。
+以前 Dart 有一个 Math 类，后来我们把该类的所有函数都放到 dart:math 库的
+顶级函数中了。</p>
 
-  <h2 id="dependency-injection">Dependency injection</h2>
+  <h2 id="section-7">依赖注入</h2>
 
-  <p>You can combine ideas from typedefs, functions, and constructors to build a
-simple <em>dependency injection</em> system. Consider this example:</p>
+  <p>你可以组合 typedef、方法和构造函数来定义一个简单的
+_依赖注入_系统。如下示例：</p>
 
   <pre class="prettyprint lang-dart">typedef Connection ConnectionFactory();
 
@@ -704,23 +700,21 @@ class Person {
   }
 }</pre>
 
-  <p>The above sample shows off a bunch of cool features from Dart:</p>
+  <p>上面的简单示例演示了很多 Dart 中的酷特性：</p>
 
   <dl>
     <dt>Typedefs</dt>
-    <dd>Used to create an alias for a function that returns a new database
-connection.</dd>
-    <dt>Optional named parameters</dt>
-    <dd>Used to set a default database connection factory,
-or use a user-supplied factory function.</dd>
-    <dt>Top-level functions</dt>
-    <dd>Used to define the default database connection factory method.</dd>
+    <dd>用来创建一个返回数据库连接的方法别名。</dd>
+    <dt>可选命名参数</dt>
+    <dd>用来设置默认的数据库连接工厂，或者用一个用户设置的工厂方法。</dd>
+    <dt>顶级方法</dt>
+    <dd>用来定义默认的数据库连接工厂方法</dd>
   </dl>
 
-  <h2 id="strings-and-interpolation">Strings and interpolation</h2>
+  <h2 id="section-8">字符串和插值</h2>
 
-  <p>Dart has a few kinds of string literals. You can use single or double quotes,
-and you can use triple-quoted multiline strings:</p>
+  <p>Dart 有一些字符串字面量。你可以用单引号或者双引号来定义字符串，
+也可以用三个单引号来定义跨行的字符串：</p>
 
   <pre class="prettyprint lang-dart">var s1 = 'I am a &quot;string&quot;'
 &quot;I'm one too&quot;;
@@ -735,16 +729,15 @@ am
 I
 &quot;&quot;&quot;;</pre>
 
-  <p>While there is a plus (+) operator on String, it’s often cleaner and faster to
-use <em>string interpolation</em>:</p>
+  <p>尽管在 String 上还有一个加号(+)操作符，但是用_字符串插值_是更简洁高效的方式：</p>
 
   <pre class="prettyprint lang-dart">var name = 'Fred';
 var salutation = 'Hi';
 var greeting = '$salutation, $name';</pre>
 
-  <p>A dollar sign (<code>$</code>) in a string literal followed by a variable will expand to
-that variable’s value. (If the variable isn’t a string, it calls <code>toString()</code> on
-it.) You can also interpolate expressions by placing them inside curly braces:</p>
+  <p>在字符串字面量中的美元符号 (<code>$</code>)后跟一个变量名字代表一个变量的值。
+ (如果变量不是 string 对象，则调用 <code>toString()</code>函数。)
+ 你也可以把表达式放到花括号中来插值表达式的值：</p>
 
   <pre class="prettyprint lang-dart">import 'dart:math';
 main() {
@@ -752,16 +745,15 @@ main() {
   print('The area of a circle with radius $r is ${PI * r * r}');
 }</pre>
 
-  <h2 id="operators">Operators</h2>
+  <h2 id="section-9">操作符</h2>
 
-  <p>Dart shares the same operators and precedences that you’re familiar with from C,
-Java, etc. They will do what you expect. Under the hood, though, they are a
-little special. In Dart, an expression using an operator like <code>1 + 2</code> is really
-just syntactic sugar for calling a method. The previous example looks more like
-<code>1.+(2)</code> to the language.</p>
+  <p>Dart 的操作符和优先级和你熟悉的语言一样，例如 Java 、 C 等。
+这样，他们符合你期望的行为。但是在表面之下，他们还有一些特殊用法。
+在 Dart 中，类似 <code>1 + 2</code> 这种使用操作符的表达式只是调用函数的语法糖。
+这个例子类似于语言中的 <code>1.+(2)</code>。</p>
 
-  <p>This means that you can also override (most) operators for your own types. For
-example, here’s a <code>Vector</code> class:</p>
+  <p>这就意味着，大部分情况下你都可以重写自定义类型的操作符。
+例如，下面是一个自定义的 <code>Vector</code> 类：</p>
 
   <pre class="prettyprint lang-dart">class Vector {
   num x, y;
@@ -769,88 +761,82 @@ example, here’s a <code>Vector</code> class:</p>
   operator +(Vector other) =&gt; new Vector(x + other.x, y + other.y);
 }</pre>
 
-  <p>With that, we can add vectors using familiar syntax:</p>
+  <p>这样，我们可以用熟悉的语法来把两个 Vector 相加：</p>
 
   <pre class="prettyprint lang-dart">var position = new Vector(3, 4);
 var velocity = new Vector(1, 2);
 var newPosition = position + velocity;</pre>
 
-  <p>That being said, please don’t go crazy with this. We’re giving you the keys to
-the car and trusting that you won’t turn around and drive it through the living
-room.</p>
+  <p>话虽如此，但不要太疯狂了。我们给你车的钥匙并且
+相信你不会瞎搞乱撞。</p>
 
-  <p>In practice, if the type you’re defining often uses operators in the “real
-world” (on a blackboard?) then it might be a good candidate for overridden
-operators: things like complex numbers, vectors, matrices, etc. Otherwise,
-probably not. Types with custom operators should generally be immutable too.</p>
+  <p>在实际中，如果你定义的类型在”真实世界”（在黑板上？）中经常使用操作符，则很可能该
+类型很适合重写操作符：例如 复数、向量、矩阵 等等。
+否则，可能不适合重写操作符。使用自定义操作符的类型通常也应该是不可变的。</p>
 
-  <p>Note that because operator calls are really just method calls, they have an
-inherent asymmetry. The method is always looked up on the left-hand argument. So
-when you do <code>a + b</code>, it’s the type of <code>a</code> that gets to decide what that means.</p>
+  <p>注意，操作符调用只是普通的函数调用，所以他们本质上具有不对称性。
+总是在左边的参数上查找函数。所以当你用  <code>a + b</code>，
+则由类型 <code>a</code>来确定实现何种功能。</p>
 
-  <h2 id="equality">Equality</h2>
+  <h2 id="section-10">相等判断</h2>
 
-  <p>Dart has two equality operators,
-<code>==</code> and <code>!=</code>,
-which work a little differently from the JavaScript equality operators.
-Unlike JavaScript, Dart has no <code>===</code> operator.
-Instead, it has a top-level function called <code>identical()</code>.</p>
+  <p>Dart 有两种相等判断操作符：
+<code>==</code> 和 <code>!=</code>。
+和 JavaScript 的相等操作符有点差别。
+和 JavaScript 不同， Dart 没有 <code>===</code> 操作符，而是提供了
+一个顶级方法 <code>identical()</code>。</p>
 
-  <p>Use <code>==</code> and <code>!=</code> for testing equivalence. They are what you’ll need 99% of the
-time. Unlike in JavaScript, they don’t do any implicit conversions, so they
-will behave like you’d expect. Don’t be afraid to use them. Unlike <em>Java</em>,
-they work for any type that has an equivalence relation defined. No more
-<code>someString.equals("something")</code>.</p>
+  <p>用 <code>==</code> 和 <code>!=</code> 来测试相等。在 99% 的情况下他们都能满足你的需求。
+和 JavaScript 不同，他们不会做任何潜在的转化，所以他们和你期望的行为一致。
+所以 大胆的用吧。
+和 <em>Java</em> 也不同，他们可以在任意定义了相等关系的类型使用。
+告别 <code>someString.equals("something")</code> 吧。</p>
 
-  <p>You can implement <code>==</code> for your own types if that makes sense for them. You don’t
-have to implement <code>!=</code>: Dart will automatically infer that from your definition
-of <code>==</code>. If you do implement <code>==</code> be sure to also implement
-<a href="http://api.dartlang.org/dart_core/Object.html#hashCode">hashCode</a>.</p>
+  <p>如果有意义，你可以在自定义类型中实现 <code>==</code>。
+但是你无须实现 <code>!=</code>：Dart 会从 <code>==</code> 的实现中自动推断  <code>!=</code>。
+如果你自己实现了 <code>==</code>，不要忘了同时实现
+<a href="http://api.dartlang.org/dart_core/Object.html#hashCode">hashCode</a>。</p>
 
-  <p>The <code>identical()</code> function is for testing whether two objects are the <em>exact
-same object in memory</em>. In practice, you will rarely need to use it. The Object
-class definition of <code>==</code> returns <code>identical(this, other)</code>, so the only time
-you’ll need to call <code>identical()</code> is if you overload <code>==</code> or specifically want
-to sidestep an overloaded <code>==</code> operator.</p>
+  <p><code>identical() 函数用来测试两个对象是否_是内存中的同一个对象_。
+实际上，你很少使用这种测试。 Object 类定义 </code>==<code> 返回 </code>identical(this, other)<code>，
+所以，只有当你重写 </code>==<code> 或者 避免重写 </code>==<code> 的时候才需要调用 </code>identical()`。</p>
 
-  <h2 id="numbers">Numbers</h2>
+  <h2 id="section-11">数字</h2>
 
-  <p>Dart has a <code>num</code> class and two subclasses: <code>int</code> and <code>double</code>. Integers are of
-arbitrary size in the VM, and double are 64-bit doubles as defined by IEEE 754
-standard.</p>
+  <p>Dart 有个 <code>num</code> 类和两个子类：<code>int</code> 、 <code>double</code>。
+整数在 VM 中可以是任意大小，double 为 IEEE 754 标准定义的 64-bit double。</p>
 
-  <p>In typical Dart code, we find that we want two kinds of numbers:</p>
+  <p>在常规的 Dart 代码中，我们发现需要两种类型的数字：</p>
 
   <ol>
-    <li>Only integers with no floating points. For instance, using ints for list
-indices.</li>
-    <li>Any number, including floating points.</li>
+    <li>没有小数点的整数。例如：用于列表索引的整数。</li>
+    <li>任何数字，包含带小数点的。</li>
   </ol>
 
-  <p>Using <code>int</code> handles the first set, and using <code>num</code> handles the second set. It’s
-very rare that we want a number that <em>must</em> have a floating point and
-<em>cannot</em> be an integer, which is what double expresses.</p>
+  <p>第一种情况使用 <code>int</code> ，第二种情况用  <code>num</code>。
+只有极少数情况我们才需要一个数字_必须_带小数点儿
+_不能_为整数，这种情况才需要用 double。</p>
 
-  <p>Idiomatic Dart numbers are annotated with either <code>int</code> or <code>num</code>,
-rarely <code>double</code>.</p>
+  <p>Dart 中的数字通常都是 <code>int</code> 或者 <code>num</code>，
+极少情况下才会是 <code>double</code>。</p>
 
   <h2 id="futures">Futures</h2>
 
-  <p>A Future is a promise for a value to be returned, well, in the future.</p>
+  <p>Future 代表未来某个时候会返回一个值。</p>
 
-  <p>Methods that work with a Future should always return the Future. This helps
-consumers of the method to properly handle errors that might occur. It also
-lets consumers know when the operation is complete.</p>
+  <p>用 Future 的函数应该总是返回 Future。这样可以帮助调用者来
+处理错误的情况。也可以让调用者知道
+何时该操作完成。</p>
 
   <pre class="prettyprint lang-dart">Future doLengthyComputation() {
   return lengthyComp().then((value) =&gt; print(value))
                       .catchError((e) =&gt; print(e));
 }</pre>
 
-  <p>Always chain the <code>catchError()</code> call off of the call to
-<code>then()</code>, otherwise you will lose exceptions thrown from within <code>then()</code>.</p>
+  <p>总是把 <code>catchError()</code> 级联在
+<code>then()</code> 之后调用，否则你会丢失在 <code>then()</code> 中抛出的异常。</p>
 
-  <p>Here is an example of what <strong>not to do</strong>:</p>
+  <p>下面是一个 <strong>不要这么干</strong> 的反面示例：</p>
 
   <pre class="prettyprint lang-dart">// WARNING: This code contains an anti-pattern.
 Future doLengthyComputation() {
@@ -863,26 +849,25 @@ Future doLengthyComputation() {
   return future;
 }</pre>
 
-  <p>If you want to run a function “in the future”, it’s tempting to use
-<code>Timer.run</code>. Unless you know what you’re doing, <strong>don’t.</strong>
-Unfortunately, exceptions thrown
-from within run’s callback are more-or-less uncatchable.</p>
+  <p>如果你想在”未来”运行一个函数， <code>Timer.run</code> 将会诱惑你使用它。
+除非你知道你在干啥，否则<strong>不要用</strong>。
+非常不幸的是，在 run 回调函数中的异常通常或多或少的不好捕获。</p>
 
-  <p>Luckily, Future has a constructor that can help. Use
-<code>Future.delayed</code> to run a function in a future event loop tick
-without losing exceptions that might be thrown.</p>
+  <p>非常幸运的是， Future 有个构造函数可以帮助我们。
+<code>Future.delayed</code> 函数可以在未来运行一个函数而无需丢失
+可能抛出的异常。</p>
 
   <pre class="prettyprint lang-dart">Future doLengthyComputation() {
   return new Future.delayed(const Duration(seconds: 0),
       () =&gt; doTheThingThatMightFail());
 }</pre>
 
-  <h2 id="comments">Comments</h2>
+  <h2 id="section-12">注释</h2>
 
-  <p>Dart supports structured comments that can be parsed by tools. However, Dart
-eschews ceremonial API docs for more fluid and natural comments.</p>
+  <p>Dart 支持可被工具解析的结构化注释。
+然而，为了用更流畅和更自然的注释， Dart 避免正式的 API 文档。</p>
 
-  <p>Compare and contrast Java and Dart comment styles:</p>
+  <p>对比 Java 和 Dart 的注释风格：</p>
 
   <div class="row">
     <div class="col-md-6">
@@ -919,10 +904,10 @@ Llama buyLlama(int age, Money amount) {
     </div>
   </div>
 
-  <p>Less is more with Dart doc comments. No need to repeat yourself over and over,
-just say what you need to say inline in the comments.
-Also, no need to embed HTML tags in your doc comments; Dart’s dartdoc tool can
-understand a subset of markdown.</p>
+  <p>Dart 文档注释使用了 少即是多 的原则。无需一遍又一遍的重复你的描述，
+只需要在注释中说明你需要啥即可。
+同时，也无需在文档注释中用 HTML 标签； Dart 的 dartdoc 工具可以理解
+一些 Markdown 语法。</p>
 
   <pre class="prettyprint lang-dart">/**
  * ## Examples
@@ -936,7 +921,7 @@ understand a subset of markdown.</p>
  * ...
  */</pre>
 
-  <p>Learn more about <a href="/articles/doc-comment-guidelines/">Dart’s comment styles</a>.</p>
+  <p>了解更多 <a href="/articles/doc-comment-guidelines/">Dart 注释风格</a>。</p>
 </div>
 
     	  </div> <!-- End of content from toc.html -->
@@ -945,7 +930,7 @@ understand a subset of markdown.</p>
 
 	
 	<ul class="pager">
-	  <li><a href="/articles/">More articles about Dart <i class="glyphicon glyphicon-chevron-up"></i></a></li>
+	  <li><a href="/articles/">关于 Dart 的更多文章 <i class="glyphicon glyphicon-chevron-up"></i></a></li>
 	 </ul>
 	 
 

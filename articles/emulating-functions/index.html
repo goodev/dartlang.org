@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Emulating Functions in Dart | Dart: 用于创建结构化的web应用</title>
+  <title>在 Dart 中模拟方法 | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Emulating Functions in Dart | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="在 Dart 中模拟方法 | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
   
-  <meta itemprop="description" content="Learn how to define Dart classes that behave like functions.">
+  <meta itemprop="description" content="如何定义行为和方法一样的 Dart 类">
 
   <!-- Bootstrap core CSS -->
   <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 	
 	<link rel="author" href="/authors/gilad-bracha.html">
 	
-	<link rel="alternate" type="application/atom+xml" href="http://news.dartlang.org/feeds/posts/default" title="Atom feed">
+	<link rel="alternate" type="application/atom+xml" href="http://dartnews.sinaapp.com/?feed=atom" title="Atom feed">
   <!-- 
   <link href="https://plus.google.com/109866369054280216564" rel="publisher">
   -->
@@ -203,15 +203,15 @@
   <div class="bs-sidebar hidden-print affix-top" role="complementary">
 
 <ol class="toc nav bs-sidenav" id="markdown-toc">
-  <li><a href="#the-call-method">The call() method</a>    <ol>
-      <li><a href="#how-does-it-work">How does it work?</a></li>
+  <li><a href="#call-">call() 函数</a>    <ol>
+      <li><a href="#section">这是如何实现的呢？</a></li>
     </ol>
   </li>
-  <li><a href="#the-apply-method">The apply() method</a></li>
-  <li><a href="#symbols">Symbols</a></li>
-  <li><a href="#function-types">Function types</a></li>
+  <li><a href="#apply-">apply() 函数</a></li>
+  <li><a href="#section-1">符号</a></li>
+  <li><a href="#section-2">方法类型</a></li>
   <li><a href="#interactions-with-mirrors-and-nosuchmethod">Interactions with mirrors and noSuchMethod()</a></li>
-  <li><a href="#summary">Summary</a></li>
+  <li><a href="#section-3">总结</a></li>
 </ol>
 
   </div>
@@ -220,100 +220,95 @@
   <p><!-- Start of content -->
 	</p>
 
-  <h1 id="emulating-functions-in-dart">Emulating Functions in Dart</h1>
+  <h1 id="dart-">在 Dart 中模拟方法</h1>
 
-  <p><em>Written by Gilad Bracha <br />
-January 2012
-(updated November 2013)</em></p>
+  <p><em>作者： Gilad Bracha <br />
+2012 1月
+(2013 11月更新)</em></p>
 
-  <p>This document describes how to define Dart classes
-that behave like functions.</p>
+  <p>该文章介绍 如何定义行为和方法一样的 Dart 类。</p>
 
-  <h2 id="the-call-method">The call() method</h2>
+  <h2 id="call-">call() 函数</h2>
 
-  <p>In the following example, we have an ordinary class <code>WannabeFunction</code> that
-happens to define a method named <code>call()</code>.</p>
+  <p>下面的示例中，是一个普通的定义
+了一个 <code>call()</code> 函数的 <code>WannabeFunction</code> 类。</p>
 
   <pre class="prettyprint lang-dart">class WannabeFunction {
   call(int a, int b) =&gt; a + b;
 }</pre>
 
-  <p>The call() method is special, in that anyone who defines a call() method is
-presumed to dynamically emulate a function. This allows us to use instances of
-WannabeFunction as if they were functions that take two integer arguments:</p>
+  <p>call() 很特殊，任何定义 call() 函数的对象都假定在
+动态的模拟一个方法调用。
+这样，我们可以和使用方法一样来使用 WannabeFunction 实例：</p>
 
   <pre class="prettyprint lang-dart">var wf = new WannabeFunction();
 wf(3, 4); // 7</pre>
 
-  <p>The example above is rather trivial, and we would be better off writing a
-function directly. However, there are cases where this ability can be quite
-useful.  It is also core to the design philosophy of the Dart language:</p>
+  <p>上面的代码和直接使用方法相比有点繁琐。
+但是，有些地方该功能还是相当有用的。
+同时这也是 Dart 语言的核心设计哲学：</p>
 
   <ul>
-    <li>What matters about an object is its behavior. If object <em>a</em> has a procedural
-interface that is compatible with that of another object <em>b</em>, <em>a</em> may
-substitute for <em>b</em>.</li>
-    <li>The interface of any kind of object can always be emulated by another
-suitably defined object.</li>
+    <li>对于一个对象来说，最重要的是其行为。如果一个对象 <em>a</em> 和一个对象 <em>b</em> 的接口兼容，则 <em>a</em> 差不多可以替代 <em>b</em>。</li>
+    <li>任何对象的接口都可以被另外一个对象模拟</li>
   </ul>
 
-  <h3 id="how-does-it-work">How does it work?</h3>
+  <h3 id="section">这是如何实现的呢？</h3>
 
-  <p>When x(a<sub>1</sub>, .., a<sub>n</sub>) is evaluated, if it is a normal
-function, it gets called in the normal way. If it isn’t we just invoke call()
-on it. If x supports a call() method with suitable arguments it gets called.</p>
+  <p>当计算 x(a<sub>1</sub>, .., a<sub>n</sub>) 的时候，如果是一个普通的方法，
+则用普通的方式来调用；如果不是，我们就在上面调用 call() 函数。
+如果 x 支持 call() 函数并且能够兼容调用的参数，则就调用 call() 函数。</p>
 
-  <p>Otherwise, <code>noSuchMethod()</code> gets invoked. The default implementation of
-noSuchMethod() checks to see whether it was invoked due to an attempt to use call(),
-and if so issues a helpful error message suggesting you might have wanted to use
-a closure.</p>
+  <p>否则，就调用 <code>noSuchMethod()</code>。<code>noSuchMethod()</code> 的默认实现是：
+先检测是否由于调用 call() 引起的，如果是的话，则抛出一个帮助性错误信息建议你或许应该使用闭包。</p>
 
-  <h2 id="the-apply-method">The apply() method</h2>
+  <h2 id="apply-">apply() 函数</h2>
 
-  <p>The class Function defines the static method <code>apply()</code>
-with the following signature:</p>
+  <p>Function 类用如下签名定义了一个
+静态的 <code>apply()</code> 函数：</p>
 
   <pre class="prettyprint lang-dart">static apply(Function function,
                       List positionalArguments,
                       [Map&lt;Symbol, dynamic&gt; namedArguments]);</pre>
 
-  <p>The apply() function allows functions to be called in generic fashion. The
-last argument is positional, and is only needed if the function we mean to
-call takes named arguments.  These are provided via map from argument names to
-their values. One thing to pay attention to is that names are described
-via instances of class <a href="http://api.dartlang.org/docs/releases/latest/dart_core/Symbol.html">Symbol</a>.</p>
+  <p>apply() 函数用泛型方式来调用函数。
+最后一个参数是可选的，只有当调用的函数支持命名参数的时候才需要该参数。
+最后一个参数是用 map 提供的，key 为参数的名字；value 为参数的值。
+这里值得注意的是，名字是通过
+<a href="http://api.dartlang.org/docs/releases/latest/dart_core/Symbol.html">Symbol</a>
+类的实例定义的。</p>
 
-  <h2 id="symbols">Symbols</h2>
+  <h2 id="section-1">符号</h2>
 
-  <p>You can create symbols from strings:</p>
+  <p>你可以从字符串创建符号：</p>
 
   <pre class="prettyprint lang-dart">new Symbol('myFavoriteMethodName');</pre>
 
-  <p>If possible, create constant symbol objects:</p>
+  <p>如果可能，使用常量符号对象：</p>
 
   <pre class="prettyprint lang-dart">const Symbol('myFavoriteMethodName');</pre>
 
-  <p>Using constant symbols helps dart2js minify your code.</p>
+  <p>用常量符号可以帮助 dart2js 来压缩你的代码。</p>
 
-  <h2 id="function-types">Function types</h2>
+  <h2 id="section-2">方法类型</h2>
 
-  <p>An additional issue is how user-defined function classes relate to the type
-system.  To simulate functions properly, we want them to be members of the
-appropriate function type:</p>
+  <p>另外一个问题是，用户自定义的方法类是如何和系统关联起来的。
+为了恰当的模拟方法，我们需要他们是一些方法类型的成员（也就是说，用 is 关键字来检查是否属于一个类型，返回值为 true，如下所示）：</p>
 
   <pre class="prettyprint lang-dart">typedef BinaryFunction(a,b);
 ...
 new WannabeFunction() is BinaryFunction; // true</pre>
 
-  <p>Therefore, we decree that an object is a member of a function type if the
+  <p>因此，如果一个对象具有一个 call() 函数，并且该函数也是一个方法类型的成员则我们判定
+该对象就是这个方法类型的成员。
+{Therefore, we decree that an object is a member of a function type if the
 object’s class has a call() method and that method is a member of the function
-type.</p>
+type.}</p>
 
   <h2 id="interactions-with-mirrors-and-nosuchmethod">Interactions with mirrors and noSuchMethod()</h2>
 
-  <p>In Dart, you can customize how objects react to methods that are not explicitly
-defined in their class chain by overriding noSuchMethod(). Here’s an example
-showing how you could use function emulation inside noSuchMethod():</p>
+  <p>在 Dart 中，通过重写 noSuchMethod() 函数，你可以定义当调用该对象不存在的函数时的行为。
+下面是演示如何在 noSuchMethod() 中用方法模拟的示例：</p>
 
   <pre class="prettyprint lang-dart">noSuchMethod(Invocation msg) =&gt;
     msg.memberName == #foo ? Function.apply(baz,
@@ -321,16 +316,13 @@ showing how you could use function emulation inside noSuchMethod():</p>
                                 msg.namedArguments)
                           : super.noSuchMethod(msg);</pre>
 
-  <p>The first branch handles the case where you want to forward just the parameters to
-another function. If you know <code>baz</code> doesn’t take any named arguments,
-then that code can instead be
-<code>Function.apply(baz, msg.positionalArguments)</code>. The second branch simply forwards
-to the standard implementation of the noSuchMethod(), a common pattern.</p>
+  <p>第一个分支处理了你想把参数转移到另外一个函数的情况。
+如果你知道 <code>baz</code> 函数不支持任意的命名参数，则可以用 <code>Function.apply(baz, msg.positionalArguments)</code> 。
+第二个分支只是简单的调用标准的 noSuchMethod() 实现，这是一个常见的情况。</p>
 
-  <p>The only argument to noSuchMethod() is an
-<a href="http://api.dartlang.org/dart_core/Invocation.html">Invocation</a>.
-The boolean properties of Invocation identify the syntactic form of the
-method invocation, as the following table shows.</p>
+  <p>noSuchMethod() 只有一个 
+<a href="http://api.dartlang.org/dart_core/Invocation.html">Invocation</a> 对象参数。
+Invocation 的布尔属性确定函数的调用语法，如下表所示：</p>
 
   <!-- TODO: move this to stylesheet -->
   <style type="text/css">
@@ -380,18 +372,14 @@ noSuchMethod() only if neither a normal method nor a getter were found.
 Likewise, <code>isGetter</code> does not imply a getter was being looked up; if a method
 was present, it would be closurized and returned.</p>
 
-  <h2 id="summary">Summary</h2>
+  <h2 id="section-3">总结</h2>
 
-  <p>Here is what you need to know in order to
-implement your own function type in Dart:</p>
+  <p>下面是如何实现自定义方法类型的必备知识：</p>
 
   <ol>
-    <li>Define a class with a method named <strong>call</strong>.</li>
-    <li>Implement the call() method to define
-what instances of your class do
-when invoked as functions via the <strong>()</strong> syntax.</li>
-    <li>As a matter of good style,
-have the class implement the <strong>Function</strong> interface.</li>
+    <li>定义一个带有名字为 <strong>call</strong> 函数的类。</li>
+    <li>实现 call()  函数来定义当用你的类来当做函数调用（使用 <strong>()</strong> 语法）的时候的行为。</li>
+    <li>作为一个好的风格，让你的类实现 <strong>Function</strong> 接口。</li>
   </ol>
 
 </div>
@@ -402,7 +390,7 @@ have the class implement the <strong>Function</strong> interface.</li>
 
 	
 	<ul class="pager">
-	  <li><a href="/articles/">More articles about Dart <i class="glyphicon glyphicon-chevron-up"></i></a></li>
+	  <li><a href="/articles/">关于 Dart 的更多文章 <i class="glyphicon glyphicon-chevron-up"></i></a></li>
 	 </ul>
 	 
 
