@@ -130,10 +130,6 @@ i.sprite-icon-social-gplus {
 	background-position: -50px -50px;
 }
 
-i.sprite-icon-social-weibo {
-	background-position: -20px -50px;
-}
-
 i.sprite-icon-browsers {
 	width: 193px;
 	height: 36px;
@@ -733,7 +729,7 @@ pre li {
 	text-align: center;
 }
 
-/* ***** Dart’s comprehensive libraries ***** */
+/* ***** Dart鈥檚 comprehensive libraries ***** */
 .dart-libraries {
 	margin-top: 50px;
 	margin-bottom: 50px;
