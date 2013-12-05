@@ -650,11 +650,10 @@ music.length;                  // 6
 
 ##### 使用组合字符
 
-It is tempting to brush aside the complexity involved in dealing with runes and
-code units and base the length of the string on the number of characters it
-appears to have. Anyone can tell that 'Dart' has four characters, and 'Amelié'
-has six, right? Almost. The length of 'Dart' is indeed four, but the length of
-'Amelié' depends on how that string was constructed:
+如上所示，把扩展字符和普通字符一起使用而无需处理 runes 和 代码单元的复杂性，让 Dart 来处理字符
+和计算字符串的长度看起来是非常诱人的。
+人们都知道 'Dart' 是四个字符而 'Amelié' 是六个字符。 在 Dart 中，'Dart' 的长度确实是四，但是
+'Amelié' 的长度就不一定了：
 
 {% prettify dart %}
 var name = 'Ameli\u00E9';               // 'Amelié'
@@ -663,20 +662,20 @@ print(name.length);                     // 6
 print(anotherName.length);              // 7
 {% endprettify %}
 
-Both `name` and `anotherName` return strings that look the same, but where
-the 'é' is constructed using a different number of runes. This makes it
-impossible to know the length of these strings by just looking at them.
+虽然 `name` 和 `anotherName` 代表的字符串看起来是一样的，
+但是 'é' 通过不同的 runes 创建的。
+这样通过输出的字符串就没法确定该字符串的长度了。
 
 
 ### 一次一个字符地处理字符串
 
 #### 面对的问题
 
-You want to do something with each character in a string.
+你想处理字符串中的每个字符。
 
 #### 解决的方式
 
-Map the results of calling `string.split('')`:
+通过函数 `string.split('')` 来映射结果字符：
 
 {% prettify dart %}
 var lang= 'Dart';
@@ -689,7 +688,7 @@ var happy = 'I am $smileyFace';
 print(happy.split('')); // ['I', ' ', 'a', 'm', ' ', '☺']
 {% endprettify %}
 
-Or, loop over the characters of a string:
+或者遍历字符串：
 
 {% prettify dart %}
 var list = [];
@@ -700,7 +699,7 @@ for(var i = 0; i < lang.length; i++) {
 print(list); // ['*D*', '*a*', '*r*', '*t*']
 {% endprettify %}
 
-Or, map the string runes:
+或者映射 runes：
 
 {% prettify dart %}
 // ['*D*', '*a*', '*r*', '*t*']
@@ -714,21 +713,21 @@ var runeList = happy.runes.map((rune) {
 });
 {% endprettify %}
 
-When working with extended characters, you should always map the string runes.
-Don't use `split('')` and avoid indexing an extended string. See the _Handling
-extended characters that are composed of multiple code units_ recipe for
-special considerations when working with extended strings.
+当使用扩展字符的时候，你应该总是用 runes 来操作字符。
+不要用 `split('')` 可以避免索引扩展字符。
+查看 _处理由多个字符单元组成的扩展字符_ 来了解如何
+处理扩展字符。
 
 
 ### 把字符串分割为子字符串
 
 #### 面对的问题
 
-You want to split a string into substrings using a delimiter or a pattern.
+你想用分隔符或者正则表达式把字符串分割为子字符串。
 
 #### 解决的方式
 
-Use the `split()` method with a string or a RegExp as an argument.
+用  `split()` 函数，参数为 字符串或者 RegExp 对象。
 
 {% prettify dart %}
 var smileyFace = '\u263A';
@@ -736,7 +735,7 @@ var happy = 'I am $smileyFace';
 happy.split(' '); // ['I', 'am', '☺']
 {% endprettify %}
 
-Here is an example of using `split()` with a RegExp:
+下面是用 RegExp 调用 `split()` 的示例：
 
 {% prettify dart %}
 var nums = '2/7 3 4/5 3~/5';
@@ -744,12 +743,11 @@ var numsRegExp = new RegExp(r'(\s|/|~/)');
 nums.split(numsRegExp); // ['2', '7', '3', '4', '5', '3', '5']
 {% endprettify %}
 
-In the code above, the string `nums` contains various numbers, some of which
-are expressed as fractions or as int-divisions. A RegExp splits the string to
-extract just the numbers.
+上面的代码中， `nums` 包含了一些数学表达式。
+用 RegExp 把里面的数字给分割出来。
 
-You can perform operations on the matched and unmatched portions of a string
-when using `split()` with a RegExp:
+当用 RegExp 来调用 `split()` 函数时，你可以分别处理每个匹配或者不匹配的
+子字符串：
 
 {% prettify dart %}
 var phrase = 'Eats SHOOTS leaves';
@@ -762,27 +760,26 @@ print(newPhrase); // 'EATS *shoots* LEAVES'
   
 {% endprettify %}
 
-The RegExp matches the middle word ('SHOOTS'). A pair of callbacks are
-registered to transform the matched and unmatched substrings before the
-substrings are joined together again.
+RegExp 匹配中间的字符 ('SHOOTS')。
+一对回调函数用来处理匹配和不匹配的子字符串，该操作发生在字符串 Join 操作之前。
 
 
 ### 检测一个字符串是否包含另外一个字符串
 
 #### 面对的问题
 
-You want to find out whether a string is the substring of another string.
+你想知道一个字符串是否是另外一个字符串的子集。
 
 #### 解决的方式
 
-Use `string.contains()`:
+用 `string.contains()`：
 
 {% prettify dart %}
 var fact = 'Dart strings are immutable';
 print(fact.contains('immutable')); // True.
 {% endprettify %}
 
-You can use a second argument to specify where in the string to start looking:
+第二个参数可以用来设置开始查找字符串的起点位置：
 
 {% prettify dart %}
 print(fact.contains('Dart', 2)); // False
@@ -790,22 +787,22 @@ print(fact.contains('Dart', 2)); // False
 
 #### 延伸讨论
 
-The String class provides a couple of shortcuts for 测试 whether a
-string is a substring of another:
+String 类提供了一些函数用来测试一个字符串是否
+是另外一个字符串的子集：
 
 {% prettify dart %}
 print(string.startsWith('Dart')); // True.
 print(string.endsWith('e'));      // True.
 {% endprettify %}
 
-You can also use `string.indexOf()`, which returns -1 if the substring
-is not found within a string, and otherwise returns the matching index:
+你还可以用 `string.indexOf()` 函数来判断，如果在字符串中没有发现子字符串则
+返回值为 -1 ， 如果发现的话，就返回子字符串的位置：
 
 {% prettify dart %}
 var found = string.indexOf('art') != -1; // True, `art` is found in `Dart`.
 {% endprettify %}
 
-You can also use a RegExp and `hasMatch()`:
+还可以用 RegExp 和 `hasMatch()`：
 
 {% prettify dart %}
 var found = new RegExp(r'ar[et]').hasMatch(string);
@@ -816,13 +813,12 @@ var found = new RegExp(r'ar[et]').hasMatch(string);
 
 #### 面对的问题
 
-You want to use RegExp to match a pattern in a string, and want to be
-able to access the matches.
+你想用正则表达式来匹配字符串，并且想访问匹配的子字符串。
 
 #### 解决的方式
 
-Construct a regular expression using the RegExp class, and find matches
-using the `allMatches()` method:
+用 RegExp 类来创建一个正则表达式对象，然后用 `allMatches()` 函数
+来查找匹配的项：
 
 {% prettify dart %}
 var neverEatingThat = 'Not with a fox, not in a box';
@@ -833,20 +829,20 @@ print(matches.map((match) => match.group(0)).toList()); // ['fox', 'box']
 
 #### 延伸讨论
 
-You can query the object returned by `allMatches()` to find out the
-number of matches:
+你可以通过查询 `allMatches()` 返回值来获取匹配项的
+个数：
 
 {% prettify dart %}
 var howManyMatches = matches.length; // 2
 {% endprettify %}
 
-To find the first match, use `firstMatch()`:
+要查找第一个匹配的项，用  `firstMatch()` 函数：
 
 {% prettify dart %}
 var firstMatch = RegExp.firstMatch(neverEatingThat).group(0); // 'fox'
 {% endprettify %}
 
-To directly get the matched string, use `stringMatch()`:
+要直接访问匹配的字符串，用  `stringMatch()` 函数：
 
 {% prettify dart %}
 print(regExp.stringMatch(neverEatingThat));         // 'fox'
@@ -857,27 +853,25 @@ print(regExp.stringMatch('I like bagels and lox')); // null
 
 #### 面对的问题
 
-You want to match substrings within a string and make substitutions
-based on the matches.
+你想用正则表达式来查找字符串，并替换找到的字符串。
 
 #### 解决的方式
 
-Construct a regular expression using the RegExp class and make
-replacements using `replaceAll()` method:
+用 RegExp 类来创建一个正则表达式对象，然后通过字符串的
+ `replaceAll()` 函数来替换：
 
 {% prettify dart %}
 var resume = 'resume'.replaceAll(new RegExp(r'e'), '\u00E9'); // 'résumé'
 {% endprettify %}
 
-If you want to replace just the first match, use `replaceFirst()`:
+如果你只想替换第一个匹配的项，则用函数 `replaceFirst()`：
 
 {% prettify dart %}
 // Replace the first match of one or more zeros with an empty string.
 var smallNum = '0.0001'.replaceFirst(new RegExp(r'0+'), ''); // '.0001'
 {% endprettify %}
 
-You can use `replaceAllMapped()` to register a function that modifies the
-matches:
+可以用 `replaceAllMapped()` 函数来注册一个修改所有匹配项的方法：
 
 {% prettify dart %}
 var heart = '\u2661'; // '♡'
@@ -898,19 +892,18 @@ print(newString); // 'I like IKE but I ♡ LUCY'
 
 #### 面对的问题
 
-You want to create a list but don't want to allow it's size to be
-changed.
+你想创建一个大小不变的 List。
 
 #### 解决的方式
 
-Pass the list size as an argument to the List constructor. This creates a
-fixed-length list:
+给 List 构造函数提供一个长度的参数即可创建一个
+长度固定的 List：
 
 {% prettify dart %}
 var fixedList = new List(3); // fixedList can have exactly 3 items.
 {% endprettify %}
 
-You cannot change the size of the list:
+你不能修改固定 list 的长度：
 
 {% prettify dart %}
 fixedList.add(2);       // UnsupportedError
@@ -918,7 +911,7 @@ fixedList.removeLast(); // UnsupportedError
 fixedList.length = 10;  // UnsupportedError
 {% endprettify %}
 
-You _can_ change the values of list elements:
+但是你 _可以_ 改变每个 list 元素的值：
 
 {% prettify dart %}
 fixedList[0] = 'red';
@@ -932,21 +925,19 @@ print(fixedList); // ['red', 'green', 'blue']
 
 #### 面对的问题
 
-Because you want to protect your data from being accidentally overwritten, you
-want to use a list that cannot be changed after it is created.  You don't want
-anyone to be able to modify list elements, add new elements, or remove
-existing elments.
+你想保护你的数据不被意外覆盖， 创建一个创建后不能修改的 List。
+你不想让他人修改 list 的元素、添加新的元素或者从 list 中删除元素。
 
 #### 解决的方式
 
-Create an immutable list using the reserved word 'const':
+用关键字 'const' 创建一个不可变 list：
 
 {% prettify dart %}
 const List<String> vowels = const ['A', 'E', 'I', 'O', 'U'];
 {% endprettify %}
 
-A list constructed using const is a compile-time constant. Each element of a
-const list must also be a compile-time constant.
+用 const 创建的 list 是编译期常量。 所以每个 list 的元素也需要为
+编译期常量。
 
 {% prettify dart %}
 const List<String> vowels = const ['A', 'E', 'I', 'O', 'U'];
@@ -954,8 +945,7 @@ const List<String> rgb = const ['R', 'G', 'B'];
 const List<List<String>> chars = const [vowels, rgb];
 {% endprettify %}
 
-Attempting to use non-const values in a const list results in a compile-time
-error:
+尝试在 const list 中用非 const 值会导致编译失败：
 
 {% prettify dart %}
 // ILLEGAL.
@@ -963,21 +953,20 @@ const List<List<String>> chars = const [
     ['A', 'E', 'I', 'O', 'U'], ['R', 'G', 'B']];
 {% endprettify %}
 
-Once a const list is constructed, you cannot change its length:
+一旦 const list 创建后，就无法修改其长度：
 
 {% prettify dart %}
 vowels.add('Y'); // UnsupportedError
 {% endprettify %}
 
-And, you cannot modify any list element:
+并且也无法修改 list 中的元素内容：
 
 {% prettify dart %}
 vowels[0] = 'a'; // UnsupportedError
 {% endprettify %}
 
-Two const lists are considered equal _and identical_ if they have the same
-length, and the same values in the same order. In other words, const lists are
-canonicalized:
+两个 const list 只有满足如下条件才认为是相等和一样（ _equal and identical_）的：
+长度一样、里面的值一样且顺序也一样。也就是说， const list 是规范化的（canonicalized）：
 
 {% prettify dart %}
 const List<String> colors = const ['R', 'G', 'B'];    
@@ -993,13 +982,13 @@ colors.hashCode == rgb.hashCode; // true
 
 #### 面对的问题
 
-You want to create a new list and want to assign defalt values at every position
-when the list is created.
+你想创建一个新的 list 并且在 list 创建的时候设置
+所有元素的默认值。
 
 #### 解决的方式
 
-Use the `List.generate()` constructor. Pass it a function that generates the
-fill value: 
+用 `List.generate()` 构造函数。参数为一个用来生成默认值的
+方法。
 
 {% prettify dart %}
 var filledList = new List<bool>.generate(3, (_) => false);
@@ -1009,20 +998,20 @@ filledList.add(true);
 print(filledList); // [false, false, false, true]
 {% endprettify %}
 
-If you want a fixed-length list, set the optional `growable` argument to
-`false` (it is `true` by default):
+如果你想创建一个固定长度的 list ，则设置可选的参数 `growable` 为 
+`false` (该参数默认值为 `true`  )：
 
 {% prettify dart %}
 var fixedAndFilled = new List<bool>.generate(3, (_) => false, growable: false);
 {% endprettify %}
 
-You can generate fill values dynamically:
+可以动态的生成所有的值：
 
 {% prettify dart %}
 List<List<int>> grid = new List.generate(3, (x) => [x, x + 1, x + 2]);
 {% endprettify %}
 
-The code above generates a 3 X 3 grid:
+上面的代码生成了一个 3 X 3 的矩阵：
 
 {% prettify dart %}
 print(grid); // [[0, 1, 2], [1, 2, 3], [2, 3, 4]]
@@ -1030,29 +1019,29 @@ print(grid); // [[0, 1, 2], [1, 2, 3], [2, 3, 4]]
 
 #### 延伸讨论
 
-You will optionally use the `List.filled()` constructor to create a list and
-initialize it with default values:
+另外，你也可以用 `List.filled()` 构造函数来创建带有默认
+值的 list：
 
 {% prettify dart %}
 var filledList = new List<bool>.filled(3, false);
 print(filledList); // [false, false, false]
 {% endprettify %}
 
-The `List.filled()` constructor has two restrictions that `List.generate()`
-does not:
+`List.filled()` 和 `List.generate()` 相比，有两个限制
+条件：
 
-- You can only create fixed-length lists.
-- You cannot dynamically generate fill values.
+- 只能创建长度固定的 list 。
+- 不能动态的生成默认值。
 
-If these restrictions are not important to your code, you can use
-`List.filled()` instead of `List.generate()`.
+如果上面两个限制条件对你的需求无影响，
+则可以用 `List.filled()` 来替代  `List.generate()`。
 
 
 ### 复制一个 List
 
 #### 面对的问题
 
-You want to create a new list with the elements of another list.
+你想用其他 list 的值创建一个新的 list。
 
 #### 解决的方式
 
