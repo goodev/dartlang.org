@@ -275,8 +275,8 @@ print(r'$superGenius and Road Runner'); // '$superGenius and Road Runner'
 
 #### 解决的方式
 
-Use a StringBuffer to programmatically generate a string. Consider this code
-below for assembling a series of urls from fragments:
+用 StringBuffer 来生成字符串。如下是一个从 url 片段
+中组合成一个 url 字符串的例子：
 
 {% prettify dart %}
 var data = [{'scheme': 'https', 'domain': 'news.ycombinator.com'}, 
@@ -306,13 +306,13 @@ String assembleUrlsUsingStringBuffer(entries) {
 // http://reddit.com/search?q=dart
 {% endprettify %}
 
-A StringBuffer collects string fragments, but does not generate a new string
-until `toString()` is called. 
+一个 StringBuffer 收集字符串片段，只有当 `toString()` 函数
+调用的时候才生成一个新的字符串。
 
 #### 延伸讨论
 
-Using a StringBuffer is vastly more efficient than concatenating fragments
-at each step: Consider this rewrite of the above code:
+使用 StringBuffer 和 直接连接字符串 相比，效率要高很多。
+例如 下面的代码：
 
 {% prettify dart %}
 String assembleUrlsUsingConcatenation(data) {
@@ -333,16 +333,17 @@ String assembleUrlsUsingConcatenation(data) {
 }
 {% endprettify %}
 
-This approach produces the exact same result, but incurs the cost of
-joining strings multiple times. 
+虽然产生的结果一样，但是上面的代码会导致
+多次连接字符串，从而引起性能问题。
 
 
-##### Other StringBuffer methods
+##### StringBuffer 的其他函数
 
-In addition to `write()`, the StringBuffer class provides methods to
-write a list of strings (`writeAll()`), write a numerical character code
-(`writeCharCode()`), write with an added newline (`writeln()`), and
-more. The example below shows how to use these methods:
+除了 `write()` 函数之外， StringBuffer 类还提供了其他函数：
+`writeAll()` 一次写入一个字符串 list 的所有内容、
+`writeCharCode()` 一次写入一个字符代码、
+`writeln()` 写入一个新的换行符 、 等等。
+下面的示例演示如何使用这些函数：
 
 {% prettify dart %}
 var sb = new StringBuffer();
@@ -353,29 +354,29 @@ var beatles = sb.toString(); // 'The Beatles:\nJohn, Paul, George, and Ringo!'
 {% endprettify %}
 
 
-### Determining whether a string is empty
+### 判断字符串是否为空
 
 #### 面对的问题
 
-You want to know whether a string is empty. You tried `if (string) {...}`, but
-that did not work.
+你想知道字符串是否为空的。如果你尝试使用 `if (string) {...}`，你会
+发现这样并不满足你的要求。
 
 #### 解决的方式
 
-Use `string.isEmpty`:
+用 `string.isEmpty`：
 
 {% prettify dart %}
 var emptyString = '';
 print(emptyString.isEmpty); // true
 {% endprettify %}
 
-You can also just use `==`:
+你也可以直接用  `==`：
 
 {% prettify dart %}
 if (string == '') {...} // True if string is empty.
 {% endprettify %}
 
-A string with a space is not empty:
+一个包含空白字符的字符串不是空的：
 
 {% prettify dart %}
 var space = ' ';
@@ -384,22 +385,20 @@ print(space.isEmpty); // false
 
 #### 延伸讨论
 
-Don't use `if (string)` to test the emptiness of a string. In Dart, all objects
-except the boolean true evaluate to false, so `if(string)` is always false. You
-will see a warning in the editor if you use an 'if' statement with a non-boolean
-in checked mode.
+不要用 `if (string)` 来测试字符串是否为空。 在 Dart 中，除了 boolean 值
+true 外所有的对象都是 fasle， 所有 `if (string)` 总是为空。
+在检测模式下 如果你在 'if' 中用了非 boolean 值的表达式，则编辑器会发出一个警告信息。
 
 
-### Removing leading and trailing whitespace
+### 删除字符串首尾空白字符
 
 #### 面对的问题
 
-You want to remove spaces, tabs, and other whitespace from the beginning and
-end of strings.
+你想要删除字符串开头和结尾的 空格、制表符以及其他空白字符。
 
 #### 解决的方式
 
-Use `string.trim()`:
+用 `string.trim()`：
 
 {% prettify dart %}
 var space = '\n\r\f\t\v';       // A variety of space characters.
@@ -407,31 +406,31 @@ var string = '$space X $space';
 var newString = string.trim();  // 'X'
 {% endprettify %}
 
-The String class has no methods to remove only leading or only trailing
-whitespace. You can always use a RegExp.
+String 类并没包含一个只删除开头或者结尾空白字符的函数。
+如果你有该需求，则可以用正则表达式。
 
-Remove only leading whitespace:
+只删除开头的空白字符：
 
 {% prettify dart %}
 var newString = string.replaceFirst(new RegExp(r'^\s+'), ''); // 'X \n\r\f\t\v'
 {% endprettify %}
 
-Remove only trailing whitespace:
+只删除末尾的空白字符：
 
 {% prettify dart %}
 var newString = string.replaceFirst(new RegExp(r'\s+$'), ''); // '\n\r\f\t\v X'
 {% endprettify %}
 
 
-### Changing string case
+### 改变字符大小写
 
 #### 面对的问题
 
-You want to change the case of strings.
+你想改变字符串的大小写
 
 #### 解决的方式
 
-Use String's `toUpperCase()` and `toLowerCase()` methods: 
+用 String 的 `toUpperCase()` 和 `toLowerCase()` 函数：
 
 {% prettify dart %}
 var theOneILove = 'I love Lucy';
@@ -446,8 +445,8 @@ var resume = '\u0052\u00e9\u0073\u0075\u006d\u00e9'; // 'Résumé'
 resume.toLowerCase();                                // 'résumé'
 {% endprettify %}
 
-The `toUpperCase()` and `toLowerCase()` methods don't affect the characters of
-scripts such as Devanagri that don't have distinct letter cases.
+对于没有大小写之分的语言（比如 中文、印度文等）， `toUpperCase()` 和 `toLowerCase()` 
+函数不会改变字符串内容。
 
 {% prettify dart %}
 var chickenKebab = '\u091a\u093f\u0915\u0928 \u0915\u092c\u093e\u092c'; 
@@ -456,21 +455,21 @@ chickenKebab.toLowerCase();  // 'चिकन कबाब'
 chickenKebab.toUpperCase();  // 'चिकन कबाब'
 {% endprettify %}
 
-If a character's case does not change when using `toUpperCase()` and
-`toLowerCase()`, it is most likely because the character only has one
-form.
+如果字符串用 `toUpperCase()` 和
+`toLowerCase()` 不会改变大小写，则通常说明该字符串只有
+一种形态。
 
 
 ### 处理由多个字符单元组成的扩展字符
 
 #### 面对的问题
 
-You want to use emoticons and other special symbols that don't fit into 16
-bits. How can you create such strings and use them correctly in your code? 
+你想使用表情和其他特殊字符，这些字符用 16 bit 无法表达。
+你如何在代码中直接使用这些字符呢？
 
 #### 解决的方式
 
-You can create an extended character using `'\u{}'` syntax:
+你可以用 `'\u{}'` 语法创建扩展字符：
 
 {% prettify dart %}
 var clef = '\u{1D11E}'; // 𝄞
@@ -478,26 +477,24 @@ var clef = '\u{1D11E}'; // 𝄞
 
 #### 延伸讨论
 
-Most UTF-16 strings are stored as two-byte (16 bit) code sequences.
-Since two bytes can only contain the 65,536 characters in the 0x0 to 0xFFFF
-range, a pair of strings is used to store values in the 0x10000 to 0x10FFFF
-range. These strings only have semantic meaning as a pair. Individually, they
-are invalid UTF-16 strings. The term 'surrogate pair' is often used to
-describe these strings. 
+大多数的 UTF-16 字符用 two-byte (16 bit) 代码序列保存。
+由于 两个 byte 只能包含 65,536 个字符。所以就用两个 16 bit 来表示位于
+0x10000 和 0x10FFFF 中的增补字符集。这里的字符只有成对使用（用两个 16 bit）时，才有意义。
+如果单个用，则是不合法的 UTF-16 字符。 通常用术语 'surrogate pair(代理对)' 来表示这种字符。
 
-The treble clef glyph `'\u{1D11E}'` is composed of the `'\uD834'` and
-`'\uDD1E'` surrogate pair.
+`'\u{1D11E}'` 字符由 `'\uD834'` 和
+`'\uDD1E'` 代理对组成。
 
-You can get an extended string's surrogate pair through its `codeUnits`
-property:
+通过 `codeUnits` 属性可以获取扩展字符的
+代理对：
 
 {% prettify dart %}
 clef.codeUnits.map((codeUnit) => codeUnit.toRadixString(16)); 
 // ['D834', 'DD1E']
 {% endprettify %}
 
-Accessing a surrogate pair member leads to errors, and you should avoid
-properties and methods that expose it:
+单独使用一个代理对成员会出错，
+你应该避免提供访问这些代理对的变量和函数：
 
 {% prettify dart %}
 print('\uD834');          // Error: '\uD834' is not a valid string.
@@ -506,11 +503,11 @@ print(clef.split('')[1]); // Invalid string. Dart Editor prints '?'
 print(clef[0]);           // Invalid string. Dart Editor prints '?'
 {% endprettify %}
 
-When dealing with strings containing extended characters, you should use the
-`runes` getter.
+当处理扩展字符串的时候，你应该用
+`runes` getter 函数。
 
-To get the string's length, use `string.runes.length`. Don't use
-`string.length`:
+例如，查询字符串的长度，应该用 `string.runes.length`，而不要用
+`string.length`：
 
 {% prettify dart %}
 print(clef.runes.length);     // 1
@@ -518,13 +515,13 @@ print(clef.length);           // 2
 print(clef.codeUnits.length); // 2
 {% endprettify %}
 
-To get an individual character or its numeric equivalent, index the rune list:
+要获取单个字符或者第几个字符，也要用 `runes` ：
 
 {% prettify dart %}
 print(clef.runes.toList()[0]); // 119070 ('\u{1D11E}')
 {% endprettify %}
 
-To get the string's characters as a list, map the string runes:
+要把扩展字符串的字符放到一个 list 中，也需要用 `runes` 来映射字符：
 
 {% prettify dart %}
 var clef = '\u{1D11E}'; // 𝄞
@@ -538,14 +535,11 @@ print(subject.runes.map((rune) => new String.fromCharCode(rune)).toList());
 
 #### 面对的问题
 
-You want to convert string characters into numerical codes and vice versa.
-You want to do this because sometimes you need to compare characters in a string
-to numerical values coming from another source. Or, maybe you want to split a
-string and then operate on each character.
+你需要把字符串转换为字符代码或者 把字符代码转换为字符串。
 
 #### 解决的方式
 
-Use the `runes` getter to get a string's code points:
+用 `runes` getter  来获取字符串的代码数字：
 
 {% prettify dart %}
 'Dart'.runes.toList();            // [68, 97, 114, 116]
@@ -557,7 +551,7 @@ var clef = '\u{1D11E}';           // 𝄞
 print(clef.runes.toList());       // [119070], (equivalent to ['\u{1D11E}']).
 {% endprettify %}
 
-Use `string.codeUnits` to get a string's UTF-16 code units:
+用 `string.codeUnits` 来获取一个字符串的 UTF-16 代码单元( code unit )：
 
 {% prettify dart %}
 'Dart'.codeUnits.toList();     // [68, 97, 114, 116]
@@ -565,9 +559,9 @@ smileyFace.codeUnits.toList(); // [9786]
 clef.codeUnits.toList();       // [55348, 56606]
 {% endprettify %}
 
-##### Using codeUnitAt() to get individual code units
+##### 用 codeUnitAt() 获取单个代码单元：
 
-To get the code unit at a particular index, use `codeUnitAt()`:
+要获取特定位置的字符代码单元，用  `codeUnitAt()`：
 
 {% prettify dart %}
 'Dart'.codeUnitAt(0);     // 68
@@ -575,12 +569,12 @@ smileyFace.codeUnitAt(0); // 9786 (the decimal value of '\u263A')
 clef.codeUnitAt(0);       // 55348 (does not represent a legal string) 
 {% endprettify %}
 
-#### Converting numerical codes to strings
+#### 把数字代码转换为字符串
 
-You can generate a new string from numerical codes using the factory
-`String.fromCharCodes(charCodes)`. You can pass either runes or code units and
-`String.fromCharCodes(charCodes)` can tell the difference and do the right
-thing automatically:
+使用工厂构造函数 `String.fromCharCodes(charCodes)` 可以从
+数字代码中生成一个新的字符串，参数可以为 runes 和 code units。
+`String.fromCharCodes(charCodes)` 会自动分辨他们的区别，并返回
+正确的字符串：
 
 {% prettify dart %}
 print(new String.fromCharCodes([68, 97, 114, 116]));                  // 'Dart'
@@ -595,8 +589,8 @@ print(new String.fromCharCodes([55348, 56606]));                      // 𝄞
 print(new String.fromCharCodes([119070]));                            // 𝄞
 {% endprettify %}
 
-You can use the `String.fromCharCode()` factory to convert a single rune
-or code unit to a string:
+还可以用 `String.fromCharCode()` 转换一个 rune
+或者 code unit 为字符串：
 
 {% prettify dart %}
 new String.fromCharCode(68);     // 'D'
@@ -604,27 +598,27 @@ new String.fromCharCode(9786);   // ☺
 new String.fromCharCode(119070); // 𝄞
 {% endprettify %}
 
-Creating a string with only one half of a surrogate pair is permitted,
-but not recommended.
+创建一个只包含一半代理对的字符串是允许的，但是不推荐这
+样做。
 
 
 ### 计算字符串的长度
 
 #### 面对的问题
 
-You want to get the length of a string, but are not sure how to calculate the
-length correctly when working with variable length Unicode characters.
+你想知道字符串的长度，但是在处理各种长度 Unicode 字符的时候你不知道
+如何正确的计算字符长度。
 
 #### 解决的方式
 
-Use `string.runes.length` to get the number of characters in a string.
+用 `string.runes.length` 计算字符串的长度：
 
 {% prettify dart %}
 print('I love music'.runes.length); // 12
 {% endprettify %}
 
-You can safely use `string.runes.length` to get the length of strings that
-contain extended characters:
+包含扩展字符的字符串也可以用  `string.runes.length`  
+来查询字符串长度：
 
 {% prettify dart %}
 var clef = '\u{1D11E}';        // 𝄞
@@ -637,12 +631,12 @@ music.runes.length             // 5
 
 #### 延伸讨论
 
-You can directly use a string's `length` property (minus `runes`). This returns
-the string's code unit length. Using `string.length` produces the same length
-as `string.runes.length` for most unicode characters.
+你可以省略 `runes` 直接用 String 的 `length` 变量。 这样会返回
+字符串的代码单元长度。 对于大部分的 unicode 字符，用 `string.length`和
+`string.runes.length` 的结果一样。
 
-For extended characters, the code unit length is one more than the rune
-length:
+对于 扩展字符， `string.length` 的值要比 `string.runes.length` 
+大：
 
 {% prettify dart %}
 clef.length;                   // 2
@@ -651,10 +645,10 @@ var music = 'I $hearts $clef'; // 'I ♡ 𝄞'
 music.length;                  // 6
 {% endprettify %}
 
-Unless you specifically need the code unit length of a string, use
-`string.runes.length`.
+如果你不是想要代码单元的长度，则最好使用
+`string.runes.length`。
 
-##### Working with combined characters
+##### 使用组合字符
 
 It is tempting to brush aside the complexity involved in dealing with runes and
 code units and base the length of the string on the number of characters it
