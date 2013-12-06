@@ -1045,7 +1045,7 @@ print(filledList); // [false, false, false]
 
 #### 解决的方式
 
-Use the `List.from()` constructor and pass the original list as an argument:
+用原来的 list 作为参数调用  `List.from()` 构造函数：
 
 {% prettify dart %}
 var fruit1 = ['orange', 'banana', 'mango'];
@@ -1054,13 +1054,13 @@ var fruit2 = new List.from(fruit1);
 
 #### 延伸讨论
 
-The `List.from()` constructor creates a new, independent list:
+`List.from()` 构造函数创建一个新的独立的 list：
 
 {% prettify dart %}
 identical(names, namesCopy); // false
 {% endprettify %}
 
-However, compound elements in the new list retain a reference to the original:
+但是， 新创建的 list 里面的元素和 原来的 list 还是一样的：
 
 {% prettify dart %}
 var names = [{'first': 'Reggie', 'last': 'Jackson'}, 
@@ -1070,16 +1070,16 @@ var namesCopy = new List.from(names);
 identical(names.first, namesCopy.first); // true
 {% endprettify %}
 
-Modifying an element in the original changes the corresponding element in the
-copy (and vise versa):
+修改任意一个 list 中的元素值，另外一个 list 中对应的值也会
+改变：
 
 {% prettify dart %}
 names[0]['last'] = 'Jefferson';
 print(namesCopy[0]['last']); // 'Jefferson'
 {% endprettify %}
 
-Since the lists themselves do not share a reference, adding a new element to
-one does not affect the other:
+由于 list 自己并没有共享同一个引用，所以在一个 list 中添加
+元素并不影响另外一个 list：
 
 {% prettify dart %}
 names.add({'first' : 'Micky', 'last' : 'Mantle'});
@@ -1087,10 +1087,10 @@ names.length;     // 3
 namesCopy.length; // 2
 {% endprettify %}
 
-##### Fixed-length vs. flexible-length lists
+##### 固定长度 vs. 长度可变 的 list
 
-By default, the new list created will be growable. This is true even if you
-passed a `const` list as an argument to `List.from()`:
+默认情况下，创建的 list 是长度可增加的。
+即使用一个 `const` list 作为参数来调用 `List.from()` 构造函数生成的 list 也是如此：
 
 {% prettify dart %}
 const List<String> vowels1 = const ['A', 'E', 'I', 'O', 'U'];
@@ -1103,8 +1103,8 @@ vowels2[0] = 'Y';
 print(vowels2[0]); // 'Y'
 {% endprettify %}
 
-To make the copy fixed-length, set `List.from()`s `growable` argument to
-`false`:
+要复制一个固定长度的 list， 设置 `List.from()` 构造函数的  `growable`
+参数为 `false`：
 
 {% prettify dart %}
 const List<String> vowels1 = const ['A', 'E', 'I', 'O', 'U'];
@@ -1112,14 +1112,14 @@ var vowelsFixed = new List.from(vowels1, growable: false);
 var fruitFixed = new List.from(fruit1, growable: false);
 {% endprettify %}
 
-You can then modify an element:
+可以修改其中的一个元素：
 
 {% prettify dart %}
 vowelsFixed[0] = 'Y';
 print(vowelsFixed[0]); 'Y'
 {% endprettify %}
 
-But you cannot add or remove elements:
+但是无法删除和添加元素：
 
 {% prettify dart %}
 vowelsFixed.add('Y');     // UnsupportedError
@@ -1131,12 +1131,12 @@ vowelsFixed.removeLast(); // UnsupportedError
 
 #### 面对的问题
 
-You want to add items to the end of a list, and want to know the most
-efficient way to do so.
+你想知道如何在 list 末尾添加一个元素，也想知道
+添加元素最高效的方式。
 
 #### 解决的方式
 
-To add one item at a time to a list, use `add()`:
+用 `add()` 函数在 list 末尾添加一个元素：
 
 {% prettify dart %}
 var names = ['Seth', 'Timothy', 'John'];
@@ -1145,8 +1145,8 @@ names.add('Mary');
 print(names); // ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']
 {% endprettify %}
 
-If the items to be added are already in a list, you can add them all at once
-using `addAll()`:
+如果要添加的元素已经位于一个 list 中了，则可以
+用函数  `addAll()` 添加所有的元素：
 
 {% prettify dart %}
 var names = ['Seth', 'Timothy', 'John'];
@@ -1154,15 +1154,15 @@ names.addAll(['Kathy', 'Mary']);
 print(names); // ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']
 {% endprettify %}
 
-Or, you can increase the `length` property of a list. This generates
-additional entries that are initialized to null. 
+或者你可以增加  `length` 成员变量。 这样的话新的 list 元素的
+默认值为 null。
 
 {% prettify dart %}
 names.length += 2; // Creates 2 more null items.
 print(names);      // ['Seth', 'Timothy', 'John', null, null]
 {% endprettify %}
 
-You can then replace the `null` values with actual values:
+然后可以用真实的值替代这些 `null`：
 
 {% prettify dart %}
 var names = ['Seth', 'Timothy', 'John'];
@@ -1178,8 +1178,8 @@ for (var i = 0; i < moreNames.length; i++) {
 print(names); ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']
 {% endprettify %}
 
-在 List 中添加内容 by increasing the list length first is generally more
-efficient than using `add()` or `addAll()`.
+通过增加 length 来添加内容比用 `add()` 或者 `addAll()`
+更高效。
 
 
 
@@ -1189,90 +1189,89 @@ efficient than using `add()` or `addAll()`.
 
 #### 面对的问题
 
-You want to parse a string and convert it to a number.
+解析一个字符串并转化为数字。
 
 #### 解决的方式
 
-Use `int.parse` to convert a string to an int:
+用 `int.parse` 把字符串转换为 int：
 
 {% prettify dart %}
 print(int.parse('231')); // 231
 {% endprettify %}
 
-The strings can be prefixed with a '+' or a '-':
+字符串可以用 '+' 或者 '-' 作为前缀：
 
 {% prettify dart %}
 print(int.parse('+231')); // 231
 print(int.parse('-231')); // -231
 {% endprettify %}
 
-You can pass in the radix as a second argument:
+第二个参数可以设置安装几进制解析：
 
 {% prettify dart %}
 print(int.parse('231', radix: 16));  // 561
 print(int.parse('F34A', radix: 16)); // 62282
 {% endprettify %}
 
-Strings starting with '0x', '-0x' or '+0x' are assumed to have a radix of 16:
+以'0x'、 '-0x' 或者 '+0x' 开头的字符串默认按照 16 进制数字解析：
 
 {% prettify dart %}
 print(int.parse('0x231')); // 561
 {% endprettify %}
 
-Use `double.parse` to convert a string to a double:
+用 `double.parse` 把字符串转换为 double：
 
 {% prettify dart %}
 print(double.parse('3.14')); // 3.14
 {% endprettify %}
 
-The method accepts exponential notation:
+该函数支持指数表达形式：
 
 {% prettify dart %}
 print(double.parse('3.14e5')); // 314000.0
 {% endprettify %}
 
-Both `int.parse` and `double.parse` throw a FormatException if they are passed
-invalid arguments.
+如果字符串不可解析为数字，则 `int.parse` 和 `double.parse` 都会抛出一个 FormatException 。
 
 
 ### 把数字转换为字符串
 
 #### 面对的问题
 
-You want to convert a number to a string.
+你想把数字转化为字符串。
 
 #### 解决的方式
 
-Use `toString()` for a no-frills number to string conversion:
+用 `toString()` 把数字转换为对应的字符串：
 
 {% prettify dart %}
 1234.toString();   // '1234'
 3.1519.toString(); // '3.1519'
 {% endprettify %}
 
-To specify the number of signficant digits, use the `toStringAsPrecision()`
-method: 
+如果要指定数字的位数，则用 `toStringAsPrecision()`
+函数：
 
 {% prettify dart %}
 1234.toStringAsPrecision(5);   // '1234.0'
 3.1519.toStringAsPrecision(8); // '3.1519000'
 {% endprettify %}
 
-To specify the number of digits after the decimal, use `toStringAsFixed()`:
+如果要指定小数点后的位数，则用  `toStringAsFixed()`:
 
 {% prettify dart %}
 1234.toStringAsFixed(2);   // '1234.00'
 3.1519.toStringAsFixed(2); // '3.15'
 {% endprettify %}
 
-To convert the number to decimal exponential notation, use the
-`toStringAsExponential()` method: 
+要转换为指数表达方式，则用
+`toStringAsExponential()` 函数： 
 
 {% prettify dart %}
 1234.toStringAsExponential();   // '1.234e+3'
 {% endprettify %}
 
-You can specify the radix when converting an integer to a string:
+当把数字转换为字符串的时候还可以指定按照几进制来转换：
 
 {% prettify dart %}
 64.toRadixString(2);  // '1000000'
@@ -1283,13 +1282,12 @@ You can specify the radix when converting an integer to a string:
 
 ## JSON
 
-JSON (JavaScript Object Notation) is a text-based format for representing
-objects and collections. You can use the 'dart:json' library to decode JSON
-strings into Dart objects, and encode Dart objects into JSON strings.
+JSON (JavaScript Object Notation) 是用文本的方式来描述对象和集合。
+你可以用 'dart:json' 库中的类来解析和编码 JSON 对象。
 
-To use the examples in this chapter, you need to import the `dart:json`
-library. We prefer to declare our import of the libary in a manner that
-provides helpful namespacing for top level functions:
+本节的示例需要先导入 `dart:json` 才能运行。
+推荐用如下的方式来导入库，这样可以提供一个
+友好的命名空间来调用顶级方法：
 
 {% prettify dart %}
 import 'dart:json' as json;
@@ -1301,23 +1299,21 @@ void main() {
 }
 {% endprettify %}
 
-You can read the API documentation for the dart:json library at
-http://api.dartlang.org/docs/releases/latest/dart_json.html.
+关于 dart:json 的 API 文档请访问：http://api.dartlang.org/docs/releases/latest/dart_json.html.
 
 
 ### 编码为 JSON 格式
 
 #### 面对的问题
 
-You want to convert a Dart object into JSON.
+你想把 Dart 对象编码为 JSON 字符串。
 
 #### 解决的方式
 
-Use the `stringify()` function to encode a Dart object into a JSON-formatted
-string.
+用 `stringify()` 函数来把 Dart 对象编码为 JSON 格式字符串。
 
-The following Dart objects are automatically encoded into JSON by
-`stringify()`:
+下面的 Dart 对象通过
+`stringify()` 可以自动编码为 JSON 字符串：
 
 * int
 * double
@@ -1341,10 +1337,10 @@ void main() {
 }
 {% endprettify %}
 
-Note that `stringify()` encodes List and Map objects recursively.
+注意 `stringify()` 函数通过递归的方式来编码  List 和 Map 对象。
 
-If an object of a type not in the list above is passed to `stringify()` as an
-argument, `stringify()` calls that object's `toJson()` method:
+如果 `stringify()` 的参数不是上面的对象，则 `stringify()` 会调用该对象的
+`toJson()` 函数：
 
 {% prettify dart %}
 import 'dart:json' as json;
@@ -1363,8 +1359,8 @@ void main() {
 }
 {% endprettify %}
 
-If the `toJson()` method is not defined on an object that `stringify()`
-doesn't know how to handle, `stringify()` throws an exception:
+如果该对象也没有定义 `toJson()` 函数，则
+`stringify()` 抛出一个异常：
 
 {% prettify dart %}
 import 'dart:json' as json;
@@ -1382,10 +1378,11 @@ void main() {
 }
 {% endprettify %}
 
-It is possible that `stringify()` calls `toJson()` on several objects in your
-code, and throws an exception if any one of those objects lacks a `toJson()`.
-Use `JsonUnsupportedObjectError`'s `cause` property to see which
-object triggered the exception:
+有可能 `stringify()` 调用了很多个对象的 `toJson()` 函数，
+但是其中有一个没有实现
+`toJson()` 函数；则可以用
+ `JsonUnsupportedObjectError`的 `cause` 成员变量来查看是
+ 谁触发了该异常：
 
 {% prettify dart %}
 void main() {
@@ -1406,11 +1403,11 @@ void main() {
 
 #### 面对的问题
 
-You want to convert a JSON string into a Dart object.
+你想把 JSON 字符串转换为 Dart 对象。
 
 #### 解决的方式
 
-Use `parse()` to decode a JSON-encoded string into a Dart object:
+用 `parse()` 函数把 JSON 字符串转换为 Dart 对象：
 
 {% prettify dart %}
 import 'dart:json' as json;
@@ -1426,13 +1423,12 @@ void main() {
 }
 {% endprettify %}
 
-Sometimes you want to transform the data parsed by `parse`. For
-example, you may prefer to express a date field as a DateTime object, and not
-as a list of numbers representing the year, month and day. Specify a 'reviver'
-function as a second argument to `parse`. 
+有时候你可能需要转换 `parse` 解析的内容。例如，
+你可能用一个 DateTime 对象来代表日期，而不是用一个年月日的数字 list 来表达。
+用 'reviver' 方法作为 `parse` 的第二个参数可以实现转换功能。
 
-This function is called once for each object or list property parsed, and the 
-return value of the reviver function is used instead of the parsed value:
+该方法会在每个解析的对象或者 list 属性上执行，并使用 reviver 方法返回的值
+替代原来的值：
 
 {% prettify dart %}
 import 'dart:json' as json;
@@ -1455,7 +1451,7 @@ void main() {
 
 ## URIs
 
-Note: all examples require that you load 'dart:uri':
+注意 本节所有的示例代码都需要导入 'dart:uri'：
 
 {% prettify dart %}
 import 'dart:uri';
@@ -1465,15 +1461,15 @@ import 'dart:uri';
 ### 编码和解码完整的 URI
 
 
-Use `encodeUri()` to encode a fully qualified URI:
+用 `encodeUri()` 来编码一个完整的 URI：
 
 {% prettify dart %}
 encodeUri('http://www.example.com/file with spaces.html')
 // 'http://www.example.com/file+with+spaces.html'
 {% endprettify %}
 
-Characters that have special meaning in the URI (such as #;,/?:@&=$) are not
-escaped:
+在  URI 中具有特殊作用的字符 (例如 #;,/?:@&=$) 不会
+被转义：
 
 {% prettify dart %}
 encodeUri('http://example.com/?x=10&y=20#last');
@@ -1482,8 +1478,8 @@ encodeUri('http://example.com/?x=10&y=20#last');
 encodeUri('mailto:bob@example.com'); // 'mailto:bob@example.com'
 {% endprettify %}
 
-Call `encodeUriComponent()` to encode any user-provided parameters that are
-passed to the server as part of a URI:
+用 `encodeUriComponent()` 来编码任何用户提交需要作为 URI 的一部分提交到
+服务器的数据：
 
 {% prettify dart %}
 var params = encodeUriComponent('?param1=10&param2=20');
@@ -1493,15 +1489,15 @@ encodeUri('http://www.example.com/') + params;
 // 'http://www.example.com/%3Fparam1%3D10%26param2%3D20'));
 {% endprettify %}
 
-Don't call `encodeUriComponent()` on the complete URI. It escapes characters
-like : and / and renders the URI unusable:
+注意：不要在完整的 URI 上调用 `encodeUriComponent()` 。
+这样会导致 URI 中的特殊字符被转义：
 
 {% prettify dart %}
 encodeUriComponent('http://www.example.com/'); 
 // 'http%3A%2F%2Fwww.example.com%2F'
 {% endprettify %}
 
-To decode a URI previously encoded using `encodeUri()`, use `decodeUri()`:
+用 `decodeUri()` 来解析之前用 `encodeUri()` 编码的 URI  ：
 
 {% prettify dart %}
 var uri = 'http://www.example.com/file with spaces.html';
@@ -1509,8 +1505,8 @@ var encodedUri = encodeUri(uri);
 decodeUri(encodedUri) == uri; // true
 {% endprettify %}
 
-To decode a URI component previously encoded using `encodeUriComponent()`, use
-`decodeUriComponent()`: 
+用 `decodeUriComponent()` 解析之前
+ `encodeUriComponent()` 编码过的 URI：
 
 {% prettify dart %}
 var params = encodeUriComponent('?param1=10&param2=20');
@@ -1523,12 +1519,12 @@ decodeUriComponent(encodedParams) == params; // true
 
 #### 面对的问题
 
-You want to access the parts of a URI.
+你想访问 URI 的部分内容。
 
 #### 解决的方式
 
-The properties of a URI created using the `Uri()` constructor can be directly
-accessed in the following manner: 
+用 `Uri()` 构造函数创建的 URI 对象可以直接访问如下
+成员变量：
 
 {% prettify dart %}
 var uri = new Uri('http://example.org:8080/content/a.html#intro');
@@ -1541,7 +1537,7 @@ uri.path;       // '/content/a.html'
 uri.fragment;   // 'intro'
 {% endprettify %}
 
-Get the query parameters using the URI's `query` property:
+通过 URI 的  `query` 成员变量来获取 URI 的查询参数：
 
 {% prettify dart %}
 var params = 'name=john&age=32';
@@ -1549,7 +1545,7 @@ var uri = new Uri('http://example.org/?name=john&age=32');
 uri.query; // 'name=john&age=32'
 {% endprettify %}
 
-For http/https schemes, you can access the `origin` property:
+对于 http/https 协议，可以通过 `origin` 来查询主机信息：
 
 {% prettify dart %}
 var uri = new Uri('http://example.org:8080/content/a.html#intro');
@@ -1558,23 +1554,21 @@ uri.origin;     // 'http://example.org:8080'
 
 #### 延伸讨论
 
-The Uri class treats all URs that do not explicitly begin with a scheme as
-relative:
+所有不是以 URI 协议开头的 URL ， Uri 类都认为是相对的：
 
 {% prettify dart %}
 new Uri('//example.org:8080/content/').isAbsolute; // false
 new Uri('example.org:8080/content/').isAbsolute;   // false
 {% endprettify %}
 
-URIs that begin with a scheme, but that contain a fragment, are also considered
-relative:
+以协议开头但是同时包含片段的 URI 也被认为是相对的：
 
 {% prettify dart %}
 new Uri('http//example.org:8080/content/#intro').isAbsolute; // false
 {% endprettify %}
 
-The `scheme` and `domain` properties for  relative URIs are empty. Instead, a 
-relative URI starts with the path component:
+相对 URI 的 `scheme` 和 `domain` 是空的。
+而 相对 URI 是从一个路径开始的：
 
 {% prettify dart %}
 var uri = new Uri('example.org/content/a.html#intro');
@@ -1585,7 +1579,7 @@ uri.domain;     // ''
 uri.path;       // 'example.org/content/a.html'
 {% endprettify %}
 
-Accessing the `origin` property of a relative URI throws an exception:
+访问相对 URI 的 `origin` 成员变量会抛出一个异常：
 
 {% prettify dart %}
 var uri = new Uri('example.org/content/a.html#intro');
@@ -1603,12 +1597,11 @@ try {
 
 #### 面对的问题
 
-You want to build URIs from individual parts.
+你想从各个组成部门创建一个 URI。
 
 #### 解决的方式
 
-Use the `Uri.fromComponents()` constructor to build up a URI from individual
-parts:
+用 `Uri.fromComponents()` 构造函数从各个组成部分创建 URI：
 
 {% prettify dart %}
 var uri = new Uri.fromComponents(
@@ -1621,8 +1614,8 @@ uri.isAbsolute;        // true
 print(uri.toString()); // 'http://example.org/content/a.html?name=john'
 {% endprettify %}
 
-If you do not pass in the scheme as an argument, `Uri.fromComponents()` creates
-a relative URI, and prefixes the URI with leading '//`:
+如果没有提供协议参数，则 `Uri.fromComponents()` 
+创建一个相对 URI，并用 '//` 作为 URI 的起始字符：
 
 {% prettify dart %}
 var uri = new Uri.fromComponents(domain: '/content/a.html');
@@ -1631,7 +1624,7 @@ uri.isAbsolute;       // false
 print(uri.toString(); // '//content/a.html'
 {% endprettify %}
 
-You should remove the leading '//' before using the URI.
+在使用该 URI 之前需要先删除 '//' 字符。
 
 
 ## 测试
@@ -1640,21 +1633,20 @@ You should remove the leading '//' before using the URI.
 
 #### 面对的问题
 
-You want to run just a single test.  Maybe it is the test you are
-currently working on and want to make that pass before running all your tests.
-Or, perhaps it is a failing test that you want to explore in the debugger,
-without dealing with the noise from other tests. 
+你想只是运行一个单一的测试。可能是当前你正在编码的一个测试，你想让该测试
+通过后再运行所有的测试。
+或者，该测试是一个你想在调试器中调试的失败测试，只运行该测试可以避免其他测试的干扰。
 
 #### 解决的方式
 
-To isolate a test, change `test()` to `solo_test()`.
+要隔离一个测试，把  `test()` 修改为 `solo_test()` 即可。
 
 {% prettify dart %}
 test('if y == 0', ()  => expect(() => ...));
 solo_test('if y != 0', () => expect(() => ...));
 {% endprettify %}
 
-Only the `solo_test()` will run:
+只有 `solo_test()` 会执行：
 
 {% prettify dart %}
 unittest-suite-wait-for-done
@@ -1664,14 +1656,14 @@ All 1 tests passed.
 unittest-suite-success
 {% endprettify %}
 
-Do not have multiple `solo_test()`s:
+注意，不要使用多个  `solo_test()` ：
 
 {% prettify dart %}
 solo_test('if y == 0', () => expect(() => ...));
 solo_test('if y != 0', () => expect(() => ...));
 {% endprettify %}
 
-This raises an exception, and only the first `solo_test()` runs:
+上面的代码会抛出异常，并且只有第一个  `solo_test()` 被执行：
 
 {% prettify dart %}
 unittest-suite-wait-for-done
@@ -1687,21 +1679,17 @@ unittest-suite-success
 
 #### 面对的问题
 
-You want to run just a subset of all your tests. Maybe you've divided up your
-tests into `group()`s and want to run the tests for one or more group. Or
-perhaps you carefully placed certain keywords in your test descriptions, and
-want to run only tests whose desciption contains a specific keyword.
+你想只运行一部分测试。可能你用 `group()`来把你的测试给分组了，并需要执行一组或者机组测试。
+或者，你在测试中设置有关键字，并且只想运行带有某些关键字的测试。
 
 #### 解决的方式
 
-Use the `filterTests()` function provided by the Unittest library. This
-function takes a String or RegExp argument and matches it against each test
-description.  If the description matches, the test runs, otherwise, it doesn’t.
+用 Unittest 库提供的  `filterTests()` 方法。
+该方法的参数为一个字符串或者一个 RegExp，每个测试描述符合该参数才会执行。
 
-By default, the Unittest library is configured to run _all_ tests called
-within `main()`. You want to override this behavior. Subclass the default
-Configuration class to create a custom configuration, and disable the
-auto-running of all tests:
+Unittest 默认配置运行 `main()` 中的所有测试。
+你需要修改该默认行为。 继承 Configuration 类来提供一个自定义的配置并禁用
+自动运行所有测试的行为：
 
 {% prettify dart %}
 class CustomConfiguration extends Configuration {
@@ -1709,9 +1697,9 @@ class CustomConfiguration extends Configuration {
 }
 {% endprettify %}
 
-Then, after telling the test runner to use the new configuration, you can
-define groups and tests, call `filteredTests()`, and run your tests using
-`runTests()`:
+在告诉测试执行者新的配置后，可以定义你的测试并通过
+`filteredTests()` 来过滤测试，
+用 `runTests()` 来运行你的测试：
 
 {% prettify dart %}
 void main() {
@@ -1724,15 +1712,15 @@ void main() {
 }
 {% endprettify %}
 
-A complete example that uses `filterTests()` is shown below. You can run the
-code from the command line, adding a keyword argument that is then passed on
-to `filterTests()`: 
+下面有一个完整使用 `filterTests()` 的示例。
+你可以在命令行中运行该示例，命令行输入的命令将作为
+ `filterTests()` 的参数： 
 
 {% prettify dart %}
 $ dart filter_tests.dart <keyword>
 {% endprettify %}
 
-Here is the code:
+下面是代码：
 
 {% prettify dart %}
 import 'package:unittest/unittest.dart';
@@ -1769,13 +1757,13 @@ void main() {
 }
 {% endprettify %}
 
-Run the tests with 'crucial' as an argument:
+用 'crucial' 作为参数来运行：
 
 {% prettify dart %}
 $ dart filter_tests.dart crucial
 {% endprettify %}
 
-Only tests with 'crucial' in the description run:
+只有测试描述中包含 'crucial' 的测试被执行：
 
 {% prettify dart %}
 unittest-suite-wait-for-done
@@ -1786,13 +1774,13 @@ All 2 tests passed.
 unittest-suite-success
 {% endprettify %}
 
-Run the tests with 'case' as an argument: 
+用  'case' 参数运行：
 
 {% prettify dart %}
 $ dart filter_tests.dart case
 {% endprettify %}
 
-Only tests within the 'case change' group run:
+只有位于 'case change' 组中的测试被执行：
 
 {% prettify dart %}
 unittest-suite-wait-for-done
@@ -1803,23 +1791,22 @@ All 2 tests passed.
 unittest-suite-success
 {% endprettify %}
 
-The keyword argument is optional. If you omit it, all tests in the file run.
+关键字参数是可选的，如果没有提供，则运行所有测试。
 
 
 ### 在测试前后运行代码
 
 #### 面对的问题
 
-You want initialization code to run before each test, and cleanup code to run
-after each test, but want to avoid code duplication.
+你想在每个测试运行之前初始化一些数据，在测试运行后清理现场，并且
+避免重复的代码。
 
 #### 解决的方式
 
-Within each `group()`, call `setUp()` for initialization and `tearDown()` for
-cleanup. The function passed as an argument to `setUp()` runs before each
-test, and that passed to `tearDown()` runs after each test.
+在每个 `group()` 中，用 `setUp()` 来执行初始化任务；用 `tearDown()` 来执行清理任务。
+ `setUp()` 的参数在每个测试运行之前运行，`tearDown()` 的参数在每个测试运行之后运行。
 
-##### setUp() example
+##### setUp() example（示例）
 
 Assume you have defined a Point class that contains several methods. You want
 to test each method, and need a Point object in each test. Place the Point
@@ -1840,7 +1827,7 @@ void main() {
 }
 {% endprettify %}
 
-##### setUp() and tearDown() example
+##### setUp() and tearDown() example（示例）
 
 Tests that create files and directories need to clean up after themselves.
 Here is a function that creates a file inside a given directory: 
