@@ -56,7 +56,7 @@ has-permalinks: true
 1. [HTML DOM](#html-dom)
     1. [用 CSS 选择器查找 DOM 元素](#using-css-selectors-to-find-dom-elements)
     1. [在一个限定的范围内使用 CSS 选择器](#using-css-selectors-within-a-limited-scope)
-    1. [从一个特定的元素来便利 DOM](#traversing-the-dom-starting-from-a-particular-element)
+    1. [从一个特定的元素来遍历 DOM](#traversing-the-dom-starting-from-a-particular-element)
     1. [创建 DOM 元素](#creating-dom-elements)
     1. [在 DOM 元素中添加一个子元素](#inserting-child-elements-inside-an-existing-dom-element)
     1. [在 DOM 元素前后插入子元素](#inserting-elements-before-or-after-an-existing-dom-element)
@@ -1808,10 +1808,10 @@ unittest-suite-success
 
 ##### setUp() example（示例）
 
-Assume you have defined a Point class that contains several methods. You want
-to test each method, and need a Point object in each test. Place the Point
-initialization code inside `setUp()`, and the Point object becomes available in
-each test:
+假设你定义了一个包含几个函数的 Point 类。
+你想测试该类的每个函数，并且在每个测试中都需要一个函数。
+把 Point 类的初始化函数放到 `setUp()` 中，然后在每个测试中就
+可以用 Point 对象了：
 
 {% prettify dart %}
 void main() {
@@ -1829,8 +1829,8 @@ void main() {
 
 ##### setUp() and tearDown() example（示例）
 
-Tests that create files and directories need to clean up after themselves.
-Here is a function that creates a file inside a given directory: 
+在测试完成后，需要把测试生成的文件以及文件夹都删除掉。
+下面是在一个文件夹中创建文件的方法：
 
 {% prettify dart %}
 // Writes a file in 'dir' directory.
@@ -1839,8 +1839,8 @@ Path writeFileToDirectory(dir) {
 }
 {% endprettify %}
 
-The code to create the directory goes in `setUp()`. The code to remove the
-directory and its contents goes in `tearDown()`:
+下面的代码在 `setUp()` 中创建目录。在
+`tearDown()` 中删除目录中的文件和目录：
 
 {% prettify dart %}
 void main() {
@@ -1863,9 +1863,8 @@ void main() {
 }
 {% endprettify %}
 
-The code inside `tearDown()` runs regardless of whether `setUp()` sets up a
-resource successfully or not, and regardless of whether a test passes or
-fails. If there is an error inside a test, code within `tearDown()` still runs:
+不管 `setUp()` 中的代码是否执行成功，也不管测试是否成功， `tearDown()` 中的
+代码都会执行。如果在测试中有个测试失败了， `tearDown()` 依然执行：
 
 {% prettify dart %}
 group('tearDown behavior when', () {
@@ -1890,7 +1889,7 @@ group('tearDown behavior when', () {
 });
 {% endprettify %}
 
-Here is the (truncated) test run output:
+下面是测试的输出结果：
 
 {% prettify dart %}
 unittest-suite-wait-for-done
@@ -1909,8 +1908,8 @@ Stack Trace:
 
 ##### setUp() and tearDown() in nested group()s
 
-The `setUp()` and `tearDown()` functions reset with the start of a new `group()`.
-This applies to nested `group()`s, which do not inherit these functions:
+在新的 `group()` 中，`setUp()` 和 `tearDown()` 方法会被重置。
+即使在嵌套的 `group()` 中，里面的 `group()` 也无法访问外面 `group()` 的 `setUp()` 代码：
 
 {% prettify dart %}
 group('test Point with nested setUp()', () {
@@ -1927,38 +1926,36 @@ group('test Point with nested setUp()', () {
 });
 {% endprettify %}
 
-You can fix this 面对的问题 by assigning each nested `group()` its own `setUp()`
-and `tearDown()`.
+可以在每个 `group()` 中都设置一个
+`setUp()` 和 `tearDown()` 来解决该问题。
 
 
 ### 测试同步异常
 
 #### 面对的问题
 
-You want to test exceptions in your code. You want to know if some code returns
-normally, or if it throws. Or, you want to test that a specific error is raised,
-and that the error message is correct. 
+如果你想测试代码中的异常。你想知道你的代码是否正确的返回了，还是抛出异常了。或者你想测试函数抛出
+的特定异常信息。
 
 #### 解决的方式
 
-The Matcher library, bundled together with the Unittest package, provides
-several handy assertion shortcuts that you can use in your tests. 
+在 Unittest 包中的 Matcher 库提供了一些处理异常的方法。 
 
-To test whether code throws, use the `throws` matcher: 
+用 `throws` matcher（匹配器）来测试异常： 
 
 {% prettify dart %}
 expect(() => 10 ~/ 0, throws);
 {% endprettify %}
 
-To test that code runs without generating an exception, use the
-`returnsNormally` matcher:
+用 `returnsNormally` matcher 来测试代码
+正常执行而无异常：
 
 {% prettify dart %}
 expect(() => 10 ~/ 1, returnsNormally);
 {% endprettify %}
 
-The Unittest library provides matchers for commonly occuring exceptions and
-errors:
+Unittest 库提供了处理常见异常和错误
+的 matcher：
 
 {% prettify dart %}
 throwsException
@@ -1971,41 +1968,41 @@ throwsStateError
 throwsUnsupportedError
 {% endprettify %}
 
-You can use one of these matchers to test the type of the error thrown by your
-code:
+你可以用这些 matcher 来测试你代码中
+抛出的异常：
 
 {% prettify dart %}
 expect(() => throw new StateError('functions called in the wrong order'), 
     throwsStateError);
 {% endprettify %}
 
-You can also use the `throwsA()` and `predicate()` functions for more granular
-测试 of exceptions.
+还可以用 `throwsA()` 和 `predicate()`方法来详细的控制异常
+信息。
 
-The `predicate()` function returns a Matcher based on an assertion about the
-error object:
+`predicate()` 根据提供的参数返回一个匹配
+特定异常或者错误的 Matcher：
 
 {% prettify dart %}
 Matcher isIntegerDivisionByZeroException =
   predicate((e) => e is IntegerDivisionByZeroException);
 {% endprettify %}
 
-The `throwsA()` function takes the Matcher returned by `predicate()` and
-matches the exception thrown by the code under test against it:
+`throwsA()` 方法用 `predicate()` 返回的 Matcher 
+来判断测试代码是否抛出匹配的异常：
 
 {% prettify dart %}
 expect(() => 10 ~/ 0, throwsA(isIntegerDivisionByZeroException));
 {% endprettify %}
 
-You can test the error message using a combination of `throwsA()` and
-`predicate()`:
+通过组合 `throwsA()` 和 `predicate()` 你可以测试
+错误信息：
 
 {% prettify dart %}
 expect(() => throw new ArgumentError('bad argument'), 
   throwsA(predicate((e) => e.message == 'bad argument')));
 {% endprettify %}
 
-You can also test the error type and the error message together:
+还可以同时测试错误类型和错误消息：
 
 {% prettify dart %}
 expect(() => throw new RangeError('out of range'), 
@@ -2017,20 +2014,20 @@ expect(() => throw new RangeError('out of range'),
 
 #### 面对的问题
 
-Arithmetic involving doubles is inexact. You want to compare two doubles to
-determine if they are acceptably close.
+在数学中关于 double 类型是不精确的。你想比较两个 double 来看看
+他们是否相等。
 
 #### 解决的方式 
 
-Use the `closeTo()` matcher for 测试 approximate numerical equality:
+用 `closeTo()` matcher 来测试数字近似相等：
 
 {% prettify dart %}
 closeTo(value, delta)
 {% endprettify %}
 
-This matcher checks if the number under test is within delta of some value.
+该测试会检查测试的数字是否误差在一个变量范围 内。
 
-Consider this code that computes the distance between two points: 
+例如，下面两个测试两点之间距离的代码：
 
 {% prettify dart %}
 Point point1 = new Point(-2, -3);
@@ -2039,7 +2036,7 @@ Point point2 = new Point(-4, 4);
 print(point1.distanceTo(point2)); // 7.280109889280518.  
 {% endprettify %}
 
-Here's how you can test for approximate equality:
+下面是测试近似相等的方法：
 
 {% prettify dart %}
 expect(point1.distanceTo(point2)), closeTo(7.28, .001)); 
@@ -2051,19 +2048,19 @@ expect(point1.distanceTo(point2)), closeTo(7.28, .001));
 
 #### 面对的问题
 
-You want to find DOM elements on a web page.
+你想查找页面中的 DOM 元素。
 
 #### 解决的方式
 
-Use the top-level `query()` and `queryAll()` functions provided by the
-`dart:html` library. Both functions take CSS selectors as arguments. The
-`query()` function returns the first matching element, and the `queryAll()`
-function returns all matching elements.
+用 `dart:html` 库的顶级方法 `query()` 和 `queryAll()`。
+两个方法都支持 CSS 选择器参数。
+`query()` 方法返回第一个匹配的元素，
+`queryAll()` 返回所有匹配的元素。
 
-#### Example
+#### Example（示例）
 
-Here are a few examples of the using `query()` and `queryAll()` with CSS
-selectors to find DOM elements:
+下面是一些  `query()` 和 `queryAll()` 的示例代码，用
+CSS 选择器来查找 DOM 元素：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2087,24 +2084,24 @@ selectors to find DOM elements:
       
       void main() {
     
-        // Find by ID.
+        // 通过 ID 查找
         Element element = query('#first');
         print(element.id);                 // 'first'
         print(element.text);               // 'Milk'
         
-        // Find by class.
+        // 通过 class 查找
         List<Element> elements = queryAll('.must-have');
         print(elements.length);            // 2
         
-        // Find by ID or class.
+        // 通过  ID 或者 class 查找
         elements = queryAll('#first, .must-have');
         print(elements.length);            // 2
         
-        // Find by tag.
+        // 通过  tag 查找
         elements = queryAll('li');
         print(elements.length);            // 5
         
-        // Use hierarchical selectors.
+        // 用继承选择器
         elements = queryAll('li > ul > li');
         print(elements.first.text);        // 'Bran Flakes'
         
@@ -2112,7 +2109,7 @@ selectors to find DOM elements:
         element = query('li:nth-child(1)');
         print(element.text);               // 'Milk'
         
-        // Find by attribute.
+        // 通过 attribute 查找
         elements = queryAll('[href *= Nut]');
         print(elements.length);            // 1
       
@@ -2123,12 +2120,12 @@ selectors to find DOM elements:
 </html>
 {% endprettify %}
 
-For a comprehensive list of selectors that you can use for querying, see
-http://www.w3.org/TR/css3-selectors/[The CSS Selector Specification guide].
+所有可用的 CSS 选择器请参考：
+http://www.w3.org/TR/css3-selectors/[CSS 选择器规范指南]。
 
 #### 延伸讨论
 
-Calling `queryAll()` returns a list of DOM elements:
+方法 `queryAll()` 返回一个 DOM 元素的 list：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2154,8 +2151,8 @@ Calling `queryAll()` returns a list of DOM elements:
 </html>
 {% endprettify %}
 
-Use the `[]` operator to access individual elements. You can also use the
-`first` and `last` getters:
+用 `[]` 操作符访问每个元素。
+还可以用 `first` 和 `last` getters:
 
 {% prettify dart %}
 print(elements[2].text);    // 'Reddit'
@@ -2163,8 +2160,7 @@ print(elements.first.text); // 'Google'
 print(elements.last.text);  // 'Github'
 {% endprettify %}
 
-You can iterate over the list, map list elements to a new list, and filter list
-contents:
+可以遍历该 list，并把该 list 内容映射为一个新的 list，并过滤里面的内容：
 
 {% prettify dart %}
 for (var element in elements) {
@@ -2178,7 +2174,7 @@ sites = elements.where((site) => site.text.length != 6);
 print(sites.first.text); // "StackOverflow"
 {% endprettify %}
 
-You can slice the list to obtain a sublist:
+还可以获取 list 的子列表：
         
 {% prettify dart %}
 var sublist = elements.sublist(1, 3); // Get the elements at positions 1 and 2.
@@ -2186,38 +2182,36 @@ print(sublist.first.text);            // 'StackOverflow'
 print(sublist.last.text);             // 'Reddit'
 {% endprettify %}
 
-Since the list returned by `queryAll()` is read only, you cannot add, modify,
-or remove list elements. Attempting to change the list in any way generates an
-error:
+由于 `queryAll()` 方法返回的 lsit 为只读的，你无法在里面添加、修改或者删除元素。
+通过任何方式修改里面的元素都会导致错误:
 
 {% prettify dart %}
 elements.length = 2; // Error message: 'Cannot resize immutable List.'
 {% endprettify %}
 
-Other recipes in this chapter show how you can create elements and insert them
-into the DOM, and how to modify existing DOM elements.
+该书中其他妙方将介绍如何创建和在 DOM 中插入元素，
+以及如何修改已有的 DOM 元素。
 
 
 ### 在一个限定的范围内使用 CSS 选择器
 
 #### 面对的问题
 
-You want to find elements that are contained by a particular element.
+你想查找特定元素内的元素。
 
 #### 解决的方式
 
-Call the `query()` or `queryAll()` methods on a DOM element. Invoking one of
-these methods on an element restricts the scope of the query to that
-element's descendants:
+在一个 DOM 元素上调用 `query()` 或者 `queryAll()`。
+在 DOM 元素上调用这些函数，将查找返回限制为该元素的子元素中：
 
 {% prettify dart %}
 containerElement.query(cssSelector);
 containerElement.queryAll(cssSelector);
 {% endprettify %}
 
-#### Examples
+#### Examples（示例）
 
-Consider the following table of user records:
+例如，如下示例中：
 
 {% prettify dart %}
 <table>
@@ -2228,8 +2222,8 @@ Consider the following table of user records:
 </table>
 {% endprettify %}
 
-The following code attaches an event handler to each <tr>. When a <tr> is
-clicked, the text within the matching descendant <td> toggles:
+下面的代码在每个 <tr> 上注册一个事件处理函数。 当点击 <tr> 的时候，
+查找该元素内的 <td> 元素并修改其内容：
 
 {% prettify dart %}
 queryAll('tr').forEach((element) {
@@ -2240,26 +2234,25 @@ queryAll('tr').forEach((element) {
 });
 {% endprettify %}
 
-Because the query is scoped to the just-clicked row, cells with the 'status'
-class in other rows are not affected.
+上面的代码在点击的元素上调用函数 query ， 参数为 'status' 类。
+所以其他非点击的行不受影响。
 
-Note the use of `queryAll()` as a top-level function in the code above. Used
-in this manner, `queryAll()` is scoped to the entire document.
+同时，注意上面的示例代码中用 `queryAll()` 来查找文档中的所有匹配的
+元素。
 
 
-### 从一个特定的元素来便利 DOM
+### 从一个特定的元素来遍历 DOM
 
 #### 面对的问题
 
-You have a reference to a DOM element and want to locate its ancestor,
-sibling, and descendant elements within the DOM structure.
+你手上有一个 DOM 元素，你想查找该元素的 父节点、兄弟节点和子节点。
 
 #### 解决的方式
 
-The dart:html API provides methods for DOM traversal based on your current
-position in the DOM.
+dart:html API 提供了用来从一个 DOM 元素遍历
+其他元素的方法。
 
-Consider the example below:
+如下示例中：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2287,32 +2280,32 @@ Consider the example below:
 
 {% endprettify %}
 
-Using the top level `query()` function, you obtain a reference to an <li>
-element. This is your starting point within the DOM structure.
+用  `query()` 方法可以获取一个
+<li> 元素。该元素是访问其他元素的起点。
 
-Use the `nextElementSibling` and `previousElementSibling` properties to locate
-an element's immediate siblings:
+用 `nextElementSibling` 和 `previousElementSibling` 来访问该元素
+紧邻的兄弟元素：
 
 {% prettify dart %}
 print(knees.nextElementSibling.text);     // 'Toes'
 print(knees.previousElementSibling.text); // 'Shoulders'
 {% endprettify %}
         
-Use the `parent` property to locate an element's immediate ancestor:
+用 `parent` 来访问该元素的直接父节点：
 
 {% prettify dart %}
 print(knees.parent.tagName);              // 'OL'
 print(knees.parent.parent.tagName);       // 'BODY'
 {% endprettify %}
 
-Use the `children` property to locate an element's immediate descendants:
+用 `children` 来访问该元素的直接子节点：
 
 {% prettify dart %}
 print(knees.parent.children.length);      // 4
 {% endprettify %}
 
-Invoking the `children` property on an element returns a list, and you can
-define functions to filter that list:
+一个元素的 `children` 是一个 list，你可以定义一个方法
+来过滤该 list：
 
 {% prettify dart %}
 List<Element> previousSiblings(item) {
@@ -2327,7 +2320,7 @@ List<Element> nextSiblings(item) {
 }
 {% endprettify %}
 
-The `knees` element has two previous siblings, and a single next sibling:
+ `knees` 元素前面有两个兄弟元素，后面有一个兄弟元素：
 
 {% prettify dart %}
 List<Element> previousSiblings = previousSiblings(knees);
@@ -2342,20 +2335,20 @@ print(nextSiblings(knees).first.text); // 'Toes'
 
 #### 面对的问题
 
-You want to create new DOM elements.
+你想创建一个新的 DOM 元素。
 
 #### 解决的方式
 
-The dart:html library provides several ways to create new DOM elements.
+dart:html 库提供了几个创建 DOM 元素的方法。
 
-You can use constructors provided by specialized element classes:
+你可以用特定元素的构造函数来创建：
 
 {% prettify dart %}
 var item = new LIElement();
 {% endprettify %}
 
-These classes inherit from Element. Here are a few examples of specialized
-properties that these classes provide:
+这些类继承 Element 类。
+下面的一些示例演示了这些类提供的属性：
 
 {% prettify dart %}
 var anchor = new AnchorElement();
@@ -2372,61 +2365,59 @@ form.method = 'PUT';
 print(form.outerHtml); // '<form method="PUT"></form>'
 {% endprettify %}
 
-You can also use constructors provided by the Element class.
+还可以用 Element 类的构造函数。
 
-Use the `Element.tag()` constructor to create an element with a specified tag:
+用 `Element.tag()` 构造函数来创建一个特殊 tag 的元素：
 
 {% prettify dart %}
 LIElement item = new Element.tag('li');
 print(item.tagName); // 'LI'
 {% endprettify %}
         
-You can then assign content to the element using the element's text property:
+然后可以用该元素的 text 属性来设置文本：
 
 {% prettify dart %}
 item.text = 'learn Dart';
 print(item.outerHtml); //  '<li>learn Dart</li>'
 {% endprettify %}
 
-An invalid HTML tag passed to `Element.tag()` creates an UnknownElement object:
+如果 `Element.tag()` 的参数为非法的 tag 名字，则会创建一个 UnknownElement 对象:
 
 {% prettify dart %}
 var newElement = new Element.tag('bogusTag');
 print(newElement is UnknownElement); // true
 {% endprettify %}
 
-You can use the 'isTagSupported' static method provided by the Element class
-to test whether a tag is valid:
+可以用 Element 类的静态函数 'isTagSupported' 来测试 tag 是否
+是合法的：
 
 {% prettify dart %}
 print(Element.isTagSupported('bogusTag')); // false
 {% endprettify %}
-        
-Another way of creating elements is through the use of the `Element.html()`
-constructor. This constuctor takes a String argument representing a valid HTML
-fragment:
+
+还可以用 `Element.html()` 构造函数来创建元素。
+该函数的参数为一个合法的 HTML 片段：        
 
 {% prettify dart %}
 DivElement div = new Element.html('<div>I love Strawberries.</div>');
 {% endprettify %}
 
-Note that creating an element does not insert it into the DOM. Other recipes
-in this chapter discuss different ways in which you can add elements to the DOM.
+注意：创建的元素并没有插入到 DOM 中。
+该书的其他妙方介绍如何把元素插入到 DOM 树中。
 
 
 ### 在 DOM 元素中添加一个子元素
 
 #### 面对的问题
 
-You want to insert one or more elements inside an existing DOM element.
+你想在存在的 DOM 中掺入元素。
 
 #### 解决的方式
 
-Get the list of the DOM element's children, and add new child elements to that
-list.                                                                            
+获取 DOM 元素的子节点并在里面添加元素。
 
-Consider this sparse web page with an empty <ul>. You want to use Dart code to 
-dynamically add <li> elements to the <ul>:
+例如下面包含一个空的 <ul> 的网页。你想用 Dart 代码
+动态的往 <ul> 中插入 <li> 子元素：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2441,8 +2432,7 @@ dynamically add <li> elements to the <ul>:
 </html>
 {% endprettify %}
 
-In the corresponding Dart file, begin by getting a reference to the parent
-element:
+在对应的 Dart 代码中， 先获取该 ul 元素：
 
 {% prettify dart %}
 import 'dart:html';
@@ -2453,7 +2443,7 @@ void main() {
 }
 {% endprettify %}
 
-Use `add()` to append a new element to the parent's children:
+用 `add()` 来在父节点的子节点中添加元素：
 
 {% prettify dart %}
 var li = new LIElement();
@@ -2463,15 +2453,14 @@ ul.children.add(li);
 print(ul.children.last.outerHtml); '<li>One banana</li>'
 {% endprettify %}
 
-The code for creating a new <li> and adding it to the <ul> can be more
-succinctly written using the cascade operator, and we will use this synax for
-subsequent examples:
+用级联操作符可以让上面的代码更加简洁，在下面的示例中我们将用
+级联操作符的方式来演示代码：
 
 {% prettify dart %}
 items.add(new LIElement()..text = 'Three banana');                                       
 {% endprettify %}
 
-Use `addAll()` to add several elements to the list:
+用 `addAll()` 可以一次添加多个元素：
 
 {% prettify dart %}
 List<LIElement> items = [];                                                      
@@ -2480,7 +2469,7 @@ items.add(new LIElement()..text = 'Four banana');
 ul.children.addAll(items);  
 {% endprettify %}
                 
-This is what the list looks like:
+现在该 list 看起来如下所示：
 
 {% prettify dart %}
 One banana
@@ -2488,14 +2477,13 @@ Three banana
 Four banana
 {% endprettify %}
 
-Looks like we skipped an item. Use `insert()` to place the missing item in the
-list:
+这里少了一个元素，我们可以用 `insert()` 来插入缺少的元素：
 
 {% prettify dart %}
 ul.children.insert(1, new LIElement()..text = 'Two banana');
 {% endprettify %}
 
-This adds the new <li>  after the second item. The list now looks like this:
+这样，在第二个元素后面插入一个新的 <li>。现在的列表内容如下：
 
 {% prettify dart %}
 One banana
@@ -2504,31 +2492,30 @@ Three banana
 Four banana
 {% endprettify %}
 
-You can use `insert()` to prepend to a list:
+也可以用 `insert()` 在最前面插入元素：
 
 {% prettify dart %}
 ul.children.insert(0, new LIElement()..text = 'Zero banana');
 print(ul.children.first.outerHtml == '<li>Zero banana</li>');
 {% endprettify %}
 
-The Element class defines a couple of helpful methods that provide additional
-ways of adding child elements to a parent element.
+Element 类还提供了一些辅助的方法来简化在父元素中添加元素的
+操作。
 
-Use `append()` to add a single element to a parent:
+用 `append()` 在父节点中添加一个元素：
 
 {% prettify dart %}
 ul.append(new LIElement()..text = 'Five banana');
 {% endprettify %}
 
-Or, you can use the `appendHtml()` method. This method parses the String
-argument passed to it as HTML and adds the resulting node as the last child of
-the parent:
+或则用 `appendHtml()` 元素。这个函数解析 HTML 参数内容并把解析
+到的元素添加到该元素的子节点中：
 
 {% prettify dart %}
 ul.appendHtml('<li>Six banana</li>');
 {% endprettify %}
 
-Here is the final version of the list:
+下面是该列表的最终内容：
 
 {% prettify dart %}
 Zero banana
@@ -2544,18 +2531,18 @@ Six banana
 
 #### 面对的问题
 
-You want to insert an element before or after another element.
+你想在一个元素前面或则后面插入元素
 
 #### 解决的方式
 
-Use an element's `insertAdjacentElement()` method to insert another element
-immediately before or immediately after it. Or, use the `insertBefore()` method.
-Examples of both are shown below.
+用元素的 `insertAdjacentElement()` 函数在元素前后添加元素。或则用
+ `insertBefore()` 函数。
+ 下面示例中演示了这两个函数。
 
-#### Examples
+#### Examples（示例）
 
-Consider this HTML file. You want to insert two new <li> elements into the <ul>,
-one before the <li> with the 'target' ID, and one after it:
+在如下示例 HTML 中，你想在 <ul> 中添加两个 <li>，
+一个在带有 ID 为 'target' 元素之前一个在其后面：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2575,9 +2562,8 @@ one before the <li> with the 'target' ID, and one after it:
 </html>
 {% endprettify %}
 
-In the accompanying Dart file, get a reference to the target <li>.  Then,
-invoke the `insertAdjacentElement()` method on that <li> to insert new
-elements next to it:
+在 Dart 代码中，先获取 target <li> 元素。 然后调用该元素的
+`insertAdjacentElement()` 函数来添加新的元素：
 
 {% prettify dart %}
 import 'dart:html';
@@ -2596,12 +2582,11 @@ void main() {
 
 {% endprettify %}
 
-The first argument to `insertAdjacentElement()` indicates where the new
-element is inserted. If it is 'beforeBegin', the new element is inserted
-immediately before the target element. If it is 'afterEnd', the new element is
-inserted immediately after the target element.
+`insertAdjacentElement()` 的第一个参数代表新元素插入的位置。
+如果是 'beforeBegin'，则新元素紧邻目标元素之前插入；如果是
+'afterEnd' 则新元素紧邻目标元素之后插入。
 
-The list looks like this after the new elements have been inserted:
+插入两个新元素后的列表如下：
 
 {% prettify dart %}
 First item
@@ -2611,8 +2596,8 @@ Added after target
 Last item
 {% endprettify %}
 
-You can also use the `insertBefore()` method to insert an element into the
-DOM. Call `insertBefore()` on the target element's parent node:
+也可以用 `insertBefore()` 函数来插入元素。
+在目标元素的父节点上调用 `insertBefore()` ：
 
 {% prettify dart %}
 import 'dart:html';
@@ -2636,13 +2621,13 @@ void main() {
 
 #### 面对的问题
 
-You want to duplicate a DOM element.
+你想复制一个 DOM 元素。
 
 #### 解决的方式
 
-Call the `clone()` method on the element.
+调用 Element 的 `clone()` 函数。
 
-Assume you have the following HTML, and want to clone the <ul>:
+在如下示例中，复制  <ul> 元素：
 
 {% prettify dart %}
 <ul>
@@ -2652,41 +2637,39 @@ Assume you have the following HTML, and want to clone the <ul>:
 </ul>
 {% endprettify %}
 
-First, obtain a reference to the original element:
+首先获取这个 ul 元素：
 
 {% prettify dart %}
 UListElement ul = query('ul');
 {% endprettify %}
 
-Then, call `clone()` with a boolean argument. This argument determines whether
-you create a deep or a shallow copy. 
+然后调用 `clone()` 函数，该函数参数为布尔值。
+该参数指定是深度克隆还是影子克隆（a deep or a shallow copy）。
 
-If the argument to `clone()` is `true`, a deep copy is created, and the entire
-subtree of the original node is cloned:
+如果 `clone()` 的参数为 `true`，则是深度克隆，目标节点的所有子节点都被克隆：
 
 {% prettify dart %}
 UListElement deepCopy = ul.clone(true);
 print(deepCopy.children.length); // 3
 {% endprettify %}
 
-If the argument to `clone()` is `false`, a shallow copy is created, and the
-original element's child nodes are not copied:
+如果 `clone()` 的参数为 `false`，则是影子克隆，
+则目标元素的子元素没有被克隆：
 
 {% prettify dart %}
 UListElement shallowCopy = ul.clone(false);
 print(shallowCopy.children.length); // 0
 {% endprettify %}
 
-Cloning a node copies all of the node's attributes, as well as the values of 
-those attributes.
+克隆一个节点则复制该节点的所有属性和值。
 
-Assume a page contains the following HTML:
+假设一个包含如下代码的网页：
 
 {% prettify dart %}
 <input type="text" name="username" maxlength="10">
 {% endprettify %}
 
-The clone of the \<input\> element contains the same attributes as the original:
+克隆的 \<input\> 元素包含同样的属性和值：
 
 {% prettify dart %}
 import 'dart:html';
@@ -2702,25 +2685,23 @@ void main() {
 {% endprettify %}
 
 
-#### Example
+#### Example（示例）
 
-We want to display to create a new page that displays some fun [Google
-Doodles](www.google.com/doodles), but don't want to load up all the images when
-the page loads. We provide a link that the user can click to see the logos.
+这里创建一个显示有趣的 [Google
+Doodles](www.google.com/doodles) 的网页，该页面在加载的时候
+并不载入所有的图片。当用户点击每个 doodles 的时候再载入图片。
 
-We use a \<template\> element to store the barebones structure for displaying each
-logo and the accompanying caption. The \<template\> element allows us to declare
-fragments of markup. These fragments are not rendered when the page loads, but
-they can be activated at runtime.
+用一个 \<template\> 元素来作为每个 doodles logo 和 文字的模板。
+\<template\> 可以定义标记片段作为模板。
 
-The \<template\> element is new and not supported by every modern browser. For
-an excellent introduction to this new element, see
+\<template\> 元素是新的标签，目前有些浏览器还不支持该元素。
+关于该新元素的介绍，请参考：
 [HTML's New Template Tag](http://www.html5rocks.com/en/tutorials/webcomponents/template/).
 
-The \<template\> in the HTML below contains \<img\>, <div> and <hr> tags. The
+在下面的 \<template\> 中包含 \<img\>、 <div> 和 <hr> 标签。
 \<img\>
-tag has no src and alt properties, and the <div> element contains no text. These
-tags are placeholders.
+标签没有 src 和 alt 属性，并且 <div> 元素也没有 文本。
+这些标签只是占位符。
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2742,9 +2723,8 @@ tags are placeholders.
 
 {% endprettify %}
 
-Once the user clicks the link to see the logos, we fill in the missing fields
-using hard-coded data. Then, we clone the template contents, and we insert them
-into the document:
+当用户点击链接查看 logo 的时候，我们用代码中的数据来填充缺少的标签内容。然后再克隆
+模板内容并插入到页面中：
 
 {% prettify dart %}
 import 'dart:html';
@@ -2784,21 +2764,21 @@ void main() {
 }
 {% endprettify %}
 
-We get the template contents using the template element's `content` property.
+用 template 的 `content` 属性来获取模板内容。
 
 {% prettify dart %}
 var content = document.query('#myTemplate').content;
 {% endprettify %}
 
-We get references to the \<img\> and <div> elements using scoped queries:
+在元素上查询 \<img\> 和 <div> 标签：
 
 {% prettify dart %}
 ImageElement img = content.query('img');
 DivElement div = content.query('div');
 {% endprettify %}
 
-Cloning the template contents activates the \<template\> element's inert HTML, and
-inserting it into the DOM makes the logos visible to the user:
+把克隆的 \<template\> 内容插入到网页中来更新网页内容，
+然后用户就可以看到图片了：
 
 {% prettify dart %}
 document.body.append(content.clone(true));
@@ -2809,19 +2789,18 @@ document.body.append(content.clone(true));
 
 #### 面对的问题
 
-You want to replace one or more DOM elements with other elements.
+你想用其他的元素来替换一个或者多个 DOM 元素。
 
 #### 解决的方式
 
-Call the `replaceWith()` method on a DOM element and pass to it the new
-element as an argument.
+调用 DOM 元素的  `replaceWith()` 函数，参数为替代的元素。
 
 #### Example
 
-The following example allows the user to edit a snippet of text. The text is
-displayed within a <span> element. A text \<input\> replaces the <span> when the
-user wants to edit the text. When the user is done editing, the <span> replaces
-the \<input\>:
+下面的示例用户可以编辑一小段文本。文本显示在 <span> 元素中。
+当用户点击文本的时候，就用 \<input\> 替代 <span> 来编辑内容。
+当用户编辑完后，再用 <span> 替代
+\<input\>:
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2870,18 +2849,18 @@ the \<input\>:
 
 #### 面对的问题
 
-You want to find an element and remove it from the DOM structure. 
+你想查找并删除 DOM 元素。
 
 #### 解决的方式
 
-Call the `remove()` method on the element. Doing so removes it from the DOM.
+调用元素的 `remove()` 函数即可从 DOM 中删除该元素。
 
 #### Example
 
-The following example shows a list of exotic fruits, some of which are out of
-stock.  The application allows the user to click a link to stop displaying the out
-of stock items. Clicking the link triggers a callback that removes the items from
-the DOM. Here is the HTML file:
+下面示例中显示一个水果列表，有些水果断货了。
+用户可以点击一个连接来隐藏断货的水果。
+点击连接会触发一个删除元素的回调函数。下面是
+示例 HTML 代码：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -2906,7 +2885,7 @@ the DOM. Here is the HTML file:
 </html>
 {% endprettify %}
 
-And here is the Dart code that handles the element removal:
+下面是删除元素的 Dart 代码：
 
 {% prettify dart %}
 import 'dart:html';
@@ -2930,35 +2909,32 @@ void main() {
 
 #### 延伸讨论
 
-Using `remove()` works well if you have a reference to the DOM element you
-want to remove. But sometimes, you have a reference to the element's
-parent, not to the element itself. For example, you may want to remove an <li>, 
-but you only have a reference to the <ul> or <ol> that contains the <li>. 
+如果你有要删除的元素对象，则用 `remove()` 函数即可。但是，有时候你拿到的是该元素的父节点。
+例如，你想删除一个 <li> 元素，但是你拿到的是该元素的父节点 <ul> 或者 <ol>  对象。
 
-In such cases, get a list of the parent element's children. Removing elements
-from this list removes them from the DOM.
+在这种情况下，从父节点中获取子节点的列表。然后从该子节点列表中删除
+这个元素即可。
 
-Use `removeAt()` to remove a child by its index position:
+用 `removeAt()` 来删除对应位置的元素：
 
 {% prettify dart %}
 element.children.removeAt(1); // Removes the second child.
 {% endprettify %}
 
-Remove the last child using `removeLast()`: 
+用 `removeLast()` 来删除最后一个元素：
 
 {% prettify dart %}
 element.children.removeLast();
 {% endprettify %}
 
-You can query the collection of children and remove a matching child using
-`remove()`. The code below finds the first child with the class `largest`,
-and removes it from the DOM:
+用 `remove()` 函数还可以删除符合要求的所有子节点元素。
+下面的代码用 `largest` class 选择器查找到第一个元素并删除。
 
 {% prettify dart %}
 element.children.remove(element.query('.largest'));
 {% endprettify %}
 
-You can remove all of an element's children using the `clear()` method:
+用 `clear()` 函数删除所有子元素：
 
 {% prettify dart %}
 element.children.clear();
@@ -2969,25 +2945,25 @@ element.children.clear();
 
 #### 面对的问题
 
-You have a DOM element and want to get or set the value of its attributes.
+你有一个 DOM 元素，你想获取或者设置元素属性的值。
 
 #### 解决的方式
 
-Most attributes have a corresponding property that you can use to get or set
-the attribute value. You can also use the an element's `attributes` map. In
-general, using properties is more Darty, since properties allow tools to check
-the attribute name and type.
+大部分元素属性都有对应的成员变量来获取或者设置元素的值。
+还可以用元素的 `attributes` map 变量。
+简单来说，用成员变量更加符合 Dart 风格，成员变量可以让工具来
+检查属性的名字和类型。
 
 #### Examples
 
-Consider the following element:
+如下元素：
 
 {% prettify dart %}
 <input type='text' name='fname' id='fname' data-purpose='informational' />
 {% endprettify %}
 
-The Element class defines several properties, such as `id` and `classes`, that
-correspond to element attributes. Here are some examples:
+对应的 Element 类定义了几个成员变量，例如 `id` 和 `classes`。 下面是
+一些示例：
 
 {% prettify dart %}
 print(element.id);                 // 'fname'
@@ -2996,30 +2972,30 @@ element.classes.add('first-name');
 print(element.classes.first);      // 'first-name'
 {% endprettify %}
 
-Subclasses of Element define additional properties, such as the href property of
-AnchorElement, or the size and maxLength properties of InputElement:
+Element 的子类定义了其他额外的成员变量，
+例如 AnchorElement 类的 href ，InputElement 类的 size 和 maxLength 等：
 
 {% prettify dart %}
 element.size = 30;
 element.maxLength = 10;
 {% endprettify %}
 
-When an element attribute does not have a corresponding property, or when
-using a property is not convenient, you can use an element's attributes map:
+当一个元素属性没有对应的成员变量时，或者用成员变量不太方便时，你可以用
+attributes map 变量：
 
 {% prettify dart %}
 print(element.attributes['id']);                   // 'fname'
 print(element.attributes['name']);                 // 'fname'
 {% endprettify %}
 
-Use the attributes map to access an element's data-* attributes:
+用 attributes map 来访问元素的 data-* attributes：
 
 {% prettify dart %}
 print(element.attributes['data-purpose']); // 'informational'
 {% endprettify %}
         
-If you want to get or set _only_ the data-* attributes, use the `dataset`
-property:
+如果你_只_获取或者设置 data-* 属性，则可以用
+`dataset` 成员变量：
 
 {% prettify dart %}
 print(element.dataset.length);     // 1
@@ -3032,9 +3008,8 @@ element.dataset['purpose'] = 'biographical';
 print(element.dataset['purpose']); // 'biographical'
 {% endprettify %}
 
-Both the `attributes` and the `dataset` properties return Map objects. Any
-modifications to an element's attributes map automatically apply to the
-element:
+`attributes` 和 `dataset` 都返回 Map 对象。
+修改该 Map 对象会同时应用到元素上：
 
 {% prettify dart %}
 // Change attribute value.
@@ -3055,24 +3030,22 @@ print(element.attributes['id']);       // null
 
 #### 面对的问题
 
-You want to get and set an element's CSS style properties.
+你想获取或者设置元素的 CSS 样式值。
 
 #### 解决的方式
 
-You have three options:
+有三中方式：
  
-* To get an element's style properties, use the `getComputedStyle()` method.
+* 用 `getComputedStyle()` 函数来获取 CSS 样式
  
-* To get or set the classes associated with an element, use the `classes`
-field.
+* 用 `classes` 来访问或者设置元素的 class 
 
-* To assign style properties directly to an element, use the `style` field.
-To get an element's style properties, use the `getComputedStyle()` method.
+* 用 `style` 直接设置元素的样式。
 
 
 #### Examples
  
-The examples below assume the following HTML:
+假设有如下 HTML 代码：
 
 {% prettify dart %}
 <!DOCTYPE html>
@@ -3091,7 +3064,7 @@ The examples below assume the following HTML:
 </html>
 {% endprettify %}
 
-Here are the associated style declarations:
+下面是对应的 CSS 样式定义：
 
 {% prettify dart %}
 // main.css
@@ -3102,10 +3075,10 @@ div:after {content: ' rocks!';}
 .underlined {text-decoration: underline;}
 {% endprettify %}
 
-##### Getting an element's CSS styles
+##### Getting an element's CSS styles（获取一个元素的 CSS 样式）
 
-Use the `getComputedStyle()` method to get a collection of all CSS styles
-applied to an element:
+用 `getComputedStyle()` 函数来获取应用到该元素上的所有
+ CSS 值：
 
 {% prettify dart %}
 // main.dart
@@ -3122,23 +3095,22 @@ void main() {
 }
 {% endprettify %}
 
-The `getComputedStyle()` method gets the style information for pseudo-elements.
-Just pass in the pseudo-element as an argument:
+用 `getComputedStyle()` 函数查询伪元素的样式信息。
+参数为 伪元素 ：
 
 {% prettify dart %}
 print(element.getComputedStyle(':after').content); // "' rocks!'"
 {% endprettify %}
 
-##### Accessing the classes associated with an element
+##### Accessing the classes associated with an element（获取一个元素相关的 class）
 
-Use the `classes` field to get a set of an element's CSS classes:
+用 `classes` 来查询一个元素上的 CSS class ：
 
 {% prettify dart %}
 print(element.classes.first); // 'bold'
 {% endprettify %}
 
-You can associate a new class with an element. Doing this applies the class
-styles to the element:
+你可以通过如下方式在一个元素上添加一个新的 class 样式：
 
 {% prettify dart %}
 element.classes.add('underlined');
@@ -3146,15 +3118,14 @@ print(element.classes.contains('underlined'));    // true
 print(element.getComputedStyle().textDecoration); // 'underline'
 {% endprettify %}
 
-You can remove a class associated with an element. Doing this removes the
-class styles from the element:
+通过如下方式来删除一个元素上的 class 样式：
 
 {% prettify dart %}
 element.classes.remove('underlined');
 print(element.getComputedStyle().textDecoration); // 'none'
 {% endprettify %}
 
-You can use the class list's `toggle()` method to toggle a class:
+用 class 列表的 `toggle()` 函数来切换一个 class：
 
 {% prettify dart %}
 element.classes.toggle('underlined');
@@ -3164,17 +3135,17 @@ element.classes.toggle('underlined');
 print(element.classes.contains('underlined')); // false
 {% endprettify %}
 
-##### Directly applying a style property
+##### Directly applying a style property（直接应用一个样式属性）
 
-While using classes is a common way of associating an element with a set of
-styles, you can also attach a style property directly to the element:
+虽然，用 class 定义属性是一个常见的做法，但是有时候你也需要直接在元素上指定样式属性，
+可以通过如下方式实现：
 
 {% prettify dart %}
 element.style.color = 'rgb(120, 120, 120)';
 element.style.border = '1px solid rgb(0, 0, 0)';
 {% endprettify %}
 
-It is idiomatic Dart to write the above code using the cascade operator (..):
+在 Dart 中通常用 级联操作符来实现上面的代码：
 
 {% prettify dart %}
 element.style
