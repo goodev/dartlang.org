@@ -98,7 +98,6 @@ Dart 语言中的 Iterable 类提供了
 
 * [Collections ( _Dart: Up and Running_ Chapter 3 的一部分)](/docs/dart-up-and-running/contents/ch03.html#ch03-collections)
 * [Iteration ( _Dart: Up and Running_, Chapter 3 的一部分)](/docs/dart-up-and-running/contents/ch03.html#ch03-iteration)
-* [Iterables (一篇介绍了  M3 更新后的 Iterable API)](/articles/m3-whats-new/iterables.html)
 * [Iterable API 文档](http://api.dartlang.org/dart_core/Iterable.html)
 
 
@@ -157,8 +156,6 @@ dart:html 和 polymer.dart 包
   (Dart 教程中的一部分)
 * [改进 DOM](/articles/improving-the-dom/)
 * [dart:html API 文档](http://api.dartlang.org/dart_html.html)
-* [HTML DOM](/docs/cookbook/#html-dom)
-  (Dart Cookbook 中的良方)
 
 ### Polymer.dart
 
@@ -205,8 +202,6 @@ Angular 框架的 Dart 实现。
 * [dartanalyzer: 静态分析器](/docs/dart-up-and-running/contents/ch04-tools-dart_analyzer.html)
 * [为 Pub 包编写单元测试](/articles/writing-unit-tests-for-pub-packages/)
 * [Dart 中的单元测试](/articles/dart-unit-tests/)
-* [测试](/docs/cookbook/#testing)
-  (Dart Cookbook 中的良方)
 * [drone.io](http://drone.io)
 
 ## 其他资源
@@ -217,13 +212,10 @@ Angular 框架的 Dart 实现。
 
 ### 编程问题
 
-三个用来解决编程问题的超棒资源：
+在这里询问关于 Dart 编程的问题：
 
-* [Dart Cookbook](/docs/cookbook/)
 * [Stack Overflow](http://stackoverflow.com/questions/tagged/dart)
 * [Dart 中文论坛](http://bbs.dartlang.cc)
-
-或者试试 <a href="/support/">邮件列表</a>。
 
 
 ### 代码风格

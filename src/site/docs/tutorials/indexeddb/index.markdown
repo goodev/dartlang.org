@@ -130,7 +130,7 @@ IndexedDB 有多中优势。
 <aside class="alert">
 <strong>版本提示：</strong> count_down 
 应用和 
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.9</a>
 版本兼容。
 </aside>
 
@@ -205,7 +205,7 @@ count_down 应用使用如下库：
 该教程没有介绍 Future 和 Polymer。
 关于 Future 请
 参考
-<a href="/articles/using-future-based-apis/">使用 Future API</a>
+<a href="/docs/tutorials/futures/">使用 Future-Based APIs</a>
 和
 <a href="/articles/futures-and-error-handling/">Future 和错误处理</a>。
 关于 Polymer，请参考
@@ -713,7 +713,7 @@ _loadFromDB 函数返回一个 Future， 该 Future 返回了读取数据的条�
 
 <ul>
   <li> 关于 Future 的更多信息请查看
-  <a href="/articles/using-future-based-apis/">使用 Future  APIs</a>
+  <a href="/articles/using-future-based-apis/">使用 Future Based APIs</a>
   和
   <a href="/articles/futures-and-error-handling/">Future 和错误处理</a>。
   </li>

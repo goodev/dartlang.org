@@ -7,6 +7,7 @@ rel:
 has-permalinks: true
 article:
   written_on: 2012-12-18
+  updated_on: 2013-11-01
   collection: language-details
 ---
 
@@ -15,7 +16,7 @@ article:
 # {{ page.title }}
 
 _作者：Gilad Bracha <br>
- 2012 12月_ (2013 11月修订)
+ 2012 12月_ (2013 11月更新)
 
 [Mixins 原文](http://www.dartlang.org/articles/mixins/)。
 

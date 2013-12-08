@@ -150,7 +150,7 @@ Polymer.dart 移植了 _Polymer Foundation_
 {% prettify html %}
 <head>
   <link rel="import" href="[[highlight]]hello_world.html[[/highlight]]">
-  <script type="application/dart">import 'package:polymer/init.dart';</script>
+  <script type="application/dart">export 'package:polymer/init.dart';</script>
   <script src="packages/browser/dart.js"></script>
 </head>
 
@@ -332,7 +332,9 @@ import 'dart:html';
 
 @CustomTag('fancy-button')
 class FancyButton [[highlight]]extends ButtonElement with Polymer, Observable[[/highlight]] {
-  FancyButton.created() : super.created();
+  FancyButton.created() : super.created() {
+    polymerCreated();
+  }
 }
 {% endraw %}{% endprettify %}
 
@@ -402,9 +404,8 @@ linter 可以和 Dart 编辑器关联起来并直接
 {% prettify dart %}
 import 'package:polymer/builder.dart';
 
-void main() {
-  // Runs the linter, and optionally builds the project for deployment.
-  build(entryPoints: ['web/index.html']);
+void main(List<String> args) {
+  lint(entryPoints: ['web/index.html'], options: parseOptions(args));
 }
 {% endprettify %}
 
@@ -412,6 +413,32 @@ void main() {
 linter 的警告信息。
 
 <img src="polymer-warning-in-editor.png">
+
+### Building
+
+用 `pub build` 把 polymer.dart 编译为 JavaScript，这样你的应用
+就可以在大多数的浏览器中运行了。Build 的时候也会把脚本代码连接到同一个文件中
+来加速网页加载速度。
+
+首先，把 polymer.dart 的 _transformer_ 添加到你的 `pubspec.yaml` 文件中，
+`transformers` 部分应该位于该文件的末尾处，在 依赖项后面。
+
+{% prettify yaml %}
+transformers:
+- polymer:
+    entry_points: web/index.html
+{% endprettify %}
+
+然后，在项目根目录运行 `pub build` 会生成一个 `build` 目录。
+
+{% prettify bash %}
+> pub build
+{% endprettify %}
+
+在 `build` 目录中包含 HTML、 JavaScript、和其他资源。
+然后你可以在你喜欢的服务器中部署 `build` 目录中的文件。
+
+关于 build 的详细信息，请参考： [pub build](http://pub.dartlang.org/doc/pub-build.html).
 
 <hr>
 
@@ -484,8 +511,8 @@ Web UI 是 polymer.dart 的先驱。
 | [Polymer Core](https://github.com/Polymer/polymer) | Tracking
 | Pointer events | Not started
 | Web animations | Not started
-| [Polymer base elements](https://github.com/Polymer/polymer-elements) | Not started
-| [Polymer UI elements](https://github.com/Polymer/polymer-ui-elements) | Not started
+| [Polymer base elements](https://github.com/Polymer/polymer-elements) | [Community effort](https://github.com/ErikGrimes/polymer_elements)
+| [Polymer UI elements](https://github.com/Polymer/polymer-ui-elements) | [Community effort](https://github.com/ErikGrimes/polymer_ui_elements)
 {: .table}
 
 <hr>

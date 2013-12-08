@@ -930,7 +930,7 @@ someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
 
 <div class="good">
 {% prettify dart %}
-new Future.delayed(const Duration(seconds:1), () {
+new Future.delayed(const Duration(seconds: 1), () {
   print('I am a callback');
 });
 {% endprettify %}
@@ -938,7 +938,7 @@ new Future.delayed(const Duration(seconds:1), () {
 
 <div class="bad">
 {% prettify dart %}
-new Future.delayed(const Duration(seconds:1), () {
+new Future.delayed(const Duration(seconds: 1), () {
       print('I am a callback');
     });
 {% endprettify %}

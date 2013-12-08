@@ -5,8 +5,8 @@ description: "用 Polymer 创建一个自定义 HTML element 。"
 has-permalinks: true
 tutorial:
   id: polymer-intro
-next: fetchdata
-next-title: "动态获取数据"
+next: futures
+next-title: "使用  Future-Based APIs"
 prev: shared-pkgs
 prev-title: "使用共享包"
 ---
@@ -48,7 +48,7 @@ prev-title: "使用共享包"
 
 <aside class="alert">
 <strong>版本提示：</strong> 该示例中的代码和
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>版本
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.9</a>版本
 兼容。
 </aside>
 
@@ -211,7 +211,7 @@ Polymer.dart 提供的功能。
 来初始化一个自定义元素。
 在该示例中，自定义元素的名字为 `tute-stopwatch`。
 
-<img class="scale-img-max" src="images/polymer-element-instantiation.png"
+<img class="scale-img-max" src="images/polymer-instance-create.png"
      alt="Instantiate a custom element with a custom tag">
 
 把自定义元素定义在一个单独的文件中
@@ -465,17 +465,17 @@ by querying a custom element's _shadow root_&mdash;a
 special node from which an instance of a custom element is rendered.
 
 {% prettify dart %}
-startButton = getShadowRoot('tute-stopwatch').query('#startbutton');
-stopButton = getShadowRoot('tute-stopwatch').query('#stopbutton');
-resetButton = getShadowRoot('tute-stopwatch').query('#resetbutton');
+startButton = getShadowRoot('tute-stopwatch').querySelector('#startbutton');
+stopButton = getShadowRoot('tute-stopwatch').querySelector('#stopbutton');
+resetButton = getShadowRoot('tute-stopwatch').querySelector('#resetbutton');
 {% endprettify %}
 
 Call `getShadowRoot()` with the name of the custom element.
 The `getShadowRoot()` method returns the shadow root element
 for this instance of the specified element.
-Use `query()` with a CSS selector to get the element(s) of interest.
+Use `querySelector()` with a CSS selector to get the element(s) of interest.
 
-Note that this code uses `query()` to get each button by ID.
+Note that this code uses `querySelector()` to get each button by ID.
 By querying the shadow root object rather than the DOM,
 you are guaranteed to get the objects from within the custom element,
 not from anywhere else on the page.

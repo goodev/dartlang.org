@@ -165,7 +165,7 @@ prev-title: "在 DOM 中添加元素"
 </li>
 
 <li markdown="1">
-Dart 代码用 query() 函数（参数为 #delete-all ）从 DOM 中
+Dart 代码用 querySelectorAll 函数（参数为 #delete-all ）从 DOM 中
 找到该按钮。
 然后在按钮上注册一个鼠标点击事件监听器，
 该监听器把列表中的所有子元素都删除了。
@@ -224,15 +224,6 @@ void deleteAllElements(Event e) {
 ##其他资源
 
 <ul>
-  <li>
-    不要忘了看看
-    <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>，
-    这里具有很多操作 DOM 和使用 CSS 的技巧。
-	该书还介绍了 Dart 基本数据类型，例如
-  strings、 lists、 maps、 和 numbers。
-  </li>
-
   <li>
     <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>
     是覆盖了 Dart 语言、库和工具的一本书。

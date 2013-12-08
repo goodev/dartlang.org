@@ -88,28 +88,29 @@ js:
                   <p>你可能已经见过甚至编写过 Dart 代码。 <a href="/samples/">查看更多示例。</a> </p>
                   <div class="code-hldr">
 <pre class="prettyprint lang-dart">
-main() {                              // 这里是程序开始执行的入口
-  print(<a href="#" class="dart-popover" data-toggle="popover" title="把对象转化为字符串" data-html="true" data-trigger="hover focus" data-content="print() 函数 -- 使用 object 的 toString() 函数 -- 把接收的任何对象参数转化为字符串 。">new Fibonacci(10)</a>);          // 打印一个对象的值
+import 'dart:math' show Random;        // Import a class from a library.
+
+void main() {                          // The app starts executing here.
+  print(new Die(<a href="#" class="dart-popover" data-toggle="popover" title="Named parameters" data-html="true" data-trigger="hover focus" data-content="Set the value of a named optional parameter. In this case, set the number of sides for a new Die object to 12.">n: 12</a>).roll());       // Print a new object's value. Chain method calls.
 }
 
-class Fibonacci {                     // 定义一个类。
-  int original, fibo;                 //声明变量。
-  String toString() => '<a href="#" class="dart-popover" data-toggle="popover" title="字符串插值" data-html="true" data-trigger="hover focus" data-content="使用 $标示符 来插入标示符所代表的值 (在该示例中是 fibo 变量的整数值) 到一个字符串中。">$fibo</a>';      // 使用速记语法来定义函数。
+class Die {                            // 定义一个类
+  static Random shaker = new Random(); // 定义一个类变量
+  int sides, value;                    // 定义实例变量
 
-  Fibonacci(int value) :              // 使用列表初始化程序定义构造函数。
-    original = value, fibo = fib(value) {
-  }
-
-  static int fib(int n) {             // 定义一个类函数。
-    if (n < 2) {                      // 流程控制和表达式。
-      return n;
+  String toString() => '<a href="#" class="dart-popover" data-toggle="popover" title="String interpolation" data-html="true" data-trigger="hover focus" data-content="Use $identifier to insert the value of an identifier (in this case, the integer value of 'value') into a string.">$value</a>';      // Define a method using shorthand syntax.
+  
+  Die(<a href="#" class="dart-popover" data-toggle="popover" title="Optional named parameters" data-html="true" data-trigger="hover focus" data-content="Parameters within curly brackets are optional. Set them by name when you call the function, method or, in this case, constructor. Here, the default value of 'n' is set to 6.">{int n: 6}</a>) {                   // Define a constructor.
+    if (4 <= n && n <= 20) {
+      sides = n;
     } else {
-      return fib(n-1) + fib(n-2);     // 算术操作符。
+      throw new ArgumentError(/* */);  // Support for errors and exceptions.
     }
   }
+  int roll() {                         // Define an instance method.
+    return value = shaker.nextInt(sides); // Get a random number.
+  }
 }
-// 想要更简洁的代码？ 可以用一行代码函数替代：
-// fib(n) => n < 2 ? n : (fib(n - 1) + fib(n - 2));
 </pre>
                   </div>
                 </div>
@@ -132,28 +133,37 @@ main() {
   print('Area of the first shape: <a href="#" class="dart-popover" data-toggle="popover" title="在字符串中插入表达式的值" data-html="true" data-trigger="hover focus" data-content="使用 ${表达式} 在字符串中插入表达式的值。表达式运算后的值转化为字符串。">${shapes[0].area}</a>');
 }
 
-class Ellipse {
+class Ellipse extends Shape {
   num minorAxis, majorAxis;
   // 在构造函数体运行之前设置变量值的语法糖。
   Ellipse(this.minorAxis, this.majorAxis);
+
+  static const num C = PI/4;
+  num get area => C*majorAxis*minorAxis;  // A property implemented with a getter.
 }
 </pre>
                   </div>
                 </div>
                 <div class="item">
                   <p>在代码中添加类型可以帮助人和工具理解代码。
-                                                                  或者不用类型。你可以一直使用动态类型。</p>
+                                                                  或者不用类型。Dart 是真正的动态类型。</p>
                   <div class="code-hldr">
-                    <div class="code-hldr">  
-                      <div class="item" style="margin-top:23px">
-                                                                                           没有类型，更自由的编写代码。<br>
-                        <img src="imgs/no_types.png">
-                                </div>
-                                <div class="item" style="margin-top:23px;">
-                                                                                               有类型， 很容易的检测错误。<br>
-                        <img src="imgs/with_types.png">
-                      </div>
-                    </div>
+
+                          <div style="padding-top:20px;">While prototyping, code freely without worrying about types.</div>
+<pre class="prettyprint lang-dart">
+// A function without types.
+recalculate(origin, offset, estimate) {
+  // ...
+}
+</pre>
+                          <div style="padding-top:20px;">During production, use types to learn about errors early,
+                          communicate intent, and get help with code completion.</div>
+<pre class="prettyprint lang-dart">
+// A function with types (and an optional parameter).
+num recalculate(Point origin, num offset, {bool estimate: false}) {
+  // ...
+}
+</pre>
                   </div>
                 </div>
                 <div class="item">

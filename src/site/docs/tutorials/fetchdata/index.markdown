@@ -7,8 +7,8 @@ tutorial:
   id: fetchdata
 next: forms/
 next-title: "从表单中获取数据"
-prev: polymer-intro/
-prev-title: "定义一个自定义元素"
+prev: futures/
+prev-title: "使用 Future API"
 ---
 
 {% capture whats_the_point %}
@@ -89,7 +89,7 @@ HttpRequest 有浏览器提供，并且
 
 <aside class="alert">
 <strong>版本提示：</strong> its_all_about_you app 应用和
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.9</a>
  版本兼容。
 </aside>
 
@@ -293,7 +293,12 @@ SDK 提供了如下有用的类来
      alt="Use the getString() function to make a request">
 
 getString() 函数用一个 Future 对象来处理请求。 
-你可以把上面的代码作为常用用法，
+Future 是用来异步执行比较耗时的操作的，
+例如 HTTP 请求。
+如果你还不熟悉 Future，
+你可以在 [使用 Future-Based APIs](/docs/tutorials/futures/)
+中了解 Future。
+现在你可以把上面的代码作为常用用法，
 然后把你的处理逻辑代码在 processString() 函数
 中实现，并在 handlerError 中实现错误处理逻辑。
 
@@ -452,6 +457,10 @@ portmanteaux.json 文件包含了 JSON
 和信息。   
 
 ##接下来干啥？
+
+如果你跳过了前面的
+[使用 Future-Based APIs](/docs/tutorials/futures/)
+一节内容，我们强烈建议你回去看看 Future ，然后再继续下一节的学习。
 
 在下一个教程中，
 [从表单中获取数据](/docs/tutorials/forms/),

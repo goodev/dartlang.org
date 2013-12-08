@@ -19,8 +19,6 @@ header:
 
 # {{ page.title }}
 
-## 有点空闲时间？来编写个 Dart 应用吧
-
 在该代码实验室中,
 你将从一个框架应用中创建一个海盗徽章生成器。
 该示例应用简单的介绍了一些 Dart 语言和库的特性。
@@ -29,7 +27,7 @@ header:
 <strong>建构该应用！</strong>
 
 <iframe class="running-app-frame"
-        style="height:220px;width:530px;"
+        style="height:220px;width:550px;"
         src="examples/6-piratebadge_json/piratebadge.html">
 </iframe>
 
@@ -438,7 +436,7 @@ void main() {
 在输入框中输入内容。
 
 <iframe class="running-app-frame"
-        style="height:220px;width:530px;"
+        style="height:220px;width:550px;"
         src="examples/2-inputnamebadge/piratebadge.html">
 </iframe>
 
@@ -738,7 +736,7 @@ genButton.text = 'Aye! Gimme a name!';
 点击按钮。
 
 <iframe class="running-app-frame"
-        style="height:220px;width:530px;"
+        style="height:220px;width:550px;"
         src="examples/3-buttonbadge/piratebadge.html">
 </iframe>
 
@@ -1097,7 +1095,7 @@ void generateBadge(Event e) {
 点击按钮。
 
 <iframe class="running-app-frame"
-        style="height:220px;width:530px;"
+        style="height:220px;width:550px;"
         src="examples/4-classbadge/piratebadge.html">
 </iframe>
 
@@ -1353,7 +1351,7 @@ void main() {
 复制该窗口再次打开该应用。
 
 <iframe class="running-app-frame"
-        style="height:220px;width:530px;"
+        style="height:220px;width:550px;"
         src="examples/5-localbadge/piratebadge.html">
 </iframe>
 
@@ -1706,7 +1704,7 @@ void main() {
 
 
 <iframe class="running-app-frame"
-        style="height:220px;width:530px;"
+        style="height:220px;width:550px;"
         src="examples/6-piratebadge_json/piratebadge.html">
 </iframe>
 

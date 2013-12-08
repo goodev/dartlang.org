@@ -15,7 +15,7 @@ prev-title: "开始"
 
 * DOM 模型通过树/节点结构来构成一个网页页面。
 * HTML 文件在浏览器中引入 Dart 代码。
-* 使用 query() 函数 - 参数为元素ID - 来从 DOM 中查询元素。
+* 使用 querySelector() 函数 - 参数为元素ID - 来从 DOM 中查询元素。
 * 编译为 JavaScript 可以在所有主流浏览器中运行。
 * 可以用 CSS 选择器来选择 DOM 中匹配的元素。
 * 用 CSS 规则来定义每个元素的外观样式。
@@ -228,7 +228,7 @@ Dart 编辑器创建一个应用的时候，
 {% prettify dart %}
 import 'dart:html';
 void main() {
-  query('#RipVanWinkle').text = 'Wake up, sleepy head!';
+  querySelector('#RipVanWinkle').text = 'Wake up, sleepy head!';
 }
 {% endprettify %}
 
@@ -263,20 +263,20 @@ Dart core 库中包含了另外一个常用的类，
 在 List\<Element> 中来保存 
 Element 的对象。
 
-###使用 query() 函数
+###使用 querySelector() 函数
 
 该 应用的 main() 函数包含了一行
 代码，这行代码一步一步的执行了
 多个操作。下面就来
 拆解该行代码。
 
-query() 是由 Dart HTML 库提供的顶级函数，
+querySelector() 是由 Dart HTML 库提供的顶级函数，
 该函数从 DOM 中获取一个 Element 对象。
 
 <img class="scale-img-max" src="images/3-mini-code-walk-through.png"
      alt="An example of querying for a DOM object by its ID">
 
-query() 的参数为一个字符串，
+querySelector() 的参数为一个字符串，
 该字符串为一个 CSS 选择器来指定要查询的对象。
 常用的 CSS 选择器有 类选择器、ID 选择器和属性选择器。
 后面当我们使用 CSS 文件的时候
@@ -289,7 +289,7 @@ query() 的参数为一个字符串，
      alt="ID attribute from HTML file">
 
 另外一个从 DOM 中查找元素的常用函数为
-queryAll()，
+querySelectorAll()，
 该函数便利 DOM 树并返回
 所有符合条件的 Element 对象，
 返回结果为 List<Element> 对象。
@@ -325,7 +325,7 @@ queryAll()，
 会导致丢失一些文本子节点信息。
 在上面这个 RipVanWinkle 示例中并没有这种情况发生。
 
-赋值操作符 (=) 设置 query() 
+赋值操作符 (=) 设置 querySelector() 
 函数返回的 Element 的
 文本内容为
  "Wake up, sleepy head!" 字符串。
@@ -426,7 +426,7 @@ CSS 选择器让 CSS 、 HTML、 和 Dart 代码可以
 选择器也可以嵌套。
 
 在 Dart 程序中 CSS 选择器非常重要，
-因为你可以用他们作为参数来调用函数  query() 或者 queryAll() 
+因为你可以用他们作为参数来调用函数  querySelector() 或者 querySelectorAll() 
 从 DOMO 中查询匹配的元素。
 
 下面是 CSS 选择器的一些实例：
@@ -499,14 +499,6 @@ _style sheet(样式表)_。
     详细介绍了 Dart 编辑器的功能。
 包含 如何使用 Dart 编辑器的主要功能：
 代码完成、重构、设置运行环境等。
-  </li>
-  <li>
-    不要忘了看看
-    <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>，
-    这里具有很多操作 DOM 和使用 CSS 的技巧。
-	该书还介绍了 Dart 基本数据类型，例如
-  strings、 lists、 maps、 和 numbers。
   </li>
 </ul>
 

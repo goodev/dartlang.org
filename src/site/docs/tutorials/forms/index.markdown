@@ -69,9 +69,10 @@ color pickers、 date and time widgets、以及 range elements。
 <aside class="alert alert-info" markdown="1">
   <strong>注意：</strong>
   该教材假设你已经学习了
-  [定义自定义元素](/docs/tutorials/polymer-intro/)
+  [定义自定义元素](/docs/tutorials/polymer-intro/)、
+  [使用 Future-Based APIs](/docs/tutorials/futures/)
   和 [动态获取数据](/docs/tutorials/fetchdata/)，
-  或者熟悉 Polymer、 JSON、 和 HttpRequest 。
+  或者熟悉 Polymer、 Futures、JSON、 和 HttpRequest 。
 </aside>
 
 
@@ -232,7 +233,7 @@ Dart 代码把输入数据格式化为 JSON 字符串，
 
 <aside class="alert">
 <strong>版本提示：</strong>  slambook 应用和 
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.9</a>
  版本兼容。
 </aside>
 
@@ -875,7 +876,7 @@ updates the map whenever the user changes the selection.
 void changeselected(Event e) {
   // Get the selected elements.
   List<OptionElement> options =
-      (query('#bookselector') as SelectElement).selectedOptions;
+      (querySelector('#bookselector') as SelectElement).selectedOptions;
   // Set everything in books map to false temporarily.
   books.forEach((k, v) => books[k] = false);
   // Set true in books map for selected items.
@@ -929,12 +930,6 @@ When `books` changes, the UI updates the unnumbered list of selected books.
   的代码基于 Chris Buckett 写
   的文章
        <a href="/articles/json-web-service/">使用 Dart 中的 JSON Web Services</a> 。
-  </li>
-  <li> 查看
-       <a href="/docs/cookbook/">
-       <i class="icon-food"> </i> Dart Cookbook</a>。
-       该书中包含很多本教程中设计到的内容。
-       例如 JSON 和 URI。
   </li>
   <li> 前一教程中，
        <a href="/docs/tutorials/fetchdata/">动态获取数据</a> 

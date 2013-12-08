@@ -38,6 +38,7 @@ next-title: "开始"
     <li><a href="#dom" data-toggle="tab">浏览器</a></li>
     <li><a href="#packages" data-toggle="tab">Packages</a></li>
     <li><a href="#polymer" data-toggle="tab">Polymer</a></li>
+    <li><a href="#futures" data-toggle="tab">Futures</a></li>
     <li><a href="#forms" data-toggle="tab">表单和数据</a></li>
     <!--<li><a href="#mobile" data-toggle="tab">移动浏览器</a></li>-->
   </ul>
@@ -172,6 +173,24 @@ next-title: "开始"
           <h4 class="no-permalink"><a href="polymer-intro/"><img src="images/target.png" height="20" width="20">&nbsp;Define a Custom Element</a></h4>
           <p>使用 Polymer 创建自定义的 HTML 元素。</p>
           <img src="images/stopwatch-screenshot.png" width="200">
+          </section>
+        </div>
+
+        <div class="col-md-6">
+        </div>
+
+      </div>
+    </div>
+
+  <!-- FUTURES & STREAMS TAB -->
+    <div class="tab-pane" id="futures">
+      <div class="row">
+
+        <div class="col-md-6">
+          <section>
+          <h4 class="no-permalink"><a href="futures/"><img src="images/target.png" height="20" width="20">&nbsp;Use Future-Based APIs</a></h4>
+          <p>了解下 Future。</p>
+          <img src="futures/images/futurescode.png" width="350">
           </section>
         </div>
 

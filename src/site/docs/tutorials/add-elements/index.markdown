@@ -214,12 +214,12 @@ Dart 代码在 list 中添加一个元素。
 <img class="scale-img-max" src="images/todo-dart.png"
      alt="todo app and its corresponding Dart code">
 
-在 main() 函数中用 dart:html 库中的 query() 函数
+在 main() 函数中用 dart:html 库中的 querySelector() 函数
 来从 DOM 中查询感兴趣的元素。
-由于调用 query() 函数是需要代价的，
+由于调用 querySelector() 函数是需要代价的，
 如果代码中不只一次使用同一个元素，
 则应该用一个变量来保存该元素的应用，
-避免每次调用 query() 函数来查找。
+避免每次调用 querySelector() 函数来查找。
 
 上面的代码用一个顶级变量 `toDoInput`
 来保存输入框元素
@@ -368,15 +368,6 @@ Dart 代码 letterpile.children.add()
 ##其他资源
 
 <ul>
-  <li>
-    不要忘了看看
-    <a href="/docs/cookbook/">
-    <i class="icon-food"> </i> Dart Cookbook</a>，
-    这里具有很多操作 DOM 和使用 CSS 的技巧。
-	该书还介绍了 Dart 基本数据类型，例如
-  strings、 lists、 maps、 和 numbers。
-  </li>
-
   <li>
     <a href="/docs/dart-up-and-running/">Dart: Up and Running</a>
     是覆盖了 Dart 语言、库和工具的一本书。
