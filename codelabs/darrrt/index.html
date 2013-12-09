@@ -15,14 +15,14 @@
   
   <meta itemprop="description" content="尝试些点 Dart 代码，学习一些基础内容。">
 
-  <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/css/dart-style.css" rel="stylesheet">
-  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
-  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
 	<link href="/codelabs/darrrt/darrrt.css" rel="stylesheet" type="text/css">
 	
 	
@@ -62,30 +62,6 @@
 -->
 
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script>
-  
-
-<!-- 
-	window.___gcfg = {lang: 'en'};
-	(function()
-	{var po = document.createElement("script");
-	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-	var s = document.getElementsByTagName("script")[0];
-	s.parentNode.insertBefore(po, s);
-	})();
--->
-  </script>
-<!-- 
-  <script>
-    window.twttr = (function (d,s,id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-  </script>
--->
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
@@ -104,14 +80,9 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
                                                        入门
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
-                <li><a href="/docs/tutorials/">Dart 教程</a></li>
-              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -119,6 +90,9 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                <li class="divider"></li>
+                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -152,25 +126,21 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
-                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
+                <li><a href="/performance/">性能</a></li>
+                <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/support/" title="Community and Support">
                                               社区
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/support/">支持和社区资源</a></li>
-                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -201,8 +171,6 @@
     <article class="has-permalinks">
     <h1 id="dart">试试 Dart</h1>
 
-<h2 id="dart-">有点空闲时间？来编写个 Dart 应用吧</h2>
-
 <p>在该代码实验室中,
 你将从一个框架应用中创建一个海盗徽章生成器。
 该示例应用简单的介绍了一些 Dart 语言和库的特性。
@@ -210,7 +178,7 @@
 
 <p><strong>建构该应用！</strong></p>
 
-<iframe class="running-app-frame" style="height:220px;width:530px;" src="examples/6-piratebadge_json/piratebadge.html">
+<iframe class="running-app-frame" style="height:220px;width:550px;" src="examples/6-piratebadge_json/piratebadge.html">
 </iframe>
 
 <hr />
@@ -716,7 +684,7 @@ Dart 使用 CSS 选择器（例如 这个 ID）
 
   <p>在输入框中输入内容。</p>
 
-  <iframe class="running-app-frame" style="height:220px;width:530px;" src="examples/2-inputnamebadge/piratebadge.html">
+  <iframe class="running-app-frame" style="height:220px;width:550px;" src="examples/2-inputnamebadge/piratebadge.html">
 </iframe>
 
   <h4 id="section-1">问题？</h4>
@@ -1026,7 +994,7 @@ genButton.text = 'Aye! Gimme a name!';
 从输入框中删除文字。
 点击按钮。</p>
 
-  <iframe class="running-app-frame" style="height:220px;width:530px;" src="examples/3-buttonbadge/piratebadge.html">
+  <iframe class="running-app-frame" style="height:220px;width:550px;" src="examples/3-buttonbadge/piratebadge.html">
 </iframe>
 
   <h4 id="section-2">问题？</h4>
@@ -1407,7 +1375,7 @@ genButton.text = 'Aye! Gimme a name!';
 从输入框中删除文本。
 点击按钮。</p>
 
-  <iframe class="running-app-frame" style="height:220px;width:530px;" src="examples/4-classbadge/piratebadge.html">
+  <iframe class="running-app-frame" style="height:220px;width:550px;" src="examples/4-classbadge/piratebadge.html">
 </iframe>
 
   <h4 id="section-3">问题？</h4>
@@ -1667,7 +1635,7 @@ void main() {
   <p>点击按钮在徽章上添加一个名字。
 复制该窗口再次打开该应用。</p>
 
-  <iframe class="running-app-frame" style="height:220px;width:530px;" src="examples/5-localbadge/piratebadge.html">
+  <iframe class="running-app-frame" style="height:220px;width:550px;" src="examples/5-localbadge/piratebadge.html">
 </iframe>
 
   <h4 id="section-4">问题？</h4>
@@ -2041,7 +2009,7 @@ void main() {
 
   <p>把你的代码和最后一步的代码比较下，并运行。</p>
 
-  <iframe class="running-app-frame" style="height:220px;width:530px;" src="examples/6-piratebadge_json/piratebadge.html">
+  <iframe class="running-app-frame" style="height:220px;width:550px;" src="examples/6-piratebadge_json/piratebadge.html">
 </iframe>
 
   <h4 id="section-5">问题？</h4>
@@ -2071,9 +2039,6 @@ void main() {
 <a href="https://twitter.com/share" class="twitter-share-button external-link" data-count="none" data-text="Arrr! I've generated me pirate name and learnt Dart, to boot. http://dartlang.org/darrrt" data-hashtags="dartlang">Tweet</a>
  </p>
 
-  <script src="https://apis.google.com/js/plusone.js"></script>
-
-  <g:plus action="share"></g:plus>
   <wb:share-button appkey="3wn9s7" addition="number" type="button" default_text="我通过学习Dart语言制作了一个海盗徽章，快来围观吧！" ralateuid="3908541102" picture_search="false"></wb:share-button>
 </div>
 
@@ -2089,7 +2054,7 @@ void main() {
 一个概览。
 下面深入学习的资料。</p>
 
-  <h4 id="dart--1">Dart 语言</h4>
+  <h4 id="dart-">Dart 语言</h4>
 
   <p><a href="/docs/dart-up-and-running/contents/ch02.html">
 Dart 语言简介</a>
@@ -2115,7 +2080,7 @@ Dart 语言简介</a>
     <li>泛型</li>
   </ul>
 
-  <h4 id="dart--2">Dart 库</h4>
+  <h4 id="dart--1">Dart 库</h4>
 
   <p><a href="/docs/dart-up-and-running/contents/ch03.html">
 Dart 库简介</a>
@@ -2217,7 +2182,6 @@ Dart 库简介</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/js/social-event-analytics.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
 <script type='text/javascript' src='/js/lang-dart.js'></script>
 <script type='text/javascript' src='/js/lang-yaml.js'></script>

@@ -11,18 +11,18 @@
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="Polymer.dart | Dart: 用于创建结构化的web应用">
   
-  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
   <meta itemprop="description" content="基于标准的 web 组件： 用于 Dart web 应用的 自定义元素、模板、 和数据绑定。 Dart 版本的 Polymer。">
 
-  <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/css/dart-style.css" rel="stylesheet">
-  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
-  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
 	
 	
 	
@@ -62,30 +62,6 @@
 -->
 
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script>
-  
-
-<!-- 
-	window.___gcfg = {lang: 'en'};
-	(function()
-	{var po = document.createElement("script");
-	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-	var s = document.getElementsByTagName("script")[0];
-	s.parentNode.insertBefore(po, s);
-	})();
--->
-  </script>
-<!-- 
-  <script>
-    window.twttr = (function (d,s,id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-  </script>
--->
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
@@ -104,14 +80,9 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
                                                        入门
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
-                <li><a href="/docs/tutorials/">Dart 教程</a></li>
-              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -119,6 +90,9 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                <li class="divider"></li>
+                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -152,25 +126,21 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
-                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
+                <li><a href="/performance/">性能</a></li>
+                <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/support/" title="Community and Support">
                                               社区
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/support/">支持和社区资源</a></li>
-                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -272,7 +242,10 @@ hr {
     </ol>
   </li>
   <li><a href="#section-7">安装</a></li>
-  <li><a href="#section-8">工具</a></li>
+  <li><a href="#section-8">工具</a>    <ol>
+      <li><a href="#building">Building</a></li>
+    </ol>
+  </li>
   <li><a href="#web-ui-">从 Web UI 升级</a></li>
   <li><a href="#section-9">兼容性</a></li>
   <li><a href="#section-10">支持</a></li>
@@ -367,7 +340,7 @@ hr {
 
     <pre class="prettyprint lang-html">&lt;head&gt;
   &lt;link rel=&quot;import&quot; href=&quot;<code class="nocode highlight">hello_world.html</code>&quot;&gt;
-  &lt;script type=&quot;application/dart&quot;&gt;import 'package:polymer/init.dart';&lt;/script&gt;
+  &lt;script type=&quot;application/dart&quot;&gt;export 'package:polymer/init.dart';&lt;/script&gt;
   &lt;script src=&quot;packages/browser/dart.js&quot;&gt;&lt;/script&gt;
 &lt;/head&gt;
 
@@ -523,7 +496,9 @@ import 'dart:html';
 
 @CustomTag('fancy-button')
 class FancyButton <code class="nocode highlight">extends ButtonElement with Polymer, Observable</code> {
-  FancyButton.created() : super.created();
+  FancyButton.created() : super.created() {
+    polymerCreated();
+  }
 }</pre>
 
     <pre class="prettyprint lang-html">&lt;button <code class="nocode highlight">is=&quot;fancy-button&quot;</code>&gt;&lt;/button&gt;</pre>
@@ -585,15 +560,36 @@ linter 可以和 Dart 编辑器关联起来并直接
 
     <pre class="prettyprint lang-dart">import 'package:polymer/builder.dart';
 
-void main() {
-  // Runs the linter, and optionally builds the project for deployment.
-  build(entryPoints: ['web/index.html']);
+void main(List&lt;String&gt; args) {
+  lint(entryPoints: ['web/index.html'], options: parseOptions(args));
 }</pre>
 
     <p>当保存文件的时候，Dart 编辑器运行  <code>build.dart</code> 并显示来自于
 linter 的警告信息。</p>
 
     <p><img src="polymer-warning-in-editor.png" /></p>
+
+    <h3 id="building">Building</h3>
+
+    <p>用 <code>pub build</code> 把 polymer.dart 编译为 JavaScript，这样你的应用
+就可以在大多数的浏览器中运行了。Build 的时候也会把脚本代码连接到同一个文件中
+来加速网页加载速度。</p>
+
+    <p>首先，把 polymer.dart 的 <em>transformer</em> 添加到你的 <code>pubspec.yaml</code> 文件中，
+<code>transformers</code> 部分应该位于该文件的末尾处，在 依赖项后面。</p>
+
+    <pre class="prettyprint lang-yaml">transformers:
+- polymer:
+    entry_points: web/index.html</pre>
+
+    <p>然后，在项目根目录运行 <code>pub build</code> 会生成一个 <code>build</code> 目录。</p>
+
+    <pre class="prettyprint lang-bash">&gt; pub build</pre>
+
+    <p>在 <code>build</code> 目录中包含 HTML、 JavaScript、和其他资源。
+然后你可以在你喜欢的服务器中部署 <code>build</code> 目录中的文件。</p>
+
+    <p>关于 build 的详细信息，请参考： <a href="http://pub.dartlang.org/doc/pub-build.html">pub build</a>.</p>
 
     <hr />
 
@@ -706,11 +702,11 @@ linter 的警告信息。</p>
         </tr>
         <tr>
           <td><a href="https://github.com/Polymer/polymer-elements">Polymer base elements</a></td>
-          <td>Not started</td>
+          <td><a href="https://github.com/ErikGrimes/polymer_elements">Community effort</a></td>
         </tr>
         <tr>
           <td><a href="https://github.com/Polymer/polymer-ui-elements">Polymer UI elements</a></td>
-          <td>Not started</td>
+          <td><a href="https://github.com/ErikGrimes/polymer_ui_elements">Community effort</a></td>
         </tr>
       </tbody>
     </table>
@@ -831,7 +827,6 @@ to instantiate document fragments with identical contents.</dd>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/js/social-event-analytics.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
 <script type='text/javascript' src='/js/lang-dart.js'></script>
 <script type='text/javascript' src='/js/lang-yaml.js'></script>

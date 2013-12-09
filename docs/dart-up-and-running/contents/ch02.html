@@ -11,18 +11,18 @@
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="Chapter 2. A Tour of the Dart Language from Dart: Up and Running | Dart: 用于创建结构化的web应用">
   
-  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
   <meta itemprop="description" content="Read Chapter 2. A Tour of the Dart Language of Dart: Up and Running, published by O'Reilly.">
 
-  <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/css/dart-style.css" rel="stylesheet">
-  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
-  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
 	
 	
 	
@@ -62,30 +62,6 @@
 -->
 
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script>
-  
-
-<!-- 
-	window.___gcfg = {lang: 'en'};
-	(function()
-	{var po = document.createElement("script");
-	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-	var s = document.getElementsByTagName("script")[0];
-	s.parentNode.insertBefore(po, s);
-	})();
--->
-  </script>
-<!-- 
-  <script>
-    window.twttr = (function (d,s,id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-  </script>
--->
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
@@ -104,14 +80,9 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
                                                        入门
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
-                <li><a href="/docs/tutorials/">Dart 教程</a></li>
-              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -119,6 +90,9 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                <li class="divider"></li>
+                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -152,25 +126,21 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
-                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
+                <li><a href="/performance/">性能</a></li>
+                <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/support/" title="Community and Support">
                                               社区
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/support/">支持和社区资源</a></li>
-                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -1008,7 +978,7 @@ assert(p.y == 3);    // Get the value of y.
 
 num distance = p.distanceTo(new Point(4,4)); // Invoke distanceTo() on p.</pre><p>Use the cascade operator (..) when you want to perform a series of
     operations on the members of a single object:</p><pre class="programlisting"><em><span class="remark">lang-dart
-</span></em>query('#button')
+</span></em>querySelector('#button')
     ..text = 'Click to Confirm'                        // Get an object. Use its
     ..classes.add('important')                         // instance variables
     ..onClick.listen((e) =&gt; window.alert('Confirmed!')); // and methods.</pre><p>Some classes provide constant constructors. To create a compile-time
@@ -1632,7 +1602,7 @@ void main() {
     concurrency is error prone and can lead to complicated code.</p><p>Instead of threads, all Dart code runs inside of
     <span class="emphasis"><em>isolates</em></span>. Each isolate has its own memory heap,
     ensuring that no isolate’s state is accessible from any other
-    isolate.</p><p>Learn more about isolates in <a class="xref" href="ch03.html#ch03-dartisolate---concurrency-with-isolates" title="dart:isolate - Concurrency with Isolates">the section called “dart:isolate - Concurrency with Isolates”</a>.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="typedefs"></a>Typedefs</h2></div></div></div><p>In Dart, functions are objects, just like strings and numbers are
+    isolate.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="typedefs"></a>Typedefs</h2></div></div></div><p>In Dart, functions are objects, just like strings and numbers are
     objects. A <span class="emphasis"><em>typedef</em></span>, or <span class="emphasis"><em>function-type
     alias</em></span>, gives a function type a name that you can use when
     declaring fields and return types. A typedef retains type information when
@@ -1840,7 +1810,6 @@ class Llama {
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/js/social-event-analytics.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
 <script type='text/javascript' src='/js/lang-dart.js'></script>
 <script type='text/javascript' src='/js/lang-yaml.js'></script>

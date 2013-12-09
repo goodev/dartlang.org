@@ -11,18 +11,18 @@
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="Dart Cookbook | Dart: 用于创建结构化的web应用">
   
-  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
   <meta itemprop="description" content="使用 Dart 的妙方。">
 
-  <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/css/dart-style.css" rel="stylesheet">
-  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
-  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
 	
 	
 	
@@ -62,30 +62,6 @@
 -->
 
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script>
-  
-
-<!-- 
-	window.___gcfg = {lang: 'en'};
-	(function()
-	{var po = document.createElement("script");
-	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-	var s = document.getElementsByTagName("script")[0];
-	s.parentNode.insertBefore(po, s);
-	})();
--->
-  </script>
-<!-- 
-  <script>
-    window.twttr = (function (d,s,id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-  </script>
--->
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
@@ -104,14 +80,9 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
                                                        入门
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
-                <li><a href="/docs/tutorials/">Dart 教程</a></li>
-              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -119,6 +90,9 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                <li class="divider"></li>
+                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -152,25 +126,21 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
-                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
+                <li><a href="/performance/">性能</a></li>
+                <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/support/" title="Community and Support">
                                               社区
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/support/">支持和社区资源</a></li>
-                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -268,7 +238,7 @@
           <ol>
             <li><a href="#using-css-selectors-to-find-dom-elements">用 CSS 选择器查找 DOM 元素</a></li>
             <li><a href="#using-css-selectors-within-a-limited-scope">在一个限定的范围内使用 CSS 选择器</a></li>
-            <li><a href="#traversing-the-dom-starting-from-a-particular-element">从一个特定的元素来便利 DOM</a></li>
+            <li><a href="#traversing-the-dom-starting-from-a-particular-element">从一个特定的元素来遍历 DOM</a></li>
             <li><a href="#creating-dom-elements">创建 DOM 元素</a></li>
             <li><a href="#inserting-child-elements-inside-an-existing-dom-element">在 DOM 元素中添加一个子元素</a></li>
             <li><a href="#inserting-elements-before-or-after-an-existing-dom-element">在 DOM 元素前后插入子元素</a></li>
@@ -1096,18 +1066,18 @@ print(filledList); // [false, false, false]</pre>
 
     <h4 id="section-65">解决的方式</h4>
 
-    <p>Use the <code>List.from()</code> constructor and pass the original list as an argument:</p>
+    <p>用原来的 list 作为参数调用  <code>List.from()</code> 构造函数：</p>
 
     <pre class="prettyprint lang-dart">var fruit1 = ['orange', 'banana', 'mango'];
 var fruit2 = new List.from(fruit1);</pre>
 
     <h4 id="section-66">延伸讨论</h4>
 
-    <p>The <code>List.from()</code> constructor creates a new, independent list:</p>
+    <p><code>List.from()</code> 构造函数创建一个新的独立的 list：</p>
 
     <pre class="prettyprint lang-dart">identical(names, namesCopy); // false</pre>
 
-    <p>However, compound elements in the new list retain a reference to the original:</p>
+    <p>但是， 新创建的 list 里面的元素和 原来的 list 还是一样的：</p>
 
     <pre class="prettyprint lang-dart">var names = [{'first': 'Reggie', 'last': 'Jackson'}, 
              {'first': 'Cy', 'last': 'Young'}];
@@ -1115,23 +1085,23 @@ var fruit2 = new List.from(fruit1);</pre>
 var namesCopy = new List.from(names);
 identical(names.first, namesCopy.first); // true</pre>
 
-    <p>Modifying an element in the original changes the corresponding element in the
-copy (and vise versa):</p>
+    <p>修改任意一个 list 中的元素值，另外一个 list 中对应的值也会
+改变：</p>
 
     <pre class="prettyprint lang-dart">names[0]['last'] = 'Jefferson';
 print(namesCopy[0]['last']); // 'Jefferson'</pre>
 
-    <p>Since the lists themselves do not share a reference, adding a new element to
-one does not affect the other:</p>
+    <p>由于 list 自己并没有共享同一个引用，所以在一个 list 中添加
+元素并不影响另外一个 list：</p>
 
     <pre class="prettyprint lang-dart">names.add({'first' : 'Micky', 'last' : 'Mantle'});
 names.length;     // 3
 namesCopy.length; // 2</pre>
 
-    <h5 id="fixed-length-vs-flexible-length-lists">Fixed-length vs. flexible-length lists</h5>
+    <h5 id="vs---list">固定长度 vs. 长度可变 的 list</h5>
 
-    <p>By default, the new list created will be growable. This is true even if you
-passed a <code>const</code> list as an argument to <code>List.from()</code>:</p>
+    <p>默认情况下，创建的 list 是长度可增加的。
+即使用一个 <code>const</code> list 作为参数来调用 <code>List.from()</code> 构造函数生成的 list 也是如此：</p>
 
     <pre class="prettyprint lang-dart">const List&lt;String&gt; vowels1 = const ['A', 'E', 'I', 'O', 'U'];
 var vowels2 = new List.from(vowels1);
@@ -1142,19 +1112,19 @@ print(vowels2); // ['A', 'E', 'I', 'O', 'U', 'Y']
 vowels2[0] = 'Y';
 print(vowels2[0]); // 'Y'</pre>
 
-    <p>To make the copy fixed-length, set <code>List.from()</code>s <code>growable</code> argument to
-<code>false</code>:</p>
+    <p>要复制一个固定长度的 list， 设置 <code>List.from()</code> 构造函数的  <code>growable</code>
+参数为 <code>false</code>：</p>
 
     <pre class="prettyprint lang-dart">const List&lt;String&gt; vowels1 = const ['A', 'E', 'I', 'O', 'U'];
 var vowelsFixed = new List.from(vowels1, growable: false);
 var fruitFixed = new List.from(fruit1, growable: false);</pre>
 
-    <p>You can then modify an element:</p>
+    <p>可以修改其中的一个元素：</p>
 
     <pre class="prettyprint lang-dart">vowelsFixed[0] = 'Y';
 print(vowelsFixed[0]); 'Y'</pre>
 
-    <p>But you cannot add or remove elements:</p>
+    <p>但是无法删除和添加元素：</p>
 
     <pre class="prettyprint lang-dart">vowelsFixed.add('Y');     // UnsupportedError
 vowelsFixed.removeLast(); // UnsupportedError</pre>
@@ -1163,32 +1133,32 @@ vowelsFixed.removeLast(); // UnsupportedError</pre>
 
     <h4 id="section-67">面对的问题</h4>
 
-    <p>You want to add items to the end of a list, and want to know the most
-efficient way to do so.</p>
+    <p>你想知道如何在 list 末尾添加一个元素，也想知道
+添加元素最高效的方式。</p>
 
     <h4 id="section-68">解决的方式</h4>
 
-    <p>To add one item at a time to a list, use <code>add()</code>:</p>
+    <p>用 <code>add()</code> 函数在 list 末尾添加一个元素：</p>
 
     <pre class="prettyprint lang-dart">var names = ['Seth', 'Timothy', 'John'];
 names.add('Kathy');
 names.add('Mary');
 print(names); // ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']</pre>
 
-    <p>If the items to be added are already in a list, you can add them all at once
-using <code>addAll()</code>:</p>
+    <p>如果要添加的元素已经位于一个 list 中了，则可以
+用函数  <code>addAll()</code> 添加所有的元素：</p>
 
     <pre class="prettyprint lang-dart">var names = ['Seth', 'Timothy', 'John'];
 names.addAll(['Kathy', 'Mary']);
 print(names); // ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']</pre>
 
-    <p>Or, you can increase the <code>length</code> property of a list. This generates
-additional entries that are initialized to null. </p>
+    <p>或者你可以增加  <code>length</code> 成员变量。 这样的话新的 list 元素的
+默认值为 null。</p>
 
     <pre class="prettyprint lang-dart">names.length += 2; // Creates 2 more null items.
 print(names);      // ['Seth', 'Timothy', 'John', null, null]</pre>
 
-    <p>You can then replace the <code>null</code> values with actual values:</p>
+    <p>然后可以用真实的值替代这些 <code>null</code>：</p>
 
     <pre class="prettyprint lang-dart">var names = ['Seth', 'Timothy', 'John'];
 var moreNames = ['Kathy', 'Mary'];
@@ -1202,8 +1172,8 @@ for (var i = 0; i &lt; moreNames.length; i++) {
 
 print(names); ['Seth', 'Timothy', 'John', 'Kathy', 'Mary']</pre>
 
-    <p>在 List 中添加内容 by increasing the list length first is generally more
-efficient than using <code>add()</code> or <code>addAll()</code>.</p>
+    <p>通过增加 length 来添加内容比用 <code>add()</code> 或者 <code>addAll()</code>
+更高效。</p>
 
     <h2 id="numbers">Numbers</h2>
 
@@ -1211,69 +1181,68 @@ efficient than using <code>add()</code> or <code>addAll()</code>.</p>
 
     <h4 id="section-70">面对的问题</h4>
 
-    <p>You want to parse a string and convert it to a number.</p>
+    <p>解析一个字符串并转化为数字。</p>
 
     <h4 id="section-71">解决的方式</h4>
 
-    <p>Use <code>int.parse</code> to convert a string to an int:</p>
+    <p>用 <code>int.parse</code> 把字符串转换为 int：</p>
 
     <pre class="prettyprint lang-dart">print(int.parse('231')); // 231</pre>
 
-    <p>The strings can be prefixed with a ‘+’ or a ‘-‘:</p>
+    <p>字符串可以用 ‘+’ 或者 ‘-‘ 作为前缀：</p>
 
     <pre class="prettyprint lang-dart">print(int.parse('+231')); // 231
 print(int.parse('-231')); // -231</pre>
 
-    <p>You can pass in the radix as a second argument:</p>
+    <p>第二个参数可以设置安装几进制解析：</p>
 
     <pre class="prettyprint lang-dart">print(int.parse('231', radix: 16));  // 561
 print(int.parse('F34A', radix: 16)); // 62282</pre>
 
-    <p>Strings starting with ‘0x’, ‘-0x’ or ‘+0x’ are assumed to have a radix of 16:</p>
+    <p>以’0x’、 ‘-0x’ 或者 ‘+0x’ 开头的字符串默认按照 16 进制数字解析：</p>
 
     <pre class="prettyprint lang-dart">print(int.parse('0x231')); // 561</pre>
 
-    <p>Use <code>double.parse</code> to convert a string to a double:</p>
+    <p>用 <code>double.parse</code> 把字符串转换为 double：</p>
 
     <pre class="prettyprint lang-dart">print(double.parse('3.14')); // 3.14</pre>
 
-    <p>The method accepts exponential notation:</p>
+    <p>该函数支持指数表达形式：</p>
 
     <pre class="prettyprint lang-dart">print(double.parse('3.14e5')); // 314000.0</pre>
 
-    <p>Both <code>int.parse</code> and <code>double.parse</code> throw a FormatException if they are passed
-invalid arguments.</p>
+    <p>如果字符串不可解析为数字，则 <code>int.parse</code> 和 <code>double.parse</code> 都会抛出一个 FormatException 。</p>
 
     <h3 id="section-72">把数字转换为字符串</h3>
 
     <h4 id="section-73">面对的问题</h4>
 
-    <p>You want to convert a number to a string.</p>
+    <p>你想把数字转化为字符串。</p>
 
     <h4 id="section-74">解决的方式</h4>
 
-    <p>Use <code>toString()</code> for a no-frills number to string conversion:</p>
+    <p>用 <code>toString()</code> 把数字转换为对应的字符串：</p>
 
     <pre class="prettyprint lang-dart">1234.toString();   // '1234'
 3.1519.toString(); // '3.1519'</pre>
 
-    <p>To specify the number of signficant digits, use the <code>toStringAsPrecision()</code>
-method: </p>
+    <p>如果要指定数字的位数，则用 <code>toStringAsPrecision()</code>
+函数：</p>
 
     <pre class="prettyprint lang-dart">1234.toStringAsPrecision(5);   // '1234.0'
 3.1519.toStringAsPrecision(8); // '3.1519000'</pre>
 
-    <p>To specify the number of digits after the decimal, use <code>toStringAsFixed()</code>:</p>
+    <p>如果要指定小数点后的位数，则用  <code>toStringAsFixed()</code>:</p>
 
     <pre class="prettyprint lang-dart">1234.toStringAsFixed(2);   // '1234.00'
 3.1519.toStringAsFixed(2); // '3.15'</pre>
 
-    <p>To convert the number to decimal exponential notation, use the
-<code>toStringAsExponential()</code> method: </p>
+    <p>要转换为指数表达方式，则用
+<code>toStringAsExponential()</code> 函数： </p>
 
     <pre class="prettyprint lang-dart">1234.toStringAsExponential();   // '1.234e+3'</pre>
 
-    <p>You can specify the radix when converting an integer to a string:</p>
+    <p>当把数字转换为字符串的时候还可以指定按照几进制来转换：</p>
 
     <pre class="prettyprint lang-dart">64.toRadixString(2);  // '1000000'
 64.toRadixString(8);  // '100'
@@ -1281,13 +1250,12 @@ method: </p>
 
     <h2 id="json">JSON</h2>
 
-    <p>JSON (JavaScript Object Notation) is a text-based format for representing
-objects and collections. You can use the ‘dart:json’ library to decode JSON
-strings into Dart objects, and encode Dart objects into JSON strings.</p>
+    <p>JSON (JavaScript Object Notation) 是用文本的方式来描述对象和集合。
+你可以用 ‘dart:json’ 库中的类来解析和编码 JSON 对象。</p>
 
-    <p>To use the examples in this chapter, you need to import the <code>dart:json</code>
-library. We prefer to declare our import of the libary in a manner that
-provides helpful namespacing for top level functions:</p>
+    <p>本节的示例需要先导入 <code>dart:json</code> 才能运行。
+推荐用如下的方式来导入库，这样可以提供一个
+友好的命名空间来调用顶级方法：</p>
 
     <pre class="prettyprint lang-dart">import 'dart:json' as json;
 
@@ -1297,22 +1265,20 @@ void main() {
   ...
 }</pre>
 
-    <p>You can read the API documentation for the dart:json library at
-http://api.dartlang.org/docs/releases/latest/dart_json.html.</p>
+    <p>关于 dart:json 的 API 文档请访问：http://api.dartlang.org/docs/releases/latest/dart_json.html.</p>
 
     <h3 id="json-">编码为 JSON 格式</h3>
 
     <h4 id="section-75">面对的问题</h4>
 
-    <p>You want to convert a Dart object into JSON.</p>
+    <p>你想把 Dart 对象编码为 JSON 字符串。</p>
 
     <h4 id="section-76">解决的方式</h4>
 
-    <p>Use the <code>stringify()</code> function to encode a Dart object into a JSON-formatted
-string.</p>
+    <p>用 <code>stringify()</code> 函数来把 Dart 对象编码为 JSON 格式字符串。</p>
 
-    <p>The following Dart objects are automatically encoded into JSON by
-<code>stringify()</code>:</p>
+    <p>下面的 Dart 对象通过
+<code>stringify()</code> 可以自动编码为 JSON 字符串：</p>
 
     <ul>
       <li>int</li>
@@ -1336,10 +1302,10 @@ void main() {
   // '{&quot;name&quot;:&quot;joe&quot;,&quot;born&quot;:2002,&quot;into&quot;:{&quot;films&quot;:[&quot;crime&quot;,&quot;noir&quot;]},&quot;aliases&quot;:[]}'
 }</pre>
 
-    <p>Note that <code>stringify()</code> encodes List and Map objects recursively.</p>
+    <p>注意 <code>stringify()</code> 函数通过递归的方式来编码  List 和 Map 对象。</p>
 
-    <p>If an object of a type not in the list above is passed to <code>stringify()</code> as an
-argument, <code>stringify()</code> calls that object’s <code>toJson()</code> method:</p>
+    <p>如果 <code>stringify()</code> 的参数不是上面的对象，则 <code>stringify()</code> 会调用该对象的
+<code>toJson()</code> 函数：</p>
 
     <pre class="prettyprint lang-dart">import 'dart:json' as json;
 
@@ -1356,8 +1322,8 @@ void main() {
   json.stringify(person); // '&quot;{\&quot;name\&quot;:\&quot;john\&quot;,\&quot;age\&quot;:32}&quot;'
 }</pre>
 
-    <p>If the <code>toJson()</code> method is not defined on an object that <code>stringify()</code>
-doesn’t know how to handle, <code>stringify()</code> throws an exception:</p>
+    <p>如果该对象也没有定义 <code>toJson()</code> 函数，则
+<code>stringify()</code> 抛出一个异常：</p>
 
     <pre class="prettyprint lang-dart">import 'dart:json' as json;
 
@@ -1373,10 +1339,11 @@ void main() {
   json.stringify(book); // json.JsonUnsupportedObjectError
 }</pre>
 
-    <p>It is possible that <code>stringify()</code> calls <code>toJson()</code> on several objects in your
-code, and throws an exception if any one of those objects lacks a <code>toJson()</code>.
-Use <code>JsonUnsupportedObjectError</code>’s <code>cause</code> property to see which
-object triggered the exception:</p>
+    <p>有可能 <code>stringify()</code> 调用了很多个对象的 <code>toJson()</code> 函数，
+但是其中有一个没有实现
+<code>toJson()</code> 函数；则可以用
+ <code>JsonUnsupportedObjectError</code>的 <code>cause</code> 成员变量来查看是
+ 谁触发了该异常：</p>
 
     <pre class="prettyprint lang-dart">void main() {
   var person = new Person('john', 32);              // toJson() defined.
@@ -1395,11 +1362,11 @@ object triggered the exception:</p>
 
     <h4 id="section-77">面对的问题</h4>
 
-    <p>You want to convert a JSON string into a Dart object.</p>
+    <p>你想把 JSON 字符串转换为 Dart 对象。</p>
 
     <h4 id="section-78">解决的方式</h4>
 
-    <p>Use <code>parse()</code> to decode a JSON-encoded string into a Dart object:</p>
+    <p>用 <code>parse()</code> 函数把 JSON 字符串转换为 Dart 对象：</p>
 
     <pre class="prettyprint lang-dart">import 'dart:json' as json;
 
@@ -1413,13 +1380,12 @@ void main() {
   person['date'] is List; // true
 }</pre>
 
-    <p>Sometimes you want to transform the data parsed by <code>parse</code>. For
-example, you may prefer to express a date field as a DateTime object, and not
-as a list of numbers representing the year, month and day. Specify a ‘reviver’
-function as a second argument to <code>parse</code>. </p>
+    <p>有时候你可能需要转换 <code>parse</code> 解析的内容。例如，
+你可能用一个 DateTime 对象来代表日期，而不是用一个年月日的数字 list 来表达。
+用 ‘reviver’ 方法作为 <code>parse</code> 的第二个参数可以实现转换功能。</p>
 
-    <p>This function is called once for each object or list property parsed, and the 
-return value of the reviver function is used instead of the parsed value:</p>
+    <p>该方法会在每个解析的对象或者 list 属性上执行，并使用 reviver 方法返回的值
+替代原来的值：</p>
 
     <pre class="prettyprint lang-dart">import 'dart:json' as json;
 
@@ -1439,27 +1405,27 @@ void main() {
 
     <h2 id="uris">URIs</h2>
 
-    <p>Note: all examples require that you load ‘dart:uri’:</p>
+    <p>注意 本节所有的示例代码都需要导入 ‘dart:uri’：</p>
 
     <pre class="prettyprint lang-dart">import 'dart:uri';</pre>
 
     <h3 id="uri">编码和解码完整的 URI</h3>
 
-    <p>Use <code>encodeUri()</code> to encode a fully qualified URI:</p>
+    <p>用 <code>encodeUri()</code> 来编码一个完整的 URI：</p>
 
     <pre class="prettyprint lang-dart">encodeUri('http://www.example.com/file with spaces.html')
 // 'http://www.example.com/file+with+spaces.html'</pre>
 
-    <p>Characters that have special meaning in the URI (such as #;,/?:@&amp;=$) are not
-escaped:</p>
+    <p>在  URI 中具有特殊作用的字符 (例如 #;,/?:@&amp;=$) 不会
+被转义：</p>
 
     <pre class="prettyprint lang-dart">encodeUri('http://example.com/?x=10&amp;y=20#last');
 // 'http://example.com/?x=10&amp;y=20#last'
 
 encodeUri('mailto:bob@example.com'); // 'mailto:bob@example.com'</pre>
 
-    <p>Call <code>encodeUriComponent()</code> to encode any user-provided parameters that are
-passed to the server as part of a URI:</p>
+    <p>用 <code>encodeUriComponent()</code> 来编码任何用户提交需要作为 URI 的一部分提交到
+服务器的数据：</p>
 
     <pre class="prettyprint lang-dart">var params = encodeUriComponent('?param1=10&amp;param2=20');
 print(params); // '%3Fparam1%3D10%26param2%3D20'
@@ -1467,20 +1433,20 @@ print(params); // '%3Fparam1%3D10%26param2%3D20'
 encodeUri('http://www.example.com/') + params;
 // 'http://www.example.com/%3Fparam1%3D10%26param2%3D20'));</pre>
 
-    <p>Don’t call <code>encodeUriComponent()</code> on the complete URI. It escapes characters
-like : and / and renders the URI unusable:</p>
+    <p>注意：不要在完整的 URI 上调用 <code>encodeUriComponent()</code> 。
+这样会导致 URI 中的特殊字符被转义：</p>
 
     <pre class="prettyprint lang-dart">encodeUriComponent('http://www.example.com/'); 
 // 'http%3A%2F%2Fwww.example.com%2F'</pre>
 
-    <p>To decode a URI previously encoded using <code>encodeUri()</code>, use <code>decodeUri()</code>:</p>
+    <p>用 <code>decodeUri()</code> 来解析之前用 <code>encodeUri()</code> 编码的 URI  ：</p>
 
     <pre class="prettyprint lang-dart">var uri = 'http://www.example.com/file with spaces.html';
 var encodedUri = encodeUri(uri);
 decodeUri(encodedUri) == uri; // true</pre>
 
-    <p>To decode a URI component previously encoded using <code>encodeUriComponent()</code>, use
-<code>decodeUriComponent()</code>: </p>
+    <p>用 <code>decodeUriComponent()</code> 解析之前
+ <code>encodeUriComponent()</code> 编码过的 URI：</p>
 
     <pre class="prettyprint lang-dart">var params = encodeUriComponent('?param1=10&amp;param2=20');
 var encodedParams = encodeUriComponent(params);
@@ -1490,12 +1456,12 @@ decodeUriComponent(encodedParams) == params; // true</pre>
 
     <h4 id="section-79">面对的问题</h4>
 
-    <p>You want to access the parts of a URI.</p>
+    <p>你想访问 URI 的部分内容。</p>
 
     <h4 id="section-80">解决的方式</h4>
 
-    <p>The properties of a URI created using the <code>Uri()</code> constructor can be directly
-accessed in the following manner: </p>
+    <p>用 <code>Uri()</code> 构造函数创建的 URI 对象可以直接访问如下
+成员变量：</p>
 
     <pre class="prettyprint lang-dart">var uri = new Uri('http://example.org:8080/content/a.html#intro');
 
@@ -1506,32 +1472,30 @@ uri.domain;     // 'example.org'
 uri.path;       // '/content/a.html'
 uri.fragment;   // 'intro'</pre>
 
-    <p>Get the query parameters using the URI’s <code>query</code> property:</p>
+    <p>通过 URI 的  <code>query</code> 成员变量来获取 URI 的查询参数：</p>
 
     <pre class="prettyprint lang-dart">var params = 'name=john&amp;age=32';
 var uri = new Uri('http://example.org/?name=john&amp;age=32');
 uri.query; // 'name=john&amp;age=32'</pre>
 
-    <p>For http/https schemes, you can access the <code>origin</code> property:</p>
+    <p>对于 http/https 协议，可以通过 <code>origin</code> 来查询主机信息：</p>
 
     <pre class="prettyprint lang-dart">var uri = new Uri('http://example.org:8080/content/a.html#intro');
 uri.origin;     // 'http://example.org:8080'</pre>
 
     <h4 id="section-81">延伸讨论</h4>
 
-    <p>The Uri class treats all URs that do not explicitly begin with a scheme as
-relative:</p>
+    <p>所有不是以 URI 协议开头的 URL ， Uri 类都认为是相对的：</p>
 
     <pre class="prettyprint lang-dart">new Uri('//example.org:8080/content/').isAbsolute; // false
 new Uri('example.org:8080/content/').isAbsolute;   // false</pre>
 
-    <p>URIs that begin with a scheme, but that contain a fragment, are also considered
-relative:</p>
+    <p>以协议开头但是同时包含片段的 URI 也被认为是相对的：</p>
 
     <pre class="prettyprint lang-dart">new Uri('http//example.org:8080/content/#intro').isAbsolute; // false</pre>
 
-    <p>The <code>scheme</code> and <code>domain</code> properties for  relative URIs are empty. Instead, a 
-relative URI starts with the path component:</p>
+    <p>相对 URI 的 <code>scheme</code> 和 <code>domain</code> 是空的。
+而 相对 URI 是从一个路径开始的：</p>
 
     <pre class="prettyprint lang-dart">var uri = new Uri('example.org/content/a.html#intro');
       
@@ -1540,7 +1504,7 @@ uri.scheme;     // ''
 uri.domain;     // ''
 uri.path;       // 'example.org/content/a.html'</pre>
 
-    <p>Accessing the <code>origin</code> property of a relative URI throws an exception:</p>
+    <p>访问相对 URI 的 <code>origin</code> 成员变量会抛出一个异常：</p>
 
     <pre class="prettyprint lang-dart">var uri = new Uri('example.org/content/a.html#intro');
 uri.isAbsolute; // false
@@ -1555,12 +1519,11 @@ try {
 
     <h4 id="section-82">面对的问题</h4>
 
-    <p>You want to build URIs from individual parts.</p>
+    <p>你想从各个组成部门创建一个 URI。</p>
 
     <h4 id="section-83">解决的方式</h4>
 
-    <p>Use the <code>Uri.fromComponents()</code> constructor to build up a URI from individual
-parts:</p>
+    <p>用 <code>Uri.fromComponents()</code> 构造函数从各个组成部分创建 URI：</p>
 
     <pre class="prettyprint lang-dart">var uri = new Uri.fromComponents(
   scheme: 'http',
@@ -1571,15 +1534,15 @@ parts:</p>
 uri.isAbsolute;        // true
 print(uri.toString()); // 'http://example.org/content/a.html?name=john'</pre>
 
-    <p>If you do not pass in the scheme as an argument, <code>Uri.fromComponents()</code> creates
-a relative URI, and prefixes the URI with leading ‘//`:</p>
+    <p>如果没有提供协议参数，则 <code>Uri.fromComponents()</code> 
+创建一个相对 URI，并用 ‘//` 作为 URI 的起始字符：</p>
 
     <pre class="prettyprint lang-dart">var uri = new Uri.fromComponents(domain: '/content/a.html');
          
 uri.isAbsolute;       // false
 print(uri.toString(); // '//content/a.html'</pre>
 
-    <p>You should remove the leading ‘//’ before using the URI.</p>
+    <p>在使用该 URI 之前需要先删除 ‘//’ 字符。</p>
 
     <h2 id="section-84">测试</h2>
 
@@ -1587,19 +1550,18 @@ print(uri.toString(); // '//content/a.html'</pre>
 
     <h4 id="section-86">面对的问题</h4>
 
-    <p>You want to run just a single test.  Maybe it is the test you are
-currently working on and want to make that pass before running all your tests.
-Or, perhaps it is a failing test that you want to explore in the debugger,
-without dealing with the noise from other tests. </p>
+    <p>你想只是运行一个单一的测试。可能是当前你正在编码的一个测试，你想让该测试
+通过后再运行所有的测试。
+或者，该测试是一个你想在调试器中调试的失败测试，只运行该测试可以避免其他测试的干扰。</p>
 
     <h4 id="section-87">解决的方式</h4>
 
-    <p>To isolate a test, change <code>test()</code> to <code>solo_test()</code>.</p>
+    <p>要隔离一个测试，把  <code>test()</code> 修改为 <code>solo_test()</code> 即可。</p>
 
     <pre class="prettyprint lang-dart">test('if y == 0', ()  =&gt; expect(() =&gt; ...));
 solo_test('if y != 0', () =&gt; expect(() =&gt; ...));</pre>
 
-    <p>Only the <code>solo_test()</code> will run:</p>
+    <p>只有 <code>solo_test()</code> 会执行：</p>
 
     <pre class="prettyprint lang-dart">unittest-suite-wait-for-done
 PASS: if y != 0
@@ -1607,12 +1569,12 @@ PASS: if y != 0
 All 1 tests passed.
 unittest-suite-success</pre>
 
-    <p>Do not have multiple <code>solo_test()</code>s:</p>
+    <p>注意，不要使用多个  <code>solo_test()</code> ：</p>
 
     <pre class="prettyprint lang-dart">solo_test('if y == 0', () =&gt; expect(() =&gt; ...));
 solo_test('if y != 0', () =&gt; expect(() =&gt; ...));</pre>
 
-    <p>This raises an exception, and only the first <code>solo_test()</code> runs:</p>
+    <p>上面的代码会抛出异常，并且只有第一个  <code>solo_test()</code> 被执行：</p>
 
     <pre class="prettyprint lang-dart">unittest-suite-wait-for-done
 Exception: Only one test can be soloed right now.
@@ -1625,29 +1587,25 @@ unittest-suite-success</pre>
 
     <h4 id="section-89">面对的问题</h4>
 
-    <p>You want to run just a subset of all your tests. Maybe you’ve divided up your
-tests into <code>group()</code>s and want to run the tests for one or more group. Or
-perhaps you carefully placed certain keywords in your test descriptions, and
-want to run only tests whose desciption contains a specific keyword.</p>
+    <p>你想只运行一部分测试。可能你用 <code>group()</code>来把你的测试给分组了，并需要执行一组或者机组测试。
+或者，你在测试中设置有关键字，并且只想运行带有某些关键字的测试。</p>
 
     <h4 id="section-90">解决的方式</h4>
 
-    <p>Use the <code>filterTests()</code> function provided by the Unittest library. This
-function takes a String or RegExp argument and matches it against each test
-description.  If the description matches, the test runs, otherwise, it doesn’t.</p>
+    <p>用 Unittest 库提供的  <code>filterTests()</code> 方法。
+该方法的参数为一个字符串或者一个 RegExp，每个测试描述符合该参数才会执行。</p>
 
-    <p>By default, the Unittest library is configured to run <em>all</em> tests called
-within <code>main()</code>. You want to override this behavior. Subclass the default
-Configuration class to create a custom configuration, and disable the
-auto-running of all tests:</p>
+    <p>Unittest 默认配置运行 <code>main()</code> 中的所有测试。
+你需要修改该默认行为。 继承 Configuration 类来提供一个自定义的配置并禁用
+自动运行所有测试的行为：</p>
 
     <pre class="prettyprint lang-dart">class CustomConfiguration extends Configuration {
   get autoStart =&gt; false;
 }</pre>
 
-    <p>Then, after telling the test runner to use the new configuration, you can
-define groups and tests, call <code>filteredTests()</code>, and run your tests using
-<code>runTests()</code>:</p>
+    <p>在告诉测试执行者新的配置后，可以定义你的测试并通过
+<code>filteredTests()</code> 来过滤测试，
+用 <code>runTests()</code> 来运行你的测试：</p>
 
     <pre class="prettyprint lang-dart">void main() {
   unittestConfiguration = new CustomConfiguration();
@@ -1658,13 +1616,13 @@ define groups and tests, call <code>filteredTests()</code>, and run your tests u
   runTests();
 }</pre>
 
-    <p>A complete example that uses <code>filterTests()</code> is shown below. You can run the
-code from the command line, adding a keyword argument that is then passed on
-to <code>filterTests()</code>: </p>
+    <p>下面有一个完整使用 <code>filterTests()</code> 的示例。
+你可以在命令行中运行该示例，命令行输入的命令将作为
+ <code>filterTests()</code> 的参数： </p>
 
     <pre class="prettyprint lang-dart">$ dart filter_tests.dart &lt;keyword&gt;</pre>
 
-    <p>Here is the code:</p>
+    <p>下面是代码：</p>
 
     <pre class="prettyprint lang-dart">import 'package:unittest/unittest.dart';
 import 'package:args/args.dart';
@@ -1699,11 +1657,11 @@ void main() {
   runTests();
 }</pre>
 
-    <p>Run the tests with ‘crucial’ as an argument:</p>
+    <p>用 ‘crucial’ 作为参数来运行：</p>
 
     <pre class="prettyprint lang-dart">$ dart filter_tests.dart crucial</pre>
 
-    <p>Only tests with ‘crucial’ in the description run:</p>
+    <p>只有测试描述中包含 ‘crucial’ 的测试被执行：</p>
 
     <pre class="prettyprint lang-dart">unittest-suite-wait-for-done
 PASS: crucial test
@@ -1712,11 +1670,11 @@ PASS: another crucial test
 All 2 tests passed.
 unittest-suite-success</pre>
 
-    <p>Run the tests with ‘case’ as an argument: </p>
+    <p>用  ‘case’ 参数运行：</p>
 
     <pre class="prettyprint lang-dart">$ dart filter_tests.dart case</pre>
 
-    <p>Only tests within the ‘case change’ group run:</p>
+    <p>只有位于 ‘case change’ 组中的测试被执行：</p>
 
     <pre class="prettyprint lang-dart">unittest-suite-wait-for-done
 PASS: case change to upper
@@ -1725,27 +1683,26 @@ PASS: case change to lower
 All 2 tests passed.
 unittest-suite-success</pre>
 
-    <p>The keyword argument is optional. If you omit it, all tests in the file run.</p>
+    <p>关键字参数是可选的，如果没有提供，则运行所有测试。</p>
 
     <h3 id="section-91">在测试前后运行代码</h3>
 
     <h4 id="section-92">面对的问题</h4>
 
-    <p>You want initialization code to run before each test, and cleanup code to run
-after each test, but want to avoid code duplication.</p>
+    <p>你想在每个测试运行之前初始化一些数据，在测试运行后清理现场，并且
+避免重复的代码。</p>
 
     <h4 id="section-93">解决的方式</h4>
 
-    <p>Within each <code>group()</code>, call <code>setUp()</code> for initialization and <code>tearDown()</code> for
-cleanup. The function passed as an argument to <code>setUp()</code> runs before each
-test, and that passed to <code>tearDown()</code> runs after each test.</p>
+    <p>在每个 <code>group()</code> 中，用 <code>setUp()</code> 来执行初始化任务；用 <code>tearDown()</code> 来执行清理任务。
+ <code>setUp()</code> 的参数在每个测试运行之前运行，<code>tearDown()</code> 的参数在每个测试运行之后运行。</p>
 
-    <h5 id="setup-example">setUp() example</h5>
+    <h5 id="setup-example">setUp() example（示例）</h5>
 
-    <p>Assume you have defined a Point class that contains several methods. You want
-to test each method, and need a Point object in each test. Place the Point
-initialization code inside <code>setUp()</code>, and the Point object becomes available in
-each test:</p>
+    <p>假设你定义了一个包含几个函数的 Point 类。
+你想测试该类的每个函数，并且在每个测试中都需要一个函数。
+把 Point 类的初始化函数放到 <code>setUp()</code> 中，然后在每个测试中就
+可以用 Point 对象了：</p>
 
     <pre class="prettyprint lang-dart">void main() {
   group('test Point with setUp()', () {
@@ -1759,18 +1716,18 @@ each test:</p>
   });
 }</pre>
 
-    <h5 id="setup-and-teardown-example">setUp() and tearDown() example</h5>
+    <h5 id="setup-and-teardown-example">setUp() and tearDown() example（示例）</h5>
 
-    <p>Tests that create files and directories need to clean up after themselves.
-Here is a function that creates a file inside a given directory: </p>
+    <p>在测试完成后，需要把测试生成的文件以及文件夹都删除掉。
+下面是在一个文件夹中创建文件的方法：</p>
 
     <pre class="prettyprint lang-dart">// Writes a file in 'dir' directory.
 Path writeFileToDirectory(dir) {
   ...
 }</pre>
 
-    <p>The code to create the directory goes in <code>setUp()</code>. The code to remove the
-directory and its contents goes in <code>tearDown()</code>:</p>
+    <p>下面的代码在 <code>setUp()</code> 中创建目录。在
+<code>tearDown()</code> 中删除目录中的文件和目录：</p>
 
     <pre class="prettyprint lang-dart">void main() {
   group('test writeFileToDirectory()', () {
@@ -1791,9 +1748,8 @@ directory and its contents goes in <code>tearDown()</code>:</p>
   });
 }</pre>
 
-    <p>The code inside <code>tearDown()</code> runs regardless of whether <code>setUp()</code> sets up a
-resource successfully or not, and regardless of whether a test passes or
-fails. If there is an error inside a test, code within <code>tearDown()</code> still runs:</p>
+    <p>不管 <code>setUp()</code> 中的代码是否执行成功，也不管测试是否成功， <code>tearDown()</code> 中的
+代码都会执行。如果在测试中有个测试失败了， <code>tearDown()</code> 依然执行：</p>
 
     <pre class="prettyprint lang-dart">group('tearDown behavior when', () {
   var tempDir;
@@ -1816,7 +1772,7 @@ fails. If there is an error inside a test, code within <code>tearDown()</code> s
   });
 });</pre>
 
-    <p>Here is the (truncated) test run output:</p>
+    <p>下面是测试的输出结果：</p>
 
     <pre class="prettyprint lang-dart">unittest-suite-wait-for-done
 setting up
@@ -1833,8 +1789,8 @@ Stack Trace:
 
     <h5 id="setup-and-teardown-in-nested-groups">setUp() and tearDown() in nested group()s</h5>
 
-    <p>The <code>setUp()</code> and <code>tearDown()</code> functions reset with the start of a new <code>group()</code>.
-This applies to nested <code>group()</code>s, which do not inherit these functions:</p>
+    <p>在新的 <code>group()</code> 中，<code>setUp()</code> 和 <code>tearDown()</code> 方法会被重置。
+即使在嵌套的 <code>group()</code> 中，里面的 <code>group()</code> 也无法访问外面 <code>group()</code> 的 <code>setUp()</code> 代码：</p>
 
     <pre class="prettyprint lang-dart">group('test Point with nested setUp()', () {
   Point point;
@@ -1849,33 +1805,31 @@ This applies to nested <code>group()</code>s, which do not inherit these functio
   });
 });</pre>
 
-    <p>You can fix this 面对的问题 by assigning each nested <code>group()</code> its own <code>setUp()</code>
-and <code>tearDown()</code>.</p>
+    <p>可以在每个 <code>group()</code> 中都设置一个
+<code>setUp()</code> 和 <code>tearDown()</code> 来解决该问题。</p>
 
     <h3 id="section-94">测试同步异常</h3>
 
     <h4 id="section-95">面对的问题</h4>
 
-    <p>You want to test exceptions in your code. You want to know if some code returns
-normally, or if it throws. Or, you want to test that a specific error is raised,
-and that the error message is correct. </p>
+    <p>如果你想测试代码中的异常。你想知道你的代码是否正确的返回了，还是抛出异常了。或者你想测试函数抛出
+的特定异常信息。</p>
 
     <h4 id="section-96">解决的方式</h4>
 
-    <p>The Matcher library, bundled together with the Unittest package, provides
-several handy assertion shortcuts that you can use in your tests. </p>
+    <p>在 Unittest 包中的 Matcher 库提供了一些处理异常的方法。 </p>
 
-    <p>To test whether code throws, use the <code>throws</code> matcher: </p>
+    <p>用 <code>throws</code> matcher（匹配器）来测试异常： </p>
 
     <pre class="prettyprint lang-dart">expect(() =&gt; 10 ~/ 0, throws);</pre>
 
-    <p>To test that code runs without generating an exception, use the
-<code>returnsNormally</code> matcher:</p>
+    <p>用 <code>returnsNormally</code> matcher 来测试代码
+正常执行而无异常：</p>
 
     <pre class="prettyprint lang-dart">expect(() =&gt; 10 ~/ 1, returnsNormally);</pre>
 
-    <p>The Unittest library provides matchers for commonly occuring exceptions and
-errors:</p>
+    <p>Unittest 库提供了处理常见异常和错误
+的 matcher：</p>
 
     <pre class="prettyprint lang-dart">throwsException
 throwsFormatException
@@ -1886,33 +1840,33 @@ throwsUnimplementedError
 throwsStateError
 throwsUnsupportedError</pre>
 
-    <p>You can use one of these matchers to test the type of the error thrown by your
-code:</p>
+    <p>你可以用这些 matcher 来测试你代码中
+抛出的异常：</p>
 
     <pre class="prettyprint lang-dart">expect(() =&gt; throw new StateError('functions called in the wrong order'), 
     throwsStateError);</pre>
 
-    <p>You can also use the <code>throwsA()</code> and <code>predicate()</code> functions for more granular
-测试 of exceptions.</p>
+    <p>还可以用 <code>throwsA()</code> 和 <code>predicate()</code>方法来详细的控制异常
+信息。</p>
 
-    <p>The <code>predicate()</code> function returns a Matcher based on an assertion about the
-error object:</p>
+    <p><code>predicate()</code> 根据提供的参数返回一个匹配
+特定异常或者错误的 Matcher：</p>
 
     <pre class="prettyprint lang-dart">Matcher isIntegerDivisionByZeroException =
   predicate((e) =&gt; e is IntegerDivisionByZeroException);</pre>
 
-    <p>The <code>throwsA()</code> function takes the Matcher returned by <code>predicate()</code> and
-matches the exception thrown by the code under test against it:</p>
+    <p><code>throwsA()</code> 方法用 <code>predicate()</code> 返回的 Matcher 
+来判断测试代码是否抛出匹配的异常：</p>
 
     <pre class="prettyprint lang-dart">expect(() =&gt; 10 ~/ 0, throwsA(isIntegerDivisionByZeroException));</pre>
 
-    <p>You can test the error message using a combination of <code>throwsA()</code> and
-<code>predicate()</code>:</p>
+    <p>通过组合 <code>throwsA()</code> 和 <code>predicate()</code> 你可以测试
+错误信息：</p>
 
     <pre class="prettyprint lang-dart">expect(() =&gt; throw new ArgumentError('bad argument'), 
   throwsA(predicate((e) =&gt; e.message == 'bad argument')));</pre>
 
-    <p>You can also test the error type and the error message together:</p>
+    <p>还可以同时测试错误类型和错误消息：</p>
 
     <pre class="prettyprint lang-dart">expect(() =&gt; throw new RangeError('out of range'), 
   throwsA(predicate((e) =&gt; (e is RangeError &amp;&amp; e.message == 'out of range'))));</pre>
@@ -1921,25 +1875,25 @@ matches the exception thrown by the code under test against it:</p>
 
     <h4 id="section-98">面对的问题</h4>
 
-    <p>Arithmetic involving doubles is inexact. You want to compare two doubles to
-determine if they are acceptably close.</p>
+    <p>在数学中关于 double 类型是不精确的。你想比较两个 double 来看看
+他们是否相等。</p>
 
     <h4 id="section-99">解决的方式</h4>
 
-    <p>Use the <code>closeTo()</code> matcher for 测试 approximate numerical equality:</p>
+    <p>用 <code>closeTo()</code> matcher 来测试数字近似相等：</p>
 
     <pre class="prettyprint lang-dart">closeTo(value, delta)</pre>
 
-    <p>This matcher checks if the number under test is within delta of some value.</p>
+    <p>该测试会检查测试的数字是否误差在一个变量范围 内。</p>
 
-    <p>Consider this code that computes the distance between two points: </p>
+    <p>例如，下面两个测试两点之间距离的代码：</p>
 
     <pre class="prettyprint lang-dart">Point point1 = new Point(-2, -3);
 Point point2 = new Point(-4, 4);
 
 print(point1.distanceTo(point2)); // 7.280109889280518.</pre>
 
-    <p>Here’s how you can test for approximate equality:</p>
+    <p>下面是测试近似相等的方法：</p>
 
     <pre class="prettyprint lang-dart">expect(point1.distanceTo(point2)), closeTo(7.28, .001));</pre>
 
@@ -1949,19 +1903,19 @@ print(point1.distanceTo(point2)); // 7.280109889280518.</pre>
 
     <h4 id="section-100">面对的问题</h4>
 
-    <p>You want to find DOM elements on a web page.</p>
+    <p>你想查找页面中的 DOM 元素。</p>
 
     <h4 id="section-101">解决的方式</h4>
 
-    <p>Use the top-level <code>query()</code> and <code>queryAll()</code> functions provided by the
-<code>dart:html</code> library. Both functions take CSS selectors as arguments. The
-<code>query()</code> function returns the first matching element, and the <code>queryAll()</code>
-function returns all matching elements.</p>
+    <p>用 <code>dart:html</code> 库的顶级方法 <code>query()</code> 和 <code>queryAll()</code>。
+两个方法都支持 CSS 选择器参数。
+<code>query()</code> 方法返回第一个匹配的元素，
+<code>queryAll()</code> 返回所有匹配的元素。</p>
 
-    <h4 id="example">Example</h4>
+    <h4 id="example">Example（示例）</h4>
 
-    <p>Here are a few examples of the using <code>query()</code> and <code>queryAll()</code> with CSS
-selectors to find DOM elements:</p>
+    <p>下面是一些  <code>query()</code> 和 <code>queryAll()</code> 的示例代码，用
+CSS 选择器来查找 DOM 元素：</p>
 
     <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
@@ -1984,24 +1938,24 @@ selectors to find DOM elements:</p>
       
       void main() {
     
-        // Find by ID.
+        // 通过 ID 查找
         Element element = query('#first');
         print(element.id);                 // 'first'
         print(element.text);               // 'Milk'
         
-        // Find by class.
+        // 通过 class 查找
         List&lt;Element&gt; elements = queryAll('.must-have');
         print(elements.length);            // 2
         
-        // Find by ID or class.
+        // 通过  ID 或者 class 查找
         elements = queryAll('#first, .must-have');
         print(elements.length);            // 2
         
-        // Find by tag.
+        // 通过  tag 查找
         elements = queryAll('li');
         print(elements.length);            // 5
         
-        // Use hierarchical selectors.
+        // 用继承选择器
         elements = queryAll('li &gt; ul &gt; li');
         print(elements.first.text);        // 'Bran Flakes'
         
@@ -2009,7 +1963,7 @@ selectors to find DOM elements:</p>
         element = query('li:nth-child(1)');
         print(element.text);               // 'Milk'
         
-        // Find by attribute.
+        // 通过 attribute 查找
         elements = queryAll('[href *= Nut]');
         print(elements.length);            // 1
       
@@ -2019,12 +1973,12 @@ selectors to find DOM elements:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>For a comprehensive list of selectors that you can use for querying, see
-http://www.w3.org/TR/css3-selectors/[The CSS Selector Specification guide].</p>
+    <p>所有可用的 CSS 选择器请参考：
+http://www.w3.org/TR/css3-selectors/[CSS 选择器规范指南]。</p>
 
     <h4 id="section-102">延伸讨论</h4>
 
-    <p>Calling <code>queryAll()</code> returns a list of DOM elements:</p>
+    <p>方法 <code>queryAll()</code> 返回一个 DOM 元素的 list：</p>
 
     <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
@@ -2048,15 +2002,14 @@ http://www.w3.org/TR/css3-selectors/[The CSS Selector Specification guide].</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>Use the <code>[]</code> operator to access individual elements. You can also use the
-<code>first</code> and <code>last</code> getters:</p>
+    <p>用 <code>[]</code> 操作符访问每个元素。
+还可以用 <code>first</code> 和 <code>last</code> getters:</p>
 
     <pre class="prettyprint lang-dart">print(elements[2].text);    // 'Reddit'
 print(elements.first.text); // 'Google'
 print(elements.last.text);  // 'Github'</pre>
 
-    <p>You can iterate over the list, map list elements to a new list, and filter list
-contents:</p>
+    <p>可以遍历该 list，并把该 list 内容映射为一个新的 list，并过滤里面的内容：</p>
 
     <pre class="prettyprint lang-dart">for (var element in elements) {
    doSomethingWith(element);
@@ -2068,39 +2021,37 @@ print(sites.join(', ')); // &quot;Google, StackOverflow, Reddit, Github&quot;
 sites = elements.where((site) =&gt; site.text.length != 6);
 print(sites.first.text); // &quot;StackOverflow&quot;</pre>
 
-    <p>You can slice the list to obtain a sublist:</p>
+    <p>还可以获取 list 的子列表：</p>
 
     <pre class="prettyprint lang-dart">var sublist = elements.sublist(1, 3); // Get the elements at positions 1 and 2.
 print(sublist.first.text);            // 'StackOverflow'
 print(sublist.last.text);             // 'Reddit'</pre>
 
-    <p>Since the list returned by <code>queryAll()</code> is read only, you cannot add, modify,
-or remove list elements. Attempting to change the list in any way generates an
-error:</p>
+    <p>由于 <code>queryAll()</code> 方法返回的 lsit 为只读的，你无法在里面添加、修改或者删除元素。
+通过任何方式修改里面的元素都会导致错误:</p>
 
     <pre class="prettyprint lang-dart">elements.length = 2; // Error message: 'Cannot resize immutable List.'</pre>
 
-    <p>Other recipes in this chapter show how you can create elements and insert them
-into the DOM, and how to modify existing DOM elements.</p>
+    <p>该书中其他妙方将介绍如何创建和在 DOM 中插入元素，
+以及如何修改已有的 DOM 元素。</p>
 
     <h3 id="css-">在一个限定的范围内使用 CSS 选择器</h3>
 
     <h4 id="section-103">面对的问题</h4>
 
-    <p>You want to find elements that are contained by a particular element.</p>
+    <p>你想查找特定元素内的元素。</p>
 
     <h4 id="section-104">解决的方式</h4>
 
-    <p>Call the <code>query()</code> or <code>queryAll()</code> methods on a DOM element. Invoking one of
-these methods on an element restricts the scope of the query to that
-element’s descendants:</p>
+    <p>在一个 DOM 元素上调用 <code>query()</code> 或者 <code>queryAll()</code>。
+在 DOM 元素上调用这些函数，将查找返回限制为该元素的子元素中：</p>
 
     <pre class="prettyprint lang-dart">containerElement.query(cssSelector);
 containerElement.queryAll(cssSelector);</pre>
 
-    <h4 id="examples">Examples</h4>
+    <h4 id="examples">Examples（示例）</h4>
 
-    <p>Consider the following table of user records:</p>
+    <p>例如，如下示例中：</p>
 
     <pre class="prettyprint lang-dart">&lt;table&gt;
   &lt;tr&gt;&lt;td&gt;Jose&lt;/td&gt;&lt;td class='status'&gt;Accepted&lt;/td&gt;&lt;/tr&gt;
@@ -2109,8 +2060,8 @@ containerElement.queryAll(cssSelector);</pre>
   &lt;tr&gt;&lt;td&gt;Rohan&lt;/td&gt;&lt;td class='status'&gt;Accepted&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;</pre>
 
-    <p>The following code attaches an event handler to each &lt;tr&gt;. When a &lt;tr&gt; is
-clicked, the text within the matching descendant &lt;td&gt; toggles:</p>
+    <p>下面的代码在每个 &lt;tr&gt; 上注册一个事件处理函数。 当点击 &lt;tr&gt; 的时候，
+查找该元素内的 &lt;td&gt; 元素并修改其内容：</p>
 
     <pre class="prettyprint lang-dart">queryAll('tr').forEach((element) {
   element.onClick.listen((event) {
@@ -2119,25 +2070,24 @@ clicked, the text within the matching descendant &lt;td&gt; toggles:</p>
   });
 });</pre>
 
-    <p>Because the query is scoped to the just-clicked row, cells with the ‘status’
-class in other rows are not affected.</p>
+    <p>上面的代码在点击的元素上调用函数 query ， 参数为 ‘status’ 类。
+所以其他非点击的行不受影响。</p>
 
-    <p>Note the use of <code>queryAll()</code> as a top-level function in the code above. Used
-in this manner, <code>queryAll()</code> is scoped to the entire document.</p>
+    <p>同时，注意上面的示例代码中用 <code>queryAll()</code> 来查找文档中的所有匹配的
+元素。</p>
 
-    <h3 id="dom">从一个特定的元素来便利 DOM</h3>
+    <h3 id="dom">从一个特定的元素来遍历 DOM</h3>
 
     <h4 id="section-105">面对的问题</h4>
 
-    <p>You have a reference to a DOM element and want to locate its ancestor,
-sibling, and descendant elements within the DOM structure.</p>
+    <p>你手上有一个 DOM 元素，你想查找该元素的 父节点、兄弟节点和子节点。</p>
 
     <h4 id="section-106">解决的方式</h4>
 
-    <p>The dart:html API provides methods for DOM traversal based on your current
-position in the DOM.</p>
+    <p>dart:html API 提供了用来从一个 DOM 元素遍历
+其他元素的方法。</p>
 
-    <p>Consider the example below:</p>
+    <p>如下示例中：</p>
 
     <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
@@ -2162,28 +2112,29 @@ position in the DOM.</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>Using the top level <code>query()</code> function, you obtain a reference to an &lt;li&gt;
-element. This is your starting point within the DOM structure.</p>
+    <p>用  <code>query()</code> 方法可以获取一个</p>
+    <li>
+      <p>元素。该元素是访问其他元素的起点。</p>
 
-    <p>Use the <code>nextElementSibling</code> and <code>previousElementSibling</code> properties to locate
-an element’s immediate siblings:</p>
+      <p>用 <code>nextElementSibling</code> 和 <code>previousElementSibling</code> 来访问该元素
+紧邻的兄弟元素：</p>
 
-    <pre class="prettyprint lang-dart">print(knees.nextElementSibling.text);     // 'Toes'
+      <pre class="prettyprint lang-dart">print(knees.nextElementSibling.text);     // 'Toes'
 print(knees.previousElementSibling.text); // 'Shoulders'</pre>
 
-    <p>Use the <code>parent</code> property to locate an element’s immediate ancestor:</p>
+      <p>用 <code>parent</code> 来访问该元素的直接父节点：</p>
 
-    <pre class="prettyprint lang-dart">print(knees.parent.tagName);              // 'OL'
+      <pre class="prettyprint lang-dart">print(knees.parent.tagName);              // 'OL'
 print(knees.parent.parent.tagName);       // 'BODY'</pre>
 
-    <p>Use the <code>children</code> property to locate an element’s immediate descendants:</p>
+      <p>用 <code>children</code> 来访问该元素的直接子节点：</p>
 
-    <pre class="prettyprint lang-dart">print(knees.parent.children.length);      // 4</pre>
+      <pre class="prettyprint lang-dart">print(knees.parent.children.length);      // 4</pre>
 
-    <p>Invoking the <code>children</code> property on an element returns a list, and you can
-define functions to filter that list:</p>
+      <p>一个元素的 <code>children</code> 是一个 list，你可以定义一个方法
+来过滤该 list：</p>
 
-    <pre class="prettyprint lang-dart">List&lt;Element&gt; previousSiblings(item) {
+      <pre class="prettyprint lang-dart">List&lt;Element&gt; previousSiblings(item) {
   return item.parent.children.takeWhile(
       (element) =&gt; element != item).toList();
 }
@@ -2194,32 +2145,32 @@ List&lt;Element&gt; nextSiblings(item) {
       (element) =&gt; element != nextElement).toList();
 }</pre>
 
-    <p>The <code>knees</code> element has two previous siblings, and a single next sibling:</p>
+      <p><code>knees</code> 元素前面有两个兄弟元素，后面有一个兄弟元素：</p>
 
-    <pre class="prettyprint lang-dart">List&lt;Element&gt; previousSiblings = previousSiblings(knees);
+      <pre class="prettyprint lang-dart">List&lt;Element&gt; previousSiblings = previousSiblings(knees);
 print(previousSiblings.first.text);    // 'Head'
 print(previousSiblings.last.text);     // 'Shoulders'
 
 print(nextSiblings(knees).first.text); // 'Toes'</pre>
 
-    <h3 id="dom-">创建 DOM 元素</h3>
+      <h3 id="dom-">创建 DOM 元素</h3>
 
-    <h4 id="section-107">面对的问题</h4>
+      <h4 id="section-107">面对的问题</h4>
 
-    <p>You want to create new DOM elements.</p>
+      <p>你想创建一个新的 DOM 元素。</p>
 
-    <h4 id="section-108">解决的方式</h4>
+      <h4 id="section-108">解决的方式</h4>
 
-    <p>The dart:html library provides several ways to create new DOM elements.</p>
+      <p>dart:html 库提供了几个创建 DOM 元素的方法。</p>
 
-    <p>You can use constructors provided by specialized element classes:</p>
+      <p>你可以用特定元素的构造函数来创建：</p>
 
-    <pre class="prettyprint lang-dart">var item = new LIElement();</pre>
+      <pre class="prettyprint lang-dart">var item = new LIElement();</pre>
 
-    <p>These classes inherit from Element. Here are a few examples of specialized
-properties that these classes provide:</p>
+      <p>这些类继承 Element 类。
+下面的一些示例演示了这些类提供的属性：</p>
 
-    <pre class="prettyprint lang-dart">var anchor = new AnchorElement();
+      <pre class="prettyprint lang-dart">var anchor = new AnchorElement();
 anchor.href = 'http://dartlang.org';
 print(anchor.outerHtml); // '&lt;a href=&quot;http://dartlang.org&quot;&gt;&lt;/a&gt;'
 
@@ -2232,52 +2183,50 @@ var form = new FormElement();
 form.method = 'PUT';
 print(form.outerHtml); // '&lt;form method=&quot;PUT&quot;&gt;&lt;/form&gt;'</pre>
 
-    <p>You can also use constructors provided by the Element class.</p>
+      <p>还可以用 Element 类的构造函数。</p>
 
-    <p>Use the <code>Element.tag()</code> constructor to create an element with a specified tag:</p>
+      <p>用 <code>Element.tag()</code> 构造函数来创建一个特殊 tag 的元素：</p>
 
-    <pre class="prettyprint lang-dart">LIElement item = new Element.tag('li');
+      <pre class="prettyprint lang-dart">LIElement item = new Element.tag('li');
 print(item.tagName); // 'LI'</pre>
 
-    <p>You can then assign content to the element using the element’s text property:</p>
+      <p>然后可以用该元素的 text 属性来设置文本：</p>
 
-    <pre class="prettyprint lang-dart">item.text = 'learn Dart';
+      <pre class="prettyprint lang-dart">item.text = 'learn Dart';
 print(item.outerHtml); //  '&lt;li&gt;learn Dart&lt;/li&gt;'</pre>
 
-    <p>An invalid HTML tag passed to <code>Element.tag()</code> creates an UnknownElement object:</p>
+      <p>如果 <code>Element.tag()</code> 的参数为非法的 tag 名字，则会创建一个 UnknownElement 对象:</p>
 
-    <pre class="prettyprint lang-dart">var newElement = new Element.tag('bogusTag');
+      <pre class="prettyprint lang-dart">var newElement = new Element.tag('bogusTag');
 print(newElement is UnknownElement); // true</pre>
 
-    <p>You can use the ‘isTagSupported’ static method provided by the Element class
-to test whether a tag is valid:</p>
+      <p>可以用 Element 类的静态函数 ‘isTagSupported’ 来测试 tag 是否
+是合法的：</p>
 
-    <pre class="prettyprint lang-dart">print(Element.isTagSupported('bogusTag')); // false</pre>
+      <pre class="prettyprint lang-dart">print(Element.isTagSupported('bogusTag')); // false</pre>
 
-    <p>Another way of creating elements is through the use of the <code>Element.html()</code>
-constructor. This constuctor takes a String argument representing a valid HTML
-fragment:</p>
+      <p>还可以用 <code>Element.html()</code> 构造函数来创建元素。
+该函数的参数为一个合法的 HTML 片段：        </p>
 
-    <pre class="prettyprint lang-dart">DivElement div = new Element.html('&lt;div&gt;I love Strawberries.&lt;/div&gt;');</pre>
+      <pre class="prettyprint lang-dart">DivElement div = new Element.html('&lt;div&gt;I love Strawberries.&lt;/div&gt;');</pre>
 
-    <p>Note that creating an element does not insert it into the DOM. Other recipes
-in this chapter discuss different ways in which you can add elements to the DOM.</p>
+      <p>注意：创建的元素并没有插入到 DOM 中。
+该书的其他妙方介绍如何把元素插入到 DOM 树中。</p>
 
-    <h3 id="dom--1">在 DOM 元素中添加一个子元素</h3>
+      <h3 id="dom--1">在 DOM 元素中添加一个子元素</h3>
 
-    <h4 id="section-109">面对的问题</h4>
+      <h4 id="section-109">面对的问题</h4>
 
-    <p>You want to insert one or more elements inside an existing DOM element.</p>
+      <p>你想在存在的 DOM 中掺入元素。</p>
 
-    <h4 id="section-110">解决的方式</h4>
+      <h4 id="section-110">解决的方式</h4>
 
-    <p>Get the list of the DOM element’s children, and add new child elements to that
-list.                                                                            </p>
+      <p>获取 DOM 元素的子节点并在里面添加元素。</p>
 
-    <p>Consider this sparse web page with an empty &lt;ul&gt;. You want to use Dart code to 
-dynamically add &lt;li&gt; elements to the &lt;ul&gt;:</p>
+      <p>例如下面包含一个空的 &lt;ul&gt; 的网页。你想用 Dart 代码
+动态的往 &lt;ul&gt; 中插入 &lt;li&gt; 子元素：</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt;
@@ -2288,76 +2237,72 @@ dynamically add &lt;li&gt; elements to the &lt;ul&gt;:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>In the corresponding Dart file, begin by getting a reference to the parent
-element:</p>
+      <p>在对应的 Dart 代码中， 先获取该 ul 元素：</p>
 
-    <pre class="prettyprint lang-dart">import 'dart:html';
+      <pre class="prettyprint lang-dart">import 'dart:html';
 
 void main() {
   var ul = query('ul');
   // Code for inserting elements goes here.
 }</pre>
 
-    <p>Use <code>add()</code> to append a new element to the parent’s children:</p>
+      <p>用 <code>add()</code> 来在父节点的子节点中添加元素：</p>
 
-    <pre class="prettyprint lang-dart">var li = new LIElement();
+      <pre class="prettyprint lang-dart">var li = new LIElement();
 li.text = 'One banana';
 ul.children.add(li);
 
 print(ul.children.last.outerHtml); '&lt;li&gt;One banana&lt;/li&gt;'</pre>
 
-    <p>The code for creating a new &lt;li&gt; and adding it to the &lt;ul&gt; can be more
-succinctly written using the cascade operator, and we will use this synax for
-subsequent examples:</p>
+      <p>用级联操作符可以让上面的代码更加简洁，在下面的示例中我们将用
+级联操作符的方式来演示代码：</p>
 
-    <pre class="prettyprint lang-dart">items.add(new LIElement()..text = 'Three banana');</pre>
+      <pre class="prettyprint lang-dart">items.add(new LIElement()..text = 'Three banana');</pre>
 
-    <p>Use <code>addAll()</code> to add several elements to the list:</p>
+      <p>用 <code>addAll()</code> 可以一次添加多个元素：</p>
 
-    <pre class="prettyprint lang-dart">List&lt;LIElement&gt; items = [];                                                      
+      <pre class="prettyprint lang-dart">List&lt;LIElement&gt; items = [];                                                      
 items.add(new LIElement()..text = 'Three banana');                                       
 items.add(new LIElement()..text = 'Four banana');
 ul.children.addAll(items);</pre>
 
-    <p>This is what the list looks like:</p>
+      <p>现在该 list 看起来如下所示：</p>
 
-    <pre class="prettyprint lang-dart">One banana
+      <pre class="prettyprint lang-dart">One banana
 Three banana
 Four banana</pre>
 
-    <p>Looks like we skipped an item. Use <code>insert()</code> to place the missing item in the
-list:</p>
+      <p>这里少了一个元素，我们可以用 <code>insert()</code> 来插入缺少的元素：</p>
 
-    <pre class="prettyprint lang-dart">ul.children.insert(1, new LIElement()..text = 'Two banana');</pre>
+      <pre class="prettyprint lang-dart">ul.children.insert(1, new LIElement()..text = 'Two banana');</pre>
 
-    <p>This adds the new &lt;li&gt;  after the second item. The list now looks like this:</p>
+      <p>这样，在第二个元素后面插入一个新的 &lt;li&gt;。现在的列表内容如下：</p>
 
-    <pre class="prettyprint lang-dart">One banana
+      <pre class="prettyprint lang-dart">One banana
 Two banana
 Three banana
 Four banana</pre>
 
-    <p>You can use <code>insert()</code> to prepend to a list:</p>
+      <p>也可以用 <code>insert()</code> 在最前面插入元素：</p>
 
-    <pre class="prettyprint lang-dart">ul.children.insert(0, new LIElement()..text = 'Zero banana');
+      <pre class="prettyprint lang-dart">ul.children.insert(0, new LIElement()..text = 'Zero banana');
 print(ul.children.first.outerHtml == '&lt;li&gt;Zero banana&lt;/li&gt;');</pre>
 
-    <p>The Element class defines a couple of helpful methods that provide additional
-ways of adding child elements to a parent element.</p>
+      <p>Element 类还提供了一些辅助的方法来简化在父元素中添加元素的
+操作。</p>
 
-    <p>Use <code>append()</code> to add a single element to a parent:</p>
+      <p>用 <code>append()</code> 在父节点中添加一个元素：</p>
 
-    <pre class="prettyprint lang-dart">ul.append(new LIElement()..text = 'Five banana');</pre>
+      <pre class="prettyprint lang-dart">ul.append(new LIElement()..text = 'Five banana');</pre>
 
-    <p>Or, you can use the <code>appendHtml()</code> method. This method parses the String
-argument passed to it as HTML and adds the resulting node as the last child of
-the parent:</p>
+      <p>或则用 <code>appendHtml()</code> 元素。这个函数解析 HTML 参数内容并把解析
+到的元素添加到该元素的子节点中：</p>
 
-    <pre class="prettyprint lang-dart">ul.appendHtml('&lt;li&gt;Six banana&lt;/li&gt;');</pre>
+      <pre class="prettyprint lang-dart">ul.appendHtml('&lt;li&gt;Six banana&lt;/li&gt;');</pre>
 
-    <p>Here is the final version of the list:</p>
+      <p>下面是该列表的最终内容：</p>
 
-    <pre class="prettyprint lang-dart">Zero banana
+      <pre class="prettyprint lang-dart">Zero banana
 One banana
 Two banana
 Three banana
@@ -2365,24 +2310,24 @@ Four banana
 Five banana
 Six banana</pre>
 
-    <h3 id="inserting-elements-adjacent-to-an-existing-dom-element">Inserting elements adjacent to an existing DOM element</h3>
+      <h3 id="inserting-elements-adjacent-to-an-existing-dom-element">Inserting elements adjacent to an existing DOM element</h3>
 
-    <h4 id="section-111">面对的问题</h4>
+      <h4 id="section-111">面对的问题</h4>
 
-    <p>You want to insert an element before or after another element.</p>
+      <p>你想在一个元素前面或则后面插入元素</p>
 
-    <h4 id="section-112">解决的方式</h4>
+      <h4 id="section-112">解决的方式</h4>
 
-    <p>Use an element’s <code>insertAdjacentElement()</code> method to insert another element
-immediately before or immediately after it. Or, use the <code>insertBefore()</code> method.
-Examples of both are shown below.</p>
+      <p>用元素的 <code>insertAdjacentElement()</code> 函数在元素前后添加元素。或则用
+ <code>insertBefore()</code> 函数。
+ 下面示例中演示了这两个函数。</p>
 
-    <h4 id="examples-1">Examples</h4>
+      <h4 id="examples-1">Examples（示例）</h4>
 
-    <p>Consider this HTML file. You want to insert two new &lt;li&gt; elements into the &lt;ul&gt;,
-one before the &lt;li&gt; with the ‘target’ ID, and one after it:</p>
+      <p>在如下示例 HTML 中，你想在 &lt;ul&gt; 中添加两个 &lt;li&gt;，
+一个在带有 ID 为 ‘target’ 元素之前一个在其后面：</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt;   
@@ -2398,11 +2343,10 @@ one before the &lt;li&gt; with the ‘target’ ID, and one after it:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>In the accompanying Dart file, get a reference to the target &lt;li&gt;.  Then,
-invoke the <code>insertAdjacentElement()</code> method on that &lt;li&gt; to insert new
-elements next to it:</p>
+      <p>在 Dart 代码中，先获取 target &lt;li&gt; 元素。 然后调用该元素的
+<code>insertAdjacentElement()</code> 函数来添加新的元素：</p>
 
-    <pre class="prettyprint lang-dart">import 'dart:html';
+      <pre class="prettyprint lang-dart">import 'dart:html';
 
 void main() {
   var targetItem = query('#target');
@@ -2416,23 +2360,22 @@ void main() {
   targetItem.insertAdjacentElement('afterEnd', li);
 }</pre>
 
-    <p>The first argument to <code>insertAdjacentElement()</code> indicates where the new
-element is inserted. If it is ‘beforeBegin’, the new element is inserted
-immediately before the target element. If it is ‘afterEnd’, the new element is
-inserted immediately after the target element.</p>
+      <p><code>insertAdjacentElement()</code> 的第一个参数代表新元素插入的位置。
+如果是 ‘beforeBegin’，则新元素紧邻目标元素之前插入；如果是
+‘afterEnd’ 则新元素紧邻目标元素之后插入。</p>
 
-    <p>The list looks like this after the new elements have been inserted:</p>
+      <p>插入两个新元素后的列表如下：</p>
 
-    <pre class="prettyprint lang-dart">First item
+      <pre class="prettyprint lang-dart">First item
 Added before target
 Target item
 Added after target
 Last item</pre>
 
-    <p>You can also use the <code>insertBefore()</code> method to insert an element into the
-DOM. Call <code>insertBefore()</code> on the target element’s parent node:</p>
+      <p>也可以用 <code>insertBefore()</code> 函数来插入元素。
+在目标元素的父节点上调用 <code>insertBefore()</code> ：</p>
 
-    <pre class="prettyprint lang-dart">import 'dart:html';
+      <pre class="prettyprint lang-dart">import 'dart:html';
       
 void main() {
   var targetItem = query('#target');
@@ -2447,53 +2390,51 @@ void main() {
   targetItem.parent.insertBefore(li, targetItem.nextElementSibling);
 }</pre>
 
-    <h3 id="dom--2">复制 DOM 元素</h3>
+      <h3 id="dom--2">复制 DOM 元素</h3>
 
-    <h4 id="section-113">面对的问题</h4>
+      <h4 id="section-113">面对的问题</h4>
 
-    <p>You want to duplicate a DOM element.</p>
+      <p>你想复制一个 DOM 元素。</p>
 
-    <h4 id="section-114">解决的方式</h4>
+      <h4 id="section-114">解决的方式</h4>
 
-    <p>Call the <code>clone()</code> method on the element.</p>
+      <p>调用 Element 的 <code>clone()</code> 函数。</p>
 
-    <p>Assume you have the following HTML, and want to clone the &lt;ul&gt;:</p>
+      <p>在如下示例中，复制  &lt;ul&gt; 元素：</p>
 
-    <pre class="prettyprint lang-dart">&lt;ul&gt;
+      <pre class="prettyprint lang-dart">&lt;ul&gt;
   &lt;li&gt;Sam&lt;/li&gt;
   &lt;li&gt;Green Eggs&lt;/li&gt;
   &lt;li&gt;Ham&lt;/li&gt;
 &lt;/ul&gt;</pre>
 
-    <p>First, obtain a reference to the original element:</p>
+      <p>首先获取这个 ul 元素：</p>
 
-    <pre class="prettyprint lang-dart">UListElement ul = query('ul');</pre>
+      <pre class="prettyprint lang-dart">UListElement ul = query('ul');</pre>
 
-    <p>Then, call <code>clone()</code> with a boolean argument. This argument determines whether
-you create a deep or a shallow copy. </p>
+      <p>然后调用 <code>clone()</code> 函数，该函数参数为布尔值。
+该参数指定是深度克隆还是影子克隆（a deep or a shallow copy）。</p>
 
-    <p>If the argument to <code>clone()</code> is <code>true</code>, a deep copy is created, and the entire
-subtree of the original node is cloned:</p>
+      <p>如果 <code>clone()</code> 的参数为 <code>true</code>，则是深度克隆，目标节点的所有子节点都被克隆：</p>
 
-    <pre class="prettyprint lang-dart">UListElement deepCopy = ul.clone(true);
+      <pre class="prettyprint lang-dart">UListElement deepCopy = ul.clone(true);
 print(deepCopy.children.length); // 3</pre>
 
-    <p>If the argument to <code>clone()</code> is <code>false</code>, a shallow copy is created, and the
-original element’s child nodes are not copied:</p>
+      <p>如果 <code>clone()</code> 的参数为 <code>false</code>，则是影子克隆，
+则目标元素的子元素没有被克隆：</p>
 
-    <pre class="prettyprint lang-dart">UListElement shallowCopy = ul.clone(false);
+      <pre class="prettyprint lang-dart">UListElement shallowCopy = ul.clone(false);
 print(shallowCopy.children.length); // 0</pre>
 
-    <p>Cloning a node copies all of the node’s attributes, as well as the values of 
-those attributes.</p>
+      <p>克隆一个节点则复制该节点的所有属性和值。</p>
 
-    <p>Assume a page contains the following HTML:</p>
+      <p>假设一个包含如下代码的网页：</p>
 
-    <pre class="prettyprint lang-dart">&lt;input type=&quot;text&quot; name=&quot;username&quot; maxlength=&quot;10&quot;&gt;</pre>
+      <pre class="prettyprint lang-dart">&lt;input type=&quot;text&quot; name=&quot;username&quot; maxlength=&quot;10&quot;&gt;</pre>
 
-    <p>The clone of the &lt;input&gt; element contains the same attributes as the original:</p>
+      <p>克隆的 &lt;input&gt; 元素包含同样的属性和值：</p>
 
-    <pre class="prettyprint lang-dart">import 'dart:html';
+      <pre class="prettyprint lang-dart">import 'dart:html';
 
 void main() {
   var original = query('input');
@@ -2504,27 +2445,25 @@ void main() {
   print(original.attributes['size'] == original.attributes['size']); // true
 }</pre>
 
-    <h4 id="example-1">Example</h4>
+      <h4 id="example-1">Example（示例）</h4>
 
-    <p>We want to display to create a new page that displays some fun <a href="www.google.com/doodles">Google
-Doodles</a>, but don’t want to load up all the images when
-the page loads. We provide a link that the user can click to see the logos.</p>
+      <p>这里创建一个显示有趣的 <a href="www.google.com/doodles">Google
+Doodles</a> 的网页，该页面在加载的时候
+并不载入所有的图片。当用户点击每个 doodles 的时候再载入图片。</p>
 
-    <p>We use a &lt;template&gt; element to store the barebones structure for displaying each
-logo and the accompanying caption. The &lt;template&gt; element allows us to declare
-fragments of markup. These fragments are not rendered when the page loads, but
-they can be activated at runtime.</p>
+      <p>用一个 &lt;template&gt; 元素来作为每个 doodles logo 和 文字的模板。
+&lt;template&gt; 可以定义标记片段作为模板。</p>
 
-    <p>The &lt;template&gt; element is new and not supported by every modern browser. For
-an excellent introduction to this new element, see
+      <p>&lt;template&gt; 元素是新的标签，目前有些浏览器还不支持该元素。
+关于该新元素的介绍，请参考：
 <a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/">HTML’s New Template Tag</a>.</p>
 
-    <p>The &lt;template&gt; in the HTML below contains &lt;img&gt;, &lt;div&gt; and &lt;hr&gt; tags. The
+      <p>在下面的 &lt;template&gt; 中包含 &lt;img&gt;、 &lt;div&gt; 和 &lt;hr&gt; 标签。
 &lt;img&gt;
-tag has no src and alt properties, and the &lt;div&gt; element contains no text. These
-tags are placeholders.</p>
+标签没有 src 和 alt 属性，并且 &lt;div&gt; 元素也没有 文本。
+这些标签只是占位符。</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt;   
@@ -2541,11 +2480,10 @@ tags are placeholders.</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>Once the user clicks the link to see the logos, we fill in the missing fields
-using hard-coded data. Then, we clone the template contents, and we insert them
-into the document:</p>
+      <p>当用户点击链接查看 logo 的时候，我们用代码中的数据来填充缺少的标签内容。然后再克隆
+模板内容并插入到页面中：</p>
 
-    <pre class="prettyprint lang-dart">import 'dart:html';
+      <pre class="prettyprint lang-dart">import 'dart:html';
 
 void main() {
   
@@ -2581,39 +2519,38 @@ void main() {
   });
 }</pre>
 
-    <p>We get the template contents using the template element’s <code>content</code> property.</p>
+      <p>用 template 的 <code>content</code> 属性来获取模板内容。</p>
 
-    <pre class="prettyprint lang-dart">var content = document.query('#myTemplate').content;</pre>
+      <pre class="prettyprint lang-dart">var content = document.query('#myTemplate').content;</pre>
 
-    <p>We get references to the &lt;img&gt; and &lt;div&gt; elements using scoped queries:</p>
+      <p>在元素上查询 &lt;img&gt; 和 &lt;div&gt; 标签：</p>
 
-    <pre class="prettyprint lang-dart">ImageElement img = content.query('img');
+      <pre class="prettyprint lang-dart">ImageElement img = content.query('img');
 DivElement div = content.query('div');</pre>
 
-    <p>Cloning the template contents activates the &lt;template&gt; element’s inert HTML, and
-inserting it into the DOM makes the logos visible to the user:</p>
+      <p>把克隆的 &lt;template&gt; 内容插入到网页中来更新网页内容，
+然后用户就可以看到图片了：</p>
 
-    <pre class="prettyprint lang-dart">document.body.append(content.clone(true));</pre>
+      <pre class="prettyprint lang-dart">document.body.append(content.clone(true));</pre>
 
-    <h3 id="dom--3">替换 DOM 元素</h3>
+      <h3 id="dom--3">替换 DOM 元素</h3>
 
-    <h4 id="section-115">面对的问题</h4>
+      <h4 id="section-115">面对的问题</h4>
 
-    <p>You want to replace one or more DOM elements with other elements.</p>
+      <p>你想用其他的元素来替换一个或者多个 DOM 元素。</p>
 
-    <h4 id="section-116">解决的方式</h4>
+      <h4 id="section-116">解决的方式</h4>
 
-    <p>Call the <code>replaceWith()</code> method on a DOM element and pass to it the new
-element as an argument.</p>
+      <p>调用 DOM 元素的  <code>replaceWith()</code> 函数，参数为替代的元素。</p>
 
-    <h4 id="example-2">Example</h4>
+      <h4 id="example-2">Example</h4>
 
-    <p>The following example allows the user to edit a snippet of text. The text is
-displayed within a <span> element. A text &lt;input&gt; replaces the <span> when the
-user wants to edit the text. When the user is done editing, the <span> replaces
-the &lt;input&gt;:</span></span></span></p>
+      <p>下面的示例用户可以编辑一小段文本。文本显示在 <span> 元素中。
+当用户点击文本的时候，就用 &lt;input&gt; 替代 <span> 来编辑内容。
+当用户编辑完后，再用 <span> 替代
+&lt;input&gt;:</span></span></span></p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt; 
@@ -2653,24 +2590,24 @@ the &lt;input&gt;:</span></span></span></p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <h3 id="dom--4">从 DOM 中删除元素</h3>
+      <h3 id="dom--4">从 DOM 中删除元素</h3>
 
-    <h4 id="section-117">面对的问题</h4>
+      <h4 id="section-117">面对的问题</h4>
 
-    <p>You want to find an element and remove it from the DOM structure. </p>
+      <p>你想查找并删除 DOM 元素。</p>
 
-    <h4 id="section-118">解决的方式</h4>
+      <h4 id="section-118">解决的方式</h4>
 
-    <p>Call the <code>remove()</code> method on the element. Doing so removes it from the DOM.</p>
+      <p>调用元素的 <code>remove()</code> 函数即可从 DOM 中删除该元素。</p>
 
-    <h4 id="example-3">Example</h4>
+      <h4 id="example-3">Example</h4>
 
-    <p>The following example shows a list of exotic fruits, some of which are out of
-stock.  The application allows the user to click a link to stop displaying the out
-of stock items. Clicking the link triggers a callback that removes the items from
-the DOM. Here is the HTML file:</p>
+      <p>下面示例中显示一个水果列表，有些水果断货了。
+用户可以点击一个连接来隐藏断货的水果。
+点击连接会触发一个删除元素的回调函数。下面是
+示例 HTML 代码：</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 &lt;head&gt;
   &lt;style&gt; .out-of-stock {color: #aaa}; &lt;/style&gt;  
 &lt;/head&gt;
@@ -2691,9 +2628,9 @@ the DOM. Here is the HTML file:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>And here is the Dart code that handles the element removal:</p>
+      <p>下面是删除元素的 Dart 代码：</p>
 
-    <pre class="prettyprint lang-dart">import 'dart:html';
+      <pre class="prettyprint lang-dart">import 'dart:html';
       
 void main() {
   
@@ -2711,81 +2648,78 @@ void main() {
   });
 }</pre>
 
-    <h4 id="section-119">延伸讨论</h4>
+      <h4 id="section-119">延伸讨论</h4>
 
-    <p>Using <code>remove()</code> works well if you have a reference to the DOM element you
-want to remove. But sometimes, you have a reference to the element’s
-parent, not to the element itself. For example, you may want to remove an &lt;li&gt;, 
-but you only have a reference to the &lt;ul&gt; or &lt;ol&gt; that contains the &lt;li&gt;. </p>
+      <p>如果你有要删除的元素对象，则用 <code>remove()</code> 函数即可。但是，有时候你拿到的是该元素的父节点。
+例如，你想删除一个 &lt;li&gt; 元素，但是你拿到的是该元素的父节点 &lt;ul&gt; 或者 &lt;ol&gt;  对象。</p>
 
-    <p>In such cases, get a list of the parent element’s children. Removing elements
-from this list removes them from the DOM.</p>
+      <p>在这种情况下，从父节点中获取子节点的列表。然后从该子节点列表中删除
+这个元素即可。</p>
 
-    <p>Use <code>removeAt()</code> to remove a child by its index position:</p>
+      <p>用 <code>removeAt()</code> 来删除对应位置的元素：</p>
 
-    <pre class="prettyprint lang-dart">element.children.removeAt(1); // Removes the second child.</pre>
+      <pre class="prettyprint lang-dart">element.children.removeAt(1); // Removes the second child.</pre>
 
-    <p>Remove the last child using <code>removeLast()</code>: </p>
+      <p>用 <code>removeLast()</code> 来删除最后一个元素：</p>
 
-    <pre class="prettyprint lang-dart">element.children.removeLast();</pre>
+      <pre class="prettyprint lang-dart">element.children.removeLast();</pre>
 
-    <p>You can query the collection of children and remove a matching child using
-<code>remove()</code>. The code below finds the first child with the class <code>largest</code>,
-and removes it from the DOM:</p>
+      <p>用 <code>remove()</code> 函数还可以删除符合要求的所有子节点元素。
+下面的代码用 <code>largest</code> class 选择器查找到第一个元素并删除。</p>
 
-    <pre class="prettyprint lang-dart">element.children.remove(element.query('.largest'));</pre>
+      <pre class="prettyprint lang-dart">element.children.remove(element.query('.largest'));</pre>
 
-    <p>You can remove all of an element’s children using the <code>clear()</code> method:</p>
+      <p>用 <code>clear()</code> 函数删除所有子元素：</p>
 
-    <pre class="prettyprint lang-dart">element.children.clear();</pre>
+      <pre class="prettyprint lang-dart">element.children.clear();</pre>
 
-    <h3 id="dom--5">获取和设置 DOM 元素的属性</h3>
+      <h3 id="dom--5">获取和设置 DOM 元素的属性</h3>
 
-    <h4 id="section-120">面对的问题</h4>
+      <h4 id="section-120">面对的问题</h4>
 
-    <p>You have a DOM element and want to get or set the value of its attributes.</p>
+      <p>你有一个 DOM 元素，你想获取或者设置元素属性的值。</p>
 
-    <h4 id="section-121">解决的方式</h4>
+      <h4 id="section-121">解决的方式</h4>
 
-    <p>Most attributes have a corresponding property that you can use to get or set
-the attribute value. You can also use the an element’s <code>attributes</code> map. In
-general, using properties is more Darty, since properties allow tools to check
-the attribute name and type.</p>
+      <p>大部分元素属性都有对应的成员变量来获取或者设置元素的值。
+还可以用元素的 <code>attributes</code> map 变量。
+简单来说，用成员变量更加符合 Dart 风格，成员变量可以让工具来
+检查属性的名字和类型。</p>
 
-    <h4 id="examples-2">Examples</h4>
+      <h4 id="examples-2">Examples</h4>
 
-    <p>Consider the following element:</p>
+      <p>如下元素：</p>
 
-    <pre class="prettyprint lang-dart">&lt;input type='text' name='fname' id='fname' data-purpose='informational' /&gt;</pre>
+      <pre class="prettyprint lang-dart">&lt;input type='text' name='fname' id='fname' data-purpose='informational' /&gt;</pre>
 
-    <p>The Element class defines several properties, such as <code>id</code> and <code>classes</code>, that
-correspond to element attributes. Here are some examples:</p>
+      <p>对应的 Element 类定义了几个成员变量，例如 <code>id</code> 和 <code>classes</code>。 下面是
+一些示例：</p>
 
-    <pre class="prettyprint lang-dart">print(element.id);                 // 'fname'
+      <pre class="prettyprint lang-dart">print(element.id);                 // 'fname'
 
 element.classes.add('first-name');
 print(element.classes.first);      // 'first-name'</pre>
 
-    <p>Subclasses of Element define additional properties, such as the href property of
-AnchorElement, or the size and maxLength properties of InputElement:</p>
+      <p>Element 的子类定义了其他额外的成员变量，
+例如 AnchorElement 类的 href ，InputElement 类的 size 和 maxLength 等：</p>
 
-    <pre class="prettyprint lang-dart">element.size = 30;
+      <pre class="prettyprint lang-dart">element.size = 30;
 element.maxLength = 10;</pre>
 
-    <p>When an element attribute does not have a corresponding property, or when
-using a property is not convenient, you can use an element’s attributes map:</p>
+      <p>当一个元素属性没有对应的成员变量时，或者用成员变量不太方便时，你可以用
+attributes map 变量：</p>
 
-    <pre class="prettyprint lang-dart">print(element.attributes['id']);                   // 'fname'
+      <pre class="prettyprint lang-dart">print(element.attributes['id']);                   // 'fname'
 print(element.attributes['name']);                 // 'fname'</pre>
 
-    <p>Use the attributes map to access an element’s data-* attributes:</p>
+      <p>用 attributes map 来访问元素的 data-* attributes：</p>
 
-    <pre class="prettyprint lang-dart">print(element.attributes['data-purpose']); // 'informational'</pre>
+      <pre class="prettyprint lang-dart">print(element.attributes['data-purpose']); // 'informational'</pre>
 
-    <p>If you want to get or set <em>only</em> the data-* attributes, use the <code>dataset</code>
-property:</p>
+      <p>如果你_只_获取或者设置 data-* 属性，则可以用
+<code>dataset</code> 成员变量：</p>
 
-    <pre class="prettyprint lang-dart">print(element.dataset.length);     // 1
+      <pre class="prettyprint lang-dart">print(element.dataset.length);     // 1
 
 // The key is 'purpose', not 'data-purpose'.
 print(element.dataset.keys.first); // 'purpose'
@@ -2794,11 +2728,10 @@ print(element.dataset['purpose']); // 'informational'
 element.dataset['purpose'] = 'biographical';
 print(element.dataset['purpose']); // 'biographical'</pre>
 
-    <p>Both the <code>attributes</code> and the <code>dataset</code> properties return Map objects. Any
-modifications to an element’s attributes map automatically apply to the
-element:</p>
+      <p><code>attributes</code> 和 <code>dataset</code> 都返回 Map 对象。
+修改该 Map 对象会同时应用到元素上：</p>
 
-    <pre class="prettyprint lang-dart">// Change attribute value.
+      <pre class="prettyprint lang-dart">// Change attribute value.
 element.attributes['id'] = 'first-name';
 print(element.attributes['id']);        // 'first-name'
 
@@ -2810,35 +2743,33 @@ print(element.attributes['maxLength']); // '30'
 element.attributes.remove('id');
 print(element.attributes['id']);       // null</pre>
 
-    <h3 id="section-122">获取和设置元素样式属性</h3>
+      <h3 id="section-122">获取和设置元素样式属性</h3>
 
-    <h4 id="section-123">面对的问题</h4>
+      <h4 id="section-123">面对的问题</h4>
 
-    <p>You want to get and set an element’s CSS style properties.</p>
+      <p>你想获取或者设置元素的 CSS 样式值。</p>
 
-    <h4 id="section-124">解决的方式</h4>
+      <h4 id="section-124">解决的方式</h4>
 
-    <p>You have three options:</p>
+      <p>有三中方式：</p>
 
-    <ul>
-      <li>
-        <p>To get an element’s style properties, use the <code>getComputedStyle()</code> method.</p>
-      </li>
-      <li>
-        <p>To get or set the classes associated with an element, use the <code>classes</code>
-field.</p>
-      </li>
-      <li>
-        <p>To assign style properties directly to an element, use the <code>style</code> field.
-To get an element’s style properties, use the <code>getComputedStyle()</code> method.</p>
-      </li>
-    </ul>
+      <ul>
+        <li>
+          <p>用 <code>getComputedStyle()</code> 函数来获取 CSS 样式</p>
+        </li>
+        <li>
+          <p>用 <code>classes</code> 来访问或者设置元素的 class </p>
+        </li>
+        <li>
+          <p>用 <code>style</code> 直接设置元素的样式。</p>
+        </li>
+      </ul>
 
-    <h4 id="examples-3">Examples</h4>
+      <h4 id="examples-3">Examples</h4>
 
-    <p>The examples below assume the following HTML:</p>
+      <p>假设有如下 HTML 代码：</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;head&gt;
@@ -2853,21 +2784,21 @@ To get an element’s style properties, use the <code>getComputedStyle()</code> 
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>Here are the associated style declarations:</p>
+      <p>下面是对应的 CSS 样式定义：</p>
 
-    <pre class="prettyprint lang-dart">// main.css
+      <pre class="prettyprint lang-dart">// main.css
 
 body {font-family: sans-serif;}
 div:after {content: ' rocks!';}
 .bold {font-weight: bold;}
 .underlined {text-decoration: underline;}</pre>
 
-    <h5 id="getting-an-elements-css-styles">Getting an element’s CSS styles</h5>
+      <h5 id="getting-an-elements-css-styles-css-">Getting an element’s CSS styles（获取一个元素的 CSS 样式）</h5>
 
-    <p>Use the <code>getComputedStyle()</code> method to get a collection of all CSS styles
-applied to an element:</p>
+      <p>用 <code>getComputedStyle()</code> 函数来获取应用到该元素上的所有
+ CSS 值：</p>
 
-    <pre class="prettyprint lang-dart">// main.dart
+      <pre class="prettyprint lang-dart">// main.dart
 
 import 'dart:html';
 
@@ -2880,138 +2811,136 @@ void main() {
   print(element.getComputedStyle().fontWeight); // 'bold'
 }</pre>
 
-    <p>The <code>getComputedStyle()</code> method gets the style information for pseudo-elements.
-Just pass in the pseudo-element as an argument:</p>
+      <p>用 <code>getComputedStyle()</code> 函数查询伪元素的样式信息。
+参数为 伪元素 ：</p>
 
-    <pre class="prettyprint lang-dart">print(element.getComputedStyle(':after').content); // &quot;' rocks!'&quot;</pre>
+      <pre class="prettyprint lang-dart">print(element.getComputedStyle(':after').content); // &quot;' rocks!'&quot;</pre>
 
-    <h5 id="accessing-the-classes-associated-with-an-element">Accessing the classes associated with an element</h5>
+      <h5 id="accessing-the-classes-associated-with-an-element-class">Accessing the classes associated with an element（获取一个元素相关的 class）</h5>
 
-    <p>Use the <code>classes</code> field to get a set of an element’s CSS classes:</p>
+      <p>用 <code>classes</code> 来查询一个元素上的 CSS class ：</p>
 
-    <pre class="prettyprint lang-dart">print(element.classes.first); // 'bold'</pre>
+      <pre class="prettyprint lang-dart">print(element.classes.first); // 'bold'</pre>
 
-    <p>You can associate a new class with an element. Doing this applies the class
-styles to the element:</p>
+      <p>你可以通过如下方式在一个元素上添加一个新的 class 样式：</p>
 
-    <pre class="prettyprint lang-dart">element.classes.add('underlined');
+      <pre class="prettyprint lang-dart">element.classes.add('underlined');
 print(element.classes.contains('underlined'));    // true
 print(element.getComputedStyle().textDecoration); // 'underline'</pre>
 
-    <p>You can remove a class associated with an element. Doing this removes the
-class styles from the element:</p>
+      <p>通过如下方式来删除一个元素上的 class 样式：</p>
 
-    <pre class="prettyprint lang-dart">element.classes.remove('underlined');
+      <pre class="prettyprint lang-dart">element.classes.remove('underlined');
 print(element.getComputedStyle().textDecoration); // 'none'</pre>
 
-    <p>You can use the class list’s <code>toggle()</code> method to toggle a class:</p>
+      <p>用 class 列表的 <code>toggle()</code> 函数来切换一个 class：</p>
 
-    <pre class="prettyprint lang-dart">element.classes.toggle('underlined');
+      <pre class="prettyprint lang-dart">element.classes.toggle('underlined');
 print(element.classes.contains('underlined')); // true
 
 element.classes.toggle('underlined');
 print(element.classes.contains('underlined')); // false</pre>
 
-    <h5 id="directly-applying-a-style-property">Directly applying a style property</h5>
+      <h5 id="directly-applying-a-style-property">Directly applying a style property（直接应用一个样式属性）</h5>
 
-    <p>While using classes is a common way of associating an element with a set of
-styles, you can also attach a style property directly to the element:</p>
+      <p>虽然，用 class 定义属性是一个常见的做法，但是有时候你也需要直接在元素上指定样式属性，
+可以通过如下方式实现：</p>
 
-    <pre class="prettyprint lang-dart">element.style.color = 'rgb(120, 120, 120)';
+      <pre class="prettyprint lang-dart">element.style.color = 'rgb(120, 120, 120)';
 element.style.border = '1px solid rgb(0, 0, 0)';</pre>
 
-    <p>It is idiomatic Dart to write the above code using the cascade operator (..):</p>
+      <p>在 Dart 中通常用 级联操作符来实现上面的代码：</p>
 
-    <pre class="prettyprint lang-dart">element.style
+      <pre class="prettyprint lang-dart">element.style
   ..color =  'rgb(120, 120, 120)';
   ..border = '1px solid rgb(0, 0, 0)';</pre>
 
-    <h2 id="web-ui">Web UI</h2>
+      <h2 id="web-ui">Web UI</h2>
 
-    <aside class="alert alert-danger">
-      <p><strong>Web UI 已经不建议使用了。</strong>
+      <aside class="alert alert-danger">
+        <p><strong>Web UI 已经不建议使用了。</strong>
 从 0.5 版本之后，推荐用 <a href="/polymer-dart/">Polymer.dart</a>
 来替代 Web UI。（译者注： 由于 Web UI 废弃了，所以不再浪费人力翻译了，见谅！）</p>
-    </aside>
-    <p>The Web UI package provides web components and templates to help you write web
+      </aside>
+      <p>The Web UI package provides web components and templates to help you write web
 applications at scale.</p>
 
-    <p>The examples in this chapter can be compiled and run. The instructions below
+      <p>The examples in this chapter can be compiled and run. The instructions below
 for how this can be done assume you are using Dart Editor. For information 
 on how to compile Web UI apps from the command line (and to read more about the
 Web UI compile process), see http://www.dartlang.org/articles/web-ui/tools.html.</p>
 
-    <h4 id="pub-dependency">Pub dependency</h4>
+      <h4 id="pub-dependency">Pub dependency</h4>
 
-    <p>The Web UI package is available from Pub, Dart’s package manager.  In a Dart
+      <p>The Web UI package is available from Pub, Dart’s package manager.  In a Dart
 application that you have opened in the Editor, add the dependency to the Web
 UI package:</p>
 
-    <pre class="prettyprint lang-dart">dependencies:
+      <pre class="prettyprint lang-dart">dependencies:
   web_ui: any</pre>
 
-    <p>This is what a sample <code>pubspec.yaml</code> file looks like:</p>
+      <p>This is what a sample <code>pubspec.yaml</code> file looks like:</p>
 
-    <pre class="prettyprint lang-dart">name: sample
+      <pre class="prettyprint lang-dart">name: sample
 description: A sample web application
 dependencies:
   browser: any
   web_ui: any</pre>
 
-    <p>Run <code>pub install</code> from the Editor’s Tools menu to install the web_ui package.</p>
+      <p>Run <code>pub install</code> from the Editor’s Tools menu to install the web_ui package.</p>
 
-    <h4 id="example-file">Example file</h4>
+      <h4 id="example-file">Example file</h4>
 
-    <p>Copy any example from this chapter in a new file in the top level <code>web/</code>
+      <p>Copy any example from this chapter in a new file in the top level <code>web/</code>
 directory (create that directory if it does not exist). Call the new file
 <code>main.html</code>.</p>
 
-    <h4 id="build-file">Build file</h4>
+      <h4 id="build-file">Build file</h4>
 
-    <p>Create a top level <code>build.dart</code> file with the following contents:</p>
+      <p>Create a top level <code>build.dart</code> file with the following contents:</p>
 
-    <pre class="prettyprint lang-dart">import 'package:web_ui/component_build.dart';
+      <pre class="prettyprint lang-dart">import 'package:web_ui/component_build.dart';
 import 'dart:io';
 
 void main() {
   build(new Options().arguments, ['web/main.html']);
 }</pre>
 
-    <p>This assumes that you called your example file <code>main.html</code>. Modify the filename
+      <p>This assumes that you called your example file <code>main.html</code>. Modify the filename
 in <code>build.dart</code> if you picked a different name for your example file.</p>
 
-    <h4 id="compiling-the-example">Compiling the example</h4>
+      <h4 id="compiling-the-example">Compiling the example</h4>
 
-    <p>Right-click the <code>build.dart</code> file, and choose <code>Run</code> from the drop down menu.</p>
+      <p>Right-click the <code>build.dart</code> file, and choose <code>Run</code> from the drop down menu.</p>
 
-    <p>This runs the Web UI compile script (<code>packages/web_ui/dwc.dart</code>) and generates
+      <p>This runs the Web UI compile script (<code>packages/web_ui/dwc.dart</code>) and generates
 an <code>out</code> directory containing the compiled files. </p>
 
-    <p>Right-click on <code>web/main.html</code>, and select either the <code>Run in Dartium</code> or
+      <p>Right-click on <code>web/main.html</code>, and select either the <code>Run in Dartium</code> or
 “Run as JavaScript” option to run the example.</p>
 
-    <h4 id="making-changes">Making changes</h4>
+      <h4 id="making-changes">Making changes</h4>
 
-    <p>You need to go through the manual compile process only once. After the intial
+      <p>You need to go through the manual compile process only once. After the intial
 compilation is done, Dart Editor detects changes you make to the example file,
 and automatically invokes the <code>dwc.dart</code> compiler script. You can directly run
 the example file (<code>web/main.html</code>) and Dart Editor automatically runs the
 compiled file.</p>
 
-    <h3 id="using-a-dart-expression-inside-html">Using a Dart expression inside HTML</h3>
+      <h3 id="using-a-dart-expression-inside-html">Using a Dart expression inside HTML</h3>
 
-    <h4 id="section-125">面对的问题</h4>
+      <h4 id="section-125">面对的问题</h4>
 
-    <p>You want to inject the value of a Dart expression in your markup.</p>
+      <p>You want to inject the value of a Dart expression in your markup.</p>
 
-    <h4 id="section-126">解决的方式</h4>
+      <h4 id="section-126">解决的方式</h4>
 
-    <p>Place the Dart expression within <code>{{ }}</code>. At runtime, the Web UI framework
+      <p>Place the Dart expression within <code>{{ }}</code>. At runtime, the Web UI framework
 evaluates the expression, and injects the result into the HTML.  Commonly used
 Dart expressions include identifiers, method and function calls, getters, string
 interpolation, and raw strings:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt;
@@ -3042,54 +2971,54 @@ interpolation, and raw strings:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>Building and running the above code displays the following in the browser:</p>
+      <p>Building and running the above code displays the following in the browser:</p>
 
-    <pre class="prettyprint lang-dart">Using identifiers: var x = 32 and var y = 3
+      <pre class="prettyprint lang-dart">Using identifiers: var x = 32 and var y = 3
 Calling a method: 32 in hex is 20
 Calling functions: (x ~/ y) = 10 and (x / y) = 10.67
 Using a getter: [B, o, s, t, o, n]
 Using string interpolation: city = BOSTON
 Using a raw string: $city</pre>
 
-    <p>The expression interpolation shown in the code above creates a <em>static</em> binding
+      <p>The expression interpolation shown in the code above creates a <em>static</em> binding
 between a Dart variable and its representation in the UI. When the page loads,
 all expressions inside <code>{{ }}</code> are evaluated. If the evaluated variable’s value
 changes later on, the UI does not automatically update.</p>
 
-    <p>We will look at how we can make the binding between Dart variables and the UI
+      <p>We will look at how we can make the binding between Dart variables and the UI
 live in other recipes in this chapter.</p>
 
-    <h3 id="observing-a-dart-variable-for-changes">Observing a Dart variable for changes</h3>
+      <h3 id="observing-a-dart-variable-for-changes">Observing a Dart variable for changes</h3>
 
-    <h4 id="section-127">面对的问题</h4>
+      <h4 id="section-127">面对的问题</h4>
 
-    <p>You want to sync a variable and its display. Every time the variable’s value
+      <p>You want to sync a variable and its display. Every time the variable’s value
 changes, you want its display to automatically change. You want this to happen
 without a page refresh, and without having to do any manual DOM manipulation.</p>
 
-    <h4 id="section-128">解决的方式</h4>
+      <h4 id="section-128">解决的方式</h4>
 
-    <p>Add an <code>@observable</code> declaration right before you define the variable:</p>
+      <p>Add an <code>@observable</code> declaration right before you define the variable:</p>
 
-    <pre class="prettyprint lang-dart">@observable 
+      <pre class="prettyprint lang-dart">@observable 
 var myVar;</pre>
 
-    <p>Then, put that variable within <code>{{ }}</code> in the HTML:</p>
+      <p>Then, put that variable within <code>{{ }}</code> in the HTML:</p>
 
-    <pre class="prettyprint lang-dart">&lt;li&gt;The value is {{myVar}}&lt;/li&gt;</pre>
+      <pre class="prettyprint lang-dart">&lt;li&gt;The value is {{myVar}}&lt;/li&gt;</pre>
 
-    <p>This creates a dynamic binding between that variable and its display in the UI.
+      <p>This creates a dynamic binding between that variable and its display in the UI.
 If the variable’s value changes, the UI updates automatically.</p>
 
-    <h4 id="example-4">Example</h4>
+      <h4 id="example-4">Example</h4>
 
-    <p>Imagine you have a collection of movie quotes, and you want to display them on
+      <p>Imagine you have a collection of movie quotes, and you want to display them on
 a web page one by one in slideshow fashion.</p>
 
-    <p>Begin by creating a collection of quotes. Then, define a variable to store the
+      <p>Begin by creating a collection of quotes. Then, define a variable to store the
 current quote, and make that variable observable:</p>
 
-    <pre class="prettyprint lang-dart">class Quote {
+      <pre class="prettyprint lang-dart">class Quote {
   final String quote, saidBy; 
   Quote(this.quote, this.saidBy);
 }
@@ -3099,14 +3028,14 @@ List&lt;Quote&gt; quotes = [ ... ];
 @observable 
 Quote currentQuote;</pre>
 
-    <p>Wrap the observable variable inside <code>{{ }}</code> in the UI to get its value:</p>
+      <p>Wrap the observable variable inside <code>{{ }}</code> in the UI to get its value:</p>
 
-    <pre class="prettyprint lang-dart">&lt;div&gt;&lt;em&gt;{{currentQuote.quote}}&lt;/em&gt; - {{currentQuote.saidBy}}&lt;/div&gt;</pre>
+      <pre class="prettyprint lang-dart">&lt;div&gt;&lt;em&gt;{{currentQuote.quote}}&lt;/em&gt; - {{currentQuote.saidBy}}&lt;/div&gt;</pre>
 
-    <p>Now, cycle through the collection of quotes, picking a new quote every few
+      <p>Now, cycle through the collection of quotes, picking a new quote every few
 seconds:</p>
 
-    <pre class="prettyprint lang-dart">var i = 0;
+      <pre class="prettyprint lang-dart">var i = 0;
 currentQuote = quotes[i];
 
 new Timer.periodic(new Duration(seconds: 2), (_) {
@@ -3114,13 +3043,13 @@ new Timer.periodic(new Duration(seconds: 2), (_) {
   currentQuote = quotes[i];
 });</pre>
 
-    <p>The quote displayed on the page changes as the observable variable’s value
+      <p>The quote displayed on the page changes as the observable variable’s value
 changes. The rest of the page remains the same, and you don’t have to modify
 the page’s markup!</p>
 
-    <p>Here is the entire script:</p>
+      <p>Here is the entire script:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt;
@@ -3161,71 +3090,71 @@ the page’s markup!</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <h3 id="creating-a-bidirectional-binding-using-text-elements">Creating a bidirectional binding using text elements</h3>
+      <h3 id="creating-a-bidirectional-binding-using-text-elements">Creating a bidirectional binding using text elements</h3>
 
-    <h4 id="section-129">面对的问题</h4>
+      <h4 id="section-129">面对的问题</h4>
 
-    <p>You are using a text field (text input or textarea) to set the value of a Dart
+      <p>You are using a text field (text input or textarea) to set the value of a Dart
 variable. You want that variable to be modified in real time, without a page
 refresh.</p>
 
-    <h4 id="section-130">解决的方式</h4>
+      <h4 id="section-130">解决的方式</h4>
 
-    <p>First, make the variable observable:</p>
+      <p>First, make the variable observable:</p>
 
-    <pre class="prettyprint lang-dart">@observable
+      <pre class="prettyprint lang-dart">@observable
 var myVar = value;</pre>
 
-    <p>Then, bind a text input or a textarea to that variable. Use ‘bind-value=’
+      <p>Then, bind a text input or a textarea to that variable. Use ‘bind-value=’
 syntax:</p>
 
-    <pre class="prettyprint lang-dart">&lt;input type='text' bind-value='myVar'&gt;
+      <pre class="prettyprint lang-dart">&lt;input type='text' bind-value='myVar'&gt;
 &lt;textarea bind-value='myVar'&gt;&lt;/textarea&gt;</pre>
 
-    <p>This creates a bidirectional binding: changing the variable’s value updates 
+      <p>This creates a bidirectional binding: changing the variable’s value updates 
 the UI, and changing the UI updates the variable’s value.</p>
 
-    <h4 id="example-5">Example</h4>
+      <h4 id="example-5">Example</h4>
 
-    <p>You’ve started micro-blogging. You have a webpage where you display one of your
+      <p>You’ve started micro-blogging. You have a webpage where you display one of your
 posts, along with a simple textarea to edit that post. You’re restricting
 yourself to 140 characters, and want the UI to tell you how many characters
 you have remaining when you type.</p>
 
-    <p>To enable real-time editing of a post, make the post variable observable:</p>
+      <p>To enable real-time editing of a post, make the post variable observable:</p>
 
-    <pre class="prettyprint lang-dart">@observable
+      <pre class="prettyprint lang-dart">@observable
 var post = 'This is my very first post about Dart, and the' + 
            ' only thing I have to say is ...it is awesome!!!';</pre>
 
-    <p>Use <code>{{ }}</code> syntax for displaying the post and its length:</p>
+      <p>Use <code>{{ }}</code> syntax for displaying the post and its length:</p>
 
-    <pre class="prettyprint lang-dart">&lt;p&gt;{{post}}&lt;/p&gt;
+      <pre class="prettyprint lang-dart">&lt;p&gt;{{post}}&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Post Length:&lt;/em&gt;  {{post.length}}&lt;/p&gt;</pre>
 
-    <p>Then, create the binding in the textarea for editing the post, along with a
+      <p>Then, create the binding in the textarea for editing the post, along with a
 tracker that tells you how many characters you have remaining:</p>
 
-    <pre class="prettyprint lang-dart">&lt;textarea rows='4' cols='40' bind-value=&quot;post&quot;&gt;&lt;/textarea&gt;
+      <pre class="prettyprint lang-dart">&lt;textarea rows='4' cols='40' bind-value=&quot;post&quot;&gt;&lt;/textarea&gt;
 &lt;p&gt;&lt;em&gt;Chars remaining:&lt;/em&gt; {{MAXLENGTH - post.length}}&lt;/p&gt;</pre>
 
-    <p>That’s it, you’re done!</p>
+      <p>That’s it, you’re done!</p>
 
-    <p>By sprinkling a few declarative statements in your code, you get to enjoy all
+      <p>By sprinkling a few declarative statements in your code, you get to enjoy all
 the functionality that bidirectional binding gives you:</p>
 
-    <ul>
-      <li>You need to do nothing to make the textarea sticky: it automatically contains
+      <ul>
+        <li>You need to do nothing to make the textarea sticky: it automatically contains
 the post text.</li>
-      <li>Modifying the post in the textarea changes the post object in real
+        <li>Modifying the post in the textarea changes the post object in real
 time. There is no DOM manipulation required.</li>
-      <li>By observing the post object, you get to observe its attributes (in this
+        <li>By observing the post object, you get to observe its attributes (in this
 case, the <code>length</code> property) for free.</li>
-    </ul>
+      </ul>
 
-    <p>Here is the entire script:</p>
+      <p>Here is the entire script:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
 &lt;body&gt;
@@ -3253,41 +3182,41 @@ case, the <code>length</code> property) for free.</li>
 &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <h3 id="creating-a-binding-using-radio-buttons">Creating a binding using radio buttons</h3>
+      <h3 id="creating-a-binding-using-radio-buttons">Creating a binding using radio buttons</h3>
 
-    <h4 id="section-131">面对的问题</h4>
+      <h4 id="section-131">面对的问题</h4>
 
-    <p>You want to use radio buttons to allow a user to select a single value from a
+      <p>You want to use radio buttons to allow a user to select a single value from a
 set of choices. You want to bind the value of the selected radio button to a
 Dart variable.</p>
 
-    <h4 id="section-132">解决的方式</h4>
+      <h4 id="section-132">解决的方式</h4>
 
-    <p>First, make the Dart variable used to store the value of the radio button
+      <p>First, make the Dart variable used to store the value of the radio button
 observable:</p>
 
-    <pre class="prettyprint lang-dart">@observable
+      <pre class="prettyprint lang-dart">@observable
 var myVar = '';</pre>
 
-    <p>Then, use ‘bind-value=’ syntax to bind the value of a radio button to that
+      <p>Then, use ‘bind-value=’ syntax to bind the value of a radio button to that
 variable:</p>
 
-    <pre class="prettyprint lang-dart">&lt;input type='radio' name='someName' value='someValue' bind-value='myVar' /&gt;</pre>
+      <pre class="prettyprint lang-dart">&lt;input type='radio' name='someName' value='someValue' bind-value='myVar' /&gt;</pre>
 
-    <p>As the user selects a button, its value is automatically stored in the
+      <p>As the user selects a button, its value is automatically stored in the
 observable variable. The display of the observable variable is updated as its
 value changes if it is placed within <code>{{ }}</code> in the HTML.</p>
 
-    <p>To bind multiple radio buttons to the same variable, assign the same value to
+      <p>To bind multiple radio buttons to the same variable, assign the same value to
 each radio button’s name attribute. See the example below.</p>
 
-    <h4 id="example-6">Example</h4>
+      <h4 id="example-6">Example</h4>
 
-    <p>Here is a simple example of how you can create a bidirectional binding when
+      <p>Here is a simple example of how you can create a bidirectional binding when
 using radio buttons. Giving the observable variable a value selects the
 radio button with that value:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 
 &lt;html&gt;
   &lt;body&gt;
@@ -3316,29 +3245,29 @@ radio button with that value:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <h3 id="creating-bindings-for-booleans-using-checkboxes">Creating bindings for booleans using checkboxes</h3>
+      <h3 id="creating-bindings-for-booleans-using-checkboxes">Creating bindings for booleans using checkboxes</h3>
 
-    <h4 id="section-133">面对的问题</h4>
+      <h4 id="section-133">面对的问题</h4>
 
-    <p>You want to use a checkbox to store the value of a boolean object. And because
+      <p>You want to use a checkbox to store the value of a boolean object. And because
 you have parts of your UI dependent on that boolean object, you want its value
 to update automatically as a user checks or unchecks the checkbox.</p>
 
-    <h4 id="section-134">解决的方式</h4>
+      <h4 id="section-134">解决的方式</h4>
 
-    <p>Make the boolean observable:</p>
+      <p>Make the boolean observable:</p>
 
-    <pre class="prettyprint lang-dart">@observable
+      <pre class="prettyprint lang-dart">@observable
 bool someBool = false;</pre>
 
-    <p>Bind the checkbox to a boolean using <code>bind-checked=</code> syntax:</p>
+      <p>Bind the checkbox to a boolean using <code>bind-checked=</code> syntax:</p>
 
-    <pre class="prettyprint lang-dart">&lt;input type='checkbox' bind-checked='someBool'&gt;</pre>
+      <pre class="prettyprint lang-dart">&lt;input type='checkbox' bind-checked='someBool'&gt;</pre>
 
-    <p>Checking the checkbox sets the boolean value to true, and unchecking it sets
+      <p>Checking the checkbox sets the boolean value to true, and unchecking it sets
 the value to false:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;body&gt;
     &lt;input type='checkbox' bind-checked='someBool'&gt;Check or uncheck&lt;br&gt;
@@ -3359,12 +3288,12 @@ the value to false:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <h4 id="example-7">Example</h4>
+      <h4 id="example-7">Example</h4>
 
-    <p>The code below demonstrates the use of checkboxes to toggle the boolean
+      <p>The code below demonstrates the use of checkboxes to toggle the boolean
 attributes of an object:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;style&gt;
@@ -3418,10 +3347,10 @@ attributes of an object:</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>Note that we mark the boolean instance variables of the <code>Student</code> class as
+      <p>Note that we mark the boolean instance variables of the <code>Student</code> class as
 @observable:</p>
 
-    <pre class="prettyprint lang-dart">class Student {
+      <pre class="prettyprint lang-dart">class Student {
   final String studentId;
   
   @observable
@@ -3433,67 +3362,67 @@ attributes of an object:</p>
   Student(this.studentId, this.isGraduating, this.isHonorStudent);
 }</pre>
 
-    <p>This creates a one-way binding between the values stored within the observable
+      <p>This creates a one-way binding between the values stored within the observable
 attributes of any <code>Student</code> object and the UI:</p>
 
-    <pre class="prettyprint lang-dart">&lt;td&gt;{{student.isGraduating ?   'Yes' : 'No'}}&lt;/td&gt;
+      <pre class="prettyprint lang-dart">&lt;td&gt;{{student.isGraduating ?   'Yes' : 'No'}}&lt;/td&gt;
 &lt;td&gt;{{student.isHonorStudent ? 'Yes' : 'No'}}&lt;/td&gt;</pre>
 
-    <p>We make the binding bidirectional using <code>bind-checked=</code> syntax. This allows us
+      <p>We make the binding bidirectional using <code>bind-checked=</code> syntax. This allows us
 to modify the observable instance variables using the bound checkboxes:</p>
 
-    <pre class="prettyprint lang-dart">Edit record for student &lt;em&gt;{{student.studentId}}:&lt;/em&gt;&lt;br&gt;
+      <pre class="prettyprint lang-dart">Edit record for student &lt;em&gt;{{student.studentId}}:&lt;/em&gt;&lt;br&gt;
 &lt;input type='checkbox' bind-checked='student.isGraduating' /&gt;
     Graduating?&lt;br&gt;
 &lt;input type='checkbox' bind-checked='student.isHonorStudent' /&gt;
     Honor Student?&lt;br&gt;</pre>
 
-    <p>Note that setting one of the instance variables to <code>true</code> automatically checks
+      <p>Note that setting one of the instance variables to <code>true</code> automatically checks
 the corresponding checkbox when the page loads:</p>
 
-    <pre class="prettyprint lang-dart">new Student('12345678', false, true);</pre>
+      <pre class="prettyprint lang-dart">new Student('12345678', false, true);</pre>
 
-    <h3 id="selecting-multiple-items-from-a-list-of-checkboxes-using-data-binding">Selecting multiple items from a list of checkboxes using data binding</h3>
+      <h3 id="selecting-multiple-items-from-a-list-of-checkboxes-using-data-binding">Selecting multiple items from a list of checkboxes using data binding</h3>
 
-    <h4 id="section-135">面对的问题</h4>
+      <h4 id="section-135">面对的问题</h4>
 
-    <p>You want to use checkboxes to allow a user to select multiple values from a
+      <p>You want to use checkboxes to allow a user to select multiple values from a
 set of choices. You want to keep track of the checkboxes that are checked
 by the user, and want live updates in the UI every time the user checks or
 unchecks a checkbox.</p>
 
-    <h4 id="section-136">解决的方式</h4>
+      <h4 id="section-136">解决的方式</h4>
 
-    <p>Create a map to keep track of the checked state of the checkboxes. Make the
+      <p>Create a map to keep track of the checked state of the checkboxes. Make the
 checkbox values the map keys, and assign each key a boolean value. Assign <code>true</code>
 for a checked checkbox, and <code>false</code> for an unchecked one. </p>
 
-    <p>Now, sync the checkboxes and the map by creating a bidirectional binding
+      <p>Now, sync the checkboxes and the map by creating a bidirectional binding
 between them.</p>
 
-    <p>First, make the map observable. You can do this by using the top-level
+      <p>First, make the map observable. You can do this by using the top-level
 <code>toObservable()</code> function:</p>
 
-    <pre class="prettyprint lang-dart">Map&lt;String, bool&gt; myMap = toObservable({'value1': true, 'value2': false});</pre>
+      <pre class="prettyprint lang-dart">Map&lt;String, bool&gt; myMap = toObservable({'value1': true, 'value2': false});</pre>
 
-    <p>Then, bind each checkbox to the corresponding map key using <code>bind-checked=</code>
+      <p>Then, bind each checkbox to the corresponding map key using <code>bind-checked=</code>
 syntax:</p>
 
-    <pre class="prettyprint lang-dart">&lt;input type='checkbox' bind-checked='myMap[&quot;value1&quot;]'&gt;{{value1}}
+      <pre class="prettyprint lang-dart">&lt;input type='checkbox' bind-checked='myMap[&quot;value1&quot;]'&gt;{{value1}}
 &lt;input type='checkbox' bind-checked='myMap[&quot;value2&quot;]'&gt;{{value2}}</pre>
 
-    <p>When the page loads, checkboxes corresponding to map keys with <code>true</code> values
+      <p>When the page loads, checkboxes corresponding to map keys with <code>true</code> values
 are checked.  As the user checks and unchecks checkboxes, the map values update
 accordingly.</p>
 
-    <p>To know which checkboxes were checked by the user, select the map keys with
+      <p>To know which checkboxes were checked by the user, select the map keys with
 <code>true</code> values.</p>
 
-    <h4 id="example-8">Example</h4>
+      <h4 id="example-8">Example</h4>
 
-    <p>Here is a short example that you can build and run:</p>
+      <p>Here is a short example that you can build and run:</p>
 
-    <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
+      <pre class="prettyprint lang-dart">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;body&gt;
     Pick your favorite colors:&lt;br&gt;
@@ -3528,25 +3457,26 @@ accordingly.</p>
   &lt;/body&gt;
 &lt;/html&gt;</pre>
 
-    <p>We bind the checkbox values to a map as described earlier in this recipes. We
+      <p>We bind the checkbox values to a map as described earlier in this recipes. We
 implement a getter to keep track of the checked values. </p>
 
-    <p>Note that getters and setters do not have to be marked as observable: you just
+      <p>Note that getters and setters do not have to be marked as observable: you just
 need to make sure that all fields they depend on are observable. In our example,
 the <code>selectedColors</code> getter relies only on the <code>colors</code> map. Since we have
 made <code>colors</code> observable, <code>selectedColors</code> executes when the values in
 <code>colors</code> change. As a result, the parts of the UI responsible for displaying
 the values of the checked checkboxes gets updated in real time:</p>
 
-    <pre class="prettyprint lang-dart">&lt;ul&gt;
+      <pre class="prettyprint lang-dart">&lt;ul&gt;
   &lt;li template repeat='color in selectedColors'&gt;{{color}}&lt;/li&gt;
 &lt;/ul&gt;</pre>
 
-  </div>
-  <p><!-- End of "col-md-7" --></p>
-</div>
-<p><!-- End of "row" -->
+      <p>&lt;/div&gt; <!-- End of "col-md-7" -->
+&lt;/div&gt; <!-- End of "row" -->
   </p>
+    </li>
+  </div>
+</div>
 
     </article>
     
@@ -3602,7 +3532,6 @@ the values of the checked checkboxes gets updated in real time:</p>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/js/social-event-analytics.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
 <script type='text/javascript' src='/js/lang-dart.js'></script>
 <script type='text/javascript' src='/js/lang-yaml.js'></script>

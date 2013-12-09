@@ -11,18 +11,18 @@
   <meta property="twitter:account_id" content="376585411" />
   <meta itemprop="name" content="从表单中获取数据 | Dart: 用于创建结构化的web应用">
   
-  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-900w.png">
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
   <meta itemprop="description" content="使用 HTML 表单和 input 元素往服务器发送数据">
 
-  <!-- Bootstrap core CSS -->
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="/css/dart-style.css" rel="stylesheet">
-  <link href="/css/prettify.css" type="text/css" rel="stylesheet" />
-  <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <link href="//fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
 	
 	
 	
@@ -62,30 +62,6 @@
 -->
 
 
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script>
-  
-
-<!-- 
-	window.___gcfg = {lang: 'en'};
-	(function()
-	{var po = document.createElement("script");
-	po.type = "text/javascript"; po.async = true;po.src = "https://apis.google.com/js/plusone.js";
-	var s = document.getElementsByTagName("script")[0];
-	s.parentNode.insertBefore(po, s);
-	})();
--->
-  </script>
-<!-- 
-  <script>
-    window.twttr = (function (d,s,id) {
-      var t, js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js=d.createElement(s); js.id=id;
-      js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
-      return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
-    }(document, "script", "twitter-wjs"));
-  </script>
--->
   <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body onload="prettyPrint()">
@@ -104,14 +80,9 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
                                                        入门
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/codelabs/darrrt/">试试 Dart</a></li>
-                <li><a href="/docs/tutorials/">Dart 教程</a></li>
-              </ul>
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -119,6 +90,9 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                <li class="divider"></li>
+                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -152,25 +126,21 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
-                <li><a href="http://try.dartlang.org/">Try Dart!</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
+                <li><a href="/performance/">性能</a></li>
+                <li class="divider"></li>
                 <li><a href="http://code.google.com/p/dart/issues/list">Bugs and Feature Requests</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="/support/" title="Community and Support">
                                               社区
               </a>
-              <ul class="dropdown-menu">
-                <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/support/">支持和社区资源</a></li>
-                <li><a href="http://code.google.com/p/dart/wiki/Contributing">Contributor's Guide</a></li>
-              </ul>
             </li>
           </ul>
 
@@ -311,9 +281,10 @@ color pickers、 date and time widgets、以及 range elements。</p>
 <aside class="alert alert-info">
   <p><strong>注意：</strong>
   该教材假设你已经学习了
-  <a href="/docs/tutorials/polymer-intro/">定义自定义元素</a>
+  <a href="/docs/tutorials/polymer-intro/">定义自定义元素</a>、
+  <a href="/docs/tutorials/futures/">使用 Future-Based APIs</a>
   和 <a href="/docs/tutorials/fetchdata/">动态获取数据</a>，
-  或者熟悉 Polymer、 JSON、 和 HttpRequest 。</p>
+  或者熟悉 Polymer、 Futures、JSON、 和 HttpRequest 。</p>
 </aside>
 
 <ul>
@@ -483,7 +454,7 @@ Dart 代码把输入数据格式化为 JSON 字符串，
 
 <aside class="alert">
 <strong>版本提示：</strong>  slambook 应用和 
-<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.8.7</a>
+<a href="https://pub.dartlang.org/packages/polymer#versions">polymer.dart 0.9</a>
  版本兼容。
 </aside>
 
@@ -1108,12 +1079,6 @@ HTML 代码通过 Dart 代码中的名字来访问
   的文章
        <a href="/articles/json-web-service/">使用 Dart 中的 JSON Web Services</a> 。
   </li>
-  <li> 查看
-       <a href="/docs/cookbook/">
-       <i class="icon-food"> </i> Dart Cookbook</a>。
-       该书中包含很多本教程中设计到的内容。
-       例如 JSON 和 URI。
-  </li>
   <li> 前一教程中，
        <a href="/docs/tutorials/fetchdata/">动态获取数据</a> 
        中介绍了如何使用 Dart 编辑器来实现一个
@@ -1209,7 +1174,6 @@ HTML 代码通过 Dart 代码中的名字来访问
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/js/social-event-analytics.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
 <script type='text/javascript' src='/js/lang-dart.js'></script>
 <script type='text/javascript' src='/js/lang-yaml.js'></script>
