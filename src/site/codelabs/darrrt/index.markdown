@@ -1736,8 +1736,6 @@ void main() {
    data-hashtags="dartlang">Tweet</a>
  </p>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
-<g:plus action="share"></g:plus>
 <wb:share-button appkey="3wn9s7" addition="number" type="button" default_text="我通过学习Dart语言制作了一个海盗徽章，快来围观吧！" ralateUid="3908541102" picture_search="false"></wb:share-button>
 </div>
 
