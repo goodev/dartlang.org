@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <synonyms>
 <theme id="theme-getting-started">
   <title>入门</title>
@@ -58,7 +58,7 @@ window.alert('Clicked on the button.');
 </theme>
 <theme id="theme-code-modularity">
   <title>代码的模块性</title>
-  <learn-more>https://www.http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#libraries</learn-more>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#libraries</learn-more>
   <synonym id="syn-define-a-library">
     <title>定义一个库</title>
     <code language="dart"><![CDATA[
