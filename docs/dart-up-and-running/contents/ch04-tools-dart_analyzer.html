@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>dartanalyzer: The Static Analyzer from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
+  <title>dartanalyzer: 静态分析工具 from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="dartanalyzer: The Static Analyzer from Dart: Up and Running | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="dartanalyzer: 静态分析工具 from Dart: Up and Running | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
-  <meta itemprop="description" content="Read dartanalyzer: The Static Analyzer of Dart: Up and Running, published by O'Reilly.">
+  <meta itemprop="description" content="Read dartanalyzer: 静态分析工具 of Dart: Up and Running, published by O'Reilly.">
 
 
   <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
@@ -174,27 +174,22 @@
       </div>
 
       <article class="up-and-running-contents">
-        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">dartanalyzer: The Static Analyzer</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-dart-vm.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Tools</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dartdoc.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dart_analyzer"></a>dartanalyzer: The Static Analyzer</h2></div></div></div><p>You can use the <span class="emphasis"><em>dartanalyzer</em></span> tool (<code class="literal">bin/dartanalyzer</code>) to statically analyze your
-    code at the command line, checking for errors and warnings that are
-    specified in the <a class="ulink" href="http://www.dartlang.org/docs/spec/" target="_top">Dart
-    Language Specification.</a></p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Dart Editor performs the same analysis that dartanalyzer does, but
-      with additional checks for common mistakes. A previous static analyzer,
-      called <span class="emphasis"><em>dart_analyzer</em></span>, is no longer
-      supported.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart_analyzer-basic-usage"></a>Basic Usage</h3></div></div></div><p>Here’s an example of testing a Dart file:</p><pre class="screen"><em><span class="remark">lang-sh
-</span></em>dartanalyzer --package-root <em class="replaceable"><code>code/packages</code></em> <em class="replaceable"><code>test.dart</code></em></pre><p>As <a class="xref" href="ch04-tools-dart_analyzer.html#ch04-dartanalyzer-exit" title="Table 4.1. Exit codes for dartanalyzer">Table 4.1, “Exit codes for dartanalyzer”</a> shows, the exit code
-      of dartanalyzer tells you whether the code passed analysis.</p><div class="table"><a name="ch04-dartanalyzer-exit"></a><p class="title"><b>Table 4.1. Exit codes for dartanalyzer</b></p><div class="table-contents"><table summary="Exit codes for dartanalyzer" border="1"><colgroup><col><col></colgroup><thead><tr><th>Exit code</th><th>Description</th></tr></thead><tbody><tr><td>0</td><td>No issues found</td></tr><tr><td>1</td><td>Warnings found (but no errors)</td></tr><tr><td>2</td><td>Errors found</td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart_analyzer-options"></a>Options</h3></div></div></div><p>You can use the following command-line options with
-      dartanalyzer:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">dartanalyzer: 静态分析工具</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-dart-vm.html">Prev</a> </td><th width="60%" align="center">Chapter 4. 工具</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dartdoc.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dart_analyzer"></a>dartanalyzer: 静态分析工具</h2></div></div></div><p>你可以用 <span class="emphasis"><em>dartanalyzer</em></span> 工具 (<code class="literal">bin/dartanalyzer</code>) 通过命令行来静态的分析
+    代码，检测 <a class="ulink" href="http://www.dartlang.cc/docs/spec/" target="_top">Dart
+    语言规范</a> 中的一些错误和警告情况。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Dart 编辑器 除了执行 dartanalyzer 功能外还有其他
+          一些常见错误检测。
+     之前版本的 <span class="emphasis"><em>dart_analyzer</em></span>已经被淘汰了。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart_analyzer-basic-usage"></a>基础用法</h3></div></div></div><p>下面是测试一个 Dart 代码的示例：</p><pre class="screen"><em><span class="remark">lang-sh
+</span></em>dartanalyzer --package-root <em class="replaceable"><code>code/packages</code></em> <em class="replaceable"><code>test.dart</code></em></pre><p>如 <a class="xref" href="ch04-tools-dart_analyzer.html#ch04-dartanalyzer-exit" title="Table 4.1. dartanalyzer 的退出码">Table 4.1, “dartanalyzer 的退出码”</a> 所示，dartanalyzer 的退出码
+          代表分析的结果。</p><div class="table"><a name="ch04-dartanalyzer-exit"></a><p class="title"><b>Table 4.1. dartanalyzer 的退出码</b></p><div class="table-contents"><table summary="dartanalyzer 的退出码" border="1"><colgroup><col><col></colgroup><thead><tr><th>退出码</th><th>描述</th></tr></thead><tbody><tr><td>0</td><td>没有发现问题</td></tr><tr><td>1</td><td>发现警告(但是没错误)</td></tr><tr><td>2</td><td>发现错误</td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart_analyzer-options"></a>支持的参数</h3></div></div></div><p>dartanalyzer 支持如下命令行参数：</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
           </code><code class="literal">--dart-sdk
-          <em class="replaceable"><code>&lt;path&gt;</code></em></code></span></dt><dd><p>Specify the directory that contains the Dart SDK.</p></dd><dt><span class="term"><code class="literal">
+          <em class="replaceable"><code>&lt;path&gt;</code></em></code></span></dt><dd><p>设置 Dart SDK 的目录。</p></dd><dt><span class="term"><code class="literal">
           </code><code class="literal">--package-root
-          <em class="replaceable"><code>&lt;path&gt;</code></em></code></span></dt><dd><p>Specify the directory to search for any libraries that are
-            imported using <code class="literal">package:</code>.</p></dd><dt><span class="term"><code class="literal">
-          </code><code class="literal">--show-package-warnings</code></span></dt><dd><p>Show warnings not only for code in the specified .dart file
-            and others in its library, but also for libraries imported with
-            <code class="literal">package:</code>.</p></dd><dt><span class="term"><code class="literal">
-          </code><code class="literal">--machine</code></span></dt><dd><p>Produce output in a format suitable for parsing.</p></dd><dt><span class="term"><code class="literal">
-          </code><code class="literal">--version</code></span></dt><dd><p>Show the analyzer version.</p></dd><dt><span class="term"><code class="literal">
-          </code><code class="literal">--help</code></span></dt><dd><p>Show all the command-line options.</p></dd></dl></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-dart-vm.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dartdoc.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">dart: The Standalone VM </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> dartdoc: The API Documentation Generator</td></tr></table></div>
+          <em class="replaceable"><code>&lt;path&gt;</code></em></code></span></dt><dd><p>设置使用  <code class="literal">package:</code> 导入的包的目录。</p></dd><dt><span class="term"><code class="literal">
+          </code><code class="literal">--show-package-warnings</code></span></dt><dd><p>不仅仅显示你应用中的  .dart 代码警告，同时还显示
+                所使用库（<code class="literal">package:</code> 导入的库）的警告信息。 </p></dd><dt><span class="term"><code class="literal">
+          </code><code class="literal">--machine</code></span></dt><dd><p>生成可以分析的结果文件。</p></dd><dt><span class="term"><code class="literal">
+          </code><code class="literal">--version</code></span></dt><dd><p>显示分析器的版本。</p></dd><dt><span class="term"><code class="literal">
+          </code><code class="literal">--help</code></span></dt><dd><p>显示所有命令行参数。</p></dd></dl></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-dart-vm.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dartdoc.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">dart: 独立的虚拟机(VM) </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> dartdoc: API 文档生成器</td></tr></table></div>
       </article>
 
       

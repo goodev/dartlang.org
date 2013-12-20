@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>dartdoc: The API Documentation Generator from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
+  <title>dartdoc: API 文档生成器 from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="dartdoc: The API Documentation Generator from Dart: Up and Running | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="dartdoc: API 文档生成器 from Dart: Up and Running | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
-  <meta itemprop="description" content="Read dartdoc: The API Documentation Generator of Dart: Up and Running, published by O'Reilly.">
+  <meta itemprop="description" content="Read dartdoc: API 文档生成器 of Dart: Up and Running, published by O'Reilly.">
 
 
   <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
@@ -174,31 +174,23 @@
       </div>
 
       <article class="up-and-running-contents">
-        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">dartdoc: The API Documentation Generator</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-dart_analyzer.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Tools</th><td width="20%" align="right"> <a accesskey="n" href="ch04-summary.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dartdoc"></a>dartdoc: The API Documentation Generator</h2></div></div></div><p>You can use the <span class="emphasis"><em>dartdoc</em></span> tool (<code class="literal">bin/dartdoc</code>) to generate documentation from your
-    Dart code. By default, dartdoc parses and creates documentation for the
-    .dart files that you pass to it, plus the libraries they import.</p><p>To improve dartdoc’s output, provide documentation comments as
-    described in <a class="xref" href="ch02.html#comments-doc" title="Documentation Comments">the section called “Documentation Comments”</a>. Also see the article <a class="ulink" href="http://www.dartlang.org/articles/doc-comment-guidelines/" target="_top">Guidelines
-    for Dart Doc <span class="keep-together">Comments</span>.</a></p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dartdoc-basic-usage"></a>Basic Usage</h3></div></div></div><p>Here’s an example of generating documentation from a Dart
-      file.</p><pre class="screen"><em><span class="remark">lang-sh
-</span></em>dartdoc --out=/docs/mylib <em class="replaceable"><code>mylib.dart</code></em></pre><p>By default, the generated documentation appears in a directory
-      named <code class="literal">docs/</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dartdoc-options"></a>Options</h3></div></div></div><p>Common command-line options for dartdoc include:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--out=<em class="replaceable"><code>&lt;absolute_path&gt;</code></em></code></span></dt><dd><p>Put the documentation in the specified directory. If the
-            directory doesn’t already exist, it’s created.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--no-code</code></span></dt><dd><p>Don’t include source code in the generated
-            documentation.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--exclude-lib=<em class="replaceable"><code>&lt;identifier&gt;</code></em></code></span></dt><dd><p>Don’t generate documentation for the specified
-            library.</p><p><span class="keep-together"><span class="emphasis"><em>Example:</em></span>
+        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">dartdoc: API 文档生成器</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-dart_analyzer.html">Prev</a> </td><th width="60%" align="center">Chapter 4. 工具</th><td width="20%" align="right"> <a accesskey="n" href="ch04-summary.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dartdoc"></a>dartdoc: API 文档生成器</h2></div></div></div><p>可以用 <span class="emphasis"><em>dartdoc</em></span> 工具 (<code class="literal">bin/dartdoc</code>) 来生成 Dart 代码的 文档。
+    默认情况下，dartdoc 生成你指定的 .dart 代码和这些代码所导入的库的文档。
+    </p><p>按照 <a class="xref" href="ch02.html#comments-doc" title="文档注释">the section called “文档注释”</a> 文章中推荐的方式写注释，可以
+        改进生成的 文档。同时也参考下 <a class="ulink" href="http://www.dartlang.cc/articles/doc-comment-guidelines/" target="_top"> Dart 文档<span class="keep-together">注释指南 </span></a></p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dartdoc-basic-usage"></a>基本用法</h3></div></div></div><p>下面是从 Dart 代码中生成文档的方法：</p><pre class="screen"><em><span class="remark">lang-sh
+</span></em>dartdoc --out=/docs/mylib <em class="replaceable"><code>mylib.dart</code></em></pre><p>默认情况下，生成的文档位于 <code class="literal">docs/</code> 目录中。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dartdoc-options"></a>支持的参数</h3></div></div></div><p>dartdoc 支持如下参数：上</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+          </code><code class="literal">--out=<em class="replaceable"><code>&lt;absolute_path&gt;</code></em></code></span></dt><dd><p>设置生成的文档目录，如果目录不存在，则会创建该目录。</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+          </code><code class="literal">--no-code</code></span></dt><dd><p>在生成的文档中不要包含代码。</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+          </code><code class="literal">--exclude-lib=<em class="replaceable"><code>&lt;identifier&gt;</code></em></code></span></dt><dd><p>设置不生成文档的库。</p><p><span class="keep-together"><span class="emphasis"><em>示例:</em></span>
             <code class="literal">--exclude-lib=metadata</code></span></p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--omit-generation-time</code></span></dt><dd><p>Don’t put a timestamp at the bottom of every page.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--mode=static</code></span></dt><dd><p>Use static HTML navigation. The resulting files can be much
-            larger than the default, but previewing docs locally is
-            easier.</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--package-root=<em class="replaceable"><code>&lt;path&gt;</code></em></code></span></dt><dd><p>Specify where to find imported libraries. You might need to
-            use this option if dartdoc can’t find a library because your
-            directory structure doesn’t match <a class="ulink" href="http://pub.dartlang.org/doc/package-layout.html" target="_top">pub’s
-            package layout conventions.</a> <span class="emphasis"><em>Example:</em></span>
+          </code><code class="literal">--omit-generation-time</code></span></dt><dd><p>在每个文档页面底部不要包含生成的日期。</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+          </code><code class="literal">--mode=static</code></span></dt><dd><p>使用静态 HTML 导航，生成的文档文件会占用更多的存储空间，但是
+                本地浏览会比较方便。</p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+          </code><code class="literal">--package-root=<em class="replaceable"><code>&lt;path&gt;</code></em></code></span></dt><dd><p>设置查找导入库的目录。
+                如果你的文件目录和  <a class="ulink" href="http://pub.dartlang.org/doc/package-layout.html" target="_top">pub 包
+            目录布局约定</a> 中介绍的不一样，则需要设置该选项。<span class="emphasis"><em>例如:</em></span>
             <code class="literal">--package-root=foo/packages/</code></p></dd></dl></div><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          </code><code class="literal">--help</code></span></dt><dd><p>Print all the command-line options.</p></dd></dl></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-dart_analyzer.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-summary.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">dartanalyzer: The Static Analyzer </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Summary</td></tr></table></div>
+          </code><code class="literal">--help</code></span></dt><dd><p>打印所有参数信息。</p></dd></dl></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-dart_analyzer.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-summary.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">dartanalyzer: 静态分析工具 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> 总结</td></tr></table></div>
       </article>
 
       
