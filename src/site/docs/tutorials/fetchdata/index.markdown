@@ -7,8 +7,8 @@ tutorial:
   id: fetchdata
 next: forms/
 next-title: "从表单中获取数据"
-prev: futures/
-prev-title: "使用 Future API"
+prev: streams/
+prev-title: "使用 Streams 数据"
 ---
 
 {% capture whats_the_point %}

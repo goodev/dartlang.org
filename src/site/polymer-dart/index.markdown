@@ -86,7 +86,7 @@ Polymer.dart 移植了 _Polymer Foundation_
 
 <div class="col-md-4 text-center">
 
-<i class="icon icon-code"> </i>
+<i class="fa fa-code"> </i>
 
 <h2 class="no-permalink">自定义标签</h2>
 
@@ -97,7 +97,7 @@ Polymer.dart 移植了 _Polymer Foundation_
 
 <div class="col-md-4 text-center">
 
-<i class="icon icon-exchange"> </i>
+<i class="fa fa-exchange"> </i>
 
 <h2 class="no-permalink">数据绑定</h2>
 
@@ -107,7 +107,7 @@ Polymer.dart 移植了 _Polymer Foundation_
 
 <div class="col-md-4 text-center">
 
-<i class="icon icon-check"> </i>
+<i class="fa fa-check"> </i>
 
 <h2 class="no-permalink">标准</h2>
 

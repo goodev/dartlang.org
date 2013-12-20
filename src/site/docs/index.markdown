@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: default
 title: "开发者指南"
 description: "Dart 语言的文档、参考、库以及工具。"
 has-permalinks: true
@@ -124,8 +124,9 @@ Stream 的一个示例是
  用来读取文件数据流。
 深入了解：
 
-* [开始使用 Streams](/articles/creating-streams/)
-* [在 Dart 中创建 Streams](/articles/feet-wet-streams/)
+
+* [用 Streams 数据](/docs/tutorials/streams/)
+* [在 Dart 中创建 Streams](/articles/creating-streams/)
 * [Stream API 文档](http://api.dartlang.org/dart_async/Stream.html)
 
 
