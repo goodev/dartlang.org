@@ -31,8 +31,8 @@ United States License](http://creativecommons.org/licenses/by-nc-nd/3.0/us/)
 
 #### 内容
 
-1. [序言](contents/foreword.html)
-1. [前言](contents/preface.html)
+1. [前言](contents/foreword.html)
+1. [序](contents/preface.html)
    (包含从书出版后的[内容更新](contents/preface.html#preface-updates)
    )
 1. [第一章. 快速开始](contents/ch01.html)

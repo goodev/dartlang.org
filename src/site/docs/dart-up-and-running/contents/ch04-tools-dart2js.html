@@ -2,53 +2,51 @@
 # WARNING: GENERATED FILE. DO NOT EDIT.
 # WANT TO CONTRIBUTE? SEE https://github.com/dart-lang/dart-up-and-running-book
 layout: book
-title: "dart2js: The Dart-to-JavaScript Compiler from Dart: Up and Running"
-description: "Read dart2js: The Dart-to-JavaScript Compiler of Dart: Up and Running, published by O'Reilly."
+title: "dart2js: Dart-to-JavaScript 编译器 from Dart: Up and Running"
+description: "Read dart2js: Dart-to-JavaScript 编译器 of Dart: Up and Running, published by O'Reilly."
 ---
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">dart2js: The Dart-to-JavaScript Compiler</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-dartium.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Tools</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dart-vm.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dart2js"></a>dart2js: The Dart-to-JavaScript Compiler</h2></div></div></div><p>You can use the <span class="emphasis"><em>dart2js</em></span> tool to compile Dart
-    code to JavaScript. <a class="link" href="ch04-tools-editor.html#ch04-editor-dart2js" title="Compiling to JavaScript">Dart Editor</a>
-    uses dart2js behind the scenes whenever Dart Editor compiles to
-    JavaScript. This section tells you how to use dart2js on the command line.
-    It also give tips on debugging the JavaScript that dart2js
-    generates.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart2js-basic-usage"></a>Basic Usage</h3></div></div></div><p>Here’s an example of compiling a Dart file to JavaScript:</p><pre class="screen"><em><span class="remark">lang-sh
-</span></em>dart2js --out=test.js <em class="replaceable"><code>test.dart</code></em></pre><p>This command produces a file that contains the JavaScript
-      equivalent of your Dart code. It also produces a source map, which can
-      help you debug the JavaScript version of the app more easily.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart2js-options"></a>Options</h3></div></div></div><p>Common command-line options for dart2js include:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
-          -o<em class="replaceable"><code>&lt;file&gt;</code></em></code><span class="emphasis"><em> or
-          </em></span><code class="literal">--out=<em class="replaceable"><code>&lt;file&gt;</code></em></code></span></dt><dd><p>Generate the output into
-            <em class="replaceable"><code>&lt;file&gt;</code></em>. If not specified, the
-            output goes in a file named <code class="literal">out.js</code>.</p></dd><dt><span class="term"><code class="literal"> -c</code><span class="emphasis"><em>
-          or </em></span><code class="literal">--checked</code></span></dt><dd><p>Insert runtime type checks, and enable assertions (checked
-            mode).</p></dd><dt><span class="term"><code class="literal">
-          --minify</code></span></dt><dd><p>Generate minified output.</p></dd><dt><span class="term"><code class="literal"> -h</code><span class="emphasis"><em>
-          or </em></span><code class="literal">--help</code></span></dt><dd><p>Display help. (Use <code class="literal">-vh</code>
-            for information about all options.)</p></dd><dt><span class="term"><code class="literal">
-          --output-type=dart</code></span></dt><dd><p>Output Dart code instead of JavaScript. This option is
-            useful when deploying your app, because it generates a single file
-            containing everything the app needs.</p></dd></dl></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart2js-generating-efficient-code"></a>Helping dart2js Generate Better Code</h3></div></div></div><p>You can do a couple of things to improve the code that dart2js
-      generates:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Write your code in a way that makes type inference
-          easier.</p></li><li class="listitem"><p>Once you’re ready to deploy your app, use the dart2js --minify
-          option to reduce code size.</p></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Don’t worry about the size of your app’s included libraries.
-        Thanks to a feature called <span class="emphasis"><em>tree shaking,</em></span> dart2js
-        omits unused classes, functions, methods, and so on. Just import the
-        libraries you need, and let dart2js get rid of what you don’t
-        need.</p></div><p>Follow these practices to help dart2js do better type inference,
-      so it can generate smaller and faster JavaScript code:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Avoid setting variables to null.</p></li><li class="listitem"><p>Use const or final variables wherever possible.</p></li><li class="listitem"><p>Be consistent with the types of arguments you pass into each
-          function or method.</p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="tools-dart2js-debugging"></a>Debugging</h3></div></div></div><p>This section gives tips for debugging dart2js-produced code in
-      Chrome, Firefox, and Safari. Debugging the JavaScript produced by
-      dart2js is easiest in browsers such as Chrome that support source
-      maps.</p><p>Whichever browser you use, you should enable pausing on at least
-      uncaught exceptions, and perhaps on all exceptions. For frameworks such
-      as dart:isolate and dart:async that wrap user code in try-catch, we
-      recommend pausing on all exceptions.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="dart2js-debugging-chrome"></a>Chrome</h4></div></div></div><p>To debug in Chrome:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Open the Developer Tools window, as described in <a class="ulink" href="https://developers.google.com/chrome-developer-tools/docs/overview" target="_top">How
-            to Access the Developer Tools.</a></p></li><li class="listitem"><p>Turn on source maps, as described in the video <a class="ulink" href="http://bit.ly/YugIUY" target="_top">SourceMaps in Chrome.</a></p></li><li class="listitem"><p>Enable debugging, either on all exceptions or only on
-            uncaught exceptions, <span class="phrase">as described in <a class="ulink" href="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints#pause-on-exceptions" target="_top">Pause
-            on Exceptions</a> </span>and <a class="ulink" href="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints#pause-on-uncaught-exceptions" target="_top">Pause
-            on Uncaught Exceptions,</a> respectively.</p></li><li class="listitem"><p>Reload your application.</p></li></ol></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="dart2js-debugging-firefox"></a>Firefox</h4></div></div></div><p>Firefox doesn’t yet support source maps (see <a class="ulink" href="https://bugzilla.mozilla.org/show_bug.cgi?id=771597" target="_top">bug
-        #771597</a>). To debug in Firefox:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Enable the Developer Toolbar, as described in Kevin
-            Dangoor’s blog post, <a class="ulink" href="https://hacks.mozilla.org/2012/08/new-firefox-command-line-helps-you-develop-faster/" target="_top">New
-            Firefox Command Line Helps You Develop Faster.</a></p></li><li class="listitem"><p>Click the <span class="bold"><strong>Debugger</strong></span> button
-            at the bottom of the browser, and enable <span class="bold"><strong>Pause on exceptions</strong></span>. (See <a class="xref" href="ch04-tools-dart2js.html#FirefoxDeveloperToolbar" title="Figure 4.7. Firefox’s Developer Toolbar">Figure 4.7, “Firefox’s Developer Toolbar”</a>.)</p></li><li class="listitem"><p>Reload your application.</p></li></ol></div><div class="figure"><a name="FirefoxDeveloperToolbar"></a><p class="title"><b>Figure 4.7. Firefox’s Developer Toolbar</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0408.png" alt="Firefox’s Developer Toolbar"></div></div></div><br class="figure-break"></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="dart2js-debugging-safari"></a>Safari</h4></div></div></div><p>To debug in Safari:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Turn on the Develop menu, as described in the <a class="ulink" href="https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW1" target="_top">Safari
-            Web Inspector Guide</a>.</p></li><li class="listitem"><p>Enable breaks, either on all exceptions or only on uncaught
-            exceptions. See Figure 4-2 on the Safari <a class="ulink" href="https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1" target="_top">Debugging</a>
-            page.</p></li><li class="listitem"><p>Reload your application.</p></li></ol></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-dartium.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dart-vm.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Dartium: Chromium with the Dart VM </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> dart: The Standalone VM</td></tr></table></div>
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">dart2js: Dart-to-JavaScript 编译器</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-dartium.html">Prev</a> </td><th width="60%" align="center">Chapter 4. 工具</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dart-vm.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dart2js"></a>dart2js: Dart-to-JavaScript 编译器</h2></div></div></div><p>可以用 <span class="emphasis"><em>dart2js</em></span> 工具把 Dart 代码
+        编译为 JavaScript。 <a class="link" href="ch04-tools-editor.html#ch04-editor-dart2js" title="编译为 JavaScript">Dart 编辑器</a>
+        就是用 dart2js 把代码编译为 JavaScript 并在其他浏览器中运行的。
+        本节内容介绍如何用 dart2js 命令行工具。
+        同时也介绍了如果调试 dart2js 编译的 JavaScript 程序。
+   </p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart2js-basic-usage"></a>基本用法</h3></div></div></div><p>下面是把 Dart 编译为 JavaScript 的示例：</p><pre class="screen"><em><span class="remark">lang-sh
+</span></em>dart2js --out=test.js <em class="replaceable"><code>test.dart</code></em></pre><p>上面的命令把 Dart 代码编译为功能一样的 JavaScript 代码。
+          同时还生成了一个代码映射表，这样可以方便的调试生成的
+          JavaScript 代码。
+      </p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart2js-options"></a>支持的参数</h3></div></div></div><p>dart2js 常用的参数有：</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="literal">
+          -o<em class="replaceable"><code>&lt;file&gt;</code></em></code><span class="emphasis"><em> 或者
+          </em></span><code class="literal">--out=<em class="replaceable"><code>&lt;file&gt;</code></em></code></span></dt><dd><p>编译后的文件保存在 
+            <em class="replaceable"><code>&lt;file&gt;</code></em> 文件中。如果
+            没有设置该参数，生成的 JavaScript 文件名为
+             <code class="literal">out.js</code>.</p></dd><dt><span class="term"><code class="literal"> -c</code><span class="emphasis"><em>
+          或者 </em></span><code class="literal">--checked</code></span></dt><dd><p>插入运行时类型检测和启用断言（检测模式）。
+            </p></dd><dt><span class="term"><code class="literal">
+          --minify</code></span></dt><dd><p>生成最小尺寸的代码（也就是启用代码压缩）。</p></dd><dt><span class="term"><code class="literal"> -h</code><span class="emphasis"><em>
+          或者 </em></span><code class="literal">--help</code></span></dt><dd><p>显示帮助信息。(使用 <code class="literal">-vh</code>
+            显示所有的帮助信息)</p></dd><dt><span class="term"><code class="literal">
+          --output-type=dart</code></span></dt><dd><p>输出的文件为 Dart 代码而不是 JavaScript。 在部署代码的时候该选项非常有用，
+                该选项会生成一个文件包含该应用的所有 Dart 代码，这样可以加速 web 页面的加载。
+            </p></dd></dl></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-tools-dart2js-generating-efficient-code"></a>帮助 dart2js 生成更好的代码</h3></div></div></div><p>你可以通过如下方面来帮助 dart2js
+      生成更好的代码：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>编写能够很容易推断类型的代码。</p></li><li class="listitem"><p>当部署代码的时候， 用 dart2js --minify
+          参数来减少生成的代码。</p></li></ul></div><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>不用担心你使用的各种库的大小。
+            使用 <span class="emphasis"><em>tree shaking</em></span> 技术， dart2js 会忽略
+            没有用到的类、函数、方法、等等。你只要导入需要使用的库就可以了，
+            让 dart2js 帮助你删除不需要的代码。</p></div><p>如下是一些帮助 dart2js 生成更好代码的最佳实践，遵守这些实践可以
+          让 dart2js 生成更简单、运行更快的 JavaScript 代码：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>避免设置变量值为 null。</p></li><li class="listitem"><p>如果可能总是使用 const 或者 final 修饰符。</p></li><li class="listitem"><p>使用一致的类型参数来调用同一个函数或者方法。</p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="tools-dart2js-debugging"></a>调试</h3></div></div></div><p>下面是一些在
+      Chrome、 Firefox、 和 Safari 中调试 dart2js 生成的 JavaScript 代码的一些建议。
+      在支持代码映射的浏览器中调试 dart2js 生成的 JavaScript 代码是非常容易的，
+      例如 Chrome。</p><p>
+          无论使用那个浏览器，你至少要启用在非捕获异常发生时暂停执行的功能，如果启用
+          所有异常则更好。
+          对于 dart:isolate 和 dart:async 这些框架来说，用户代码在 try-catch 中执行，
+          所有我们建议启用所有异常发生都暂停执行的功能。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="dart2js-debugging-chrome"></a>Chrome</h4></div></div></div><p>在 Chrome 中调试：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>打开  Developer Tools 窗口。具体如何打开，请参考 <a class="ulink" href="https://developers.google.com/chrome-developer-tools/docs/overview" target="_top">How
+            to Access the Developer Tools。</a></p></li><li class="listitem"><p>启用代码映射功能。详细信息参考这个视频 <a class="ulink" href="http://bit.ly/YugIUY" target="_top">SourceMaps in Chrome。</a></p></li><li class="listitem"><p>启用调试功能，选择所有异常或者非捕获异常。详细信息参考<span class="phrase"> <a class="ulink" href="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints#pause-on-exceptions" target="_top">Pause
+            on Exceptions</a> </span>和 <a class="ulink" href="https://developers.google.com/chrome-developer-tools/docs/scripts-breakpoints#pause-on-uncaught-exceptions" target="_top">Pause
+            on Uncaught Exceptions </a> 文档。</p></li><li class="listitem"><p>重新载入调试的应用。</p></li></ol></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="dart2js-debugging-firefox"></a>Firefox</h4></div></div></div><p>Firefox 还不支持代码映射 (参考 <a class="ulink" href="https://bugzilla.mozilla.org/show_bug.cgi?id=771597" target="_top">bug
+        #771597</a>)。 在 Firefox 中调试步骤：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>启用 Developer Toolbar。启用方式参考  Kevin
+            Dangoor 的文章 <a class="ulink" href="https://hacks.mozilla.org/2012/08/new-firefox-command-line-helps-you-develop-faster/" target="_top">New
+            Firefox Command Line Helps You Develop Faster.</a></p></li><li class="listitem"><p>点击浏览器底部的 <span class="bold"><strong>Debugger</strong></span> 按钮
+                ，并启用 <span class="bold"><strong>Pause on exceptions</strong></span>。(参考 <a class="xref" href="ch04-tools-dart2js.html#FirefoxDeveloperToolbar" title="Figure 4.7. Firefox’s Developer Toolbar">Figure 4.7, “Firefox’s Developer Toolbar”</a>.)</p></li><li class="listitem"><p>重新载入调试的应用。</p></li></ol></div><div class="figure"><a name="FirefoxDeveloperToolbar"></a><p class="title"><b>Figure 4.7. Firefox’s Developer Toolbar</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0408.png" alt="Firefox’s Developer Toolbar"></div></div></div><br class="figure-break"></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="dart2js-debugging-safari"></a>Safari</h4></div></div></div><p>在 Safari 中调试的步骤：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>打开 Develop 菜单。详细操作参考 <a class="ulink" href="https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html#//apple_ref/doc/uid/TP40007874-CH2-SW1" target="_top">Safari
+            Web Inspector Guide</a>.</p></li><li class="listitem"><p>启用断点。参考 Safari  <a class="ulink" href="https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Debugger/Debugger.html#//apple_ref/doc/uid/TP40007874-CH5-SW1" target="_top">Debugging</a>
+            页面的 Figure 4-2 图。</p></li><li class="listitem"><p>重新载入调试的应用。</p></li></ol></div></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-dartium.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dart-vm.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Dartium: 带有 Dart VM 的 Chromium </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> dart: 独立的虚拟机(VM)</td></tr></table></div>

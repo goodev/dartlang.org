@@ -2,138 +2,137 @@
 # WARNING: GENERATED FILE. DO NOT EDIT.
 # WANT TO CONTRIBUTE? SEE https://github.com/dart-lang/dart-up-and-running-book
 layout: book
-title: "Dart Editor from Dart: Up and Running"
-description: "Read Dart Editor of Dart: Up and Running, published by O'Reilly."
+title: "Dart 编辑器 from Dart: Up and Running"
+description: "Read Dart 编辑器 of Dart: Up and Running, published by O'Reilly."
 ---
-<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dart Editor</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-pub.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Tools</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dartium.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-editor"></a>Dart Editor</h2></div></div></div><p>We already introduced Dart Editor in <a class="xref" href="ch01.html#ch01-editor" title="Up and Running">the section called “Up and Running”</a>.
-    Here are some more tips on using Dart Editor, with information such as
-    <a class="link" href="ch04-tools-editor.html#ch04-editor-run-non-dartium" title="Specifying a browser for JavaScript launches">specifying a browser</a>
-    and <a class="link" href="ch04-tools-editor.html#ch04-editor-dart2js" title="Compiling to JavaScript">compiling to JavaScript</a>. If
-    you run into a problem, see <a class="ulink" href="http://www.dartlang.org/tools/editor/troubleshoot.html" target="_top">Troubleshooting
-    Dart Editor.</a> Dart Editor is updated frequently, so it probably
-    looks different from what you see here. For the latest information, see
-    the <a class="ulink" href="http://www.dartlang.org/editor" target="_top">Dart Editor
-    documentation.</a></p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-view-samples"></a>Viewing Samples</h3></div></div></div><p>The Welcome page of Dart Editor (<a class="xref" href="ch01.html#DartEditor-initial" title="Figure 1.2. Dart Editor and its Welcome page">Figure 1.2, “Dart Editor and its Welcome page”</a>) displays a few samples. To open a
-      sample and look at its source code, click the sample’s image.</p><p>If you don’t see the Welcome page, you probably closed it. Get it
-      back with <span class="bold"><strong>Tools &gt; Welcome
-      Page</strong></span>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-apps"></a>Managing the Files View</h3></div></div></div><p>The Files view shows the files that implement the libraries
-      included in Dart, installed packages,
-      as well as all the apps that you create or
-      open.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-apps-open"></a>Adding apps</h4></div></div></div><p>Here’s how to open an app, which makes it appear in your Files
-        view:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Go to the <span class="bold"><strong>File</strong></span> menu, and
-            choose <span class="bold"><strong>Open Existing Folder...</strong></span>.
-            Or use the keyboard shortcut (<span class="keep-together"><span class="bold"><strong>Ctrl+O</strong></span></span> or, on Mac, <span class="bold"><strong>Cmd+O</strong></span>).</p></li><li class="listitem"><p>Browse
-            to the directory that contains the app’s files.</p></li><li class="listitem"><p>Click <span class="bold"><strong>Open</strong></span>.</p></li></ol></div><p>The directory and all its files appear in the Files view.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-apps-remove"></a>Removing apps</h4></div></div></div><p>You can remove an app from the Files view, either with or
-        without deleting its files.</p><p>Right-click (or Ctrl+click) the directory and choose <span class="bold"><strong>Delete</strong></span>. If you want to delete the app’s files
-        permanently, then in the dialog that comes up, choose <span class="bold"><strong>Delete project contents on disk</strong></span>.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-create-app"></a>Creating Apps</h3></div></div></div><p>It’s easy to create a simple web or command-line app from
-      scratch:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Click the New Application button <span class="inlinemediaobject"><img src="figs/web/newapp.png" width="11"></span> (at the upper left of Dart Editor).
-          Alternatively, choose <span class="bold"><strong>File &gt; New
-          Application</strong></span> from the Dart Editor menu. A dialog
-          appears.</p></li><li class="listitem"><p>Type in a name for your application—for example,
-          <code class="code">hello_web</code>. If you don’t like the default parent
-          directory, type in a new location or browse to choose the
-          location.</p></li><li class="listitem"><p>Unless you really don’t want files to be automatically created
-          for you, make sure <span class="bold"><strong>Generate sample
-          content</strong></span> is selected.</p></li><li class="listitem"><p>Select the kind of application you’re writing, such as command
-          line, web, or web using <a class="ulink" href="http://www.dartlang.org/polymer-dart/" target="_top">Polymer.dart.</a></p></li><li class="listitem"><p>Click <span class="bold"><strong>Finish</strong></span> to create a
-          directory with initial files for the app.</p><p>A default Dart file appears in the Edit view, and its
-          directory appears in the Files view. Your Dart Editor window should
-          look something like <a class="xref" href="ch04-tools-editor.html#DartEditor-helloweb" title="Figure 4.1. A new app, pre-filled with basic, runnable code">Figure 4.1, “A new app, pre-filled with basic, runnable code”</a>.</p><div class="figure"><a name="DartEditor-helloweb"></a><p class="title"><b>Figure 4.1. A new app, pre-filled with basic, runnable code</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0401.png" width="405" alt="A new app, pre-filled with basic, runnable code"></div></div></div><br class="figure-break"></li></ol></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-edit"></a>Editing Apps</h3></div></div></div><p>Dart Editor provides the basic editing functionality you’d expect,
-      plus features such as Dart code completion, API browsing, support for
-      refactoring, and the ability to search multiple files.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-autocomplete"></a>Using autocomplete</h4></div></div></div><p>Autocomplete suggestions look something like <a class="xref" href="ch04-tools-editor.html#helloweb-dotcomplete" title="Figure 4.2. Autocomplete suggestions">Figure 4.2, “Autocomplete suggestions”</a>. They appear when you either:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Type a class or variable name, and then type a
-            period.</p><p>For example, type <code class="code">document.</code> or
-            <code class="code">DateTime.</code> and pause a moment. Once the suggestions
-            appear, continue typing to pare down the list.</p></li><li class="listitem"><p>Type <span class="bold"><strong>Ctrl+Space</strong></span>.</p><p>For example, type <code class="code">Dat</code>, then Ctrl+Space to see a
-            list of classes that start with <span class="quote">“<span class="quote">Dat</span>”</span>.</p></li></ul></div><p>When the suggestions come up, you can click, type, or use the
-        arrow keys to select the one you want. Press Enter or Return to choose
-        a suggestion, or Esc to dismiss the panel.</p><div class="figure-float"><div class="figure"><a name="helloweb-dotcomplete"></a><p class="title"><b>Figure 4.2. Autocomplete suggestions</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0402.png" alt="Autocomplete suggestions"></div></div></div><br class="figure-break"></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-browse-apis"></a>Browsing APIs</h4></div></div></div><p>With Dart Editor you can easily find where APIs are declared.
-        You can also outline the contents of a Dart file.</p><div class="sect4"><div class="titlepage"><div><div><h5 class="title"><a name="browse-api-declaration"></a>Finding out more about an API</h5></div></div></div><p>To get more information about an API item-variable, method,
-            type, library, and so on-hover the mouse over the item in the
-            Edit view. Dart Editor displays a popup that provides more
-            information about that item.</p><p>To go to the declaration of an API item, either within the
-          same .dart file or in another file:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>In the Edit view of a Dart file, click on
-                an API item. Dart Editor highlights the item and all other
-                occurrences of the item.</p></li><li class="listitem"><p>Right click.</p></li><li class="listitem"><p>Choose <span class="bold"><strong>Open Declaration</strong></span>
-              in the menu.</p><p>The editor displays the file that declares the item. For
-              example, if you open the declaration for querySelector, the file
-              that declares the <code class="literal">querySelector()</code> function
-              appears.</p></li></ol></div></div><div class="sect4"><div class="titlepage"><div><div><h5 class="title"><a name="browse-api-outline"></a>Outlining a file’s contents</h5></div></div></div><p>Press <span class="bold"><strong>Alt+O</strong></span> (<span class="bold"><strong>Option+O</strong></span> on Mac) or right-click and choose
-          <span class="bold"><strong>Outline File</strong></span>.</p><p>A panel comes up displaying the classes, methods, and fields
-          declared in the current Dart file. For example, the outline for the
-          Sunflower sample’s <code class="code">sunflower.dart</code> file looks something
-          like <a class="xref" href="ch04-tools-editor.html#sunflower-outline" title="Figure 4.3. The Outline panel for the Sunflower sample">Figure 4.3, “The Outline panel for the Sunflower sample”</a>.</p><div class="figure"><a name="sunflower-outline"></a><p class="title"><b>Figure 4.3. The Outline panel for the Sunflower sample</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0403.png" alt="The Outline panel for the Sunflower sample"></div></div></div><br class="figure-break"><p>You can reduce the size of the list by typing one or more
-          characters. For example, if you type <span class="bold"><strong>c</strong></span>, only the <span class="bold"><strong>center</strong></span> and <span class="bold"><strong>context</strong></span> variables appear.</p><p>If you choose an item from the list—for example, <span class="bold"><strong>centerX</strong></span>— the editor scrolls to its
-          declaration.</p><p>Alternatively, add a more permanent outline view by choosing
-          <span class="bold"><strong>Tools &gt; Outline</strong></span>.</p></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-refactor"></a>Refactoring</h4></div></div></div><p>To change the name of an item throughout your code, put the
-        cursor within (or double-click) the item’s name in the Edit view, and
-        right-click and choose <span class="bold"><strong>Rename...</strong></span>.</p><p>You can rename almost anything—local variables, function
-        parameters, fields, methods, types, top-level functions, library
-        prefixes, top-level compilation units, and more. An example of
-        renaming a top-level compilation unit is changing the name of a file
-        that’s sourced by a library.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-searching"></a>Searching</h4></div></div></div><p>The search field at the upper right of the Dart Editor window is
-        an easy way to go <span class="keep-together">directly
-        to:</span></p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Types</p></li><li class="listitem"><p>Files</p></li><li class="listitem"><p>Text inside of files</p></li></ul></div><p>The scope of a text search is every file in your Files view.
-        Results for text searches come up in a Search view. Within that view,
-        double-click a file to see it in the Edit view. All occurrences of the
-        search string in the Edit view are highlighted.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-run"></a>Running Apps</h3></div></div></div><p>To run any Dart app, click Dart Editor’s Run button
-      <span class="inlinemediaobject"><img src="figs/web/run.png" width="11"></span> while a file in that app is selected. If you’re
-      working on a web app, Dart Editor brings up a browser window that
-      displays the app’s HTML page, with the app’s code running inside
-      it.</p><p>When you run a web application using Dart Editor, by default the
-      app uses the copy of Dartium that’s included in the Dart Editor
-      download, with the Dart code executing directly in the browser. If your
-      launch configuration specifies a browser, then Dart Editor uses <a class="link" href="ch04-tools-dart2js.html" title="dart2js: The Dart-to-JavaScript Compiler">dart2js</a> to compile the Dart code to
-      JavaScript that executes in the browser.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-run-manage-launch"></a>Specifying launch configurations</h4></div></div></div><p>Use <span class="bold"><strong>Run &gt; Manage Launches</strong></span> to
-        specify as many launch configurations as you like.</p><p>For web apps, you can specify the following:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>HTML file or URL to open</p></li><li class="listitem"><p>arguments to pass to the browser; for example, <code class="literal">--allow-file-access-from-files</code></p></li><li class="listitem"><p>checked mode (Dartium only)</p></li><li class="listitem"><p>enable experimental features (Dartium only)</p></li><li class="listitem"><p>whether to show the browser’s stdout and stderr output
-            (Dartium only; useful for diagnosing Dartium crashes)</p></li></ul></div><p>For example, a web app might have a launch configuration for
-        Dartium and several more configurations corresponding to additional
-        browsers you want to test.</p><p>You can specify the following for command-line apps:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>.dart file to execute</p></li><li class="listitem"><p>working directory</p></li><li class="listitem"><p>arguments to pass to the app</p></li><li class="listitem"><p>checked mode</p></li></ul></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-run-production-mode"></a>Running in production mode</h4></div></div></div><p>By default, apps run in checked mode. To run in production mode
-        instead, disable checked mode in your app’s launch
-        configuration:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Run your app at least once, so that it has a launch
-            configuration.</p></li><li class="listitem"><p>Choose <span class="bold"><strong>Run &gt; Manage
-            Launches</strong></span>, or click the little arrow to the right of the
-            Run button <span class="inlinemediaobject"><img src="figs/web/run.png" width="11"></span> and choose <span class="bold"><strong>Manage
-            Launches</strong></span>.</p></li><li class="listitem"><p>In the Manage Launches dialog, find a launch configuration
-            for your app. Click it if it isn’t already selected.</p></li><li class="listitem"><p>Unselect <span class="bold"><strong>Run in checked
-            mode</strong></span> (see <a class="xref" href="ch04-tools-editor.html#production-mode" title="Figure 4.4. To run in production mode, unselect checked mode">Figure 4.4, “To run in production mode, unselect checked mode”</a>).</p><div class="figure"><a name="production-mode"></a><p class="title"><b>Figure 4.4. To run in production mode, unselect checked mode</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0404.png" alt="To run in production mode, unselect checked mode"></div></div></div><br class="figure-break"></li><li class="listitem"><p>Click <span class="bold"><strong>Apply</strong></span> to save your
-            change, or <span class="bold"><strong>Run</strong></span> to save it and run
-            your app.</p></li></ol></div><p>For details about checked mode and production mode, see <a class="xref" href="ch02.html#ch02-runtime-modes" title="Runtime Modes">the section called “Runtime Modes”</a>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-run-non-dartium"></a>Specifying a browser for JavaScript launches</h4></div></div></div><p>To specify the browser in which to run the JavaScript version
-        of your web apps:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Choose
+<div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dart 编辑器</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-pub.html">Prev</a> </td><th width="60%" align="center">Chapter 4. 工具</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dartium.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-editor"></a>Dart 编辑器</h2></div></div></div><p>在 <a class="xref" href="ch01.html#ch01-editor" title="开始使用 Dart">the section called “开始使用 Dart”</a> 我们已经介绍了 Dart 编辑器了。
+        下面是使用 Dart 编辑器的一些有用的提示，例如
+    <a class="link" href="ch04-tools-editor.html#ch04-editor-run-non-dartium" title="设置运行 JavaScript 的浏览器">如何指定浏览器</a>
+    和 <a class="link" href="ch04-tools-editor.html#ch04-editor-dart2js" title="编译为 JavaScript">编译为  JavaScript</a>。
+    如果你遇到了问题，请参考 <a class="ulink" href="http://www.dartlang.cc/tools/editor/troubleshoot.html" target="_top">
+    Dart 编辑器问题指南。</a> Dart 编辑器更新比较快，
+    所以这里的截图可能看起来不太一样。
+    最新的信息 ，请参考 <a class="ulink" href="http://www.dartlang.cc/editor" target="_top">Dart 编辑器文档。</a></p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-view-samples"></a>查看示例项目</h3></div></div></div><p>Dart 编辑器的欢迎界面 (<a class="xref" href="ch01.html#DartEditor-initial" title="Figure 1.2. Dart 编辑器和欢迎界面">Figure 1.2, “Dart 编辑器和欢迎界面”</a>) 显示了一些示例项目。
+      只需要点击示例项目图片就可以打开该项目并查看其
+      代码了。</p><p>如果你没有看到欢迎界面，很有可能是之前你关闭该页面了。
+      通过菜单 <span class="bold"><strong>Tools &gt; Welcome
+      Page</strong></span> 可以打开该页面。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-apps"></a>管理文件视图</h3></div></div></div><p>文件视图显示了 库的文件、安装的包的文件、和你的应用
+          创建的文件。
+      </p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-apps-open"></a>添加应用</h4></div></div></div><p>下面是如何打开应用并在文件
+            视图中显示的步骤：
+	</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>打开 <span class="bold"><strong>File</strong></span> 菜单，然后选择
+              <span class="bold"><strong>Open Existing Folder...</strong></span> ，
+              或者用快捷键
+             (<span class="keep-together"><span class="bold"><strong>Ctrl+O</strong></span></span> 、在 Mac 系统用 <span class="bold"><strong>Cmd+O</strong></span>)。</p></li><li class="listitem"><p>找到
+                包含应用的目录。
+</p></li><li class="listitem"><p>点击 <span class="bold"><strong>Open</strong></span>。</p></li></ol></div><p>在文件视图中就可以看到该目录和其中的文件了。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-apps-remove"></a>删除应用</h4></div></div></div><p>你可以从文件视图中删除应用，可以同时删除磁盘上的文件也可以保留
+            文件。</p><p>右键 (或者 Ctrl+点击) 项目目录并选择 <span class="bold"><strong>Delete</strong></span>。
+        如果你想同时删除该项目在磁盘上的文件，则在删除对话框中选中
+<span class="bold"><strong>Delete project contents on disk</strong></span>。</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-create-app"></a>创建应用</h3></div></div></div><p>从头创建一个命令行应用或者 web 应用也是很简单的：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>点击 New Application 按钮 <span class="inlinemediaobject"><img src="figs/web/newapp.png" width="11"></span> (在 Dart 编辑器的左上角)。
+            或者选择菜单
+          <span class="bold"><strong>File &gt; New
+          Application</strong></span> 。然后出现一个对话框。
+          </p></li><li class="listitem"><p>输入应用的名字，比如
+          <code class="code">hello_web</code>。如果你不想用默认的
+          目录存放该项目，你可以选择一个新的目录。
+          </p></li><li class="listitem"><p>如果你真的不想让编辑器创建一些示例内容，则不要选中 <span class="bold"><strong>Generate sample
+          content</strong></span> 。</p></li><li class="listitem"><p>选择要创建的应用类型，例如 命令行应用、 web 或者使用 
+          <a class="ulink" href="http://www.dartlang.cc/polymer-dart/" target="_top">Polymer.dart</a> 的 web 应用。</p></li><li class="listitem"><p>点击 <span class="bold"><strong>Finish</strong></span> 来
+              创建一个带有一些示例文件的项目。</p><p>
+              在编辑视图中会打开默认的 Dart 文件，在 文件视图中会显示项目目录。
+              创建后的 Dart 编辑器看起来应该和下图类似：
+           <a class="xref" href="ch04-tools-editor.html#DartEditor-helloweb" title="Figure 4.1. 使用默认示例代码创建的新应用">Figure 4.1, “使用默认示例代码创建的新应用”</a>。</p><div class="figure"><a name="DartEditor-helloweb"></a><p class="title"><b>Figure 4.1. 使用默认示例代码创建的新应用</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0401.png" width="405" alt="使用默认示例代码创建的新应用"></div></div></div><br class="figure-break"></li></ol></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-edit"></a>编辑应用</h3></div></div></div><p>Dart 编辑器提供了一些编辑功能，
+          例如 Dart 代码辅助、API 浏览、支持重构以及搜索文件等。
+      </p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-autocomplete"></a>使用代码辅助</h4></div></div></div><p>代码辅助功能看起来如  <a class="xref" href="ch04-tools-editor.html#helloweb-dotcomplete" title="Figure 4.2. 代码辅助建议">Figure 4.2, “代码辅助建议”</a> 所示。当你输入如下代码的时候，提示出现：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>输入一个类或者变量名字，然后再输入一个圆点。
+                </p><p>例如  <code class="code">document.</code> 或者
+            <code class="code">DateTime.</code> 然后暂停一小会。
+            当代码建议面板出现后，在继续输入可以过滤建议的代码。
+            </p></li><li class="listitem"><p>按  <span class="bold"><strong>Ctrl+Space</strong></span>。</p><p>例如，输入  <code class="code">Dat</code> 然后按 Ctrl+Space 来查看
+                以 <span class="quote">“<span class="quote">Dat</span>”</span> 开头的类。</p></li></ul></div><p>当代码建议面板出现后，你可以点击、输入或者用上下箭头来选择你先要的建议。
+            按回车键（Enter）或者返回键（Return）选择代码建议，用
+            退出键（Esc） 来关闭代码建议面板。
+        </p><div class="figure-float"><div class="figure"><a name="helloweb-dotcomplete"></a><p class="title"><b>Figure 4.2. 代码辅助建议</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0402.png" alt="代码辅助建议"></div></div></div><br class="figure-break"></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-browse-apis"></a>浏览 APIs</h4></div></div></div><p>使用 Dart 编辑器可以很容易的查找 API 是在何处定义的。
+            同时还可以列出所选 Dart 文件的内容大纲视图。</p><div class="sect4"><div class="titlepage"><div><div><h5 class="title"><a name="browse-api-declaration"></a>查看 API 的更多信息</h5></div></div></div><p>要查看一个 API 的详细信息 -变量、函数、类型、
+              库、等等 - 只需要在 编辑视图上把鼠标放到 API 名字上即可。
+              Dart 编辑器会弹出一个面板来显示关于该 API 的更多信息。
+            </p><p>不管该 API 是否在当前文件定义，都可以通过如下方式找到该 API 的定义位置：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>在 Dart 文件的编辑视图中，点击一个 API 。 Dart 编辑器会高亮当前文件
+                  所有使用该 API 的地方。</p></li><li class="listitem"><p>然后在该 API 上右键。</p></li><li class="listitem"><p>选择菜单中的  <span class="bold"><strong>Open Declaration</strong></span>
+              选项。</p><p>编辑器会打开该 API 的定义位置。
+                  例如，如果你查询 querySelector 的定义位置，则编辑器
+                  会打开定义   <code class="literal">querySelector()</code> 方法的文件。
+		</p></li></ol></div></div><div class="sect4"><div class="titlepage"><div><div><h5 class="title"><a name="browse-api-outline"></a>浏览文件大概</h5></div></div></div><p>通过快捷键 <span class="bold"><strong>Alt+O</strong></span> (Mac 上为 <span class="bold"><strong>Option+O</strong></span> ) 或者 右键并选择 
+          <span class="bold"><strong>Outline File</strong></span> 菜单。</p><p>然后会弹出一个面板，在该面板中显示了当前文件定义的 类、函数、和变量。
+              例如，  Sunflower 示例中的  <code class="code">sunflower.dart</code> 文件的大纲
+              面板如图所示：
+               <a class="xref" href="ch04-tools-editor.html#sunflower-outline" title="Figure 4.3. Sunflower 示例的大纲面板">Figure 4.3, “Sunflower 示例的大纲面板”</a></p><div class="figure"><a name="sunflower-outline"></a><p class="title"><b>Figure 4.3. Sunflower 示例的大纲面板</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0403.png" alt="Sunflower 示例的大纲面板"></div></div></div><br class="figure-break"><p>你可以输入字符来过滤显示的内容。例如
+              如果你输入
+          <span class="bold"><strong>c</strong></span>，则只会显示 <span class="bold"><strong>center</strong></span> 和 <span class="bold"><strong>context</strong></span> 变量。</p><p>如果你选择了其中的一个条目，例如  <span class="bold"><strong>centerX</strong></span>— 编辑器会把文件滚动到该条目定义的地方显示。</p><p>另外，还有一个常驻的 大纲视图，通过菜单 
+          <span class="bold"><strong>Tools &gt; Outline</strong></span>来打开。</p></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-refactor"></a>重构</h4></div></div></div><p>要修改代码的名字，在编辑文件视图中，可以把鼠标放到名字中间或者双击名字，然后右键选择菜单
+            中的 <span class="bold"><strong>Rename...</strong></span>选项。</p><p>你几乎可以重命名任意内容，局部变量、方法参数、成员变量、函数、类型、顶级方法、库前缀
+            、等等。 </p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-edit-searching"></a>搜索</h4></div></div></div><p>
+            Dart 编辑器右上角的搜索输入框可以
+        <span class="keep-together">直接定位到
+        </span> 如下位置：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>类型定义</p></li><li class="listitem"><p>文件</p></li><li class="listitem"><p>文件中的文本</p></li></ul></div><p>
+            搜索的范围为当前文件视图中的所有文件。
+            在搜索视图中显示搜索结果。
+            在搜索视图中，双击一个文件可以在编辑视图中显示该文件。
+            在打开的文件中， 所有符合搜索的字符串都被高亮显示。
+        </p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-run"></a>运行应用</h3></div></div></div><p>只需要选择该应用的文件并点击 Dart 编辑器的 Run 按钮
+      <span class="inlinemediaobject"><img src="figs/web/run.png" width="11"></span> 就可以运行该应用。
+      如果是 web 应用， Dart 编辑器会启动一个浏览器来运行该应用。
+</p><p>当用 Dart 编辑器运行 web 应用的时候，默认 Dart 编辑器会启动
+          带有 Dart VM 的 Dartium 浏览器来直接运行 Dart 代码。
+          如果你指定了其他的浏览器，则 Dart 编辑器用
+       <a class="link" href="ch04-tools-dart2js.html" title="dart2js: Dart-to-JavaScript 编译器">dart2js</a>  来把 Dart 代码
+      编译为
+      JavaScript 在浏览器中运行。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-run-manage-launch"></a>设置启动配置</h4></div></div></div><p>通过菜单 <span class="bold"><strong>Run &gt; Manage Launches</strong></span> 
+            来设置多个启动配置。
+        </p><p>对于 Web 应用，你可以设置如下内容：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>要打开的 HTML 文件或者 URL 地址</p></li><li class="listitem"><p>传递给浏览器的参数。例如， <code class="literal">--allow-file-access-from-files</code></p></li><li class="listitem"><p>检测模式(checked mode) (只支持 Dartium )</p></li><li class="listitem"><p>启用实验性功能  (只支持 Dartium)</p></li><li class="listitem"><p>在哪里显示浏览器的 stdout 和 stderr 输出内容
+            (只支持 Dartium ，可以帮助诊断  Dartium 崩溃问题)</p></li></ul></div><p>例如，一个 web 应用可以有一个启动 
+        Dartium 的配置和启动其他浏览器的配置。</p><p>对于命令行应用，可以设置如下内容：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>执行的 .dart </p></li><li class="listitem"><p>工作目录</p></li><li class="listitem"><p>传递给应用的参数</p></li><li class="listitem"><p>检测模式</p></li></ul></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-run-production-mode"></a>在生产模式下运行</h4></div></div></div><p>默认情况下，应用在 检测模式 运行.如果要在生产模式下运行，则可以在启动
+            配置中禁用检测模式：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>最少要运行一次该应用，这样就生成该启动配置项了。</p></li><li class="listitem"><p>选择 <span class="bold"><strong>Run &gt; Manage
+            Launches</strong></span>或者点击 Run 按钮
+            Run button <span class="inlinemediaobject"><img src="figs/web/run.png" width="11"></span> 右边的三角形图标并选择 <span class="bold"><strong>Manage
+            Launches</strong></span>。</p></li><li class="listitem"><p>在 Manage Launches 对话框中，找到你应用的启动配置。
+                如果已经存在了，则选中该配置。</p></li><li class="listitem"><p>不要选中 <span class="bold"><strong>Run in checked
+            mode</strong></span> (参考 <a class="xref" href="ch04-tools-editor.html#production-mode" title="Figure 4.4. 要在生产模式运行，不要选中 checked mode">Figure 4.4, “要在生产模式运行，不要选中 checked mode”</a>)。</p><div class="figure"><a name="production-mode"></a><p class="title"><b>Figure 4.4. 要在生产模式运行，不要选中 checked mode</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0404.png" alt="要在生产模式运行，不要选中 checked mode"></div></div></div><br class="figure-break"></li><li class="listitem"><p>点击 <span class="bold"><strong>Apply</strong></span> 来保存
+                修改，或者点击 <span class="bold"><strong>Run</strong></span> 来保存并
+                运行应用。</p></li></ol></div><p>关于检测模式和生产模式的更多信息，请参考 <a class="xref" href="ch02.html#ch02-runtime-modes" title="运行时模式">the section called “运行时模式”</a>。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-run-non-dartium"></a>设置运行 JavaScript 的浏览器</h4></div></div></div><p>要设置一个浏览器来运行你应用的 JavaScript 版本，安装如下步骤操作：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>选择
             <span class="bold"><strong>Dart Editor &gt; Preferences</strong></span>.
-            </p></li><li class="listitem"><p>Click <span class="bold"><strong>Run and Debug</strong></span>.</p></li><li class="listitem"><p>Unless you want to use the default system browser,
-            unselect <span class="bold"><strong>Use default <span class="keep-together">system browser</span></strong></span> and
-            specify the location of the browser you want to use. <span class="keep-together"><span class="emphasis"><em>Example:</em></span>
-            /Applications/Firefox.app</span></p></li><li class="listitem"><p>Click <span class="bold"><strong>OK</strong></span> to save your
-            changes.</p></li></ol></div><p>Now whenever you run an app as JavaScript,
-        Dart Editor will invoke your browser of choice.
+            </p></li><li class="listitem"><p>点击 <span class="bold"><strong>Run and Debug</strong></span>.</p></li><li class="listitem"><p>如果你不想用系统默认浏览器，则不要选中
+             <span class="bold"><strong>Use default <span class="keep-together">system browser</span></strong></span> ,并
+            设置你想使用的浏览器文件位置。 <span class="keep-together"><span class="emphasis"><em>例如：</em></span>
+            /Applications/Firefox.app</span></p></li><li class="listitem"><p>点击  <span class="bold"><strong>OK</strong></span> 保存
+                修改。</p></li></ol></div><p>现在 只要你用 JavaScript 来运行你的应用， Dart
+            编辑器都会打开你选择的浏览器。
         </p>
-
-        Alternatively, you can run your app as JavaScript using
-        the default browser setting and then copy and paste the URL into
-        a different browser.
-      </div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-debug"></a>Debugging Apps</h3></div></div></div><p>You can debug both command-line and web apps with Dart Editor.
-      Some tips:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Set breakpoints by double-clicking in the left margin of the
-          Edit view.</p></li><li class="listitem"><p>Use the Debugger view to view your app’s state and control its
-          execution. By default, the Debugger view is to the right of the Edit
-          view and appears when you first hit a breakpoint (<a class="xref" href="ch04-tools-editor.html#debugger" title="Figure 4.5. Using Dart Editor to debug the Sunflower sample app">Figure 4.5, “Using Dart Editor to debug the Sunflower sample app”</a>).</p></li><li class="listitem"><p>To see the value of a variable, mouse over it, look in the
-          Debugger view, or use an Expression <span class="inlinemediaobject"><img src="figs/web/watchlist_view.gif" width="11"></span>.</p></li><li class="listitem"><p>To debug web apps, use Dart Editor with Dartium. While you’re
-          debugging, Dart Editor takes the place of the Dartium console. For
-          example, Dart Editor displays the output of<code class="literal">
-          print()</code> statements.</p></li></ul></div><div class="figure"><a name="debugger"></a><p class="title"><b>Figure 4.5. Using Dart Editor to debug the Sunflower sample app</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0406.png" alt="Using Dart Editor to debug the Sunflower sample app"></div></div></div><br class="figure-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-dart2js"></a>Compiling to JavaScript</h3></div></div></div><p>You might not need to do anything to compile your code to
-      JavaScript. When you run an app using a launch configuration that <a class="link" href="ch04-tools-editor.html#ch04-editor-run-non-dartium" title="Specifying a browser for JavaScript launches">specifies a browser</a>, Dart
-      Editor automatically compiles the app to JavaScript before executing it
-      in the browser.</p><p>However, you can also compile Dart code to JavaScript without
-      running the app. Just choose <span class="bold"><strong>Tools &gt; Generate
-      JavaScript</strong></span>. Another option is using dart2js from the command
-      line (see <a class="xref" href="ch04-tools-dart2js.html" title="dart2js: The Dart-to-JavaScript Compiler">the section called “dart2js: The Dart-to-JavaScript Compiler”</a>).</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-more"></a>Other Features</h3></div></div></div><p>Dart Editor has many additional features, including doc
-      generation, customization, and keyboard alternatives.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-more-dartdoc"></a>Generating documentation with dartdoc</h4></div></div></div><p>Use the <span class="bold"><strong>Tools &gt; Generate
-        Dartdoc</strong></span> command to generate HTML documentation from Dart
-        code. For information on supplying text for the documentation, see
-        <a class="xref" href="ch02.html#comments-doc" title="Documentation Comments">the section called “Documentation Comments”</a>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-more-preferences"></a>Customizing Dart Editor</h4></div></div></div><p>You can customize the editor’s font, margins, key bindings, and
-        more using the Preferences dialog. To bring up the dialog, choose
-        <span class="bold"><strong>Tools &gt; Preferences</strong></span> (on Mac:
-        <span class="bold"><strong>Dart Editor &gt; Preferences</strong></span>).</p><p>You can also customize which views you see in Dart Editor, as
-        well as their size and position. To add views, use the <span class="bold"><strong>Tools</strong></span> menu. To remove a view, click its
-        <span class="bold"><strong>X</strong></span>. To move a view, drag its tab to a
-        different position, either within or outside of the Dart Editor
-        window. To resize a view, drag its edges.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-more-keys"></a>Keyboard alternatives</h4></div></div></div><p>To get a list of all keyboard alternatives, choose <span class="bold"><strong>Help &gt; Key Assist</strong></span> (<a class="xref" href="ch04-tools-editor.html#key-assist" title="Figure 4.6. Help &gt; Key Assist">Figure 4.6, “Help &gt; Key Assist”</a>).</p><div class="figure"><a name="key-assist"></a><p class="title"><b>Figure 4.6. Help &gt; Key Assist</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0407.png" alt="Help &gt; Key Assist"></div></div></div><br class="figure-break"></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-pub.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dartium.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">pub: The Dart Package Manager </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Dartium: Chromium with the Dart VM</td></tr></table></div>
+	
+        你也可以用默认的配置打开 JavaScript 应用。然后把网址复制到你想测试的浏览器中即可。
+      </div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-debug"></a>调试应用</h3></div></div></div><p>在 Dart 编辑器中可以调试命令行应用和 web 应用。下面是一些提示：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>
+              在编辑视图代码每行左边距区域双击可以添加断点。
+	</p></li><li class="listitem"><p>
+              用 调试器视图（Debugger view）来查看应用的状态和控制代码的执行。
+              默认情况下，调试器视图在编辑视图的右边，当你第一次执行到断点代码位置处时，调试器视图自动打开
+          (<a class="xref" href="ch04-tools-editor.html#debugger" title="Figure 4.5. 用 Dart 编辑器调试 Sunflower 示例应用">Figure 4.5, “用 Dart 编辑器调试 Sunflower 示例应用”</a>).</p></li><li class="listitem"><p>要查看变量的只，把鼠标放到变量名字上，在 调试器视图 查看，或者用  Expression （表达式） 查看<span class="inlinemediaobject"><img src="figs/web/watchlist_view.gif" width="11"></span>.</p></li><li class="listitem"><p>
+              要调试 web 应用，需要用 Dartium 配合 Dart 编辑器。
+              当调试的时候， 编辑器接管 Dartium 控制台。例如， 编辑器可以显示
+          <code class="literal">
+          print()</code> 语句打印的消息。</p></li></ul></div><div class="figure"><a name="debugger"></a><p class="title"><b>Figure 4.5. 用 Dart 编辑器调试 Sunflower 示例应用</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0406.png" alt="用 Dart 编辑器调试 Sunflower 示例应用"></div></div></div><br class="figure-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-dart2js"></a>编译为 JavaScript</h3></div></div></div><p>要把你的代码编译为 
+      JavaScript 你无需做额外的工作。
+      当你在启动配置中
+       <a class="link" href="ch04-tools-editor.html#ch04-editor-run-non-dartium" title="设置运行 JavaScript 的浏览器">设置了其他浏览器</a>，则 Dart 编辑器
+      会在执行应用之前自动把 Dart 代码编译为 JavaScript。
+      </p><p>当然，你也可以不允许应用就可以把 Dart 代码编译为  JavaScript。
+          通过菜单 <span class="bold"><strong>Tools &gt; Generate
+      JavaScript</strong></span>即可。另外还可以用命令行工具 dart2js
+      (参考 <a class="xref" href="ch04-tools-dart2js.html" title="dart2js: Dart-to-JavaScript 编译器">the section called “dart2js: Dart-to-JavaScript 编译器”</a>).</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-editor-more"></a>其他功能</h3></div></div></div><p>Dart 编辑器还有很多功能，例如 生成文档、自定义界面和快捷键等。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-more-dartdoc"></a>用 dartdoc 生成文档</h4></div></div></div><p>用工具 <span class="bold"><strong>Tools &gt; Generate
+        Dartdoc</strong></span> 菜单来生成 Dart 代码的 HTML 文档。
+        关于文档格式的更多信息，请参考
+        <a class="xref" href="ch02.html#comments-doc" title="文档注释">the section called “文档注释”</a>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-more-preferences"></a>自定义 Dart 编辑器</h4></div></div></div><p>
+            在 Preferences 对话框中你可以自定义编辑器的字体、边距、快捷键和其他内容。通过菜单
+        <span class="bold"><strong>Tools &gt; Preferences</strong></span> ( Mac:
+        <span class="bold"><strong>Dart Editor &gt; Preferences</strong></span>) 来打开该对话框。</p><p>
+            你还可以定制显示那些视图，和视图显示的位置和大小。通过 <span class="bold"><strong>Tools</strong></span> 菜单添加视图。通过视图的
+        <span class="bold"><strong>X</strong></span> 图标来删除视图。
+        拖动视图 tab 来移动视图到另外一个位置，可以移动到 Dart 编辑器的其他地方，也可以移出 
+        Dart 编辑器。 拖动视图边缘可以放到缩小。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch04-editor-more-keys"></a>快捷键提示</h4></div></div></div><p>通过菜单 <span class="bold"><strong>Help &gt; Key Assist</strong></span> (<a class="xref" href="ch04-tools-editor.html#key-assist" title="Figure 4.6. Help &gt; Key Assist">Figure 4.6, “Help &gt; Key Assist”</a>)可以查看可以使用的快捷键。</p><div class="figure"><a name="key-assist"></a><p class="title"><b>Figure 4.6. Help &gt; Key Assist</b></p><div class="figure-contents"><div class="mediaobject"><img src="figs/web/daur_0407.png" alt="Help &gt; Key Assist"></div></div></div><br class="figure-break"></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-pub.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dartium.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">pub: Dart 包管理器 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Dartium: 带有 Dart VM 的 Chromium</td></tr></table></div>
