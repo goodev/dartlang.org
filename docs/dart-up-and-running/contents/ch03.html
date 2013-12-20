@@ -6,19 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Chapter 3. A Tour of the Dart Libraries from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
+  <title>Chapter 3. Dart 库概览 from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Chapter 3. A Tour of the Dart Libraries from Dart: Up and Running | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="Chapter 3. Dart 库概览 from Dart: Up and Running | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
-  <meta itemprop="description" content="Read Chapter 3. A Tour of the Dart Libraries of Dart: Up and Running, published by O'Reilly.">
+  <meta itemprop="description" content="Read Chapter 3. Dart 库概览 of Dart: Up and Running, published by O'Reilly.">
 
 
   <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
 <link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
 <link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+<link rel='stylesheet' type='text/css' href='/css/font-awesome.min.css'>
 
   
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
@@ -125,7 +126,7 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
-                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
@@ -139,7 +140,7 @@
             </li>
             <li class="dropdown">
               <a href="/support/" title="Community and Support">
-                                              社区
+                                              支持
               </a>
             </li>
           </ul>
@@ -174,26 +175,25 @@
       </div>
 
       <article class="up-and-running-contents">
-        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. A Tour of the Dart Libraries</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="ch03"></a>Chapter 3. A Tour of the Dart Libraries</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="sect1"><a href="ch03.html#ch03-dartcore---strings-collections-and-more">dart:core - Numbers, Collections, Strings, and More</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-numbers">Numbers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-strings-and-regular-expressions">Strings and Regular Expressions</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-collections">Collections</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-uri">URIs</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-dates-and-times">Dates and Times</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utility-interfaces">Utility Classes</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-exceptions">Exceptions</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-asynchronous-programming">dart:async - Asynchronous Programming</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-futures">Future</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-streams">Stream</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-9">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-math">dart:math - Math and Random</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-trigonometry">Trigonometry</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-maximum-and-minimum">Maximum and Minimum</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-math-constants">Math Constants</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-random-numbers">Random Numbers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-7">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-html-using-html5-apis">dart:html - Browser-Based Apps</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-manipulating-the-dom">Manipulating the DOM</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-httprequest">Using HTTP Resources with HttpRequest</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-websockets">Sending and Receiving Real-Time Data with WebSockets</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-html">More information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dartio---file-and-socket-io-for-command-line-apps">dart:io - I/O for Command-Line Apps</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-files-and-directories">Files and Directories</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-io-http">HTTP Clients and Servers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-io">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-convert">dart:convert - Decoding and Encoding JSON, UTF-8, and more</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-json">Decoding and Encoding JSON</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utf">Decoding and Encoding UTF-8 Characters</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utf-other">Other Functionality</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-mirrors">dart:mirrors - Reflection</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-symbols">Symbols</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-introspection">Introspection</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-invocation">Invocation</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-mirrors">More Information</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-summary">Summary</a></span></dt></dl></div><p>This chapter shows you how to use the major features in Dart’s
-  libraries. It’s just an overview, and by no means comprehensive. Whenever
-  you need more details about a class, consult the <a class="ulink" href="http://api.dartlang.org/" target="_top">Dart API reference.</a></p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dartcore---strings-collections-and-more"></a>dart:core - Numbers, Collections, Strings, and More</h2></div></div></div><p>The Dart core library provides a small but critical set of built-in
-    functionality. This library is automatically imported into every Dart
-    program.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-numbers"></a>Numbers</h3></div></div></div><p>The dart:core library defines the num, int, and double classes,
-      which have some basic utilities for working with numbers.</p><p>You can convert a string into an integer or double with the
-      <code class="literal">parse()</code> methods of int and double,
-      respectively:</p><pre class="screen"><em><span class="remark">lang-dart
+        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Chapter 3. Dart 库概览</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="ch03"></a>Chapter 3. Dart 库概览</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl class="toc"><dt><span class="sect1"><a href="ch03.html#ch03-dartcore---strings-collections-and-more">dart:core - 数字、集合、 String、以及更多</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-numbers">Numbers</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-strings-and-regular-expressions">字符串（String）和正则表达式</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-collections">集合</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-uri">URIs</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-dates-and-times">日期和时间</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utility-interfaces">常用工具类</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-exceptions">异常（Exceptions）</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-asynchronous-programming">dart:async - 异步编程</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-futures">Future</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-streams">Stream</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-9">更多信息</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-math">dart:math - Math 和 Random</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-trigonometry">三角函数</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-maximum-and-minimum">最大值和最小值</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-math-constants">数学常量</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-random-numbers">随机数</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-7">更多信息</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-html-using-html5-apis">dart:html - 基于浏览器的应用</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-manipulating-the-dom">操作 DOM</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-httprequest">用 HttpRequest 请求 HTTP 资源</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-websockets">用 WebSocket 来发送和接收实时数据</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-html">更多信息</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dartio---file-and-socket-io-for-command-line-apps">dart:io - 用于命令行应用的 I/O 操作 </a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-files-and-directories">文件和目录</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-io-http">HTTP 客户端和服务器</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-io">更多信息</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-dart-convert">dart:convert - 编码和解码 JSON 数据、 UTF-8 编码以及其他</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-json">编码和解码 JSON</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utf">编码和解码 UTF-8 字符</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-utf-other">其他功能</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-mirrors">dart:mirrors - Reflection（反射）</a></span></dt><dd><dl><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-symbols">Symbols（符号）</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-introspection">Introspection（审查对象）</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-mirrors-invocation">Invocation</a></span></dt><dt><span class="sect2"><a href="ch03.html#ch03-more-information-mirrors">更多信息</a></span></dt></dl></dd><dt><span class="sect1"><a href="ch03.html#ch03-summary">总结</a></span></dt></dl></div><p>本章介绍如何使用 Dart 库中的主要功能。
+  这里只是一个概要介绍，并不全面。当你想查看一个类的
+  详细信息的时候，请参考 <a class="ulink" href="http://api.dartlang.org/" target="_top">Dart API 文档。</a></p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dartcore---strings-collections-and-more"></a>dart:core - 数字、集合、 String、以及更多</h2></div></div></div><p>Dart 核心库提供了少量关键的功能。
+    该库自动导入到每个 Dart 程序中。</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-numbers"></a>Numbers</h3></div></div></div><p>dart:core 库定义了 num、 int、 和 double 类，
+      这些类提供了一些基本的数字操作功能。</p><p>通过 int 或者 double 的
+      <code class="literal">parse()</code> 函数可以把字符串转化为 int 或者 double：
+       </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/number-tests.dart
 </span></em>assert(int.parse('42') == 42);
 assert(int.parse('0x42') == 66);
-assert(double.parse('0.50') == 0.5);</pre><p>To specify the base, add a <code class="literal">radix</code>
-      parameter:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(double.parse('0.50') == 0.5);</pre><p>要指定是几进制数，用可选的 <code class="literal">radix</code>
+      参数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/number-tests.dart
-</span></em>assert(int.parse('42', radix: 16) == 66);</pre><p>Use the <code class="literal">toString()</code> method (defined by <a class="ulink" href="http://api.dartlang.org/dart_core/Object.html" target="_top">Object</a>) to
-      convert an int or double to a string. To specify the number of digits to
-      the right of the decimal, use <code class="literal">toStringAsFixed()</code>
-      (defined by num). To specify the number of significant digits in the
-      string, use <span class="keep-together"><code class="literal">toStringAsPrecision()</code>
-      </span>(also in num):</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>assert(int.parse('42', radix: 16) == 66);</pre><p>用 <code class="literal">toString()</code> 函数 (<a class="ulink" href="http://api.dartlang.org/dart_core/Object.html" target="_top">Object</a> 类定义
+      的函数) 可以把 int 或者 double 转化为 string。
+      通过 <code class="literal">toStringAsFixed()</code>
+      (num 类定义的函数) 可以指定保留几位小数。
+      通过 <span class="keep-together"><code class="literal">toStringAsPrecision()</code>
+      </span>(也是 num 类定义) 可以指定几位有效数字：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/number-tests.dart
 </span></em>// Convert an int to a string.
 assert(42.toString() == '42');
@@ -206,85 +206,84 @@ assert(123.456.toStringAsFixed(2) == '123.46');
 
 // Specify the number of significant figures.
 assert(123.456.toStringAsPrecision(2) == '1.2e+2');
-assert(double.parse('1.2e+2') == 120.0);</pre><p>For more information, see the API documentation for <a class="ulink" href="http://api.dartlang.org/dart_core/int.html" target="_top">int,</a> <a class="ulink" href="http://api.dartlang.org/dart_core/double.html" target="_top">double,</a> and
-      <a class="ulink" href="http://api.dartlang.org/dart_core/num.html" target="_top">num.</a>
-      Also see <a lang="" class="xref" href="ch03.html#ch03-dart-math" title="dart:math - Math and Random">the section called “dart:math - Math and Random”</a>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-strings-and-regular-expressions"></a>Strings and Regular Expressions</h3></div></div></div><p>A string in Dart is an immutable sequence of UTF-16 code units.
-      The language tour has more information about <a class="link" href="ch02.html#strings" title="Strings">strings</a>. You can use regular expressions
-      (RegExp objects) to search within strings and to replace parts of
-      strings.</p><p>The String class defines such methods as
-      <code class="literal">split()</code>, <code class="literal">contains()</code>,
-      <code class="literal">startsWith()</code>, <span class="keep-together"><code class="literal">endsWith()</code></span>, and
-      more.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-searching-inside-a-string"></a>Searching inside a string</h4></div></div></div><p>You can find particular locations within a string, as well as
-        check whether a string begins with or ends with a particular pattern.
-        For example:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(double.parse('1.2e+2') == 120.0);</pre><p>详细信息参考 <a class="ulink" href="http://api.dartlang.org/dart_core/int.html" target="_top">int,</a> <a class="ulink" href="http://api.dartlang.org/dart_core/double.html" target="_top">double,</a> 和
+      <a class="ulink" href="http://api.dartlang.org/dart_core/num.html" target="_top">num 的 API 文档。</a>
+      也可以参考下 <a lang="" class="xref" href="ch03.html#ch03-dart-math" title="dart:math - Math 和 Random">the section called “dart:math - Math 和 Random”</a>。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-strings-and-regular-expressions"></a>字符串（String）和正则表达式</h3></div></div></div><p>Dart 中的字符串是一个不可变的 UTF-16 编码单元（code units） 序列。
+          在语言概览中详细介绍了 <a class="link" href="ch02.html#strings" title="Strings">strings</a>。还可以用正则表达式
+      (RegExp 对象) 来在字符串内搜索和替换部分
+      字符串
+      。</p><p>String 类有一些函数：
+      <code class="literal">split()</code>、 <code class="literal">contains()</code>、
+      <code class="literal">startsWith()</code>、 <span class="keep-together"><code class="literal">endsWith()</code></span>、 等等。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-searching-inside-a-string"></a>在字符串内搜索</h4></div></div></div><p>你可以查找字符串内匹配字符的开始位置，也可以
+            检查字符串是否以某个特定的模式开始和结束。
+            例如：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
-</span></em>// Check whether a string contains another string.
+</span></em>// 检测一个字符串是否包含另外一个字符串
 assert('Never odd or even'.contains('odd'));
 
-// Does a string start with another string?
+// 一个字符串是否以另外一个字符串开始？
 assert('Never odd or even'.startsWith('Never'));
 
-// Does a string end with another string?
+// 一个字符串是否以另外一个字符串结束？
 assert('Never odd or even'.endsWith('even'));
 
-// Find the location of a string inside a string.
-assert('Never odd or even'.indexOf('odd') == 6);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-extracting-data-from-a-string"></a>Extracting data from a string</h4></div></div></div><p>You can get the individual characters or UTF-16 code units from
-        a string as Strings or ints, respectively.</p><p>You can also extract a substring or split a string into a list
-        of substrings:</p><pre class="screen"><em><span class="remark">lang-dart
+// 查找一个字符串在另外一个字符串中出现的位置。
+assert('Never odd or even'.indexOf('odd') == 6);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-extracting-data-from-a-string"></a>从字符串中提取数据</h4></div></div></div><p>可以从字符串中获取每个独立的字符或者 UTF-16 编码单元。
+            </p><p>还可以从字符串中截取一个子字符串或者把一个
+            字符串分割为一个字符串数组：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
-</span></em>// Grab a substring.
+</span></em>// 截取一个子字符串
 assert('Never odd or even'.substring(6, 9) == 'odd');
 
-// Split a string using a string pattern.
+// 使用一个模式来分割字符串
 var parts = 'structured web apps'.split(' ');
 assert(parts.length == 3);
 assert(parts[0] == 'structured');
 
-// Get a character (as a string) by index.
+// 通过下标索引获取一个字符（String 对象）
 assert('Never odd or even'[0] == 'N');
 
-// Use split() with an empty string parameter to get a list of
-// all characters (as Strings); good for iterating.
+// 使用 空字符串作为参数调用 split() 函数可以获取字符串中的
+// 所有单个字符，结果为一个内容为 String 的 list
 for (var char in 'hello'.split('')) {
   print(char);
 }
 
-// Get all the characters in the string as a list of UTF-16 code units.
-// Some characters might require two code units.
+// 获取一个字符串所有字符的 UTF-16 编码单元
+// 有些字符可能需要用两个编码单元来表达
 var codeUnitList = 'Never odd or even'.codeUnits.toList();
-assert(codeUnitList[0] == 78);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-converting-to-uppercase-or-lowercase"></a>Converting to uppercase or lowercase</h4></div></div></div><p>You can easily convert strings to their uppercase and lowercase
-        variants:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(codeUnitList[0] == 78);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-converting-to-uppercase-or-lowercase"></a>大小写转换</h4></div></div></div><p>字符串大小写转换非常简单：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
-</span></em>// Convert to uppercase.
+</span></em>// 转换为大小
 assert('structured web apps'.toUpperCase() == 'STRUCTURED WEB APPS');
 
-// Convert to lowercase.
-assert('STRUCTURED WEB APPS'.toLowerCase() == 'structured web apps');</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>These methods don't work for every language. For example, the
-          Turkish alphabet's dotless <span class="emphasis"><em>I</em></span> is converted
-          incorrectly.</p></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-trimming-and-empty-strings"></a>Trimming and empty strings</h4></div></div></div><p>Remove all leading and trailing white space with
-        <code class="literal">trim()</code>. To check whether a string is empty (length
-        is zero), use <code class="literal">isEmpty</code>.</p><pre class="screen"><em><span class="remark">lang-dart
+// 转换为小写
+assert('STRUCTURED WEB APPS'.toLowerCase() == 'structured web apps');</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>注意：上面的函数并不适用于所有的语言。
+              例如  ，土耳其语言中的   <span class="emphasis"><em>I</em></span> 用上面的函数转换会得到错误的结果。</p></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-trimming-and-empty-strings"></a>删除字符串首尾空白字符和检测空字符串</h4></div></div></div><p>用
+        <code class="literal">trim()</code> 函数删除字符串首尾的空白字符。
+        用 <code class="literal">isEmpty</code> 来检测字符串是否为空（长度为 0 ）。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
-</span></em>// Trim a string.
+</span></em>// 删除字符串首尾空白字符
 assert('  hello  '.trim() == 'hello');
 
-// Check whether a string is empty.
+// 检测字符串是否为空
 assert(''.isEmpty);
 
-// Strings with only white space are not empty.
-assert(!'  '.isEmpty);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_replacing_part_of_a_string"></a>Replacing part of a string</h4></div></div></div><p>Strings are immutable objects, which means you can create them
-        but you can’t change them. If you look closely at the <a class="ulink" href="http://api.dartlang.org/dart_core/String.html" target="_top">String API
-        docs,</a> you’ll notice that none of the methods actually changes
-        the state of a String. For example, the method
-        <code class="literal">replaceAll()</code> returns a new String without changing
-        the original String:</p><pre class="screen"><em><span class="remark">lang-dart
+// 只有空白字符的字符串并不为空
+assert(!'  '.isEmpty);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_replacing_part_of_a_string"></a>替代部分字符</h4></div></div></div><p>String 是不可变对象，所以你只能创建 String 对象而无法修改他们。
+            如果你仔细的查看  <a class="ulink" href="http://api.dartlang.org/dart_core/String.html" target="_top">String API
+        文档</a>，你会发现所有的函数都没有修改 String 的状态。例如，
+        函数
+        <code class="literal">replaceAll()</code> 返回一个
+        新的 String 对象而不是修改原来的对象：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
 </span></em>var greetingTemplate = 'Hello, NAME!';
 var greeting = greetingTemplate.replaceAll(new RegExp('NAME'), 'Bob');
 
-assert(greeting != greetingTemplate); // greetingTemplate didn't change.</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_building_a_string"></a>Building a string</h4></div></div></div><p>To programmatically generate a string, you can use StringBuffer.
-        A StringBuffer doesn’t generate a new String object until
-        <code class="literal">toString()</code> is called.</p><pre class="screen"><em><span class="remark">lang-dart
+assert(greeting != greetingTemplate); // greetingTemplate didn't change.</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_building_a_string"></a>创建一个 string</h4></div></div></div><p>要在代码中生成一个 string， 你可以用 StringBuffer。
+        只有调用 
+        <code class="literal">toString()</code> 函数的时候 StringBuffer 才生成
+        String 。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
 </span></em>var sb = new StringBuffer();
 
@@ -295,172 +294,164 @@ sb..write('Use a StringBuffer ')
 var fullString = sb.toString();
 
 assert(fullString ==
-    'Use a StringBuffer for efficient string creation.');</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-regular-expressions"></a>Regular expressions</h4></div></div></div><p>The RegExp class provides the same capabilities as JavaScript
-        regular expressions. Use regular expressions for efficient searching
-        and pattern matching of strings.</p><pre class="screen"><em><span class="remark">lang-dart
+    'Use a StringBuffer for efficient string creation.');</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-regular-expressions"></a>正则表达式</h4></div></div></div><p>RegExp 类提供了 JavaScript 正则表达式的功能。
+            用正则表达式搜索字符串和匹配符合某个规则的字符串更加高效。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
-</span></em>// Here's a regular expression for one or more digits.
+</span></em>// 匹配一个或者多个数字的规则
 var numbers = new RegExp(r'\d+');
 
 var allCharacters = 'llamas live fifteen to twenty years';
 var someDigits = 'llamas live 15 to 20 years';
 
-// contains() can use a regular expression.
+// contains() 可以用正则表达式作为参数
 assert(!allCharacters.contains(numbers));
 assert(someDigits.contains(numbers));
 
-// Replace every match with another string.
+// 用一个字符串替换所有匹配的字符
 var exedOut = someDigits.replaceAll(numbers, 'XX');
-assert(exedOut == 'llamas live XX to XX years');</pre><p>You can work directly with the RegExp class, too. The Match
-        class provides access to a regular expression match.</p><pre class="screen"><em><span class="remark">lang-dart
+assert(exedOut == 'llamas live XX to XX years');</pre><p>你也可以直接操作 RegExp 对象。
+            Match 类提供了访问匹配一个表达式的结果：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
 </span></em>var numbers = new RegExp(r'\d+');
 var someDigits = 'llamas live 15 to 20 years';
 
-// Check whether the reg exp has a match in a string.
+// 检测字符串中是否有匹配的项
 assert(numbers.hasMatch(someDigits));
 
-// Loop through all matches.
+// 遍历所有匹配的项
 for (var match in numbers.allMatches(someDigits)) {
   print(match.group(0)); // 15, then 20
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-more-information-8"></a>More information</h4></div></div></div><p>Refer to the <a class="ulink" href="http://api.dartlang.org/dart_core/String.html" target="_top">String API
-        docs</a> for a full list of methods. Also see the API docs for
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-more-information-8"></a>更多信息</h4></div></div></div><p>参考  <a class="ulink" href="http://api.dartlang.org/dart_core/String.html" target="_top">String API
+        文档</a> 来查看 String 的所有函数。同时参考
         <a class="ulink" href="http://api.dartlang.org/dart_core/StringBuffer.html" target="_top">StringBuffer,</a>
         <a class="ulink" href="http://api.dartlang.org/dart_core/Pattern.html" target="_top">Pattern,</a>
         <a class="ulink" href="http://api.dartlang.org/dart_core/RegExp.html" target="_top">RegExp,</a>
-        and <a class="ulink" href="http://api.dartlang.org/dart_core/Match.html" target="_top">Match.</a></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-collections"></a>Collections</h3></div></div></div><p>Dart ships with a core collections API, which includes classes for
-      lists, sets, and maps.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-lists"></a>Lists</h4></div></div></div><p>As the language tour shows, you can use literals to create and
-        initialize <a class="link" href="ch02.html#lists" title="Lists">lists</a>. Alternatively, use one
-        of the List constructors. The List class also defines several methods
-        for adding items to and removing items from lists.</p><pre class="screen"><em><span class="remark">lang-dart
+        and <a class="ulink" href="http://api.dartlang.org/dart_core/Match.html" target="_top">Match</a> 类的 API 文档来了解这些类的更多功能。</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-collections"></a>集合</h3></div></div></div><p>Dart 包含了一个核心的集合 API，这些 API 包含
+      lists、 sets、和  maps。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-lists"></a>Lists</h4></div></div></div><p>在语言概览中已经介绍过用 字符字面量来创建 <a class="link" href="ch02.html#lists" title="Lists">lists</a> 的方法。
+            另外也可以用 List 的构造函数。 List 还定义了一些函数可以添加或者删除 List 中的内容。
+        </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/list-tests.dart
-</span></em>// Use a List constructor.
+</span></em>// 使用 List 构造函数
 var vegetables = new List();
 
-// Or simply use a list literal.
+// 使用 list 字符字面量 创建 List
 var fruits = ['apples', 'oranges'];
 
-// Add to a list.
+// 添加到 list 中
 fruits.add('kiwis');
 
-// Add multiple items to a list.
+// 一次添加多个项到 list 中
 fruits.addAll(['grapes', 'bananas']);
 
-// Get the list length.
+// 查询 list 的长度
 assert(fruits.length == 5);
 
-// Remove a single item.
+// 删除一个项
 var appleIndex = fruits.indexOf('apples');
 fruits.removeAt(appleIndex);
 assert(fruits.length == 4);
 
-// Remove all elements from a list.
+// 删除 list 中的所有项
 fruits.clear();
-assert(fruits.length == 0);</pre><p>Use <code class="literal">indexOf()</code> to find the index of an object
-        in a list:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(fruits.length == 0);</pre><p>用 <code class="literal">indexOf()</code> 函数来查找 list 中
+            某个位置的对象：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/list-tests.dart
 </span></em>var fruits = ['apples', 'oranges'];
 
-// Access a list item by index.
+// 通过索引访问 list 中的对象
 assert(fruits[0] == 'apples');
 
-// Find an item in a list.
-assert(fruits.indexOf('apples') == 0);</pre><p>Sort a list using the <code class="literal">sort()</code> method. You must
-        provide a sorting function that compares two objects. This sorting
-        function must return &lt; 0 for <span class="emphasis"><em>smaller</em></span>, 0 for
-        the <span class="emphasis"><em>same</em></span>, and &gt; 0 for
-        <span class="emphasis"><em>bigger</em></span>. The following example uses
-        <code class="literal">compareTo()</code>, which is defined by <a class="ulink" href="http://api.dartlang.org/dart_core/Comparable.html" target="_top">Comparable</a>
-        and implemented by String.</p><pre class="screen"><em><span class="remark">lang-dart
+// 查找 list 中是否包含该对象
+assert(fruits.indexOf('apples') == 0);</pre><p>用 <code class="literal">sort()</code> 函数可以排序 list 中的内容。
+            该函数的参数为一个用来比较两个对象的方法。该方法的返回值需要满足如下要求：
+            比较的结果为 <span class="emphasis"><em>小于</em></span>的话，则返回值必需  &lt; 0，
+            如果<span class="emphasis"><em>相等</em></span>的话，则必需返回 0，如果结果为
+            <span class="emphasis"><em>大于</em></span>的话，则返回值必需为  &gt; 0 。
+           下面的示例使用了  <a class="ulink" href="http://api.dartlang.org/dart_core/Comparable.html" target="_top">Comparable</a>
+        接口定义的函数 <code class="literal">compareTo()</code>， String 类实现了该函数。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/list-tests.dart
 </span></em>var fruits = ['bananas', 'apples', 'oranges'];
 
-// Sort a list.
+// 排序 list 中的对象
 fruits.sort((a, b) =&gt; a.compareTo(b));
-assert(fruits[0] == 'apples');</pre><p>Lists are parameterized types, so you can specify the type that
-        a list should contain:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(fruits[0] == 'apples');</pre><p>List 支持泛型，所以你可以设置一个 List 中对象的类型：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/list-tests.dart
-</span></em>// This list should contain only strings.
+</span></em>// 这个 list 应该只包含 String 对象
 var fruits = new List&lt;String&gt;();
 
 fruits.add('apples');
 var fruit = fruits[0];
 assert(fruit is String);
 
-// Generates static analysis warning, num is not a string.
-fruits.add(5);  // BAD: Throws exception in checked mode.</pre><p>Refer to the <a class="ulink" href="http://api.dartlang.org/dart_core/List.html" target="_top">List API
-        docs</a> for a full list of methods.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-sets"></a>Sets</h4></div></div></div><p>A set in Dart is an unordered collection of unique items.
-        Because a set is unordered, you can’t get a set’s items by index
-        (position).</p><pre class="screen"><em><span class="remark">lang-dart
+// 将有一个静态分析警告， num 不是一个 String
+fruits.add(5);  // BAD: 在检测模式（Checked mode）下会抛出异常。</pre><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_core/List.html" target="_top">List API
+        文档</a> 来了解 List 对象的所有函数，</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-sets"></a>Sets</h4></div></div></div><p>Dart 中的 Set 是包含唯一对象的无序集合。
+            由于 set 中的对象都是没有顺序的，所以无法用位置索引来
+            访问里面的对象。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/set-tests.dart
 </span></em>var ingredients = new Set();
 ingredients.addAll(['gold', 'titanium', 'xenon']);
 assert(ingredients.length == 3);
 
-// Adding a duplicate item has no effect.
+// 添加一个重复的对象不起作用
 ingredients.add('gold');
 assert(ingredients.length == 3);
 
-// Remove an item from a set.
+// 从 set 中删除一个对象
 ingredients.remove('gold');
-assert(ingredients.length == 2);</pre><p>Use <code class="literal">contains()</code> and
-        <code class="literal">containsAll()</code> to check whether one or more objects
-        are in a set:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(ingredients.length == 2);</pre><p>用 <code class="literal">contains()</code> 和
+        <code class="literal">containsAll()</code> 来检测 set 中是否包含一个或者多个对象：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/set-tests.dart
 </span></em>var ingredients = new Set();
 ingredients.addAll(['gold', 'titanium', 'xenon']);
 
-// Check whether an item is in the set.
+// 检测一个对象是否在 set 中
 assert(ingredients.contains('titanium'));
 
-// Check whether all the items are in the set.
-assert(ingredients.containsAll(['titanium', 'xenon']));</pre><p>An intersection is a set whose items are in two other
-        sets.</p><pre class="screen"><em><span class="remark">lang-dart
+// 检测是否 set 包含多个对象
+assert(ingredients.containsAll(['titanium', 'xenon']));</pre><p>交集是两个 set 中都包含的对象集合。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/set-tests.dart
 </span></em>var ingredients = new Set();
 ingredients.addAll(['gold', 'titanium', 'xenon']);
 
-// Create the intersection of two sets.
+// 创建两个 set 的交集
 var nobleGases = new Set.from(['xenon', 'argon']);
 var intersection = ingredients.intersection(nobleGases);
 assert(intersection.length == 1);
-assert(intersection.contains('xenon'));</pre><p>Refer to the <a class="ulink" href="http://api.dartlang.org/dart_core/Set.html" target="_top">Set API docs</a>
-        for a full list of methods.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-maps-aka-dictionaries-or-hashes"></a>Maps</h4></div></div></div><p>A map, commonly known as a <span class="emphasis"><em>dictionary</em></span> or
-        <span class="emphasis"><em>hash</em></span>, is an unordered collection of key-value
-        pairs. Maps associate a key to some value for easy retrieval. Unlike
-        in JavaScript, Dart objects are not maps.</p><p><span class="keep-together">You can declare a map using a terse
-        literal syntax, or you can use a traditional
-        constructor:</span></p><pre class="screen"><em><span class="remark">lang-dart
+assert(intersection.contains('xenon'));</pre><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_core/Set.html" target="_top">Set API 文档</a>
+        了解 set 的更多功能。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-maps-aka-dictionaries-or-hashes"></a>Maps</h4></div></div></div><p>map 通常被称之为 <span class="emphasis"><em>dictionary</em></span> 或者
+        <span class="emphasis"><em>hash</em></span>， map 是一个无序的 key-value（键-值） 对。
+        map 中每个值都有一个对应的键便于访问。和 JavaScript 不同， Dart 对象不是 map。
+        </p><p><span class="keep-together">
+            可以通过字符字面量定义 map 也可以通过 map 构造函数来定义 map：
+        </span></p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
-</span></em>// Maps often use strings as keys.
+</span></em>// map 通常都是用 String 做为 key
 var hawaiianBeaches = {
   'oahu'       : ['waikiki', 'kailua', 'waimanalo'],
   'big island' : ['wailea bay', 'pololu beach'],
   'kauai'      : ['hanalei', 'poipu']
 };
 
-// Maps can be built from a constructor.
+// 用构造函数创建 map
 var searchTerms = new Map();
 
-// Maps are parameterized types; you can specify what types
-// the key and value should be.
-var nobleGases = new Map&lt;int, String&gt;();</pre><p>You add, get, and set map items using the bracket syntax. Use
-        <code class="literal">remove()</code> to remove a key and its value from a
-        map.<em><span class="remark"> [PENDING: It’s questionable that this example uses
-        containsKey before containsKey is discussed.]</span></em></p><pre class="screen"><em><span class="remark">lang-dart
+// map 支持泛型，所以可以指定 map 的 key 和 value 的类型：
+var nobleGases = new Map&lt;int, String&gt;();</pre><p>使用方括号来添加、设置和访问 map 中的值。用
+        <code class="literal">remove()</code> 函数从 map 中删除
+        对应的 key 和 value。<em><span class="remark"> [注意 下面的示例中使用了 尚未见到过的 containsKey 函数]</span></em></p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
 </span></em>var nobleGases = { 54: 'xenon' };
 
-// Retrieve a value with a key.
+// 通过 key 获取对应的 value
 assert(nobleGases[54] == 'xenon');
 
-// Check whether a map contains a key.
+// 检测 map 中是否包含一个 key
 assert(nobleGases.containsKey(54));
 
-// Remove a key and its value.
+// 删除一个 key 和对应的 value
 nobleGases.remove(54);
-assert(!nobleGases.containsKey(54));</pre><p>You can retrieve all the values or all the keys from a
-        map:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(!nobleGases.containsKey(54));</pre><p>可以获取 map 的所有 key 或者所有 value：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
 </span></em>var hawaiianBeaches = {
   'oahu' : ['waikiki', 'kailua', 'waimanalo'],
@@ -468,19 +459,20 @@ assert(!nobleGases.containsKey(54));</pre><p>You can retrieve all the values or 
   'kauai' : ['hanalei', 'poipu']
 };
 
-// Get all the keys as an unordered collection (an Iterable).
+// 获取所有的 key，结果为一个无序集合 ( 一个 Iterable).
 var keys = hawaiianBeaches.keys;
 
 assert(keys.length == 3);
 assert(new Set.from(keys).contains('oahu'));
 
-// Get all the values as an unordered collection (an Iterable of Iterables).
+// 获取 map 所有 value 的集合 (an Iterable of Iterables).
 var values = hawaiianBeaches.values;
 assert(values.length == 3);
-assert(values.any((v) =&gt; v.indexOf('waikiki') != -1));</pre><p>To check whether a map contains a key, use
-        <code class="literal">containsKey()</code>. Because map values can be null, you
-        cannot rely on simply getting the value for the key and checking for
-        null to determine the existence of a key.</p><pre class="screen"><em><span class="remark">lang-dart
+assert(values.any((v) =&gt; v.indexOf('waikiki') != -1));</pre><p>用
+        <code class="literal">containsKey()</code> 函数检测
+        map 中是否包含一个 key。由于 map 的 value 可以为 null，
+        所以你不能通过判断 key 来判断是否包含一个 value。
+        </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
 </span></em>var hawaiianBeaches = {
   'oahu' : ['waikiki', 'kailua', 'waimanalo'],
@@ -489,49 +481,49 @@ assert(values.any((v) =&gt; v.indexOf('waikiki') != -1));</pre><p>To check wheth
 };
 
 assert(hawaiianBeaches.containsKey('oahu'));
-assert(!hawaiianBeaches.containsKey('florida'));</pre><p>Use the <code class="literal">putIfAbsent()</code> method when you want to
-        assign a value to a key if and only if the key does not already exist
-        in a map. You must provide a function that returns the value.</p><pre class="screen"><em><span class="remark">lang-dart
+assert(!hawaiianBeaches.containsKey('florida'));</pre><p>如果你想在 key 不存在的时候
+            才设置该值，则可以用  <code class="literal">putIfAbsent()</code> 函数。该函数
+            的参数为返回设置的值的方法：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
 </span></em>var teamAssignments = {};
 teamAssignments.putIfAbsent('Catcher', () =&gt; pickToughestKid());
-assert(teamAssignments['Catcher'] != null);</pre><p>Refer to the <a class="ulink" href="http://api.dartlang.org/dart_core/Map.html" target="_top">Map API docs</a>
-        for a full list of methods.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-common-collection-methods"></a>Common collection methods</h4></div></div></div><p>List, Set, and Map share common functionality found in many
-        collections. Some of this common functionality is defined by the
-        Iterable class, which List and Set implement.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Although Map doesn’t implement Iterable, you can get Iterables
-          from it using the Map <code class="literal">keys</code> and
-          <code class="literal">values</code> properties.</p></div><p>Use <code class="literal">isEmpty</code> to check whether a list, set, or
-        map has no items:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(teamAssignments['Catcher'] != null);</pre><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_core/Map.html" target="_top">Map API 文档</a>
+        查看 Map 的所有函数。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-common-collection-methods"></a>常用的集合方法</h4></div></div></div><p>List、 Set、 和 Map 公用一些常用的
+            集合操作。有些函数定义在 Iterable 类中， List 和 Set 实现了该类。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>虽然  Map 没有实现 Iterable，但是通过 Map 的
+              <code class="literal">keys</code> 和
+          <code class="literal">values</code> 属性可以得到一个 Iterable 对象。 </p></div><p>用 <code class="literal">isEmpty</code> 函数来检查
+            集合是否为空：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/collection-isEmpty.dart
 </span></em>var teas = ['green', 'black', 'chamomile', 'earl grey'];
-assert(!teas.isEmpty);</pre><p>To apply a function to each item in a list, set, or map, you can
-        use <code class="literal">forEach()</code>:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(!teas.isEmpty);</pre><p>要在 list、 set、 或者 map 中的每个元素上使用一个方法，则可以用
+         <code class="literal">forEach()</code> 函数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/collection-apply-function.dart
 </span></em>var teas = ['green', 'black', 'chamomile', 'earl grey'];
 
-teas.forEach((tea) =&gt; print('I drink $tea'));</pre><p>When you invoke <code class="literal">forEach()</code> on a map, your
-        function must take two arguments (the key and value):</p><pre class="screen"><em><span class="remark">lang-dart
+teas.forEach((tea) =&gt; print('I drink $tea'));</pre><p>当调用 Map 的 <code class="literal">forEach()</code> 函数的时候，
+            方法参数必须有两个参数（分别为 key 和 value）：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
-</span></em>// NOTE: Do not depend on iteration order.
+</span></em>// 注意：遍历集合是无序的
 hawaiianBeaches.forEach((k,v) {
   print('I want to visit $k and swim at $v');
   // I want to visit oahu and swim at [waikiki, kailua, waimanalo], etc.
-});</pre><p>An alternative for Iterables is the <code class="literal">map()</code>
-        method, which gives you all the results in a single object:</p><pre class="screen"><em><span class="remark">lang-dart
+});</pre><p>还有一个用来遍历集合的方法：<code class="literal">map()</code>
+        ，该函数把所有的结果放到一个对象中：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/collection-apply-function.dart
 </span></em>var teas = ['green', 'black', 'chamomile', 'earl grey'];
 
 var loudTeas = teas.map((tea) =&gt; tea.toUpperCase());
-loudTeas.forEach(print);</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>The object returned by <code class="literal">map()</code> is an Iterable
-          that’s <span class="emphasis"><em>lazily evaluated</em></span>: your function isn’t
-          called until you ask for an item from the returned object.</p></div><p>To force your function to be called immediately on each item,
-        use <code class="literal">map().toList()</code> or
-        <code class="literal">map().toSet()</code>:</p><pre class="screen"><em><span class="remark">lang-dart
+loudTeas.forEach(print);</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>注意： <code class="literal">map()</code> 函数返回的 Iterable 对象是
+           <span class="emphasis"><em>lazily evaluated（懒惰加载的）</em></span>：
+           只有当你使用返回对象的时候，你的方法才被调用。</p></div><p>要强制立刻在每个对象上调用你的方法，则可以用 <code class="literal">map().toList()</code> 
+或者
+        <code class="literal">map().toSet()</code> 函数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/collection-apply-function.dart
-</span></em>var loudTeaList = teas.map((tea) =&gt; tea.toUpperCase()).toList();</pre><p>Use Iterable’s <code class="literal">where()</code> method to get all the
-        items that match a condition. Use Iterable’s <code class="literal">any()</code>
-        and <code class="literal">every()</code> methods to check whether some or all
-        items match a condition.</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>var loudTeaList = teas.map((tea) =&gt; tea.toUpperCase()).toList();</pre><p>Iterable 的 <code class="literal">where()</code> 函数用户过滤集合中的对象，
+            返回符合条件的所有对象。
+            Iterable 的 <code class="literal">any()</code>
+        和 <code class="literal">every()</code> 函数用来检查是否一些对象或者所有对象都满足
+        一个条件。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/collection-any-every.dart
 </span></em>var teas = ['green', 'black', 'chamomile', 'earl grey'];
 
@@ -549,16 +541,17 @@ assert(teas.any(isDecaffeinated));
 
 // Use every() to check whether all the items in a collection
 // satisfy a condition.
-assert(!teas.every(isDecaffeinated));</pre><p>For a full list of methods, refer to the <a class="ulink" href="http://api.dartlang.org/dart_core/Iterable.html" target="_top">Iterable API
-        docs,</a> as well as those for List, Set, and Map.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-uri"></a>URIs</h3></div></div></div><p>The <a class="ulink" href="http://api.dartlang.org/dart_core/Uri.html" target="_top">Uri
-      class</a> provides functions to encode and decode strings for use in
-      URIs (which you might know as <span class="emphasis"><em>URLs</em></span>). These
-      functions handle characters that are special for URIs, such as <code class="literal">&amp;</code> and <code class="literal">=</code>. The Uri class also parses and exposes the
-      components of a URI—host, port, scheme, and so on.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-fully-qualified"></a>Encoding and Decoding Fully Qualified URIs</h4></div></div></div><p>To encode and decode characters <span class="emphasis"><em>except</em></span>
-        those with special meaning in a URI (such as <code class="literal">/</code>, <code class="literal">:</code>,
-        <code class="literal">&amp;</code>, <code class="literal">#</code>), use the <code class="literal">encodeFull()</code>
-        and <code class="literal">decodeFull()</code> methods. These <span class="keep-together">methods are good</span> for encoding or
-        decoding a fully qualified URI, leaving intact <span class="keep-together">special URI characters.</span></p><pre class="screen"><em><span class="remark">lang-dart
+assert(!teas.every(isDecaffeinated));</pre><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_core/Iterable.html" target="_top">Iterable API
+        文档</a> 和 List、 Set、 以及 Map 的文档来了解集合的所有函数。</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-uri"></a>URIs</h3></div></div></div><p><a class="ulink" href="http://api.dartlang.org/dart_core/Uri.html" target="_top">Uri
+      类</a> 提供了用来编码和解码 URI 字符串的函数。
+      这些函数处理 URI 中的特殊字符，例如 <code class="literal">&amp;</code> 和 <code class="literal">=</code>。 Uri 类还提供了获取 URI 组件的函数，
+      例如 URI 的 主机地址、端口号、协议 等等。
+      </p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-fully-qualified"></a>编码和解码完整的 URI</h4></div></div></div><p>使用 <code class="literal">encodeFull()</code>
+        和 <code class="literal">decodeFull()</code> 函数来编码和解码
+        <span class="emphasis"><em>除了</em></span> 特殊字符的 URI（例如这些特殊字符：<code class="literal">/</code>, <code class="literal">:</code>,
+        <code class="literal">&amp;</code>, <code class="literal">#</code>）。
+        这些函数<span class="keep-together">特别擅长</span> 
+        用来编码和解码一个完整的 URI，保留 <span class="keep-together">特殊的 URI 字符。</span></p><pre class="screen"><em><span class="remark">lang-dart
 code/ch03/encodeUri.dart
 </span></em>main() {
   var uri = 'http://example.org/api?foo=some message';
@@ -567,11 +560,11 @@ code/ch03/encodeUri.dart
 
   var decoded = Uri.decodeFull(encoded);
   assert(uri == decoded);
-}</pre><p>Notice how only the space between <code class="literal">some</code> and <code class="literal">message</code> was encoded.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-components"></a>Encoding and Decoding URI Components</h4></div></div></div><p>To encode and decode all of a string’s characters that have
-        special meaning in a URI, including (but not limited to) <code class="literal">/</code>, <code class="literal">&amp;</code>,
-        and <code class="literal">:</code>, use the
-        <code class="literal">encodeComponent()</code> and
-        <code class="literal">decodeComponent()</code> methods.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>注意，上面的代码中，只有位于 <code class="literal">some</code> 和 <code class="literal">message</code> 之间的空格给编码了。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-components"></a>编码和解码 URI 组件</h4></div></div></div><p>使用<code class="literal">encodeComponent()</code> 和
+        <code class="literal">decodeComponent()</code> 函数来编码和解码 URI 组件，
+        URI 组件中的特殊字符（例如 <code class="literal">/</code>, <code class="literal">&amp;</code>,
+        and <code class="literal">:</code>）会被
+        正确的编码。</p><pre class="screen"><em><span class="remark">lang-dart
 code/ch03/encodeUriComponents.dart
 </span></em>main() {
   var uri = 'http://example.org/api?foo=some message';
@@ -580,10 +573,10 @@ code/ch03/encodeUriComponents.dart
 
   var decoded = Uri.decodeComponent(encoded);
   assert(uri == decoded);
-}</pre><p>Notice how every special character is encoded. For example,
-        <code class="literal">/</code> is encoded to <code class="literal">%2F</code>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-parsing"></a>Parsing URIs</h4></div></div></div><p>If you have a Uri object or a URI string, you can get its parts
-        using Uri fields such as <code class="literal">path</code>. To create a Uri from
-        a string, use the <code class="literal">parse()</code> static method:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>注意上面特殊的字符是如何编码的。例如
+        <code class="literal">/</code> 被编码为 <code class="literal">%2F</code>。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-parsing"></a>解析 URI</h4></div></div></div><p>如果你有一个 Uri 对象或者一个 URI 字符串，使用 Uri 的变量可以
+            获取 Uri 的组成部分，例如 <code class="literal">path（路径）</code>。
+            使用 <code class="literal">parse()</code> 静态函数把 URI 字符串解析为 Uri 对象。</p><pre class="screen"><em><span class="remark">lang-dart
 code/ch03/parseUri.dart
 </span></em>main() {
   var uri = Uri.parse('http://example.org:8080/foo/bar#frag');
@@ -593,66 +586,61 @@ code/ch03/parseUri.dart
   assert(uri.path     == '/foo/bar');
   assert(uri.fragment == 'frag');
   assert(uri.origin   == 'http://example.org:8080');
-}</pre><p>See the <a class="ulink" href="http://api.dartlang.org/dart_core/Uri.html" target="_top">Uri API docs</a>
-        for more URI components that you can get.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-building"></a>Building URIs</h4></div></div></div><p>You can build up a URI from individual parts using the
-        <code class="literal">Uri()</code> <span class="keep-together">constructor</span>:</p><pre class="programlisting"><em><span class="remark">lang-dart
+}</pre><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_core/Uri.html" target="_top">Uri API 文档</a>
+       了解 Uri 的所有函数。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-uri-building"></a>创建 URI</h4></div></div></div><p>可以用
+        <code class="literal">Uri()</code> <span class="keep-together">构造函数</span>来创建一个 URI：</p><pre class="programlisting"><em><span class="remark">lang-dart
 code/ch03/uriFromComponents.dart
 </span></em>main() {
   var uri = new Uri(scheme: 'http', host: 'example.org', 
                     path: '/foo/bar', fragment: 'frag');
   assert(uri.toString() == 'http://example.org/foo/bar#frag');
-}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-dates-and-times"></a>Dates and Times</h3></div></div></div><p>A DateTime object is a point in time. The time zone is either UTC
-      or the local time zone.</p><p>You can create DateTime objects using several constructors:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-dates-and-times"></a>日期和时间</h3></div></div></div><p>DateTime 对象代表某个时间。时区不是 UTC 就是 本地时区。</p><p>可以用如下构造函数创建 DateTime 对象：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/date.dart
-</span></em>// Get the current date and time.
+</span></em>// 获取当前的日期和时间
 var now = new DateTime.now();
 
-// Create a new DateTime with the local time zone.
+// 使用本地时区创建一个 DateTime 对象
 var y2k = new DateTime(2000);   // January 1, 2000
 
-// Specify the month and day.
+// 设置年月日
 y2k = new DateTime(2000, 1, 2); // January 2, 2000
 
-// Specify the date as a UTC time.
+// 创建一个 UTC 时间
 y2k = new DateTime.utc(2000);   // January 1, 2000, UTC
 
-// Specify a date and time in milliseconds since the Unix epoch.
+// 用从 Unix epoch 开始的毫秒数来设置时间
 y2k = new DateTime.fromMillisecondsSinceEpoch(946684800000, isUtc: true);
 
-// Parse an ISO 8601 date.
-y2k = DateTime.parse('2000-01-01T00:00:00Z');</pre><p>The <code class="literal">millisecondsSinceEpoch</code>
-      property of a date returns the number of milliseconds since the “Unix
-      epoch”—January 1, 1970, UTC:</p><pre class="screen"><em><span class="remark">lang-dart
+// 解析 ISO 8601 格式日期
+y2k = DateTime.parse('2000-01-01T00:00:00Z');</pre><p> <code class="literal">millisecondsSinceEpoch</code>
+      的值为 从 “Unix
+      epoch”—1970年1月1号 UTC 时区 开始的毫秒数值：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/date.dart
 </span></em>var y2k = new DateTime.utc(2000);           // 1/1/2000, UTC
 assert(y2k.millisecondsSinceEpoch == 946684800000);
 var unixEpoch = new DateTime.utc(1970); // 1/1/1970, UTC
-assert(unixEpoch.millisecondsSinceEpoch == 0);</pre><p>Use the Duration class to calculate the difference between two
-      dates and to shift a date forward or backwards:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(unixEpoch.millisecondsSinceEpoch == 0);</pre><p>用 Duration 类来计算两个日期之间的间隔，或者在当前时间上加减时间：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/date.dart
 </span></em>var y2k = new DateTime.utc(2000);
 
-// Add one year.
+// 在当前时间上加一年
 var y2001 = y2k.add(const Duration(days: 366));
 assert(y2001.year == 2001);
 
-// Subtract 30 days.
+// 减去30天
 var december2000 = y2001.subtract(const Duration(days: 30));
 assert(december2000.year == 2000);
 assert(december2000.month == 12);
 
-// Calculate the difference between two dates.
-// Returns a Duration object.
+// 计算两个日期之间的间隔
+// 返回一个 Duration 对象
 var duration = y2001.difference(y2k);
-assert(duration.inDays == 366); // y2k was a leap year.</pre><p>Refer to the API docs for <a class="ulink" href="http://api.dartlang.org/dart_core/DateTime.html" target="_top">DateTime</a>
-      and <a class="ulink" href="http://api.dartlang.org/dart_core/Duration.html" target="_top">Duration</a>
-      for a full list of methods.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utility-interfaces"></a>Utility Classes</h3></div></div></div><p>The core library contains various utility classes, useful for
-      sorting, mapping values, and iterating.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-comparing-objects"></a>Comparing objects</h4></div></div></div><p>Implement the <a class="ulink" href="http://api.dartlang.org/dart_core/Comparable.html" target="_top">Comparable</a>
-        interface to indicate that an object can be compared to another
-        object, usually for sorting. The <code class="literal">compareTo()</code> method
-        returns &lt; 0 for <span class="emphasis"><em>smaller</em></span>, 0 for the
-        <span class="emphasis"><em>same</em></span>, and &gt; 0 for
-        <span class="emphasis"><em>bigger</em></span>.</p><pre class="screen"><em><span class="remark">lang-dart
+assert(duration.inDays == 366); // y2k 是闰年</pre><p>参考  <a class="ulink" href="http://api.dartlang.org/dart_core/DateTime.html" target="_top">DateTime</a>
+      和 <a class="ulink" href="http://api.dartlang.org/dart_core/Duration.html" target="_top">Duration</a>
+      的 API 文档来了解这些类的所有函数。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utility-interfaces"></a>常用工具类</h3></div></div></div><p>核心库还包含用来拍下、map 的 key 和遍历对象的各种工具类。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-comparing-objects"></a>比较对象</h4></div></div></div><p>实现 <a class="ulink" href="http://api.dartlang.org/dart_core/Comparable.html" target="_top">Comparable</a>
+        接口的对象可以和另外一个对象比较，通常用来排序。 <code class="literal">compareTo()</code> 函数
+        的返回结果如下：<span class="emphasis"><em>小于</em></span> 的返回值为 &lt; 0；<span class="emphasis"><em>相等</em></span>
+        的返回值为 0；<span class="emphasis"><em>大于</em></span> 的返回值为 &gt; 0。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/comparable.dart
 </span></em>class Line implements Comparable {
   final length;
@@ -664,22 +652,20 @@ main() {
   var short = const Line(1);
   var long = const Line(100);
   assert(short.compareTo(long) &lt; 0);
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-implementing-map-keys"></a>Implementing map keys</h4></div></div></div><p>Each object in Dart automatically provides an integer hash code,
-        and thus can be used as a key in a map. However, you can override the
-        <code class="literal">hashCode</code> getter to generate a custom hash code. If
-        you do, be sure to override the <code class="literal">==</code>
-        operator, as well. Objects that are equal (via <code class="literal">==</code>) must have identical hash codes. A hash
-        code doesn’t have to be unique, but it should be well
-        distributed.</p><p class="remark"><em><span class="remark">Note: There’s disagreement over whether to include identical()
-        in the == implementation. It might improve speed. They don’t do
-        identical() automatically because, by convention, NaN != NaN.</span></em></p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-implementing-map-keys"></a>实现 map 的 key</h4></div></div></div><p>Dart 中的每个对象都自动带有一个整数的 哈希值，所有可以用作 map 中的 key。
+            你还可以重写（override）
+        <code class="literal">hashCode</code> getter 函数来生成一个自定义
+        的哈希值。如果你自定义了哈希值，记得同时还要重写 <code class="literal">==</code>
+        操作符。相等的对象 (用 <code class="literal">==</code> 来比较) 必须具有同样的哈希值。
+        一个哈希值不一定是唯一的，但是应该具有合理的分布。</p><p class="remark"><em><span class="remark">注意： 在 == 实现中包含 identical() 是有争议的。虽然这样可以
+            提高速度。但是通常 NaN != NaN ，所以 对象默认并不是 identical() 的。</span></em></p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-keys.dart
 </span></em>class Person {
   String firstName, lastName;
 
   Person(this.firstName, this.lastName);
 
-  // Override hashCode using strategy from Effective Java, Chapter 11.
+  // 使用 Effective Java 第 11 章 中的方法来重写 hashCode 函数
   int get hashCode {
     int result = 17;
     result = 37 * result + firstName.hashCode;
@@ -687,7 +673,7 @@ main() {
     return result;
   }
 
-  // Always implement operator== if you override hashCode.
+  // 如果重写了 hashCode 则需要同时重写 operator== 
   bool operator==(other) {
     if (identical(other, this)) return true;
     return (other.firstName == firstName &amp;&amp; other.lastName == lastName);
@@ -698,12 +684,11 @@ main() {
   var p1 = new Person('bob', 'smith');
   var p2 = new Person('bob', 'smith');
   assert(p1.hashCode == p2.hashCode);
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-iteration"></a>Iteration</h4></div></div></div><p>The <a class="ulink" href="http://api.dartlang.org/dart_core/Iterable.html" target="_top">Iterable</a>
-        and <a class="ulink" href="http://api.dartlang.org/dart_core/Iterator.html" target="_top">Iterator</a>
-        classes support for-in loops. Extend (if possible) or implement
-        Iterable whenever you create a class that can provide Iterators for
-        use in for-in loops. Implement Iterator to define the actual iteration
-        ability.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-iteration"></a>Iteration（遍历）</h4></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_core/Iterable.html" target="_top">Iterable</a>
+        和 <a class="ulink" href="http://api.dartlang.org/dart_core/Iterator.html" target="_top">Iterator</a>
+        类支持 for-in 循环。
+        如果你创建的对象需要支持 for-in 循环，则可以继承（Extends）或者实现（Implements） Iterable 接口。
+        实现 Iterator 来定义遍历的功能。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/iterator.dart
 </span></em>class Process {
   // Represents a process...
@@ -716,84 +701,81 @@ class ProcessIterator implements Iterator&lt;Process&gt; {
   }
 }
 
-// A mythical class that lets you iterate through all processes.
-// Extends an Iterable subclass.
+// 一个可以遍历所有 Process 的虚构类
+// 继承 Iterable 类。
 class Processes extends DoubleLinkedQueue&lt;Process&gt; {
   final Iterator&lt;Process&gt; iterator = new ProcessIterator();
 }
 
 main() {
-  // Iterable objects can be used with for-in.
+  // Iterable 对象可以在 for-in 循环中使用
   for (var process in new Processes()) {
     // Do something with the process.
   }
-}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-exceptions"></a>Exceptions</h3></div></div></div><p>The Dart core library defines many common exceptions and errors.
-      Exceptions are considered conditions that you can plan ahead for and
-      catch. Errors are conditions that you don’t expect or plan for.</p><p>A couple of the most common errors are:</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><a class="ulink" href="http://api.dartlang.org/dart_core/NoSuchMethodError.html" target="_top">NoSuchMethodError</a></span></dt><dd><p>Thrown when a receiving object (which might be null) does
-            not implement a <span class="keep-together">method</span>.</p></dd><dt><span class="term"><a class="ulink" href="http://api.dartlang.org/dart_core/ArgumentError.html" target="_top">ArgumentError</a></span></dt><dd><p>Can be thrown by a method that encounters an unexpected
-            argument.</p></dd></dl></div><p>Throwing an application-specific exception is a common way to
-      indicate that an error has occurred. You can define a custom exception
-      by implementing the Exception <span class="keep-together">interface</span>:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-exceptions"></a>异常（Exceptions）</h3></div></div></div><p>Dart 核心库定义了很多常用的异常（exception）和错误（error）。
+          异常是一些你可以提前预料和处理的错误情况。而错误则是你没有料到或者没有处理的情况。</p><p>一些常见的错误如下：</p><div class="variablelist"><dl class="variablelist"><dt><span class="term"><a class="ulink" href="http://api.dartlang.org/dart_core/NoSuchMethodError.html" target="_top">NoSuchMethodError</a></span></dt><dd><p>当一个对象(可能为 null) 没有实现一个
+            <span class="keep-together">被调用的函数</span> 时抛出该错误。</p></dd><dt><span class="term"><a class="ulink" href="http://api.dartlang.org/dart_core/ArgumentError.html" target="_top">ArgumentError</a></span></dt><dd><p>当用错误的参数调用一个函数的时候，由该函数抛出。</p></dd></dl></div><p>抛出一个应用相关的异常是表明发生错误的常见做法。
+          你可以通过实现 Exception  <span class="keep-together">接口</span> 来定义自己的异常：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/exceptions.dart
 </span></em>class FooException implements Exception {
   final String msg;
   const FooException([this.msg]);
   String toString() =&gt; msg == null ? 'FooException' : msg;
-}</pre><p>For more information, see <a class="xref" href="ch02.html#exceptions" title="Exceptions">the section called “Exceptions”</a> and the
+}</pre><p>更多信息请参考 <a class="xref" href="ch02.html#exceptions" title="Exceptions（异常）">the section called “Exceptions（异常）”</a> 和
       <a class="ulink" href="http://api.dartlang.org/dart_core/Exception.html" target="_top">Exception
-      API docs.</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-asynchronous-programming"></a>dart:async - Asynchronous Programming</h2></div></div></div><p>Asynchronous programming often uses callback functions, but Dart
-    provides alternatives: <a class="ulink" href="http://api.dartlang.org/dart_async/Future.html" target="_top">Future</a> and
+      API 文档.</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-asynchronous-programming"></a>dart:async - 异步编程</h2></div></div></div><p>异步编程通常使用回调函数，而 Dart 
+        提供了另外一种选择：<a class="ulink" href="http://api.dartlang.org/dart_async/Future.html" target="_top">Future</a> 和
     <a class="ulink" href="http://api.dartlang.org/dart_async/Stream.html" target="_top">Stream</a>
-    objects. A Future is like a promise for a result to be provided sometime
-    in the future. A Stream is a way to get a sequence of values, such as
-    events. Future, Stream, and more are in the <a class="ulink" href="http://api.dartlang.org/dart_async.html" target="_top">dart:async</a>
-    library.</p><p>The dart:async library works in both web apps and command-line apps.
-    To use it, import dart:async:</p><pre class="screen"><em><span class="remark">lang-dart</span></em><em><span class="remark">
-</span></em>import 'dart:async';</pre><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-futures"></a>Future</h3></div></div></div><p>Future objects appear throughout the Dart libraries, often as the
-      object returned by an asynchronous method. When a future
-      <span class="emphasis"><em>completes</em></span>, its value is ready to use.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-future-example"></a>Basic Usage</h4></div></div></div><p><span class="keep-together">Use <code class="literal">then()</code> to
-        schedule code that runs when the future completes. For example,
-        <code class="literal">HttpRequest.getString()</code> returns a Future, since
-        HTTP requests can take a while. Using <code class="literal">then()</code> lets
-        you run some code when that Future has completed and the promised
-        string value is available:</span></p><pre class="screen"><em><span class="remark">lang-dart
+    对象。一个 Future 对象保证在未来的某个时间返回一个结果。
+    Stream 对象是获取一系列值的方法，例如 输入事件序列。
+     <a class="ulink" href="http://api.dartlang.org/dart_async.html" target="_top">dart:async</a>
+    库提供了 Future、 Stream、和其他更多异步编程支持。</p><p>在命令行应用和 web 应用中都可以使用 dart:async 库。
+    要使用该库，只需要导入 dart:async：</p><pre class="screen"><em><span class="remark">lang-dart</span></em><em><span class="remark">
+</span></em>import 'dart:async';</pre><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-futures"></a>Future</h3></div></div></div><p>在 Dart 库中到处都可以看到 Future 对象，
+          通常都是作为异步函数的返回值出现。
+      当一个 future
+      <span class="emphasis"><em>完成的时候</em></span>，返回的值就可以使用了。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-future-example"></a>基础用法</h4></div></div></div><p><span class="keep-together">使用 <code class="literal">then()</code>
+            来设置当 future 完成时执行的代码。
+            例如，由于 HTTP 请求可以消耗一些时间，所以
+        <code class="literal">HttpRequest.getString()</code> 返回一个 Future。
+       使用 <code class="literal">then()</code> 你可以在 Future 完成的时候来执行一些代码：
+        </span></p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/ch03_4_async/web/ch03_4_async.dart
 </span></em>HttpRequest.getString(url)
   .then((String result) {
     print(result); });
-  // Should handle errors here</pre><p>Use <code class="literal">catchError()</code> to handle any errors or
-        exceptions that a Future object might throw. Be sure to invoke
-        <code class="literal">catchError()</code> on the result of
-        <code class="literal">then()</code>—not on the result of the original Future.
-        <em><span class="remark">{PENDING: What are the symptoms when you do it
-        wrong?}</span></em></p><pre class="screen"><em><span class="remark">lang-dart
+  // 在这里处理错误情况</pre><p>用 <code class="literal">catchError()</code> 来处理 Future 对象
+            抛出的异常。
+            注意：要在 <code class="literal">then()</code> 函数的返回值对象上调用
+        <code class="literal">catchError()</code> 才能处理 Future 的异常；
+        如果在 原来的 Future 对象上调用 <code class="literal">catchError()</code> 则不能处理 Future 抛出
+        的异常。
+        <em><span class="remark">{待定：当你调用错了的时候会发生何种现象？}</span></em></p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/ch03_4_async/web/ch03_4_async.dart
 </span></em>HttpRequest.getString(url)
-  .then((String result) {  // callback function
+  .then((String result) {  // 回调函数
     print(result); })
   .catchError((e) {
-    // Handle or ignore the error.
-  });</pre><p>The <code class="literal">then().catchError()</code> pattern is the
-        asynchronous version of
-        <code class="literal">try</code>-<code class="literal">catch</code>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-chaining-multiple-async-methods"></a>Chaining Multiple Asynchronous Methods</h4></div></div></div><p>The <code class="literal">then()</code> method returns a Future, providing
-        a useful way to run multiple asynchronous functions in a certain
-        order. If the callback registered with <code class="literal">then()</code>
-        returns a Future, then it is simply returned as-is by
-        <code class="literal">then()</code>. If the callback returns a value of any
-        other type, a new Future instance is created and is completed with the
-        value.</p><pre class="screen"><em><span class="remark">lang-dart
+    // 处理或者忽略错误情况
+  });</pre><p>这里的 <code class="literal">then().catchError()</code> 模式是
+            异步版本的
+        <code class="literal">try</code>-<code class="literal">catch</code> 模式。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-chaining-multiple-async-methods"></a>串联多个异步函数</h4></div></div></div><p>由于 <code class="literal">then()</code> 函数返回一个 Future ，
+            所以提供了一种按照顺序执行多个异步方法的方式。
+            如果 <code class="literal">then()</code> 的回调函数返回一个 Future，
+            则 <code class="literal">then()</code> 直接返回该对象。
+            如果回调函数返回其他类型的值，则 返回一个新的 Future 对象，该 Future 对象完成时候
+            返回回调函数返回的值。
+        </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/futures.dart
 </span></em>Future result = costlyQuery();
 
 return result.then((value) =&gt; expensiveWork())
              .then((value) =&gt; lengthyComputation())
              .then((value) =&gt; print('done!'))
-             .catchError((exception) =&gt; print('DOH!'));</pre><p>In the above example, the methods run in the following
-        order:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><code class="literal">costlyQuery()</code></p></li><li class="listitem"><p><code class="literal">expensiveWork()</code></p></li><li class="listitem"><p><code class="literal">lengthyComputation()</code></p></li></ol></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-waiting-for-multiple-futures"></a>Waiting for Multiple Futures</h4></div></div></div><p>Sometimes your algorithm needs to invoke many asynchronous
-        functions and wait for them all to complete before continuing. Use the
+             .catchError((exception) =&gt; print('DOH!'));</pre><p>上面的示例代码中，按照如下顺序执行：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><code class="literal">costlyQuery()</code></p></li><li class="listitem"><p><code class="literal">expensiveWork()</code></p></li><li class="listitem"><p><code class="literal">lengthyComputation()</code></p></li></ol></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-waiting-for-multiple-futures"></a>等待多个 Futures 完成</h4></div></div></div><p>有时，你的算法要求调用多个异步
+            方法并且等待所有的方法都完成。使用
         <a class="ulink" href="http://api.dartlang.org/dart_async/Future.html#wait" target="_top"><code class="literal">Future.wait()</code></a>
-        static method to manage multiple Futures and wait for them to
-        complete:</p><pre class="screen"><em><span class="remark">lang-dart
+        静态函数来管理多个 Future 并等待所有 Future 一起完成：</p><pre class="screen"><em><span class="remark">lang-dart
 <em><span class="remark">ch03/futures.dart</span></em>
 </span></em>Future deleteDone = deleteLotsOfFiles();
 Future copyDone = copyLotsOfFiles();
@@ -801,27 +783,27 @@ Future checksumDone = checksumLotsOfOtherFiles();
 
 Future.wait([deleteDone, copyDone, checksumDone]).then((List values) {
   print('Done with all the long steps');
-});</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-streams"></a>Stream</h3></div></div></div><p>Stream objects appear throughout Dart APIs, representing sequences
-      of data. For example, HTML events such as button clicks are delivered
-      using streams. You can also read a file as a stream.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-streams-listen"></a>Listening for Stream Data</h4></div></div></div><p>To get each value as it arrives, subscribe to the stream using
-        the <code class="code">listen()</code> method:</p><pre class="screen"><em><span class="remark">lang-dart
+});</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-streams"></a>Stream</h3></div></div></div><p>Stream 对象代表数据序列，也经常在 Dart API 中出现。
+          例如， HTML 的按钮点击事件就是用 stream 来传输的。
+          你也可以用 stream 来读取文件。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-streams-listen"></a>监听 Stream 数据流</h4></div></div></div><p>要获取每个 Stream 中的数据，则可以用 <code class="code">listen()</code> 函数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>// Find a button by ID and add an event handler.
+</span></em>// 通过 ID 查找按钮并注册事件
 querySelector('#submitInfo').onClick.listen((e) {
-  // When the button is clicked, it runs this code.
+  // 当按钮点击的时候，执行下面代码
   submitData();
-});</pre><p>In this example, the <code class="literal">onClick</code> property is a
-        Stream object provided by the 'submitInfo' button.</p><p>If you care about only one event, you can get it using a
-        property such as <code class="literal">first</code>, <code class="literal">last</code>, or
-        <code class="literal">single</code>. To test the event before handling it, use a
-        method such as <code class="literal">firstWhere()</code>,
-        <code class="literal">lastWhere()</code>, or <code class="literal">singleWhere()</code>.
-        <em><span class="remark">{PENDING: example}</span></em></p><p>If you care about a subset of events, you can use methods such
-        as <code class="literal">skip()</code>, <code class="literal">skipWhile()</code>,
-        <code class="literal">take()</code>, <code class="literal">takeWhile()</code>, and
-        <code class="literal">where()</code>. <em><span class="remark">{PENDING: example}</span></em></p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-streams-transform"></a>Transforming Stream Data</h4></div></div></div><p>Often, you need to change the format of a stream's data before
-        you can use it. Use the <code class="literal">transform()</code> method to
-        produce a stream with a different type of data:</p><pre class="screen"><em><span class="remark">lang-dart
+});</pre><p>上面的例子中，'submitInfo' 按钮的 <code class="literal">onClick</code> 
+           属性为一个 Stream 对象。</p><p>如果你只关心第一个事件，则可以用 <code class="literal">first</code>、
+             <code class="literal">last</code> 或者
+        <code class="literal">single</code> 属性。
+        用 <code class="literal">firstWhere()</code>、
+        <code class="literal">lastWhere()</code>、或者 <code class="literal">singleWhere()</code>
+        函数在处理数据之前测试事件发生的位置。
+        <em><span class="remark">{待定：示例。}</span></em></p><p>如果你关心一段数据，则可以用
+         <code class="literal">skip()</code>、 <code class="literal">skipWhile()</code>、
+        <code class="literal">take()</code>、 <code class="literal">takeWhile()</code>、 和
+        <code class="literal">where()</code> 函数。 <em><span class="remark">{PENDING: example}</span></em></p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-streams-transform"></a>转换 Stream 数据</h4></div></div></div><p>通常，在使用 Stream 数据之前都需要先转换为可用形式。
+             用 <code class="literal">transform()</code> 函数来把 Stream 数据转换为其他
+             形式：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/readFile.dart
 </span></em>var config = new File('config.txt');
 Stream&lt;List&lt;int&gt;&gt; inputStream = config.openRead();
@@ -830,28 +812,30 @@ inputStream
   .transform(UTF8.decoder)
   .transform(new LineSplitter())
   .listen(
-    (String line) {...} ...);</pre><p>This example uses two transformers. First it uses UTF8.decoder
-        to transform the <code class="literal">Stream&lt;List&lt;int&gt;&gt;</code> into
-        a <code class="literal">Stream&lt;String&gt;</code>. Then it uses a LineSplitter
-        to transform the <code class="literal">Stream&lt;String&gt;</code> into a
-        <code class="literal">Stream&lt;List&lt;String&gt;&gt;</code>. These
-        transformers are from the dart:convert library (see <a class="xref" href="ch03.html#ch03-dart-convert" title="dart:convert - Decoding and Encoding JSON, UTF-8, and more">the section called “dart:convert - Decoding and Encoding JSON, UTF-8, and more”</a>).<em><span class="remark"> PENDING: add onDone and
-        onError. (See "Streaming file contents".)</span></em></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-9"></a>More Information</h3></div></div></div><p>For some examples of using Future and Stream in command-line apps,
-      see <a class="xref" href="ch03.html#ch03-dartio---file-and-socket-io-for-command-line-apps" title="dart:io - I/O for Command-Line Apps">the section called “dart:io - I/O for Command-Line Apps”</a>.
-      Also see these articles:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.dartlang.org/articles/using-future-based-apis/" target="_top">Using
-          Future Based APIs</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.org/articles/futures-and-error-handling/" target="_top">Futures
-          and Error Handling</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.org/articles/event-loop/" target="_top">The
-          Event Loop and Dart</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.org/articles/feet-wet-streams/" target="_top">Getting
-          Your Feet Wet with Streams</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.org/articles/creating-streams/" target="_top">Creating
-          Streams in Dart</a></p></li></ul></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dart-math"></a>dart:math - Math and Random</h2></div></div></div><p>The Math library provides common functionality such as sine and
-    cosine, maximum and minimum, and constants such as <span class="emphasis"><em>pi</em></span>
-    and <span class="emphasis"><em>e</em></span>. Most of the functionality in the Math library
-    is implemented as top-level functions.</p><p>To use the Math library in your app, import dart:math. The following
-    examples use the prefix <code class="literal">math</code> to make
-    clear which top-level functions and constants are from the Math
-    library:</p><pre class="screen"><em><span class="remark">lang-dart
+    (String line) {...} ...);</pre><p>这里用了两个转换器。 第一个转换器 UTF8.decoder
+        把 <code class="literal">Stream&lt;List&lt;int&gt;&gt;</code> 转换为
+        一个 <code class="literal">Stream&lt;String&gt;</code>。然后用
+       一个 LineSplitter
+        把 <code class="literal">Stream&lt;String&gt;</code> 转换为 
+        <code class="literal">Stream&lt;List&lt;String&gt;&gt;</code> 对象。
+    这些转换器来自于 dart:convert 库。        
+(参考 <a class="xref" href="ch03.html#ch03-dart-convert" title="dart:convert - 编码和解码 JSON 数据、 UTF-8 编码以及其他">the section called “dart:convert - 编码和解码 JSON 数据、 UTF-8 编码以及其他”</a>)。<em><span class="remark"> PENDING: add onDone and
+        onError. (See "Streaming file contents".)</span></em></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-9"></a>更多信息</h3></div></div></div><p>在命令行应用中使用 Future 和 Stream 的例子请参考
+        <a class="xref" href="ch03.html#ch03-dartio---file-and-socket-io-for-command-line-apps" title="dart:io - 用于命令行应用的 I/O 操作">the section called “dart:io - 用于命令行应用的 I/O 操作 ”</a>。
+      下面还有一些可以参考的文章：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p><a class="ulink" href="http://www.dartlang.cc/articles/using-future-based-apis/" target="_top">使用
+          Future APIs</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.cc/articles/futures-and-error-handling/" target="_top">Futures
+          和 错误处理</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.cc/articles/event-loop/" target="_top">Dart
+              中的事件循环</a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.cc/articles/feet-wet-streams/" target="_top">使用
+          Stream </a></p></li><li class="listitem"><p><a class="ulink" href="http://www.dartlang.cc/articles/creating-streams/" target="_top">
+          在 Dart 中创建 Stream</a></p></li></ul></div></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dart-math"></a>dart:math - Math 和 Random</h2></div></div></div><p>Math 库提供了数学运算的常用公式，例如  sine 和
+    cosine、 最大值和最小值、另外还有一些常量 <span class="emphasis"><em>pi</em></span>
+    和 <span class="emphasis"><em>e</em></span> 等。
+    Math 库中的大部分方法都是顶级方法。</p><p>在代码中 import dart:math 即可使用 Math 库。
+        下面的示例中，使用前缀 <code class="literal">math</code> 来表明
+        使用了 Math 库中的顶级函数和常量，这样使代码看起来
+        更加清晰：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/math-tests.dart
-</span></em>import 'dart:math' as math;</pre><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-trigonometry"></a>Trigonometry</h3></div></div></div><p>The Math library provides basic trigonometric functions:</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>import 'dart:math' as math;</pre><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-trigonometry"></a>三角函数</h3></div></div></div><p>Math 库提供了常用的三角函数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/math-tests.dart
 </span></em>// Cosine
 assert(math.cos(math.PI) == -1.0);
@@ -863,64 +847,66 @@ var radians = degrees * (math.PI / 180);
 var sinOf30degrees = math.sin(radians);
 
 // Truncate the decimal places to 2.
-assert(double.parse(sinOf30degrees.toStringAsPrecision(2)) == 0.5);</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>These functions use radians, not degrees!</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-maximum-and-minimum"></a>Maximum and Minimum</h3></div></div></div><p>The Math library provides optimized <code class="literal">max()</code> and
-      <code class="literal">min()</code> methods:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(double.parse(sinOf30degrees.toStringAsPrecision(2)) == 0.5);</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>这些函数的参数为弧度不是角度！</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-maximum-and-minimum"></a>最大值和最小值</h3></div></div></div><p>Math 库还提供了优化过的 <code class="literal">max()</code> 和
+      <code class="literal">min()</code> 函数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/math-tests.dart
 </span></em>assert(math.max(1, 1000) == 1000);
-assert(math.min(1, -1000) == -1000);</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-math-constants"></a>Math Constants</h3></div></div></div><p>Find your favorite constants—<span class="emphasis"><em>pi</em></span>,
-      <span class="emphasis"><em>e</em></span>, and more—in the Math library:</p><pre class="screen"><em><span class="remark">lang-dart
+assert(math.min(1, -1000) == -1000);</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-math-constants"></a>数学常量</h3></div></div></div><p>Math 库提供了很多常量，例如 <span class="emphasis"><em>pi</em></span>、
+      <span class="emphasis"><em>e</em></span> 等：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/math-tests.dart
 </span></em>// See the Math library for additional constants.
 print(math.E);     // 2.718281828459045
 print(math.PI);    // 3.141592653589793
-print(math.SQRT2); // 1.4142135623730951</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-random-numbers"></a>Random Numbers</h3></div></div></div><p>Generate random numbers with the <a class="ulink" href="http://api.dartlang.org/dart_math/Random.html" target="_top">Random</a>
-      class. You can optionally provide a seed to the Random
-      constructor.</p><pre class="screen"><em><span class="remark">lang-dart
+print(math.SQRT2); // 1.4142135623730951</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-random-numbers"></a>随机数</h3></div></div></div><p>用 <a class="ulink" href="http://api.dartlang.org/dart_math/Random.html" target="_top">Random</a>
+      类来生成随机数。
+      还可以用一个种子来构造一个 Random 对象。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/math-tests.dart
 </span></em>var random = new math.Random();
-random.nextDouble(); // Between 0.0 and 1.0: [0, 1)
-random.nextInt(10);  // Between 0 and 9.</pre><p>You can even generate random booleans:</p><pre class="screen"><em><span class="remark">lang-dart
+random.nextDouble(); // 返回值在 0.0 和 1.0 之间： [0, 1)
+random.nextInt(10);  // 返回值在 0 和 9 之间</pre><p>甚至还可以生成一个随机布尔值：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/math-tests.dart
 </span></em>var random = new math.Random();
-random.nextBool();  // true or false</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-7"></a>More Information</h3></div></div></div><p>Refer to the <a class="ulink" href="http://api.dartlang.org/dart_math/index.html" target="_top">Math API docs</a>
-      for a full list of methods. Also see the API docs for<span class="keep-together"> <a class="ulink" href="http://api.dartlang.org/dart_core/num.html" target="_top">num,</a></span>
-      <a class="ulink" href="http://api.dartlang.org/dart_core/int.html" target="_top">int,</a> and
-      <a class="ulink" href="http://api.dartlang.org/dart_core/double.html" target="_top">double.</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dart-html-using-html5-apis"></a>dart:html - Browser-Based Apps</h2></div></div></div><p>Use the <a class="ulink" href="http://api.dartlang.org/dart_html.html" target="_top">dart:html library</a> to
-    program the browser, manipulate objects and elements in the DOM, and
-    access HTML5 APIs. <em class="firstterm">DOM</em> stands for
-    <span class="emphasis"><em>Document Object Model</em></span>, which describes the hierarchy
-    of an HTML page.</p><p>Other common uses of dart:html are manipulating styles
-    (<span class="emphasis"><em>CSS</em></span>), getting data using HTTP requests, and
-    exchanging data using <a class="link" href="ch03.html#ch03-websockets" title="Sending and Receiving Real-Time Data with WebSockets">WebSockets</a>.
-    HTML5 (and dart:html) has many additional APIs that this section doesn’t
-    cover. Only web apps can use dart:html, not command-line apps.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>For scalable, higher level approaches to web app UIs, see <a class="ulink" href="http://www.dartlang.org/polymer-dart/" target="_top">Polymer.dart</a> and
-      <a class="ulink" href="http://pub.dartlang.org/packages/angular" target="_top">AngularDart</a>.</p></div><p>To use the HTML library in your web app, import dart:html:</p><pre class="programlisting"><em><span class="remark">lang-dart
+random.nextBool();  // true or false</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-7"></a>更多信息</h3></div></div></div><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_math/index.html" target="_top">Math API 文档</a>
+      以及 <span class="keep-together"> <a class="ulink" href="http://api.dartlang.org/dart_core/num.html" target="_top">num、</a></span>
+      <a class="ulink" href="http://api.dartlang.org/dart_core/int.html" target="_top">int、</a> 和
+      <a class="ulink" href="http://api.dartlang.org/dart_core/double.html" target="_top">double</a> 来 查看所有的函数。</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dart-html-using-html5-apis"></a>dart:html - 基于浏览器的应用</h2></div></div></div><p>使用 <a class="ulink" href="http://api.dartlang.org/dart_html.html" target="_top">dart:html 库</a> 
+    来编写浏览器应用，该库提供了操作 DOM 元素和访问 HTML5 API 的功能。 <em class="firstterm">DOM</em> 
+    是
+    <span class="emphasis"><em>Document Object Model</em></span> 的缩写，DOM 描述了
+    HTML 页面的文档结构。</p><p>使用 dart:html 库还可以用来操作
+    (<span class="emphasis"><em>CSS</em></span>)、用 HTTP 请求获取数据、以及
+    用 <a class="link" href="ch03.html#ch03-websockets" title="用 WebSocket 来发送和接收实时数据">WebSockets</a> 来传输数据。
+    HTML5 (和 dart:html) 还有很多本节没有介绍的 API。
+    注意： 只有 Web 应用可以使用  dart:html 库，命令行应用无法使用。
+    </p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>使用  <a class="ulink" href="http://www.dartlang.cc/polymer-dart/" target="_top">Polymer.dart</a> 和
+      <a class="ulink" href="http://pub.dartlang.org/packages/angular" target="_top">AngularDart</a>
+      可以创建更灵活、更具扩展性的 web 应用 UI。
+      </p></div><p>导入 dart:html 库即可使用该库：</p><pre class="programlisting"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>import 'dart:html';</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Parts of the dart:html library are experimental, as noted in the
-      API documentation.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-manipulating-the-dom"></a>Manipulating the DOM</h3></div></div></div><p>To use the DOM, you need to know about
-      <span class="emphasis"><em>windows</em></span>, <span class="emphasis"><em>documents</em></span>,
-      <span class="emphasis"><em>elements</em></span>, and <span class="emphasis"><em>nodes</em></span>.</p><p>A <a class="ulink" href="http://api.dartlang.org/html/Window.html" target="_top">Window</a> object
-      represents the actual window of the web browser. Each Window has a
-      <code class="literal">document</code> property (a Document
-      object), which points to the document currently loaded. The Window
-      object also has accessors to various APIs such as IndexedDB (for storing
-      data), <code class="literal">requestAnimationFrame()</code> (for animations), and
-      more. In tabbed browsers, each tab has its own Window object.</p><p>With the <a class="ulink" href="http://api.dartlang.org/html/Document.html" target="_top">Document</a>
-      object, you can create and manipulate <a class="ulink" href="http://api.dartlang.org/html/Element.html" target="_top">Elements</a> within
-      the document. Note that the document itself is an element and can be
-      manipulated.</p><p>The DOM models a tree of <a class="ulink" href="http://api.dartlang.org/html/Node.html" target="_top">Nodes.</a> These nodes
-      are often elements, but they can also be attributes, text, comments, and
-      other DOM types. Except for the root node, which has no parent, each
-      node in the DOM has one parent and might have many children.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-finding-elements"></a>Finding elements</h4></div></div></div><p>To manipulate an element, you first need an object that
-        represents it. You can get this object using a query.</p><p>Find one or more elements using the top-level functions
-        <code class="literal">querySelector()</code> and<code class="literal">
-        querySelectorAll()</code>. You can query by ID, class, tag, name,
-        or any combination of these. The <a class="ulink" href="http://www.w3.org/TR/css3-selectors/" target="_top">CSS Selector Specification
-        guide</a> defines the formats of the selectors such as using a #
-        prefix to specify IDs and a period (.) for classes.</p><p>The <code class="literal">querySelector()</code> function returns the
-        first element that matches the selector, while <span class="keep-together"><code class="literal">querySelectorAll()</code>
-        </span>returns a collection of elements that match the
-        selector.</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>import 'dart:html';</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>有些 dart:html 库的功能还是试验性质的，在 API
+    文档中有注明。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-manipulating-the-dom"></a>操作 DOM</h3></div></div></div><p>要使用 DOM 你需要了解
+      <span class="emphasis"><em>windows（窗口）</em></span>、 <span class="emphasis"><em>documents（文档）</em></span>、
+      <span class="emphasis"><em>elements（元素）</em></span>、 和 <span class="emphasis"><em>nodes（节点）</em></span>。</p><p>一个 <a class="ulink" href="http://api.dartlang.org/html/Window.html" target="_top">Window</a> 对象代表
+      浏览器的真实窗口。 每个 Window 都有一个
+      <code class="literal">document</code> 属性( 一个 Document
+      对象)，该对象代表当前加载的页面内容。
+      Window 对象还包含了访问各种 API 的能力，例如  IndexedDB (用来
+      存储数据)、 <code class="literal">requestAnimationFrame()</code> (用来实现动画)、以及更多。
+    在支持标签页（tab）的浏览器中，每个标签页都有自己的 Window 对象。</p><p>使用 <a class="ulink" href="http://api.dartlang.org/html/Document.html" target="_top">Document</a>
+      对象可以操作文档中的  <a class="ulink" href="http://api.dartlang.org/html/Element.html" target="_top">Elements</a> 。
+      注意 Document 本身也是一个 element，也可以被修改。</p><p>DOM 是一个 <a class="ulink" href="http://api.dartlang.org/html/Node.html" target="_top">Nodes</a> 树模型。
+      这些 Node 通常都是 Element，有些是 attributes（属性）、 text（文本）、 comments（注释）、
+      以及其他类型。除了根 Node 没有父节点外，DOM 中的所有 Node 都有一个父节点，每个节点都可能有多个子节点。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-finding-elements"></a>查找 elements</h4></div></div></div><p>你需要先找到一个 element 才能修改该 element。
+            你可以用各种条件查找一个 element 对象。</p><p>使用顶级方法 
+        <code class="literal">querySelector()</code> 和<code class="literal">
+        querySelectorAll()</code> 来查找一个或者多个 element。
+        可以用 ID、类（class）、tag（标签）、name（名字）、或者其组合来查找 Element。        
+        <a class="ulink" href="http://www.w3.org/TR/css3-selectors/" target="_top">CSS Selector Specification
+        guide</a> 定义了选择器的规范。
+        例如，用 # 前缀指定 ID；用 . 指定 CSS 类。</p><p> <code class="literal">querySelector()</code> 方法返回第一个匹配
+            的 Element，而
+        <span class="keep-together"><code class="literal">querySelectorAll()</code>
+        </span> 返回匹配的所有 Element。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>Element elem1 = querySelector('#an-id');           // Find an element by id (an-id).
 Element elem2 = querySelector('.a-class');         // Find an element by class (a-class).
@@ -929,23 +915,28 @@ List&lt;Element&gt; elems2 = querySelectorAll('input[type="text"]'); // Find all
 
 // Find all elements with the CSS class 'class' inside of a &lt;p&gt;
 // that is inside an element with the ID 'id'.
-List&lt;Element&gt; elems3 = querySelectorAll('#id p.class');</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-manipulating-elements"></a>Manipulating elements</h4></div></div></div><p>You can use properties to change the state of an element. Node
-        and its subtype Element define the properties that all elements have.
-        For example, all elements have <code class="literal">classes</code>, <code class="literal">hidden</code>, <code class="literal">id</code>, <code class="literal">style</code>, and <code class="literal">title</code> properties that you can use to set
-        state. Subclasses of Element define additional properties, such as the
-        <code class="literal">href</code> property of <a class="ulink" href="http://api.dartlang.org/html/AnchorElement.html" target="_top">AnchorElement.</a></p><p>Consider this example of specifying an anchor element in
-        HTML:</p><pre class="screen"><em><span class="remark">lang-dart
+List&lt;Element&gt; elems3 = querySelectorAll('#id p.class');</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-manipulating-elements"></a>操控 elements</h4></div></div></div><p>
+            可以用 properties（属性） 来修改 element 的状态。
+            Node 和子类型 Element 定义了所有 element 都有的 属性。
+            例如， 所有的 element 都有
+         <code class="literal">classes</code>、 <code class="literal">hidden</code>、 <code class="literal">id</code>、 <code class="literal">style</code>、 和 <code class="literal">title</code> 属性，可以用这些属性来
+        设置 element 的状态。 Element 的子类定义了其他属性，例如
+          <a class="ulink" href="http://api.dartlang.org/html/AnchorElement.html" target="_top">AnchorElement</a>
+        定义了 <code class="literal">href</code> 属性。
+        </p><p>下面是一个设置 HTML 超链接的示例：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>&lt;a id="example" href="http://example.com"&gt;link text&lt;/a&gt;</pre><p>This &lt;a&gt; tag specifies an element with an <code class="literal">href</code> attribute and a text node (accessible
-        via a <code class="literal">text</code> property) that contains
-        the string “linktext”. To change the URL that the link goes to, you
-        can use AnchorElement’s <code class="literal">href</code>
-        property:</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>&lt;a id="example" href="http://example.com"&gt;link text&lt;/a&gt;</pre><p>这个 &lt;a&gt; 标签定义了一个带有
+            <code class="literal">href</code> 属性和
+        文本节点（ text node） (通过  <code class="literal">text</code> 属性访问该文本)
+        的 链接。 可以使用 AnchorElement 的 <code class="literal">href</code> 属性来
+        修改该链接打开的 URL 地址：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>querySelector('#example').href = 'http://dartlang.org';</pre><p>Often you need to set properties on multiple elements. For
-        example, the following code sets the <code class="literal">hidden</code> property of all elements that have a
-        class of “mac”, “win”, or “linux”. Setting the <code class="literal">hidden</code> property to true has the same effect
-        as adding <code class="literal">display:none</code> to <span class="keep-together">the CSS</span>.</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>querySelector('#example').href = 'http://dartlang.org';</pre><p>通常你需要修改多个 element 的属性。
+            例如，下面的代码设置使用类 “mac”、 “win”、 或者 “linux” 元素的 <code class="literal">hidden</code> 属性。
+        把
+        <code class="literal">hidden</code> 属性设置为 true 和
+        在 <span class="keep-together">CSS 样式上</span>
+        添加 <code class="literal">display:none</code>  是一样的效果。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>&lt;!-- In HTML: --&gt;
 &lt;p&gt;
@@ -964,105 +955,106 @@ for (var os in osList) {            // For each possible OS...
   for (var elem in querySelectorAll('.$os')) { // Find all elements for this OS.
     elem.hidden = !shouldShow;      // Show or hide each element.
   }
-}</pre><p>When the right property isn’t available or convenient, you can
-        use Element’s <code class="literal">attributes</code> property.
-        This property is a <code class="literal">Map&lt;String, String&gt;</code>, where
-        the keys are attribute names. For a list of attribute names and their
-        meanings, see the <a class="ulink" href="https://developer.mozilla.org/en/HTML/Attributes" target="_top">MDN Attributes
-        page.</a> Here’s an example of setting an attribute’s
-        value:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>
+            当所需要的属性不可用或者不方便使用的话，可以用
+          Element 对象的 <code class="literal">attributes</code> 属性。
+    该属性为一个 <code class="literal">Map&lt;String, String&gt;</code> 对象，
+    key 为 attribute 的名字。 参考
+         <a class="ulink" href="https://developer.mozilla.org/en/HTML/Attributes" target="_top">MDN Attributes
+        页面</a> 来查看每个属性代表的意义。
+         下面是一个设置 attribute 值的示例：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>elem.attributes['someAttribute'] = 'someValue';</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-creating-elements"></a>Creating elements</h4></div></div></div><p>You can add to existing HTML pages by creating new elements and
-        attaching them to the DOM. Here’s an example of creating a paragraph
-        (&lt;p&gt;) element:</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>elem.attributes['someAttribute'] = 'someValue';</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-creating-elements"></a>创建 elements</h4></div></div></div><p>创建一个新的 elements 并添加到
+            DOM 树中可以往 HTML 页面中添加内容。
+            下面是一个创建 段落（(&lt;p&gt;)） 的示例：
+        </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>var elem = new ParagraphElement();
-elem.text = 'Creating is easy!';</pre><p>You can also create an element by parsing HTML text. Any child
-        elements are also parsed and created.</p><pre class="screen"><em><span class="remark">lang-dart
+elem.text = 'Creating is easy!';</pre><p>通过解析 HTML 文本也可以创建 Element 对象。 所有的子 element
+            也会被解析并创建。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>var elem2 = new Element.html('&lt;p&gt;Creating &lt;em&gt;is&lt;/em&gt; easy!&lt;/p&gt;');</pre><p>Note that elem2 is a ParagraphElement in the above
-        example.</p><p>Attach the newly created element to the document by assigning a
-        parent to the element. You can add an element to any existing
-        element’s children. In the following example, <code class="literal">body</code> is an element, and its child elements
-        are accessible (as a List&lt;Element&gt;) from the <code class="literal">children</code> property.</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>var elem2 = new Element.html('&lt;p&gt;Creating &lt;em&gt;is&lt;/em&gt; easy!&lt;/p&gt;');</pre><p>注意：上面示例中的 elem2 对象为 ParagraphElement 。</p><p> 通过设置新创建 element 对象的父节点来把该 element 添加到
+            文档中。你可以把一个 element 添加到现有 element 的子节点上。
+            下面的示例中，
+        <code class="literal">body</code> 是一个 element，
+        使用  <code class="literal">children</code> property（属性）可以
+        访问 body 的子元素（as a List&lt;Element&gt;）。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
-</span></em>document.body.children.add(elem2);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-adding-replacing-and-removing-nodes"></a>Adding, replacing, and removing nodes</h4></div></div></div><p>Recall that elements are just a kind of node. You can find all
-        the children of a node using the <code class="literal">nodes</code> property of Node, which returns a
-        List&lt;Node&gt;. Once you have this list, you can use the usual List
-        methods and operators to manipulate the children of the node.</p><p>To add a node as the last child of its parent, use the List
-        <code class="literal">add()</code> method:</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>document.body.children.add(elem2);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-adding-replacing-and-removing-nodes"></a>添加、替换、删除节点（ node ）</h4></div></div></div><p>还记得 element 是 node 的子类型吗。使用 Node 的
+        <code class="literal">nodes</code> 属性可以获取该 node 的所有子节点，
+        返回值为
+        List&lt;Node&gt;。 获取到该 list 后，就可以用
+        List 的函数和操作符来操作 node 的子节点了。</p><p>使用 List 的
+        <code class="literal">add()</code> 函数把一个节点添加到父节点的所有子节点的最后：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>// Find the parent by ID, and add elem as its last child.
-querySelector('#inputs').nodes.add(elem);</pre><p>To replace a node, use the Node <code class="literal">replaceWith()</code>
-        method:</p><pre class="screen"><em><span class="remark">lang-dart
+querySelector('#inputs').nodes.add(elem);</pre><p>用 Node 的<code class="literal">replaceWith()</code>
+        函数来替换一个 node：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>// Find a node by ID, and replace it in the DOM.
-querySelector('#status').replaceWith(elem);</pre><p>To remove a node, use the Node <code class="literal">remove()</code>
-        method:</p><pre class="screen"><em><span class="remark">lang-dart
+querySelector('#status').replaceWith(elem);</pre><p>使用 Node 的 <code class="literal">remove()</code>
+        函数来删除节点：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>// Find a node by ID, and remove it from the DOM.
-querySelector('#expendable').remove();</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-manipulating-styles"></a>Manipulating CSS styles</h4></div></div></div><p>CSS, or <span class="emphasis"><em>cascading style sheets</em></span>, defines the
-        presentation styles of DOM elements. You can change the appearance of
-        an element by attaching ID and class attributes to it.</p><p>Each element has a <code class="literal">classes</code>
-        field, which is a list. Add and remove CSS classes simply by adding
-        and removing strings from this collection. For example, the following
-        sample adds the <code class="literal">warning</code> class to an
-        element:</p><pre class="screen"><em><span class="remark">lang-dart
+querySelector('#expendable').remove();</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-manipulating-styles"></a>控制 CSS 样式</h4></div></div></div><p>CSS （<span class="emphasis"><em>cascading style sheets</em></span>）定义了
+            DOM 元素的显示样式。 通过设置 ID 和 类属性可以修改
+            一个 element 的显示样式。</p><p>每个 element 都有一个 <code class="literal">classes</code>
+        变量，该变量是一个 list 对象。
+        在该 list 中添加、删除 字符串就可以实现 添加和删除 CSS 类的功能。
+    例如，下面的示例在 element 中添加一个
+        <code class="literal">warning</code>  CSS 类：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>var element = querySelector('#message');
-element.classes.add('warning');</pre><p>It’s often very efficient to find an element by ID. You can
-        dynamically set an element ID with the <code class="literal">id</code> property:</p><pre class="screen"><em><span class="remark">lang-dart
+element.classes.add('warning');</pre><p>通过 ID 来查找 element 一般都是比较高效的。
+            通过
+         <code class="literal">id</code> property（属性） 可以
+        动态的设置一个 element 的 ID。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>var message = new DivElement();
 message.id = 'message2';
-message.text = 'Please subscribe to the Dart mailing list.';</pre><p>You can reduce the redundant text in this example by using
-        method cascades:</p><pre class="screen"><em><span class="remark">lang-dart
+message.text = 'Please subscribe to the Dart mailing list.';</pre><p>通过级联操作符可以减少输入敲键盘的次数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>var message = new DivElement()
     ..id = 'message2'
-    ..text = 'Please subscribe to the Dart mailing list.';</pre><p>While using IDs and classes to associate an element with a set
-        of styles is best practice, sometimes you want to attach a specific
-        style directly to the element:</p><pre class="screen"><em><span class="remark">lang-dart
+    ..text = 'Please subscribe to the Dart mailing list.';</pre><p>
+            使用 ID 或者 类来设置 element 的样式是最好的做法，但是有时候你也需要
+            直接在 element 上设置样式：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>message.style
     ..fontWeight = 'bold'
-    ..fontSize = '3em';</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-handling-events"></a>Handling events</h4></div></div></div><p>To respond to external events such as clicks, changes of focus,
-        and selections, add an event listener. You can add an event listener
-        to any element on the page. Event dispatch and propagation is a
-        complicated subject; <a class="ulink" href="http://www.w3.org/TR/DOM-Level-3-Events/#dom-event-architecture" target="_top">research
-        the details</a> if you’re new to web programming.</p><p>Add an event handler using <code class="literal">element.on<em class="replaceable"><code>Event</code></em>.listen(<em class="replaceable"><code>function</code></em>)</code>,
-        where <code class="literal"><em class="replaceable"><code>Event</code></em></code> is the
-        event name and <code class="literal"><em class="replaceable"><code>function</code></em></code> is the
-        event handler.</p><p>For example, here’s how you can handle clicks on a
-        button:</p><pre class="screen"><em><span class="remark">lang-dart
+    ..fontSize = '3em';</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-handling-events"></a>处理事件</h4></div></div></div><p>要响应外部事件，例如 鼠标点击、焦点改变和选择 等，需要注册一个事件监听器（event listener）。
+        你可以在页面的任意 element 上注册事件监听器。 如果你初次接触 web 编程，请参考     
+        <a class="ulink" href="http://www.w3.org/TR/DOM-Level-3-Events/#dom-event-architecture" target="_top">这里了解事件分发和传播 机制。</a>
+         </p><p>使用  <code class="literal">element.on<em class="replaceable"><code>Event</code></em>.listen(<em class="replaceable"><code>function</code></em>)</code>
+        来注册事件监听器，这里的
+          <code class="literal"><em class="replaceable"><code>Event</code></em></code> 
+        是事件的名字， <code class="literal"><em class="replaceable"><code>function</code></em></code> 是事件
+        处理函数。</p><p>例如，下面是一次处理按钮点击事件的示例：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>// Find a button by ID and add an event handler.
 querySelector('#submitInfo').onClick.listen((e) {
   // When the button is clicked, it runs this code.
   submitData();
-});</pre><p>Events can propagate up and down through the DOM tree. To
-        discover which element originally fired the event, use <code class="literal">e.target</code>:</p><pre class="screen"><em><span class="remark">lang-dart
+});</pre><p>事件可以在  DOM 树中上下传递。
+            使用
+        <code class="literal">e.target</code> 来判断是哪个 element 触发了该事件：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_html.dart
 </span></em>document.body.onClick.listen((e) {
   var clickedElem = e.target;
   print('You clicked the ${clickedElem.id} element.');
-});</pre><p>To see all the events for which you can register an event
-        listener, look for "on<em class="replaceable"><code>EventType</code></em>" properties
-        in the API docs for <a class="ulink" href="http://api.dartlang.org/dart_html/Element.html" target="_top">Element</a>
-        and its subclasses. Some common events include:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>change</p></li><li class="listitem"><p>blur</p></li><li class="listitem"><p>keyDown</p></li><li class="listitem"><p>keyUp</p></li><li class="listitem"><p>mouseDown</p></li><li class="listitem"><p>mouseUp</p></li></ul></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-httprequest"></a>Using HTTP Resources with HttpRequest</h3></div></div></div><p>Formerly known as XMLHttpRequest, the <a class="ulink" href="http://api.dartlang.org/dart_html/HttpRequest.html" target="_top">HttpRequest</a>
-      class gives you access to HTTP resources from within your browser-based
-      app. Traditionally, AJAX-style apps make heavy use of HttpRequest. Use
-      HttpRequest to dynamically load JSON data or any other resource from a
-      web server. You can also dynamically send data to a web server.</p><p>The following examples assume all resources are served from the
-      same web server that hosts the script itself. Due to security
-      restrictions in the browser, the HttpRequest class can’t easily use
-      resources that are hosted on an origin that is different from the origin
-      of the app. If you need to access resources that live on a different web
-      server, you need to either use a technique called JSONP or enable CORS
-      headers on the remote resources.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_getting_data_from_the_server"></a>Getting data from the server</h4></div></div></div><p>The HttpRequest static method <code class="literal">getString()</code> is
-        an easy way to get data from a web server. Use
-        <code class="literal">then()</code> after <code class="literal">getString()</code> to
-        specify the function that handles the string data.</p><pre class="screen"><em><span class="remark">lang-dart
+});</pre><p>通过查看<a class="ulink" href="http://api.dartlang.org/dart_html/Element.html" target="_top">Element</a>
+        和其子类的   "on<em class="replaceable"><code>EventType</code></em>" 属性可以了解都有
+        那些事件类型。一些常见的示例类型如下：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>change</p></li><li class="listitem"><p>blur</p></li><li class="listitem"><p>keyDown</p></li><li class="listitem"><p>keyUp</p></li><li class="listitem"><p>mouseDown</p></li><li class="listitem"><p>mouseUp</p></li></ul></div></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-httprequest"></a>用 HttpRequest 请求 HTTP 资源</h3></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_html/HttpRequest.html" target="_top">HttpRequest</a>
+      类（之前被称之为 XMLHttpRequest ） 可以在浏览器中访问 HTTP 资源。
+      传统的 AJAX 风格应用非常依赖 HttpRequest。 用 HttpRequest 来从服务器动态加载 JSON 数据或者其他资源。
+      还可以动态的给服务器发送数据。
+      </p><p>
+          下面的示例中假设所请求的资源和 脚本本事位于同一个 服务器。
+          由于浏览器的安全策略限制，HttpRequest 类不能简单的使用不再同一个主机的资源。
+          如果你需要访问不同主机的资源，你可以用 JSONP 技术或者启用 远程资源的 CORS 头（header）。
+</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_getting_data_from_the_server"></a>从服务器获取数据</h4></div></div></div><p>HttpRequest 类的静态函数 <code class="literal">getString()</code> 
+        是从服务器获取数据的一个方法。在 <code class="literal">getString()</code> 的返回值上使用    
+        <code class="literal">then()</code> 来异步处理返回的结果。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_2_html.dart
 </span></em>import 'dart:html';
 import 'dart:async';
@@ -1077,12 +1069,12 @@ main() {
 
 processString(String jsonText) {
   parseText(jsonText);
-}</pre><p>The function you specify (in the example,
-        <code class="literal">processString()</code>) runs when the data at the
-        specified URI is successfully retrieved. In this case, we are
-        dynamically loading a JSON file. Information about the JSON API is in
-        <a class="xref" href="ch03.html#ch03-json" title="Decoding and Encoding JSON">the section called “Decoding and Encoding JSON”</a>.</p><p>Add <code class="literal">.catchError()</code> after the call to
-        <code class="literal">.then()</code> to specify an error handler:</p><pre class="programlisting"><em><span class="remark">lang-dart
+}</pre><p>
+            上面设置的方法 <code class="literal">processString()</code> 会在请求完成的时候执行。
+            上面的示例中，动态的加载一个 JSON 文件。在
+        <a class="xref" href="ch03.html#ch03-json" title="编码和解码 JSON">the section called “编码和解码 JSON”</a> 介绍了 JSON API。</p><p>在  
+        <code class="literal">.then()</code> 后面通过 <code class="literal">.catchError()</code>
+        来设置一个错误处理方法：</p><pre class="programlisting"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_2_html.dart
 </span></em>...
 HttpRequest.getString(uri)
@@ -1092,10 +1084,10 @@ HttpRequest.getString(uri)
 handleError(error) {
   print('Uh oh, there was an error.');
   print(error.toString());
-}</pre><p>If you need access to the HttpRequest, not just the text data it
-        retrieves, you can use the <code class="literal">request()</code> static method
-        instead of <code class="literal">getString()</code>. Here’s an example of
-        reading XML data:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>如果你的 HttpRequest 返回的结果不是一个字符串，则
+            可以用 <code class="literal">request()</code> 静态函数。
+            下面是读取 XML 数据的一个示例：
+             </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03_html/ch03_2_html.dart
 </span></em>import 'dart:html';
 import 'dart:async';
@@ -1119,9 +1111,7 @@ processRequest(HttpRequest request) {
     print('$xmlUri doesn\'t have correct XML formatting.');
   }
 }
-...</pre><p>You can also use the full API to handle more interesting cases.
-        For example, you can set arbitrary headers.</p><p>The general flow for using the full API of HttpRequest is as
-        follows:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>Create the HttpRequest object.</p></li><li class="listitem"><p>Open the URL with either <code class="literal">GET</code> or <code class="literal">POST</code>.</p></li><li class="listitem"><p>Attach event handlers.</p></li><li class="listitem"><p>Send the request.</p></li></ol></div><p>For example:</p><pre class="screen"><em><span class="remark">lang-dart
+...</pre><p>还可以用完整的 API（full API） 来实现不同的功能， 例如读取请求头信息。</p><p>下面是使用 完整 API 的流程：</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>创建一个 HttpRequest 对象：</p></li><li class="listitem"><p>用  <code class="literal">GET</code> 或者 <code class="literal">POST</code> 打开一个 URL。</p></li><li class="listitem"><p>添加事件处理函数。</p></li><li class="listitem"><p>发送该请求。</p></li></ol></div><p>例如：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">dart-tutorials-samples/web/portmanteaux/portmanteaux.dart
 </span></em>import 'dart:html';
 ...
@@ -1129,14 +1119,12 @@ var httpRequest = new HttpRequest()
     ..open('POST', dataUrl)
     ..onLoadEnd.listen((_) =&gt; requestComplete(httpRequest))
     ..send(encodedData);
-</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_sending_data_to_the_server"></a>Sending data to the server</h4></div></div></div><p>HttpRequest can send data to the server using the HTTP method
-        POST. For example, you might want to dynamically submit data to a form
-        handler. Sending JSON data to a RESTful web service is another common
-        example.</p><p>Submitting data to a form handler requires you to provide
-        name-value pairs as URI-encoded strings. (Information about the URI
-        class is in <a class="xref" href="ch03.html#ch03-uri" title="URIs">the section called “URIs”</a>.) You must also set the
-        <code class="literal">Content-type</code> header to <code class="literal">application/x-www-form-urlencode</code> if you wish
-        to send data to a form handler.</p><pre class="screen"><em><span class="remark">lang-dart
+</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_sending_data_to_the_server"></a>往服务器发送数据</h4></div></div></div><p>HttpRequest 用 HTTP POST 可以往服务器发送数据。
+            例如：你可能需要从 form 表单中动态的提交数据。 往 RESTful  web 服务 发送 JSON 数据是另外
+            一个常见的情景。</p><p>
+            提交 form 表单数据需要提供一个 URI 编码过的 name-value 字符串。
+            （<a class="xref" href="ch03.html#ch03-uri" title="URIs">the section called “URIs”</a> 介绍了 URI。）另外还要设置
+        <code class="literal">Content-type</code> 头为 <code class="literal">application/x-www-form-urlencode</code>。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/ch03/ch03_3_html/json-send-to-server.dart
 </span></em>import 'dart:html';
 
@@ -1165,28 +1153,26 @@ main() {
                                'application/x-www-form-urlencoded');
   httpRequest.onLoadEnd.listen((e) =&gt; loadEnd(httpRequest));
   httpRequest.send(encodedData);
-}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-websockets"></a>Sending and Receiving Real-Time Data with WebSockets</h3></div></div></div><p>A WebSocket allows your web app to exchange data with a server
-      interactively—no polling necessary. A server creates the WebSocket and
-      listens for requests on a URL that starts with <span class="strong"><strong>ws://</strong></span>—for example, ws://127.0.0.1:1337/ws. The
-      data transmitted over a WebSocket can be a string, a blob, or an <a class="ulink" href="http://api.dartlang.org/html/ArrayBuffer.html" target="_top">ArrayBuffer.</a>
-      Often, the data is a JSON-formatted string.</p><p>To use a WebSocket in your web app, first create a <a class="ulink" href="http://api.dartlang.org/html/WebSocket.html" target="_top">WebSocket</a>
-      object, passing the WebSocket URL as an argument:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-websockets"></a>用 WebSocket 来发送和接收实时数据</h3></div></div></div><p>WebSocket 可以和服务器实时的交换数据，不用轮询。 服务器通过监听
+          <span class="strong"><strong>ws://</strong></span> 开头的 URL 来启动 WebSocket，例如
+      ws://127.0.0.1:1337/ws。
+      通过 WebSocket 可以传输 字符串、二进制数据和
+      一个<a class="ulink" href="http://api.dartlang.org/html/ArrayBuffer.html" target="_top">ArrayBuffer 对象。</a>
+      通常情况下使用的都是 JSON 格式的字符串。</p><p>要在 web 应用中使用 WebSocket ，先创建一个 <a class="ulink" href="http://api.dartlang.org/html/WebSocket.html" target="_top">WebSocket</a>
+      对象，参数为 WebSocket URL 地址：</p><pre class="screen"><em><span class="remark">lang-dart
 github.com/dart-lang/dart-samples/.../web/html5/websockets/basics/websocket_sample.dart
-</span></em>var ws = new WebSocket('ws://echo.websocket.org');</pre><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-sending-data"></a>Sending data</h4></div></div></div><p>To send string data on the WebSocket, use the
-        <code class="literal">send()</code> method:</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>var ws = new WebSocket('ws://echo.websocket.org');</pre><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-sending-data"></a>发送数据</h4></div></div></div><p>用 
+        <code class="literal">send()</code> 函数发送字符串：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">github.com/dart-lang/dart-samples/.../web/html5/websockets/basics/websocket_sample.dart
-</span></em>ws.send('Hello from Dart!');</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-receiving-data"></a>Receiving data</h4></div></div></div><p>To receive data on the WebSocket, register a listener for
-        message events:</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>ws.send('Hello from Dart!');</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-receiving-data"></a>接收数据</h4></div></div></div><p>在 WebSocket 上注册监听器来接收数据：</p><pre class="screen"><em><span class="remark">lang-dart
 <em><span class="remark">github.com/dart-lang/dart-samples/.../web/html5/websockets/basics/websocket_sample.dart
 </span></em></span></em>ws.onMessage.listen((MessageEvent e) {
   print('Received message: ${e.data}');
-});</pre><p>The message event handler receives a <a class="ulink" href="http://api.dartlang.org/html/MessageEvent.html" target="_top">MessageEvent</a>
-        object. This object’s <code class="literal">data</code> field
-        has the data from the server.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-handling-websocket-events"></a>Handling WebSocket events</h4></div></div></div><p><a class="ulink" href="http://api.dartlang.org/html/WebSocketEvents.html" target="_top">WebSocketEvents</a>
-        defines the WebSocket events your app can handle: open, close, error,
-        and (as shown above) message. Here’s an example of a method that
-        creates a WebSocket object and registers handlers for open, close,
-        error, and message events:</p><pre class="screen"><em><span class="remark">lang-dart
+});</pre><p>消息事件监听器接收一个  <a class="ulink" href="http://api.dartlang.org/html/MessageEvent.html" target="_top">MessageEvent</a>
+        对象。该对象的 <code class="literal">data</code> 变量包含了服务器发送的数据。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-handling-websocket-events"></a>处理 WebSocket 事件</h4></div></div></div><p><a class="ulink" href="http://api.dartlang.org/html/WebSocketEvents.html" target="_top">WebSocketEvents</a>
+        定义了你的应用可以处理的事件： open、 close、 error、
+        和 (上面所演示的) message 事件。
+        下面是创建一个 WebSocket 对象并注册  open、 close、 error、和 message 事件的示例：</p><pre class="screen"><em><span class="remark">lang-dart
 <em><span class="remark">github.com/dart-lang/dart-samples/.../web/html5/websockets/basics/websocket_sample.dart
 </span></em></span></em>void initWebSocket([int retrySeconds = 2]) {
   var reconnectScheduled = false;
@@ -1219,50 +1205,44 @@ github.com/dart-lang/dart-samples/.../web/html5/websockets/basics/websocket_samp
   ws.onMessage.listen((MessageEvent e) {
     print('Received message: ${e.data}');
   });
-}</pre><p>For more information and examples of using WebSockets, see the
-        <a class="ulink" href="http://www.dartlang.org/samples/" target="_top">Dart Code
-        Samples.</a></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-html"></a>More information</h3></div></div></div><p>This section barely scratched the surface of using the dart:html
-      library. For more information, see the documentation for <a class="ulink" href="http://api.dartlang.org/dart_html.html" target="_top">dart:html</a> and the
-      code and explanations in the <a class="ulink" href="http://www.dartlang.org/samples/" target="_top">Dart Code Samples.</a> Dart
-      has additional libraries for more specialized web APIs, such as <a class="ulink" href="http://api.dartlang.org/dart_web_audio.html" target="_top">web audio,</a>
-      <a class="ulink" href="http://api.dartlang.org/dart_indexed_db.html" target="_top">IndexedDB</a>,
-      and <a class="ulink" href="http://api.dartlang.org/dart_web_gl.html" target="_top">WebGL</a>.</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dartio---file-and-socket-io-for-command-line-apps"></a>dart:io - I/O for Command-Line Apps</h2></div></div></div><p>The <a class="ulink" href="http://api.dartlang.org/io.html" target="_top">dart:io
-    library</a> provides APIs to deal with files, directories, processes,
-    sockets, and HTTP connections. Only command-line apps can use dart:io—not
-    web apps.</p><p>In general, the dart:io library implements and promotes an
-    asynchronous API. Synchronous methods can easily block the event loop,
-    making it difficult to scale server applications. Therefore, most
-    operations return results via callbacks or Future objects, a pattern
-    common with modern server platforms such as Node.js.</p><p>The few synchronous methods in the dart:io library are clearly
-    marked with a Sync suffix on the method name. We don’t cover them
-    here.</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Only command-line apps can import and use <code class="literal">dart:io</code>.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-files-and-directories"></a>Files and Directories</h3></div></div></div><p>The I/O library enables command-line apps to read and write files
-      and browse directories. You have two choices for reading the contents of
-      a file: all at once, or streaming. Reading a file all at once requires
-      enough memory to store all the contents of the file. If the file is very
-      large or you want to process it while reading it, you should use a
-      Stream, as described in <a class="xref" href="ch03.html#ch03-streaming-file-contents" title="Streaming file contents">the section called “Streaming file contents”</a>.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-reading-a-file-as-text"></a>Reading a file as text</h4></div></div></div><p>When reading a text file, you can read the entire file contents
-        with <code class="literal">readAsString()</code>. When the individual lines are
-        important, you can use <code class="literal">readAsLines()</code>. In both
-        cases, a Future object is returned that provides the contents of the
-        file as one or more strings.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>关于 WebSocket 的更多信息和示例代码请参考 
+        <a class="ulink" href="http://www.dartlang.cc/samples/" target="_top">Dart 代码示例。</a></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-html"></a>更多信息</h3></div></div></div><p>这节内容之上蜻蜓点水般的介绍了 dart:html
+        库，更多信息请参考 <a class="ulink" href="http://api.dartlang.org/dart_html.html" target="_top">dart:html</a> 
+      和 <a class="ulink" href="http://www.dartlang.cc/samples/" target="_top">Dart 代码示例。</a> Dart 
+      还有一些库专门处理特殊的 web API，例如：
+      <a class="ulink" href="http://api.dartlang.org/dart_web_audio.html" target="_top">web audio、</a>
+      <a class="ulink" href="http://api.dartlang.org/dart_indexed_db.html" target="_top">IndexedDB</a>、
+      和 <a class="ulink" href="http://api.dartlang.org/dart_web_gl.html" target="_top">WebGL</a> 等。</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dartio---file-and-socket-io-for-command-line-apps"></a>dart:io - 用于命令行应用的 I/O 操作 </h2></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/io.html" target="_top">dart:io
+    库</a> 提供了访问文件、目录、进程、socket 和 HTTP 通信的功能。
+    只有命令行应用才能使用 dart:io 库。</p><p>
+        一般来说，dart:io 库的实现都是异步的。 同步操作可以很容易阻塞事件循环，只有开发可扩展
+        服务器应用非常困难。
+        因此，大多数的函数都是通过回调函数或者 Future 对象返回。</p><p>
+        在 dart:io 库中也有少数几个以 Sync 开头的同步函数。 这里不介绍这些同步函数。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>只有命令行应用可以使用 <code class="literal">dart:io</code>。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-files-and-directories"></a>文件和目录</h3></div></div></div><p>I/O 库可以让命令行应用读写文件和浏览目录。
+          有两种读取文件的方式：一次读完，或者用 stream 流读取。
+          一次读完一个文件需要消耗一些内存。如果文件非常大，或者你想边读取边
+          处理，则可以用 Stream ，在 <a class="xref" href="ch03.html#ch03-streaming-file-contents" title="用流的方式读取文件">the section called “用流的方式读取文件”</a> 介绍了 Stream。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-reading-a-file-as-text"></a>读取文件文本内容</h4></div></div></div><p>当读文本文件的时候，通过函数
+          <code class="literal">readAsString()</code> 可以一次读完。
+          如果需要按行处理文本，则可以用 <code class="literal">readAsLines()</code>
+          函数。这两个函数都返回一个 Future 对象。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/textRead.dart
 </span></em>import 'dart:io';
 
 main() {
   var config = new File('config.txt');
 
-  // Put the whole file in a single string.
+  // 用一个字符串保存文件内容
   config.readAsString().then((String contents) {
     print('The entire file is ${contents.length} characters long');
   });
 
-  // Put each line of the file into its own string.
+  // 每行文字都放到一个字符串中
   config.readAsLines().then((List&lt;String&gt; lines) {
     print('The entire file is ${lines.length} lines long');
   });
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-reading-a-file-as-binary"></a>Reading a file as binary</h4></div></div></div><p>The following code reads an entire file as bytes into a list of
-        ints. The call to <span class="keep-together"><code class="literal">readAsBytes()</code></span> returns
-        a Future, which provides the result when it’s available.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-reading-a-file-as-binary"></a>读取二进制文件</h4></div></div></div><p>下面的代码把文件读取到一个数字 list 中。
+            函数 <span class="keep-together"><code class="literal">readAsBytes()</code></span> 返回一个
+         Future。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/binaryRead.dart
 </span></em>import 'dart:io';
 
@@ -1272,9 +1252,9 @@ main() {
   config.readAsBytes().then((List&lt;int&gt; contents) {
     print('The entire file is ${contents.length} bytes long');
   });
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-handling-errors"></a>Handling errors</h4></div></div></div><p>To capture errors so they don't result in exceptions, you can
-        register a <code class="literal">catchError</code>
-        handler:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-handling-errors"></a>错误处理</h4></div></div></div><p>
+            通过  <code class="literal">catchError</code> 可以处理
+            错误情况：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/fileErrors.dart
 </span></em>import 'dart:io';
 
@@ -1285,10 +1265,9 @@ main() {
   }).catchError((e) {
     print(e);
   });
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-streaming-file-contents"></a>Streaming file contents</h4></div></div></div><p>Use a Stream to read a file, a little at a time. The <code class="literal">listen()</code> method specifies a handler to be
-        called when data is available. When the Stream is finished reading the
-        file, the <code class="literal">onDone</code> callback
-        executes.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-streaming-file-contents"></a>用流的方式读取文件</h4></div></div></div><p>用 Stream 来一次读取一点文件内容。 <code class="literal">listen()</code> 函数设置一个处理函数，当有
+        数据可用的时候调用该函数。当 Stream 完成读取文件操作会调用
+         <code class="literal">onDone</code> 回调函数。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/readFile.dart
 </span></em>import 'dart:io';
 import 'dart:convert';
@@ -1307,24 +1286,24 @@ main() {
       },
       onDone: () { print('file is now closed'); },
       onError: (e) { print(e.toString()); });
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-writing-file-contents"></a>Writing file contents</h4></div></div></div><p>You can use an <a class="ulink" href="http://api.dartlang.org/dart_io/IOSink.html" target="_top">IOSink</a> to
-        write data to a file. Use the File <code class="literal">openWrite()</code>
-        method to declare a mode and get an IOSink that you can write to. The
-        default mode, <code class="literal">FileMode.WRITE</code>,
-        completely overwrites existing data in the file.</p><pre class="programlisting"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-writing-file-contents"></a>写文件</h4></div></div></div><p>可以用 <a class="ulink" href="http://api.dartlang.org/dart_io/IOSink.html" target="_top">IOSink</a> 来写
+        文件。 用 File 的 <code class="literal">openWrite()</code>
+        函数来设置读写模式和获取一个 IOSink 对象。
+        默认模式为  <code class="literal">FileMode.WRITE</code>，
+        该模式会覆盖文件原来的内容。</p><pre class="programlisting"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/writeFile.dart
 </span></em>var logFile = new File('log.txt');
 var sink = logFile.openWrite();
 sink.write('FILE ACCESSED ${new DateTime.now()}\n');
-sink.close();</pre><p>To add to the end of the file, use the optional
-        <code class="literal">mode</code> parameter to specify
-        <code class="literal">FileMode.APPEND</code>:</p><pre class="screen"><em><span class="remark">lang-dart
+sink.close();</pre><p>如果要在文件末尾继续写入数据，则可以设置
+        <code class="literal">mode</code> 参数为
+        <code class="literal">FileMode.APPEND</code>：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/writeFile.dart
-</span></em>var sink = logFile.openWrite(mode: FileMode.APPEND); </pre><p>To write binary data, use <code class="literal">add(List&lt;int&gt; data)</code>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-listing-files-in-a-directory"></a>Listing files in a directory</h4></div></div></div><p>Finding all files and subdirectories for a directory is an
-        asynchronous operation. The <code class="literal">list()</code> method returns a
-        Stream on which you can register handlers (using
-        <code class="literal">listen()</code>) to be notified when a file or directory
-        is encountered.</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em>var sink = logFile.openWrite(mode: FileMode.APPEND); </pre><p>用  <code class="literal">add(List&lt;int&gt; data)</code> 来写入二进制数据。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-listing-files-in-a-directory"></a>访问目录中的文件</h4></div></div></div><p>
+            查找一个目录中的所有文件和子目录是一个异步操作。 <code class="literal">list()</code> 函数返回
+            一个 
+        Stream 对象，在该对象上用
+        <code class="literal">listen()</code> 来注册文件或者目录监听器。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/listFiles.dart
 </span></em>import 'dart:io';
 import 'dart:async';
@@ -1342,22 +1321,14 @@ main() {
     },
     onError: (e) { print(e.toString()); }
   );
-}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-other-common-functionality"></a>Other common functionality</h4></div></div></div><p>The File and Directory classes contain other functionality,
-        including but not limited to:</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>Creating a file or directory: <code class="literal">create()</code> in
-            File and Directory</p></li><li class="listitem"><p>Deleting a file or directory: <code class="literal">delete()</code> in
-            File and Directory</p></li><li class="listitem"><p>Getting the length of a file: <code class="literal">length()</code> in
-            File</p></li><li class="listitem"><p>Getting random access to a file: <code class="literal">open()</code>
-            in File</p></li></ul></div><p>Refer to the API docs for <a class="ulink" href="http://api.dartlang.org/io/File.html" target="_top">File</a> and <a class="ulink" href="http://api.dartlang.org/io/Directory.html" target="_top">Directory</a> for
-        a full list of methods.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-io-http"></a>HTTP Clients and Servers</h3></div></div></div><p>The dart:io library provides classes that command-line apps can
-      use for accessing HTTP resources, as well as running HTTP
-      servers.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_http_server"></a>HTTP server</h4></div></div></div><p>The <a class="ulink" href="http://api.dartlang.org/dart_io/HttpServer.html" target="_top">HttpServer</a>
-        class provides the low-level functionality for building web servers.
-        You can match request handlers, set headers, stream data, and
-        more.</p><p>The following sample web server can return only simple text
-        information. This server listens on port 8888 and address 127.0.0.1
-        (localhost), responding to requests for the path <code class="literal">/languages/dart</code>. All other requests are
-        handled by the default request handler, which returns a response code
-        of 404 (not found).</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-other-common-functionality"></a>其他常用功能</h4></div></div></div><p> File 和 Directory 类还包含一些常见的功能：</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>用 <code class="literal">create()</code>函数创建文件或者目录。</p></li><li class="listitem"><p>用 <code class="literal">delete()</code> 函数删除文件或者目录。</p></li><li class="listitem"><p>用  <code class="literal">length()</code> 函数获取文件的长度。</p></li><li class="listitem"><p>用 <code class="literal">open()</code> 函数来随机访问文件。</p></li></ul></div><p>参考 <a class="ulink" href="http://api.dartlang.org/io/File.html" target="_top">File</a> 和 <a class="ulink" href="http://api.dartlang.org/io/Directory.html" target="_top">Directory</a>
+    API 文档了解所有的函数。</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-io-http"></a>HTTP 客户端和服务器</h3></div></div></div><p>dart:io 库提供了可以访问 HTTP 资源的类。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_http_server"></a>HTTP 服务器</h4></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_io/HttpServer.html" target="_top">HttpServer</a>
+        类提供了创建 web 服务器的基础功能。
+        你可以匹配请求、设置请求头、返回数据 等等。</p><p>
+            下面简单的 web 服务器只能返回简单的文本内容。 该服务器监听本地（localhost 或者 127.0.0.1）的 8888 端口，
+            并响应路径为  <code class="literal">/languages/dart</code> 的请求。
+        所有其他的请求都是由默认的请求处理器（request handler）处理的，该处理器返回
+        一个 404 代码（没有发现所请求的资源）。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/httpServer.dart
 </span></em>import 'dart:io';
 
@@ -1380,17 +1351,17 @@ main() {
       }
     });
   });
-}</pre><p>For a more comprehensive HTTP server, see the <a class="ulink" href="https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dartiverse_search/" target="_top">dartiverse_search</a>
-        example, which uses additional packages such as <a class="ulink" href="https://pub.dartlang.org/packages/http_server" target="_top">http_server</a>
-        and <a class="ulink" href="http://pub.dartlang.org/packages/route" target="_top">route</a>.<em><span class="remark">
-        {PENDING: point to the <a class="ulink" href="http://www.dartlang.org/samples/" target="_top">Dart Code Samples</a>
+}</pre><p>更完善的 HTTP 服务器示例请参考 <a class="ulink" href="https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dartiverse_search/" target="_top">dartiverse_search</a>
+        应用，该应用使用了<a class="ulink" href="https://pub.dartlang.org/packages/http_server" target="_top">http_server</a>
+        和 <a class="ulink" href="http://pub.dartlang.org/packages/route" target="_top">route</a> 包。<em><span class="remark">
+        {PENDING: point to the <a class="ulink" href="http://www.dartlang.cc/samples/" target="_top">Dart Code Samples</a>
         instead? Need to come up with a good way of pointing to
-        samples.}</span></em></p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_http_client"></a>HTTP client</h4></div></div></div><p>The <a class="ulink" href="http://api.dartlang.org/dart_io/HttpClient.html" target="_top">HttpClient</a>
-        class helps you connect to HTTP resources from your Dart command-line
-        or server-side application. You can set headers, use HTTP methods, and
-        read and write data. The HttpClient class does not work in
-        browser-based apps. When programming in the browser, use the <a class="link" href="ch03.html#ch03-httprequest" title="Using HTTP Resources with HttpRequest">HttpRequest class</a>. Here’s an example
-        of using HttpClient:</p><pre class="screen"><em><span class="remark">lang-dart
+        samples.}</span></em></p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_http_client"></a>HTTP 客户端</h4></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_io/HttpClient.html" target="_top">HttpClient</a>
+        类可以访问 HTTP 资源。你可以设置请求头、使用 HTTP 方法、和 读写数据。
+        HttpClient 类无法在浏览器应用中使用。
+        在浏览器应用中需要用
+        <a class="link" href="ch03.html#ch03-httprequest" title="用 HttpRequest 请求 HTTP 资源">HttpRequest 类</a>。下面是一个使用
+         HttpClient 的示例：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/httpClient.dart
 </span></em>import 'dart:io';
 import 'dart:convert';
@@ -1411,22 +1382,18 @@ main() {
         httpClient.close();
       });
     });
-}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-io"></a>More Information</h3></div></div></div><p>Besides the APIs discussed in this section, the dart:io library
-      also provides APIs for <a class="ulink" href="http://api.dartlang.org/io/Process.html" target="_top">processes,</a> <a class="ulink" href="http://api.dartlang.org/io/Socket.html" target="_top">sockets,</a> and <a class="ulink" href="http://api.dartlang.org/io/WebSocket.html" target="_top">web
-      sockets.</a></p><p>For more examples of using dart:io, see the <a class="ulink" href="http://www.dartlang.org/samples/" target="_top">Dart Code Samples.</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dart-convert"></a>dart:convert - Decoding and Encoding JSON, UTF-8, and more</h2></div></div></div><p>The <a class="ulink" href="http://api.dartlang.org/dart_convert.html" target="_top">dart:convert
-    library</a> has converters for JSON and UTF-8, as well as support for
-    creating additional converters. JSON is a simple text format for
-    representing structured objects and collections. UTF-8 is a common
-    variable-width encoding that can represent every character in the Unicode
-    character set.</p><p>The dart:convert library works in both web apps and command-line
-    apps. To use it, import dart:convert.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-json"></a>Decoding and Encoding JSON</h3></div></div></div><p>Decode a JSON-encoded string into a Dart object with
-      <code class="literal">JSON.decode()</code>:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-io"></a>更多信息</h3></div></div></div><p>除了上面介绍的功能外，dart:io 还提供了 <a class="ulink" href="http://api.dartlang.org/io/Process.html" target="_top">processes,</a> <a class="ulink" href="http://api.dartlang.org/io/Socket.html" target="_top">sockets,</a> 和 <a class="ulink" href="http://api.dartlang.org/io/WebSocket.html" target="_top">web
+      sockets 等功能。</a></p><p>在 <a class="ulink" href="http://www.dartlang.cc/samples/" target="_top">Dart 代码示例</a> 中
+      有更多介绍 dart:io 的例子。</p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-dart-convert"></a>dart:convert - 编码和解码 JSON 数据、 UTF-8 编码以及其他</h2></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_convert.html" target="_top">dart:convert
+    库</a> 提供了 JSON 和 UTF-8 编码的转换器，还支持创建自定义转换器。
+    JSON 是一个用来表达结构化对象和集合的文本格式。 UTF-8 是一个常用的 Unicode 字符编码。</p><p>web 应用和命令行应用都可以使用 dart:convert 库。
+        import dart:convert 即可使用。</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-json"></a>编码和解码 JSON</h3></div></div></div><p>用 
+      <code class="literal">JSON.decode()</code> 把 JSON 文本转换为 Dart 对象：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/jsonParse.dart
 </span></em>import 'dart:convert' show JSON;
 
 main() {
-  // NOTE: Be sure to use double quotes ("), not single quotes ('),
-  // inside the JSON string. This string is JSON, not Dart.
+  // 注意：在 JSON 字符串中需要用 双引号 来定义字符串，而不是单引号。
   var jsonString = '''
   [
     {"score": 40},
@@ -1440,8 +1407,8 @@ main() {
   var firstScore = scores[0];
   assert(firstScore is Map);
   assert(firstScore['score'] == 40);
-}</pre><p>Encode a supported Dart object into a JSON-formatted string with
-      <code class="literal">JSON.encode()</code>:</p><pre class="programlisting"><em><span class="remark">lang-dart
+}</pre><p>使用 
+      <code class="literal">JSON.encode()</code> 函数把支持 JSON 编码的对象转换为 JSON 字符串：</p><pre class="programlisting"><em><span class="remark">lang-dart
 ch03/jsonStringify.dart
 </span></em>import 'dart:convert' show JSON;
 
@@ -1456,15 +1423,13 @@ main() {
   assert(jsonText == '[{"score":40},{"score":80},'
                      '{"score":100,"overtime":true,'
                      '"special_guest":null}]');
-}</pre><p>Only objects of type int, double, String, bool, null, List, or Map
-      (with string keys) are directly encodable into JSON. List and Map
-      objects are encoded recursively.</p><p>You have two options for encoding objects that aren't directly
-      encodable. The first is to invoke <code class="literal">encode()</code> with a
-      second argument: a function that returns an object that is directly
-      encodable. Your second option is to omit the second argument, in which
-      case the encoder calls the object's <code class="literal">toJson()</code>
-      method.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utf"></a>Decoding and Encoding UTF-8 Characters</h3></div></div></div><p>Use <code class="literal">UTF8.decode()</code> to decode UTF8-encoded bytes
-      to a Dart string:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>默认只有类型为 int、 double、 String、 bool、 null、 List、 或者 Map
+      (key 为 String) 的对象支持编码为 JSON 字符串。
+      List 和 Map 对象递归的编码里面的对象。</p><p>对于不支持的编码对象，你可以有两种选择： 第一种选择就是用一个方法当做第二个参数来调用 <code class="literal">encode()</code> 
+          函数，该方法参数返回一个支持编码的对象；第二个选择就是忽略第二个参数，编码器会调用该对象的
+          <code class="literal">toJson()</code>
+      函数。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utf"></a>编码和解码 UTF-8 字符</h3></div></div></div><p>使用 <code class="literal">UTF8.decode()</code> 来解析 UTF-8 编码格式的
+          字节流为 Dart string：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/decodeUtf8.dart
 </span></em>import 'dart:convert' show UTF8;
 
@@ -1475,9 +1440,9 @@ main() {
                            0xbc, 0xc3, 0xae, 0xc5, 0xbe, 0xc3, 0xa5, 0xc5,
                            0xa3, 0xc3, 0xae, 0xe1, 0xbb, 0x9d, 0xc3, 0xb1]);
   print(string); // 'Îñţérñåţîöñåļîžåţîờñ'
-}</pre><p>To convert a stream of UTF-8 characters into a Dart string,
-      specify <code class="literal">UTF8.decoder</code> to the Stream
-      <code class="literal">transform()</code> method:</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>要把 UTF-8 字符转换为一个 Dart string，则可以用
+    <code class="literal">UTF8.decoder</code> 作为 Stream 的
+      <code class="literal">transform()</code> 函数参数：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/readFile.dart
 </span></em>inputStream
   .transform(UTF8.decoder)
@@ -1485,8 +1450,8 @@ ch03/readFile.dart
   .listen(
     (String line) { 
       print('Read ${line.length} bytes from stream');
-    });</pre><p>Use <code class="literal">UTF8.encode()</code> to encode a Dart string as a
-      list of UTF8-encoded bytes:</p><pre class="screen"><em><span class="remark">lang-dart
+    });</pre><p>用 <code class="literal">UTF8.encode()</code> 把一个 Dart string 编码为
+          UTF-8 格式的字节流：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/encodeUtf8.dart
 </span></em>import 'dart:convert' show UTF8;
 
@@ -1506,43 +1471,36 @@ main() {
     }
     return true;
   });
-}</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utf-other"></a>Other Functionality</h3></div></div></div><p>The dart:convert library also has converters for ASCII and ISO
-      Latin 1. For details, see the <a class="ulink" href="http://api.dartlang.org/dart_convert.html" target="_top">API docs for the
-      dart:convert library.</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-mirrors"></a>dart:mirrors - Reflection</h2></div></div></div><p>The dart:mirrors library provides basic reflection abilities to
-    Dart. Use mirrors to query the structure of your program and to
-    dynamically invoke functions or methods at runtime. </p><p>The dart:mirrors library works in both web apps and command-line
-    apps. To use it, import dart:mirrors.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>Using dart:mirrors can cause dart2js to generate very large
-      JavaScript files.</p><p>The current workaround is to add a <code class="literal">@MirrorsUsed</code>
-      annotation before the import of dart:mirrors. For details, see the
+}</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utf-other"></a>其他功能</h3></div></div></div><p>dart:convert 库还包含了 ASCII 和 ISO
+      Latin 1 编码格式的转换器。 详情请参考 <a class="ulink" href="http://api.dartlang.org/dart_convert.html" target="_top"> dart:convert 库的 API 文档。</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-mirrors"></a>dart:mirrors - Reflection（反射）</h2></div></div></div><p>dart:mirrors 库提供了基础的反射功能。
+        用 mirror 来查询代码的结构和在运行时动态的调用函数和方法。 </p><p>web 应用和命令行应用都可以使用 dart:mirrors 库。</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>注意： 使用 dart:mirrors 可能导致 dart2js 生成大量
+          的 JavaScript 文件。</p><p>当前的解决方式是在导入 dart:mirrors 之前添加一个 <code class="literal">@MirrorsUsed</code>
+      注解。详细信息请参考
       <a class="ulink" href="http://api.dartlang.org/dart_mirrors/MirrorsUsed.html" target="_top">MirrorsUsed</a>
-      API documentation. This workaround might change, as the dart:mirrors
-      library is still under development.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-mirrors-symbols"></a>Symbols</h3></div></div></div><p>The mirror system represents the names of Dart declarations
-      (classes, fields, and so on) by instances of the class <a class="ulink" href="http://api.dartlang.org/dart_core/Symbol.html" target="_top">Symbol</a>.
-      Symbols help compilers like dart2js produce efficient output, even when
-      minified.</p><p>When you know the name of the symbol ahead of time, use a symbol
-      literal. This way, repeated uses of the same symbol can use the same
-      canonicalized instance. If the name of the symbol is determined
-      dynamically at runtime, use the Symbol constructor.</p><pre class="screen"><em><span class="remark">lang-dart
+      API 文档。由于 dart:mirrors 库还在开发中，所有该解决方法可能会发生变化。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-mirrors-symbols"></a>Symbols（符号）</h3></div></div></div><p>mirror 系统通过 <a class="ulink" href="http://api.dartlang.org/dart_core/Symbol.html" target="_top">Symbol</a>
+       类对象来代表 Dart 中的定义（类、变量、等等）。
+      Symbols 帮助编译器（例如 dart2js） 生成高效的代码。</p><p>如果在编码的时候已经知道 symbol 的名字，则可以通过
+          字符字面量的方式定义 symbol 对象。如果是运行时确定的名字，则可以通过
+          symbol 的构造函数来定义。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>import 'dart:mirrors';
 
-// If the symbol name is known at compile time.
+// 在编码的时候 symbol 名字已经知道
 const className = #MyClass;
 
-// If the symbol name is dynamically determined.
+// 如果是动态确定名字的用构造函数
 var userInput = askUserForNameOfFunction();
-var functionName = new Symbol(userInput);</pre><p>During minification, a compiler might replace a symbol name with a
-      different (often smaller) name. To convert from a symbol back to a
-      string, use <code class="literal">MirrorSystem.getName()</code>. This function
-      returns the correct name, even if the code was minified.</p><pre class="screen"><em><span class="remark">lang-dart
+var functionName = new Symbol(userInput);</pre><p>在压缩代码的时候，编译器科可能用一个短小的名字来替代一个 symbol 名字。
+          要用 symbol 还原该符号的名字，则调用 <code class="literal">MirrorSystem.getName()</code>。
+          即使代码被压缩过了，该函数还是会返回正确的名字。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>import 'dart:mirrors';
 
 const className = #MyClass;
 assert('MyClass' == MirrorSystem.getName(className));
-</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-mirrors-introspection"></a>Introspection</h3></div></div></div><p>Use mirrors to introspect the running program's structure. You can
-      inspect classes, libraries, instances, and more.</p><p>The examples in this section use the following Person
-      class:</p><pre class="screen"><em><span class="remark">lang-dart
+</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-mirrors-introspection"></a>Introspection（审查对象）</h3></div></div></div><p>使用 mirror 可以审查运行代码的结构。
+          可以审查 类、库、实例对象 等。</p><p>后面的示例使用下面的 Person
+      类演示：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>class Person {
   String firstName;
@@ -1556,20 +1514,20 @@ ch03/mirrors.dart
   void greet(String other) {
     print('Hello there, $other!');
   }
-}</pre><p>To begin, you need to <span class="emphasis"><em>reflect</em></span> on a class or
-      object to get its <span class="emphasis"><em>mirror</em></span>.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-class-inspect"></a>Class Mirrors</h4></div></div></div><p>Reflect on a Type to get its ClassMirror.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>首先，需要在一个类或者对象上 <span class="emphasis"><em>reflect</em></span> 
+          一个
+      <span class="emphasis"><em>mirror</em></span> 对象。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-class-inspect"></a>Class Mirrors</h4></div></div></div><p>在一个 Type 上反射一个 ClassMirror。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>ClassMirror mirror = reflectClass(Person);
 
-assert('Person' == MirrorSystem.getName(mirror.simpleName));</pre><p>You can also call <code class="literal">runtimeType</code> to get a Type
-        from an instance.</p><pre class="screen"><em><span class="remark">lang-dart
+assert('Person' == MirrorSystem.getName(mirror.simpleName));</pre><p>也可以用对象的 <code class="literal">runtimeType</code> 从对象上获取其 Type：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>var person = new Person('Bob', 'Smith', 33);
 ClassMirror mirror = reflectClass(person.runtimeType);
 
-assert('Person' == MirrorSystem.getName(mirror.simpleName));</pre><p>Once you have a ClassMirror, you can get a class's constructors,
-        fields, and more. Here is an example of listing the constructors of a
-        class.</p><pre class="screen"><em><span class="remark">lang-dart
+assert('Person' == MirrorSystem.getName(mirror.simpleName));</pre><p>一旦获取到了 ClassMirror，就可以查询类的 构造函数、变量、等信息。
+        下面是查询一个类的所有构造函数的示例：
+        </p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>showConstructors(ClassMirror mirror) {
   var methods = mirror.declarations.values.where((m) =&gt; m is MethodMirror);
@@ -1578,8 +1536,7 @@ ch03/mirrors.dart
   constructors.forEach((m) {
     print('The constructor ${m.simpleName} has ${m.parameters.length} parameters.');
   });
-}</pre><p>Here is an example of listing all of the fields declared by a
-        class.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>下面是查询一个类所有变量的示例：</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>showFields(ClassMirror mirror) {
   var fields = mirror.declarations.values.where((m) =&gt; m is VariableMirror);
@@ -1592,53 +1549,54 @@ ch03/mirrors.dart
     print('The field ${m.simpleName} is $privateStatus and $finalStatus and is annotated '
           'as $typeAnnotation');
   });
-}</pre><p>For a full list of methods, consult the <a class="ulink" href="http://api.dartlang.org/dart_mirrors/ClassMirror.html" target="_top">API docs
-        for ClassMirror</a>.</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-instance-inspect"></a>Instance Mirrors</h4></div></div></div><p>Reflect on an object to get an InstanceMirror.</p><pre class="screen"><em><span class="remark">lang-dart
+}</pre><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_mirrors/ClassMirror.html" target="_top">ClassMirror 的 API 文档
+        </a> 了解所有功能。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-instance-inspect"></a>Instance Mirrors</h4></div></div></div><p>在对象上使用反射可以得到一个 InstanceMirror。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>var p = new Person('Bob', 'Smith', 42);
-InstanceMirror mirror = reflect(p);</pre><p>If you have an InstanceMirror and you want to get the object
-        that it reflects, use <code class="literal">reflectee</code>.</p><pre class="screen"><em><span class="remark">lang-dart
+InstanceMirror mirror = reflect(p);</pre><p>
+            如果你有个 InstanceMirror 对象，可以通过
+            <code class="literal">reflectee</code> 来获取该 
+            InstanceMirror 对象的反射对象。
+            </p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>var person = mirror.reflectee;
-assert(identical(p, person));</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-mirrors-invocation"></a>Invocation</h3></div></div></div><p>Once you have an InstanceMirror, you can invoke methods and call
-      getters and setters. For a full list of methods, consult the <a class="ulink" href="http://api.dartlang.org/dart_mirrors/InstanceMirror.html" target="_top">API docs
-      for InstanceMirror</a>.</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-invoke"></a>Invoke Methods</h4></div></div></div><p>Use InstanceMirror's <code class="literal">invoke()</code> method to
-        invoke a method on an object. The first parameter specifies the method
-        to be invoked, and the second is a list of positional arguments to the
-        method. An optional third parameter lets you specify named
-        arguments.</p><pre class="screen"><em><span class="remark">lang-dart
+assert(identical(p, person));</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-mirrors-invocation"></a>Invocation</h3></div></div></div><p>
+          一旦有了一个 InstanceMirror 对象，就可以调用其函数或者 getter 和 setter 。参考
+      <a class="ulink" href="http://api.dartlang.org/dart_mirrors/InstanceMirror.html" target="_top">InstanceMirror API 文档
+      </a> 查看所有函数。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-invoke"></a>Invoke Methods</h4></div></div></div><p>用 InstanceMirror 的 <code class="literal">invoke()</code> 函数来调用
+            对象上的函数。第一个参数为调用的函数名字，第二个参数为该函数的参数列表，
+            第三个可选参数可以指定命名参数。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>var p = new Person('Bob', 'Smith', 42);
 InstanceMirror mirror = reflect(p);
 
-mirror.invoke(#greet, ['Shailen']);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-getset-fields"></a>Get and Set Properties</h4></div></div></div><p>Use InstanceMirror's <code class="literal">getField()</code> and
-        <code class="literal">setField()</code> methods to get and set properties of an
-        object.</p><pre class="screen"><em><span class="remark">lang-dart
+mirror.invoke(#greet, ['Shailen']);</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-mirrors-getset-fields"></a>Get 和 Set Properties</h4></div></div></div><p>用 InstanceMirror 的 <code class="literal">getField()</code> 和
+        <code class="literal">setField()</code> 函数来获取和设置一个对象
+        的变量。</p><pre class="screen"><em><span class="remark">lang-dart
 ch03/mirrors.dart
 </span></em>
 var p = new Person('Bob', 'Smith', 42);
 InstanceMirror mirror = reflect(p);
 
-// Get the value of a property.
+// 获取一个变量的值
 var fullName = mirror.getField(#fullName).reflectee;
 assert(fullName == 'Bob Smith');
   
-// Set the value of a property.
+// 设置变量的值
 mirror.setField(#firstName, 'Mary');
-assert(p.firstName == 'Mary');</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-mirrors"></a>More Information</h3></div></div></div><p>The article <a class="ulink" href="https://www.dartlang.org/articles/reflection-with-mirrors/" target="_top">Reflection
-      in Dart with Mirrors</a> has more information and examples. Also see
-      the API docs for <a class="ulink" href="http://api.dartlang.org/dart_mirrors.html" target="_top">dart:mirror,</a>
-      especially <a class="ulink" href="http://api.dartlang.org/dart_mirrors/MirrorsUsed.html" target="_top">MirrorsUsed</a>,
-      <a class="ulink" href="http://api.dartlang.org/dart_mirrors/ClassMirror.html" target="_top">ClassMirror,</a>
-      and <a class="ulink" href="http://api.dartlang.org/dart_mirrors/InstanceMirror.html" target="_top">InstanceMirror.</a></p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-summary"></a>Summary</h2></div></div></div><p>This chapter introduced you to the most commonly used functionality
-    in many of Dart’s built-in libraries. It didn’t cover all the built-in
-    libraries, however. Others that you might want to look into include <a class="ulink" href="http://api.dartlang.org/dart_collection.html" target="_top">dart:collection,</a>
-    <a class="ulink" href="http://api.dartlang.org/dart_isolate.html" target="_top">dart:isolate,</a>
-    <a class="ulink" href="http://api.dartlang.org/dart_js.html" target="_top">dart:js,</a> and
-    <a class="ulink" href="http://api.dartlang.org/dart_typed_data.html" target="_top">dart:typed_data.</a>
-    You can get yet more libraries by using the pub tool, discussed in the
-    next chapter. The <a class="ulink" href="http://pub.dartlang.org/packages/args" target="_top">args,</a> <a class="ulink" href="http://api.dartlang.org/logging.html" target="_top">logging,</a> <a class="ulink" href="http://pub.dartlang.org/packages/polymer" target="_top">polymer,</a> and <a class="ulink" href="http://api.dartlang.org/unittest.html" target="_top"><span class="keep-together">unittest</span></a> libraries are just a
-    sampling of what you can install using pub.</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 2. A Tour of the Dart Language </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 4. Tools</td></tr></table></div>
+assert(p.firstName == 'Mary');</pre></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-more-information-mirrors"></a>更多信息</h3></div></div></div><p> <a class="ulink" href="https://www.dartlang.cc/articles/reflection-with-mirrors/" target="_top">Reflection
+      in Dart with Mirrors</a> 这篇文章介绍了反射的更多信息。
+       另外更详细信息请参考 <a class="ulink" href="http://api.dartlang.org/dart_mirrors.html" target="_top">dart:mirror、</a>
+       <a class="ulink" href="http://api.dartlang.org/dart_mirrors/MirrorsUsed.html" target="_top">MirrorsUsed</a>、
+      <a class="ulink" href="http://api.dartlang.org/dart_mirrors/ClassMirror.html" target="_top">ClassMirror、</a>
+      和 <a class="ulink" href="http://api.dartlang.org/dart_mirrors/InstanceMirror.html" target="_top">InstanceMirror</a>
+      类的 API 文档。
+      </p></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch03-summary"></a>总结</h2></div></div></div><p>
+        该章介绍了 Dart 中大部分常用的内置库功能。但是该章并没有覆盖所有的库。下面这些库请参考其 API 文档：<a class="ulink" href="http://api.dartlang.org/dart_collection.html" target="_top">dart:collection、</a>
+    <a class="ulink" href="http://api.dartlang.org/dart_isolate.html" target="_top">dart:isolate、</a>
+    <a class="ulink" href="http://api.dartlang.org/dart_js.html" target="_top">dart:js、</a> 和
+    <a class="ulink" href="http://api.dartlang.org/dart_typed_data.html" target="_top">dart:typed_data。</a>
+    使用 pub 工具还可以使用其他库。下一章将介绍如何用 pub 工具来引用第三方库。用 pub 来安装  <a class="ulink" href="http://pub.dartlang.org/packages/args" target="_top">args、</a> <a class="ulink" href="http://api.dartlang.org/logging.html" target="_top">logging、</a> <a class="ulink" href="http://pub.dartlang.org/packages/polymer" target="_top">polymer、</a> 和 <a class="ulink" href="http://api.dartlang.org/unittest.html" target="_top"><span class="keep-together">unittest</span></a>  等库是非常简单的。</p></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch02.html">Prev</a> </td><td width="20%" align="center"> </td><td width="40%" align="right"> <a accesskey="n" href="ch04.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Chapter 2. Dart 语言概览 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> Chapter 4. 工具</td></tr></table></div>
       </article>
 
       
@@ -1674,7 +1632,7 @@ assert(p.firstName == 'Mary');</pre></div></div><div class="sect2"><div class="t
           <h4>资源</h4>
           <ul>
             <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
-            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
             <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
           </ul>
         </div>
@@ -1682,7 +1640,8 @@ assert(p.firstName == 'Mary');</pre></div></div><div class="sect2"><div class="t
           <h4>社区</h4>
           <ul>
             <li><a href="/support/">邮件列表</a></li>
-            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="http://forum.dartlang.cc">中文社区</a></li>
+            <li><a href="http://weibo.com/cndart">中文微博</a></li>
             <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
             <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
             <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>

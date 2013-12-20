@@ -6,19 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Dartium: Chromium with the Dart VM from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
+  <title>Dartium: 带有 Dart VM 的 Chromium from Dart: Up and Running | Dart: 用于创建结构化的web应用</title>
   <meta property="wb:webmaster" content="a984f6440858ee44" />
   <meta property="twitter:account_id" content="376585411" />
-  <meta itemprop="name" content="Dartium: Chromium with the Dart VM from Dart: Up and Running | Dart: 用于创建结构化的web应用">
+  <meta itemprop="name" content="Dartium: 带有 Dart VM 的 Chromium from Dart: Up and Running | Dart: 用于创建结构化的web应用">
   
   <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
   
-  <meta itemprop="description" content="Read Dartium: Chromium with the Dart VM of Dart: Up and Running, published by O'Reilly.">
+  <meta itemprop="description" content="Read Dartium: 带有 Dart VM 的 Chromium of Dart: Up and Running, published by O'Reilly.">
 
 
   <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
 <link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
 <link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+<link rel='stylesheet' type='text/css' href='/css/font-awesome.min.css'>
 
   
     <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
@@ -125,7 +126,7 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
-                <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+                <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
@@ -139,7 +140,7 @@
             </li>
             <li class="dropdown">
               <a href="/support/" title="Community and Support">
-                                              社区
+                                              支持
               </a>
             </li>
           </ul>
@@ -174,32 +175,32 @@
       </div>
 
       <article class="up-and-running-contents">
-        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dartium: Chromium with the Dart VM</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-editor.html">Prev</a> </td><th width="60%" align="center">Chapter 4. Tools</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dart2js.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dartium"></a>Dartium: Chromium with the Dart VM</h2></div></div></div><p>This section tells you how to get and use Dartium, a Chromium-based
-    browser that includes the Dart VM. This browser can execute Dart web apps
-    directly, so you don’t have to compile your code to JavaScript until
-    you’re ready to test on other browsers.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>This browser is a technical preview, and it might have security
-      and stability issues. <span class="bold"><strong>Do not use Dartium as your
-      primary browser!</strong></span></p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-download"></a>Downloading and Installing the Browser</h3></div></div></div><p>If you have an up-to-date version of Dart Editor, you already have
-      Dartium.</p><p>If you don’t have Dart Editor or want a different version of
-      Dartium, you can get it separately from the <a class="ulink" href="http://www.dartlang.org/downloads.html" target="_top">Downloads page.</a> The
-      Dartium binary does expire after a while. When that happens, you’ll
-      need to download a new copy if you want to continue using
-      Dartium.</p><p>You don’t usually need to do anything special to install Dartium:
-      just unarchive the ZIP file. If you want Dart Editor to launch a
-      particular copy of Dartium, then put that copy in the same directory 
-      as the <code class="literal">dart-sdk</code> directory of your Dart installation
-      directory (see <a class="xref" href="ch01.html#ch01-editor-download" title="Step 1: Download and Install the Software">the section called “Step 1: Download and Install the Software”</a>), replacing the
-      original copy of Chromium.</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-launch"></a>Launching the Browser</h3></div></div></div><p>To launch Dartium, navigate to its directory in your finder, and
-      double-click the Chromium executable file. Or use Dart Editor as
-      described in <a class="xref" href="ch04-tools-editor.html#ch04-editor-run" title="Running Apps">the section called “Running Apps”</a> or the command line as
-      described in <a class="xref" href="ch04-tools-dartium.html#ch04-dartium-command" title="Launching from the Command Line">the section called “Launching from the Command Line”</a>.</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p><span class="emphasis"><em>If you already use Chromium:</em></span> If another
-        version of Chromium is open, then you could have a profile conflict.
-        To avoid this, you can open Dartium or Chromium from the command line
-        with the <span class="keep-together"><a class="ulink" href="http://www.chromium.org/user-experience/user-data-directory" target="_top">--user-data-dir
-        flag.</a></span></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-bug"></a>Filing Bugs</h3></div></div></div><p>If you find a bug in Dartium, create an issue in the Dart project
-      and use the <a class="ulink" href="http://bit.ly/WO0U32" target="_top">Dartium bug
-      template.</a></p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-linking"></a>Linking to Dart Source</h3></div></div></div><p>Use a script tag with a type <code class="literal">application/dart</code> to link to your Dart source
-      file. Example:</p><pre class="programlisting"><em><span class="remark">lang-html
+        <div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Dartium: 带有 Dart VM 的 Chromium</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="ch04-tools-editor.html">Prev</a> </td><th width="60%" align="center">Chapter 4. 工具</th><td width="20%" align="right"> <a accesskey="n" href="ch04-tools-dart2js.html">Next</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="ch04-tools-dartium"></a>Dartium: 带有 Dart VM 的 Chromium</h2></div></div></div><p>本节内容告诉你如何下载和使用 Dartium 浏览器。 
+        Dartium 直接运行 Dart
+        web 应用中的 Dart 代码， 这样你无需把 Dart 代码编译为 JavaScript 就可以
+        测试你的应用了。
+    </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>该浏览器目前还处于开发早期。 <span class="bold"><strong>请不要用
+          Dartium 作为你的日常使用浏览器。</strong></span></p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-download"></a>下载安装 Dartium</h3></div></div></div><p>如果你已经下载了最新的 Dart 编辑器，则里面已经包含了 
+      Dartium.</p><p>
+          如果你还没有下载 Dart 编辑器或者你想下载一个其他版本的
+          Dartium ，你可以从
+      <a class="ulink" href="http://www.dartlang.cc/downloads.html" target="_top">下载页面下载。</a> 
+      Dartium 程序在一段时间以后就会失效。
+      所以当你的 Dartium 失效后，你需要从新下载一个。
+      </p><p>
+          只需要解压下载的文件 就安装好 Dartium 了。
+	如果你想让 Dart 编辑器启动你下载的 Dartium，则需要把下载的文件复制到          
+       <code class="literal">dart-sdk</code> 目录中的 Dartium 目录下
+      (参考 <a class="xref" href="ch01.html#ch01-editor-download" title="第一步：下载并安装 Dart">the section called “第一步：下载并安装 Dart”</a>) ，并替换之前下载的  Chromium。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-launch"></a>启动 Dartium</h3></div></div></div><p>
+          要启动 Dartium， 只需要双击 Chromium 可执行文件即可。
+          或者按照 <a class="xref" href="ch04-tools-editor.html#ch04-editor-run" title="运行应用">the section called “运行应用”</a> 描述的方式在 Dart 编辑器中启动，或者按照
+       <a class="xref" href="ch04-tools-dartium.html#ch04-dartium-command" title="从命令行启动 Dartium">the section called “从命令行启动 Dartium”</a> 描述的方式在命令行中启动。</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p><span class="emphasis"><em>已经使用 Chromium 的用户请注意：</em></span> 
+        如果另外一个 Chromium 在运行，当运行 Dartium 的时候可能会出现配置冲突的情况。
+        通过命令行  <span class="keep-together"><a class="ulink" href="http://www.chromium.org/user-experience/user-data-directory" target="_top">--user-data-dir
+        参数来启动 Dartium 可以避免该问题。</a></span></p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-bug"></a>提交 Bug</h3></div></div></div><p>如果你发现了一个 Dartium 的 bug，可以按照
+       <a class="ulink" href="http://bit.ly/WO0U32" target="_top">Dartium bug
+      模板</a> 来给 Dart 开发组提交 Bug。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-linking"></a>连接到 Dart 代码</h3></div></div></div><p>用类型为 <code class="literal">application/dart</code> 的 script 来连接 Dart 代码。
+      例如：</p><pre class="programlisting"><em><span class="remark">lang-html
 </span></em>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;body&gt;
@@ -208,10 +209,10 @@
     &lt;!-- Support for non-Dart browsers. --&gt;
     &lt;script src="packages/browser/dart.js"&gt;&lt;/script&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Dart Editor automatically adds both the <code class="literal">application/dart</code> script tag and the
-        <code class="literal">dart.js</code> script tag into the project’s main
-        HTML file.</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-detect"></a>Detecting Dart Support</h3></div></div></div><p>You can check whether a browser supports Dart
-      with this JavaScript code:
+&lt;/html&gt;</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>Dart 编辑器自动在项目的启动 HTML 文件
+            中添加
+<code class="literal">application/dart</code> script 和
+        <code class="literal">dart.js</code> script 标签。</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-detect"></a>检测浏览器是否支持 Dart</h3></div></div></div><p>可以通过 JavaScript 代码检测浏览器是否支持 Dart：
       </p><pre class="programlisting"><em><span class="remark">lang-js
 </span></em>// In JavaScript code:
 if (navigator.userAgent.indexOf('(Dart)') == -1) {
@@ -220,20 +221,21 @@ if (navigator.userAgent.indexOf('(Dart)') == -1) {
       // ...Fall back to compiled JS...
     }
   }, false);
-}</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-command"></a>Launching from the Command Line</h3></div></div></div><p>Because Dartium is based on Chromium, all <a class="ulink" href="http://www.chromium.org/developers/how-tos/run-chromium-with-flags" target="_top">Chromium
-      flags</a> should work. In some cases, you might want to specify
-      Dart-specific flags so that you can tweak the embedded Dart VM’s
-      behavior. For example, while developing your web app, you might want the
-      VM to verify type annotations and check assertions. To achieve that,
-      you can enable checked mode (the VM’s <code class="literal">--checked</code>
-      flag).</p><p>On Linux, you can specify flags by starting Dartium as
-      follows:</p><pre class="screen"><em><span class="remark">lang-sh
-</span></em>DART_FLAGS='--checked' <em class="replaceable"><code>path</code></em>/chrome</pre><p>On Mac:</p><pre class="screen"><em><span class="remark">lang-sh
+}</pre></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch04-dartium-command"></a>从命令行启动 Dartium</h3></div></div></div><p>由于 Dartium 是基于  Chromium 的，所有 <a class="ulink" href="http://www.chromium.org/developers/how-tos/run-chromium-with-flags" target="_top">Chromium
+      标记( flag )</a> 都应该可以使用。有些情况下，你可能想使用 Dart 相关的标记来设置 Dart VM 的行为。
+      例如，在开发 web 应用的时候，你想让 VM 检查类型声明和断言（assertions），
+      启用 检测模式 即可启用该功能 (VM 的 <code class="literal">--checked</code>
+      标记)。
+      </p><p>在 Linux，可以通过如下方式启动
+          Dartium：
+		</p><pre class="screen"><em><span class="remark">lang-sh
+</span></em>DART_FLAGS='--checked' <em class="replaceable"><code>path</code></em>/chrome</pre><p> Mac 系统:</p><pre class="screen"><em><span class="remark">lang-sh
 </span></em>DART_FLAGS='--checked'              \
-  <em class="replaceable"><code>path</code></em>/Chromium.app/Contents/MacOS/Chromium</pre><p>Or (also on Mac):</p><pre class="screen"><em><span class="remark">lang-sh
+  <em class="replaceable"><code>path</code></em>/Chromium.app/Contents/MacOS/Chromium</pre><p>Mac 系统也可以这样 :</p><pre class="screen"><em><span class="remark">lang-sh
 </span></em>DART_FLAGS='--checked'              \
-   open <em class="replaceable"><code>path</code></em>/Chromium.app</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>You can see the command-line flags and executable path of your
-        current Chromium-based browser by going to <code class="literal">chrome://version</code>.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-editor.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dart2js.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Dart Editor </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> dart2js: The Dart-to-JavaScript Compiler</td></tr></table></div>
+   open <em class="replaceable"><code>path</code></em>/Chromium.app</pre><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>
+            通过  <code class="literal">chrome://version</code> 你可以查看当前
+        使用的命令行标记和执行文件路径。</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="ch04-tools-editor.html">Prev</a> </td><td width="20%" align="center"><a accesskey="u" href="ch04.html">Up</a></td><td width="40%" align="right"> <a accesskey="n" href="ch04-tools-dart2js.html">Next</a></td></tr><tr><td width="40%" align="left" valign="top">Dart 编辑器 </td><td width="20%" align="center"><a accesskey="h" href="index.html">Home</a></td><td width="40%" align="right" valign="top"> dart2js: Dart-to-JavaScript 编译器</td></tr></table></div>
       </article>
 
       
@@ -269,7 +271,7 @@ if (navigator.userAgent.indexOf('(Dart)') == -1) {
           <h4>资源</h4>
           <ul>
             <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
-            <li><a href="http://synonym.dartlang.org/">Translations from Dart</a></li>
+            <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
             <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
           </ul>
         </div>
@@ -277,7 +279,8 @@ if (navigator.userAgent.indexOf('(Dart)') == -1) {
           <h4>社区</h4>
           <ul>
             <li><a href="/support/">邮件列表</a></li>
-            <li><a href="http://bbs.dartlang.cc">中文社区</a></li>
+            <li><a href="http://forum.dartlang.cc">中文社区</a></li>
+            <li><a href="http://weibo.com/cndart">中文微博</a></li>
             <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
             <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
             <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
