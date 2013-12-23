@@ -1,9 +1,7 @@
 name: site_scripts
 description: Utility scripts
 dependencies:
-  http: any
-  path: any
-
-#dependencies:
-#  js: any
-#  unittest: any
+  http:
+    path: D:\dartlang.cc\scripts\package\http
+  path:
+    path: D:\dartlang.cc\scripts\package\path

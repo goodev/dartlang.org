@@ -2,10 +2,20 @@
 # See http://pub.dartlang.org/doc/glossary.html#lockfile
 packages:
   http:
-    description: http
-    source: hosted
-    version: "0.7.3+1"
+    description:
+      path: "D:\\dartlang.cc\\scripts\\package\\http"
+      relative: false
+    source: path
+    version: "0.9.2"
   path:
-    description: path
-    source: hosted
-    version: "0.7.3+1"
+    description:
+      path: "D:\\dartlang.cc\\scripts\\package\\path"
+      relative: false
+    source: path
+    version: "1.0.0"
+  stack_trace:
+    description:
+      path: "D:\\dartlang.cc\\scripts\\package\\stack_trace"
+      relative: false
+    source: path
+    version: "0.9.1"
