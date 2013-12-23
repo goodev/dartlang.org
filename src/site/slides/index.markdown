@@ -12,6 +12,8 @@ snippet_img: imgs/dart-today-and-beyond.jpg
 
 观看 Dart 语言演讲视频和幻灯片。
 你还可以观看五分钟 [ Dart 技巧视频](/dart-tips/)。
+更多视频，请访问
+[Dart 视频集合 ](http://www.youtube.com/user/DartlangTV)（自备楼梯）。
 
 {% injectdata presos slides/presentations.yaml %}
 
@@ -49,5 +51,3 @@ snippet_img: imgs/dart-today-and-beyond.jpg
 
 {% cycle '', '', '</div>' %}
 {% endfor %}
-
-

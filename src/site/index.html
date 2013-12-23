@@ -1,6 +1,5 @@
 ---
 layout: homepage
-googleapi: true
 js:
 - url: /js/display-news.js
 - url: /js/os-switcher.js
@@ -18,8 +17,13 @@ js:
       <div class="hero container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
-            <h5>1.0 发布了</h5>
-            <h1>Dart 是一种新的用来建构可扩展Web应用程序的语言。</h1>
+            <h1>Dart 是一个用来建构<br>可扩展 Web 工程的新平台。</h1>
+            <ul>
+              <li>语言</li>
+              <li>库</li>
+              <li>工具</li>
+              <li>编译为 JavaScript</li>
+            </ul>
             {% include downloads/_dart-editor.html buttonclass="btn btn-default btn-lg download-btn" %}
           </div>
         </div>
@@ -41,7 +45,7 @@ js:
                 <h2>了解下 Dart</h2>
                 <p class="timer"><i class="sprite-icon-timer"></i>大约 5 分钟</p>
                 <p>Dart 是基于类的和面向对象的、非教条式的语言。</p>
-                <a id="see-code" href="#code"><i class="sprite-icon-triangle"></i>了解代码</a>
+                <a id="see-code" href="#code" data-slide="true"><i class="sprite-icon-triangle"></i>了解代码</a>
               </div>
               <div class="col-md-4">
                 <h2>尝试下 Dart</h2>

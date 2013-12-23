@@ -38,7 +38,7 @@ next-title: "开始"
     <li><a href="#dom" data-toggle="tab">浏览器</a></li>
     <li><a href="#packages" data-toggle="tab">Packages</a></li>
     <li><a href="#polymer" data-toggle="tab">Polymer</a></li>
-    <li><a href="#futures" data-toggle="tab">Futures</a></li>
+    <li><a href="#futures" data-toggle="tab">Futures 和 Streams</a></li>
     <li><a href="#forms" data-toggle="tab">表单和数据</a></li>
     <!--<li><a href="#mobile" data-toggle="tab">移动浏览器</a></li>-->
   </ul>
@@ -194,6 +194,11 @@ next-title: "开始"
           </section>
         </div>
 
+          <section>
+          <h4 class="no-permalink"><a href="streams/"><img src="images/target.png" height="20" width="20">&nbsp;Use Streams for Data</a></h4>
+          <p>用 streams 来管理数据序列</p>
+          <img src="images/streams-code.png">
+          </section>
         <div class="col-md-6">
         </div>
 

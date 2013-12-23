@@ -999,6 +999,12 @@ code {
   -webkit-transform: translateZ(0);
 }
 
+/* Fix perf bug with desktop chrome */
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  -webkit-transform: translateZ(0);
+}
+
 /* ***** Footer ***** */
 .footer {
   background: #3f4245 url(../imgs/footer-bg.png) repeat-x left top;

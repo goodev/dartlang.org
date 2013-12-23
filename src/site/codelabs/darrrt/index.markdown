@@ -56,7 +56,7 @@ header:
 在该步骤中，你需要下载 Dart 并获取一些实例代码。
 
 
-### <i class="icon-anchor"> </i> 下载 Dart。
+### <i class="fa fa-anchor"> </i> 下载 Dart。
 
 <div class="trydart-step-details" markdown="1">
 如果你尚未下载 Dart，
@@ -72,7 +72,7 @@ header:
 </p>
 </div>
 
-### <i class="icon-anchor"> </i> 启动编辑器。
+### <i class="fa fa-anchor"> </i> 启动编辑器。
 
 <div class="trydart-step-details" markdown="1">
 打开 `dart` 目录，双击  **DartEditor**。
@@ -82,7 +82,7 @@ header:
 
 </div>
 
-### <i class="icon-anchor"> </i> 下载示例代码。
+### <i class="fa fa-anchor"> </i> 下载示例代码。
 
 <div class="trydart-step-details" markdown="1">
 <a href="https://github.com/dart-lang/one-hour-codelab/archive/master.zip">下载</a>
@@ -91,7 +91,7 @@ header:
 得到一个名称为 `one-hour-codelab-master` 的目录。
 </div>
 
-### <i class="icon-anchor"> </i> 打开 the one-hour-codelab-master 示例应用
+### <i class="fa fa-anchor"> </i> 打开 the one-hour-codelab-master 示例应用
 
 <div class="trydart-step-details" markdown="1">
 在 Dart 编辑器中，
@@ -132,7 +132,7 @@ Dart 编辑器自动安装需要的包。
 熟悉下 Dart 和 HTML 代码，
 然后运行应用。
 
-### <i class="icon-anchor"> </i> 展开 1-blankbadge 目录。
+### <i class="fa fa-anchor"> </i> 展开 1-blankbadge 目录。
 
 <div class="trydart-step-details" markdown="1">
 在 Dart 编辑器中，通过点击目录前面的小箭头
@@ -141,14 +141,14 @@ Dart 编辑器自动安装需要的包。
 这个目录包含两个文件 ：`piratebadge.html` 和 `piratebadge.dart`。
 </div>
 
-### <i class="icon-anchor"> </i> 打开文件。
+### <i class="fa fa-anchor"> </i> 打开文件。
 
 <div class="trydart-step-details" markdown="1">
 通过在 Dart 编辑器中双击 `piratebadge.html` 和 `piratebadge.dart`来
 打开这两个文件。
 </div>
 
-### <i class="icon-anchor"> </i> 浏览代码。
+### <i class="fa fa-anchor"> </i> 浏览代码。
 
 <div class="trydart-step-details" markdown="1">
 熟悉下框架应用的 Dart 和 HTML 代码。
@@ -240,7 +240,7 @@ Dart 代码根基用户输入内容
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 </div> </div>
 
-### <i class="icon-anchor"> </i> 运行应用。
+### <i class="fa fa-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
 要在 Dart 编辑器中运行该应用，只需要选择 `piratebadge.html`
@@ -279,7 +279,7 @@ Dart 虚拟机的浏览器。
 当用户在输入框中输入的时候，
 Dart 代码使用输入的值来更新徽章的内容。
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.html.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.html.
 
 <div class="row"> <div class="col-md-7" markdown="1">
 
@@ -313,7 +313,7 @@ Dart 使用 CSS 选择器（例如 这个 ID）
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 
@@ -420,7 +420,7 @@ void main() {
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 运行应用。
+### <i class="fa fa-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
 
@@ -459,7 +459,7 @@ void main() {
 当用户点击按钮的时候，
 应用把 `Anne Bonney` 这个名字输入到徽章中。
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.html.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.html.
 
 <div class="trydart-step-details" markdown="1">
 在输入框下方添加 &lt;button&gt; 标签。
@@ -493,7 +493,7 @@ Dart 代码就可以通过 ID 获取按钮。
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 编辑 piragebadge.dart.
+### <i class="fa fa-anchor"> </i> 编辑 piragebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 在 import 语句下方，定义一个顶级 `ButtonElement` 变量。
@@ -718,7 +718,7 @@ genButton.text = 'Aye! Gimme a name!';
 </div></div>
 
 
-### <i class="icon-anchor"> </i> 运行应用。
+### <i class="fa fa-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
 
@@ -763,7 +763,7 @@ genButton.text = 'Aye! Gimme a name!';
 或者你也可以在构造函数
 中提供名字和称呼。
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 在文件顶部添加一个 import 语句。
@@ -1077,7 +1077,7 @@ void generateBadge(Event e) {
 
 </div></div>
 
-### <i class="icon-anchor"> </i> 运行应用。
+### <i class="fa fa-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
   
@@ -1121,7 +1121,7 @@ void generateBadge(Event e) {
 当重新打开该应用的时候，
 会从本地保存的数据中初始化徽章名字。
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 从 `dart:convert` 库中导入 JSON 转换器。
@@ -1334,7 +1334,7 @@ void main() {
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 运行应用。
+### <i class="fa fa-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
   
@@ -1377,7 +1377,7 @@ void main() {
 这样可以方便在添加更多的
 名字和称呼。
 
-### <i class="icon-anchor"> </i> 创建 piratenames.json.
+### <i class="fa fa-anchor"> </i> 创建 piratenames.json.
 
 <div class="trydart-step-details" markdown="1">
 使用菜单 **File > New File...** 来创建一个名称为
@@ -1432,7 +1432,7 @@ map 中有两个字符串列表。
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.html.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.html.
 
 <div class="trydart-step-details" markdown="1">
 禁用输入框和按钮。
@@ -1464,7 +1464,7 @@ Dart 代码将启用
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 编辑 piratebadge.dart.
+### <i class="fa fa-anchor"> </i> 编辑 piratebadge.dart.
 
 <div class="trydart-step-details" markdown="1">
 
@@ -1686,7 +1686,7 @@ void main() {
 
 </div> </div>
 
-### <i class="icon-anchor"> </i> 运行应用。
+### <i class="fa fa-anchor"> </i> 运行应用。
 
 <div class="trydart-step-details" markdown="1">
   
@@ -1719,7 +1719,7 @@ void main() {
 
 </div>
 
-### <i class="icon-anchor"> </i> 分享您的海盗名字。
+### <i class="fa fa-anchor"> </i> 分享您的海盗名字。
 
 <div class="trydart-step-details" markdown="1">
 
@@ -1744,7 +1744,7 @@ void main() {
 
 ##Step 7: 继续前行，了解 Dart 语言的更多特性 {#step-seven}
 
-### <i class="icon-anchor"> </i> 回顾下你都学会了那些内容！
+### <i class="fa fa-anchor"> </i> 回顾下你都学会了那些内容！
 
 <div class="trydart-step-details" markdown="1">
 
@@ -1810,7 +1810,7 @@ Dart 库简介</a>
 
 </div>
 
-### <i class="icon-anchor"> </i> 看看示例项目。
+### <i class="fa fa-anchor"> </i> 看看示例项目。
 
 <div class="trydart-step-details" markdown="1">
 
@@ -1818,7 +1818,7 @@ Dart 库简介</a>
  [示例项目](/samples/)界面查看示例代码。
 </div>
 
-### <i class="icon-anchor"> </i> 阅读语言教程。
+### <i class="fa fa-anchor"> </i> 阅读语言教程。
 
 <div class="trydart-step-details" markdown="1">
 从 [Dart 语言教程](/docs/tutorials/)中学习更多内容。

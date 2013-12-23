@@ -1,0 +1,1073 @@
+<?xml version="1.0"?>
+<synonyms>
+<theme id="theme-getting-started">
+  <title>入门</title>
+  <synonym id="syn-code-embedding">
+    <title>嵌入脚本</title>
+    <code language="dart"><![CDATA[
+// 使用下面两个标签可以支持所有浏览器
+
+// 用于支持 Dart VM 的浏览器
+<script type='application/dart' src='program.dart'></script>
+
+// 如果浏览器不支持 Dart VM
+// 则下面的脚本会载入 javascript 版本的
+// 程序代码
+<script src="packages/browser/dart.js">
+</script>
+]]></code>
+  </synonym>
+  <synonym id="syn-entry-point">
+    <title>入口</title>
+    <code language="dart"><![CDATA[
+// 必须
+main() {
+  // 这是程序的入口
+}
+
+// 或者
+main(List<String> args) {
+  // ...
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-detect-language-unavailability">
+    <title>检测是否支持 Dart</title>
+    <code language="dart"><![CDATA[
+<script type='text/javascript'>
+  if (navigator.userAgent.indexOf('(Dart)') === -1) {
+    // 浏览器不支持 Dart
+  }
+</script>
+]]></code>
+  </synonym>
+  <synonym id="syn-printing-to-the-console">
+    <title>输出结果到控制台</title>
+    <code language="dart"><![CDATA[
+print('Level completed.');
+]]></code>
+  </synonym>
+  <synonym id="syn-modal-alerts">
+    <title>模态对话框</title>
+    <code language="dart"><![CDATA[
+import 'dart:html';
+
+window.alert('Clicked on the button.');
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-code-modularity">
+  <title>代码的模块性</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#libraries</learn-more>
+  <synonym id="syn-define-a-library">
+    <title>定义一个库</title>
+    <code language="dart"><![CDATA[
+// 定义一个 animals 库
+library animals;
+
+class Dog {
+  noise() => 'BARK!';
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-use-a-library">
+    <title>使用库</title>
+    <code language="dart"><![CDATA[
+import 'animals.dart';
+var fido = new Dog();
+
+// 支持前缀，可以避免命名冲突
+import 'animals.dart' as pets;
+var fido = new pets.Dog();
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-variables">
+  <title>变量</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#variables</learn-more>
+  <synonym id="syn-create--assign-value">
+    <title>定义变量并赋值</title>
+    <code language="dart"><![CDATA[
+// Dart 变量可以有类型
+String myName = 'Aaron';
+
+// 但是类型是可选的
+var myOtherName = 'Aaron';
+]]></code>
+  </synonym>
+  <synonym id="syn-default-value">
+    <title>默认值</title>
+    <code language="dart"><![CDATA[
+var myName;
+// == null
+
+int x;
+// == null
+]]></code>
+  </synonym>
+  <synonym id="syn-hoisting">
+    <title>变量作用域提升</title>
+    <code language="dart"><![CDATA[
+// Dart 不提升变量的作用域。下面的函数
+// 会产生一个错误信息："cannot resolve name"
+printName() {
+  print('Hello, $name'); // compilation error here
+  var name = 'Bob';
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-final-variables">
+    <title>Final 变量</title>
+    <code language="dart"><![CDATA[
+final name = 'Bob';
+
+// final 变量也可以有类型定义
+final String name = 'Bob';
+
+// final 变量不能再次赋值，否则抛出一个 错误
+name = 'Alice';
+// ERROR: cannot assign value to final variable
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-collections">
+  <title>集合</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch03.html#ch03-collections</learn-more>
+  <synonym id="syn-arrays--lists">
+    <title>Arrays / Lists</title>
+    <code language="dart"><![CDATA[
+var a = new List();
+var a = [];
+var a = ['apple', 'banana', 'cherry'];
+
+a.add('orange');
+
+a.length == 4;
+
+//   Dart 支持泛型
+var a = new List<String>();
+]]></code>
+  </synonym>
+  <synonym id="syn-custom-sort">
+    <title>自定义排序</title>
+    <code language="dart"><![CDATA[
+var numbers = [42, 2.1, 5, 0.1, 391];
+numbers.sort((a, b) => a - b);
+// == [0.1, 2.1, 5, 42, 391];
+]]></code>
+  </synonym>
+  <synonym id="syn-key-value-pairs">
+    <title>Key-value 对</title>
+    <code language="dart"><![CDATA[
+// Dart 有个 Map 接口用于 key-value 对
+var periodic = {};
+var periodic = new Map();
+]]></code>
+  </synonym>
+  <synonym id="syn-appropriate-keys">
+    <title>Appropriate keys</title>
+    <code language="dart"><![CDATA[
+// Map literals must use strings as keys
+var periodic = {
+  'gold' : 'AU',
+  'silver' : 'AG'
+};
+
+// Map 构造函数可以用任意对象作为 key
+var favoriteIceCream = new Map();
+favoriteIceCream[new Kid('Billy')] = 'vanilla';
+]]></code>
+  </synonym>
+  <synonym id="syn-accessing-values">
+    <title>访问 values</title>
+    <code language="dart"><![CDATA[
+// Values 只能用方括号语法来访问和赋值，
+// 不支持用原点访问。
+periodic['gold'] // == 'AU'
+
+periodic['gold'] = 'Glitter';
+
+// 可以只当该 key 不存在的情况下才设置该 value
+// 通过一个方法生成一个 value
+periodic.putIfAbsent('Xenon', () => 'XE');
+]]></code>
+  </synonym>
+  <synonym id="syn-sets-collections-of-unique-items">
+    <title>Sets (不包含重复元素的集合)</title>
+    <code language="dart"><![CDATA[
+var fruits = new Set();
+fruits.add('oranges');
+fruits.add('apples');
+fruits.length // == 2
+
+fruits.add('oranges'); // duplicate of existing item
+fruits.length // == 2
+]]></code>
+  </synonym>
+  <synonym id="syn-queues-fifo">
+    <title>Queues (FIFO)</title>
+    <code language="dart"><![CDATA[
+// Queues 优化了从头开始删除元素
+var queue = new Queue();
+queue.add('event:32342');
+queue.add('event:49309');
+
+print(queue.length);  // 2
+
+var eventId = queue.removeFirst();
+
+print(eventId == 'event:32342'); // true
+print(queue.length); // 1
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-strings">
+  <title>Strings</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch03.html#ch03-strings-and-regular-expressions</learn-more>
+  <synonym id="syn-raw-strings">
+    <title>原始 strings</title>
+    <code language="dart"><![CDATA[
+var rawString = r'The following is not expanded to a tab \t';
+
+var escapedString = 'The following is not expanded to a tab \\t';
+
+rawString == escapedString // == true
+]]></code>
+  </synonym>
+  <synonym id="syn-interpolation">
+    <title>字符串插值</title>
+    <code language="dart"><![CDATA[
+var name = 'Aaron';
+var greeting = 'My name is $name.';
+
+var greetingPolish = 'My Polish name would be ${name}ski.';
+
+// calculations can be performed in string interpolation
+element.style.top = '${top + 20}px';
+]]></code>
+  </synonym>
+  <synonym id="syn-concatenation">
+    <title>字符串连接</title>
+    <code language="dart"><![CDATA[
+// 相邻的字符串字面量可以连接起来
+var longMessage = 'This is a very long line. '
+                  'It is concatenated into one string.';
+
+// 也可以用加号 +
+
+var anotherMessage = 'This is also a very long line. ' +
+                     'It is concatenated with a +.';
+                  
+// 也可以用字符串插值
+var name = 'Aaron';
+var greeting = 'My name is $name.';  
+]]></code>
+  </synonym>
+  <synonym id="syn-substring">
+    <title>子字符串</title>
+    <code language="dart"><![CDATA[
+'doghouses'.substring(3, 8); // == 'house'
+]]></code>
+  </synonym>
+  <synonym id="syn-replace-all-occurences">
+    <title>替代所有匹配的字符串</title>
+    <code language="dart"><![CDATA[
+'doghouses'.replaceAll('s','z'); // == 'doghouzez'
+]]></code>
+  </synonym>
+  <synonym id="syn-replace-one-occurence">
+    <title>替代一个匹配的字符串</title>
+    <code language="dart"><![CDATA[
+'racecar'.replaceFirst('r', 'sp'); // == 'spacecar'
+]]></code>
+  </synonym>
+  <synonym id="syn-multi-line-strings">
+    <title>多行 strings</title>
+    <code language="dart"><![CDATA[
+// Dart 忽略第一个换行符 (如果该换行符直接在
+// 引号后面)，但是不忽略最后一个。
+var string = '''
+This is a string that spans
+many lines.
+''';
+]]></code>
+  </synonym>
+  <synonym id="syn-split-into-an-array">
+    <title>分隔成数组</title>
+    <code language="dart"><![CDATA[
+var animals = 'dogs, cats, gophers, zebras';
+var individualAnimals = animals.split(', ');
+// == ['dogs', 'cats', 'gophers', 'zebras'];
+]]></code>
+  </synonym>
+  <synonym id="syn-test-whether-a-string-starts-with-a-substring">
+    <title>测试字符串是否以另外一个字符串开头</title>
+    <code language="dart"><![CDATA[
+// Dart string objects have a built-in startsWith method
+'racecar'.startsWith('race'); // == true
+'racecar'.startsWith('pace'); // == false
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-booleans">
+  <title>Booleans</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#booleans</learn-more>
+  <synonym id="syn-if-statements">
+    <title>If 语句</title>
+    <code language="dart"><![CDATA[
+var bugNumbers = [3234,4542,944,124];
+if (bugNumbers.length > 0) {
+  print('Not ready for release');
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-ternary-statements">
+    <title>三元语句</title>
+    <code language="dart"><![CDATA[
+var bugNumbers = [3234,4542,944,124];
+var status = bugNumbers.length > 0 ? 'RED' : 'GREEN';
+
+print('The build is $status');
+]]></code>
+  </synonym>
+  <synonym id="syn-checking-for-empty-string">
+    <title>检测空字符串</title>
+    <code language="dart"><![CDATA[
+var emptyString = '';
+
+if (emptyString.isEmpty) {
+  print('use isEmpty');
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-checking-for-zero">
+    <title>检测是否为 0</title>
+    <code language="dart"><![CDATA[
+var zero = 0;
+
+if (zero == 0) {
+  print('use == 0 to check zero');
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-checking-for-null">
+    <title>检测是否为 null</title>
+    <code language="dart"><![CDATA[
+var myNull = null;
+
+if (myNull == null) {
+  print('use == null to check null');
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-checking-for-nan">
+    <title>检测是否为 NaN</title>
+    <code language="dart"><![CDATA[
+var myNaN = 0/0;
+
+if (myNaN.isNaN) {
+  print('use isNaN to check if a number is NaN');
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-checking-for-undefined">
+    <title>检测是否 没定义（undefined）</title>
+    <code language="dart"><![CDATA[
+// Dart 没有 undefined 概念
+]]></code>
+  </synonym>
+  <synonym id="syn-value-and-identity-equality">
+    <title>Value and identity equality</title>
+    <code language="dart"><![CDATA[
+/*
+ * 在 Dart 中， == 按照如下顺序检测：
+ * 1) 如果 x 和 y 都不是 null，则返回 identical(x, y)
+ * 2) 否则，返回 x.==(y)
+ */
+
+/*
+ * 这意味着：
+ * a) 使用 identical(a, b) 替代  === (Dart 中没有 ===)
+ * b) 当实现 ==() 时，你无需关心参数是否为
+ *    null
+ * c) 你不能定义一个
+ *    等于 null 的类型
+ * d) null == null
+ */
+
+// 因此，下面的代码是正确的：
+
+var letterA = 'A';
+var charA = new String.fromCharCodes([65]);
+
+// String 是这样定义相等的： '同样的字符代码和同样的字符顺序'
+letterA == charA // == true
+
+// 然后，下面的代码和 JavaScript 不同
+
+var number5 = 5;
+var char5 = '5';
+
+number5 != char5 // == true, 他们的类型不同，所以不相等
+
+// 你自己的类可以定义 ==
+class Person {
+  String name;
+  String ssn;
+  Person(this.name, this.ssn);
+  
+  bool operator ==(Person other) {
+    return ssn == other.ssn;
+  }
+}
+
+new Person('Bob', '111') == new Person('Robert', '111');
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-functions">
+  <title>方法</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#functions</learn-more>
+  <synonym id="syn-function-definition">
+    <title>Function 定义</title>
+    <code language="dart"><![CDATA[
+// Dart 中方法的返回值类型是
+// 可选的
+fn() {
+  …
+  return true;
+}
+
+// 也可以这样写
+bool fn() {
+  …
+  return true;
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-return-value">
+    <title>返回值</title>
+    <code language="dart"><![CDATA[
+// 和 JavaScript 一样，用 'return' 关键字
+// 来返回方法的值
+fn() {
+  return 'Hello';
+}
+fn(); // == 'Hello'
+
+// 如果方法没有返回值则返回 null.
+doNothing() {
+  // nothing
+}
+
+doNothing(); // == returns null
+
+// 如果方法体只是返回一个表达式，则
+// 可以用简写形式
+fn() => true;
+]]></code>
+  </synonym>
+  <synonym id="syn-assign-a-function-to-a-variable">
+    <title>用变量保存方法</title>
+    <code language="dart"><![CDATA[
+var loudify = (msg) => msg.toUpperCase();
+
+loudify('not gonna take it anymore'); // NOT GONNA TAKE IT ANYMORE
+]]></code>
+  </synonym>
+  <synonym id="syn-optional-parameters">
+    <title>可选参数</title>
+    <code language="dart"><![CDATA[
+fn(a, b, c) => c;
+
+fn(1); // ERROR: NoSuchMethodException
+fn(1, 2, 3); // == 3
+
+// Dart 使用方括号支持可选参数
+fn(a, [b, c]) => c;
+fn('a'); // == null
+]]></code>
+  </synonym>
+  <synonym id="syn-default-parameters">
+    <title>带有默认值的参数</title>
+    <code language="dart"><![CDATA[
+String send(msg, [rate='First Class']) {
+  return '${msg} was sent via ${rate}';
+}
+
+send('hello'); // == 'hello was sent via First Class'
+send("I'm cheap", '4th class'); // == "I'm cheap was sent via 4th class"
+]]></code>
+  </synonym>
+  <synonym id="syn-named-parameters">
+    <title>命名参数</title>
+    <code language="dart"><![CDATA[
+String send(msg, {rate: 'First Class'}) {
+  return '${msg} was sent via ${rate}';
+}
+
+// 如果参数是可选的则可以用命名参数
+send("I'm cheap", rate:'4th class'); // == "I'm cheap was sent via 4th class"
+]]></code>
+  </synonym>
+  <synonym id="syn-variable-number-of-arguments">
+    <title>参数的个数</title>
+    <code language="dart"><![CDATA[
+// Dart 不支持参数的个数
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-iterators">
+  <title>Iterators</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#control-flow-statements</learn-more>
+  <synonym id="syn-for-loops-for-lists">
+    <title>For 循环一个 list</title>
+    <code language="dart"><![CDATA[
+var colors = ['red', 'orange', 'green'];
+
+for (var i = 0; i < colors.length; i++) {
+  print(colors[i]);
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-for-in-loops">
+    <title>For-in 循环</title>
+    <code language="dart"><![CDATA[
+var fruits = ['orange', 'apple', 'banana'];
+
+// Dart 中的 'in' 符号返回 list
+// 中的元素而不是位置索引
+
+for (var fruit in fruits) {
+  print(fruit);
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-for-loops-for-objectsmaps">
+    <title>For loops for objects/maps</title>
+    <code language="dart"><![CDATA[
+var data = { … };
+
+for (var key in data.keys) {
+  print('$key, ${data[key]}');
+}
+
+// 另外，Dart 的 Map 还有一个 forEach 函数
+
+data.forEach((key, value) {
+  print('${key}, ${value}');
+});
+]]></code>
+  </synonym>
+  <synonym id="syn-closures-and-counters-in-loops">
+    <title>Closures and counters in loops</title>
+    <code language="dart"><![CDATA[
+// Dart doesn't reuse and close over the same
+// loop variable in each iteration
+var callbacks = [];
+for (var i = 0; i < 2; i++) {
+  callbacks.add(() => print(i));
+}
+
+callbacks[0]() // == 0
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-classes">
+  <title>Classes</title>
+  <learn-more>http://www.dartlang.cc/docs/dart-up-and-running/ch02.html#classes</learn-more>
+  <synonym id="syn-define">
+    <title>定义类</title>
+    <code language="dart"><![CDATA[
+class Person {
+  String name;
+
+  String greet() => 'Hello, $name';
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-constructor-with-parameter">
+    <title>带参数构造函数</title>
+    <code language="dart"><![CDATA[
+class Person {
+  String name;
+
+  Person(String name) {
+    this.name = name;
+  }
+}
+
+// 构造函数赋值简写形式
+class Person {
+  String name;
+
+  // 以 'this.' 开头的参数会自动
+  // 的赋值给实例变量
+  Person(this.name);
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-instantiate">
+    <title>实例化</title>
+    <code language="dart"><![CDATA[
+var person = new Person();
+]]></code>
+  </synonym>
+  <synonym id="syn-reflection">
+    <title>反射</title>
+    <code language="dart"><![CDATA[
+var name = "Bob";
+name.runtimeType  // == String
+]]></code>
+  </synonym>
+  <synonym id="syn-check-the-type">
+    <title>检测类型</title>
+    <code language="dart"><![CDATA[
+var name = 'Bob';
+
+name is String // == true
+
+name is! int // == true
+]]></code>
+  </synonym>
+  <synonym id="syn-subclass">
+    <title>子类</title>
+    <code language="dart"><![CDATA[
+class Person {
+  String name;
+
+  Person(this.name);
+
+  String greet() => 'Hello, $name';
+}
+
+class Employee extends Person {
+  num salary;
+
+  Employee(String name, this.salary) : super(name);
+  
+  void grantRaise(num percent) {
+    percent /= 100;
+    salary += (salary * percent).toInt();
+  }
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-operator-overloading">
+    <title> &quot;重写&quot; 操作符</title>
+    <code language="dart"><![CDATA[
+class Hug {
+  num strength;
+  Hug(this.strength);
+  
+  Hug operator +(Hug other) => new Hug(strength + other.strength);
+}
+
+main() {
+  var hug1 = new Hug(10);
+  var hug2 = new Hug(100);
+  var bigHug = hug1 + hug2;
+}
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-finding-elements-in-dom">
+  <title>查找 DOM 中的元素</title>
+  <synonym id="syn-find-one-element-by-id">
+    <title>通过 id 查找一个元素</title>
+    <code language="dart"><![CDATA[
+querySelector('#main');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-one-element-by-class">
+    <title>通过 class 查找一个元素</title>
+    <code language="dart"><![CDATA[
+querySelector('.visible');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-many-elements-by-class">
+    <title>通过 class 查找多个元素</title>
+    <code language="dart"><![CDATA[
+querySelectorAll('.visible');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-one-element-by-tag">
+    <title>通过 tag 查找一个元素</title>
+    <code language="dart"><![CDATA[
+querySelector('div');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-many-elements-by-tag">
+    <title>通过 tag 查找多个元素</title>
+    <code language="dart"><![CDATA[
+querySelectorAll('div');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-one-element-by-name">
+    <title>通过 name 查找一个元素</title>
+    <code language="dart"><![CDATA[
+querySelector('[name="form"]');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-many-elements-by-name">
+    <title>通过 name 查找多个元素</title>
+    <code language="dart"><![CDATA[
+querySelectorAll('[name="form"]');
+]]></code>
+  </synonym>
+  <synonym id="syn-find-elements-by-combination-of-above">
+    <title>通过上面的组合查找元素</title>
+    <code language="dart"><![CDATA[
+querySelector('#main').querySelector('div').querySelectorAll('.visible');
+
+querySelectorAll('#main div:first-of-type .visible');
+]]></code>
+  </synonym>
+  <synonym id="syn-iterate-over-a-list-of-elements">
+    <title>遍历元素列表</title>
+    <code language="dart"><![CDATA[
+for (var el in els) {
+  doSomethingWithEl(el);
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-access-the-first-child">
+    <title>访问第一个子元素</title>
+    <code language="dart"><![CDATA[
+elem.children.first;
+
+elem.children[0];
+]]></code>
+  </synonym>
+  <synonym id="syn-find-out-whether-an-element-has-children-elements">
+    <title>查看一个元素是否有子元素</title>
+    <code language="dart"><![CDATA[
+!elem.nodes.isEmpty;
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-manipulating-dom">
+  <title>操作 DOM</title>
+  <synonym id="syn-create-an-element">
+    <title>创建一个元素</title>
+    <code language="dart"><![CDATA[
+import 'dart:html';
+
+var element = new Element.tag('div');
+
+// 很多元素都有自己的构造函数
+var element = new DivElement();
+]]></code>
+  </synonym>
+  <synonym id="syn-create-an-element-and-set-its-contents">
+    <title>创建元素并设置内容</title>
+    <code language="dart"><![CDATA[
+var element = new Element.html('<p>A quick brown <em>fox</em>.</p>');
+]]></code>
+  </synonym>
+  <synonym id="syn-add-an-element-to-a-parent">
+    <title>给元素设置一个父节点</title>
+    <code language="dart"><![CDATA[
+element.children.add(newElement);
+]]></code>
+  </synonym>
+  <synonym id="syn-remove-an-element-from-its-parent">
+    <title>从父节点删除一个元素</title>
+    <code language="dart"><![CDATA[
+element.remove();
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-regular-expressions">
+  <title>正则表达式</title>
+  <synonym>
+    <code language="dart"><![CDATA[
+var email = 'test@example.com';
+(new RegExp(r'@')).firstMatch(email);
+// == Match Object
+]]></code>
+  </synonym>
+  <synonym>
+    <code language="dart"><![CDATA[
+var invalidEmail = 'f@il@example.com';
+(new RegExp(r'@')).allMatches(invalidEmail)
+// == Iterable Match Object
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-exceptions">
+  <title>Exceptions</title>
+  <synonym id="syn-throw-an-exception">
+    <title>抛出一个异常</title>
+    <code language="dart"><![CDATA[
+throw new Exception("Intruder Alert!!");
+
+// 也可以抛出 strings
+
+throw "Unexpected user input";
+]]></code>
+  </synonym>
+  <synonym id="syn-catch-an-exception">
+    <title>捕获异常</title>
+    <code language="dart"><![CDATA[
+main() {    
+  try {
+    int.parse("three");
+  } on FormatException catch(fe) {
+    print("Ouch! Detected: $fe");
+  } catch(e) {
+    print("If some other type of exception");
+  } finally {
+    print("This runs even if an exception is thrown");
+  }
+}
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-event-handling">
+  <title>DOM 事件处理</title>
+  <synonym id="syn-attach-an-event-handler">
+    <title>添加时间处理函数</title>
+    <code language="dart"><![CDATA[
+element.onClick.listen(handleOnClick);
+
+handleOnClick(Event e) {
+  // ...
+}
+
+// 如果事件处理函数不使用 Event，则可以这样
+
+element.onClick.listen((e) => subscribeToService());
+]]></code>
+  </synonym>
+  <synonym id="syn-remove-an-event-handler">
+    <title>删除一个事件处理函数</title>
+    <code language="dart"><![CDATA[
+var subscription = element.onClick.listen(handleOnClick);
+subscription.cancel();
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-timing">
+  <title>Timing</title>
+  <synonym id="syn-schedule-a-future-event">
+    <title>计划一个未来事件</title>
+    <code language="dart"><![CDATA[
+import 'dart:async';
+var timer = new Timer(new Duration(milliseconds:500), () { … });
+]]></code>
+  </synonym>
+  <synonym id="syn-measure-the-execution-time-of-a-function">
+    <title>测量函数的执行时间</title>
+    <code language="dart"><![CDATA[
+int measure(fn) {
+  var watch = new Stopwatch();
+  watch.start();
+  fn();
+  return watch.elapsedMicroseconds;
+}
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-html-attributes">
+  <title>HTML 属性（attribute）</title>
+  <synonym id="syn-get-html-attribute">
+    <title>获取 HTML 属性</title>
+    <code language="dart"><![CDATA[
+element.attributes['href'];
+]]></code>
+  </synonym>
+  <synonym id="syn-set-html-attribute">
+    <title>设置 HTML 属性</title>
+    <code language="dart"><![CDATA[
+element.attributes['playable'] = true;
+]]></code>
+  </synonym>
+  <synonym id="syn-remove-html-attribute">
+    <title>删除 HTML 属性</title>
+    <code language="dart"><![CDATA[
+element.attributes.remove('playable');
+]]></code>
+  </synonym>
+  <synonym id="syn-check-if-html-attribute-exists">
+    <title>检测 HTML 属性是否存在</title>
+    <code language="dart"><![CDATA[
+element.attributes.containsKey('href');
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-css-classes">
+  <title>CSS classes</title>
+  <synonym id="syn-add-css-class">
+    <title>添加 CSS class</title>
+    <code language="dart"><![CDATA[
+element.classes.add('new-class');
+]]></code>
+  </synonym>
+  <synonym id="syn-remove-css-class">
+    <title>删除 CSS class</title>
+    <code language="dart"><![CDATA[
+element.classes.remove('new-class');
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-ajax">
+  <title>Ajax</title>
+  <synonym id="syn-request-data-via-xmlhttprequest">
+    <title>用 XMLHttpRequest 请求数据</title>
+    <code language="dart"><![CDATA[
+HttpRequest.request("/data.json").then((req) {
+  print("The contents of your data: ${req.responseText}");
+});
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-jquery">
+  <title>jQuery</title>
+  <synonym id="syn-react-to-document-finishing-loading">
+    <title>响应文档加载完成事件</title>
+    <code language="dart"><![CDATA[
+window.onContentLoaded.listen((e) => print('Content is loaded'));
+
+// 然而， main() 通常在 DOMContentLoaded 之后执行
+]]></code>
+  </synonym>
+  <synonym id="syn-node-lookup">
+    <title>查找节点</title>
+    <code language="dart"><![CDATA[
+var els = querySelectorAll('div');
+]]></code>
+  </synonym>
+  <synonym id="syn-node-creation">
+    <title>创建节点</title>
+    <code language="dart"><![CDATA[
+var pic = new Element.tag('img');
+
+pic.classes.add('avatar');
+pic.classes.toggle('main');
+
+pic.attributes['src'] = 'myPic.jpg';
+
+// 或者:
+
+var pic = new ImageElement('myPic.jpg');
+pic.classes
+    ..add('avatar')
+    ..toggle('main');
+    
+// 级联调用 (..) 可以在同一对象上
+// 调用多个函数
+
+document.body.children.add(pic);
+]]></code>
+  </synonym>
+  <synonym id="syn-event-handling">
+    <title>事件处理</title>
+    <code language="dart"><![CDATA[
+querySelectorAll('a.person').forEach((el) {
+  el.onClick.listen((e) => print('Person clicked'));
+});
+]]></code>
+  </synonym>
+  <synonym id="syn-relative-nodes">
+    <title>相对节点</title>
+    <code language="dart"><![CDATA[
+var myNode = querySelector('div');
+
+var parent = myNode.parent;
+
+var next = myNode.nextNode;
+]]></code>
+  </synonym>
+  <synonym id="syn-children">
+    <title>子节点</title>
+    <code language="dart"><![CDATA[
+var myNode = querySelector('div');
+
+if (!myNode.children.isEmpty) {
+  myNode.children.clear();
+}
+]]></code>
+  </synonym>
+  <synonym id="syn-clone">
+    <title>克隆</title>
+    <code language="dart"><![CDATA[
+var clonedElement = querySelector('#about').clone(true);
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-math">
+  <title>Math</title>
+  <synonym id="syn-absolute-value">
+    <title>绝对值</title>
+    <code language="dart"><![CDATA[
+-4.abs() // == 4
+]]></code>
+  </synonym>
+  <synonym id="syn-ceiling">
+    <title>Ceiling</title>
+    <code language="dart"><![CDATA[
+4.89.ceil() // == 5
+]]></code>
+  </synonym>
+  <synonym id="syn-floor">
+    <title>Floor</title>
+    <code language="dart"><![CDATA[
+4.89.floor() // == 4
+]]></code>
+  </synonym>
+  <synonym id="syn-random">
+    <title>随机数</title>
+    <code language="dart"><![CDATA[
+import 'dart:math';
+
+var rand = new Random();
+
+// 返回一个大于等于 0.0　小于
+//  1.0 的随机 double
+rand.nextDouble();
+
+// 返回一个随机的布尔值
+rand.nextBool();
+
+// 返回一个大于等于 0
+// 小于 10 的随机整数
+rand.nextInt(10);
+]]></code>
+  </synonym>
+  <synonym id="syn-sine-and-cosine">
+    <title>Sine 和 Cosine</title>
+    <code language="dart"><![CDATA[
+import 'dart:math' as Math;
+sin(Math.PI/2) // == 1.0
+cos(Math.PI) // == -1.0
+]]></code>
+  </synonym>
+  <synonym id="syn-convert-a-string-to-a-number">
+    <title>把字符串转化为数字</title>
+    <code language="dart"><![CDATA[
+int.parse('3') // == 3
+
+double.parse('3.14') // == 3.14
+
+int.parse('3px') // ERROR: throws FormatException
+int.parse('three') // ERROR: throws FormatException 
+]]></code>
+  </synonym>
+</theme>
+<theme id="theme-run-time-program-manipulation">
+  <title>运行时操作代码</title>
+  <synonym id="syn-eval">
+    <title>Eval</title>
+    <code language="dart"><![CDATA[
+// Dart 不支持 eval()。这不是一个 Bug。
+]]></code>
+  </synonym>
+  <synonym id="syn-adding-a-method-to-a-class">
+    <title>在类上添加一个函数</title>
+    <code language="dart"><![CDATA[
+// Dart 不支持代码编译后修改类的行为
+]]></code>
+  </synonym>
+</theme>
+</synonyms>
