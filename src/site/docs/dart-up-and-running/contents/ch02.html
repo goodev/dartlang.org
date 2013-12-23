@@ -1009,7 +1009,9 @@ main() {
   assert(v.x == 2 &amp;&amp; v.y == 3);         // v   == (2,3)
   assert((v+w).x == 4 &amp;&amp; (v+w).y == 5); // v+w == (4,5)
   assert((v-w).x == 0 &amp;&amp; (v-w).y == 1); // v-w == (0,1)
-}</pre><p>重写  <code class="literal">==</code> 的示例在  <a class="xref" href="ch03.html#ch03-implementing-map-keys" title="实现 map 的 key">the section called “实现 map 的 key”</a> 有介绍。
+}</pre><p>
+    如果重写 == ，则也应该重写 Object 的 <code class="literal">hashCode</code> getter。        
+            重写  <code class="literal">==</code> 的示例在  <a class="xref" href="ch03.html#ch03-implementing-map-keys" title="实现 map 的 key">the section called “实现 map 的 key”</a> 有介绍。
         关于重写的更多信息，参考 <a class="xref" href="ch02.html#ch02-class-extend" title="继承一个类">the section called “继承一个类”</a>。</p></div></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch02-class-abstract"></a>抽象类</h3></div></div></div><p>使用 <code class="literal">abstract</code>
           修饰符来定义一个  <em class="firstterm">抽象类</em>，抽象类无法被实例化。
           抽象类通常用于定义接口并具有一些基本行为实现。如果你想让你的抽象类看起来是可被实例化的，则可以提供一个
