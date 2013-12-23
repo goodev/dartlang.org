@@ -87,7 +87,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                文档
+                                                文档 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
@@ -109,7 +109,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                       工具
+                                       工具  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
@@ -121,7 +121,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                     资源
+                                                     资源  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
@@ -183,7 +183,12 @@
 </span></em><em><span class="remark">ch03/number-tests.dart
 </span></em>assert(int.parse('42') == 42);
 assert(int.parse('0x42') == 66);
-assert(double.parse('0.50') == 0.5);</pre><p>要指定是几进制数，用可选的 <code class="literal">radix</code>
+assert(double.parse('0.50') == 0.5);</pre><p>或者用 num 的 parse() 函数， 该函数在可能的情况下
+          会创建一个 整数，如果不是整数，则创建一个 double：</p><pre class="screen"><em><span class="remark">lang-dart
+</span></em><em><span class="remark">ch03/number-tests.dart
+</span></em>assert(num.parse('42') is int);
+assert(num.parse('0x42') is int);
+assert(num.parse('0.50') is double);</pre><p>要指定是几进制数，用可选的 <code class="literal">radix</code>
       参数：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/number-tests.dart
 </span></em>assert(int.parse('42', radix: 16) == 66);</pre><p>用 <code class="literal">toString()</code> 函数 (<a class="ulink" href="http://api.dartlang.org/dart_core/Object.html" target="_top">Object</a> 类定义
@@ -281,12 +286,13 @@ var greeting = greetingTemplate.replaceAll(new RegExp('NAME'), 'Bob');
 assert(greeting != greetingTemplate); // greetingTemplate didn't change.</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_building_a_string"></a>创建一个 string</h4></div></div></div><p>要在代码中生成一个 string， 你可以用 StringBuffer。
         只有调用 
         <code class="literal">toString()</code> 函数的时候 StringBuffer 才生成
-        String 。</p><pre class="screen"><em><span class="remark">lang-dart
+        String 。 <code class="literal">writeAll()</code> 函数还有一个可选的参数可以设置
+        字符之间的分隔符，在下面的示例中用的分隔符的空格。</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/string-tests.dart
 </span></em>var sb = new StringBuffer();
 
 sb..write('Use a StringBuffer ')
-  ..writeAll(['for ', 'efficient ', 'string ', 'creation'])
+  ..writeAll(['for', 'efficient', 'string', 'creation'], ' ')
   ..write('.');
 
 var fullString = sb.toString();
@@ -463,10 +469,10 @@ var keys = hawaiianBeaches.keys;
 assert(keys.length == 3);
 assert(new Set.from(keys).contains('oahu'));
 
-// 获取 map 所有 value 的集合 (an Iterable of Iterables).
+// 获取 map 所有 value 的集合 (an Iterable of Lists).
 var values = hawaiianBeaches.values;
 assert(values.length == 3);
-assert(values.any((v) =&gt; v.indexOf('waikiki') != -1));</pre><p>用
+assert(values.any((v) =&gt; v.contains('waikiki')));</pre><p>用
         <code class="literal">containsKey()</code> 函数检测
         map 中是否包含一个 key。由于 map 的 value 可以为 null，
         所以你不能通过判断 key 来判断是否包含一个 value。
@@ -501,8 +507,7 @@ assert(!teas.isEmpty);</pre><p>要在 list、 set、 或者 map 中的每个元�
 teas.forEach((tea) =&gt; print('I drink $tea'));</pre><p>当调用 Map 的 <code class="literal">forEach()</code> 函数的时候，
             方法参数必须有两个参数（分别为 key 和 value）：</p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-1.dart
-</span></em>// 注意：遍历集合是无序的
-hawaiianBeaches.forEach((k,v) {
+</span></em>hawaiianBeaches.forEach((k, v) {
   print('I want to visit $k and swim at $v');
   // I want to visit oahu and swim at [waikiki, kailua, waimanalo], etc.
 });</pre><p>还有一个用来遍历集合的方法：<code class="literal">map()</code>
@@ -633,7 +638,9 @@ assert(december2000.month == 12);
 // 计算两个日期之间的间隔
 // 返回一个 Duration 对象
 var duration = y2001.difference(y2k);
-assert(duration.inDays == 366); // y2k 是闰年</pre><p>参考  <a class="ulink" href="http://api.dartlang.org/dart_core/DateTime.html" target="_top">DateTime</a>
+assert(duration.inDays == 366); // y2k 是闰年</pre><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Warning</h3><p>Using a Duration to shift a DateTime by days can be
+          problematic, due to clock shifts (to daylight saving time, for
+          example). Use UTC dates if you must shift days.</p></div><p>参考 <a class="ulink" href="http://api.dartlang.org/dart_core/DateTime.html" target="_top">DateTime</a>
       和 <a class="ulink" href="http://api.dartlang.org/dart_core/Duration.html" target="_top">Duration</a>
       的 API 文档来了解这些类的所有函数。</p></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="ch03-utility-interfaces"></a>常用工具类</h3></div></div></div><p>核心库还包含用来拍下、map 的 key 和遍历对象的各种工具类。</p><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-comparing-objects"></a>比较对象</h4></div></div></div><p>实现 <a class="ulink" href="http://api.dartlang.org/dart_core/Comparable.html" target="_top">Comparable</a>
         接口的对象可以和另外一个对象比较，通常用来排序。 <code class="literal">compareTo()</code> 函数
@@ -659,7 +666,7 @@ main() {
             提高速度。但是通常 NaN != NaN ，所以 对象默认并不是 identical() 的。</span></em></p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/map-keys.dart
 </span></em>class Person {
-  String firstName, lastName;
+  final String firstName, lastName;
 
   Person(this.firstName, this.lastName);
 
@@ -673,15 +680,19 @@ main() {
 
   // 如果重写了 hashCode 则需要同时重写 operator== 
   bool operator==(other) {
-    if (identical(other, this)) return true;
-    return (other.firstName == firstName &amp;&amp; other.lastName == lastName);
+    if (other is! Person) return false;
+    Person person = other;
+    return (person.firstName == firstName &amp;&amp; person.lastName == lastName);
   }
 }
 
 main() {
   var p1 = new Person('bob', 'smith');
   var p2 = new Person('bob', 'smith');
+  var p3 = 'not a person';
   assert(p1.hashCode == p2.hashCode);
+  assert(p1 == p2);
+  assert(p1 != p3);
 }</pre></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-iteration"></a>Iteration（遍历）</h4></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_core/Iterable.html" target="_top">Iterable</a>
         和 <a class="ulink" href="http://api.dartlang.org/dart_core/Iterator.html" target="_top">Iterator</a>
         类支持 for-in 循环。
@@ -700,8 +711,8 @@ class ProcessIterator implements Iterator&lt;Process&gt; {
 }
 
 // 一个可以遍历所有 Process 的虚构类
-// 继承 Iterable 类。
-class Processes extends DoubleLinkedQueue&lt;Process&gt; {
+// 继承 Iterable 的一个子类。
+class Processes extends IterableBase&lt;Process&gt; {
   final Iterator&lt;Process&gt; iterator = new ProcessIterator();
 }
 
@@ -743,12 +754,7 @@ main() {
   .then((String result) {
     print(result); });
   // 在这里处理错误情况</pre><p>用 <code class="literal">catchError()</code> 来处理 Future 对象
-            抛出的异常。
-            注意：要在 <code class="literal">then()</code> 函数的返回值对象上调用
-        <code class="literal">catchError()</code> 才能处理 Future 的异常；
-        如果在 原来的 Future 对象上调用 <code class="literal">catchError()</code> 则不能处理 Future 抛出
-        的异常。
-        <em><span class="remark">{待定：当你调用错了的时候会发生何种现象？}</span></em></p><pre class="screen"><em><span class="remark">lang-dart
+            抛出的异常。 </p><pre class="screen"><em><span class="remark">lang-dart
 </span></em><em><span class="remark">ch03/ch03_4_async/web/ch03_4_async.dart
 </span></em>HttpRequest.getString(url)
   .then((String result) {  // 回调函数
@@ -757,7 +763,11 @@ main() {
     // 处理或者忽略错误情况
   });</pre><p>这里的 <code class="literal">then().catchError()</code> 模式是
             异步版本的
-        <code class="literal">try</code>-<code class="literal">catch</code> 模式。</p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-chaining-multiple-async-methods"></a>串联多个异步函数</h4></div></div></div><p>由于 <code class="literal">then()</code> 函数返回一个 Future ，
+        <code class="literal">try</code>-<code class="literal">catch</code> 模式。</p><div class="note" style="margin-left: 0.5in; margin-right: 0.5in;"><h3 class="title">Note</h3><p>注意：要在  <code class="literal">then()</code> 上
+              调用  <code class="literal">catchError()</code> ，而不是在原来的 Future
+              上调用。否则的话， <code class="literal">catchError()</code> 只能处理
+              Future 中的 异常而无法
+              处理 <code class="literal">then()</code> 中的异常。</p></div></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="ch03-chaining-multiple-async-methods"></a>串联多个异步函数</h4></div></div></div><p>由于 <code class="literal">then()</code> 函数返回一个 Future ，
             所以提供了一种按照顺序执行多个异步方法的方式。
             如果 <code class="literal">then()</code> 的回调函数返回一个 Future，
             则 <code class="literal">then()</code> 直接返回该对象。
@@ -1280,7 +1290,7 @@ main() {
     .transform(new LineSplitter())
     .listen(
       (String line) { 
-        print('Read ${line.length} bytes from stream');
+        print('Got ${line.length} characters from stream');
       },
       onDone: () { print('file is now closed'); },
       onError: (e) { print(e.toString()); });
@@ -1332,29 +1342,26 @@ main() {
 
 main() {
   dartHandler(HttpRequest request) {
-    print('New request');
+    request.response.headers.contentType = new ContentType('text', 'plain');
     request.response.write('Dart is optionally typed');
     request.response.close();
   };
 
   HttpServer.bind('127.0.0.1', 8888).then((HttpServer server) {
     server.listen((request) { 
-      print("got request");
+      print('Got request for ${request.uri.path}');
       if (request.uri.path == '/languages/dart') {
         dartHandler(request);
       } else {
         request.response.write('Not found');
-        request.response.statusCode = HttpStatus.NOT_FOUND;
         request.response.close();
       }
     });
   });
-}</pre><p>更完善的 HTTP 服务器示例请参考 <a class="ulink" href="https://code.google.com/p/dart/source/browse/branches/bleeding_edge/dart/samples/dartiverse_search/" target="_top">dartiverse_search</a>
-        应用，该应用使用了<a class="ulink" href="https://pub.dartlang.org/packages/http_server" target="_top">http_server</a>
-        和 <a class="ulink" href="http://pub.dartlang.org/packages/route" target="_top">route</a> 包。<em><span class="remark">
-        {PENDING: point to the <a class="ulink" href="http://www.dartlang.cc/samples/" target="_top">Dart Code Samples</a>
-        instead? Need to come up with a good way of pointing to
-        samples.}</span></em></p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_http_client"></a>HTTP 客户端</h4></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_io/HttpClient.html" target="_top">HttpClient</a>
+}</pre><p>更加完善的 HTTP 服务器，请参考 <a class="xref" href="ch05.html" title="Chapter 5. 项目演练： Dartiverse Search">Chapter 5, <i>项目演练： Dartiverse Search</i></a>。使用了 Dartiverse Search 示例，使用 dart:io 里面的功能
+        实现了一个 web 服务器，例如 <a class="ulink" href="https://pub.dartlang.org/packages/http_server" target="_top">http_server</a>
+        和 <a class="ulink" href="http://pub.dartlang.org/packages/route" target="_top">route</a> 包。
+        </p></div><div class="sect3"><div class="titlepage"><div><div><h4 class="title"><a name="_http_client"></a>HTTP 客户端</h4></div></div></div><p> <a class="ulink" href="http://api.dartlang.org/dart_io/HttpClient.html" target="_top">HttpClient</a>
         类可以访问 HTTP 资源。你可以设置请求头、使用 HTTP 方法、和 读写数据。
         HttpClient 类无法在浏览器应用中使用。
         在浏览器应用中需要用

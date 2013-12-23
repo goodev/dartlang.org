@@ -87,7 +87,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                文档
+                                                文档 <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
@@ -109,7 +109,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                       工具
+                                       工具  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
@@ -121,7 +121,7 @@
             </li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                     资源
+                                                     资源  <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
@@ -166,9 +166,9 @@
 
 <div class="container-page">
   <div class="container">
-  	<div class="container sub-page">
-       <div class="has-permalinks">
-         {::options parse_block_html="true" /}
+    <div class="container col-md-10 col-md-offset-1 sub-page">
+      <div class="has-permalinks">
+      {::options parse_block_html="true" /}
 <div class="col-md-3">
 <div class="bs-sidebar hidden-print affix-top" role="complementary">
 {::options parse_block_html="false" /}	
@@ -756,7 +756,7 @@ Many more have been released or are in development.
 [Oilpan]: https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/V1vJmirHUGE
 [Dartium]: https://www.dartlang.org/tools/dartium/
 [JSON]: http://api.dartlang.org/docs/channels/stable/latest/dart_convert.html#JSON
-       </div>
+      </div>
     </div>
   </div>
 </div>
