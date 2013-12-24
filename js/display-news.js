@@ -11,7 +11,7 @@ function loadAndDisplayPosts() {
         a.setAttribute('href', entry.link);
         a.appendChild(document.createTextNode(entry.title));
         var p = document.createElement("p");
-        p.appendChild(document.createTextNode("news.dartlang.org"));
+        p.appendChild(document.createTextNode("news.dartlang.cc"));
         p.innerHTML+="&nbsp;&nbsp;&nbsp;";
         p.appendChild(a);
         container.appendChild(p);
