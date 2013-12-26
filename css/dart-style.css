@@ -1,4 +1,3 @@
-
 body {
   font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -1483,4 +1482,7 @@ dd{
 /* ***** baidu share ***** */
 .alignRight{
 	float:right;
+}
+i.sprite-icon-social-weibo {
+  background-position: -5110px -5110px;
 }
