@@ -1484,3 +1484,8 @@ dd{
 .alignRight{
 	float:right;
 }
+
+i.sprite-icon-social-weibo {
+  background-position: -1000 -350px;
+  margin-left: 20px;
+}
