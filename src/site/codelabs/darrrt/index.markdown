@@ -202,7 +202,7 @@ Dart 编辑器自动安装需要的包。
 
 * 在后面的步骤中，
 带有 `badgeName` 的 &lt;span&gt; 元素将有
-Dart 代码根基用户输入内容
+Dart 代码根据用户输入内容
 来动态更新。
 
 * `piratebadge.dart` 脚本是该应用的主要代码文件。
