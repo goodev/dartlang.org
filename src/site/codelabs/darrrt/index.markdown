@@ -707,8 +707,7 @@ void updateBadge(Event e) {
 
 * `updateBadge()` 代码用级联操作符来设置
 按钮的两个属性。
-和下面的代码具
-有同样的效果。
+和下面的代码具有同样的效果。
 
 <pre>
 genButton.disabled = false;
