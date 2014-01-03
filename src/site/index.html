@@ -92,9 +92,9 @@ js:
                   <p>你可能已经见过甚至编写过 Dart 代码。 <a href="/samples/">查看更多示例。</a> </p>
                   <div class="code-hldr">
 <pre class="prettyprint lang-dart">
-import 'dart:math' show Random;        // Import a class from a library.
+import 'dart:math' show Random;        // 从库中导入一个类
 
-void main() {                          // The app starts executing here.
+void main() {                          // 应用从这里开始执行
   print(new Die(<a href="#" class="dart-popover" data-toggle="popover" title="Named parameters" data-html="true" data-trigger="hover focus" data-content="Set the value of a named optional parameter. In this case, set the number of sides for a new Die object to 12.">n: 12</a>).roll());       // Print a new object's value. Chain method calls.
 }
 
@@ -108,11 +108,11 @@ class Die {                            // 定义一个类
     if (4 <= n && n <= 20) {
       sides = n;
     } else {
-      throw new ArgumentError(/* */);  // Support for errors and exceptions.
+      throw new ArgumentError(/* */);  // 支持 errors 和 exceptions.
     }
   }
-  int roll() {                         // Define an instance method.
-    return value = shaker.nextInt(sides); // Get a random number.
+  int roll() {                         // 定义一个实例方法
+    return value = shaker.nextInt(sides); // 获取一个随机数。
   }
 }
 </pre>
