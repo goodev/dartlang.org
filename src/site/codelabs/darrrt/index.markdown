@@ -1569,10 +1569,10 @@ class PirateName {
 调用回调函数 `.then()`。
 
 * 当 Future 成功的完成后，
-将会从 JSFON 文件中获取到海盗的名字。
+将会从 JSON 文件中获取到海盗的名字。
 
 * `readyThePirates` 函数返回一个 Future，这样主程序
-就读取该文件后就有机会继续干其他任务。
+在读取该文件后就有机会继续干其他任务。
 
 </div> </div>
 
