@@ -1681,7 +1681,7 @@ void main() {
  程序然后显示一个错误信息，
  并保持 UI 不可用。
 
-* `then()` 和 `catchError` 回到函数定义为内联函数。
+* `then()` 和 `catchError` 回调函数定义为内联函数。
 
 </div> </div>
 
