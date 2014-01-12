@@ -67,6 +67,7 @@ Dart 是新的语言，所以我们直接修复这些陷阱并
 ## 类型
 
 #### 避免 创建只包含静态成员的类
+{:.no_toc}
 
 在 Java 和 C# 中，所有的成员必需位于类中。在这些语言中，
 你有时只是用这些类作为命名空间：只是用来保存一些静态成员。
@@ -105,6 +106,7 @@ class GeometryUtils {
 </div>
 
 #### 避免 定义只有一个成员的抽象类，如果一个简单的函数可以实现该功能。
+{:.no_toc}
 
 和 Java 不一样，Dart 支持 first-class（类等）函数、闭包、和使用它们的优雅轻量的语法。
 如果你只需要一个回调函数，只需要用一个函数即可。
@@ -129,6 +131,7 @@ abstract class Predicate {
 ## 成员
 
 #### 确保 使用构造函数而不是静态函数来创建实例
+{:.no_toc}
 
 
 使用 `new` 或者 `const` 来调用构造函数，在调用的时候就清楚的知道
@@ -159,6 +162,7 @@ class Point {
 </div>
 
 #### 确保 使用 `;` 来替代 `{}` 作为空构造函数的函数体
+{:.no_toc}
 
 
 在 Dart 中，一个空内容的构造函数可以只用一个分号结尾。
@@ -184,6 +188,7 @@ class Point {
 </div>
 
 #### 确保 把 `super()`放到构造函数初始化列表后面调用
+{:.no_toc}
 
 
 域（Field）初始化是按照他们出现在构造函数初始化列表的顺序计算值的。
@@ -217,6 +222,7 @@ View(Style style, List children)
 </div>
 
 #### 确保 使用 getter 来执行概念上像访问一个属性的操作
+{:.no_toc}
 
 
 如果函数的名字以 `get` 开头，或者一个形容词，例如 `visible` 或者
@@ -247,6 +253,7 @@ window.refresh;                      // doesn't return a value
 </div>
 
 #### 确保 用一个 setter 来执行概念上像设置一个属性的操作
+{:.no_toc}
 
 
 如果函数的名字以 `set` 开头，通常意味着该函数是一个 setter。
@@ -269,6 +276,7 @@ button.visible = false;
 </div>
 
 #### 避免 只是为了"安全"而为一个变量提供 getter 和 setter 函数
+{:.no_toc}
 
 
 在 Java 和 C#中，把所有的成员变量用 getter 和 setter 函数隐藏起来是很常见的。
@@ -302,6 +310,7 @@ class Box {
 </div>
 
 #### 推荐 使用一个 public final 成员变量来替代一个带有 getter的 私有变量
+{:.no_toc}
 
 
 如果你有一个成员变量，外部的代码可以看到该变量但是无法修改其值
@@ -326,6 +335,7 @@ class Box {
 </div>
 
 #### 推荐 使用 `=>` 来定义函数体只是返回单个表达式的函数
+{:.no_toc}
 
 
 在函数表达式中使用 `=>` ，你还可以定义局部变量。
@@ -345,6 +355,7 @@ containsValue(String value) => getValues().contains(value);
 最好还是用花括号和 `return` 语句来实现函数体。
 
 #### 避免 使用没有实际意义的布尔参数
+{:.no_toc}
 
 
 和其他类型不同，布尔值通常用于字面格式（literal form）。
@@ -374,6 +385,7 @@ new ListBox(scroll: true, showScrollbars: true);
 ## 类型注解
 
 #### 推荐 在公开的 API 上提供类型
+{:.no_toc}
 
 
 类型是一个库如何使用的重要文档。
@@ -409,6 +421,7 @@ Future<bool> install(PackageId id, String destPath) {
 通过类型，这些疑问就消失了。
 
 #### 推荐 用 `var` 修饰局部变量
+{:.no_toc}
 
 
 现在流行的编码中，函数体都是非常短小的，而局部变量的类型通常
@@ -444,6 +457,7 @@ Map<int, List<Person>> groupByZip(Iterable<Person> people) {
 </div>
 
 #### 推荐 在性能敏感的地方使用  `double` 或者 `int` 来替代 `num` 作为参数类型
+{:.no_toc}
 
 单一调用入口（参数具有明确的类型）
 比多态调用入口（参数具有多种类型）
@@ -457,6 +471,7 @@ Map<int, List<Person>> groupByZip(Iterable<Person> people) {
 Dart 运行环境无法优化这个不确定的参数。
 
 #### 不要 为初始化构造函数提供类型
+{:.no_toc}
 
 
 如果构造函数的参数用 `this.` 来初始化成员变量，
@@ -481,6 +496,7 @@ class Point {
 </div>
 
 #### 避免 在方法表达式提供类型
+{:.no_toc}
 
 
 方法表达式的值是非常简洁的。如果方法复杂到需要类型才能理解，
@@ -503,6 +519,7 @@ var names = people.map((Person person) {
 </div>
 
 #### 避免 在不需要的地方用 `dynamic`
+{:.no_toc}
 
 
 Dart 的大部分地方都可以忽略类型，这样该类型就是 `dynamic` 的。
@@ -530,6 +547,7 @@ dynamic lookUpOrDefault(String name, Map map, dynamic defaultValue) {
 </div>
 
 #### 确保 在可以使用任何对象的地方用 `Object` 来替代 `dynamic` 
+{:.no_toc}
 
 
 有些操作可以在任何对象上执行。例如，一个日志函数
@@ -561,6 +579,7 @@ bool convertToBool(arg) {
 ## 命名
 
 #### 确保 用 `UpperCamelCase` 风格来命名
+{:.no_toc}
 
 
 类和 typedef 定义的名字的首字母应该大写，并且
@@ -581,6 +600,7 @@ typedef num Adder(num x, num y);
 </div>
 
 #### 确保 常量使用大写字母和下划线 （`ALL_CAPS_WITH_UNDERSCORES`）风格命名
+{:.no_toc}
 
 
 常量&mdash;用 `const` 修饰的变量&mdash; 在 Dart 中是特殊的，
@@ -612,6 +632,7 @@ class Dice {
 </div>
 
 #### 确保 其他的标示符都用 `lowerCamelCase` 格式命名
+{:.no_toc}
 
 
 类成员变量、顶级定义、变量、参数和命名参数都应该以该格式命名，并
@@ -631,6 +652,7 @@ align(clearItems) {
 </div>
 
 #### 确保 用 `lowercase_with_underscores` 格式命名文件名和库名
+{:.no_toc}
 
 
 一些文件系统对大小写不敏感，所有大部分的项目都要求文件名字为小写字母。
@@ -655,6 +677,7 @@ align(clearItems) {
 </div>
 
 #### 确保 首字母单词缩写和大于两个字符的缩写词按照单词来对待
+{:.no_toc}
 
 
 大写的字母缩略词比较难读，并且当有多个相邻的缩略词的时候比较
@@ -688,6 +711,7 @@ Id
 ## 注释
 
 #### 确保 用 doc-style 注释来为成员变量和类型提供注释
+{:.no_toc}
 
 
 Dart 支持两种类型文档注释。单行注释
@@ -724,6 +748,7 @@ void parse(List options) {
 [markdown]: http://daringfireball.net/projects/markdown/
 
 #### 确保 其他非文档注释用单行注释
+{:.no_toc}
 
 
 <div class="good">
@@ -745,6 +770,7 @@ greet(name) {
 </div>
 
 #### 确保 按照普通的语句来些注释，大写字母开头并且添加标点符号。
+{:.no_toc}
 
 
 这并不意味着，注释必须为一个完整的语句。
@@ -763,6 +789,7 @@ greet(name) {
 </div>
 
 #### 确保 在文档注释中用方括号包围当前作用域的标示符
+{:.no_toc}
 
 
 如果用方括号包围变量、函数名字和类型，
@@ -779,6 +806,7 @@ num greatestRoll(Dice a, Dice b) => max(a.roll(), b.roll());
 </div>
 
 #### 确保 用散文的方式来提供函数描述文档注释
+{:.no_toc}
 
 
 其他语言用冗长的标签和分块来描述什么是
@@ -824,6 +852,7 @@ Flag addFlag(String name, String abbr) {
 理解代码。
 
 #### 不要 用 tab
+{:.no_toc}
 
 
 用空格来格式化代码，这样在每个人的编辑器中看起来都一样。
@@ -836,6 +865,7 @@ Flag addFlag(String name, String abbr) {
 保持留白的一致性。
 
 #### 避免 大于 80 个字符的代码行
+{:.no_toc}
 
 
 阅读研究发现，人类在阅读比较长的文本的时候，无法快速的跳转到下一行。
@@ -848,6 +878,7 @@ Flag addFlag(String name, String abbr) {
 使用 `AbstractWidgetFactoryManagerBuilder` 这个类吗？
 
 #### 确保 在多行表达式的地方把操作符放到前面一行的末尾
+{:.no_toc}
 
 
 放到前面一行还是后面一行都是合法的，但是为了一致性考虑
@@ -880,6 +911,7 @@ bobLikes()
 </div>
 
 #### 确保 把 `.` 放到多行表达式的下一行的开头
+{:.no_toc}
 
 
 该约定紧接前面一条规则。和其他操作符不一样，如果你用一个
@@ -893,6 +925,7 @@ someVeryLongVariable.withAVeryLongProperty
 </div>
 
 #### 确保用两个空格来缩进代码块
+{:.no_toc}
 
 
 <div class="good">
@@ -904,6 +937,7 @@ if (condition) {
 </div>
 
 #### 确保 最少用四个空格来缩进跨行的代码
+{:.no_toc}
 
 
 <div class="good">
@@ -923,6 +957,7 @@ someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
 </div>
 
 #### 不要 缩进一个方法表达式的延续
+{:.no_toc}
 
 
 上面一条规则的一个例外情况就是当在一个大的表达式中使用方法表达式的时候，
@@ -945,6 +980,7 @@ new Future.delayed(const Duration(seconds: 1), () {
 </div>
 
 #### 确保 把开始的花括号 (`{`) 放到它所属的同一行结尾
+{:.no_toc}
 
 
 <div class="good">
@@ -962,6 +998,7 @@ class Foo {
 </div>
 
 #### 确保 在所有的控制流语句中用花括号
+{:.no_toc}
 
 
 这样可以避免 [dangling else][]（悬空 else） 问题。
@@ -996,6 +1033,7 @@ if (arg == null) return defaultValue;
 </div>
 
 #### 确保 用两个空格缩进 switch cases 并用四个空格缩进 case 块
+{:.no_toc}
 
 
 <div class="good">
@@ -1013,6 +1051,7 @@ switch (fruit) {
 </div>
 
 #### 确保 在二元和三元操作符之间和冒号后面用空格，不要在一元操作符后面用空格
+{:.no_toc}
 
 
 
@@ -1039,6 +1078,7 @@ if (obj is !SomeType) print('not SomeType');
 </div>
 
 #### 确保 在每个 `in` 之间和循环中的 `;` 后面使用空格
+{:.no_toc}
 
 
 <div class="good">
@@ -1054,6 +1094,7 @@ for (final item in collection) {
 </div>
 
 #### 确保 在控制流关键字后面用一个空格
+{:.no_toc}
 
 
 和函数和方法调用不一样。
@@ -1074,6 +1115,7 @@ try {
 </div>
 
 #### 不要 在 `(`、 `[`、  `{` 之后和 `)`、 `]`、 `}` 之前用空格
+{:.no_toc}
 
 
 同样，当 `<` 和 `>` 用作泛型的时候 ，也不加空格。
@@ -1085,6 +1127,7 @@ var numbers = <int>[1, 2, (3 + 4)];
 </div>
 
 #### 确保 在函数和方法体的 `{` 之前加一个空格
+{:.no_toc}
 
 
 This is an exception to the above rule. When a `{` is used after a parameter
@@ -1108,6 +1151,7 @@ getEmptyFn(a){
 </div>
 
 #### 确保 每行只放一个构造函数初始化列表语句
+{:.no_toc}
 
 
 <div class="good">
@@ -1126,6 +1170,7 @@ MyClass()
 缩进）。
 
 #### 确保 在命名参数的`:` 后面使用一个空格
+{:.no_toc}
 
 
 <div class="good">
@@ -1150,6 +1195,7 @@ new ListBox(showScrollbars : true);
 </div>
 
 #### 确保 在可选参数 `=` 赋值前后用一个空格
+{:.no_toc}
 
 
 <div class="good">
@@ -1175,6 +1221,7 @@ class HttpServer {
 </div>
 
 #### 确保 在函数级联调用的时候 使用空格缩进
+{:.no_toc}
 
 
 <div class="good">

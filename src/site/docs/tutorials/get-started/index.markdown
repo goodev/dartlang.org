@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "开始"
 description: "下载 Dart 并运行两个示例程序"
 has-permalinks: true

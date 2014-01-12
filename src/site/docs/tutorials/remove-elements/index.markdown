@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "删除 DOM 元素"
 description: "从 DOM 中删除一个子元素"
 has-permalinks: true

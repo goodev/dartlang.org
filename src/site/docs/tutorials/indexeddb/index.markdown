@@ -1,12 +1,12 @@
 ---
-layout: default
+layout: tutorial
 title: "使用 IndexedDB"
 description: "使用 IndexedDB 来保存数据或者提供离线功能。"
 has-permalinks: true
 tutorial:
   id: indexeddb
-next: 
-next-title: "教程主页"
+next: cmdline/
+next-title: "编写命令行应用"
 prev: forms/
 prev-title: "从表单中获取数据"
 ---

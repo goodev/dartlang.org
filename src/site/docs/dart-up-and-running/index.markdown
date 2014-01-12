@@ -39,5 +39,5 @@ United States License](http://creativecommons.org/licenses/by-nc-nd/3.0/us/)
 1. [第二章. Dart 语言概述](contents/ch02.html)
 1. [第三章. Dart 类库概述](contents/ch03.html)
 1. [第四章. 工具](contents/ch04.html)
-1. [第五章. 学习样例: Dart 聊天室](contents/ch05.html)
+1. [第五章. 示例项目: Dartiverse Search](contents/ch05.html)
 {:.toc}

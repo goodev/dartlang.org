@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "定义自定义 Element"
 description: "用 Polymer 创建一个自定义 HTML element 。"
 has-permalinks: true

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "连接 Dart 和 HTML"
 description: "演示 Dart web 应用的基本结构"
 has-permalinks: true

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "动态获取数据"
 description: "用 HttpRequest 从服务器或者文件获取数据。"
 has-permalinks: true
