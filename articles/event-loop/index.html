@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -425,7 +428,7 @@ ending an IndexedDB transaction or event handler.</p>
 
   <p><img src="images/scheduling-tasks.png" alt="shows chain of event handler execution, with tasks added using Future and scheduleMicrotask()." /></p>
 
-  <h4 id="event-queue-new-future">Event queue: new Future()</h4>
+  <h4 class="no_toc" id="event-queue-new-future">Event queue: new Future()</h4>
 
   <p>To schedule a task on the event queue,
 use <code>new Future()</code> or <code>new Future.delayed()</code>.
@@ -506,7 +509,7 @@ and (unless that function returns a Future)
 completes in a microtask, similar to #2.</li>
   </ol>
 
-  <h4 id="microtask-queue-schedulemicrotask">Microtask queue: scheduleMicrotask()</h4>
+  <h4 class="no_toc" id="microtask-queue-schedulemicrotask">Microtask queue: scheduleMicrotask()</h4>
 
   <p>The dart:async library defines scheduleMicrotask() as a top-level function.
 You can call scheduleMicrotask() like this:</p>
@@ -731,7 +734,7 @@ See the <a href="http://api.dartlang.org/docs/releases/latest/dart_async/Future.
 for more information.</li>
   </ul>
 
-  <h4 id="annotated-sample-and-output">Annotated sample and output</h4>
+  <h4 class="no_toc" id="annotated-sample-and-output">Annotated sample and output</h4>
 
   <p>Here are some figures that might clarify the answer to question #2.
 First, here’s the annotated program source:</p>
@@ -847,6 +850,27 @@ create additional isolates or workers.</li>
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

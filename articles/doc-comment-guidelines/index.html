@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -180,7 +183,10 @@
   </li>
   <li><a href="#markup">Markup（标记）</a>    <ol>
       <li><a href="#section-7">链接</a></li>
-      <li><a href="#section-11">块风格</a></li>
+      <li><a href="#section-11">块风格</a>        <ol>
+          <li><a href="#section-14">标题</a></li>
+        </ol>
+      </li>
       <li><a href="#section-17">行内格式</a></li>
     </ol>
   </li>
@@ -257,7 +263,7 @@ API 是否对他们有用。
 尝试用更多信息来重新描述一下。
 如果可以请避免链接跳转。</p>
 
-  <h4 id="section-3">方法和函数</h4>
+  <h4 class="no_toc" id="section-3">方法和函数</h4>
 
   <p>方法/函数 描述以 <strong>第三人称动词</strong>开头。</p>
 
@@ -268,7 +274,7 @@ API 是否对他们有用。
     <li><code>Starts the stopwatch.</code></li>
   </ul>
 
-  <h4 id="getters--setters">变量、 getters 和 setters</h4>
+  <h4 class="no_toc" id="getters--setters">变量、 getters 和 setters</h4>
 
   <p>静态/示例 变量和 getter/setter 描述应该用<strong>名词短语</strong>描述。</p>
 
@@ -282,7 +288,7 @@ API 是否对他们有用。
     <li><code>The number of days in the current month.</code></li>
   </ul>
 
-  <h4 id="section-4">类</h4>
+  <h4 class="no_toc" id="section-4">类</h4>
 
   <p>用<strong>名词短语</strong>来描述类。</p>
 
@@ -297,7 +303,7 @@ API 是否对他们有用。
     </li>
   </ul>
 
-  <h4 id="section-5">库</h4>
+  <h4 class="no_toc" id="section-5">库</h4>
 
   <p>用<strong>名词短语</strong>来描述库。</p>
 
@@ -336,7 +342,7 @@ API 是否对他们有用。
   <p>可以链接到 Dart 的 标示符 和任意 URI ，
 标示符中 构造函数 比较特殊。</p>
 
-  <h4 id="section-8">标示符</h4>
+  <h4 class="no_toc" id="section-8">标示符</h4>
 
   <p><code>[id]</code> <em>或者</em> <code>[id](uri)</code></p>
 
@@ -345,11 +351,11 @@ API 是否对他们有用。
 如果指定 <em>uri</em> ，则必须为 Dart 的库 <em>L</em>，并且
 <em>id</em> 必须是声明在 <em>L</em> 里面的名字。</p>
 
-  <h4 id="section-9">构造函数</h4>
+  <h4 class="no_toc" id="section-9">构造函数</h4>
 
   <p><code>[new c]</code> <em>或者</em> <code>[new c](uri)</code></p>
 
-  <h4 id="section-10">超链接</h4>
+  <h4 class="no_toc" id="section-10">超链接</h4>
 
   <p><code>[text](uri)</code> <em>或者</em> <code>&lt;uri&gt;</code></p>
 
@@ -358,11 +364,12 @@ API 是否对他们有用。
 
   <h3 id="section-11">块风格</h3>
 
-  <h4 id="section-12">段落</h4>
+  <h4 class="no_toc" id="section-12">段落</h4>
 
   <p>用 <em>一个空白行</em> 来表示一个段落的结束。</p>
 
-  <h4 id="section-13">代码块</h4>
+  <h4 class="no_toc" id="section-13">代码块</h4>
+
   <p>在 <em>注释字符后面</em> 用四个空白字符表示，
 也就是在 * 或 / 后面有<strong>五个空格</strong>
 （由于 * 或 / 后面总是跟随一个空格）。
@@ -386,13 +393,13 @@ API 是否对他们有用。
   <p>当前支持次级标题(例如 <code>###</code>)
 但是并没加入规范中。</p>
 
-  <h4 id="section-15">未排序（子弹头）列表</h4>
+  <h4 class="no_toc" id="section-15">未排序（子弹头）列表</h4>
 
   <pre>* item continues until next list item or blank line</pre>
 
   <p>在第一个列表条目前面必须为一个空行。</p>
 
-  <h4 id="section-16">排序（带数字）的列表</h4>
+  <h4 class="no_toc" id="section-16">排序（带数字）的列表</h4>
   <pre>1. item continues until next list item or blank line
 2. next item</pre>
 
@@ -401,7 +408,7 @@ API 是否对他们有用。
 
   <h3 id="section-17">行内格式</h3>
 
-  <h4 id="section-18">代码字体</h4>
+  <h4 class="no_toc" id="section-18">代码字体</h4>
 
   <p><code>`code`</code> <em>(注意反引号)
 或者</em>
@@ -411,7 +418,7 @@ API 是否对他们有用。
 (1) 一大段代码
 (2) 可以有效的避免混淆（混乱）</p>
 
-  <h4 id="section-19">斜体</h4>
+  <h4 class="no_toc" id="section-19">斜体</h4>
 
   <p><code>_single underscore_</code>
 <em>或者</em>
@@ -420,7 +427,7 @@ API 是否对他们有用。
   <p>如果规范中有澄清的话，单个星号
 可能会用作粗体。</p>
 
-  <h4 id="section-20">粗体</h4>
+  <h4 class="no_toc" id="section-20">粗体</h4>
 
   <p><code>**double asterisk**</code>
 <em>或者</em>
@@ -524,6 +531,27 @@ Adds an item to this list.</li>
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

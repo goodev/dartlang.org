@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -173,12 +176,17 @@
 
 <ol class="toc nav bs-sidenav" id="markdown-toc">
   <li><a href="#section-1">开始</a></li>
-  <li><a href="#section-2">工具</a></li>
-  <li><a href="#section-3">概念</a>    <ol>
-      <li><a href="#section-4">库</a></li>
-      <li><a href="#section-5">核心基础类</a></li>
+  <li><a href="#section-2">概念</a>    <ol>
+      <li><a href="#section-3">库</a></li>
+      <li><a href="#section-4">核心基础类</a>        <ol>
+          <li><a href="#iterable">Iterable</a></li>
+          <li><a href="#future">Future</a></li>
+          <li><a href="#stream">Stream</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
+  <li><a href="#section-5">创建命令行程序</a></li>
   <li><a href="#web-">创建 Web 应用</a>    <ol>
       <li><a href="#darthtml">dart:html</a></li>
       <li><a href="#polymerdart">Polymer.dart</a></li>
@@ -186,7 +194,7 @@
       <li><a href="#dart--javascript">Dart 和 JavaScript</a></li>
     </ol>
   </li>
-  <li><a href="#section-6">创建命令行程序</a></li>
+  <li><a href="#section-6">工具</a></li>
   <li><a href="#section-7">测试</a></li>
   <li><a href="#section-8">其他资源</a>    <ol>
       <li><a href="#section-9">编程问题</a></li>
@@ -226,32 +234,12 @@
   <p><a href="/docs/tutorials/">Dart 教程</a>
 ：使用 Dart 创建 web 应用的手把手教程。</p>
 
-  <h2 id="section-2">工具</h2>
-
-  <p>Dart 工具非常友好，你
-可以选择不同的编辑器、IDE以及其他工具。</p>
-
-  <p>当 <a href="/#get-started">下载 Dart</a>后，
-只包含<a href="/tools/editor/">Dart 编辑器</a> IDE、
-<a href="/tools/dartium/">Dartium</a> (带有 Dart 虚拟机的浏览器)
-和 <a href="/tools/sdk/">Dart SDK</a>。
-SDK 包含一些命令行工具，分别为：
- Dart VM (dart)、一个 Dart-to-JavaScript 编译器 (dart2js)、
- 和一个包管理器 (pub)。</p>
-
-  <p><a href="/tools/editor/">Dart 编辑器</a>
-：开始学习 Dart 的最简单方式。</p>
-
-  <p><a href="/tools/">Dart 工具</a>
-：关于其他工具的一些信息和
-下载地址。</p>
-
-  <h2 id="section-3">概念</h2>
+  <h2 id="section-2">概念</h2>
 
   <p>目前你不需要查看下面的所有内容，
 但是要记得这些内容以方便你以后参考。</p>
 
-  <h3 id="section-4">库</h3>
+  <h3 id="section-3">库</h3>
 
   <p>下载的 Dart SDK 中包含了一些库。
 你也可以定义自己的库或者
@@ -274,7 +262,7 @@ SDK 包含一些命令行工具，分别为：
   <p><a href="http://api.dartlang.org">API 文档</a>
 ：查看 Dart 库的所有 API 文档。</p>
 
-  <h3 id="section-5">核心基础类</h3>
+  <h3 id="section-4">核心基础类</h3>
 
   <p>很多 Dart 函数返回 Iterable、Future或者 Stream 对象。</p>
 
@@ -320,6 +308,17 @@ Stream 的一个示例是
     <li><a href="/docs/tutorials/streams/">用 Streams 数据</a></li>
     <li><a href="/articles/creating-streams/">在 Dart 中创建 Streams</a></li>
     <li><a href="http://api.dartlang.org/dart_async/Stream.html">Stream API 文档</a></li>
+  </ul>
+
+  <h2 id="section-5">创建命令行程序</h2>
+
+  <p>可以用 Dart 干任何事情，从脚本到 web 服务器。
+感谢 Heroku 支持第三方运行环境，
+你可以在 Heroku 云服务器中运行 Dart 应用的服务器端代码。</p>
+
+  <ul>
+    <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html">dart: The Standalone VM</a></li>
+    <li><a href="http://www.heroku.com">Heroku cloud application platform</a> </li>
   </ul>
 
   <h2 id="web-">创建 Web 应用</h2>
@@ -382,16 +381,25 @@ dart:html 和 polymer.dart 包
     <li><a href="/samples/#using_javascript_from_dart">使用 JavaScript 的示例</a></li>
   </ul>
 
-  <h2 id="section-6">创建命令行程序</h2>
+  <h2 id="section-6">工具</h2>
 
-  <p>可以用 Dart 干任何事情，从脚本到 web 服务器。
-感谢 Heroku 支持第三方运行环境，
-你可以在 Heroku 云服务器中运行 Dart 应用的服务器端代码。</p>
+  <p>Dart 工具非常友好，你
+可以选择不同的编辑器、IDE以及其他工具。</p>
 
-  <ul>
-    <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html">dart: The Standalone VM</a></li>
-    <li><a href="http://www.heroku.com">Heroku cloud application platform</a> </li>
-  </ul>
+  <p>当 <a href="/#get-started">下载 Dart</a>后，
+只包含<a href="/tools/editor/">Dart 编辑器</a> IDE、
+<a href="/tools/dartium/">Dartium</a> (带有 Dart 虚拟机的浏览器)
+和 <a href="/tools/sdk/">Dart SDK</a>。
+SDK 包含一些命令行工具，分别为：
+ Dart VM (dart)、一个 Dart-to-JavaScript 编译器 (dart2js)、
+ 和一个包管理器 (pub)。</p>
+
+  <p><a href="/tools/editor/">Dart 编辑器</a>
+：开始学习 Dart 的最简单方式。</p>
+
+  <p><a href="/tools/">Dart 工具</a>
+：关于其他工具的一些信息和
+下载地址。</p>
 
   <h2 id="section-7">测试</h2>
 
@@ -499,6 +507,27 @@ dart:html 和 polymer.dart 包
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

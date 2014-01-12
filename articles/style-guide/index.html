@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -247,7 +250,7 @@ Dart 是新的语言，所以我们直接修复这些陷阱并
 
   <h2 id="section-1">类型</h2>
 
-  <h4 id="section-2">避免 创建只包含静态成员的类</h4>
+  <h4 class="no_toc" id="section-2">避免 创建只包含静态成员的类</h4>
 
   <p>在 Java 和 C# 中，所有的成员必需位于类中。在这些语言中，
 你有时只是用这些类作为命名空间：只是用来保存一些静态成员。
@@ -281,7 +284,7 @@ class GeometryUtils {
 }</pre>
   </div>
 
-  <h4 id="section-3">避免 定义只有一个成员的抽象类，如果一个简单的函数可以实现该功能。</h4>
+  <h4 class="no_toc" id="section-3">避免 定义只有一个成员的抽象类，如果一个简单的函数可以实现该功能。</h4>
 
   <p>和 Java 不一样，Dart 支持 first-class（类等）函数、闭包、和使用它们的优雅轻量的语法。
 如果你只需要一个回调函数，只需要用一个函数即可。
@@ -301,7 +304,7 @@ class GeometryUtils {
 
   <h2 id="section-4">成员</h2>
 
-  <h4 id="section-5">确保 使用构造函数而不是静态函数来创建实例</h4>
+  <h4 class="no_toc" id="section-5">确保 使用构造函数而不是静态函数来创建实例</h4>
 
   <p>使用 <code>new</code> 或者 <code>const</code> 来调用构造函数，在调用的时候就清楚的知道
 一个对象会被创建。Dart 中的命名构造函数和工厂构造函数
@@ -326,7 +329,7 @@ class GeometryUtils {
 }</pre>
   </div>
 
-  <h4 id="section-6">确保 使用 <code>;</code> 来替代 <code>{}</code> 作为空构造函数的函数体</h4>
+  <h4 class="no_toc" id="section-6">确保 使用 <code>;</code> 来替代 <code>{}</code> 作为空构造函数的函数体</h4>
 
   <p>在 Dart 中，一个空内容的构造函数可以只用一个分号结尾。
 const(常量) 构造函数<em>需要</em>这样。
@@ -346,7 +349,7 @@ const(常量) 构造函数<em>需要</em>这样。
 }</pre>
   </div>
 
-  <h4 id="super">确保 把 <code>super()</code>放到构造函数初始化列表后面调用</h4>
+  <h4 class="no_toc" id="super">确保 把 <code>super()</code>放到构造函数初始化列表后面调用</h4>
 
   <p>域（Field）初始化是按照他们出现在构造函数初始化列表的顺序计算值的。
 如果你在初始化列表中间调用了 <code>super()</code>，则
@@ -374,7 +377,7 @@ const(常量) 构造函数<em>需要</em>这样。
       _children = children {</pre>
   </div>
 
-  <h4 id="getter-">确保 使用 getter 来执行概念上像访问一个属性的操作</h4>
+  <h4 class="no_toc" id="getter-">确保 使用 getter 来执行概念上像访问一个属性的操作</h4>
 
   <p>如果函数的名字以 <code>get</code> 开头，或者一个形容词，例如 <code>visible</code> 或者
 <code>empty</code> ，这通常是使用 getter 的标志。更具体的，
@@ -401,7 +404,7 @@ DateTime timeStamp = DateTime.now;   // returns different value each call
 window.refresh;                      // doesn't return a value</pre>
   </div>
 
-  <h4 id="setter-">确保 用一个 setter 来执行概念上像设置一个属性的操作</h4>
+  <h4 class="no_toc" id="setter-">确保 用一个 setter 来执行概念上像设置一个属性的操作</h4>
 
   <p>如果函数的名字以 <code>set</code> 开头，通常意味着该函数是一个 setter。
 更具体的，当如下情况发生应该用 setter 替代 函数：</p>
@@ -422,7 +425,7 @@ window.refresh;                      // doesn't return a value</pre>
 button.visible = false;</pre>
   </div>
 
-  <h4 id="getter--setter-">避免 只是为了”安全”而为一个变量提供 getter 和 setter 函数</h4>
+  <h4 class="no_toc" id="getter--setter-">避免 只是为了”安全”而为一个变量提供 getter 和 setter 函数</h4>
 
   <p>在 Java 和 C#中，把所有的成员变量用 getter 和 setter 函数隐藏起来是很常见的。
 大部分情况下 getter 和 setter 的实现只是赋值和返回该值。
@@ -450,7 +453,7 @@ button.visible = false;</pre>
 }</pre>
   </div>
 
-  <h4 id="public-final--getter-">推荐 使用一个 public final 成员变量来替代一个带有 getter的 私有变量</h4>
+  <h4 class="no_toc" id="public-final--getter-">推荐 使用一个 public final 成员变量来替代一个带有 getter的 私有变量</h4>
 
   <p>如果你有一个成员变量，外部的代码可以看到该变量但是无法修改其值
 （你也无须在构造函数以外设置该变量的值），
@@ -469,7 +472,7 @@ button.visible = false;</pre>
 }</pre>
   </div>
 
-  <h4 id="section-7">推荐 使用 <code>=&gt;</code> 来定义函数体只是返回单个表达式的函数</h4>
+  <h4 class="no_toc" id="section-7">推荐 使用 <code>=&gt;</code> 来定义函数体只是返回单个表达式的函数</h4>
 
   <p>在函数表达式中使用 <code>=&gt;</code> ，你还可以定义局部变量。
 这种语法特别适合只有一个简单的变量并返回其
@@ -485,7 +488,7 @@ containsValue(String value) =&gt; getValues().contains(value);</pre>
 你发现一个表达式需要用多行显示的时候，为了代码清晰的考虑，
 最好还是用花括号和 <code>return</code> 语句来实现函数体。</p>
 
-  <h4 id="section-8">避免 使用没有实际意义的布尔参数</h4>
+  <h4 class="no_toc" id="section-8">避免 使用没有实际意义的布尔参数</h4>
 
   <p>和其他类型不同，布尔值通常用于字面格式（literal form）。
 数字等通常用命名常量引用，而布尔值通常都是直接用
@@ -509,7 +512,7 @@ new ListBox(scroll: true, showScrollbars: true);</pre>
 
   <h2 id="section-9">类型注解</h2>
 
-  <h4 id="api-">推荐 在公开的 API 上提供类型</h4>
+  <h4 class="no_toc" id="api-">推荐 在公开的 API 上提供类型</h4>
 
   <p>类型是一个库如何使用的重要文档。
 给参数和返回值提供类型可以帮助
@@ -539,7 +542,7 @@ new ListBox(scroll: true, showScrollbars: true);</pre>
 
   <p>通过类型，这些疑问就消失了。</p>
 
-  <h4 id="var-">推荐 用 <code>var</code> 修饰局部变量</h4>
+  <h4 class="no_toc" id="var-">推荐 用 <code>var</code> 修饰局部变量</h4>
 
   <p>现在流行的编码中，函数体都是非常短小的，而局部变量的类型通常
 通过表达式就可以推断出来而无需明确注明。
@@ -569,7 +572,7 @@ new ListBox(scroll: true, showScrollbars: true);</pre>
 }</pre>
   </div>
 
-  <h4 id="double--int--num-">推荐 在性能敏感的地方使用  <code>double</code> 或者 <code>int</code> 来替代 <code>num</code> 作为参数类型</h4>
+  <h4 class="no_toc" id="double--int--num-">推荐 在性能敏感的地方使用  <code>double</code> 或者 <code>int</code> 来替代 <code>num</code> 作为参数类型</h4>
 
   <p>单一调用入口（参数具有明确的类型）
 比多态调用入口（参数具有多种类型）
@@ -582,7 +585,7 @@ new ListBox(scroll: true, showScrollbars: true);</pre>
   <p>当用 <code>num</code> 作为类型的时候，意味着 “要么是 int 要么就是 double”。
 Dart 运行环境无法优化这个不确定的参数。</p>
 
-  <h4 id="section-10">不要 为初始化构造函数提供类型</h4>
+  <h4 class="no_toc" id="section-10">不要 为初始化构造函数提供类型</h4>
 
   <p>如果构造函数的参数用 <code>this.</code> 来初始化成员变量，
 则参数类型是和成员变量的类型一样。</p>
@@ -601,7 +604,7 @@ Dart 运行环境无法优化这个不确定的参数。</p>
 }</pre>
   </div>
 
-  <h4 id="section-11">避免 在方法表达式提供类型</h4>
+  <h4 class="no_toc" id="section-11">避免 在方法表达式提供类型</h4>
 
   <p>方法表达式的值是非常简洁的。如果方法复杂到需要类型才能理解，
 则通常应该用方法声明或者函数来实现。
@@ -618,7 +621,7 @@ Dart 运行环境无法优化这个不确定的参数。</p>
 });</pre>
   </div>
 
-  <h4 id="dynamic">避免 在不需要的地方用 <code>dynamic</code></h4>
+  <h4 class="no_toc" id="dynamic">避免 在不需要的地方用 <code>dynamic</code></h4>
 
   <p>Dart 的大部分地方都可以忽略类型，这样该类型就是 <code>dynamic</code> 的。
 所有，省略类型就语义上等同于 <code>dynamic</code> 并且
@@ -640,7 +643,7 @@ Dart 运行环境无法优化这个不确定的参数。</p>
 }</pre>
   </div>
 
-  <h4 id="object--dynamic">确保 在可以使用任何对象的地方用 <code>Object</code> 来替代 <code>dynamic</code></h4>
+  <h4 class="no_toc" id="object--dynamic">确保 在可以使用任何对象的地方用 <code>Object</code> 来替代 <code>dynamic</code></h4>
 
   <p>有些操作可以在任何对象上执行。例如，一个日志函数
 可以调用任何对象的 <code>toString()</code>。Dart 中有两种类型都运行所有对象：
@@ -668,7 +671,7 @@ bool convertToBool(arg) {
 
   <h2 id="section-12">命名</h2>
 
-  <h4 id="uppercamelcase-">确保 用 <code>UpperCamelCase</code> 风格来命名</h4>
+  <h4 class="no_toc" id="uppercamelcase-">确保 用 <code>UpperCamelCase</code> 风格来命名</h4>
 
   <p>类和 typedef 定义的名字的首字母应该大写，并且
 没有分隔符。</p>
@@ -685,7 +688,7 @@ class HttpRequest {
 typedef num Adder(num x, num y);</pre>
   </div>
 
-  <h4 id="allcapswithunderscores">确保 常量使用大写字母和下划线 （<code>ALL_CAPS_WITH_UNDERSCORES</code>）风格命名</h4>
+  <h4 class="no_toc" id="allcapswithunderscores">确保 常量使用大写字母和下划线 （<code>ALL_CAPS_WITH_UNDERSCORES</code>）风格命名</h4>
 
   <p>常量—用 <code>const</code> 修饰的变量— 在 Dart 中是特殊的，
 和 <code>final</code> 不一样，他们可以用于常量表达式中。
@@ -711,7 +714,7 @@ class Dice {
 }</pre>
   </div>
 
-  <h4 id="lowercamelcase-">确保 其他的标示符都用 <code>lowerCamelCase</code> 格式命名</h4>
+  <h4 class="no_toc" id="lowercamelcase-">确保 其他的标示符都用 <code>lowerCamelCase</code> 格式命名</h4>
 
   <p>类成员变量、顶级定义、变量、参数和命名参数都应该以该格式命名，并
 不用
@@ -727,7 +730,7 @@ align(clearItems) {
 }</pre>
   </div>
 
-  <h4 id="lowercasewithunderscores-">确保 用 <code>lowercase_with_underscores</code> 格式命名文件名和库名</h4>
+  <h4 class="no_toc" id="lowercasewithunderscores-">确保 用 <code>lowercase_with_underscores</code> 格式命名文件名和库名</h4>
 
   <p>一些文件系统对大小写不敏感，所有大部分的项目都要求文件名字为小写字母。
 使用分隔符可以让文件名更具可读性。
@@ -754,7 +757,7 @@ align(clearItems) {
     </ul>
   </div>
 
-  <h4 id="section-13">确保 首字母单词缩写和大于两个字符的缩写词按照单词来对待</h4>
+  <h4 class="no_toc" id="section-13">确保 首字母单词缩写和大于两个字符的缩写词按照单词来对待</h4>
 
   <p>大写的字母缩略词比较难读，并且当有多个相邻的缩略词的时候比较
 难以区分。类似于 <code>HTTPSFTPConnection</code> 的名字无法知道
@@ -782,7 +785,7 @@ Id</pre>
 
   <h2 id="section-14">注释</h2>
 
-  <h4 id="doc-style-">确保 用 doc-style 注释来为成员变量和类型提供注释</h4>
+  <h4 class="no_toc" id="doc-style-">确保 用 doc-style 注释来为成员变量和类型提供注释</h4>
 
   <p>Dart 支持两种类型文档注释。单行注释
 用 <code>///</code> 开始：</p>
@@ -811,7 +814,7 @@ void parse(List options) {
 
   <p>在文档注释中，你可以用 <a href="http://daringfireball.net/projects/markdown/">markdown</a> 语法来格式。</p>
 
-  <h4 id="section-15">确保 其他非文档注释用单行注释</h4>
+  <h4 class="no_toc" id="section-15">确保 其他非文档注释用单行注释</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">greet(name) {
@@ -827,7 +830,7 @@ void parse(List options) {
 }</pre>
   </div>
 
-  <h4 id="section-16">确保 按照普通的语句来些注释，大写字母开头并且添加标点符号。</h4>
+  <h4 class="no_toc" id="section-16">确保 按照普通的语句来些注释，大写字母开头并且添加标点符号。</h4>
 
   <p>这并不意味着，注释必须为一个完整的语句。
 “Returns the number of items.” 是一个可以接受的注释。</p>
@@ -840,7 +843,7 @@ void parse(List options) {
     <pre class="prettyprint lang-dart">// remove the last item from the collection</pre>
   </div>
 
-  <h4 id="section-17">确保 在文档注释中用方括号包围当前作用域的标示符</h4>
+  <h4 class="no_toc" id="section-17">确保 在文档注释中用方括号包围当前作用域的标示符</h4>
 
   <p>如果用方括号包围变量、函数名字和类型，
 文档生成器会生成一个连接来查看
@@ -853,7 +856,7 @@ void parse(List options) {
 num greatestRoll(Dice a, Dice b) =&gt; max(a.roll(), b.roll());</pre>
   </div>
 
-  <h4 id="section-18">确保 用散文的方式来提供函数描述文档注释</h4>
+  <h4 class="no_toc" id="section-18">确保 用散文的方式来提供函数描述文档注释</h4>
 
   <p>其他语言用冗长的标签和分块来描述什么是
 参数和该函数返回啥。</p>
@@ -893,7 +896,7 @@ Flag addFlag(String name, String abbr) {
 用一个一直的空白风格可以帮助人类和编译器一样
 理解代码。</p>
 
-  <h4 id="tab">不要 用 tab</h4>
+  <h4 class="no_toc" id="tab">不要 用 tab</h4>
 
   <p>用空格来格式化代码，这样在每个人的编辑器中看起来都一样。
 这样当在博客中或者其他网站发表代码的时候也能保持格式一样。例如 例如 <a href="http://code.google.com/projecthosting/">Google Code</a> 或者 <a href="http://github.com">GitHub</a>。</p>
@@ -901,7 +904,7 @@ Flag addFlag(String name, String abbr) {
   <p>流行的编辑器会用空格来替代 tab，让你编辑 tab 比较方便并
 保持留白的一致性。</p>
 
-  <h4 id="section-20">避免 大于 80 个字符的代码行</h4>
+  <h4 class="no_toc" id="section-20">避免 大于 80 个字符的代码行</h4>
 
   <p>阅读研究发现，人类在阅读比较长的文本的时候，无法快速的跳转到下一行。
 这就是为啥 报纸 和杂志 都使用多列的
@@ -912,7 +915,7 @@ Flag addFlag(String name, String abbr) {
 你真的愿意
 使用 <code>AbstractWidgetFactoryManagerBuilder</code> 这个类吗？</p>
 
-  <h4 id="section-21">确保 在多行表达式的地方把操作符放到前面一行的末尾</h4>
+  <h4 class="no_toc" id="section-21">确保 在多行表达式的地方把操作符放到前面一行的末尾</h4>
 
   <p>放到前面一行还是后面一行都是合法的，但是为了一致性考虑
 我们的代码都是把操作符放到前面一行。</p>
@@ -937,7 +940,7 @@ Flag addFlag(String name, String abbr) {
     =&gt; isDeepFried || (hasPieCrust &amp;&amp; !vegan) || containsBacon;</pre>
   </div>
 
-  <h4 id="section-22">确保 把 <code>.</code> 放到多行表达式的下一行的开头</h4>
+  <h4 class="no_toc" id="section-22">确保 把 <code>.</code> 放到多行表达式的下一行的开头</h4>
 
   <p>该约定紧接前面一条规则。和其他操作符不一样，如果你用一个
  <code>.</code> 来分隔表达式，则把 <code>.</code> 放到下一行的开头。</p>
@@ -947,7 +950,7 @@ Flag addFlag(String name, String abbr) {
     .aMethodOnThatObject();</pre>
   </div>
 
-  <h4 id="section-23">确保用两个空格来缩进代码块</h4>
+  <h4 class="no_toc" id="section-23">确保用两个空格来缩进代码块</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">if (condition) {
@@ -955,7 +958,7 @@ Flag addFlag(String name, String abbr) {
 }</pre>
   </div>
 
-  <h4 id="section-24">确保 最少用四个空格来缩进跨行的代码</h4>
+  <h4 class="no_toc" id="section-24">确保 最少用四个空格来缩进跨行的代码</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">someLongObject.aReallyLongMethodName(longArg, anotherLongArg,
@@ -969,7 +972,7 @@ Flag addFlag(String name, String abbr) {
                                      wrappedToNextLine);</pre>
   </div>
 
-  <h4 id="section-25">不要 缩进一个方法表达式的延续</h4>
+  <h4 class="no_toc" id="section-25">不要 缩进一个方法表达式的延续</h4>
 
   <p>上面一条规则的一个例外情况就是当在一个大的表达式中使用方法表达式的时候，
 和提供函数参数一样，他们使用下面的方式来格式化：</p>
@@ -986,7 +989,7 @@ Flag addFlag(String name, String abbr) {
     });</pre>
   </div>
 
-  <h4 id="section-26">确保 把开始的花括号 (<code>{</code>) 放到它所属的同一行结尾</h4>
+  <h4 class="no_toc" id="section-26">确保 把开始的花括号 (<code>{</code>) 放到它所属的同一行结尾</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class Foo {
@@ -1000,7 +1003,7 @@ Flag addFlag(String name, String abbr) {
 }</pre>
   </div>
 
-  <h4 id="section-27">确保 在所有的控制流语句中用花括号</h4>
+  <h4 class="no_toc" id="section-27">确保 在所有的控制流语句中用花括号</h4>
 
   <p>这样可以避免 <a href="http://en.wikipedia.org/wiki/Dangling_else">dangling else</a>（悬空 else） 问题。</p>
 
@@ -1025,7 +1028,7 @@ else
     <pre class="prettyprint lang-dart">if (arg == null) return defaultValue;</pre>
   </div>
 
-  <h4 id="switch-cases--case-">确保 用两个空格缩进 switch cases 并用四个空格缩进 case 块</h4>
+  <h4 class="no_toc" id="switch-cases--case-">确保 用两个空格缩进 switch cases 并用四个空格缩进 case 块</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">switch (fruit) {
@@ -1039,7 +1042,7 @@ else
 }</pre>
   </div>
 
-  <h4 id="section-28">确保 在二元和三元操作符之间和冒号后面用空格，不要在一元操作符后面用空格</h4>
+  <h4 class="no_toc" id="section-28">确保 在二元和三元操作符之间和冒号后面用空格，不要在一元操作符后面用空格</h4>
 
   <p>注意： <code>&lt;</code> 和 <code>&gt;</code> 在表达式中被认为是二元操作符，但是对于泛型类型除外。
  <code>is</code> 和 <code>is!</code> 被认为是一个二元操作符。
@@ -1059,7 +1062,7 @@ d= condition?b:object.method(a,b,c);
 if (obj is !SomeType) print('not SomeType');</pre>
   </div>
 
-  <h4 id="in---">确保 在每个 <code>in</code> 之间和循环中的 <code>;</code> 后面使用空格</h4>
+  <h4 class="no_toc" id="in---">确保 在每个 <code>in</code> 之间和循环中的 <code>;</code> 后面使用空格</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">for (var i = 0; i &lt; 100; i++) {
@@ -1071,7 +1074,7 @@ for (final item in collection) {
 }</pre>
   </div>
 
-  <h4 id="section-29">确保 在控制流关键字后面用一个空格</h4>
+  <h4 class="no_toc" id="section-29">确保 在控制流关键字后面用一个空格</h4>
 
   <p>和函数和方法调用不一样。
 调用函数和方法则不需要使用空格分隔。</p>
@@ -1088,7 +1091,7 @@ try {
 }</pre>
   </div>
 
-  <h4 id="section-30">不要 在 <code>(</code>、 <code>[</code>、  <code>{</code> 之后和 <code>)</code>、 <code>]</code>、 <code>}</code> 之前用空格</h4>
+  <h4 class="no_toc" id="section-30">不要 在 <code>(</code>、 <code>[</code>、  <code>{</code> 之后和 <code>)</code>、 <code>]</code>、 <code>}</code> 之前用空格</h4>
 
   <p>同样，当 <code>&lt;</code> 和 <code>&gt;</code> 用作泛型的时候 ，也不加空格。</p>
 
@@ -1096,7 +1099,7 @@ try {
     <pre class="prettyprint lang-dart">var numbers = &lt;int&gt;[1, 2, (3 + 4)];</pre>
   </div>
 
-  <h4 id="section-31">确保 在函数和方法体的 <code>{</code> 之前加一个空格</h4>
+  <h4 class="no_toc" id="section-31">确保 在函数和方法体的 <code>{</code> 之前加一个空格</h4>
 
   <p>This is an exception to the above rule. When a <code>{</code> is used after a parameter
 list in a function or method, there should be a space between it and the <code>)</code>
@@ -1114,7 +1117,7 @@ ending the parameters.</p>
 }</pre>
   </div>
 
-  <h4 id="section-32">确保 每行只放一个构造函数初始化列表语句</h4>
+  <h4 class="no_toc" id="section-32">确保 每行只放一个构造函数初始化列表语句</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">MyClass()
@@ -1129,7 +1132,7 @@ ending the parameters.</p>
 每个成员变量应该对齐（除了第一个变量以外，其他的变量都用六个空格
 缩进）。</p>
 
-  <h4 id="section-33">确保 在命名参数的<code>:</code> 后面使用一个空格</h4>
+  <h4 class="no_toc" id="section-33">确保 在命名参数的<code>:</code> 后面使用一个空格</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class ListBox {
@@ -1148,7 +1151,7 @@ main() {
 new ListBox(showScrollbars : true);</pre>
   </div>
 
-  <h4 id="section-34">确保 在可选参数 <code>=</code> 赋值前后用一个空格</h4>
+  <h4 class="no_toc" id="section-34">确保 在可选参数 <code>=</code> 赋值前后用一个空格</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">class HttpServer {
@@ -1168,7 +1171,7 @@ class HttpServer {
 }</pre>
   </div>
 
-  <h4 id="section-35">确保 在函数级联调用的时候 使用空格缩进</h4>
+  <h4 class="no_toc" id="section-35">确保 在函数级联调用的时候 使用空格缩进</h4>
 
   <div class="good">
     <pre class="prettyprint lang-dart">var list = new List()
@@ -1242,6 +1245,27 @@ class HttpServer {
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

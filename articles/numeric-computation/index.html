@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -176,14 +179,31 @@
       <li><a href="#integers">Integers</a></li>
       <li><a href="#floating-point-numbers">Floating-point numbers</a></li>
       <li><a href="#boxed-and-unboxed-numbers">Boxed and unboxed numbers</a></li>
-      <li><a href="#lists-of-numbers">Lists of numbers</a></li>
+      <li><a href="#lists-of-numbers">Lists of numbers</a>        <ol>
+          <li><a href="#object-lists">Object lists</a></li>
+          <li><a href="#typed-lists">Typed lists</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li><a href="#pulling-back-the-curtains">Pulling back the curtains</a>    <ol>
-      <li><a href="#integers-1">Integers</a></li>
-      <li><a href="#doubles">Doubles</a></li>
+      <li><a href="#integers-1">Integers</a>        <ol>
+          <li><a href="#smis-and-mints">Smis and mints</a></li>
+          <li><a href="#optimally-shifting-to-the-left">Optimally shifting to the left</a></li>
+          <li><a href="#lists-of-integers">Lists of integers</a></li>
+          <li><a href="#bigints">Bigints</a></li>
+        </ol>
+      </li>
+      <li><a href="#doubles">Doubles</a>        <ol>
+          <li><a href="#lists-of-doubles">Lists of doubles</a></li>
+        </ol>
+      </li>
       <li><a href="#boxing">Boxing</a></li>
-      <li><a href="#lists">Lists</a></li>
+      <li><a href="#lists">Lists</a>        <ol>
+          <li><a href="#object-lists-instances-of-list">Object lists (instances of List)</a></li>
+          <li><a href="#typed-lists-1">Typed lists</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li><a href="#considerations-when-dart-is-compiled-to-javascript">Considerations when Dart is compiled to JavaScript</a>    <ol>
@@ -259,7 +279,7 @@ as numbers grow and shrink in range.</p>
     <td> bigint </td>
   </tr>
   <tr>
-    <th> Minimum value </th> 
+    <th> Minimum value </th>
     <td> -2<sup>30</sup> (on a 32-bit machine)
          <br />
          -2<sup>62</sup> (on a 64-bit machine)</td>
@@ -267,7 +287,7 @@ as numbers grow and shrink in range.</p>
     <td> Limited by RAM </td>
   </tr>
   <tr>
-    <th> Maximum value </th> 
+    <th> Maximum value </th>
     <td> 2<sup>30</sup> - 1 (on a 32-bit machine)
          <br />
          2<sup>62</sup> - 1 (on a 64-bit machine)</td>
@@ -857,6 +877,27 @@ if either of those lists is used.</p>
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

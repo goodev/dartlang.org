@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -355,7 +358,7 @@ not just in the body of an HTML page. See
     </div>
   </aside>
 
-  <h4 id="appearance">Appearance</h4>
+  <h4 class="no_toc" id="appearance">Appearance</h4>
 
   <p>Every component inherits from existing tags.
 This includes tags corresponding to
@@ -402,7 +405,7 @@ components specification article</a>.</p>
     </div>
   </aside>
 
-  <h4 id="behavior">Behavior</h4>
+  <h4 class="no_toc" id="behavior">Behavior</h4>
 
   <p>The behavior of a component is declared directly in Dart code. The <code>&lt;script&gt;</code>
 tag declares the code associated with the component.
@@ -646,7 +649,7 @@ the body of an HTML page, these expressions are evaluated in the context of the
 main script associated with that page (more details
 <a href="#top-level-templates">later</a>).</p>
 
-  <h4 id="binding-in-content">Binding in content</h4>
+  <h4 class="no_toc" id="binding-in-content">Binding in content</h4>
 
   <p>You can introduce a data binding in a text node
 by using expressions of the form
@@ -683,7 +686,7 @@ instance, if we use <code>x='&lt;span&gt;two&lt;/span&gt;'</code>, the result wi
 &amp;lt;span&amp;gt;two&amp;lt;/span&amp;gt; three&lt;/span&gt;</code></p>
 
   <p>On occasions, you may want to inject HTML fragments directly in the page.
-You can do so by creating an instance of <code>SafeHtml</code> (see 
+You can do so by creating an instance of <code>SafeHtml</code> (see
 <a href="https://github.com/dart-lang/web-ui/blob/master/lib/safe_html.dart"><code>package:web_ui/safe_html.dart</code></a>). If your content happen to
 be an instance of <code>SafeHtml</code>, then the data will not be escaped.</p>
 
@@ -701,7 +704,7 @@ of the <code>dart:html</code> APIs.</p>
     </div>
   </aside>
 
-  <h4 id="binding-in-attributes">Binding in attributes</h4>
+  <h4 class="no_toc" id="binding-in-attributes">Binding in attributes</h4>
 
   <p>You can also use <code>{{expression}}</code> bindings in the middle of HTML
 attributes. An attribute written as <code>foo="{{exp}}"</code> will be initialized
@@ -782,7 +785,7 @@ a binding to <code>style</code> attributes. When using a map, we track changes t
 the map keys and values and update actual style of the element accordingly.</li>
   </ul>
 
-  <h4 id="binding-interactive-elements">Binding interactive elements</h4>
+  <h4 class="no_toc" id="binding-interactive-elements">Binding interactive elements</h4>
 
   <p>Bindings can also be used to monitor user modifications on interactive elements,
 such as input boxes, text areas, and radio buttons. We do so by binding an
@@ -924,7 +927,7 @@ groups behave exactly the same way.</p>
     </div>
   </aside>
 
-  <h4 id="watchers">Watchers</h4>
+  <h4 class="no_toc" id="watchers">Watchers</h4>
 
   <p>As hinted in the previous sections, data bindings are reactive. We would like
 the UI to be updated automatically whenever a Dart expression used in a data
@@ -968,7 +971,7 @@ children conditionally visible by using a conditional attribute
 in the element. Next, we discuss each of these approaches and when it is
 appropriate to <a href="#which-conditional">use one or the other</a>.</p>
 
-  <h4 id="conditional-template">The conditional element node</h4>
+  <h4 id="conditional-template" class="no_toc">The conditional element node</h4>
 
   <p>A template conditional element is a <code>&lt;template&gt;</code> tag containing a special
 attribute of the form <code>instantiate="if expression"</code>, where <code>expression</code> is a
@@ -977,7 +980,7 @@ Alternatively, instead of <code>instantiate="if exp"</code> you can write <code>
 
   <aside>
     <div class="alert alert-info">
-      <p><strong>Note:</strong> 
+      <p><strong>Note:</strong>
 The final syntax for conditionals is not finalized. In particular, currently
 only <code>instantiate="if ..."</code> is part of the MDV specification.
 However, Web UI supports both <code>instantiate="if ..."</code> and
@@ -1031,7 +1034,7 @@ tag anymore, they got added directly as siblings. This behavior is
 intentional. Template nodes are intended to be inert, and they are mainly used
 as a declaration. This matches closely the semantics of <a href="http://code.google.com/p/mdv/">MDV</a> templates.</p>
 
-  <p>A benefit of this semantics is that the resulting HTML is often closer to 
+  <p>A benefit of this semantics is that the resulting HTML is often closer to
 what the developer intended to say. For example, a template of the form:</p>
 
   <pre class="prettyprint lang-html">&lt;ul&gt;
@@ -1073,7 +1076,7 @@ use. In particular, the first example below is valid, but the second is invalid:
  &lt;template instantiate=&quot;if true&quot;&gt;this is invalid&lt;/template&gt;
 &lt;/element&gt;</pre>
 
-  <h4 id="conditional-attribute">The conditional attribute.</h4>
+  <h4 id="conditional-attribute" class="no_toc">The conditional attribute.</h4>
 
   <p>An alternative syntax to create conditional content is to use a conditional
 attribute on an arbitrary element. This is especially useful in contexts where
@@ -1126,7 +1129,7 @@ simply reuse the placeholder node to render the contents within it.</p>
     </div>
   </aside>
 
-  <h4 id="which-conditional">Conditional element vs. attribute</h4>
+  <h4 id="which-conditional" class="no_toc">Conditional element vs. attribute</h4>
 
   <p>The main difference between conditional template nodes and conditional
 attributes is that the former makes the contents of the template node
@@ -1188,7 +1191,7 @@ You can repeat a fragment by declaring it within a
 iterate <code>&lt;template&gt;</code> element node, or you can repeat the body of an element by
 using an iterate attribute on the element.</p>
 
-  <h4 id="iterate-template">The iterate element node</h4>
+  <h4 id="iterate-template" class="no_toc">The iterate element node</h4>
 
   <p>A template iterate element is a <code>&lt;template&gt;</code> tag containing a special attribute
 of the form <code>iterate="identifier in expression"</code>, where <code>expression</code> evaluates
@@ -1235,7 +1238,7 @@ children of the template node are appended directly as siblings of the
 placeholder node, and to understand what implications this has during app
 development.</p>
 
-  <h4 id="iterate-attribute">The iterate attribute</h4>
+  <h4 id="iterate-attribute" class="no_toc">The iterate attribute</h4>
 
   <p>An alternative syntax to do template iterations is
 to use an <code>iterate</code> attribute
@@ -1271,7 +1274,7 @@ intent to remove the extra <code>template</code> attribute.</p>
     </div>
   </aside>
 
-  <h4 id="which-loop">Iterate element vs. attribute</h4>
+  <h4 id="which-loop" class="no_toc">Iterate element vs. attribute</h4>
 
   <p>The main difference between iterate template nodes and iterate attributes is
 that the former appends the repeated contents
@@ -1489,6 +1492,27 @@ are evaluated in the top-level context of the main script.</p>
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

@@ -92,8 +92,11 @@
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
                 <li class="divider"></li>
-                 
                 <li><a href="/docs/">开发者指南</a></li>
                 <li><a href="http://api.dartlang.org">API 参考</a></li>
                 <li><a href="/docs/spec/">语言规范</a></li>
@@ -115,7 +118,7 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.org/">Pub Package Manager</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
                 <li><a href="/tools/">更多工具</a></li>
               </ul>
             </li>
@@ -433,7 +436,7 @@ Dart 编辑器自动安装需要的包。</p>
       <li>
         <p>在后面的步骤中，
 带有 <code>badgeName</code> 的 &lt;span&gt; 元素将有
-Dart 代码根基用户输入内容
+Dart 代码根据用户输入内容
 来动态更新。</p>
       </li>
       <li>
@@ -965,8 +968,7 @@ Dart 代码就可以通过 ID 获取按钮。</li>
       <li>
         <p><code>updateBadge()</code> 代码用级联操作符来设置
 按钮的两个属性。
-和下面的代码具
-有同样的效果。</p>
+和下面的代码具有同样的效果。</p>
       </li>
     </ul>
 
@@ -1174,7 +1176,7 @@ genButton.text = 'Aye! Gimme a name!';
         <p><code>final</code> 修饰的变量无法修改。</p>
       </li>
       <li>
-        <p>Dart 语音原生支持列表，这里通过
+        <p>Dart 语言原生支持列表，这里通过
 列表字面字符串来创建列表。</p>
       </li>
       <li>
@@ -1865,11 +1867,11 @@ import 'dart:convert' show JSON;
       </li>
       <li>
         <p>当 Future 成功的完成后，
-将会从 JSFON 文件中获取到海盗的名字。</p>
+将会从 JSON 文件中获取到海盗的名字。</p>
       </li>
       <li>
         <p><code>readyThePirates</code> 函数返回一个 Future，这样主程序
-就读取该文件后就有机会继续干其他任务。</p>
+在读取该文件后就有机会继续干其他任务。</p>
       </li>
     </ul>
 
@@ -1987,7 +1989,7 @@ void main() {
  并保持 UI 不可用。</p>
       </li>
       <li>
-        <p><code>then()</code> 和 <code>catchError</code> 回到函数定义为内联函数。</p>
+        <p><code>then()</code> 和 <code>catchError</code> 回调函数定义为内联函数。</p>
       </li>
     </ul>
 
@@ -2177,6 +2179,27 @@ Dart 库简介</a>
       </div>
     </div>
   </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

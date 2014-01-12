@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Dart: 用于创建结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
+  
+  <meta itemprop="description" content="Dart 是一种新的用来建构可扩展Web应用程序的语言。包含一种新的语言、一个 VM、库、工具盒一个编译为JavaScript的编译器。 今天就开始尝试 Dart！">
+
+
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+<link rel='stylesheet' type='text/css' href='/css/font-awesome.min.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
+	<link href="index.css" rel="stylesheet" type="text/css">
+	
+	
+	<link rel="alternate" type="application/atom+xml" href="http://dartnews.sinaapp.com/?feed=atom" title="Atom feed">
+  <!-- 
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+
+
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body onload="prettyPrint()">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
+                                                       入门
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档 <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
+                <li class="divider"></li>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具  <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
+                <li><a href="/tools/">更多工具</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源  <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/performance/">性能</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="/support/" title="Community and Support">
+                                              支持
+              </a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+    <div class="container col-md-10 col-md-offset-1 sub-page">
+      <div class="has-permalinks">
+      <h1 id="dart-by-example">Dart By Example</h1>
+
+<p>Short snippets of code to help you become productive with Dart.</p>
+
+<ol class="toc" id="markdown-toc">
+  <li><a href="#dart-io-and-command-line-apps">Dart I/O and command-line apps</a>    <ol>
+      <li><a href="#files-directories-and-symlinks">Files, directories, and symlinks</a>        <ol>
+          <li><a href="#deleting-a-file-directory-or-symlink">Deleting a file, directory, or symlink</a></li>
+          <li><a href="#renaming-a-file-directory-or-symlink">Renaming a file, directory, or symlink</a></li>
+          <li><a href="#finding-the-type-of-a-filesystem-object">Finding the type of a filesystem object</a></li>
+          <li><a href="#getting-the-parent-directory">Getting the parent directory</a></li>
+          <li><a href="#creating-a-file">Creating a file</a></li>
+          <li><a href="#reading-a-file-as-a-string">Reading a file as a string</a></li>
+          <li><a href="#reading-a-file-as-lines">Reading a file as lines</a></li>
+          <li><a href="#reading-a-file-as-bytes">Reading a file as bytes</a></li>
+          <li><a href="#using-a-stream-to-read-a-file">Using a stream to read a file</a></li>
+          <li><a href="#handling-errors-when-reading-a-file">Handling errors when reading a file</a></li>
+          <li><a href="#writing-a-string-to-a-file">Writing a string to a file</a></li>
+          <li><a href="#writing-bytes-to-a-file">Writing bytes to a file</a></li>
+          <li><a href="#using-a-stream-to-write-to-a-file">Using a stream to write to a file</a></li>
+          <li><a href="#creating-a-directory">Creating a directory</a></li>
+          <li><a href="#creating-a-temp-directory">Creating a temp directory</a></li>
+          <li><a href="#listing-the-contents-of-a-directory">Listing the contents of a directory</a></li>
+          <li><a href="#creating-a-symlink">Creating a symlink</a></li>
+          <li><a href="#checking-if-a-path-represents-a-symlink">Checking if a path represents a symlink</a></li>
+          <li><a href="#getting-the-target-of-a-symlink">Getting the target of a symlink</a></li>
+        </ol>
+      </li>
+      <li><a href="#http-requests-and-responses">HTTP requests and responses</a>        <ol>
+          <li><a href="#making-a-get-request">Making a GET request</a></li>
+          <li><a href="#making-a-post-request">Making a POST request</a></li>
+          <li><a href="#adding-custom-headers-to-a-request">Adding custom headers to a request</a></li>
+          <li><a href="#making-multiple-requests-to-the-same-server">Making multiple requests to the same server</a></li>
+          <li><a href="#handling-errors-when-making-a-request">Handling errors when making a request</a></li>
+          <li><a href="#getting-redirection-history">Getting redirection history</a></li>
+          <li><a href="#getting-the-response-body-as-a-string">Getting the response body as a string</a></li>
+          <li><a href="#getting-the-response-content-in-binary-format">Getting the response content in binary format</a></li>
+          <li><a href="#getting-the-response-headers">Getting the response headers</a></li>
+        </ol>
+      </li>
+      <li><a href="#http-server">HTTP server</a>        <ol>
+          <li><a href="#implementing-a-dead-simple-http-server">Implementing a dead-simple HTTP server</a></li>
+          <li><a href="#listing-directory-contents">Listing directory contents</a></li>
+          <li><a href="#serving-indexhtml">Serving index.html</a></li>
+          <li><a href="#serving-a-404">Serving a 404</a></li>
+          <li><a href="#routing-requests-based-on-url-patterns">Routing requests based on URL patterns</a></li>
+        </ol>
+      </li>
+      <li><a href="#sockets">Sockets</a>        <ol>
+          <li><a href="#using-serversockets-server">Using serversockets server</a></li>
+          <li><a href="#using-serversockets-client">Using serversockets client</a></li>
+        </ol>
+      </li>
+      <li><a href="#websockets">Websockets</a>        <ol>
+          <li><a href="#using-websockets-server">Using websockets server</a></li>
+          <li><a href="#using-websockets-client">Using websockets client</a></li>
+        </ol>
+      </li>
+      <li><a href="#os-and-hardware-information">OS and hardware information</a>        <ol>
+          <li><a href="#getting-environment-variables">Getting environment variables</a></li>
+          <li><a href="#identifying-the-operating-system">Identifying the operating system</a></li>
+          <li><a href="#getting-information-about-the-script-being-run">Getting information about the script being run</a></li>
+        </ol>
+      </li>
+      <li><a href="#interacting-with-processes">Interacting with processes</a>        <ol>
+          <li><a href="#running-a-process">Running a process</a></li>
+          <li><a href="#obtaining-the-exit-code-when-running-a-process">Obtaining the exit code when running a process</a></li>
+        </ol>
+      </li>
+      <li><a href="#working-with-paths">Working with paths</a>        <ol>
+          <li><a href="#joining-paths">Joining paths</a></li>
+          <li><a href="#parsing-a-path-into-components">Parsing a path into components</a></li>
+          <li><a href="#calculating-relative-paths">Calculating relative paths</a></li>
+          <li><a href="#converting-between-a-uri-and-a-path">Converting between a URI and a path</a></li>
+          <li><a href="#getting-information-about-a-file-path">Getting information about a file path</a></li>
+          <li><a href="#getting-the-path-separator-for-the-current-platform">Getting the path separator for the current platform</a></li>
+        </ol>
+      </li>
+      <li><a href="#other-resources">Other resources</a></li>
+    </ol>
+  </li>
+</ol>
+
+<p>See the <a href="https://github.com/dart-lang/dart_by_example/tree/master/example">source on Github</a>.</p>
+
+<h2 id="dart-io-and-command-line-apps">Dart I/O and command-line apps</h2>
+
+<p>The following examples are all stand-alone apps, such as servers, that run
+from the command line. Most of the examples use the <code>dart:io</code> library, which is
+used solely for command-line applications running on a stand-alone Dart VM.
+<strong>The <code>dart:io</code> library does not work in browser-based
+applications</strong>.
+Many examples also use Pub packages.</p>
+
+<aside class="alert alert-info">
+  <p><strong>Note:</strong>
+Many server-side APIs provide both asynchronous and synchronous ways to
+accomplish a task. For example, to read a file as a string you can use either
+the asynchronous <code>readAsString()</code> method from the File class, or its synchronous
+counterpart, <code>readAsStringSync()</code>.
+<strong>The examples below use only the asynchronous versions.</strong></p>
+</aside>
+
+<p>After looking at the following code examples,
+refer to
+<a href="/docs/serverguide.html">Writing Command-line Apps: A Programmer’s Guide</a>
+for additional information about I/O, command-line apps, and servers.</p>
+
+<h3 id="files-directories-and-symlinks">Files, directories, and symlinks</h3>
+
+<h4 id="deleting-a-file-directory-or-symlink">Deleting a file, directory, or symlink</h4>
+
+<p>Use the FilesSystemEntity <code>delete()</code> method to delete a file, directory, or
+symlink. This method is inherited by File, Directory, and Link.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Create a temporary directory.
+  Directory.systemTemp.createTemp('my_temp_dir')
+    .then((directory) {
+      // Confirm it exists.
+      directory.exists().then(print); // Prints 'true'.
+      // Delete the directory.
+      return directory.delete();
+    })
+    .then((directory) {
+      // Confirm it no longer exists.
+      directory.exists().then(print); // Prints 'false'
+    });</pre>
+
+<h4 id="renaming-a-file-directory-or-symlink">Renaming a file, directory, or symlink</h4>
+
+<p>Use the FileSystemEntity <code>rename()</code> method to change the name of a
+file, directory or symlink. This method is inherited by
+File, Directory, and Link.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Get the system temp directory.
+  var systemTempDir = Directory.systemTemp;
+
+  // Create a file.
+  new File('${systemTempDir.path}/foo.txt').create()
+    .then((file) {
+      print('The path is ${file.path}'); // Prints path ending with `foo.txt`.
+      // Rename the file.
+      return file.rename('${systemTempDir.path}/bar.txt');
+    })
+    .then((file) {
+      print('The path is ${file.path}'); // Prints path ending with `bar.txt`.
+    });</pre>
+
+<h4 id="finding-the-type-of-a-filesystem-object">Finding the type of a filesystem object</h4>
+
+<p>Use the <code>FileSystemEntity.type()</code> method to get the type of a file system
+object. This method is inherited by File, Directory, and Link.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // List the contents of the system temp directory.
+  Directory.systemTemp.list(recursive: true, followLinks: false)
+    .listen((FileSystemEntity entity) {
+      // Get the type of the FileSystemEntity, apply the appropiate label, and
+      // print the entity path.
+      FileSystemEntity.type(entity.path)
+        .then((FileSystemEntityType type) {
+          String label;
+          switch (type) {
+            case FileSystemEntityType.DIRECTORY:
+              label = 'D';
+              break;
+            case FileSystemEntityType.FILE:
+              label = 'F';
+              break;
+            case FileSystemEntityType.LINK:
+              label = 'L';
+              break;
+            default:
+              label = 'UNKNOWN';
+          }
+          print('$label: ${entity.path}');
+      });
+    });</pre>
+
+<h4 id="getting-the-parent-directory">Getting the parent directory</h4>
+
+<p>Use the FileSystemEntity <code>parent</code> property to get the parent of a
+file, directory, or symlink. This property is inherited by File, Directory,
+and Link.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // List the contents of the system temp directory.
+  Directory.systemTemp.list(recursive: true, followLinks: false)
+    .listen((FileSystemEntity entity) {
+      // Print the path of the parent of each file, directory, and symlink.
+      print(entity.parent.path);
+    });</pre>
+
+<h4 id="creating-a-file">Creating a file</h4>
+
+<p>Use the File <code>create()</code> method to create a file.
+To create intermediate directories, set the <code>recursive</code> argument to
+<code>true</code> (default is <code>false</code>).</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+
+  // Get the system temp directory.
+  var systemTempDir = Directory.systemTemp;
+
+  // Creates dir/, dir/subdir/, and dir/subdir/file.txt in the system
+  // temp directory.
+  new File('${systemTempDir.path}/dir/subdir/file.txt').create(recursive: true)
+    // The created file is returned as a Future.
+    .then((file) {
+      print(file.path);
+  });</pre>
+
+<h4 id="reading-a-file-as-a-string">Reading a file as a string</h4>
+
+<p>Use the File <code>readAsString()</code> method to read a file as a string.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:async';
+import 'dart:io';
+
+void main() {
+  new File('file.txt').readAsString().then((String contents) {
+    // Do something with the file contents.
+  });</pre>
+
+<h4 id="reading-a-file-as-lines">Reading a file as lines</h4>
+
+<p>Use the File <code>readAsLines()</code> method to read file contents as lines.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:async';
+import 'dart:io';
+
+void main() {
+  new File('file.txt').readAsLines().then((List&lt;String&gt; lines) {
+    // Do something with lines.
+  });</pre>
+
+<h4 id="reading-a-file-as-bytes">Reading a file as bytes</h4>
+
+<p>Use the File <code>readAsBytes()</code> method to read file contents as bytes.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:async';
+import 'dart:io';
+
+import 'package:crypto/crypto.dart';
+
+void main() {
+  new File('file.txt').readAsBytes().then((bytes) {
+    // Do something with the bytes. For example, convert to base64.
+    String base64 = CryptoUtils.bytesToBase64(bytes);
+    // ...
+  });</pre>
+
+<h4 id="using-a-stream-to-read-a-file">Using a stream to read a file</h4>
+
+<p>Use the File <code>openRead()</code> method to read a file’s contents a little at a
+time using a stream.
+The example below reads the file fragments, decodes them to UTF8, and
+converts them to individual lines. The <code>onDone</code> callback executes when the
+stream exhausts. The <code>onError</code> callback executes when there is an error.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+import 'dart:convert';
+import 'dart:async';
+
+main() {
+  final file = new File('file.txt');
+  Stream&lt;List&lt;int&gt;&gt; inputStream = file.openRead();
+
+  inputStream
+    // Decode to UTF8.
+    .transform(UTF8.decoder)
+    // Convert stream to individual lines.
+    .transform(new LineSplitter())
+    // Process results.
+    .listen((String line) {
+        print('$line: ${line.length} bytes');
+      },
+      onDone: () { print('File is now closed.'); },
+      onError: (e) { print(e.toString()); });</pre>
+
+<h4 id="handling-errors-when-reading-a-file">Handling errors when reading a file</h4>
+
+<p>Use <code>then()</code> to read the file contents, and <code>catchError()</code> to catch
+errors. Register a callback with <code>catchError()</code> to handle the error.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void handleError(e) {
+  print('There was a ${e.runtimeType} error');
+  print(e.message);
+}
+
+main() {
+  final filename = 'non_existent_file.txt';
+  new File(filename).readAsString()
+    // Read and print the file contents.
+    .then(print)
+    // Catch errors.
+    .catchError((e) {
+      print('There was a ${e.runtimeType} error');
+      print('Could not read $filename');
+    });</pre>
+
+<h4 id="writing-a-string-to-a-file">Writing a string to a file</h4>
+
+<p>Use the File object’s <code>writeAsString()</code> method to write a string to a
+file. After writing the string, the method closes the file.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  final filename = 'file.txt';
+  new File(filename).writeAsString('some content')
+    .then((File file) {
+      // Do something with the file.
+    });</pre>
+
+<h4 id="writing-bytes-to-a-file">Writing bytes to a file</h4>
+
+<p>Use the File <code>writeAsBytes()</code> method to write bytes to a file.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+import 'dart:convert';
+
+void main() {
+  final string = 'Dart!';
+  // Encode to UTF8.
+  var encodedData = UTF8.encode(string);
+
+  new File('file.txt')
+    .writeAsBytes(encodedData)
+    .then((file) =&gt; file.readAsBytes())
+    .then((data) {
+      // Decode to a string, and print.
+      print(UTF8.decode(data)); // Prints 'Dart!'.
+  });</pre>
+
+<h4 id="using-a-stream-to-write-to-a-file">Using a stream to write to a file</h4>
+
+<p>Use the File <code>openWrite()</code> method to create a new IOSink for a file, to
+write to the file a little at a time.
+To append to the file, set the <code>mode</code> argument to <code>FileMode.APPEND</code>
+(it defaults to <code>FileMode.WRITE</code>).</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  var file = new File('file.txt');
+  var sink = file.openWrite();
+  sink.write('FILE ACCESSED ${new DateTime.now()}\n');
+
+  // Close the IOSink to free system resources.
+  sink.close();</pre>
+
+<h4 id="creating-a-directory">Creating a directory</h4>
+
+<p>Use the Directory <code>create()</code> method to create a directory.
+To create intermediate directories, set the <code>recursive</code> argument to <code>true</code>
+(default is <code>false</code>).</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Creates dir/ and dir/subdir/.
+  new Directory('dir/subdir').create(recursive: true)
+    // The created directory is returned as a Future.
+    .then((Directory directory) {
+      print(directory.path);
+  });</pre>
+
+<h4 id="creating-a-temp-directory">Creating a temp directory</h4>
+
+<p>Use the Directory <code>createTemp()</code> method to create a temporary directory.
+This method appends random characters to the name of the directory to
+produce a unique directory name.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Create a temporary directory in the system temp directory.
+  Directory.systemTemp.createTemp('my_temp_dir')
+    .then((directory) {
+      print(directory.path);
+    });</pre>
+
+<h4 id="listing-the-contents-of-a-directory">Listing the contents of a directory</h4>
+
+<p>Use the <code>list()</code> method to list a directory’s contents.  The method recurses
+into subdirectories if the <code>recursive</code> argument is <code>true</code> (default is
+<code>false</code>). It does not follow symlinks if the <code>followLinks</code> argument is
+<code>false</code> (default is <code>true</code>).</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Get the system temp directory.
+  var systemTempDir = Directory.systemTemp;
+
+  // List directory contents, recursing into sub-directories, but not following
+  // symbolic links.
+  systemTempDir.list(recursive: true, followLinks: false)
+    .listen((FileSystemEntity entity) {
+      print(entity.path);
+    });</pre>
+
+<h4 id="creating-a-symlink">Creating a symlink</h4>
+
+<p>Use the Link <code>create()</code> method to create a symlink.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Get the system temp directory.
+  var systemTempDir = Directory.systemTemp;
+
+  // Create a temporary directory with the system temp directory.
+  systemTempDir.createTemp('my_temp_dir').then((temp) {
+
+    // Generate a couple of paths.
+    var first = '${temp.path}${Platform.pathSeparator}first';
+    var second = '${temp.path}${Platform.pathSeparator}second';
+
+    // Create a symlink.
+    new Link(second).create(first).then((Link symLink) {
+      // Do something with the symlink.
+    });
+  });</pre>
+
+<h4 id="checking-if-a-path-represents-a-symlink">Checking if a path represents a symlink</h4>
+
+<p>Use the FileSystemEntity <code>isLink()</code> method to check if path represents
+a symlink.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  // Get the system temp directory.
+  var systemTempDir = Directory.systemTemp;
+
+  // List the contents of the system temp directory.
+  systemTempDir.list(recursive: true, followLinks: false)
+    .listen((FileSystemEntity entity) {
+      // Print the path only if it represents a symlink.
+      FileSystemEntity.isLink(entity.path).then((isLink) {
+        if (isLink) print(entity.path);
+      });
+    });</pre>
+
+<h4 id="getting-the-target-of-a-symlink">Getting the target of a symlink</h4>
+
+<p>Use the Link <code>target()</code> method to get the path that the link points to.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:async';
+import 'dart:io';
+
+// Creates temporary directory inside the system temp directory, creates a
+// couple of paths in the created directory, and creates a symlink.
+Future&lt;Link&gt; createSymlink() {
+  return Directory.systemTemp.createTemp('my_temp_dir').then((temp) {
+    var first = '${temp.path}${Platform.pathSeparator}first';
+    var second = '${temp.path}${Platform.pathSeparator}second';
+    return new Link(second).create(first);
+  });
+}
+
+void main() {
+  createSymlink()
+    .then((Link link) {
+      print(link.path); // Prints path that ends with 'second'.
+      link.target().then((String targetPath) {
+        // Do something with the targetPath that ends with 'first'.
+      })
+      // Catch any error generated by link.target().
+      .catchError((e) {
+        print(e.message);
+      });
+    });</pre>
+
+<h3 id="http-requests-and-responses">HTTP requests and responses</h3>
+
+<h4 id="making-a-get-request">Making a GET request</h4>
+
+<p>Use the http package <code>get()</code> function to make a GET request.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+
+void main() {
+  var url = 'http://httpbin.org/';
+  http.get(url).then((response) {
+    print(&quot;Response status: ${response.statusCode}&quot;);
+    print(&quot;Response body: ${response.body}&quot;);
+  });</pre>
+
+<h4 id="making-a-post-request">Making a POST request</h4>
+
+<p>Use the http package <code>post()</code> function to make a POST request.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+
+void main() {
+  var url = 'http://httpbin.org/post';
+  http.post(url, body: 'name=doodle&amp;color=blue').then((response) {
+    print(&quot;Response status: ${response.statusCode}&quot;);
+    print(&quot;Response body: ${response.body}&quot;);
+  });</pre>
+
+<h4 id="adding-custom-headers-to-a-request">Adding custom headers to a request</h4>
+
+<p>Use the <code>headers</code> argument to the function used to make an HTTP request.
+The example below adds a ‘User-Agent’ header to a <code>get</code> request.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+void main() {
+  var url = 'https://api.github.com/users/dart-lang/repos';
+  http.get(url, headers : {'User-Agent':'Dart/1.0 (My Dart client)'})
+    .then((response) {
+      List&lt;String&gt; repos = JSON.decode(response.body);
+      var heading = 'Repository | Star count  | Fork count';
+      print(heading);
+      print(new List.filled(heading.length, '=').join());
+      for (var repo in repos) {
+        print(&quot;${repo['name']} | &quot;
+              &quot;${repo['stargazers_count']} | &quot;
+              &quot;${repo['forks_count']}&quot;);
+    }
+  });</pre>
+
+<h4 id="making-multiple-requests-to-the-same-server">Making multiple requests to the same server</h4>
+
+<p>Use the <code>Client</code> class in the http Pub package for making multiple requests
+to the same server. Using <code>Client</code> keeps keep a persistent connection open
+to the server and is better than making multiple single requests.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+
+printResponseBody(response) {
+  print(response.body.length);
+  if (response.body.length &gt; 100) {
+    print(response.body.substring(0, 100));
+  } else {
+    print(response.body);
+  }
+  print('...\n');
+}
+
+void main() {
+   var url = 'http://www.google.com/';
+   var client = new http.Client();
+   client.get('${url}/search')
+       .then((response) {
+         printResponseBody(response);
+         return client.get('${url}/doodles');
+        })
+       .then(printResponseBody)
+
+       // Close the connection when done.
+       .whenComplete(client.close);</pre>
+
+<h4 id="handling-errors-when-making-a-request">Handling errors when making a request</h4>
+
+<p>An HTTP request may return a response, or it may generate an error. Since
+both the response and the error are produced asychronously, you should
+register callbacks with chained <code>then()</code> and <code>catchError()</code> calls. The
+response is handled by the <code>then()</code> callback, and the error is handled by
+the <code>catchError()</code> callback.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+
+handleSuccess(http.Response response) {
+  print('something went wrong');
+  print(response.body);
+}
+
+handleFailure(error) {
+  print('Something went wrong.');
+  print(error.message);
+}
+
+void main() {
+  http.get(&quot;http://some_bogus_website.org&quot;)
+    .then(handleSuccess)
+    .catchError(handleFailure);</pre>
+
+<h4 id="getting-redirection-history">Getting redirection history</h4>
+
+<p>Use the <code>HttpClient</code> class in the ‘dart:io’ library to make a request, and
+use the Response <code>redirects</code> property to get a list of the redirects.</p>
+
+<pre class="prettyprint lang-dart">import &quot;dart:io&quot; show HttpClient, RedirectInfo;
+
+main() {
+  var client = new HttpClient();
+  client.getUrl(Uri.parse('http://google.com'))
+    .then((request) =&gt; request.close())
+    .then((response) {
+      // Get a list of all redirects.
+      List&lt;RedirectInfo&gt; redirects = response.redirects;
+      redirects.forEach((redirect) {
+        print(redirect.location); // Prints 'http://www.google.com'.
+      });
+    });</pre>
+
+<h4 id="getting-the-response-body-as-a-string">Getting the response body as a string</h4>
+
+<p>Read the response body using the <code>read()</code> function defined in the http Pub
+package.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+
+void main() {
+  http.read(&quot;http://www.google.com/&quot;).then(print);</pre>
+
+<h4 id="getting-the-response-content-in-binary-format">Getting the response content in binary format</h4>
+
+<p>Use the <code>bodyBytes</code> field on the Response object to get the response
+in bytes.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+import 'package:crypto/crypto.dart';
+
+void main() {
+  var url = &quot;https://www.dartlang.org/logos/dart-logo.png&quot;;
+  http.get(url).then((response) {
+    List&lt;int&gt; bytes = response.bodyBytes;
+    // Do something with the bytes. For example, convert to base64.
+    String base64 = CryptoUtils.bytesToBase64(bytes);
+    // ...
+  });</pre>
+
+<h4 id="getting-the-response-headers">Getting the response headers</h4>
+
+<p>Use the <code>headers</code> field of the Response object to get a headers Map.
+The map keys are the header fields, and the map values are the values of
+those fields.</p>
+
+<pre class="prettyprint lang-dart">import 'package:http/http.dart' as http;
+
+void main() {
+  var url = 'http://httpbin.org/';
+  http.get(url).then((response) {
+
+    // Get the headers map.
+    print(response.headers.keys);
+
+    // Get header values.
+    print(&quot;access-control-allow-origin' = ${response.headers['access-control-allow-origin']}&quot;);
+    print(&quot;content-type = ${response.headers['content-type']}&quot;);
+    print(&quot;date = ${response.headers['date']}&quot;);
+    print(&quot;content-length = ${response.headers['content-length']}&quot;);
+    print(&quot;connection = ${response.headers['connection']}&quot;);
+  });</pre>
+
+<h3 id="http-server">HTTP server</h3>
+
+<h4 id="implementing-a-dead-simple-http-server">Implementing a dead-simple HTTP server</h4>
+
+<p>Use <code>HttpServer.bind()</code> method to bind to a port and the HttpServer
+<code>listen()</code> method to listen for connections.  Respond to an <code>HttpRequest</code>
+using the <code>response</code> property.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+void main() {
+  HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, 8080).then((server) {
+    print(server);
+    server.listen((HttpRequest request) {
+      request.response.write('Hello, world');
+      request.response.close();
+    });
+  });</pre>
+
+<h4 id="listing-directory-contents">Listing directory contents</h4>
+
+<p>Use the http Pub package, and create a VirtualDirectory to serve the
+request. Set the VirtualDirectory <code>allowDirectoryListing</code> field to
+true. Requests to the default directory (‘/’) display the contents of that
+directory.</p>
+
+<pre class="prettyprint lang-dart">library simple_http_server;
+
+import 'dart:io';
+import 'package:http_server/http_server.dart' show VirtualDirectory;
+
+final MY_HTTP_ROOT_PATH = Platform.script.resolve('web').toFilePath();
+
+void main() {
+  var virDir = new VirtualDirectory(MY_HTTP_ROOT_PATH);
+  virDir.allowDirectoryListing = true;
+
+  HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, 8080).then((server) {
+    server.listen((request) {
+      virDir.serveRequest(request);
+    });
+  });</pre>
+
+<h4 id="serving-indexhtml">Serving index.html</h4>
+
+<p>Use the http Pub package, and create a VirtualDirectory to serve the
+request. Register a callback for handling errors using the <code>errorHandler</code>
+property.</p>
+
+<pre class="prettyprint lang-dart">library simple_http_server;
+
+import 'dart:async';
+import 'dart:io';
+import 'package:http_server/http_server.dart' show VirtualDirectory;
+
+VirtualDirectory virDir;
+
+void directoryHandler(dir, request) {
+  var indexUri = new Uri.file(dir.path).resolve('index.html');
+  virDir.serveFile(new File(indexUri.toFilePath()), request);
+}
+
+void main() {
+  virDir = new VirtualDirectory(Platform.script.resolve('./web').toFilePath())
+    ..allowDirectoryListing = true
+    ..directoryHandler = directoryHandler;
+
+  HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, 8080).then((server) {
+    server.listen((request) {
+      virDir.serveRequest(request);
+    });
+  });</pre>
+
+<h4 id="serving-a-404">Serving a 404</h4>
+
+<p>Use the http Pub package, and create a VirtualDirectory to serve the
+request. Register an error handler using the <code>errorHandler</code> property.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:async';
+import 'dart:io';
+
+import 'package:http_server/http_server.dart' as http_server;
+
+void errorPageHandler(HttpRequest request) {
+  request.response
+      ..statusCode = HttpStatus.NOT_FOUND
+      ..write('Not found')
+      ..close();
+}
+
+void main() {
+  var buildPath = Platform.script.resolve('./web').toFilePath();
+
+  var virDir = new http_server.VirtualDirectory(buildPath)
+    ..allowDirectoryListing = true
+    ..errorPageHandler = errorPageHandler;
+
+  HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, 8080).then((server) {
+    server.listen((request) {
+      virDir.serveRequest(request);
+    });
+  });
+}</pre>
+
+<h4 id="routing-requests-based-on-url-patterns">Routing requests based on URL patterns</h4>
+
+<p>Use the <code>route</code> Pub package, and associate callbacks with URL patterns.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+import 'dart:async';
+
+import 'package:route/server.dart';
+import 'package:route/url_pattern.dart';
+
+// Pattern for all posts (plural).
+final postsUrl = new UrlPattern(r'/posts\/?');
+
+// Pattern for a single post('/post/24', for example).
+final postUrl = new UrlPattern(r'/post/(\d+)\/?');
+
+
+// Callback for all posts (plural).
+servePosts(req) {
+  req.response.write(&quot;All blog posts&quot;);
+  req.response.close();
+}
+
+// Callback for a single post('/post/24', for example).
+servePost(req) {
+  var postId = postUrl.parse(req.uri.path)[0];
+  req.response.write('Blog post $postId');
+  req.response.close();
+}
+
+// Callback to handle illegal urls.
+serveNotFound(req) {
+  req.response.statusCode = HttpStatus.NOT_FOUND;
+  req.response.write('Not found');
+  req.response.close();
+}
+
+void main() {
+  HttpServer.bind(InternetAddress.LOOPBACK_IP_V4, 8080).then((server) {
+    var router = new Router(server)
+      // Associate callbacks with URLs.
+      ..serve(postsUrl, method: 'GET').listen(servePosts)
+      ..serve(postUrl, method: 'GET').listen(servePost)
+      ..defaultStream.listen(serveNotFound);
+  });</pre>
+
+<h3 id="sockets">Sockets</h3>
+
+<h4 id="using-serversockets-server">Using serversockets server</h4>
+
+<p>Use <code>ServerSocket.bind()</code> to bind to an address and a port.  Get the socket
+from the ServerSocket and listen to it for the data.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+import 'dart:convert';
+
+main() {
+  ServerSocket.bind('127.0.0.1', 4041)
+    .then((serverSocket) {
+      print('connected');
+      serverSocket.listen((socket) {
+        socket.transform(UTF8.decoder).listen(print);
+      });
+    });</pre>
+
+<h4 id="using-serversockets-client">Using serversockets client</h4>
+
+<p>Create a new socket connection using <code>Socket.connect()</code>. Send data over the
+socket using the Socket <code>write()</code> method.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+main() {
+  Socket.connect('127.0.0.1', 4041).then((socket) {
+    print(socket.runtimeType);
+    socket.write('Hello, World!');
+  });</pre>
+
+<h3 id="websockets">Websockets</h3>
+
+<h4 id="using-websockets-server">Using websockets server</h4>
+
+<p>Upgrade a regular HTTP request to a WebSocket request using
+<code>WebSocketTransformer.upgrade()</code>.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+import 'dart:async';
+
+handleMsg(msg) {
+  print('Message received: $msg');
+}
+
+main() {
+  runZoned(() {
+    HttpServer.bind('127.0.0.1', 4040).then((server) {
+      server.listen((HttpRequest req) {
+        if (req.uri.path == '/ws') {
+          // Upgrade a HttpRequest to a WebSocket connection.
+          WebSocketTransformer.upgrade(req).then((socket) {
+            socket.listen(handleMsg);
+          });
+        }
+      });
+    });
+  },
+  onError: (e) =&gt; print(&quot;An error occurred.&quot;));</pre>
+
+<h4 id="using-websockets-client">Using websockets client</h4>
+
+<p>Make a WebSocket connection using <code>WebSocket.connect()</code>, and send data
+over that connection using the WebSocket <code>add()</code> method.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+main() {
+  WebSocket.connect('ws://127.0.0.1:4040/ws').then((socket) {
+    socket.add('Hello, World!');
+  });</pre>
+
+<h3 id="os-and-hardware-information">OS and hardware information</h3>
+
+<h4 id="getting-environment-variables">Getting environment variables</h4>
+
+<p>Use <code>Platform.environment</code> to get the environment for the current process.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io' show Platform;
+
+void main() {
+  Map&lt;String, String&gt; envVars = Platform.environment;
+  print(envVars['PATH']);</pre>
+
+<h4 id="identifying-the-operating-system">Identifying the operating system</h4>
+
+<p>Use <code>Platform.operatingSystem</code> to get the operating system as a String.
+Or, use the <code>isMacOS</code>, <code>isAndroid</code>, <code>isLinux</code>, and <code>isWindows</code> static
+getters defined in <code>Platform</code>.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io' show Platform, stdout;
+
+void main() {
+  // Get the operating system as a string.
+  String os = Platform.operatingSystem;
+
+  // Or, use predicate getters for checking the operating system.
+  stdout.write(&quot;You are using &quot;);
+  if (Platform.isMacOS) {
+    stdout.writeln('a Mac');
+  } else if (Platform.isAndroid) {
+    stdout.writeln('an Android device');
+  } else if (Platform.isLinux) {
+    stdout.writeln('Linux');
+  } else if (Platform.isWindows) {
+    stdout.writeln('Windows');
+  } else {
+    stdout.writeln('something other than MacOS, Android, Linux, or Windows');
+  }</pre>
+
+<h4 id="getting-information-about-the-script-being-run">Getting information about the script being run</h4>
+
+<p>Use <code>Platform.script</code> to get the absolute URI of the script being run in
+the current isolate.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io' show Platform;
+
+void main() {
+  // Get the URI of the script being run.
+  var uri = Platform.script;
+  print(uri); // Prints something like '/Users/shailentuli/workspace/...'.
+
+  // Convert the URI to a path.
+  var path = uri.toFilePath();
+  print(path); // Prints something like 'file:///Users/shailentuli/workspace/...'.</pre>
+
+<h3 id="interacting-with-processes">Interacting with processes</h3>
+
+<h4 id="running-a-process">Running a process</h4>
+
+<p>Use <code>Process.run()</code> to run a process. The results of the process are
+returned asynchronously using a ProcessResult object.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+main() {
+  // List all files in the current directory in UNIX-like operating systems.
+  Process.run('ls', ['-l']).then((ProcessResult results) {
+    print(results.stdout);
+  });</pre>
+
+<h4 id="obtaining-the-exit-code-when-running-a-process">Obtaining the exit code when running a process</h4>
+
+<p>Use <code>Process.start()</code> to start a process to run an executable. This function
+returns a new process that you can use to interact with the original
+process. You can use this returned process to obtain the exit code from
+executing the original process.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io';
+
+main() {
+  Process.start('ls', ['-l']).then((process) {
+    // Get the exit code from the new process.
+    process.exitCode.then((exitCode) {
+      print('exit code: $exitCode'); // Prints 'exit code: 1'.
+    });
+  });</pre>
+
+<h3 id="working-with-paths">Working with paths</h3>
+
+<h4 id="joining-paths">Joining paths</h4>
+
+<p>Use the path Pub package, and use <code>join()</code> to create a new path from
+existing paths. Using <code>join()</code> ensures that the current platform’s directory
+separator is used in the path.</p>
+
+<pre class="prettyprint lang-dart">import 'package:path/path.dart' as path;
+
+void main() {
+  var newPath = path.join('/Users/shailen', 'dart/projects');
+  print(newPath); // Prints '/Users.shailen/dart/projects'.</pre>
+
+<h4 id="parsing-a-path-into-components">Parsing a path into components</h4>
+
+<p>Use the <code>split()</code> function in the <code>path</code> Pub package to split a path into
+its components.</p>
+
+<pre class="prettyprint lang-dart">import 'package:path/path.dart' as path;
+
+void main() {
+  print(path.split('/Users/shailen')); // Prints ['/', 'Users', 'shailen'].
+
+  // Windows example.
+  print(path.split(r'C:\tempdir\tmp.txt')); // Prints [r'C:\', 'tempdir', 'tmp.txt'])</pre>
+
+<h4 id="calculating-relative-paths">Calculating relative paths</h4>
+
+<p>Use the <code>relative()</code> function in the <code>path</code> Pub package to calculate
+relative paths.  This function calculates the relative path from the current
+directory by default. To calculate the relative path from another path,
+specify that path using the <code>from</code> argument.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io' show Directory;
+import 'package:path/path.dart' as path;
+
+void main() {
+  // The path from the current directory to the system temp directory.
+  print(path.relative(Directory.systemTemp.path));
+
+  // You can work with relative paths.
+  var path1 = 'docs/book.html';
+  var path2 = 'articles/list';
+  print(path.relative(path1, from: path2)); // Prints '../../docs/book.html'.
+  print(path.relative(path2, from: path1)); // Prints '../../articles/list'.
+
+  // Or you can work with absolute paths.
+  var samples = 'http://www.dartlang.org/samples';
+  var docs = 'http://www.dartlang.org/docs';
+  print(path.relative(samples, from: docs)); // Prints '../samples'.</pre>
+
+<h4 id="converting-between-a-uri-and-a-path">Converting between a URI and a path</h4>
+
+<p>Use the <code>toUri()</code> and <code>fromUri()</code> functions in the <code>path</code> Pub package when
+converting between a URI and a path.</p>
+
+<pre class="prettyprint lang-dart">import 'package:path/path.dart' as path;
+
+void main() {
+  var uri = path.toUri('http://dartlang.org/samples');
+  print(path.fromUri(uri)); // Prints 'http:/dartlang.org/samples'.</pre>
+
+<h4 id="getting-information-about-a-file-path">Getting information about a file path</h4>
+
+<p>Use the <code>basename()</code>, <code>dirname()</code>, <code>basenameWithoutExtension()</code>, and
+<code>extension()</code> methods defined in the <code>path</code> Pub package when working with
+a file path.</p>
+
+<pre class="prettyprint lang-dart">import 'package:path/path.dart' as path;
+
+import 'dart:io';
+
+void main() {
+  // Create dir/ and dir/file.txt in the system temp directory.
+  new File('${Directory.systemTemp.path}/dir/myFile.txt').create(recursive: true)
+    // The created file is returned as a Future.
+    .then((file) {
+      print(path.basename(file.path)); // Prints 'file.txt'.
+      print(path.dirname(file.path));  // Prints path ending with 'dir'.
+      print(path.basenameWithoutExtension(file.path)); // Prints 'myFile'.
+      print(path.extension(file.path)); // Prints '.txt'.
+  });</pre>
+
+<h4 id="getting-the-path-separator-for-the-current-platform">Getting the path separator for the current platform</h4>
+
+<p>Use <code>Platform.pathSeparator</code> to get the separator used by the operating
+system to separate components in file. Or, use the <code>separator</code> getter
+in the <code>path</code> Pub package.</p>
+
+<pre class="prettyprint lang-dart">import 'dart:io' show Platform;
+import 'package:path/path.dart' as path;
+
+void main() {
+  // Prints  '\' on Windows and '/' on other platforms.
+  print(Platform.pathSeparator);
+
+  // This does the same.
+  print(path.separator);</pre>
+
+<h3 id="other-resources">Other resources</h3>
+
+<p>Read the <a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io.html">dart:io library API docs</a>.</p>
+
+<p>Here are links to the commonly used classes and packages in these
+examples:</p>
+
+<ul>
+  <li>
+    <p>Files, Directories, and Symlinks</p>
+
+    <ul>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/FileSystemEntity.html">FileSystemEntity class</a></li>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/File.html">File class</a></li>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/Directory.html">Directory class</a></li>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/Link.html">Link class (for symlinks)</a></li>
+    </ul>
+  </li>
+  <li>HTTP requests and responses
+    <ul>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/http.html">http Pub package</a></li>
+    </ul>
+  </li>
+  <li>HTTP server
+    <ul>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/HttpServer.html">HttpServer class</a></li>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/http_server.html">http_server Pub package</a></li>
+    </ul>
+  </li>
+  <li>OS and hardware information
+    <ul>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/Platform.html">Platform class</a></li>
+    </ul>
+  </li>
+  <li>Interacting with processes
+    <ul>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/dart_io/Process.html">Process class</a></li>
+    </ul>
+  </li>
+  <li>Working with paths
+    <ul>
+      <li><a href="https://api.dartlang.org/docs/channels/stable/latest/path.html">path Pub package</a></li>
+    </ul>
+  </li>
+</ul>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://forum.dartlang.cc">中文社区</a></li>
+            <li><a href="http://weibo.com/cndart">中文微博</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<style>
+#survey-prompt {
+text-align: center;
+position: fixed;
+bottom: 0px;
+left: 0px;
+background: #00A4E4;
+color: white;
+font-size: 15px;
+padding: 5px 70px;
+z-index: 3000;
+text-decoration: none;
+border-radius: 0 5px 0 0;
+}
+</style>
+
+<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
+填写一个两分钟开发者问卷调查。<br>
+帮助 Dart 开发团队制定 2014 年度计划。
+</a>
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+</body>
+</html>
+
