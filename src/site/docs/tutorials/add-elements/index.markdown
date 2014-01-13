@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "在 DOM 中添加元素"
 description: "你有一个 Element 对象，然后呢？"
 has-permalinks: true

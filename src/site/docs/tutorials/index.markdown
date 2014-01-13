@@ -38,8 +38,9 @@ next-title: "开始"
     <li><a href="#dom" data-toggle="tab">浏览器</a></li>
     <li><a href="#packages" data-toggle="tab">Packages</a></li>
     <li><a href="#polymer" data-toggle="tab">Polymer</a></li>
-    <li><a href="#futures" data-toggle="tab">Futures 和 Streams</a></li>
+    <li><a href="#futures" data-toggle="tab">Async</a></li>
     <li><a href="#forms" data-toggle="tab">表单和数据</a></li>
+    <li><a href="#commandline" data-toggle="tab">独立应用</a></li>
     <!--<li><a href="#mobile" data-toggle="tab">移动浏览器</a></li>-->
   </ul>
 
@@ -249,6 +250,24 @@ next-title: "开始"
       </div> <!-- end row -->
     </div> <!-- end FORMS tab -->
 
+    <!-- COMMAND-LINE APPS TAB -->
+    <div class="tab-pane" id="commandline">
+      <div class="row">
+
+        <div class="col-md-6">
+          <section>
+          <h4 class="no-permalink"><a href="cmdline/"><img src="images/target.png" height="20" width="20">&nbsp;编写命令行应用</a></h4>
+          <p>学习命令了应用的特性。</p>
+          <img src="cmdline/images/sourceforhomepage.png">
+          </section>
+        </div>
+
+        <div class="col-md-6">
+        </div>
+
+      </div>
+    </div>
+ 
   <!-- MOBILE TAB -->
   <!--
     <div class="tab-pane" id="mobile">

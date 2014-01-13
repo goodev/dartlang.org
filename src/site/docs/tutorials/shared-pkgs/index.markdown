@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "安装共享包"
 description: "包是帮助你共享代码的源代码、工具和资源的集合"
 has-permalinks: true

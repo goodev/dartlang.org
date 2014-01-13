@@ -202,7 +202,7 @@ Dart 编辑器自动安装需要的包。
 
 * 在后面的步骤中，
 带有 `badgeName` 的 &lt;span&gt; 元素将有
-Dart 代码根基用户输入内容
+Dart 代码根据用户输入内容
 来动态更新。
 
 * `piratebadge.dart` 脚本是该应用的主要代码文件。
@@ -707,8 +707,7 @@ void updateBadge(Event e) {
 
 * `updateBadge()` 代码用级联操作符来设置
 按钮的两个属性。
-和下面的代码具
-有同样的效果。
+和下面的代码具有同样的效果。
 
 <pre>
 genButton.disabled = false;
@@ -907,7 +906,7 @@ class PirateName {
 
 * `final` 修饰的变量无法修改。
 
-* Dart 语音原生支持列表，这里通过
+* Dart 语言原生支持列表，这里通过
 列表字面字符串来创建列表。
 
 * `List` 类提供了列表的相关API。
@@ -1570,10 +1569,10 @@ class PirateName {
 调用回调函数 `.then()`。
 
 * 当 Future 成功的完成后，
-将会从 JSFON 文件中获取到海盗的名字。
+将会从 JSON 文件中获取到海盗的名字。
 
 * `readyThePirates` 函数返回一个 Future，这样主程序
-就读取该文件后就有机会继续干其他任务。
+在读取该文件后就有机会继续干其他任务。
 
 </div> </div>
 
@@ -1682,7 +1681,7 @@ void main() {
  程序然后显示一个错误信息，
  并保持 UI 不可用。
 
-* `then()` 和 `catchError` 回到函数定义为内联函数。
+* `then()` 和 `catchError` 回调函数定义为内联函数。
 
 </div> </div>
 

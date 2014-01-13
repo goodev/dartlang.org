@@ -31,28 +31,6 @@ Dart 开发概览告诉你一些能够
 [Dart 教程](/docs/tutorials/)
 ：使用 Dart 创建 web 应用的手把手教程。
 
-## 工具
-
-Dart 工具非常友好，你
-可以选择不同的编辑器、IDE以及其他工具。
-
-
-当 [下载 Dart](/#get-started)后，
-只包含[Dart 编辑器](/tools/editor/) IDE、
-[Dartium](/tools/dartium/) (带有 Dart 虚拟机的浏览器)
-和 [Dart SDK](/tools/sdk/)。
-SDK 包含一些命令行工具，分别为：
- Dart VM (dart)、一个 Dart-to-JavaScript 编译器 (dart2js)、
- 和一个包管理器 (pub)。
-
-[Dart 编辑器](/tools/editor/)
-：开始学习 Dart 的最简单方式。
-
-[Dart 工具](/tools/)
-：关于其他工具的一些信息和
-下载地址。
-
-
 ## 概念
 
 目前你不需要查看下面的所有内容，
@@ -129,6 +107,14 @@ Stream 的一个示例是
 * [在 Dart 中创建 Streams](/articles/creating-streams/)
 * [Stream API 文档](http://api.dartlang.org/dart_async/Stream.html)
 
+## 创建命令行程序
+
+可以用 Dart 干任何事情，从脚本到 web 服务器。
+感谢 Heroku 支持第三方运行环境，
+你可以在 Heroku 云服务器中运行 Dart 应用的服务器端代码。
+
+* [dart: The Standalone VM](/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html)
+* [Heroku cloud application platform](http://www.heroku.com) 
 
 ## 创建 Web 应用
 
@@ -183,15 +169,27 @@ Angular 框架的 Dart 实现。
 * [dart:js API 文档](http://api.dartlang.org/dart_js.html)
 * [使用 JavaScript 的示例](/samples/#using_javascript_from_dart)
 
+## 工具
 
-## 创建命令行程序
+Dart 工具非常友好，你
+可以选择不同的编辑器、IDE以及其他工具。
 
-可以用 Dart 干任何事情，从脚本到 web 服务器。
-感谢 Heroku 支持第三方运行环境，
-你可以在 Heroku 云服务器中运行 Dart 应用的服务器端代码。
 
-* [dart: The Standalone VM](/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html)
-* [Heroku cloud application platform](http://www.heroku.com) 
+当 [下载 Dart](/#get-started)后，
+只包含[Dart 编辑器](/tools/editor/) IDE、
+[Dartium](/tools/dartium/) (带有 Dart 虚拟机的浏览器)
+和 [Dart SDK](/tools/sdk/)。
+SDK 包含一些命令行工具，分别为：
+ Dart VM (dart)、一个 Dart-to-JavaScript 编译器 (dart2js)、
+ 和一个包管理器 (pub)。
+
+[Dart 编辑器](/tools/editor/)
+：开始学习 Dart 的最简单方式。
+
+[Dart 工具](/tools/)
+：关于其他工具的一些信息和
+下载地址。
+
 
 ## 测试
 

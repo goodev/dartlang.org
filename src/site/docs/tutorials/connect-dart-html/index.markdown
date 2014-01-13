@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "连接 Dart 和 HTML"
 description: "演示 Dart web 应用的基本结构"
 has-permalinks: true
@@ -105,7 +105,7 @@ HTML 用标签来描述文档。
 这些标签定义了文档的结构。
 
 在 DOM 中，
-文档对象位于一个根节点中，
+document 对象位于根节点中，
 根节点没有父节点。
 不同的节点代表文档中
 不同的对象。

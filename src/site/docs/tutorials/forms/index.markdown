@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: tutorial
 title: "从表单中获取数据"
 description: "使用 HTML 表单和 input 元素往服务器发送数据"
 has-permalinks: true

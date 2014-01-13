@@ -136,9 +136,9 @@ i.sprite-icon-social-gplus {
 }
 
 i.sprite-icon-browsers {
-  width: 193px;
-  height: 36px;
-  background-position: 0 -100px;
+  width: 223px;
+  height: 50px;
+  background-position: 0 -90px;
   margin: 0 auto;
 }
 
@@ -1486,6 +1486,6 @@ dd{
 }
 
 i.sprite-icon-social-weibo {
-  background-position: -1000 -350px;
-  margin-left: 20px;
+  background-position: 0 -350px;
+  margin-left: 0px;
 }
