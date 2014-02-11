@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "Try Dart"
-description: "Write some Dart code. Learn some stuff."
+layout: tutorial
+title: "Avast, Ye Pirates: Write a Web App"
+description: "Take your first step to learning Dart fast."
 snippet_img: images/piratemap.jpg
 has-permalinks: true
 tutorial:
@@ -9,7 +9,7 @@ tutorial:
 js:
 - url: /js/os-switcher.js
   defer: true
-- url: /js/editor-downloads-analytics.js
+- url: /js/downloads-analytics.js
   defer: true
 - url: /js/editor-version.js
   defer: true
@@ -28,7 +28,7 @@ This code lab assumes that you have some programming experience.
 
 <iframe class="running-app-frame"
         style="height:220px;width:550px;"
-        src="examples/6-piratebadge_json/piratebadge.html">
+        src="examples/6-piratebadge/piratebadge.html">
 </iframe>
 
 <hr>
@@ -44,7 +44,9 @@ This code lab assumes that you have some programming experience.
 * [Step 4: Create a class](#step-four)
 * [Step 5: Save to local storage](#step-five)
 * [Step 6: Read names from JSON file using HttpRequest](#step-six)
-* [Step 7: Go forth and learn more about Dart](#step-seven)
+* [Step 7: Build the app and run as JavaScript](#step-seven)
+* [What next?](#whatnext)
+* [Summary and resources](#resources)
 
 </div>
 
@@ -59,11 +61,14 @@ In this step, you download Dart and get the sample code.
 ### <i class="fa fa-anchor"> </i> Get Dart.
 
 <div class="trydart-step-details" markdown="1">
-If you haven't already done so,
-get the Dart download.
+If you haven't already done so, get the Dart download.
 Unzip the ZIP file, which creates a directory called `dart`.
+(For more options, go to the [download page](/tools/download.html).)
 
+<!--style here is a hack to remove the arrow, which was only partially showing. -->
+<div style="padding-left: 10px"> 
 {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
+</div>
 
 <p class="os-choices" markdown="1">
   The Dart tools
@@ -88,37 +93,47 @@ Go to the `dart` directory and double-click **DartEditor**.
 <a href="https://github.com/dart-lang/one-hour-codelab/archive/master.zip">Download</a>
 the sample code.
 Unzip the ZIP file,
-which creates a directory called `one-hour-codelab-master`.
+which creates a directory called `one-hour-codelab`.
 </div>
 
-### <i class="fa fa-anchor"> </i> Open the one-hour-codelab-master sample.
+### <i class="fa fa-anchor"> </i> Open the one-hour-codelab sample.
 
 <div class="trydart-step-details" markdown="1">
 In Dart Editor,
 use **File > Open Existing Folder...**
-to open the `one-hour-codelab-master` directory.
+to open the `one-hour-codelab` directory.
 </div>
 
 <div class="row"> <div class="col-md-7" markdown="1">
 
 ![The files and directories in the piratebadge directory.](images/filesanddirs.png)
 
+<div class="trydart-note" markdown="1">
+<strong>Note:</strong>
+If you see <span style="color:red">red X's</span> at the left of the
+filenames or if the `packages` directory is missing,
+the packages are not properly installed.
+Right click `pubspec.yaml` and select **Pub Get**.
+</div>
+
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * The `packages` directory, as well as the `pubspec.yaml` and `pubspec.lock` files are
-related to package dependencies.
-This project has all the dependencies set up for you.
-Dart Editor automatically installs the necessary packages.
+  related to package dependencies.
+  This project has all the dependencies set up for you.
+  Dart Editor automatically installs the necessary packages.
 
 * Several numbered directories contain the completed code for each step.
-`1-blankbadge` contains the skeletal version of the app that you begin with.
-`6-piratebadge_json` contains the final version of the app.
+  `1-blankbadge` contains the skeletal version of the app that you begin with.
+  `6-piratebadge` contains the final version of the app.
 
-* The `piratebadge.css` file
-provides the CSS styles for all steps of the app.
-You don't change this file during this code lab.
+* **Dart SDK** contains the source code for all of the functions,
+  variables, and classes provided by the Dart Software Development Kit.
+
+* **Installed Packages** contains the source code for all of the functions,
+  variables, and classes for the additional libraries that this application depends on.
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -166,7 +181,9 @@ Get familiar with the HTML and the Dart code for the skeleton version of the app
   <head>
     <meta charset="utf-8">
     <title>Pirate badge</title>
-    <link rel="stylesheet" href="../piratebadge.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="piratebadge.css">
   </head>
   <body>
     <h1>Pirate badge</h1>
@@ -194,22 +211,27 @@ Get familiar with the HTML and the Dart code for the skeleton version of the app
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * During this code lab,
-all the changes you make to `piratebadge.html` are within
-the &lt;div&gt; element identified with the class `widgets`.
+  all the changes you make to `piratebadge.html` are within
+  the &lt;div&gt; element identified with the class `widgets`.
 
 * In later steps,
-the &lt;span&gt; element with the ID `badgeName`
-is programmatically updated by the Dart code
-based on user input.
+  the &lt;span&gt; element with the ID `badgeName`
+  is programmatically updated by the Dart code
+  based on user input.
 
-* The `piratebadge.dart` script provides the main program for the app.
+* The first &lt;script&gt; tag identifies
+  the main file that implements the app.
+  Here, it's the `piratebadge.dart` file.
 
-* The `packages/browser/dart.js` script is a bootstrap script
-that takes care of turning on the Dart VM,
-as well as compatibility with non-Dart browsers.
+* The Dart Virtual Machine (Dart VM) runs Dart code natively.
+  The Dart VM is built into Dartium,
+  a special build of the Chromium browser in which you can run Dart apps natively.
+
+* The `packages/browser/dart.js` script checks for native Dart support
+  and either bootstraps the Dart VM or loads compiled JavaScript instead.
 
 </div> </div>
 
@@ -231,11 +253,14 @@ as well as compatibility with non-Dart browsers.
 
 </div> <div class="col-md-5" markdown="1">
 
-* This file is the main script for the app.
-It is referenced by a &lt;script&gt; tag in the `piratebadge.html` file.
+* This file contains the single entry point for the app&mdash;the `main()` function.
+  The &lt;script&gt; tags in the `piratebadge.html` file start the application
+  by running this function.
 
 * The `main()` function is a top-level function.
-  Dart calls this function when your app starts.
+
+* A top-level variable or function is one that is declared outside
+  a class definition.
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 </div> </div>
@@ -243,15 +268,16 @@ It is referenced by a &lt;script&gt; tag in the `piratebadge.html` file.
 ### <i class="fa fa-anchor"> </i> Run the app.
 
 <div class="trydart-step-details" markdown="1">
-To run the app in Dart Editor, select `piratebadge.html`
-and click the Run button
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">.
+To run the app in Dart Editor, right click `piratebadge.html`
+and select **Run in Dartium**.
 
-![Click the run button](images/clickrun.png)
+![Select Run in Dartium](images/clickrun2.png)
 
 Dart Editor launches _Dartium_, a special build of Chromium
-that has the Dart Virtual Machine built in, and loads the app.
+that has the Dart Virtual Machine built in,
+and loads the `piratebadge.html` file.
+The `piratebadge.html` file loads the app
+and calls the `main()` function.
 
 You should see a TO DO comment on the left
 and a red and white name badge on the right.
@@ -259,7 +285,7 @@ and a red and white name badge on the right.
 
 <div class="trydart-step-details" markdown="1">
 <iframe class="running-app-frame"
-        style="height:220px;width:550px;"
+        style="height:220px;width:600px;"
         src="examples/1-blankbadge/piratebadge.html">
 </iframe>
 </div>
@@ -303,10 +329,10 @@ within the `widgets` &lt;div&gt;.
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * The ID for the input element is `inputName`.
-Dart uses CSS selectors, like this ID,
+Dart uses CSS selectors, such as `#inputName`,
 to get elements from the DOM.
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
@@ -336,11 +362,19 @@ library at the top of the file
 
 </div> <div class="col-md-5" markdown="1">
 
-* This imports all classes and other resources from dart:html,
-which provides HTML elements and access to the DOM.
+* This imports _all_ classes and other resources from dart:html.
+
+* Don't worry about bloated code.
+  The build process performs tree-shaking to help minimize code.
+
+* The dart:html library contains the classes for all DOM element types,
+  in addition to functions for accessing the DOM.
+
+* Later you'll use import with the `show` keyword,
+  which imports only the specified classes.
 
 * Dart Editor helpfully warns you that the import is unused.
-Don't worry about it. You'll fix it in the next step.
+  Don't worry about it. You'll fix it in the next step.
 
 </div> </div>
 
@@ -367,18 +401,29 @@ void main() {
 </div> <div class="col-md-5" markdown="1">
 
 * The `querySelector()` function, defined in
-dart:html, gets an element from the DOM.
-Here, the code uses the ID `#inputName`
-to specify the input field.
+  dart:html, gets the specified element from the DOM.
+  Here, the code uses the selector `#inputName`
+  to specify the input field.
 
-* `onInput` registers an event handler for input events.
+* The object returned from `querySelector()` 
+  _is_ the DOM element object.
+
+* Mouse and keyboard events are served over a stream.
+
+* A Stream provides an asynchronous sequence of data.
+  Using the `listen()` method, a stream client
+  registers a callback function that gets called when
+  data is available.
+
+* `onInput.listen()` listens to the text field's event stream for input events.
+  When such an event occurs, `updateBadge()` is called.
 
 * An input event occurs when the user presses a key.
 
 * You can use either single or double quotes to create a string.
 
 * Dart Editor warns you that the function doesn't exist.
-Let's fix that now.
+  Let's fix that now.
 
 </div> </div>
 
@@ -397,7 +442,7 @@ Implement the event handler as a top-level function.
 ...
 
 [[highlight]]void updateBadge(Event e) { 
-  querySelector('#badgeName').text = (e.target as InputElement).value;
+  querySelector('#badgeName').text = e.target.value;
 }[[/highlight]]
 {% endprettify %}
 </div>
@@ -408,17 +453,55 @@ Implement the event handler as a top-level function.
 
 * This function sets the text of the `badgeName` element from the value of the input field.
 
-* You can tell that `updateBadge()` is an event handler because it takes an
-`Event` object.
+* `Event e` is the argument to the updateBadge function.
+  The argument's name is `e`; its type is `Event`.
+
+* You can tell that `updateBadge()` is an event handler because
+  its parameter is an `Event` object.
 
 * The element that generated the event, the input field, is `e.target`.
 
-* The `as` keyword typecasts `e.target` to an
-`InputElement` to silence warnings from Dart Editor.
+* Note the warning symbol next to this line of code in Dart Editor.
+  `e.target` is typed as an `EventTarget` which does not have a `value` property.
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
 </div> </div>
+
+<div class="trydart-step-details" markdown="1">
+
+<hr>
+
+Fix the warning message.
+</div>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+{% prettify dart %}
+...
+
+void updateBadge(Event e) { 
+  querySelector('#badgeName').text = [[highlight]](e.target as InputElement)[[/highlight]].value;
+}
+{% endprettify %}
+</div>
+
+<div class="trydart-filename">piratebadge.dart</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+* In this example, `e.target` is the input element
+  that generated the event.
+
+* The `as` keyword typecasts `e.target` to an
+  `InputElement` to silence warnings from Dart Editor.
+
+&nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
+
+</div> </div>
+
 
 ### <i class="fa fa-anchor"> </i> Run the app.
 
@@ -426,10 +509,7 @@ Implement the event handler as a top-level function.
 
 Save your files with **File > Save All**.
 
-Use the Run button
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-in Dart Editor to run the app.
+Run the app by right clicking `piratebadge.html` and select **Run in Dartium**.
 
 Compare your app to the one running below.
 
@@ -486,7 +566,7 @@ Add the &lt;button&gt; tag below the input field.
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * The button has the ID `generateButton` so
 the Dart code can get the element.
@@ -513,10 +593,10 @@ import 'dart:html';
 
 </div> <div class="col-md-5" markdown="1">
 
-* Top-level variables are names at the library level.
-
 * ButtonElement is one of many different kinds of DOM elements
 provided by the dart:html library.
+
+* Variables, including numbers, initialize to null if no value is provided.
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -723,10 +803,7 @@ genButton.text = 'Aye! Gimme a name!';
 
 Save your files with **File > Save All**.
 
-Use the Run button
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-in Dart Editor to run the app.
+Run the app by right clicking `piratebadge.html` and select **Run in Dartium**.
 
 Compare your app to the one running below.
 
@@ -782,7 +859,7 @@ import 'dart:html';
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * Using the `show` keyword,
 you can import only the classes, functions, or properties you need.
@@ -873,6 +950,7 @@ class PirateName {
 </div> <div class="col-md-5" markdown="1">
 
 * Private variables start with underscore (`_`).
+  Dart has no `private` keyword.
 
 </div></div>
 
@@ -1082,10 +1160,7 @@ void generateBadge(Event e) {
   
 Save your files with **File > Save All**.
 
-Use the Run button
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-in Dart Editor to run the app.
+Run the app by right clicking `piratebadge.html` and select **Run in Dartium**.
 
 Compare your app to the one running below.
 
@@ -1141,7 +1216,7 @@ import 'dart:convert' show JSON;[[/highlight]]
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * `JSON` provides convenient access to the most common JSON use cases.
 
@@ -1197,7 +1272,7 @@ that encodes a pirate name in a JSON string.
 {% prettify dart %}
 class PirateName {
   ...
-  [[highlight]]String get jsonString => '{ "f": "$_firstName", "a": "$_appellation" } ';[[/highlight]]
+  [[highlight]]String get jsonString => JSON.encode({"f": _firstName, "a": _appellation});[[/highlight]]
 }
 {% endprettify %}
 </div>
@@ -1339,10 +1414,7 @@ void main() {
   
 Save your files with **File > Save All**.
 
-Use the Run button
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-in Dart Editor to run the app.
+Run the app by right clicking `piratebadge.html` and select **Run in Dartium**.
 
 Compare your app to the one running below.
 
@@ -1424,7 +1496,7 @@ Put the file in `1-blankbadge` alongside the Dart and HTML files you've been edi
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="fa fa-key"> </i> <strong> Key Information </strong>
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
 
 * The file contains a JSON-encoded map,
 which contains two lists of strings.
@@ -1489,6 +1561,7 @@ import 'dart:convert' show JSON;
 * The `dart:async` library provides for asynchronous programming.
 
 * A `Future` provides a way to get a value in the future.
+  (For JavaScript developers: Futures are similar to Promises.)
 
 </div> </div>
 
@@ -1691,10 +1764,7 @@ leaving the UI disabled.
   
 Save your files with **File > Save All**.
 
-Use the Run button
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-in Dart Editor to run the app.
+Run the app by right clicking `piratebadge.html` and select **Run in Dartium**.
 
 If you want to see what happens when the app can't find the `.json` file,
 change the file name in the code and run the program again.
@@ -1704,17 +1774,17 @@ Compare your app to the final version running below.
 
 <iframe class="running-app-frame"
         style="height:220px;width:550px;"
-        src="examples/6-piratebadge_json/piratebadge.html">
+        src="examples/6-piratebadge/piratebadge.html">
 </iframe>
 
 
 #### Problems?
 
-Check your code against the files in `6-piratebadge_json`.
+Check your code against the files in `6-piratebadge`.
 
-* [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.html)
+* [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge/piratebadge.html)
 
-* [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.dart)
+* [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge/piratebadge.dart)
 
 </div>
 
@@ -1722,28 +1792,235 @@ Check your code against the files in `6-piratebadge_json`.
 
 <div class="trydart-step-details" markdown="1">
 
-Congratulations! You finished the pirate badge code lab.
-
 
 Share your pirate name with the world.
 
-<p class="share-button twitter">
-<a href="https://twitter.com/share"
-   class="twitter-share-button external-link"
-   data-count="none"
-   data-text="Arrr! I've generated me pirate name and learnt Dart, to boot. http://dartlang.org/darrrt"
-   data-hashtags="dartlang">Tweet</a>
- </p>
+* <a href="https://twitter.com/share" class="twitter-share-button" data-text="Arrr! I've generated me pirate name and learnt Dart, to boot. http://dartlang.org/darrrt" data-count="none" data-hashtags="dartlang">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<script src="https://apis.google.com/js/plusone.js"></script>
+
+* <script src="https://apis.google.com/js/plusone.js"></script>
 <g:plus action="share"></g:plus>
 
 </div>
 
+<hr>
+
+##Step 7: Build the app and run as JavaScript {#step-seven}
+
+In this step, you use `pub build` to 
+generate the assets for the app
+and put them into a new directory named `build`.
+In addition to other tasks,
+the build process generates minified JavaScript that
+can be run by any modern browser.
+
+Note that the `one-hour-codelab` directory
+contains several directories, one for each step,
+all of which are considered
+part of the one-hour-codelab application.
+The build process builds the assets for each directory.
+Each directory can be individually deployed.
+
+### <i class="fa fa-anchor"> </i> Check out pubspec.yaml
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Double-click the `pubspec.yaml` file to open it.
+Click the **Source** tab at the bottom of the editing pane.
+
+{% prettify dart %}
+name: avast_ye_pirates
+description: Write a Dart web app code lab
+dependencies:
+  [[highlight]]browser: any[[/highlight]]
+{% endprettify %}
+
+</div>
+
+<div class="trydart-filename">pubspec.yaml</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+* A `pubspec.yaml` file in a directory identifies the directory
+  and its contents as an application.
+
+* `pubspec.yaml` provides meta-data for the application,
+  such as its name.
+
+* The `pubspec.yaml` file also lists the libraries on which the app depends.
+  The `browser` library needed by this app is hosted on
+  [pub.dartlang.org](https://pub.dartlang.org/) along with many others.
+
+* `any` selects the latest package that matches your SDK.
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Look at the packages directory
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+In Dart Editor, expand the `packages` directory.
+
+![Packages contains the code for the package dependencies](images/packagesfiles.png)
+
+</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+*  The `packages` directory contains the code for all of the dependencies
+   listed in the `pubspec.yaml` file.
+   These are installed automatically by Dart Editor.
+
+* The `browser` package contains the `dart.js` script
+  that checks for native Dart support.
+
+* The packages must be included in the built application
+  in order for the app to be successfully deployed.
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Run pub build
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Select `pubspec.yaml`
+then select **Tools > Pub Build**,
+which builds everything under the `one-hour-codelab` directory.
+The output looks something like this:
+
+{% prettify bash %}
+--- Jan 21, 2014 12:41:48 PM Running pub build ... ---
+Building avast_ye_pirates.....
+[Info from Dart2JS]:
+Took 0:00:01.704695 to compile avast_ye_pirates|web/1-blankbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:05.535304 to compile avast_ye_pirates|web/2-inputnamebadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:02.974628 to compile avast_ye_pirates|web/3-buttonbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:02.195714 to compile avast_ye_pirates|web/4-classbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:01.938502 to compile avast_ye_pirates|web/5-localbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:02.028974 to compile avast_ye_pirates|web/6-piratebadge/piratebadge.dart.
+Built 45 files!
+{% endprettify %}
+
+</div>
+
+<div class="trydart-filename">terminal</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+* The `pub build` command creates a `build` directory that contains
+  subdirectories for every step in the code lab.
+
+* The `build` directory contains everything needed to deploy the
+  entire project (all six steps).
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Look at the `build` directory
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Expand the `build` directory.
+Note that it contains a subdirectory for each step of the code lab.
+Expand the `6-piratebadge` directory.
+
+![The build directory contains everything you need to deploy.](images/builddir.png)
+</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+* The `piratebadge.dart.js` file is a JavaScript file that has been minified.
+  When deployed, this file runs in the browser.
+
+* The `packages` directory contains the package dependencies.
+
+* Note that the directory contains no `piratebadge.dart` file.
+  It is not needed to deploy the app to JavaScript.
+
+* Each subdirectory of `build` contains all of the files
+  needed for the app to be deployed separately.
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Run the app as JavaScript
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Right click the `piratebadge.html` file
+and choose **Run as JavaScript** from the menu.
+Copy the URL and run the app in Firefox or Safari.
+
+</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+* The app runs on localhost.
+  To share your app with others,
+  you need to deploy the app to a hosting service.
+
+</div></div>
+
 
 <hr>
 
-##Step 7: Go forth and learn more about Dart {#step-seven}
+##What next? {#whatnext}
+
+Now that you've written your app, what do you do now? Here are some suggestions.
+
+### <i class="fa fa-anchor"> </i> Deploy a server and your app
+
+<div class="trydart-step-details" markdown="1">
+
+If you are interested in server-side programming,
+you can learn to write a static file server and use it to deploy
+the pirate badge app to Heroku.
+Check out the [Weigh Anchor: Deploy a Server and App](/codelabs/deploy/) code lab.
+
+</div>
+
+### <i class="fa fa-anchor"> </i> Check out the samples.
+
+<div class="trydart-step-details" markdown="1">
+
+Run some Dart programs online and check out the source code
+on our [Samples page](/samples/).
+</div>
+
+### <i class="fa fa-anchor"> </i> Read the tutorials.
+
+<div class="trydart-step-details" markdown="1">
+Learn more about Dart from
+the [Dart tutorials](/docs/tutorials/).
+</div>
+
+<hr>
+
+##Summary and resources {#resources}
 
 ### <i class="fa fa-anchor"> </i> Think about what you've done!
 
@@ -1776,28 +2053,37 @@ all of which are covered in more detail in the language tour.
 * typecasting with `as` (`(e.target as InputElement)`)
 * import, and import with `show` (`import 'dart:math' show Random;`)
 * generics
+* streams (`inputField.onInput.listen(...);`)
+* futures (`HttpRequest.getString(path).then(...);`)
+</div>
+
+### <i class="fa fa-anchor"> </i> Online documentation
+
+<div class="trydart-step-details" markdown="1">
+
 
 #### The Dart libraries
 
-<a href="https://www.dartlang.org/docs/dart-up-and-running/contents/ch03.html">
+* <a href="https://www.dartlang.org/docs/dart-up-and-running/contents/ch03.html">
 A Tour of the Dart Libraries</a>
 shows you how to use the major features in Dart’s libraries.
 
 #### API documentation for classes
 
-<a href="https://api.dartlang.org/dart_core/String.html" target="_blank">String</a>,
+* <a href="https://api.dartlang.org/dart_core/String.html" target="_blank">String</a>,
 <a href="https://api.dartlang.org/dart_core/List.html" target="_blank">List</a>,
 <a href="https://api.dartlang.org/dart_core/Map.html" target="_blank">Map</a>,
 <a href="https://api.dartlang.org/dart_math/Random.html" target="_blank">Random</a>,
 <a href="https://api.dartlang.org/dart_html/InputElement.html" target="_blank">InputElement</a>,
 <a href="https://api.dartlang.org/dart_html/ButtonElement.html" target="_blank">ButtonElement</a>,
 <a href="https://api.dartlang.org/dart_html/Event.html" target="_blank">Event</a>,
-<a href="https://api.dartlang.org/dart_html/HttpRequest.html" target="_blank">HttpRequest</a>, and
-<a href="https://api.dartlang.org/dart_async/Future.html" target="_blank">Future</a>
+<a href="https://api.dartlang.org/dart_html/HttpRequest.html" target="_blank">HttpRequest</a>
+<a href="https://api.dartlang.org/dart_async/Future.html" target="_blank">Future</a>, and
+<a href="https://api.dartlang.org/dart_async/Stream.html" target="_blank">Stream</a>
 
 #### API documentation for libraries
 
-<a href="https://api.dartlang.org/dart_core.html" target="_blank">dart:core</a>,
+* <a href="https://api.dartlang.org/dart_core.html" target="_blank">dart:core</a>,
 <a href="https://api.dartlang.org/dart_math.html" target="_blank">dart:math</a>,
 <a href="https://api.dartlang.org/dart_html.html" target="_blank">dart:html</a>,
 <a href="https://api.dartlang.org/dart_async.html" target="_blank">dart:async</a>, and
@@ -1805,24 +2091,9 @@ shows you how to use the major features in Dart’s libraries.
 
 #### API documentation for JSON and local storage
 
-<a href="https://api.dartlang.org/dart_html/Window.html#localStorage" target="_blank">LocalStorage</a>, and
+* <a href="https://api.dartlang.org/dart_html/Window.html#localStorage" target="_blank">LocalStorage</a>, and
 <a href="https://api.dartlang.org/dart_convert.html#JSON" target="_blank">JSON</a>
 
 
-</div>
-
-### <i class="fa fa-anchor"> </i> Check out the samples.
-
-<div class="trydart-step-details" markdown="1">
-
-Run some Dart programs online and check out the source code
-on our [Samples page](/samples/).
-</div>
-
-### <i class="fa fa-anchor"> </i> Read the tutorials.
-
-<div class="trydart-step-details" markdown="1">
-Learn more about Dart from
-the [Dart tutorials](/docs/tutorials/).
 </div>
 

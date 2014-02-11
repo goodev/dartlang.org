@@ -5,7 +5,7 @@ description: "Basics for command-line apps"
 has-permalinks: true
 tutorial:
   id: dart-io
-next: /
+next:
 next-title: "Home"
 prev: indexeddb/
 prev-title: "Use IndexedDB"
@@ -514,7 +514,8 @@ Note: Use the Platform class from the dart:io library,
 not from the dart:html library.
 
 `Platform.environment` provides a copy of the environment
-variables in a mutable map.
+variables in an immutable map. If you need a mutable map (modifiable copy) you 
+can use `Map.from(Platform.environment)`.
 
 {% prettify dart %}
 Map environmentVars = Platform.environment;
@@ -628,6 +629,9 @@ and the
 package for more classes, functions, and properties.
 
 ## What next? {#what-next}
+
+Try the [Weigh Anchor: Deploy a Server and App](/codelabs/deploy/) code lab
+to learn how to deploy your project to the Heroku hosting service.
 
 The [Get Input from a Form](/docs/tutorials/forms/) tutorial
 features a client-server.

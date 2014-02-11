@@ -17,7 +17,8 @@ deploy: build
 	@echo "Visit http://$(CURRENT_BRANCH).dart-lang.appspot.com"
 
 server:
-	@open http://localhost:8081/ && cd ./src/site && jekyll serve -w --port=8081 --trace
+	@open http://localhost:8081/
+	cd ./src/site && jekyll serve -w --port=8081 --trace
 
 optimize:
 	@find . -iname *.png | xargs -L 1 optipng -o7
@@ -29,7 +30,7 @@ dartisansplaylist:
 	dart scripts/gen_dartisans_playlist.dart
 
 darttips:
-	cd scripts &&	dart gen_dart_tips.dart
+	cd scripts && dart gen_dart_tips.dart
 
 convert-docbook-to-html:
 ifndef BOOK_XML_DIR
@@ -60,4 +61,4 @@ book: copy-book-images convert-book-html-to-jekyll
 compile-sample-apps: observables-samples
 
 observables-samples:
-	cd src/site/web-ui/observables/code && pub install && dart build.dart
+	cd src/site/web-ui/observables/code && pub get && dart build.dart

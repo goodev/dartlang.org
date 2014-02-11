@@ -50,12 +50,18 @@ What does the benchmark score mean?
 What benchmarks are you tracking?
 : We are currently showing charts for the
   [Octane](https://developers.google.com/octane/)-based benchmarks
-  DeltaBlue, Richards, and Tracer.
+  DeltaBlue, Richards, Tracer, and FluidMotion.
 
   * [DeltaBlue](https://github.com/dart-lang/benchmark_harness/blob/master/example/DeltaBlue.dart)
   is a one-way constraint solver, originally written in Smalltalk by
   John Maloney and Mario Wolczko. The main focus in DeltaBlue is on
   polymorphism and object-oriented programming.
+
+  * [FluidMotion](https://github.com/dart-lang/benchmark_harness/blob/master/example/FluidMotion.dart)
+  is a 2D Navier-Stokes equations solver,
+  originally written in JavaScript by Oliver Hunt.
+  The main focus is on accessing numeric arrays,
+  as well as doing floating-point arithmetic.
 
   * [Richards](https://github.com/dart-lang/benchmark_harness/blob/master/example/Richards.dart)
   is an OS kernel simulation benchmark, originally written
@@ -75,6 +81,7 @@ What benchmarks are you tracking?
   without any abstraction layers in between;
   it runs 50% faster than the original
   Raytrace JavaScript benchmark in Octane.
+
 </div>
 
 <div markdown="1">
