@@ -167,15 +167,13 @@ var periodic = new Map();
   <synonym id="syn-appropriate-keys">
     <title>Appropriate keys</title>
     <code language="dart"><![CDATA[
-// Map literals must use strings as keys
+//  Map literals can use any object as a key.
+// For example, strings:
 var periodic = {
   'gold' : 'AU',
   'silver' : 'AG'
 };
 
-// Map 构造函数可以用任意对象作为 key
-var favoriteIceCream = new Map();
-favoriteIceCream[new Kid('Billy')] = 'vanilla';
 ]]></code>
   </synonym>
   <synonym id="syn-accessing-values">

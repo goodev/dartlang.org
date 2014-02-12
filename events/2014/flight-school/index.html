@@ -34,7 +34,6 @@ grunticon( [ "img/icons/icons.data.svg.css", "img/icons/icons.data.png.css", "im
       <li><a href="#locations"  ocu-scroll-click>Find an event</a></li>
       <li><a href="#resources"  ocu-scroll-click>Organizer Resources</a></li>
       <li><a href="#faq"        ocu-scroll-click>FAQ</a></li>
-      <li><a href="#register"   ocu-scroll-click>Start your own event</a></li>
     </ul>
     <div class="mobile-nav-hook" ng-click="nav.show_mobile = !nav.show_mobile">
       <span>&nbsp;</span>
@@ -107,9 +106,6 @@ grunticon( [ "img/icons/icons.data.svg.css", "img/icons/icons.data.png.css", "im
         </li>
       </ul>
     </div>
-    <p>
-      Can't find an event near you? Consider <a href="#register" ocu-scroll-nav>starting your own</a>!
-    </p>
   </div>
 
 </section>
@@ -122,20 +118,23 @@ grunticon( [ "img/icons/icons.data.svg.css", "img/icons/icons.data.png.css", "im
       <li>
         <h3>Tech Talk</h3>
         <p>Host a talk to show off what makes Dart a First-Class language.</p>
-        <a href="#" class="resource-link">Tech Talk deck (Coming soon)</a>
-        <a href="#" class="resource-link">Tech Talk video (Coming soon)</a>
+        <a href="https://docs.google.com/presentation/d/1MXPOKMJEF5h96LwCiutgD9xcHZiiWHpCFGt7X317Dj8/edit?forcehl=1&amp;hl=en#slide=id.p" class="resource-link">Tech Talk deck</a>
+        <a href="https://www.youtube.com/watch?v=oZOoqFQfZiI" class="resource-link">Tech Talk training video</a>
+        <a href="https://docs.google.com/presentation/d/1Cs_W1aE9GxeipvZ0M85XHHDrYizu2H0kbxshbmN7bkw/edit#slide=id.p" class="resource-link">Intro to the Dart Language (from the community)</a>
       </li>
       <li>
         <h3>Code Lab</h3>
         <p>Go from runway to take-off through a guided hands-on Code Lab.</p>
-        <a href="https://www.dartlang.org/codelabs/darrrt/" class="resource-link">Code Lab</a>
+        <a href="https://www.dartlang.org/codelabs/darrrt/" class="resource-link">Code Lab pt 1</a>
+        <a href="https://www.dartlang.org/codelabs/deploy/" class="resource-link">Code Lab pt 2</a>
         <a href="https://www.dartlang.org/docs/tutorials/" class="resource-link">Dart Tutorials</a>
         <a href="https://github.com/angular/angular.dart.tutorial" class="resource-link">AngularDart Tutorial</a>
+        <a href="https://github.com/dartlangfr/ng-darrrt-codelab/" class="resource-link">AngularDart Code Lab (from the community)</a>
       </li>
       <li>
         <h3>Hackathon</h3>
         <p>Create your own flight plan and use Dart to bring your ideas to the web.</p>
-        <a href="#" class="resource-link">Hackathon guide (Coming soon)</a>
+        <a href="https://docs.google.com/document/d/18L8_Jg0BArikykWz3QC2Z12n9VsyGZFxY3UmWteit70/view" class="resource-link">Hackathon Guide</a>
       </li>
     </ul>
     <ul class="event-formats">
@@ -156,7 +155,6 @@ grunticon( [ "img/icons/icons.data.svg.css", "img/icons/icons.data.png.css", "im
         <h3>Communities</h3>
         <p>Connect with fellow organizers and other Dartisans over Google+.</p>
         <a href="https://plus.google.com/communities/103524414949893193373" class="resource-link">Flight School Organizers</a>
-        <a href="#register" ocu-scroll-click class="resource-link">Register for an Invite</a>
         <a href="http://g.co/dartisans" class="resource-link">Dartisans</a>
       </li>
     </ul>
@@ -165,7 +163,6 @@ grunticon( [ "img/icons/icons.data.svg.css", "img/icons/icons.data.png.css", "im
         <h3>Swag</h3>
         <p>We'll send Dart swag packs to events that meet the
           <a href="#howdoigetswag" class="inline" ocu-scroll-click>minimum requirements</a>.</p>
-        <a href="#" class="resource-link">Swag Request Form (Coming soon)</a>
       </li>
       <li>
         <h3>Sponsorship</h3>
@@ -286,58 +283,6 @@ grunticon( [ "img/icons/icons.data.svg.css", "img/icons/icons.data.png.css", "im
       Google.</p>
 
   </div>
-</section>
-
-<section id="register" class="register-section" ocu-scroll-section>
-  <div class="container">
-    <h2>Start Your Own Event</h2>
-    <p>Let us know you’re interested in organizing an event or speaking at one,
-      and we’ll contact you with more information. Sign up before January 17, 2014.</p>
-    <form ng-controller="RegisterCtrl" ng-submit="register.submit()">
-      <input type="text" ng-model="register.name" ocu-label="Name" required>
-      <input type="email" ng-model="register.email" ocu-label="Email" required>
-      <small>Please provide your email address so we can keep in touch as 02.2014 approaches.</small>
-      <fieldset class="location">
-        <div class="city">
-          <input type="text" ng-model="register.city" ocu-label="city" required>
-        </div>
-        <div class="state">
-          <input class="state" type="text" ng-model="register.state" ocu-label="state">
-        </div>
-        <div class="country">
-          <input class="country" type="text" ng-model="register.country" ocu-label="country" required>
-        </div>
-      </fieldset>
-      <input type="text" ng-model="register.user_group" ocu-label="User Group Chapter">
-      <small>e.g. GDG Silicon Valley, BeJUG</small>
-      <fieldset class="involvement">
-        <label>How do you want to be involved?</label>
-        <small>Check all that apply.</small>
-        <div ocu-checkbox="register.involvement.organize">I want to organize an event.</div>
-        <div ocu-checkbox="register.involvement.speak">I want to speak at an event</div>
-      </fieldset>
-      <fieldset class="hosting">
-        <label>If you are interested in organizing a Dart Flight School Event, what format(s) would you use?</label>
-        <small>Check all that apply.</small>
-        <div class="field" ocu-checkbox="register.event.tech_talk">Tech Talk</div>
-        <div class="field" ocu-checkbox="register.event.code_lab">Code Lab</div>
-        <div class="field" ocu-checkbox="register.event.hackathon">Hackathon</div>
-        <div class="field">
-          <input type="checkbox" ng-model="register.event.other">
-          <div class='input-checkbox' ng-class='{checked: register.event.other}'
-            ng-click="register.event.other = !register.event.other"></div>
-          <input type="text" class="other-field" ng-model="register.event.other_value" placeholder="Other">
-        </div>
-      </fieldset>
-      <div ng-hide="register.submitted">
-        <input type="submit" value="Register">
-      </div>
-      <div ng-show="register.submitted">
-        <p>Thanks for contributing to Dart Flight Schools! We'll respond via email.</p>
-      </div>
-    </form>
-  </div>
-
 </section>
 
 

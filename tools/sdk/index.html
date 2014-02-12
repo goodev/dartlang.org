@@ -116,10 +116,12 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/download.html">下载 Dart</a></li>
+                <li class="divider"></li>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
-                <li><a href="/tools/">更多工具</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub 包管理器</a></li>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/faq.html">工具 FAQ</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -130,13 +132,14 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+                <li><a href="/performance/">性能</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
-                <li><a href="/performance/">性能</a></li>
+                <li><a href="/community/who-uses-dart.html">谁在使用 Dart</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -202,106 +205,8 @@ see <a href="/tools/">Dart工具页面</a>。
 在 Dart 目录的 <code>dart-sdk</code> 子目录中。
 </p>
 
-<p class="os-choices">
-如果你不想使用 Dart 编辑器，
-你可以只下载 SDK。 SDK 支持这些系统
-<span class="nowrap">
-<input type="radio" name="osChoices" id="windows">
-<label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
-</span>
-
-<span class="nowrap">
-<input type="radio" name="osChoices" id="linux" checked="checked">
-<label class="os-choice" for="linux">Linux</label>,
-</span> or
-
-<span class="nowrap">
-<input type="radio" name="osChoices" id="macos">
-<label class="os-choice" for="macos">Mac</label>.
-</span>
-
-</p>
-
-<p class="os-choices">
-  <div class="downloads">
-  
-
-  <div class="windows downloads">
-  
-    <a class="download-link btn btn-primary btn-large" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-windows-x64-release.zip">
-    	<i class="sprite-icon-download-btn"> </i>
-    	Dart SDK (64-bit Windows)
-   	</a>
-    <a class="download-link btn btn-primary btn-large" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-windows-ia32-release.zip">
-      <i class="sprite-icon-download-btn"> </i>
-      Dart SDK (32-bit Windows)
-    </a>
-  
-  </div>
-  
-
-  <div class="macos downloads">
-  
-    <a class="download-link btn btn-primary btn-large" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-macos-x64-release.zip">
-      <i class="sprite-icon-download-btn"> </i>
-      Dart SDK (Mac)
-    </a>
-  
-  </div>
-  
-
-  <div class="linux downloads">
-  
-    <a class="download-link btn btn-primary btn-large" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip">
-    	<i class="sprite-icon-download-btn"> </i>
-    	Dart SDK (64-bit Linux)
-   	</a>
-    <a class="download-link btn btn-primary btn-large" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-ia32-release.zip">
-      <i class="sprite-icon-download-btn"> </i>
-      Dart SDK (32-bit Linux)
-    </a>
-  
-  </div>
-  
-</div>
-
-</p>
-
 <p>
-通过 <b>开发通道</b> 可以下载正在开发的 SDK，该 SDK 不稳定并且包含一些新的功能，下载地址：
-
-
-<span class="windows">
-  <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-windows-x64-release.zip">
-    Windows 64-bit SDK</a>
-  或者 
-  <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-windows-ia32-release.zip">
-    Windows 32-bit SDK</a>.
-</span>
-
-
-
-<span class="macos">
-  <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-macos-x64-release.zip">
-    Mac 64-bit SDK</a>
-  或者 
-  <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-macos-ia32-release.zip">
-    Mac 32-bit SDK</a>.
-</span>
-
-
-
-<span class="linux">
-  <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-linux-x64-release.zip">
-    Linux 64-bit SDK</a>
-  或者 
-  <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-linux-ia32-release.zip">
-    Linux 32-bit SDK</a>.
-</span>
-
-
-</p>
-
+或者，你可以 <a href="/tools/download.html">直接下载 SDK</a> 。</p>
 <h2 id="contents"> SDK 包含那些内容 </h2>
 
 <p>
@@ -364,6 +269,12 @@ DART_SDK=<em>/path/to/</em>dart-sdk
 PATH=$PATH:$DART_SDK/bin
 </pre>
 
+<aside class="alert alert-info">
+<strong>Note for Linux users</strong>: If your system uses an older
+version of Ubuntu and you are compiling the SDK,
+you may need to update to GCC 4.6 or later.
+See the <a href="faq.html">Tools FAQ</a> for more information.
+</aside>
 
 
 <h2 id="bugs"> 提交 Bug 和新特性</h2>
@@ -446,27 +357,6 @@ PATH=$PATH:$DART_SDK/bin
     </div>
   </footer> <!-- End footer -->
 
-<style>
-#survey-prompt {
-text-align: center;
-position: fixed;
-bottom: 0px;
-left: 0px;
-background: #00A4E4;
-color: white;
-font-size: 15px;
-padding: 5px 70px;
-z-index: 3000;
-text-decoration: none;
-border-radius: 0 5px 0 0;
-}
-</style>
-
-<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
-填写一个两分钟开发者问卷调查。<br>
-帮助 Dart 开发团队制定 2014 年度计划。
-</a>
-
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
@@ -477,6 +367,8 @@ border-radius: 0 5px 0 0;
 
 
 <script defer src="/js/os-switcher.js"></script>
+
+<script defer src="/js/downloads-analytics.js"></script>
 
 
 <script type="text/javascript">

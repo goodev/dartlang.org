@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Product" xmlns:wb="http://open.weibo.com/wb">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Weigh Anchor: Deploy a Server and App | Dart: 用于创建结构化的web应用</title>
+  <meta property="wb:webmaster" content="a984f6440858ee44" />
+  <meta property="twitter:account_id" content="376585411" />
+  <meta itemprop="name" content="Weigh Anchor: Deploy a Server and App | Dart: 用于创建结构化的web应用">
+  
+  <meta itemprop="image" content="https://www.dartlang.org/imgs/dart-logo-wordmark-1200w.png">
+  
+  <meta itemprop="description" content="Deploy a Dart server and serve a Dart app.">
+
+
+  <link rel='stylesheet' type='text/css' href='/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='/css/dart-style.css'>
+<link rel='stylesheet' type='text/css' href='/css/prettify.css'>
+<link rel='stylesheet' type='text/css' href='/css/font-awesome.min.css'>
+
+  
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400" rel="stylesheet">
+
+	<link href="/codelabs/darrrt/darrrt.css" rel="stylesheet" type="text/css">
+	
+	
+	<link rel="alternate" type="application/atom+xml" href="http://dartnews.sinaapp.com/?feed=atom" title="Atom feed">
+  <!-- 
+  <link href="https://plus.google.com/109866369054280216564" rel="publisher">
+  -->
+  <link href="http://weibo.com/cndart" rel="publisher">
+
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- 
+<script type="text/javascript">
+
+  //var _gaq = _gaq || [];
+ // _gaq.push(['_setAccount', 'UA-26406144-4']);
+  //_gaq.push(['_setDomainName', 'dartlang.org']);
+  //_gaq.push(['_setSiteSpeedSampleRate', 50]);
+  //_gaq.push(['_trackPageview']);
+
+ // (function() {
+   // var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   // ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   // var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+ // })();
+
+</script>
+-->
+
+
+  <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body onload="prettyPrint()">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><i class="sprite-icon-dart-logo"></i></a>
+        </div>
+
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+           <li class="dropdown">
+              <a href="/codelabs/darrrt/" title="Learn Dart in this short code lab.">
+                                                       入门
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                文档 <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/docs/tutorials/">教程</a></li>
+                
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/dart-by-example/">Dart 示例</a></li>
+                
+                <li class="divider"></li>
+                <li><a href="/docs/">开发者指南</a></li>
+                <li><a href="http://api.dartlang.org">API 参考</a></li>
+                <li><a href="/docs/spec/">语言规范</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/docs/dart-up-and-running/">Dart: Up and Running</a></li>
+                <li><a href="/books/">更多图书</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/articles/">文章</a></li>
+                <li><a href="/support/faq.html">FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                       工具  <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/tools/download.html">下载 Dart</a></li>
+                <li class="divider"></li>
+                </li><li><a href="/tools/editor/">Dart Editor</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub 包管理器</a></li>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/faq.html">工具 FAQ</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                     资源  <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <i class="sprite-icon-dd-tip"></i>
+                <li><a href="/samples/">示例代码</a></li>
+                <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+                <li><a href="/performance/">性能</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/slides/">演示文稿</a></li>
+                <li><a href="/dart-tips/">Dart 短视频</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/community/who-uses-dart.html">谁在使用 Dart</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="/support/" title="Community and Support">
+                                              支持
+              </a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <form class="navbar-search" action="/search.html" id="cse-search-box">
+                <input type="hidden" name="cx" value="011220921317074318178:i4mscbaxtru">
+                <input type="hidden" name="ie" value="UTF-8">
+                <input type="hidden" name="hl" value="en">
+                <input type="search" name="q" class="search-query placeholder-position-fix form-control" id="q" autocomplete="off" placeholder="Search">
+              </form>
+            </li>
+            <li><a target="_blank" href="https://twitter.com/dart_lang" class="btn"><i class="sprite-icon-social-twitter"></i></a></li>
+            <li><a target="_blank" href="https://plus.google.com/+dartlang/posts" class="btn"><i class="sprite-icon-social-gplus"></i></a></li>
+            <li><a target="_blank" href="http://weibo.com/cndart" class="btn"><i class="sprite-icon-social-weibo"><img src="/imgs/weibo.png"></i></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+  
+
+
+<div class="container-page">
+  <div class="container">
+    <div class="container col-md-12 col-md-offset-0 sub-page">
+      <div class="has-permalinks">
+      <h1 id="weigh-anchor-deploy-a-server-and-app">Weigh Anchor: Deploy a Server and App</h1>
+
+<div style="font-size:64px;font-weight:bold;color:#DCDCDC">
+BETA
+</div>
+
+<p>Please send feedback to <a href="http://dartbug.com/new">dartbug.com</a>.</p>
+
+<hr />
+
+<p>In this code lab, you deploy an client application (web app) to the Heroku hosting service.
+This code lab focuses on the server-side programming aspect of this project.</p>
+
+<div class="trydart-note">
+  <p><strong>Note:</strong>
+This code lab is for those who want to learn
+how to write a DIY server for deploying a web app.
+If you are not interested in server-side programming,
+this code lab is probably not for you.
+Perhaps you’d prefer the
+<a href="/codelabs/darrrt/">Avast, Ye Pirates</a> code lab
+for building a web app.</p>
+</div>
+
+<p>To put your client app on the internet, you need to deploy it.
+For that, you need a client app, a web server, and a hosting service.</p>
+
+<div class="trydart-step-details">
+
+  <p><img src="images/process.png" alt="The process for deploying a Web app" /></p>
+
+</div>
+
+<p>You can use any web server to serve your Dart client app.
+Because Dart can run on the server side, as well as on
+the client side,
+you can use Dart for both your client app and your web server.
+One benefit of doing so is that the client and web server
+can share code.
+The Dart Virtual machine (Dart VM) runs on Windows, Linux, or Mac systems.</p>
+
+<ul>
+  <li>
+    <p><strong>Web Server</strong>—In this code lab, you learn how to build a web server in Dart
+that can serve static files (those that have no dynamic content).
+You use this web server to respond to HTTP requests for the web app’s pages.</p>
+  </li>
+  <li>
+    <p><strong>Host</strong>—In addition to a web server, you need a host for your web app.
+Many public hosting services are available.
+We chose the Heroku hosting service for this project
+because it has a free tier and is easy to use.</p>
+  </li>
+  <li>
+    <p><strong>Client App</strong>—As for the client app,
+you will be deploying the Pirate Badge web app from the
+<a href="/codelabs/darrrt/">Avast, Ye Pirates</a> code lab.</p>
+  </li>
+  <li>
+    <p><strong>Fun debugging on mobile devices</strong>—In addition,
+you learn how to use DevTools to inspect and debug your app on a mobile device.</p>
+  </li>
+</ul>
+
+<hr />
+
+<div>
+
+  <h2 id="contents">Contents</h2>
+
+  <ul>
+    <li><a href="#step-zero">Step 0: Set up</a></li>
+    <li><a href="#step-one">Step 1: Run the app in Dartium</a></li>
+    <li><a href="#step-two">Step 2: Build the app and run as JavaScript</a></li>
+    <li><a href="#step-three">Step 3: Walk through the static file server’s code</a></li>
+    <li><a href="#step-four">Step 4: Inspect your app on a mobile device</a></li>
+    <li><a href="#step-five">Step 5: Deploy to Heroku</a></li>
+    <li><a href="#step-six">Step 6: Run the app on the web and on a mobile device</a></li>
+    <li><a href="#whatnext">What next?</a></li>
+    <li><a href="#resources">Summary and resources</a></li>
+  </ul>
+
+</div>
+
+<hr />
+
+<h2 id="step-zero">Step 0: Set up</h2>
+
+<p>In this step, you download Dart and get the code for the app that you will be deploying.
+This code lab uses Dart Editor.</p>
+
+<h3 id="i-classfa-fa-anchor-i-get-dart"><i class="fa fa-anchor"> </i> Get Dart.</h3>
+
+<div class="trydart-step-details">
+  <p>If you haven’t already done so, get the Dart download.
+Unzip the ZIP file, which creates a directory called <code>dart</code>.
+(For more options, go to the <a href="/tools/download.html">download page</a>.)</p>
+
+  <!--style here is a hack to remove the arrow, which was only partially showing. -->
+  <div style="padding-left: 10px">
+  <div class="editor download-buttons">
+
+  
+
+  <div class="windows downloads">
+    
+    <a data-bits="64" data-os="windows" data-build="integration" data-tool="editor" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+        下载 Dart + Editor (64-bit Windows)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="windows" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+        下载 Dart + Editor (32-bit Windows)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="macos downloads">
+    
+    <a data-bits="64" data-os="macos" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+        下载 Dart + Editor (Mac)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="linux downloads">
+    
+    <a data-bits="64" data-os="linux" data-build="integration" data-tool="editor" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+        下载 Dart + Editor (64-bit Linux)
+      </button>
+    </a>
+    <p></p>
+    <a data-bits="32" data-os="linux" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
+      <button class="btn btn-primary btn-lg">
+        <i class="sprite-icon-download-btn"> </i>
+        下载 Dart + Editor (32-bit Linux)
+      </button>
+    </a>
+    
+  </div>
+
+  
+
+  <div class="editor-current-version version">
+     当前 Dart 稳定版本：
+    <span class="editor-build-rev-stable">[计算中]</span>
+  </div>
+</div>
+
+</div>
+
+  <p class="os-choices">
+  The Dart tools
+  work in recent versions of
+  <span class="nowrap">
+<input type="radio" name="osChoices" id="windows" />
+<label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
+</span>
+
+<span class="nowrap">
+<input type="radio" name="osChoices" id="linux" checked="checked" />
+<label class="os-choice" for="linux">Linux</label>,
+</span> or
+
+<span class="nowrap">
+<input type="radio" name="osChoices" id="macos" />
+<label class="os-choice" for="macos">Mac</label>.
+</span>
+
+</p>
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-start-dart-editor"><i class="fa fa-anchor"> </i> Start Dart Editor.</h3>
+
+<div class="trydart-step-details">
+  <p>Go to the <code>dart</code> directory and double-click <strong>DartEditor</strong>.</p>
+
+  <p><strong>Got questions? Having trouble?</strong> Go to the
+<a href="/tools/editor/troubleshoot.html">Troubleshooting Dart Editor</a> page.</p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-get-the-code"><i class="fa fa-anchor"> </i> Get the code.</h3>
+
+<div class="trydart-step-details">
+  <p><a href="https://github.com/dart-lang/deploy-codelab/archive/master.zip">Download</a>
+the code for the app that you will be deploying.
+Unzip the ZIP file,
+which creates a directory called <code>deploy-codelab-master</code>.</p>
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-open-deploy-codelab-master"><i class="fa fa-anchor"> </i> Open deploy-codelab-master.</h3>
+
+<div class="trydart-step-details">
+  <p>In Dart Editor,
+use <strong>File &gt; Open Existing Folder…</strong>
+to open the <code>deploy-codelab-master</code> directory.</p>
+</div>
+
+<div class="row"> <div class="col-md-7">
+
+    <p><img src="images/filesanddirs.png" alt="The files and directories in the deploy-codelab-master directory" /></p>
+
+    <div class="trydart-note">
+      <p><strong>Note:</strong>
+If you see <span style="color:red">red X’s</span> at the left of the
+filenames,
+the packages are not properly installed.
+Right click <code>pubspec.yaml</code> and select <strong>Pub Get</strong>.</p>
+    </div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>The <code>packages</code> directory contains links to 3rd party libraries.
+Those libraries are defined as dependencies in the <code>pubspec.yaml</code> file.
+The <code>pubspec.lock</code> file lists the currently installed
+versions for those libraries.</p>
+      </li>
+      <li>
+        <p>The <code>web</code> directory contains the Pirate Badge app to deploy.</p>
+      </li>
+      <li>
+        <p>The <code>bin</code> directory contains Dart scripts that run from the command line.
+For example, scripts that run web servers live in <code>bin</code>.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-get-some-extras"><i class="fa fa-anchor"> </i> Get some extras.</h3>
+
+<div class="trydart-step-details">
+
+  <p>Now is a good time to install some other
+prerequisite software and optional hardware.
+You have an opportunity to get them later as well.</p>
+
+  <p>For Step 4: (optional step)</p>
+
+  <ul>
+    <li>Android mobile device with Chrome for Android 31 or later, with USB cable</li>
+    <li>Chrome 32 or higher on your computer</li>
+  </ul>
+
+  <p>For Step 5:</p>
+
+  <ul>
+    <li><a href="http://git-scm.com/downloads">git</a></li>
+    <li><a href="https://devcenter.heroku.com/articles/quickstart">Heroku</a></li>
+  </ul>
+
+</div>
+
+<hr />
+
+<h2 id="step-one">Step 1: Run the app in Dartium</h2>
+
+<p>Open the code for the Pirate Badge web app and run it locally.</p>
+
+<h3 id="i-classfa-fa-anchor-i-expand-the-web-directory"><i class="fa fa-anchor"> </i> Expand the <code>web</code> directory.</h3>
+
+<div class="trydart-step-details">
+  <p>In Dart Editor, expand the <code>web</code> directory
+by clicking the little arrow
+<img src="images/wee-arrow.png" alt="wee arrow" /> to the left of its name.
+The directory contains four files:</p>
+
+  <p><img src="images/appfiles.png" alt="Files for the app to deploy" /></p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-look-at-piratebadgehtml"><i class="fa fa-anchor"> </i> Look at <code>piratebadge.html</code>.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>Double-click <code>piratebadge.html</code> to open it.</p>
+
+      <pre class="prettyprint lang-html">...
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Pirate badge&lt;/title&gt;
+  <code class="nocode highlight">&lt;meta name=&quot;viewport&quot;</code>
+        <code class="nocode highlight">content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code>
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;piratebadge.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+  <code class="nocode highlight">&lt;script type=&quot;application/dart&quot; src=&quot;piratebadge.dart&quot;&gt;&lt;/script&gt;</code>
+  <code class="nocode highlight">&lt;script src=&quot;packages/browser/dart.js&quot;&gt;&lt;/script&gt;</code>
+
+  ...
+&lt;/body&gt;
+...</pre>
+
+    </div>
+
+<div class="trydart-filename">piratedbadge.dart</div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>The <code>&lt;meta&gt;</code> tag sets attributes to
+make the app scale correctly on mobile devices.</p>
+      </li>
+      <li>
+        <p>The first <code>script</code> tag identifies the script,
+<code>piratebadge.dart</code>, that contains the web app.</p>
+      </li>
+      <li>
+        <p><code>dart.js</code> is a script that determines if the browser supports Dart,
+and if it does, runs the app natively.
+If it does not, the script loads the JavaScript version of the app.</p>
+      </li>
+      <li>
+        <p><code>dart.js</code> is part of the <code>browser</code> pub package.</p>
+      </li>
+    </ul>
+
+  </div></div>
+
+<h3 id="i-classfa-fa-anchor-i-run-the-app"><i class="fa fa-anchor"> </i> Run the app.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>Right-click <code>piratebadge.html</code>
+and choose <strong>Run in Dartium</strong> from the menu.</p>
+
+      <p><img src="images/runtheapp.png" alt="Run the app using the menu" /></p>
+
+    </div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>Dart Editor launches <em>Dartium</em>—a special build of Chromium
+that has the Dart Virtual Machine built in—and loads the app.</p>
+      </li>
+      <li>
+        <p>At this time, Dartium is the only browser that has the Dart VM built in.
+To run a Dart app in other browsers you need to convert it to JavaScript,
+which you do in the next step.</p>
+      </li>
+    </ul>
+
+  </div></div>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+    </div>
+
+<iframe class="running-app-frame" style="height:220px;width:550px;margin-top:20px;margin-bottom:20px" src="/codelabs/darrrt/examples/6-piratebadge/piratebadge.html">
+</iframe>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>The Pirage Badge app should appear.</p>
+      </li>
+      <li>
+        <p>Try out the app running to the left.
+Click the button or type in the text field to generate a pirate name.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div></div>
+
+<hr />
+
+<h2 id="step-two">Step 2: Build the app and run as JavaScript</h2>
+
+<p>In this step, you use <a href="http://pub.dartlang.org/doc/pub-build.html"><code>pub build</code></a>
+to generate the assets for the app and put them into a new directory named
+<code>build</code>. In addition to other tasks, this process generates minified JavaScript
+that works in any modern browser.</p>
+
+<h3 id="i-classfa-fa-anchor-i-check-out-pubspecyaml"><i class="fa fa-anchor"> </i> Check out pubspec.yaml</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>Double-click the <code>pubspec.yaml</code> file to open it.
+Click the <strong>Source</strong> tab at the bottom of the editing pane.
+The list under <code>dependencies</code> lists the packages that this app requires.
+The <code>pub</code> command installs these packages.
+<code>pub</code> might install multiple <code>packages</code> directories, as needed.</p>
+
+      <pre class="prettyprint lang-dart">name: deploy_codelab
+description: A sample deployment
+dependencies:
+  <code class="nocode highlight">browser: any</code>
+  <code class="nocode highlight">http_server: any</code>
+  <code class="nocode highlight">path: any</code></pre>
+
+    </div>
+
+<div class="trydart-filename">pubspec.yaml</div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>A <code>pubspec.yaml</code> file in a directory identifies the directory
+and its contents as a package.</p>
+      </li>
+      <li>
+        <p><code>pubspec.yaml</code> provides meta-data for the application,
+such as its name.</p>
+      </li>
+      <li>
+        <p>The <code>pubspec.yaml</code> file also lists the packages on which the app depends.
+The three packages needed by this app are all hosted on
+<a href="https://pub.dartlang.org/">pub.dartlang.org</a>.</p>
+      </li>
+      <li>
+        <p><code>any</code> selects the latest possible package version that satisfies all the
+ dependencies.</p>
+      </li>
+    </ul>
+
+  </div></div>
+
+<h3 id="i-classfa-fa-anchor-i-look-at-the-packages-directory"><i class="fa fa-anchor"> </i> Look at the packages directory</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>In Dart Editor, expand the top-level <code>packages</code> directory.</p>
+
+      <p><img src="images/packagesfiles.png" alt="Packages contains the code for the package dependencies" /></p>
+
+    </div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>The <code>packages</code> directory contains the code for all of the dependencies
+listed in the <code>pubspec.yaml</code> file.
+These are installed automatically by Dart Editor.</p>
+      </li>
+      <li>
+        <p>The <code>browser</code> package contains the <code>dart.js</code> script
+that checks for native Dart support.</p>
+      </li>
+      <li>
+        <p>The <code>http_server</code> package makes it easier to write HTTP server by providing a
+high-level HTTP server API.</p>
+      </li>
+      <li>
+        <p>The <code>path</code> package provides common path manipulation operations,
+such as joining, splitting, and normalizing.</p>
+      </li>
+      <li>
+        <p>The <code>mime</code> package is included because <code>http_server</code> depends on it.</p>
+      </li>
+      <li>
+        <p>You’re likely to see multiple <code>packages</code> directories. One is installed
+for every subdirectory that needs it.</p>
+      </li>
+    </ul>
+
+  </div></div>
+
+<h3 id="i-classfa-fa-anchor-i-run-pub-build"><i class="fa fa-anchor"> </i> Run pub build</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>With <code>pubspec.yaml</code> still selected, select <strong>Tools &gt; Pub Build</strong>.
+The output looks something like this:</p>
+
+      <pre class="prettyprint lang-bash">--- Jan 16, 2014 4:14:36 PM Running pub build ... ---
+Building deploy_codelab.....
+[Info from Dart2JS]:
+Took 0:00:06.811770 to compile deploy_codelab|web/piratebadge.dart.
+Built 10 files!</pre>
+
+    </div>
+
+<div class="trydart-filename">terminal</div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>The <code>pub build</code> command creates a <code>build</code> directory that contains
+everything your app needs to be deployed, including a minified
+JavaScript file and the required packages.</li>
+    </ul>
+
+  </div></div>
+
+<h3 id="i-classfa-fa-anchor-i-look-at-the-build-directory"><i class="fa fa-anchor"> </i> Look at the <code>build</code> directory</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>The <code>pub build</code> command creates a <code>build</code> directory
+under <code>deploy-codelab-master</code>.</p>
+
+      <p><img src="images/builddir.png" alt="The build directory contains everything you need to deploy." /></p>
+    </div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>The <code>piratebadge.dart.js</code> file is a JavaScript file that has been minified.
+When deployed, this file runs in the browser.</p>
+      </li>
+      <li>
+        <p>The <code>packages</code> directory contains the package dependencies.</p>
+      </li>
+      <li>
+        <p>Note that the <code>build</code> directory contains no <code>piratebadge.dart</code> file.
+It is not needed to deploy the app to JavaScript.</p>
+      </li>
+    </ul>
+
+  </div></div>
+
+<h3 id="i-classfa-fa-anchor-i-run-the-app-as-javascript"><i class="fa fa-anchor"> </i> Run the app as JavaScript</h3>
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details">
+
+      <p>Open the app.
+Select <strong>File &gt; Open File…</strong>
+in a browser such a Firefox or Safari
+and select the
+<code>deploy-codelab-master/build/piratebadge.html</code> file.</p>
+
+    </div>
+
+</div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>The app is running on the local machine using the <code>file</code> protocol.
+To share your app with others, you need to deploy the app to a hosting service,
+such as Heroku.</li>
+    </ul>
+
+  </div></div>
+
+<hr />
+
+<h2 id="step-three">Step 3: Walk through the static file server’s code</h2>
+
+<p>You can build full HTTP servers with Dart. The HTTP libraries and packages
+support serving both static files and dynamic responses. For this code lab,
+we focus on serving static files.</p>
+
+<p>You need to provide a static file server for this project
+because Heroku requires one for deployment.
+Also, it’s fun to serve your Dart client app with a server built with Dart!
+The code you downloaded for this project contains a static file server.
+This step walks through the code for the static file server, which uses some
+interesting Dart APIs and two helpful pub packages.</p>
+
+<p>Links to the relevant API docs are
+provided in <a href="#resources">Summary and Resources</a>.</p>
+
+<h3 id="i-classfa-fa-anchor-i-setting-the-path-to-the-app"><i class="fa fa-anchor"> </i> Setting the path to the app.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p>Double click <code>bin/basic_http_server.dart</code> to open it. The beginning of
+the code is as follows:</p>
+
+      <pre class="prettyprint lang-dart">import 'dart:io' show File, HttpServer, <code class="nocode highlight">Platform</code>;
+import 'dart:async' show runZoned;
+import 'package:http_server/http_server.dart' show VirtualDirectory;
+import 'package:path/path.dart' show <code class="nocode highlight">join, dirname;</code>
+
+void main() {
+  <code class="nocode highlight">// Assumes the server lives in bin/ and that `pub build` ran.</code>
+  <code class="nocode highlight">var buildUri = Platform.script.resolve('../build');</code>
+
+  ...
+}</pre>
+    </div>
+
+    <div class="trydart-filename">basic_http_server.dart</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>This code assumes that <code>pub build</code> has run, because it relies on the <code>build</code>
+directory existing.</p>
+      </li>
+      <li>
+        <p>In the next step, you will configure a Heroku buildpack (a collection of
+scripts) that runs <code>pub build</code> when you upload your app.</p>
+      </li>
+      <li>
+        <p>This code uses <code>resolve</code> to get the URI of the <code>build</code> directory based on the
+path of the running script.</p>
+      </li>
+      <li>
+        <p>The top-level <code>Platform</code> object provides information about the environment in
+which the application is running.
+Here, <code>Platform.script</code> returns the absolute URI of the script being run.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-serving-piratebadgehtml"><i class="fa fa-anchor"> </i> Serving <code>piratebadge.html</code>.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <pre class="prettyprint lang-dart">import 'dart:io' show <code class="nocode highlight">File</code>, HttpServer, Platform;
+import 'dart:async' show runZoned;
+import 'package:http_server/http_server.dart' show <code class="nocode highlight">VirtualDirectory;</code>
+import 'package:path/path.dart' show join, dirname;
+
+void main() {
+  ...
+  <code class="nocode highlight">var staticFiles = new VirtualDirectory(buildUri.toFilePath());</code>
+
+  <code class="nocode highlight">staticFiles</code>
+      <code class="nocode highlight">..allowDirectoryListing = true;</code>
+      <code class="nocode highlight">..directoryHandler = (dir, request) {</code>
+        <code class="nocode highlight">// Redirect directory-requests to piratebadge.html file.</code>
+        <code class="nocode highlight">var indexUri = new Uri.file(dir.path).resolve('piratebadge.html');</code>
+        <code class="nocode highlight">staticFiles.serveFile(new File(indexUri.toFilePath()), request);</code>
+      <code class="nocode highlight">};</code>
+  ...
+}</pre>
+    </div>
+
+    <div class="trydart-filename">basic_http_server.dart</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>The <code>VirtualDirectory</code> class from the <code>http_server</code> package provides a
+high-level interface for serving static files and directory listings.</p>
+      </li>
+      <li>
+        <p>This code overrides the directory index requests to serve <code>piratebadge.html</code>,
+which is the main HTML file for this app.</p>
+      </li>
+      <li>
+        <p>The <code>serveFile</code> method serves the requested static file to the client.</p>
+      </li>
+      <li>
+        <p>The <code>http_server</code> package enables writing more concise code. The lower-level
+APIs provided by <code>dart:io</code> would require making use of <code>HttpServer</code>,
+<code>HttpRequest</code>, <code>HttpResponse</code> classes.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-using-variable-port-numbers"><i class="fa fa-anchor"> </i> Using variable port numbers.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <pre class="prettyprint">import 'dart:io' show File, HttpServer, <code class="nocode highlight">Platform</code>;
+import 'dart:async' show runZoned;
+import 'package:http_server/http_server.dart' show VirtualDirectory;
+import 'package:path/path.dart' show join, dirname;
+
+void main() {
+  ...
+  <code class="nocode highlight">var portEnv = Platform.environment['PORT'];</code>
+  <code class="nocode highlight">var port = portEnv == null ? 9999 : int.parse(portEnv);</code>
+  ...
+}</pre>
+    </div>
+
+    <div class="trydart-filename">basic_http_server.dart</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>Heroku uses variable ports. Heroku sets the <code>$PORT</code> environment variable
+with the port number that your app should listen to.</p>
+      </li>
+      <li>
+        <p>This code uses the port specified in the <code>$PORT</code> environment variable,
+if present. Otherwise, it uses port 9999.</p>
+      </li>
+      <li>
+        <p>The <code>$PORT</code> environment variable might not be present if the web server is
+running outside of the Heroku environment.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-using-runzoned"><i class="fa fa-anchor"> </i> Using <code>runZoned()</code>.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <pre class="prettyprint lang-dart">import 'dart:io' show File, HttpServer, Platform;
+import 'dart:async' show <code class="nocode highlight">runZoned</code>;
+import 'package:http_server/http_server.dart' show VirtualDirectory;
+import 'package:path/path.dart' show join, dirname;
+
+void main() {
+  ...
+  <code class="nocode highlight">runZoned(() {</code>
+     ...
+  <code class="nocode highlight">},</code>
+  <code class="nocode highlight">onError: (e, stackTrace) =&gt; print('Oh noes! $e $stackTrace'));</code>
+}</pre>
+    </div>
+
+    <div class="trydart-filename">basic_http_server.dart</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li><code>runZoned</code> helps provide stability to your program.
+It catches exceptions from all call stacks within its bounds,
+allowing your program to continue running in spite of errors.</li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-listening-for-http-requests"><i class="fa fa-anchor"> </i> Listening for HTTP requests.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <pre class="prettyprint lang-dart">import 'dart:io' show File, <code class="nocode highlight">HttpServer</code>, Platform;
+import 'dart:async' show runZoned;
+import 'package:http_server/http_server.dart' show VirtualDirectory;
+import 'package:path/path.dart' show join, dirname;
+
+void main() {
+  ...
+  runZoned(() {
+    <code class="nocode highlight">HttpServer.bind('0.0.0.0', port).then((server) {</code>
+      <code class="nocode highlight">server.listen(staticFiles.serveRequest);</code>
+    <code class="nocode highlight">});</code>
+  },
+  onError: (e, stackTrace) =&gt; print('Oh noes! $e $stackTrace'));
+}</pre>
+    </div>
+
+    <div class="trydart-filename">basic_http_server.dart</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p><code>HttpServer.bind()</code> creates an HTTP server, which responds to HTTP requests
+for this app.</p>
+      </li>
+      <li>
+        <p>The HTTP server binds to a host <code>0.0.0.0</code>.
+which is a special address that is guaranteed
+to receive requests from any network socket.
+If you don’t know what specific IP to listen to, you can use 0.0.0.0.</p>
+      </li>
+      <li>
+        <p>A Stream provides an asynchronous sequence of data. Using the
+<code>listen()</code> method, a stream client
+registers a callback function that gets called when
+data is available.</p>
+      </li>
+      <li>
+        <p>HTTP requests are served over a stream.</p>
+      </li>
+      <li>
+        <p>Here, the <code>VirtualDirectory</code> object named <code>staticFiles</code>
+provides the callback function for the HTTP requests.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-run-the-web-server-run-the-app"><i class="fa fa-anchor"> </i> Run the web server, run the app</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p>In Dart Editor,
+right click <code>bin/basic_http_server.dart</code> and select <code>Run</code>.
+Dart Editor brings up a new output pane in which the web server
+displays its output, if any.</p>
+
+      <p>Now, open <code>0.0.0.0:9999</code> in your browser
+(or, on Windows, open <code>127.0.0.1:9999</code>).
+The app appears and you can generate pirate names.</p>
+
+      <p><strong>Leave the web server running.</strong></p>
+
+    </div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>0.0.0.0:9999 requests the root directory of that host and port.
+The static file server resolves that request to <code>piratebadge.html</code>
+and returns the contents of that file.</p>
+      </li>
+      <li>
+        <p>0.0.0.0:9999 requests work only on your local machine.
+Another machine cannot run your app using that URL.
+In <a href="#step-five">Step 5</a>, you deploy your app to Heroku,
+which gives you a public URL.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<hr />
+
+<h2 id="step-four">Step 4: Inspect your app on a mobile device</h2>
+
+<p>Before deploying your app,
+you can use the Chrome DevTools to check, debug, and modify
+your app on a mobile device.
+DevTools can debug Android devices natively
+and other devices using
+<a href="https://developers.google.com/chrome-developer-tools/docs/mobile-emulation">Mobile Emulation</a>.
+This section shows you how to use DevTools with your app on an Android device.</p>
+
+<p>You don’t need to do this step to deploy your app.
+You can skip and move on to <a href="#step-five">Step 5</a>.
+However, this does help you to test and debug your app on mobile devices
+and it’s pretty cool.</p>
+
+<h3 id="i-classfa-fa-anchor-i-set-up-your-computer-and-device"><i class="fa fa-anchor"> </i> Set up your computer and device</h3>
+
+<div class="trydart-step-details">
+
+  <p>Follow the instructions at
+<a href="https://developers.google.com/chrome-developer-tools/docs/remote-debugging">Remote Debugging Chrome on Android</a>
+to set up your device, Chrome, and your computer.</p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-run-the-app-on-your-mobile-device"><i class="fa fa-anchor"> </i> Run the app on your mobile device</h3>
+
+<div class="trydart-step-details">
+
+  <p>Make sure your web server is still running from <a href="#step-three">Step 3</a>.</p>
+
+  <p>On your mobile device, bring up Chrome,
+and open <code>0.0.0.0:9999</code> in your browser.</p>
+
+  <p><img src="images/calebthebrave.png" height="400" /></p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-bring-up-the-devices-page"><i class="fa fa-anchor"> </i> Bring up the Devices page</h3>
+
+<div class="trydart-step-details">
+
+  <p>In Chrome on your computer,
+click the Android icon at the right side of any window
+and select <strong>View Inspection Targets</strong>.
+As of Chrome 32,
+you can just visit <code>about:inspect</code> and verify
+that <strong>Discover USB Devices</strong> is checked.</p>
+
+  <p><img src="images/androidicon.png" alt="Click the Android icon" /></p>
+
+  <p>The Devices page appears and an entry for your app appears.
+Note the green dots. Make sure that one of them has the label <code>:9999</code>.
+If not, you need to click the <strong>Port forwarding…</strong> button
+and turn on port forwarding for <code>0.0.0.0:9999</code>.</p>
+
+  <p><img src="images/tabappears.png" alt="Your tab appears under the Chrome heading" /></p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-bring-up-devtools-for-the-app"><i class="fa fa-anchor"> </i> Bring up DevTools for the app</h3>
+
+<div class="trydart-step-details">
+
+  <p>On the Devices page, click <code>inspect</code> under the entry for your app.
+A DevTools window appears that is attached to your app running
+on the mobile device.
+You are now inspecting the client app running on your mobile device.</p>
+
+  <p><img src="images/devtoolsforphone.png" alt="Your tab appears under the Chrome heading" /></p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-experiment-with-changing-the-app"><i class="fa fa-anchor"> </i> Experiment with changing the app</h3>
+
+<div class="trydart-step-details">
+
+  <p>Experiment by using DevTools to modify the font size or color.
+The change happens instantly on your mobile device.</p>
+
+</div>
+
+<hr />
+
+<h2 id="step-five">Step 5: Deploy to Heroku</h2>
+
+<p>In this step, you deploy your web server and app to Heroku.
+Heroku is a cloud hosting service that has
+a free tier and can run arbitrary VMs,
+which is why we’re using it here.</p>
+
+<h3 id="i-classfa-fa-anchor-i-get-heroku-and-a-heroku-account"><i class="fa fa-anchor"> </i> Get Heroku and a Heroku account</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p>Follow Steps 1, 2, and 3 at
+<a href="https://devcenter.heroku.com/articles/quickstart">Getting Started with Heroku</a>
+to download the Heroku tools and get an account with Heroku.</p>
+
+    </div>
+
+  </div> <div class="col-md-5">
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-create-a-procfile"><i class="fa fa-anchor"> </i> Create a <code>Procfile</code></h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p>In the <code>deploy-codelab-master</code> directory, create a file
+named <code>Procfile</code> and add the following line to it.</p>
+
+      <pre class="prettyprint lang-bash">web: ./dart-sdk/bin/dart bin/basic_http_server.dart</pre>
+
+    </div>
+
+    <div class="trydart-filename">Procfile</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>A <code>Procfile</code> tells Heroku what part of your app can be executed.</p>
+      </li>
+      <li>
+        <p>The <code>Procfile</code> for this example defines a web process type
+in which the dart VM runs the static file server.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-commit-your-changes-to-your-local-deploy-codelab-master-git-repo"><i class="fa fa-anchor"> </i> Commit your changes to your local <code>deploy-codelab-master</code> git repo</h3>
+
+<div class="trydart-step-details">
+
+  <p><code>git</code> is a software configuration management system
+and the means for deploying apps to Heroku.
+If you don’t already have <code>git</code>, you need to download it.
+Refer to the
+<a href="http://git-scm.com/downloads">git website</a>
+for downloads and documentation.</p>
+
+  <p>Before you can push an app to Heroku,
+you need to initialize a local <code>git</code> repo and commit your files to it.</p>
+</div>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <pre class="prettyprint lang-bash">$ cd deploy-codelab-master
+$ git init
+$ git add -A .
+$ git commit -am &quot;Hoist the mizzen!&quot;
+$</pre>
+
+    </div>
+
+    <div class="trydart-filename">terminal</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>With <code>git init</code> you create a local repo.</p>
+      </li>
+      <li>
+        <p>Next, <code>git add</code> adds the specified files to the local repo.</p>
+      </li>
+      <li>
+        <p>Finally, <code>git commit</code> saves the files to your local git repo.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-create-a-heroku-app-and-configure-it"><i class="fa fa-anchor"> </i> Create a Heroku app and configure it.</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p><strong>Important:</strong> Replace
+<code>myfirstdartappforheroku</code> with something <strong>unique</strong>.</p>
+
+      <pre class="prettyprint lang-bash">$ heroku create <code class="nocode highlight">myfirstdartappforheroku</code> -s cedar
+$ heroku labs:enable user-env-compile
+$ heroku config:set DART_SDK_URL=https://github.com/selkhateeb/heroku-vagrant-dart-build/releases/download/latest/dart-sdk.tar
+$ heroku config:add BUILDPACK_URL=https://github.com/igrigorik/heroku-buildpack-dart.git
+$</pre>
+
+    </div>
+
+    <div class="trydart-filename">terminal</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>With the first command, <code>heroku create</code>, you create a Heroku app
+with the specified name.
+Provide it with a <strong>unique</strong> name (not <code>myfirstdartappforheroku</code>).</p>
+      </li>
+      <li>
+        <p>Enabling <code>user-env-compile</code> allows environment variables
+to be passed to the build script during deploy.</p>
+      </li>
+      <li>
+        <p>Official builds of Dart do not support Heroku due to mismatched glibc versions.
+The <code>DART_SDK_URL</code> specifies
+the (unsupported) <a href="https://github.com/selkhateeb/heroku-vagrant-dart-build">Vagrant Dart Build</a>,
+which is a special build of the Dart SDK that is compatible with Heroku.</p>
+      </li>
+      <li>
+        <p>A buildpack extends Heroku. The buildpack used here extends Heroku
+to support Dart apps. The location of the buildpack
+is specified with the <code>BUILDPACK_URL</code>.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-push-your-app-to-heroku"><i class="fa fa-anchor"> </i> Push your app to Heroku</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p>Type the <code>git push</code> command as shown.
+Some output has been replaced with ellipses to save space,
+but the output from the push command will look something this:</p>
+
+      <pre class="prettyprint lang-bash">$ <code class="nocode highlight">git push heroku master</code>
+Initializing repository, done.
+
+...
+-----&gt; Fetching custom git buildpack... done
+-----&gt; Dart app detected
+...
+Dart VM version: 1.0.0.5_r30248_vagrant (Thu Nov 14 13:43:29 2013) on &quot;linux_x64&quot;
+...
+*** Running pub build
+Building with &quot;pub build&quot;
+Building deploy_codelab....................
+[Info in Dart2JS]:
+Generated deploy_codelab|web/piratebadge.dart.js (97701 characters) in 0:01:19.685114
+Built 6 files!
+...
+-----&gt; Launching... done, v6
+       <code class="nocode highlight">http://myfirstdartappforheroku.herokuapp.com deployed to Heroku</code>
+
+To git@heroku.com:myfirstdartappforheroku.git
+ * [new branch]      master -&gt; master
+$</pre>
+
+    </div>
+
+    <div class="trydart-filename">terminal</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>
+        <p>Your local <code>git</code> repository becomes associated with a remote Heroku repository,
+usually named <code>heroku</code>, when you push.</p>
+      </li>
+      <li>
+        <p>Every time you push, Heroku runs the buildpack that you specified.</p>
+      </li>
+      <li>
+        <p>In addition to other tasks, this buildpack runs <code>pub build</code>.</p>
+      </li>
+      <li>
+        <p>When the push is finished, the process displays a URL for your app.</p>
+      </li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-specify-the-scale"><i class="fa fa-anchor"> </i> Specify the scale</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <pre class="prettyprint lang-bash">$ heroku ps:scale web=1
+$</pre>
+
+    </div>
+
+    <div class="trydart-filename">terminal</div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>Scale to one <em>dyno</em>, which is a Heroku lightweight container
+that runs a single user-specified command.</li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<hr />
+
+<h2 id="step-six">Step 6: Run the app on the web and on a mobile device</h2>
+
+<p>Now that your app is deployed, you can run it on the web
+and on a mobile device.</p>
+
+<h3 id="i-classfa-fa-anchor-i-run-the-app-in-a-browser"><i class="fa fa-anchor"> </i> Run the app in a browser</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <iframe class="running-app-frame" style="height:220px;width:550px;" src="/codelabs/darrrt/examples/6-piratebadge/piratebadge.html">
+</iframe>
+
+  </div> <div class="col-md-5">
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>Use the URL displayed by the previous step to visit your app:
+<code>http://myfirstdartappforheroku.herokuapp.com</code></li>
+    </ul>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-run-the-app-on-a-mobile-device"><i class="fa fa-anchor"> </i> Run the app on a mobile device</h3>
+
+<div class="row"> <div class="col-md-7">
+
+    <div class="trydart-step-details">
+
+      <p><img src="images/calebthebrave.png" height="400" /></p>
+
+    </div>
+
+  </div> <div class="col-md-5">
+
+    <p><i class="fa fa-key key-header"> </i> <strong> Key Information </strong></p>
+
+    <ul>
+      <li>Use the URL from the previous step to load the app
+into a browser on your mobile device.
+<code>http://myfirstdartappforheroku.herokuapp.com</code></li>
+    </ul>
+
+    <p>  </p>
+
+  </div> </div>
+
+<h3 id="i-classfa-fa-anchor-i-share-your-app-with-the-world"><i class="fa fa-anchor"> </i> Share your app with the world!</h3>
+
+<div class="trydart-step-details">
+
+  <p>Share your Heroku URL with your followers and circles.</p>
+
+  <ul>
+    <li>
+      <p><a href="https://twitter.com/share" class="twitter-share-button" data-text="Arrr! I've deployed me app. http://dartlang.org/codelab/deploy/" data-count="none" data-hashtags="dartlang">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></p>
+    </li>
+    <li>
+      <p>
+<script src="https://apis.google.com/js/plusone.js"></script>
+<g:plus action="share"></g:plus> </p>
+    </li>
+  </ul>
+
+</div>
+
+<hr />
+
+<h2 id="whatnext">What next?</h2>
+
+<p>Now that your app is deployed for the world to use,
+what do you do now?
+Here are some suggestions.</p>
+
+<h3 id="i-classfa-fa-anchor-i-jump-to-another-ship"><i class="fa fa-anchor"> </i> Jump to another ship.</h3>
+
+<div class="trydart-step-details">
+
+  <p>If you never went through the <a href="/codelabs/darrrt/">Avast, Ye Pirates</a> code lab,
+do it now.</p>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-check-out-the-samples"><i class="fa fa-anchor"> </i> Check out the samples</h3>
+
+<div class="trydart-step-details">
+  <p>For more command-line application and server code,
+visit <a href="/dart-by-example/">Dart by Example</a>
+and the <a href="/samples/">samples</a> page.</p>
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-read-the-tutorials"><i class="fa fa-anchor"> </i> Read the tutorials</h3>
+
+<div class="trydart-step-details">
+  <p>Learn more about command-line apps and servers,
+read the <a href="/docs/tutorials/">tutorials</a>,
+in particular the <a href="/docs/tutorials/cmdline/">command-line app tutorial</a>
+and <a href="/docs/tutorials/forms/">Get Input from a Form</a>,
+which contains an HTTP server.</p>
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-go-write-some-awesome-code"><i class="fa fa-anchor"> </i> Go write some awesome code.</h3>
+
+<hr />
+
+<h2 id="resources">Summary and resources</h2>
+
+<p>For more information about the tools and libraries used
+in this code lab, check out these resources.</p>
+
+<h3 id="i-classfa-fa-anchor-i-think-about-what-youve-done"><i class="fa fa-anchor"> </i> Think about what you’ve done!</h3>
+
+<div class="trydart-step-details">
+  <p>This code lab provided a small example of a static file server.
+You learned some interesting features of Dart,
+the Dart SDK, some Dart tools, and a few pub packages:</p>
+
+  <ul>
+    <li><code>runZoned()</code> keeps your program running in spite of exceptions</li>
+    <li><code>HttpServer.bind()</code> creates an HTTP server and binds it to a host and port</li>
+    <li><code>listen()</code> registers a callback function for Stream events</li>
+    <li><code>Platform</code> provides system environment information</li>
+    <li>
+      <p><code>File</code> represents</p>
+    </li>
+    <li>
+      <p><code>VirtualDirectory</code> makes HTTP operations easier</p>
+    </li>
+    <li><code>pub get</code> installs packages</li>
+    <li><code>pub build</code> builds an app for deployment</li>
+    <li>
+      <p><code>pub build</code> generates JavaScript so your app can run on any modern browser</p>
+    </li>
+    <li>Heroku is a hosting service with a free tier</li>
+    <li>DevTools allows you to inspect and debug your app on a mobile device</li>
+  </ul>
+
+</div>
+
+<h3 id="i-classfa-fa-anchor-i-online-documentation"><i class="fa fa-anchor"> </i> Online documentation</h3>
+
+<div class="trydart-step-details">
+
+  <h4 id="sdk-libraries-classes-and-functions">SDK libraries, classes, and functions</h4>
+
+  <ul>
+    <li>The API docs for the
+<a href="https://api.dartlang.org/dart_io/File.html" target="_blank">File</a>,
+<a href="https://api.dartlang.org/dart_io/HttpServer.html" target="_blank">HttpServer</a>, and
+<a href="https://api.dartlang.org/dart_io/Platform.html" target="_blank">Platform</a>
+classes from the
+<a href="https://api.dartlang.org/dart_io.html" target="_blank">dart:io</a>
+library.</li>
+    <li>The API docs for the
+<a href="https://api.dartlang.org/dart_async/Stream.html" target="_blank">Stream</a>
+class and
+<a href="https://api.dartlang.org/dart_async.html#runZoned" target="_blank">runZoned()</a>
+function from the
+<a href="https://api.dartlang.org/dart_async.html" target="_blank">dart:async</a> library.</li>
+  </ul>
+
+  <h4 id="classes-and-functions-from-pub-packages">Classes and functions from pub packages</h4>
+
+  <ul>
+    <li>The code for the
+<a href="https://pub.dartlang.org/packages/http_server">http_server</a> pub package,
+in particular
+<a href="https://api.dartlang.org/http_server/VirtualDirectory.html" target="_blank">VirtualDirectory</a>
+class.</li>
+    <li>The code for the
+<a href="http://pub.dartlang.org/packages/path">path</a> pub package,
+in particular the
+<a href="https://api.dartlang.org/path.html#join" target="_blank">join()</a>
+and
+<a href="https://api.dartlang.org/path.html#dirname" target="_blank">dirname()</a>
+functions.</li>
+  </ul>
+
+  <h4 id="heroku-tools">Heroku tools</h4>
+
+  <ul>
+    <li>The <a href="https://devcenter.heroku.com/">Heroku Dev Center</a>.</li>
+    <li>The Heroku-compatible build of the Dart SDK:
+<a href="https://github.com/selkhateeb/heroku-vagrant-dart-build">heroku-vagrant-dart-build</a>.</li>
+    <li>The Heroku buildpack for Dart:
+<a href="https://github.com/igrigorik/heroku-buildpack-dart">heroku-buildpack-dart</a>.</li>
+  </ul>
+
+  <h4 id="the-example-code">The example code</h4>
+
+  <ul>
+    <li>The <a href="https://github.com/dart-lang/deploy-codelab">deploy-codelab</a>
+example code.</li>
+  </ul>
+
+</div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="footer container-full">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3>一种用于创建可扩展 web 应用程序的语言、工具和代码库</h3>
+          <p>Dart 是一个 <a href="https://code.google.com/p/dart/">开源项目</a>，由  Google 和其他人员参与。</p>
+          <p class="sm">除非注明，该页面内容使用 the Creative Commons Attribution 3.0 License 发布，示例代码使用  BSD License 发布。</p>
+          <!-- 
+          <p><a class="saelogo" href="http://sae.sina.com.cn/activity/invite/15649/weibo" target="_blank"><img src="http://static.sae.sina.com.cn/image/poweredby/poweredby.png" title="Powered by Sina App Engine"></a></p>     	
+          -->
+        </div>
+        <div class="col-md-2 col-md-offset-1">
+          <h4>受欢迎的文章</h4>
+          <ul>
+            <li><a href="/polymer-dart/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">Polymer.dart</a></li>
+            <li><a href="/performance/">性能</a></li>
+            <li><a href="/docs/dart-up-and-running/contents/ch02.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">语言概览</a> &amp;
+            <a href="/docs/dart-up-and-running/contents/ch03.html?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码库概览</a></li>
+            <li><a href="/samples/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">示例代码</a></li>
+            <li><a href="/docs/tutorials/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">教程</a> &amp;
+                <a href="/codelabs/darrrt/?utm_source=site&amp;utm_medium=footer&amp;utm_campaign=homepage">代码实验室</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>资源</h4>
+          <ul>
+            <li><a href="http://pub.dartlang.org/">Pub packages</a></li>
+            <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+            <li><a href="http://code.google.com/p/dart/issues/list">Dart bugs and feature requests</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h4>社区</h4>
+          <ul>
+            <li><a href="/support/">邮件列表</a></li>
+            <li><a href="http://forum.dartlang.cc">中文社区</a></li>
+            <li><a href="http://weibo.com/cndart">中文微博</a></li>
+            <li><a href="https://plus.google.com/communities/114566943291919232850">G+ 社区</a></li>
+            <li><a href="https://plus.google.com/+dartlang/posts">G+ 新闻发布频道</a></li>
+            <li><a href="http://stackoverflow.com/questions/tagged/dart">Stack Overflow</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> <!-- End footer -->
+
+<script type='text/javascript' src='/js/jquery.js'></script>
+<script type='text/javascript' src='/js/bootstrap.min.js'></script>
+<script type='text/javascript' src='/js/prettify.js'></script>
+<script type='text/javascript' src='/js/lang-dart.js'></script>
+<script type='text/javascript' src='/js/lang-yaml.js'></script>
+<script type='text/javascript' src='/js/scripts.js'></script>
+
+
+
+<script defer src="/js/os-switcher.js"></script>
+
+<script defer src="/js/editor-downloads-analytics.js"></script>
+
+<script defer src="/js/editor-version.js"></script>
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F76b2695e71e6cec6e6af036d76afa367' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=1&amp;pos=left&amp;uid=590574" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":367};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+</body>
+</html>
+

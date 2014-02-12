@@ -116,10 +116,12 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/download.html">下载 Dart</a></li>
+                <li class="divider"></li>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
-                <li><a href="/tools/">更多工具</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub 包管理器</a></li>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/faq.html">工具 FAQ</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -130,13 +132,14 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+                <li><a href="/performance/">性能</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
-                <li><a href="/performance/">性能</a></li>
+                <li><a href="/community/who-uses-dart.html">谁在使用 Dart</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -188,142 +191,16 @@
   </div>
 </div>
 
-
-<h2 id="download"> 下载 Dart 编辑器 </h2>
-
-<p class="os-choices">
-Dart 编辑器 包含在 Dart 下载包中：
-<span class="nowrap">
-<input type="radio" name="osChoices" id="windows">
-<label class="os-choice" for="windows">Windows (Vista, 7, or 8)</label>,
-</span>
-
-<span class="nowrap">
-<input type="radio" name="osChoices" id="linux" checked="checked">
-<label class="os-choice" for="linux">Linux</label>,
-</span> or
-
-<span class="nowrap">
-<input type="radio" name="osChoices" id="macos">
-<label class="os-choice" for="macos">Mac</label>.
-</span>
-
-</p>
-
-<p>
-  <div class="editor download-buttons">
-
+<h2 id="install">安装 Dart Editor </h2>
+  <p>
+ 如果你还没有下载 编辑器，则到 <a href="/tools/download.html">这里下载  Dart 编辑器</a>。</p>
+  <p>
+Dart 编辑器需要 Java 支持。
+如果有必要，请 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html">下载
+JRE</a>。 Dart 编辑器需要 JRE 6.0+ 版本 java。</p>
+<h2 id="configure">配置  Dart Editor </h2>
   
-
-  <div class="windows downloads">
-    
-    <a data-bits="64" data-os="windows" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
-      <button class="btn btn-primary btn-lg">
-        <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit Windows)
-      </button>
-    </a>
-    <p></p>
-    <a data-bits="32" data-os="windows" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
-      <button class="btn btn-primary btn-lg">
-        <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit Windows)
-      </button>
-    </a>
-    
-  </div>
-
-  
-
-  <div class="macos downloads">
-    
-    <a data-bits="64" data-os="macos" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
-      <button class="btn btn-primary btn-lg">
-        <i class="sprite-icon-download-btn"> </i>
-                      下载 Dart (Mac)
-      </button>
-    </a>
-    
-  </div>
-
-  
-
-  <div class="linux downloads">
-    
-    <a data-bits="64" data-os="linux" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
-      <button class="btn btn-primary btn-lg">
-        <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit Linux)
-      </button>
-    </a>
-    <p></p>
-    <a data-bits="32" data-os="linux" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
-      <button class="btn btn-primary btn-lg">
-        <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit Linux)
-      </button>
-    </a>
-    
-  </div>
-
-  
-
-  <div class="editor-current-version version">
-                      当前 Dart 稳定版本：
-    <span class="editor-build-rev-stable">[计算中]</span>
-  </div>
-</div>
-
-</p>
-
-<p>
-  <div class="bleeding-edge">
-              想和 <b>dev channel</b>一起并且使用最新的功能？
-  下载
-  
-    
-    <span class="windows downloads">
-      最新的开发版本：
-      <a class="download-link" data-bits="64" data-os="windows" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-windows-x64.zip">
-      64-bit</a>
-      或者
-      <a class="download-link" data-bits="32" data-os="windows" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-windows-ia32.zip">
-      32-bit</a>.
-  </span>
-  
-  
-    
-    <span class="macos downloads">
-      <a class="download-link" data-bits="64" data-os="macos" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-macos-x64.zip">
-               最新的开发版本</a>.
-    </span>
-    
-  
-    
-    <span class="linux downloads">
-      最新的开发版本：
-      <a class="download-link" data-bits="64" data-os="linux" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-linux-x64.zip">
-      64-bit</a>
-      或者
-      <a class="download-link" data-bits="32" data-os="linux" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-linux-ia32.zip">
-      32-bit</a>.
-  </span>
-  
-  
-    遇到问题记得反馈哦！
-  </p>
-</div>
-
-</p>
-
-
-<h2 id="install"> 安装 Dart 编辑器 </h2>
-
-<p>
- 只需解压下载的文件，就安装好了。
-</p>
-
-<p>
+  <p>
  如果你想用命令行工具，也已经
  有了，在 Dart 下载包中已经包含了 SDK。
 你可能还需要按照 <a href="/tools/sdk/">SDK 页面</a>
@@ -577,27 +454,6 @@ Dart 编辑器 包含在 Dart 下载包中：
     </div>
   </footer> <!-- End footer -->
 
-<style>
-#survey-prompt {
-text-align: center;
-position: fixed;
-bottom: 0px;
-left: 0px;
-background: #00A4E4;
-color: white;
-font-size: 15px;
-padding: 5px 70px;
-z-index: 3000;
-text-decoration: none;
-border-radius: 0 5px 0 0;
-}
-</style>
-
-<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
-填写一个两分钟开发者问卷调查。<br>
-帮助 Dart 开发团队制定 2014 年度计划。
-</a>
-
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
@@ -609,7 +465,7 @@ border-radius: 0 5px 0 0;
 
 <script defer src="/js/os-switcher.js"></script>
 
-<script defer src="/js/editor-downloads-analytics.js"></script>
+<script defer src="/js/downloads-analytics.js"></script>
 
 <script defer src="/js/editor-version.js"></script>
 

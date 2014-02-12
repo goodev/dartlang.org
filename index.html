@@ -116,10 +116,12 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/download.html">下载 Dart</a></li>
+                <li class="divider"></li>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
-                <li><a href="/tools/">更多工具</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub 包管理器</a></li>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/faq.html">工具 FAQ</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -130,13 +132,14 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+                <li><a href="/performance/">性能</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
-                <li><a href="/performance/">性能</a></li>
+                <li><a href="/community/who-uses-dart.html">谁在使用 Dart</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -185,17 +188,17 @@
 
   <div class="windows downloads">
     
-    <a data-bits="64" data-os="windows" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
+    <a data-bits="64" data-os="windows" data-build="integration" data-tool="editor" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
       <button class="btn btn-default btn-lg download-btn">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit Windows)
+        下载 Dart + Editor (64-bit Windows)
       </button>
     </a>
     <p></p>
-    <a data-bits="32" data-os="windows" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
+    <a data-bits="32" data-os="windows" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
       <button class="btn btn-default btn-lg download-btn">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit Windows)
+        下载 Dart + Editor (32-bit Windows)
       </button>
     </a>
     
@@ -205,10 +208,10 @@
 
   <div class="macos downloads">
     
-    <a data-bits="64" data-os="macos" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
+    <a data-bits="64" data-os="macos" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
       <button class="btn btn-default btn-lg download-btn">
         <i class="sprite-icon-download-btn"> </i>
-                      下载 Dart (Mac)
+        下载 Dart + Editor (Mac)
       </button>
     </a>
     
@@ -218,17 +221,17 @@
 
   <div class="linux downloads">
     
-    <a data-bits="64" data-os="linux" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
+    <a data-bits="64" data-os="linux" data-build="integration" data-tool="editor" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
       <button class="btn btn-default btn-lg download-btn">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit Linux)
+        下载 Dart + Editor (64-bit Linux)
       </button>
     </a>
     <p></p>
-    <a data-bits="32" data-os="linux" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
+    <a data-bits="32" data-os="linux" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
       <button class="btn btn-default btn-lg download-btn">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit Linux)
+        下载 Dart + Editor (32-bit Linux)
       </button>
     </a>
     
@@ -237,7 +240,7 @@
   
 
   <div class="editor-current-version version">
-                      当前 Dart 稳定版本：
+     当前 Dart 稳定版本：
     <span class="editor-build-rev-stable">[计算中]</span>
   </div>
 </div>
@@ -265,7 +268,7 @@
                 <a id="see-code" href="#code" data-slide="true"><i class="sprite-icon-triangle"></i>了解代码</a>
               </div>
               <div class="col-md-4">
-                <h2>尝试下 Dart</h2>
+                <h2>试用下 Dart</h2>
                 <p class="timer"><i class="sprite-icon-timer"></i>大约 1 小时</p>
                 <p>编写一个 Dart web 程序 - 即使你以前从未编写过 web 程序。</p>
                 <a href="/codelabs/darrrt/"><i class="sprite-icon-triangle"></i>编写代码</a>
@@ -604,9 +607,14 @@ main() {
                   <p class="person"><span class="title"></span></p>
                   <p class="company">Montage</p>
                 </div>
+                
+                
               </div>
             </div>
-
+            
+          <div style="margin-top:100px">
+            看看还有谁在 <a href="/community/who-uses-dart.html">使用 Dart</a>。
+          </div>
           </div>
         </div>
       </section>
@@ -640,23 +648,27 @@ main() {
         
         <div class="row">
           <div class="col-md-12">
+          (更多下载选项请查看
+           <a href="/tools/download.html">下载页面</a>。)
+
+
           <div class="editor download-buttons">
 
   
 
   <div class="windows downloads">
     
-    <a data-bits="64" data-os="windows" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
+    <a data-bits="64" data-os="windows" data-build="integration" data-tool="editor" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip">
       <button class="btn btn-primary btn-lg">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit Windows)
+        下载 Dart + Editor (64-bit Windows)
       </button>
     </a>
     <p></p>
-    <a data-bits="32" data-os="windows" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
+    <a data-bits="32" data-os="windows" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip">
       <button class="btn btn-primary btn-lg">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit Windows)
+        下载 Dart + Editor (32-bit Windows)
       </button>
     </a>
     
@@ -666,10 +678,10 @@ main() {
 
   <div class="macos downloads">
     
-    <a data-bits="64" data-os="macos" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
+    <a data-bits="64" data-os="macos" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip">
       <button class="btn btn-primary btn-lg">
         <i class="sprite-icon-download-btn"> </i>
-                      下载 Dart (Mac)
+        下载 Dart + Editor (Mac)
       </button>
     </a>
     
@@ -679,17 +691,17 @@ main() {
 
   <div class="linux downloads">
     
-    <a data-bits="64" data-os="linux" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
+    <a data-bits="64" data-os="linux" data-build="integration" data-tool="editor" class="btn" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip">
       <button class="btn btn-primary btn-lg">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit Linux)
+        下载 Dart + Editor (64-bit Linux)
       </button>
     </a>
     <p></p>
-    <a data-bits="32" data-os="linux" data-build="integration" class="btn  download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
+    <a data-bits="32" data-os="linux" data-build="integration" data-tool="editor" class="btn download-link" href="http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip">
       <button class="btn btn-primary btn-lg">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit Linux)
+        下载 Dart + Editor (32-bit Linux)
       </button>
     </a>
     
@@ -698,7 +710,7 @@ main() {
   
 
   <div class="editor-current-version version">
-                      当前 Dart 稳定版本：
+     当前 Dart 稳定版本：
     <span class="editor-build-rev-stable">[计算中]</span>
   </div>
 </div>
@@ -777,27 +789,6 @@ main() {
     </div>
   </footer> <!-- End footer -->
 
-<style>
-#survey-prompt {
-text-align: center;
-position: fixed;
-bottom: 0px;
-left: 0px;
-background: #00A4E4;
-color: white;
-font-size: 15px;
-padding: 5px 70px;
-z-index: 3000;
-text-decoration: none;
-border-radius: 0 5px 0 0;
-}
-</style>
-
-<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
-填写一个两分钟开发者问卷调查。<br>
-帮助 Dart 开发团队制定 2014 年度计划。
-</a>
-
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
 <script type='text/javascript' src='/js/prettify.js'></script>
@@ -811,7 +802,7 @@ border-radius: 0 5px 0 0;
 
 <script defer src="/js/os-switcher.js"></script>
 
-<script defer src="/js/editor-downloads-analytics.js"></script>
+<script defer src="/js/downloads-analytics.js"></script>
 
 <script defer src="/js/front-page-analytics.js"></script>
 

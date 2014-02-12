@@ -116,10 +116,12 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/download.html">下载 Dart</a></li>
+                <li class="divider"></li>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
-                <li><a href="/tools/">更多工具</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub 包管理器</a></li>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/faq.html">工具 FAQ</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -130,13 +132,14 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+                <li><a href="/performance/">性能</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
-                <li><a href="/performance/">性能</a></li>
+                <li><a href="/community/who-uses-dart.html">谁在使用 Dart</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -286,9 +289,8 @@ a unified interface to anything that might send out a repeating series of data.<
 
 <p>Before we get started, it is important to note that Streams are part 
 of the <a href="http://api.dartlang.org/dart_async.html">dart:async</a> library.
-They share a close relationship with Dart’s async staple, <code>Future</code>,
-due to their asynchronous nature.
-(You can’t block code until a user clicks a button!)</p>
+They share a close relationship with Dart’s async staple, <code>Future</code>, due to their 
+asynchronous nature. (You can’t block code until a user clicks a button!)</p>
 
 <p>For details about using Futures, refer to the previous
 tutorial <a href="/docs/tutorials/futures/">Use Future-Based APIs</a>.</p>
@@ -305,10 +307,9 @@ the stream.  </p>
 <h3 id="key-concepts">Key concepts</h3>
 
 <ul>
-  <li><strong>Consuming a stream</strong>: Data is sent out of a stream to a 
-<code>StreamSubscriber</code> (or possibly multiple subscribers).</li>
-  <li><strong>Populating a stream</strong>: Data gets into a stream from a 
-<code>StreamController</code>.</li>
+  <li><strong>Consuming a stream</strong>: Data is sent out of a stream to a <code>StreamSubscriber</code> 
+(or possibly multiple subscribers).</li>
+  <li><strong>Populating a stream</strong>: Data gets into a stream from a <code>StreamController</code>.</li>
 </ul>
 
 <p>We’ll look at the <strong>consuming</strong> a stream in this article as you’re more likely 
@@ -318,9 +319,9 @@ a stream will be covered in a future article.</p>
 <h2 id="consuming-a-stream">Consuming a stream</h2>
 
 <p>Let’s take a look at some simple stream code.  For simplicity we’re going to 
-create a stream from a fixed, literal list at the moment by using the 
-stream’s <code>fromIterable()</code> constructor, rather than by dynamically 
-populating it with a <code>StreamController</code>.</p>
+create a stream from a fixed, literal list at the moment by using the stream’s 
+<code>fromIterable()</code> constructor, rather than by dynamically populating it with a 
+<code>StreamController</code>.</p>
 
 <!--- BEGIN(simple_stream_code) -->
 <pre class="prettyprint lang-dart">var data = [1,2,3,4,5]; // some sample data
@@ -330,10 +331,9 @@ var stream = new Stream.fromIterable(data); // create the stream</pre>
 <p>Now that we have a stream that is ready to send out some data, we can use 
 that stream to listen to some data.</p>
 
-<p>The typical way is to use the stream’s <code>listen()</code> method to 
-subscribe to the stream.  This has a number of optional parameters, and 
-one mandatory parameter, which is the <code>onData</code> handler callback 
-function:</p>
+<p>The typical way is to use the stream’s <code>listen()</code> method to subscribe to the 
+stream.  This has a number of optional parameters, and one mandatory parameter, 
+which is the <code>onData</code> handler callback function:</p>
 
 <!--- BEGIN(consuming_a_stream) -->
 <pre class="prettyprint lang-dart">import 'dart:async';
@@ -349,9 +349,9 @@ main() {
 }</pre>
 <!--- END(consuming_a_stream) -->
 
-<p>The <code>listen()</code> method is fired every time some data is received. 
-In in our stream, the <code>listen()</code> callback is called for each of 
-the data elements, so the output of running this code is as expected:</p>
+<p>The <code>listen()</code> method is fired every time some data is received. In in our 
+stream, the <code>listen()</code> callback is called for each of the data elements, so the 
+output of running this code is as expected:</p>
 
 <pre><code>Received: 1
 Received: 2
@@ -361,8 +361,8 @@ Received: 5
 </code></pre>
 
 <p>There are other ways to consume data from the stream, using properties such 
-as <code>first</code>, <code>last</code>, <code>length</code>, and
-<code>isEmpty</code>.  Each of these properties returns a future. For example:</p>
+as <code>first</code>, <code>last</code>, <code>length</code>, and <code>isEmpty</code>.  Each of these properties returns 
+a future. For example:</p>
 
 <!--- BEGIN(stream_properties) -->
 <pre class="prettyprint lang-dart">stream = new Stream.fromIterable([1,2,3,4,5]);
@@ -415,11 +415,9 @@ for the complete list.</p>
 <h3 id="subsets-of-stream-data">Subsets of stream data</h3>
 
 <p>Streams have some useful methods for extracting parts of the data being 
-sent out from the stream.  The <code>take()</code>, <code>skip()</code>, 
-<code>takeWhile()</code>, <code>skipWhile()</code>, and <code>where()</code> 
-methods
-allow you to take a subset of data, as shown by the following example.  Each 
-outputs its own stream that you can listen to.</p>
+sent out from the stream.  The <code>take()</code>, <code>skip()</code>, <code>takeWhile()</code>, <code>skipWhile()</code>, 
+and <code>where()</code> methods allow you to take a subset of data, as shown by the 
+following example.  Each outputs its own stream that you can listen to.</p>
 
 <!--- BEGIN(stream_subsets) -->
 <pre class="prettyprint lang-dart">broadcastStream
@@ -452,15 +450,13 @@ broadcastStream
 <h3 id="transforming-stream-data">Transforming stream data</h3>
 
 <p>Another useful method is the <code>transform()</code> method, which takes a 
-<code>StreamTransformer</code> instance.  This allows you to modify the 
-contents of the stream.  The <code>StreamTransformer</code> constructor takes 
-a <code>handleData</code> function, which is called for each value passed from 
-the stream.  You can modify the value as you wish, and add it back to the 
-<code>StreamSink</code>, which results in the modified values being output on 
-the <code>transform()</code> method’s own stream.  The example below takes our 
-data <code>[1,2,3,4,5]</code> and converts each item into two new 
-<code>String</code> values, <code>"Message n"</code> and 
-<code>"Body n"</code>. Each string is placed onto the new stream.</p>
+<code>StreamTransformer</code> instance.  This allows you to modify the contents of the 
+stream.  The <code>StreamTransformer</code> constructor takes a <code>handleData</code> function, 
+which is called for each value passed from the stream.  You can modify the value 
+as you wish, and add it back to the <code>StreamSink</code>, which results in the modified 
+values being output on the <code>transform()</code> method’s own stream.  The example below 
+takes our data <code>[1,2,3,4,5]</code> and converts each item into two new <code>String</code> 
+values, <code>"Message n"</code> and <code>"Body n"</code>. Each string is placed onto the new stream.</p>
 
 <!--- BEGIN(stream_transformer) -->
 <pre class="prettyprint lang-dart">// define a stream transformer
@@ -489,13 +485,13 @@ listen: Body: 5
 </code></pre>
 
 <p>Perhaps the most common transform you will use is transforming a 
-List&lt;int&gt; into a String by using a <code>StringDecoder</code>, such as 
-when reading data from a file or HTTP request, as in the following example.</p>
+List<int> into a String by using a `UTF8.decoder` from `dart:convert`, 
+such as when reading data from a file or HTTP request, as in the following example.</int></p>
 
 <!--- BEGIN(string_decoder) -->
 <pre class="prettyprint lang-dart">File file = new File(&quot;some_file.txt&quot;);
 file.openRead()
-    .transform(new StringDecoder()) // use a StringDecoder
+    .transform(UTF8.decoder) // use a UTF8.decoder
     .listen((String data) =&gt; print(data), // output the data
         onError: (error) =&gt; print(&quot;Error, could not open file&quot;),
         onDone: () =&gt; print(&quot;Finished reading data&quot;));</pre>
@@ -504,9 +500,8 @@ file.openRead()
 <h3 id="validating-stream-data">Validating stream data</h3>
 
 <p>Sometimes, you want to validate that the data returned from a stream meets 
-certain conditions.  A following functions return 
-<code>Future&lt;bool&gt;</code> values: <code>any()</code>, <code>every()</code>, 
-and <code>contains()</code>.</p>
+certain conditions.  A following functions return <code>Future&lt;bool&gt;</code> values: 
+<code>any()</code>, <code>every()</code>, and <code>contains()</code>.</p>
 
 <!--- BEGIN(validating_stream_data) -->
 <pre class="prettyprint lang-dart">broadcastStream
@@ -525,10 +520,8 @@ broadcastStream
 <h2 id="single-value-streams">Single value streams</h2>
 
 <p>Some streams are designed to return only a single value, and you want to 
-ensure that you only retrieve a  single value from them.
-The <code>single</code> getter 
-and <code>singleWhere()</code> method
-both return a future containing the single value, 
+ensure that you only retrieve a  single value from them. The <code>single</code> getter 
+and <code>singleWhere()</code> method both return a future containing the single value, 
 or raise an error if they don’t.  For example, with our data set containing 5 
 values: <code>[1,2,3,4,5]</code>, the following will return the value 1:</p>
 
@@ -556,10 +549,9 @@ the error is unhandled):</p>
 based APIs</a>, 
 so I’ll not repeat that here.  It’s useful to note, though, that we can 
 rewrite our previous snippet to include some error handling so that we can 
-detect that the <code>single</code> call has failed.  A Future’s 
-<code>then()</code> function returns a future, and you can use its 
-<code>catchError()</code> handler.  This <code>catchError</code> handler 
-will catch any errors thrown within the <code>then()<code> callback:</code></code></p>
+detect that the <code>single</code> call has failed.  A Future’s <code>then()</code> function returns 
+a future, and you can use its <code>catchError()</code> handler.  This <code>catchError</code> handler 
+will catch any errors thrown within the <code>then()</code> callback:</p>
 
 <!--- BEGIN(catch_error) -->
 <pre class="prettyprint lang-dart">broadcastStream
@@ -571,15 +563,13 @@ will catch any errors thrown within the <code>then()<code> callback:</code></cod
 
 <h3 id="error-handling-with-streamsubscription">Error handling with StreamSubscription</h3>
 
-<p>When you use the <code>listen()</code> function to listen to values coming 
-from a stream, you have the option of adding error handling.  The listen 
-function creates a <code>StreamSubscription</code> instance, which is the 
-return value of the <code>listen()</code> function. </p>
+<p>When you use the <code>listen()</code> function to listen to values coming from a stream, 
+you have the option of adding error handling.  The listen function creates a 
+<code>StreamSubscription</code> instance, which is the return value of the <code>listen()</code> function. </p>
 
-<p>A StreamSubscription has a number of handlers, namely: <code>onData</code>, 
-<code>onError</code> and <code>onDone</code>.  Each of these can be assigned 
-via the <code>listen()</code> function, or later, via the returned 
-<code>StreamSubscription</code> object.  Note the <code>onError</code> handler, 
+<p>A StreamSubscription has a number of handlers, namely: <code>onData</code>, <code>onError</code> and 
+<code>onDone</code>.  Each of these can be assigned via the <code>listen()</code> function, or later, 
+via the returned <code>StreamSubscription</code> object.  Note the <code>onError</code> handler, 
 which you can use to catch errors output from the stream:</p>
 
 <!--- BEGIN(subscription_handler_methods) -->
@@ -611,20 +601,19 @@ done
 </code></pre>
 
 <p>One of the benefits of using the form 
-<code>var subscription = stream.listen(null)</code> and then setting up the 
-<code>onData</code> handler separately means that you can use the 
-<code>subscription</code> object in the data handler itself.</p>
+<code>var subscription = stream.listen(null)</code> and then setting up the <code>onData</code> 
+handler separately means that you can use the <code>subscription</code> object in the data 
+handler itself.</p>
 
-<p>The <code>onDone</code> handler is called when there is no more data, and the 
-underlying stream is closed.</p>
+<p>The <code>onDone</code> handler is called when there is no more data, and the underlying 
+stream is closed.</p>
 
 <h2 id="unsubscribing">Unsubscribing from a stream</h2>
 
-<p>You can use the <code>StreamSubscription</code> object to unsubscribe 
-from the stream, using the <code>cancel()</code> method.  For example, 
-the listener in the following code unsubscribes from the stream
-after receiving the value 2, so it never 
-receives the <code>onDone</code> message:</p>
+<p>You can use the <code>StreamSubscription</code> object to unsubscribe from the stream, 
+using the <code>cancel()</code> method.  For example, the listener in the following code 
+unsubscribes from the stream after receiving the value 2, so it never receives 
+the <code>onDone</code> message:</p>
 
 <!--- BEGIN(cancelling_a_stream) -->
 <pre class="prettyprint lang-dart">var subscription = stream.listen(null);
@@ -639,9 +628,9 @@ subscription.onDone(() =&gt; print(&quot;done&quot;));</pre>
 <h2 id="streams-are-generic">Streams are generic</h2>
 
 <p>All the stream classes are also generic, which means that you get strongly 
-typed data in the handlers.  For example, if you create a 
-<code>Stream&lt;String&gt;</code>, then all the handler functions will also be 
-expecting a <code>String</code>, as shown by the following code:</p>
+typed data in the handlers.  For example, if you create a <code>Stream&lt;String&gt;</code>, 
+then all the handler functions will also be expecting a <code>String</code>, as shown by 
+the following code:</p>
 
 <!--- BEGIN(stream_generics) -->
 <pre class="prettyprint lang-dart">var data = [1,2,3,4,5]; // ints, valid
@@ -660,10 +649,9 @@ file.</p>
 
 <h3 id="button-clicks-in-darthtml">Button clicks in dart:html</h3>
 
-<p>Buttons have a number of <code>onSomeEvent</code> streams defined, and the 
-<code>onClick</code> stream is defined as <code>Stream&lt;MouseEvent&gt;</code>.
-This type means that the data that you receive when you listen to the 
-<code>onClick</code> stream is all going to be MouseEvents.</p>
+<p>Buttons have a number of <code>onSomeEvent</code> streams defined, and the <code>onClick</code> stream 
+is defined as <code>Stream&lt;MouseEvent&gt;</code>. This type means that the data that you 
+receive when you listen to the <code>onClick</code> stream is all going to be MouseEvents.</p>
 
 <p>The following code sets up a button and a couple of event handlers.
 One event handler remains
@@ -700,10 +688,9 @@ click, the second event handler unsubscribes itself.</p>
 <h3 id="reading-a-file-in-dartio">Reading a file in dart:io</h3>
 
 <p>The second real-world example shows how to read some data from a file on the 
-filesystem.  The <code>file.openRead()</code> returns a stream containing the 
-file’s contents.  The stream (which contains a <code>List&lt;int&gt;</code>) 
-is decoded using a <code>StringDecoder</code> class to allow for UTF-8 
-conversion.</p>
+filesystem.  The <code>file.openRead()</code> returns a stream containing the file’s 
+contents.  The stream (which contains a <code>List&lt;int&gt;</code>) is decoded using a 
+<code>UTF8.decoder</code> class from <code>dart:convert</code> to allow for UTF-8 conversion.</p>
 
 <!--- BEGIN(reading_a_file) -->
 <pre class="prettyprint lang-dart">import 'dart:io';
@@ -711,7 +698,7 @@ conversion.</p>
 main() {
   File file = new File(&quot;some_file.txt&quot;);
   file.openRead()
-      .transform(new StringDecoder()) // use a StringDecoder
+      .transform(UTF8.decoder) // use a UTF8.decoder
       .listen((String data) =&gt; print(data), // output the data
         onError: (error) =&gt; print(&quot;Error, could not open file&quot;),
         onDone: () =&gt; print(&quot;Finished reading data&quot;));
@@ -759,6 +746,7 @@ at <a href="http://www.manning.com/buckett">manning.com</a>.</p>
     </div> 
   </div> 
 </div>
+
 
       </div>
     </div>
@@ -810,27 +798,6 @@ at <a href="http://www.manning.com/buckett">manning.com</a>.</p>
       </div>
     </div>
   </footer> <!-- End footer -->
-
-<style>
-#survey-prompt {
-text-align: center;
-position: fixed;
-bottom: 0px;
-left: 0px;
-background: #00A4E4;
-color: white;
-font-size: 15px;
-padding: 5px 70px;
-z-index: 3000;
-text-decoration: none;
-border-radius: 0 5px 0 0;
-}
-</style>
-
-<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
-填写一个两分钟开发者问卷调查。<br>
-帮助 Dart 开发团队制定 2014 年度计划。
-</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>

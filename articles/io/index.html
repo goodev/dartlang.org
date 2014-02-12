@@ -116,10 +116,12 @@
               </a>
               <ul class="dropdown-menu">
                 <i class="sprite-icon-dd-tip"></i>
-                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/download.html">下载 Dart</a></li>
+                <li class="divider"></li>
                 </li><li><a href="/tools/editor/">Dart Editor</a></li>
-                <li><a href="http://pub.dartlang.cc/">Pub Package Manager</a></li>
-                <li><a href="/tools/">更多工具</a></li>
+                <li><a href="http://pub.dartlang.cc/">Pub 包管理器</a></li>
+                <li><a href="/docs/dart-up-and-running/contents/ch04-tools-dart2js.html">dart2js</a>
+                <li><a href="/tools/faq.html">工具 FAQ</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -130,13 +132,14 @@
                 <i class="sprite-icon-dd-tip"></i>
                 <li><a href="/samples/">示例代码</a></li>
                 <li><a href="/docs/synonyms/">和其他语言的相同点</a></li>
+                <li><a href="/performance/">性能</a></li>
 
                 <li class="divider"></li>
                 <li><a href="/slides/">演示文稿</a></li>
                 <li><a href="/dart-tips/">Dart 短视频</a></li>
 
                 <li class="divider"></li>
-                <li><a href="/performance/">性能</a></li>
+                <li><a href="/community/who-uses-dart.html">谁在使用 Dart</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -191,7 +194,7 @@
   <h1 id="an-introduction-to-the-dartio-library">An Introduction to the dart:io Library</h1>
 
   <p><em>Written by Mads Ager <br />
-March 2012 (updated October 2012 and February 2013)</em></p>
+March 2012 (updated October 2012, February 2013 and Januart 2014)</em></p>
 
   <p>The <a href="http://api.dartlang.org/io.html">dart:io</a> library
 is aimed at server-side code
@@ -270,10 +273,11 @@ class.</p>
   <!--- BEGIN(io_file_system) -->
   <pre class="prettyprint lang-dart">import 'dart:io';
 import 'dart:async';
+import 'dart:convert';
 
 main() {
   var file = new File(Platform.script.toFilePath());
-  Future&lt;String&gt; finishedReading = file.readAsString(encoding: Encoding.ASCII);
+  Future&lt;String&gt; finishedReading = file.readAsString(encoding: ASCII);
   finishedReading.then((text) =&gt; print(text));
 }</pre>
   <!--- END(io_file_system) -->
@@ -290,8 +294,8 @@ let’s change the example to read the contents
 only up to the first semicolon and then to print that.
 You could do this in two ways:
 either open the file for random access,
-or open an
-<a href="http://api.dartlang.org/io/InputStream.html">InputStream</a>
+or open a
+<a href="http://api.dartlang.org/dart_async/Stream.html">Stream</a>
 for the file and stream in the data.</p>
 
   <p>Here is a version that opens the file for random access operations.
@@ -494,15 +498,10 @@ _sendNotFound(HttpResponse response) {
 startServer(String basePath) {
   HttpServer.bind('127.0.0.1', 8080).then((server) {
     server.listen((HttpRequest request) {
-      final Path path = new Path(request.uri.path).canonicalize();
-      if (!path.isAbsolute) {
-        _sendNotFound(request.response);
-        return;
-      }
-      // PENDING: Do more security checks here?
-      final String stringPath =
-          path.toString() == '/' ? '/index.html' : path.toString();
-      final File file = new File('${basePath}${stringPath}');
+      final String path = request.uri.toFilePath();
+      // PENDING: Do more security checks here.
+      final String resultPath = path == '/' ? '/index.html' : path;
+      final File file = new File('${basePath}${resultPath}');
       file.exists().then((bool found) {
         if (found) {
           file.openRead()
@@ -520,7 +519,7 @@ main() {
   // Compute base path for the request based on the location of the
   // script and then start the server.
   File script = new File(Platform.script.toFilePath());
-  startServer(script.directory.path);
+  startServer(script.parent.path);
 }</pre>
   <!--- END(io_http_server_file) -->
 
@@ -603,27 +602,6 @@ use the Area-IO label in the issue tracker at
       </div>
     </div>
   </footer> <!-- End footer -->
-
-<style>
-#survey-prompt {
-text-align: center;
-position: fixed;
-bottom: 0px;
-left: 0px;
-background: #00A4E4;
-color: white;
-font-size: 15px;
-padding: 5px 70px;
-z-index: 3000;
-text-decoration: none;
-border-radius: 0 5px 0 0;
-}
-</style>
-
-<a href="//goo.gl/wpc0hL" target="_blank" id="survey-prompt">
-填写一个两分钟开发者问卷调查。<br>
-帮助 Dart 开发团队制定 2014 年度计划。
-</a>
 
 <script type='text/javascript' src='/js/jquery.js'></script>
 <script type='text/javascript' src='/js/bootstrap.min.js'></script>
