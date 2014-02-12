@@ -1,36 +1,37 @@
 ---
 layout: default
-title: "Tools FAQ"
-description: "FAQ and other tips for using Dart Tools."
+title: "工具 FAQ"
+description: "FAQ 和使用 Dart 工具的一些提示。"
 has-permalinks: false
 ---
 
 # {{ page.title }}
 
-I am having trouble running the Linux distribution of Dart on my Linux platform.
-: Some flavors of Linux require that you manually build the Dart SDK.
-  This may require that you update to a more recent version of
-  the GCC library.
-  The following resources may be useful: 
+我在 Linux 上运行 Linux 版本的 Dart 出现问题。
+: 有些版本的 Linux 需要手工编译 Dart SDK。
+  有些需要升级你的 GCC 库到最新版本。
+  下面的资源可能
+  对你有所帮助：
 
-  * [Building Dart on CentOS, Red Hat, Fedora and Amazon Linux AMI](https://code.google.com/p/dart/wiki/BuildingOnCentOS)
-  * [Building Dart SDK on Ubuntu 10.04 Server](https://code.google.com/p/dart/wiki/BuildDartSDKOnUbuntu10_04)
+  * [在 CentOS、 Red Hat、 Fedora 和 Amazon Linux AMI 上编译 Dart](https://code.google.com/p/dart/wiki/BuildingOnCentOS)
+  * [在 Ubuntu 10.04 Server 上编译 Dart SDK](https://code.google.com/p/dart/wiki/BuildDartSDKOnUbuntu10_04)
   <br /><br />
 
-Can all Dart files be put into a source code repository?
-: Dart tools generate some files that should be local only.
-  The [What Not to Commit](/tools/private-files.html) page
-  has some advice on what not to put into your source repo.
+是否可以把所有的 Dart 文件都放到代码库中？
+: Dart 工具生成的代码不应该提交到代码库中。
+  在 [哪些文件不要提交到代码库](/tools/private-files.html) 页面
+  有些建议。
   <br /><br />
 
-How do you debug an app once it has been compiled to JavaScript?
-: Dart web apps are easiest to debug with Dart Editor
-  and Dartium. However, the [Debugging code produced by dart2js](/docs/dart-up-and-running/contents/ch04-tools-dart2js.html#tools-dart2js-debugging)
-  page has some tips for specific browsers.
+如果调试一个编译为 JavaScript 的应用？
+: 使用 Dart 编辑器和 Dartium 调试 Dart web
+  应用非常容易。
+  在 [调试 dart2js 生成的代码](/docs/dart-up-and-running/contents/ch04-tools-dart2js.html#tools-dart2js-debugging)
+  页面介绍了如何调试 生成的 JavaScript 代码。
   <br />
 
-**What other tools should I know about?**
+**我还应该了解那些内容？**
 
-  * [HOP](http://pub.dartlang.org/packages/hop) - task framework
+  * [HOP](http://pub.dartlang.cc/packages/hop) - task framework
   <br /><br />
 

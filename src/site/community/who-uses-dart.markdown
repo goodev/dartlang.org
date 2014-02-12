@@ -1,40 +1,40 @@
 ---
 layout: default
-title: 'Who Uses Dart'
-description: 'Companies and business that use Dart.'
+title: '谁在使用 Dart'
+description: '使用 Dart 的一些公司和软件。'
 snippet_img: who-uses-dart.png
 ---
 
 # {{ page.title }}
 
-In no particular order, here are some companies and businesses that use Dart.
-If you build production software with Dart, and want
-to be included in this list, please open a
-[pull request](https://github.com/dart-lang/dartlang.org). Thanks!
+排名无先后顺序，下面是一些公司和商业平台在使用 Dart。
+如果你也使用了 Dart ，并想出现在这个列表中，
+请发起一个
+[pull request](https://github.com/dart-lang/dartlang.org)。 谢谢！
 
-Google internal sales tool
-: Built with AngularDart.
+Google 内部销售工具
+: 使用 AngularDart 开发的。
 
 [drone.io](http://drone.io)
-: Continuous integration with support for testing Dart apps.
+: 支持测试 Dart 应用的持续集成平台。
 
 [Soundtrap](https://www.soundtrap.com/)
-: Collaboratively record music with your browser, built with Dart and WebRTC.
+: 使用浏览器来协助录制音乐，使用 Dart 和 WebRTC 开发。
 
 [blossom](https://www.blossom.io/)
-: Lean project management tool, built with Dart.
+: 轻量级项目管理工具，用 Dart 开发。
 
 [Ascentis](http://www.ascentis.com/)
-: SaaS for human capital management.
+: 用于人力资源管理的 SaaS 平台。
 
 [Montage](http://www.montagebook.com/)
-: Photobook editing, built with Dart.
+: Photobook 编辑 ，用 Dart 开发。
 
 [WebStorm](http://blog.jetbrains.com/webstorm/2013/11/webstorm-7-0-2-is-available/)
-: Rich IDE from JetBrains includes a Dart plugin.
+: JetBrains 的 Rich IDE，包含一个 Dart 插件。
 
 [Hapara](http://hapara.com/)
-: Optimizes Google Apps for schools. Client built with Dart.
+: 针对学校优化 Google Apps 。客户端使用 Dart 开发。
 
 [Woven](http://www.woven.org/)
 : Communities and engagement app for users and brands.

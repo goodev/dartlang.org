@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Download Dart"
-description: "The download bundles that support the Dart language."
+title: "下载 Dart"
+description: "Dart 语言相关的下载介绍。"
 has-permalinks: false
 js:
 - url: /js/os-switcher.js
@@ -12,172 +12,171 @@ js:
   defer: true
 ---
 
-# Getting and Installing Dart Is Easy!
+# 下载和安装 Dart 非常简单！
 
 <p class="os-choices">
-Confirm your platform: 
+选择您的系统平台：
  {% include os-choices.html %}
 </p>
 
-You have two options for downloading Dart.
+有两种方式下载 Dart。
 
-## Option 1: Choose the complete bundle {#whole_enchilada}
+## 方式一： 捆绑式下载所有 Dart 工具 {#whole_enchilada}
 
-When you download the Dart Editor bundle, you get everything you
-need to create, edit, test, and build both web-based and server-side
-applications.
+下载的 Dart 编辑器捆绑包中包含了
+所有 Dart 语言相关的工具，可以创建、编辑、测试和编译
+基于 web 的和基于 服务器端的应用。
 
-The Dart Editor bundle includes:
+Dart 编辑器捆绑包中包含如下内容：
 
-* Dart Editor - A powerful tool for editing, debugging, and running Dart
-  applications.
-* Dartium - A special version of Chromium that includes the Dart VM.
-You can use Dartium to test and debug your Dart web applications.
-* SDK - The software developers kit includes the Dart Virtual Machine,
-  the Dart libraries, and all the command line tools used behind the
-  scenes by the Dart Editor:
+* Dart Editor - 一个功能丰富的用来编辑 、调试和运行 Dart 程序
+  的 IDE。
+* Dartium - Chromium 的定制版本，里面包含了一个 Dart VM。
+  可以用 Dartium 来测试和调试 您的 Dart Web 应用。
+* SDK - 软件开发包，里面包含 Dart 虚拟机、
+  Dart 库、和其他一些
+    命令行工具：
 
-  * [dart](/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html) - the standalone VM
-  * [dart2js](/docs/dart-up-and-running/contents/ch04-tools-dart2js.html) - the Dart-to-JavaScript compiler
-  * [dartanalyzer](/docs/dart-up-and-running/contents/ch04-tools-dart_analyzer.html) - the static analyzer
-  * [pub](http://pub.dartlang.org/) - the Dart package manager
-  * [dartdoc](dartdoc/) - the API documentation generator
+  * [dart](/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html) - 独立的 VM
+  * [dart2js](/docs/dart-up-and-running/contents/ch04-tools-dart2js.html) - Dart-to-JavaScript 编译器
+  * [dartanalyzer](/docs/dart-up-and-running/contents/ch04-tools-dart_analyzer.html) - 静态分析工具
+  * [pub](http://pub.dartlang.cc/) - Dart 包管理器
+  * [dartdoc](dartdoc/) - API 文档生成工具
 
 {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
 
-Dart Editor can automatically update itself, along with the SDK and
-Dartium, whenever a new integration build is available. To enable
-automatic updates, go to **Preferences**, choose **Update**, and select
-**Download updates automatically**.
+Dart Editor 可以自己在线更新，同时也可以更新 SDK 和
+Dartium，当一个新的集成版本发布的时候，你可以选择更新。
+也可以到 **Preferences**菜单中选择， **Update**，然后选择
+**Download updates automatically** 来自动更新。
 
 <aside class="alert alert-info" markdown="1">
-**Early Adopter?**  
+**早期尝鲜者？**  
 
 <span class="windows downloads">
-To get new features a few weeks earlier than the stable release,
-you can download the latest <strong>Dev Channel</strong> build of
+如果您想提前几周探索稳定版中的新的功能，
+你可以下载<strong>Dev Channel(开发者通道)</strong> 中的版本：
  <a data-tool="editor" class="download-link" data-bits="64" data-os="windows" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-windows-x64.zip">Dart Editor for
-Windows 64-bit</a> or
+Windows 64-bit</a> 或者
  <a data-tool="editor" class="download-link" data-bits="32" data-os="windows" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-windows-ia32.zip">Dart Editor for
-Windows 32-bit</a>.
+Windows 32-bit</a>。
 </span>
 
 <span class="linux downloads">
-To get new features a few weeks earlier than the stable release,
-you can download the latest <strong>Dev Channel</strong> build of
+如果您想提前几周探索稳定版中的新的功能，
+你可以下载<strong>Dev Channel(开发者通道)</strong> 中的版本：
  <a data-tool="editor" class="download-link" data-bits="64" data-os="linux" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-linux-x64.zip">Dart Editor for
-Linux 64-bit</a> or
+Linux 64-bit</a> 或者
  <a data-tool="editor" class="download-link" data-bits="32" data-os="linux" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-linux-ia32.zip">Dart Editor for
-Linux 32-bit</a>.
+Linux 32-bit</a>。
 </span>
 
 <span class="macos downloads">
-To get new features a few weeks earlier than the stable release,
-you can download the latest <strong>Dev Channel</strong> build of
+如果您想提前几周探索稳定版中的新的功能，
+你可以下载<strong>Dev Channel(开发者通道)</strong> 中的版本：
  <a data-tool="editor" class="download-link" data-bits="64" data-os="macos" data-build="continuous" href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/editor/darteditor-macos-x64.zip">Dart Editor for
-Mac OS X</a>.
+Mac OS X</a>。
 </span>
 </aside>
 
-Once the download is complete, unzip the bundle. Dart is installed!
+下载完后，解压下载的文件。 Dart 就安装好了！
 
-You can now work through the [Avast, Ye Pirates](/codelabs/darrrt/) code lab.
+现在你可以看看 [海盗徽章](/codelabs/darrrt/) 新手代码教程了。
 
 ------
 
-## Option 2: Choose only the software that you need {#a_la_carte}
-Perhaps you prefer to use a particular IDE or editor, and don't
-require the Dart Editor.
+## 方式二： 只下载你需要的软件 {#a_la_carte}
+也许你喜欢使用自己管用的 IDE 或者编辑器，并不需要
+Dart 编辑器。
 
-No problem!
+没问题！
 
-At the very minimum, you need to download the Dart SDK.
-This is the only Dart bundle that you need. Besides the Dart VM,
-and the Dart libraries, the SDK bundle contains the command-line Dart tools:
+你只需要下载 Dart SDK 就可以开始使用 Dart 了。
+Dart SDK 中包含如下
+内容：
 
-  * [dart](/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html) - the standalone VM
-  * [dart2js](/docs/dart-up-and-running/contents/ch04-tools-dart2js.html) - the Dart-to-JavaScript compiler
-  * [dartanalyzer](/docs/dart-up-and-running/contents/ch04-tools-dart_analyzer.html) - the static analyzer
-  * [pub](http://pub.dartlang.org/) - the Dart package manager
-  * [dartdoc](dartdoc/) - the API documentation generator
+  * [dart](/docs/dart-up-and-running/contents/ch04-tools-dart-vm.html) - 独立的 VM
+  * [dart2js](/docs/dart-up-and-running/contents/ch04-tools-dart2js.html) - Dart-to-JavaScript 编译器
+  * [dartanalyzer](/docs/dart-up-and-running/contents/ch04-tools-dart_analyzer.html) - 静态分析工具
+  * [pub](http://pub.dartlang.cc/) - Dart 包管理器
+  * [dartdoc](dartdoc/) - API 文档生成工具
 
 
 <p class="os-choices">
 {% include downloads/_sdk.html buttonclass="btn btn-primary btn-lg" %}
 </p>
 
-If you are writing web-based apps, you should download Dartium.
-Dartium is a special build of Chromium that includes a Dart VM
-so that you can test and debug your applications without first
-compiling them to JavaScript.
+如果你在编写一个 Web 应用，则你还应该下载 Dartium。
+Chromium 的定制版本，里面包含了一个 Dart VM。
+  可以用 Dartium 来测试和调试 您的 Dart Web 应用。
 
 {% include downloads/_dartium.html buttonclass="btn btn-primary btn-lg" %}
 
-The Dartium binary expires after 12 weeks.
-When that happens, you will need to download a new copy
-to continue using Dartium.
+Dartium 可执行文件在 12 周后过期。
+当过期后，你需要重新
+下载一个 Dartium 来使用。
 
 <aside class="alert alert-info" markdown="1">
-**Early Adopter?**  
+**早期尝鲜者？**  
 
 <span class="windows">
-To get new features a few weeks earlier than the stable release,
-you can download the latest **Dev Channel** build of the
+如果您想提前几周探索稳定版中的新的功能，
+你可以下载<strong>Dev Channel(开发者通道)</strong> 中的版本：
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-windows-x64-release.zip">SDK for Windows 64-bit</a>
-or 
+或者 
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-windows-ia32-release.zip">SDK for Windows 32-bit</a>.
 </span>
 
 <span class="macos">
-To get new features a few weeks earlier than the stable release,
-you can download the latest **Dev Channel** build of the
+如果您想提前几周探索稳定版中的新的功能，
+你可以下载<strong>Dev Channel(开发者通道)</strong> 中的版本：
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-macos-x64-release.zip">SDK for Mac OS X</a>.
 </span>
 
 <span class="linux">
-To get new features a few weeks earlier than the stable release,
-you can download the latest **Dev Channel** build of the
+如果您想提前几周探索稳定版中的新的功能，
+你可以下载<strong>Dev Channel(开发者通道)</strong> 中的版本：
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-linux-x64-release.zip">SDK for Linux 64-bit</a>
-or
+或者
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/sdk/dartsdk-linux-ia32-release.zip">SDK for Linux 32-bit</a>.
 </span>
 
 <span class="windows">
-You can also download the latest **Dev Channel** build of
+你还可以下载<strong>Dev Channel(开发者通道)</strong> 中的：
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/dartium/dartium-windows-ia32-release.zip">Dartium for Windows</a>.
 </span>
 
 <span class="macos">
-You can also download the latest **Dev Channel** build of
+你还可以下载<strong>Dev Channel(开发者通道)</strong> 中的：
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/dartium/dartium-macos-ia32-release.zip">Dartium for Mac OS X</a>.
 </span>
 
 <span class="linux">
-You can also download the latest **Dev Channel** build of
+你还可以下载<strong>Dev Channel(开发者通道)</strong> 中的：
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/dartium/dartium-linux-x64-release.zip">Dartium for Linux 64-bit</a>
 dartium-linux-x64-release.zip
-or
+或者
 <a href="http://storage.googleapis.com/dart-archive/channels/dev/release/latest/dartium/dartium-linux-ia32-release.zip">Dartium for Linux 32-bit</a>.
 </span>
 </aside>
 
-Note that if you choose the à la carte option you have less to download, but
-you will occasionally need to perform a manual update when new
-versions of Dart are released.
+注意，如果你按照这种方式来下载 Dart， 下载的文件比较小，但是当
+有新版本发布的时候，
+你需要手动更新一下。
 
-You may now want to customize your IDE or text editor by
-[downloading a plugin](more_downloads.html) that supports Dart.
-
-------
-
-### Note for Linux Users
-If your system uses an older version of Ubuntu and you are compiling the
-SDK, you may need to update to GCC 4.6 or later.
-See the <a href="faq.html">Tools FAQ</a> for more information.
+现在你可以
+[下载一个插件](more_downloads.html) 来定制你的 IDE 或者编辑器 使其支持 Dart 语言。
 
 ------
 
-## Feedback
-We welcome all of your feedback! Submit comments using the
-SEND FEEDBACK link in the upper right corner of the Dart Editor window,
-or file a bug on [dartbug.com](http://dartbug.com).
+### Linux 用户提示
+如果你使用旧版的 Ubuntu 编译 SDK， 你可能需要
+把  GCC 升级到 4.6+ 版本。
+参考 <a href="faq.html">工具 FAQ</a> 了解详情。
+
+------
+
+## 反馈
+我们期待您的反馈！使用 Dart 编辑器右上角
+的 SEND FEEDBACK 可以给我们发送反馈，
+或者 在 [dartbug.com](http://dartbug.com) 上提交一个 bug。
