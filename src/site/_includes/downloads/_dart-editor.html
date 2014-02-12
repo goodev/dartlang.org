@@ -4,24 +4,24 @@
 
   <div class="{{ editor.os }} downloads">
     {% if editor.os == 'macos' %}
-    <a data-bits="64" data-os="{{ editor.os }}" data-build="integration" class="btn  download-link" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-{{ editor.os }}-x64.{{ editor.editor-ext }}">
+    <a data-bits="64" data-os="{{ editor.os }}" data-build="integration" data-tool="editor" class="btn download-link" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-{{ editor.os }}-x64.{{ editor.editor-ext }}">
       <button class="{{ include.buttonclass }}">
         <i class="sprite-icon-download-btn"> </i>
-                      下载 Dart ({{ editor.name }})
+        下载 Dart + Editor ({{ editor.name }})
       </button>
     </a>
     {% else %}
-    <a data-bits="64" data-os="{{ editor.os }}" data-build="integration" class="btn  download-link" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-{{ editor.os }}-x64.{{ editor.editor-ext }}">
+    <a data-bits="64" data-os="{{ editor.os }}" data-build="integration" data-tool="editor" class="btn" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-{{ editor.os }}-x64.{{ editor.editor-ext }}">
       <button class="{{ include.buttonclass }}">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (64-bit {{ editor.name }})
+        下载 Dart + Editor (64-bit {{ editor.name }})
       </button>
     </a>
     <p></p>
-    <a data-bits="32" data-os="{{ editor.os }}" data-build="integration" class="btn  download-link" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-{{ editor.os }}-ia32.{{ editor.editor-ext }}">
+    <a data-bits="32" data-os="{{ editor.os }}" data-build="integration" data-tool="editor" class="btn download-link" href="{{ site.custom.downloads.dartarchive-stable-url-prefix }}/latest/editor/darteditor-{{ editor.os }}-ia32.{{ editor.editor-ext }}">
       <button class="{{ include.buttonclass }}">
         <i class="sprite-icon-download-btn"> </i>
-                             下载 Dart (32-bit {{ editor.name }})
+        下载 Dart + Editor (32-bit {{ editor.name }})
       </button>
     </a>
     {% endif %}
@@ -30,7 +30,7 @@
   {% endfor %}
 
   <div class="editor-current-version version">
-                      当前 Dart 稳定版本：
+     当前 Dart 稳定版本：
     <span class="editor-build-rev-stable">[计算中]</span>
   </div>
 </div>

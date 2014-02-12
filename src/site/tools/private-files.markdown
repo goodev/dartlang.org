@@ -77,7 +77,7 @@ _不_ 包含部署 Dart 应用。
  `packages/` 目录包含
  你电脑相关的一些连接。
 使用你代码的用户，会在自己电脑上
-通过 [pub install](http://pub.dartlang.org/doc/#installing-dependencies)
+通过 [pub get](http://pub.dartlang.org/doc/#installing-dependencies)
 来生成这些目录。
 
 

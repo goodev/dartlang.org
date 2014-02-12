@@ -170,14 +170,14 @@ Polymer.dart 提供的功能。
   <img class="scale-img-max" src="images/sample-pubspec.png"
      alt="Sample pubspec file with polymer dependency">
 
-* 运行 `pub install`命令，
+* 运行 `pub get`命令，
 该命令会递归的 安装 polymer.dart 包和其
 依赖的所有包。
 如果你使用 Dart 编辑器，
 当你保存 pubspec.yaml 文件的时候
-编辑器会自动运行 `pub install` 命令。
+编辑器会自动运行 `pub get` 命令。
 如果你用命令行工具，
-你可以通过命令行运行  `pub install` 命令。
+你可以通过命令行运行  `pub get` 命令。
 
 ##在项目中使用 Polymer.dart {#bootstrap}
 

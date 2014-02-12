@@ -95,6 +95,12 @@ handlers:
 - url: /dartium/.*
   script: scripts.redirector.application
 
+- url: /tools/
+  script: scripts.redirector.application
+
+- url: /tools/index.*
+  script: scripts.redirector.application
+
 - url: /tools/analyzer
   script: scripts.redirector.application
 
@@ -117,6 +123,9 @@ handlers:
   script: scripts.redirector.application
 
 - url: /articles/using-future-based-apis/
+  script: scripts.redirector.application
+
+- url: /articles/feet-wet-streams/
   script: scripts.redirector.application
 
 - url: /articles/profiling/
@@ -159,6 +168,9 @@ handlers:
   script: scripts.redirector.application
 
 - url: /eclipse/update.*
+  script: scripts.redirector.application
+
+- url: /events/2013/flight-school/
   script: scripts.redirector.application
 
 - url: /is-dartisans-live-now

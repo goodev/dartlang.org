@@ -50,12 +50,18 @@ js:
 在做何种基准测试？
 : 当前用
   [Octane](https://developers.google.com/octane/)基准测试来显示图标，包含
-  DeltaBlue、 Richards、和 Tracer。
+  DeltaBlue、 Richards、Tracer、和 FluidMotion。
 
   * [DeltaBlue](https://github.com/dart-lang/benchmark_harness/blob/master/example/DeltaBlue.dart)
   是一个单向约束求解器（one-way constraint solver），
   由 John Maloney 和 Mario Wolczko 用 Smalltalk 编写。
   DeltaBlue 主要关注多态和面向对象编程。
+ 
+  * [FluidMotion](https://github.com/dart-lang/benchmark_harness/blob/master/example/FluidMotion.dart)
+  is a 2D Navier-Stokes equations solver,
+  originally written in JavaScript by Oliver Hunt.
+  The main focus is on accessing numeric arrays,
+  as well as doing floating-point arithmetic.
 
   * [Richards](https://github.com/dart-lang/benchmark_harness/blob/master/example/Richards.dart)
   是 OS 内核模拟测试，由 Martin Richards 为 BCPL 编写。

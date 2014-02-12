@@ -350,7 +350,7 @@ class FancyButton [[highlight]]extends ButtonElement with Polymer, Observable[[/
 pub 为 Dart package manager(包管理器)。
 
 {% prettify bash %}{% raw %}
-> pub install fancy_button
+> pub get fancy_button
 {% endraw %}{% endprettify %}
 
 {% prettify html %}{% raw %}
@@ -386,7 +386,7 @@ pub 为 Dart package manager(包管理器)。
     dependencies:
       polymer: any
 
-然后，运行 `pub install` 来下载该库并在代码中使用。
+然后，运行 `pub get` 来下载该库并在代码中使用。
 
 查看 [polymer.dart pub 页面](http://pub.dartlang.org/packages/polymer)
 了解更多内容。

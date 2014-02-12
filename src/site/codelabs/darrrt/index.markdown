@@ -1,7 +1,7 @@
 ---
-layout: default
-title: "试试 Dart"
-description: "尝试些点 Dart 代码，学习一些基础内容。"
+layout: tutorial
+title: "海盗们 停下来：编写个 Web App 吧"
+description: "尝试迈出学习 Dart 的第一步。"
 snippet_img: images/piratemap.jpg
 has-permalinks: true
 tutorial:
@@ -9,7 +9,7 @@ tutorial:
 js:
 - url: /js/os-switcher.js
   defer: true
-- url: /js/editor-downloads-analytics.js
+- url: /js/downloads-analytics.js
   defer: true
 - url: /js/editor-version.js
   defer: true
@@ -28,7 +28,7 @@ header:
 
 <iframe class="running-app-frame"
         style="height:220px;width:550px;"
-        src="examples/6-piratebadge_json/piratebadge.html">
+        src="examples/6-piratebadge/piratebadge.html">
 </iframe>
 
 <hr>
@@ -45,6 +45,9 @@ header:
 * [Step 5: 保存到本地存储中](#step-five)
 * [Step 6: 使用 HttpRequest 从 JSON 文件中读取姓名](#step-six)
 * [Step 7: 继续前行，了解 Dart 语言的更多特性](#step-seven)
+* [Step 7: Build 该应用并作为 JavaScript 运行](#step-seven)
+* [接下来干啥？](#whatnext)
+* [总结和资源](#resources)
 
 </div>
 
@@ -62,8 +65,12 @@ header:
 如果你尚未下载 Dart，
 点击下面按钮下载。
 解压下载的文件得到一个名称为 `dart` 的目录。
+(更多信息请参考 [下载界面](/tools/download.html)。)
 
+<!--style here is a hack to remove the arrow, which was only partially showing. -->
+<div style="padding-left: 10px">
 {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
+</div>
 
 <p class="os-choices" markdown="1">
   Dart 工具
@@ -88,37 +95,45 @@ header:
 <a href="https://github.com/dart-lang/one-hour-codelab/archive/master.zip">下载</a>
 示例代码。
 解压文件后
-得到一个名称为 `one-hour-codelab-master` 的目录。
+得到一个名称为 `one-hour-codelab` 的目录。
 </div>
 
-### <i class="fa fa-anchor"> </i> 打开 the one-hour-codelab-master 示例应用
+### <i class="fa fa-anchor"> </i> 打开 the one-hour-codelab 示例应用
 
 <div class="trydart-step-details" markdown="1">
 在 Dart 编辑器中，
 使用菜单 **File > Open Existing Folder...**
-打开 `one-hour-codelab-master` 目录。
+打开 `one-hour-codelab` 目录。
 </div>
 
 <div class="row"> <div class="col-md-7" markdown="1">
 
 ![The files and directories in the piratebadge directory.](images/filesanddirs.png)
 
+<div class="trydart-note" markdown="1">
+<strong>注意：</strong>
+如果在文件名的坐标看到一个 <span style="color:red">红色的  X</span>，
+或者  `packages` 目录不存在，
+则该包没有正确的安装。
+右键点击 `pubspec.yaml` 并选择 **Pub Get** 来安装。
+</div>
+
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * `packages` 目录、 `pubspec.yaml` 和 `pubspec.lock` 文件是
-和项目依赖相关的文件。
-该项目已经设置了所有的依赖项了。
-Dart 编辑器自动安装需要的包。
+  和项目依赖相关的文件。
+  该项目已经设置了所有的依赖项了。
+  Dart 编辑器自动安装需要的包。
 
 * 几个带编号的目录包含了每个步骤中的完整代码。
-`1-blankbadge` 包含了框架应用代码，你将从这里开始。
-`6-piratebadge_json` 包含了最终版本的代码。
+  `1-blankbadge` 包含了框架应用代码，你将从这里开始。
+  `6-piratebadge` 包含了最终版本的代码。
 
 * `piratebadge.css` 文件提供
-了所有步骤中需要用到的 CSS 样式文件。
-在该示例中你无须修改该文件。
+  了所有步骤中需要用到的 CSS 样式文件。
+  在该示例中你无须修改该文件。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 
@@ -166,7 +181,9 @@ Dart 编辑器自动安装需要的包。
   <head>
     <meta charset="utf-8">
     <title>Pirate badge</title>
-    <link rel="stylesheet" href="../piratebadge.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="piratebadge.css">
   </head>
   <body>
     <h1>Pirate badge</h1>
@@ -194,22 +211,22 @@ Dart 编辑器自动安装需要的包。
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * 在该示例中，所有`piratebadge.html` 文件代码的改动
-都在带有 `widgets` class 标示的
-&lt;div&gt; 元素内完成。
+  都在带有 `widgets` class 标示的
+  &lt;div&gt; 元素内完成。
 
 * 在后面的步骤中，
-带有 `badgeName` 的 &lt;span&gt; 元素将有
-Dart 代码根据用户输入内容
-来动态更新。
+  带有 `badgeName` 的 &lt;span&gt; 元素将有
+  Dart 代码根据用户输入内容
+  来动态更新。
 
 * `piratebadge.dart` 脚本是该应用的主要代码文件。
 
 * `packages/browser/dart.js` 脚本是一个启动脚本，
-负责启动 Dart VM 和兼容
-不支持 Dart 的浏览器。
+  负责启动 Dart VM 和兼容
+  不支持 Dart 的浏览器。
 
 </div> </div>
 
@@ -232,10 +249,10 @@ Dart 代码根据用户输入内容
 </div> <div class="col-md-5" markdown="1">
 
 * 该文件是该应用的主要代码文件。
-通过  `piratebadge.html` 文件中的 &lt;script&gt; 标签引用代码文件。
+  通过  `piratebadge.html` 文件中的 &lt;script&gt; 标签引用代码文件。
 
 * `main()` 函数是代码入口。
-当应用启动的时候 Dart调用该函数。
+  当应用启动的时候 Dart调用该函数。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
 </div> </div>
@@ -244,14 +261,14 @@ Dart 代码根据用户输入内容
 
 <div class="trydart-step-details" markdown="1">
 要在 Dart 编辑器中运行该应用，只需要选择 `piratebadge.html`
-文件并点击 Run 按钮即可。
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">.
+文件并点击  **Run in Dartium** 按钮即可。
 
-![Click the run button](images/clickrun.png)
+![Select Run in Dartium](images/clickrun2.png)
 
 Dart 编辑器将启动 _Dartium_来加载该应用，Dartium 是一个包含
-Dart 虚拟机的浏览器。
+Dart 虚拟机的浏览器。该浏览器加载 `piratebadge.html` 文件。
+`piratebadge.html` 文件加载该应用并
+调用 `main()` 方法。
 
 在左边会看到一个 TO DO 注释，
 在右边有个红底白字的徽章。
@@ -259,7 +276,7 @@ Dart 虚拟机的浏览器。
 
 <div class="trydart-step-details" markdown="1">
 <iframe class="running-app-frame"
-        style="height:220px;width:550px;"
+        style="height:220px;width:600px;"
         src="examples/1-blankbadge/piratebadge.html">
 </iframe>
 </div>
@@ -303,10 +320,10 @@ within the `widgets` &lt;div&gt;.
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * 该输入框的 ID 为 `inputName`。
-Dart 使用 CSS 选择器（例如 这个 ID）
+Dart 使用 CSS 选择器，例如 `#inputName`，
 来从 DOM 中查询元素。
 
 &nbsp; {% comment %} non-breaking space required for bootstrap/markdown bogosity {% endcomment %}
@@ -337,10 +354,10 @@ Dart 使用 CSS 选择器（例如 这个 ID）
 </div> <div class="col-md-5" markdown="1">
 
 * 该导入语句将导入 dart:html 包中的所有类和资源，
-提供了 HTML 元素和访问 DOM 的能力。
+ 提供了 HTML 元素和访问 DOM 的能力。
 
 * Dart 编辑器非常乐意的提醒你 导入的内容没有使用。
-先不要关心它。在下一步将修复该问题。
+ 先不要关心它。在下一步将修复该问题。
 
 </div> </div>
 
@@ -397,7 +414,7 @@ void main() {
 ...
 
 [[highlight]]void updateBadge(Event e) { 
-  querySelector('#badgeName').text = (e.target as InputElement).value;
+  querySelector('#badgeName').text = e.target.value;
 }[[/highlight]]
 {% endprettify %}
 </div>
@@ -426,9 +443,7 @@ void main() {
 
 通过菜单 **File > Save All** 保存修改的内容。
 
-使用 Dart 编辑器的 Run 按钮
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
+右键点击 `piratebadge.html` 文件并选择 **Run in Dartium** 菜单
 运行应用。
 
 比较你的应用和如下是否一样。
@@ -486,7 +501,7 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * 该按钮有个 ID `generateButton` ，这样
 Dart 代码就可以通过 ID 获取按钮。
@@ -723,9 +738,7 @@ genButton.text = 'Aye! Gimme a name!';
 
 使用菜单 **File > Save All** 保存文件。
 
-使用 Dart 编辑器中的 Run 按钮
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
+右键点击 `piratebadge.html` 文件并选择 **Run in Dartium** 菜单
 运行应用。
 
 比较你的应用和如下是否一样。
@@ -782,7 +795,7 @@ import 'dart:html';
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * 使用 `show` 关键字来
 导入你仅仅需要的类、函数、和属性。
@@ -1082,10 +1095,8 @@ void generateBadge(Event e) {
   
 使用菜单 **File > Save All** 保存文件。
 
-使用 Dart 编辑器中的 Run 按钮
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-来运行应用。
+右键点击 `piratebadge.html` 文件并选择 **Run in Dartium** 菜单
+运行应用。
 
 比较你的应用和如下是否一样。
 
@@ -1141,7 +1152,7 @@ import 'dart:convert' show JSON;[[/highlight]]
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * `JSON` 提供了常用操作 JSON 数据的功能。
 
@@ -1197,7 +1208,7 @@ class PirateName {
 {% prettify dart %}
 class PirateName {
   ...
-  [[highlight]]String get jsonString => '{ "f": "$_firstName", "a": "$_appellation" } ';[[/highlight]]
+  [[highlight]]String get jsonString => JSON.encode({"f": _firstName, "a": _appellation});[[/highlight]]
 }
 {% endprettify %}
 </div>
@@ -1339,10 +1350,8 @@ void main() {
   
 使用菜单 **File > Save All** 保存文件。
 
-使用 Dart 编辑器中的 Run 按钮
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-来运行应用。
+右键点击 `piratebadge.html` 文件并选择 **Run in Dartium** 菜单
+运行应用。
 
 比较你的应用和如下是否一样。
 
@@ -1424,7 +1433,7 @@ void main() {
 
 </div> <div class="col-md-5" markdown="1">
 
-<i class="icon-key"> </i> <strong> 关键信息 </strong>
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
 
 * 该文件包含了一个 JSON 格式的 map 数据，
 map 中有两个字符串列表。
@@ -1691,10 +1700,8 @@ void main() {
   
 使用菜单 **File > Save All** 保存文件。
 
-使用 Dart 编辑器中的 Run 按钮
-<img src="images/run.png" width="16" height="16"
-     alt="Run button">
-来运行应用。
+右键点击 `piratebadge.html` 文件并选择 **Run in Dartium** 菜单
+运行应用。
 
 如果你想看看当找不到 `.json` 文件时会出现啥情况，
 改变该文件的名字并再次运行该应用。
@@ -1704,25 +1711,23 @@ void main() {
 
 <iframe class="running-app-frame"
         style="height:220px;width:550px;"
-        src="examples/6-piratebadge_json/piratebadge.html">
+        src="examples/6-piratebadge/piratebadge.html">
 </iframe>
 
 
 #### 问题？
 
-如果遇到问题把你的代码和 `6-piratebadge_json`中的代码比较下。
+如果遇到问题把你的代码和 `6-piratebadge`中的代码比较下。
 
-* [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.html)
+* [piratebadge.html](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge/piratebadge.html)
 
-* [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge_json/piratebadge.dart)
+* [piratebadge.dart](https://github.com/dart-lang/one-hour-codelab/blob/master/web/6-piratebadge/piratebadge.dart)
 
 </div>
 
 ### <i class="fa fa-anchor"> </i> 分享您的海盗名字。
 
 <div class="trydart-step-details" markdown="1">
-
-共享！您完成了海盗徽章代码实验室项目。
 
 
 来分享下你的海盗名字吧。
@@ -1738,10 +1743,224 @@ void main() {
 <wb:share-button appkey="3wn9s7" addition="number" type="button" default_text="我通过学习Dart语言制作了一个海盗徽章，快来围观吧！" ralateUid="3908541102" picture_search="false"></wb:share-button>
 </div>
 
+##Step 7: Build 该应用并作为 JavaScript 运行 {#step-seven}
+
+在该步骤中，使用 `pub build`来
+生成该 应用的 资源，并把这些资源反倒
+一个名字为  `build` 的目录中。
+
+Build 过程中的其他任务可以生成一个
+优化过的 JavaScript 文件，可以在
+其他浏览器中运行应用。
+
+注意 `one-hour-codelab` 目录包含
+了几个子目录，每个子目录对应
+一个步骤中的代码，
+这些目录都是 one-hour-codelab 应用
+的一部分。
+Build 过程会为每个目录分别生成其 资源。
+每个目录都可以单独部署运行。
+
+### <i class="fa fa-anchor"> </i> 查看 pubspec.yaml
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+双击 `pubspec.yaml` 文件打开。
+在编辑面板底部选择 **Source** tab。
+
+{% prettify dart %}
+name: avast_ye_pirates
+description: Write a Dart web app code lab
+dependencies:
+  [[highlight]]browser: any[[/highlight]]
+{% endprettify %}
+
+</div>
+
+<div class="trydart-filename">pubspec.yaml</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
+
+* A `pubspec.yaml` file in a directory identifies the directory
+  and its contents as an application.
+
+* `pubspec.yaml` provides meta-data for the application,
+  such as its name.
+
+* The `pubspec.yaml` file also lists the libraries on which the app depends.
+  The `browser` library needed by this app is hosted on
+  [pub.dartlang.org](https://pub.dartlang.org/) along with many others.
+
+* `any` selects the latest package that matches your SDK.
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Look at the packages directory
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+In Dart Editor, expand the `packages` directory.
+
+![Packages contains the code for the package dependencies](images/packagesfiles.png)
+
+</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+*  The `packages` directory contains the code for all of the dependencies
+   listed in the `pubspec.yaml` file.
+   These are installed automatically by Dart Editor.
+
+* The `browser` package contains the `dart.js` script
+  that checks for native Dart support.
+
+* The packages must be included in the built application
+  in order for the app to be successfully deployed.
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Run pub build
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Select `pubspec.yaml`
+then select **Tools > Pub Build**,
+which builds everything under the `one-hour-codelab` directory.
+The output looks something like this:
+
+{% prettify bash %}
+--- Jan 21, 2014 12:41:48 PM Running pub build ... ---
+Building avast_ye_pirates.....
+[Info from Dart2JS]:
+Took 0:00:01.704695 to compile avast_ye_pirates|web/1-blankbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:05.535304 to compile avast_ye_pirates|web/2-inputnamebadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:02.974628 to compile avast_ye_pirates|web/3-buttonbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:02.195714 to compile avast_ye_pirates|web/4-classbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:01.938502 to compile avast_ye_pirates|web/5-localbadge/piratebadge.dart.
+[Info from Dart2JS]:
+Took 0:00:02.028974 to compile avast_ye_pirates|web/6-piratebadge/piratebadge.dart.
+Built 45 files!
+{% endprettify %}
+
+</div>
+
+<div class="trydart-filename">terminal</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+* The `pub build` command creates a `build` directory that contains
+  subdirectories for every step in the code lab.
+
+* The `build` directory contains everything needed to deploy the
+  entire project (all six steps).
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Look at the `build` directory
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Expand the `build` directory.
+Note that it contains a subdirectory for each step of the code lab.
+Expand the `6-piratebadge` directory.
+
+![The build directory contains everything you need to deploy.](images/builddir.png)
+</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> Key Information </strong>
+
+* The `piratebadge.dart.js` file is a JavaScript file that has been minified.
+  When deployed, this file runs in the browser.
+
+* The `packages` directory contains the package dependencies.
+
+* Note that the directory contains no `piratebadge.dart` file.
+  It is not needed to deploy the app to JavaScript.
+
+* Each subdirectory of `build` contains all of the files
+  needed for the app to be deployed separately.
+
+</div></div>
+
+### <i class="fa fa-anchor"> </i> Run the app as JavaScript
+
+<div class="row"> <div class="col-md-7">
+
+<div class="trydart-step-details" markdown="1">
+
+Right click the `piratebadge.html` file
+and choose **Run as JavaScript** from the menu.
+Copy the URL and run the app in Firefox or Safari.
+
+</div>
+
+</div> <div class="col-md-5" markdown="1">
+
+<i class="fa fa-key key-header"> </i> <strong> 关键信息 </strong>
+
+* 该应用在本地运行，
+  如果你想和其他人分享，则
+  需要部署到一个服务器上去。
+
+</div></div>
+
+  
 
 <hr>
 
-##Step 7: 继续前行，了解 Dart 语言的更多特性 {#step-seven}
+##接下来干啥？ {#whatnext}
+
+Now that you've written your app, what do you do now? Here are some suggestions.
+
+### <i class="fa fa-anchor"> </i> Deploy a server and your app
+
+<div class="trydart-step-details" markdown="1">
+
+If you are interested in server-side programming,
+you can learn to write a static file server and use it to deploy
+the pirate badge app to Heroku.
+Check out the [Weigh Anchor: Deploy a Server and App](/codelabs/deploy/) code lab.
+
+</div>
+
+### <i class="fa fa-anchor"> </i> Check out the samples.
+
+<div class="trydart-step-details" markdown="1">
+
+Run some Dart programs online and check out the source code
+on our [Samples page](/samples/).
+</div>
+
+### <i class="fa fa-anchor"> </i> Read the tutorials.
+
+<div class="trydart-step-details" markdown="1">
+Learn more about Dart from
+the [Dart tutorials](/docs/tutorials/).
+</div>
+
+<hr>
+
+##Summary and resources {#resources}
 
 ### <i class="fa fa-anchor"> </i> 回顾下你都学会了那些内容！
 
@@ -1774,6 +1993,14 @@ Dart 语言简介</a>
 * 使用 `as` 关键字来转换对象 (`(e.target as InputElement)`) 
 * import和 `show` 关键字 (`import 'dart:math' show Random;`)
 * 泛型
+* streams (`inputField.onInput.listen(...);`)
+* futures (`HttpRequest.getString(path).then(...);`)
+</div>
+
+### <i class="fa fa-anchor"> </i> 在线文档
+
+<div class="trydart-step-details" markdown="1">
+
 
 #### Dart 库
 
@@ -1791,7 +2018,8 @@ Dart 库简介</a>
 <a href="https://api.dartlang.org/dart_html/ButtonElement.html" target="_blank">ButtonElement</a>,
 <a href="https://api.dartlang.org/dart_html/Event.html" target="_blank">Event</a>,
 <a href="https://api.dartlang.org/dart_html/HttpRequest.html" target="_blank">HttpRequest</a>, and
-<a href="https://api.dartlang.org/dart_async/Future.html" target="_blank">Future</a>
+<a href="https://api.dartlang.org/dart_async/Future.html" target="_blank">Future</a>,  and
+<a href="https://api.dartlang.org/dart_async/Stream.html" target="_blank">Stream</a>.
 
 #### 库的 API 文档
 
@@ -1807,19 +2035,5 @@ Dart 库简介</a>
 <a href="https://api.dartlang.org/dart_convert.html#JSON" target="_blank">JSON</a>
 
 
-</div>
-
-### <i class="fa fa-anchor"> </i> 看看示例项目。
-
-<div class="trydart-step-details" markdown="1">
-
-在线运行下 Dart 示例程序，并在
- [示例项目](/samples/)界面查看示例代码。
-</div>
-
-### <i class="fa fa-anchor"> </i> 阅读语言教程。
-
-<div class="trydart-step-details" markdown="1">
-从 [Dart 语言教程](/docs/tutorials/)中学习更多内容。
 </div>
 

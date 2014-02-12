@@ -1,0 +1,7 @@
+生成图书的方法，
+1. 用
+F:\dbook\book>xsltproc --xinclude  --stringparam base.dir ./_bookhtml/  --stringparam use.id.as.filename 1  --stringparam chunk.first.sections 1  --stringparam chunker.output.encoding UTF-8  ../dartlang.cc/third_party/docbook-xsl-1.78.0/html/chunk.xsl book.xml
+命令生成 dockbook
+2. 用 
+F:\dart\dartlang.org>dart scripts/convert_book.dart _bookhtml src/site/docs/dart-up-and-running/contents
+把 dockbook 转换为 网站html 格式

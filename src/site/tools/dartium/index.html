@@ -3,9 +3,6 @@ layout: default
 title: "Dartium"
 description: "下载并使用 Dartium，一个带有 Dart VM 的 Chromium"
 has-permalinks: false
-js:
-- url: /js/os-switcher.js
-  defer: true
 ---
 
 <div class="jumbotron">
@@ -38,13 +35,6 @@ Dartium 是一个带有 Dart VM 的 Chromium。
     不要用 Dartium 作为你的日常使用浏览器！
 </aside>
 
-<p>
-  <a href="/docs/dart-up-and-running/contents/ch04-tools-dartium.html" class="btn">
-    <i class="icon-book"></i>
-    如何使用 Dartium
-  </a>
-</p>
-
 
 <section>
 <h2 id="download"> 下载 Dartium </h2>
@@ -55,23 +45,10 @@ Dartium 是一个带有 Dart VM 的 Chromium。
   则里面已经包含了  Dartium。
 </p>
 
-<p class="os-choices">
- 或者你可以单独下载用于
-  {% include os-choices.html %}
-  的最新版本的 Dartium。
-</p>
-
 <p>
-{% include downloads/_dartium.html %}
+否则，你可以 <a href="/tools/download.html">直接下载 Dartium</a> 。
 </p>
 
-<aside class="alert alert-info">
-  <strong>注意：</strong>
-  Dartium 执行版本每隔<b>一个月就过期了</b> 。
-	当你的 Dartium 过期后，
-	需要重新下载一个才能继续使用 
-	Dartium。
-</aside>
 </section>
 
 <h2 id="install"> 安装 Dartium </h2>
@@ -84,7 +61,12 @@ Dartium 是一个带有 Dart VM 的 Chromium。
  Dart 编辑器的安装目录来替换以前的 Chromium 即可。
 </p>
 
+<h2 id="using">使用 Dartium</h2>
+<p>
+如何使用 Dartium 的详细文档，请参考 
+  <a href="/docs/dart-up-and-running/contents/ch04-tools-dartium.html">Dartium: Chromium with the Dart VM</a>.</p>
 
+ 
 <h2 id="bugs"> 提交 Bug 和新特性 </h2>
 
 <p>

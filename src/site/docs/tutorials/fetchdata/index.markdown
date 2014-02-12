@@ -262,7 +262,7 @@ SDK 提供了如下有用的类来
 
 | Dart 代码 | 库 | 描述 |
 |---|---|
-| <a href="https://api.dartlang.org/dart_uri/Uri.html" target="_blank">Uri</a> | dart:uri | 代表 URI 的对象。 |
+| <a href="https://api.dartlang.org/dart_core/Uri.html" target="_blank">Uri</a> | (核心库) | 一个代表 URI 的对象。 |
 | <a href="https://api.dartlang.org/dart_html/HttpRequest.html" target="_blank">HttpRequest</a> |  dart:html | 客户端的 HTTP 请求对象。用于 web 应用中。 |
 | <a href="https://api.dartlang.org/dart_io/HttpRequest.html" target="_blank">HttpRequest</a> |  dart:io | 服务器端的 HTTP 请求对象。无法在 web 应用中使用。 |
 {: .table}

@@ -6,7 +6,7 @@ has-permalinks: false
 js:
 - url: /js/os-switcher.js
   defer: true
-- url: /js/editor-downloads-analytics.js
+- url: /js/downloads-analytics.js
   defer: true
 - url: /js/editor-version.js
   defer: true
@@ -29,30 +29,16 @@ js:
   </div>
 </div>
 
-
-<h2 id="download"> 下载 Dart 编辑器 </h2>
-
-<p class="os-choices">
-Dart 编辑器 包含在 Dart 下载包中：
-{% include os-choices.html %}
-</p>
-
-<p>
-  {% include downloads/_dart-editor.html buttonclass="btn btn-primary btn-lg" %}
-</p>
-
-<p>
-  {% include downloads/_dart-editor-continuous.html %}
-</p>
-
-
-<h2 id="install"> 安装 Dart 编辑器 </h2>
-
-<p>
- 只需解压下载的文件，就安装好了。
-</p>
-
-<p>
+<h2 id="install">安装 Dart Editor </h2>
+  <p>
+ 如果你还没有下载 编辑器，则到 <a href="/tools/download.html">这里下载  Dart 编辑器</a>。</p>
+  <p>
+Dart 编辑器需要 Java 支持。
+如果有必要，请 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html">下载
+JRE</a>。 Dart 编辑器需要 JRE 6.0+ 版本 java。</p>
+<h2 id="configure">配置  Dart Editor </h2>
+  
+  <p>
  如果你想用命令行工具，也已经
  有了，在 Dart 下载包中已经包含了 SDK。
 你可能还需要按照 <a href="/tools/sdk/">SDK 页面</a>

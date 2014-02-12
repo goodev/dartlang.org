@@ -182,7 +182,7 @@ Pub 包版本策略
 在 Dart 编辑器中，通过菜单 **File > Save** 来保存 pubspec.yaml 文件。
 当保存该文件的时候，
 Dart 编辑器自动运行 
-<a href="https://pub.dartlang.org/doc/pub-install.html">pub install</a> 命令，
+<a href="https://pub.dartlang.org/doc/pub-install.html">pub get</a> 命令，
 该命令会自动安装项目依赖项中的
 所有 Dart 库和包。
 你也可以选择 Dart 编辑器 **Tools** 菜单中的  **Pub Install** 来安装。
@@ -220,7 +220,7 @@ Dart vector math repository
 </a> 
 项目主页。
 尽管该项目中有很多文件和目录，
-当你运行 pub install 命令的时候只安装了  `lib` 目录。
+当你运行 pub get 命令的时候只安装了  `lib` 目录。
 
 <div>
   <hr>

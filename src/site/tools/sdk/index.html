@@ -6,6 +6,8 @@ has-permalinks: false
 js:
 - url: /js/os-switcher.js
   defer: true
+- url: /js/downloads-analytics.js
+  defer: true
 ---
 
 <div class="jumbotron">
@@ -39,31 +41,8 @@ see <a href="/tools/">Dart工具页面</a>。
 在 Dart 目录的 <code>dart-sdk</code> 子目录中。
 </p>
 
-<p class="os-choices">
-如果你不想使用 Dart 编辑器，
-你可以只下载 SDK。 SDK 支持这些系统
-{% include os-choices.html %}
-</p>
-
-<p class="os-choices">
-  {% include downloads/_sdk.html %}
-</p>
-
 <p>
-通过 <b>开发通道</b> 可以下载正在开发的 SDK，该 SDK 不稳定并且包含一些新的功能，下载地址：
-{% for sdk in site.custom.downloads.binaries %}
-
-<span class="{{ sdk.os }}">
-  <a href="{{ site.custom.downloads.dartarchive-dev-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-x64-release.{{ sdk.ext }}">
-    {{ sdk.name }} 64-bit SDK</a>
-  或者 
-  <a href="{{ site.custom.downloads.dartarchive-dev-url-prefix }}/latest/sdk/dartsdk-{{ sdk.os }}-ia32-release.{{ sdk.ext }}">
-    {{ sdk.name }} 32-bit SDK</a>.
-</span>
-
-{% endfor %}
-</p>
-
+或者，你可以 <a href="/tools/download.html">直接下载 SDK</a> 。</p>
 <h2 id="contents"> SDK 包含那些内容 </h2>
 
 <p>
@@ -126,6 +105,12 @@ DART_SDK=<em>/path/to/</em>dart-sdk
 PATH=$PATH:$DART_SDK/bin
 </pre>
 
+<aside class="alert alert-info">
+<strong>Note for Linux users</strong>: If your system uses an older
+version of Ubuntu and you are compiling the SDK,
+you may need to update to GCC 4.6 or later.
+See the <a href="faq.html">Tools FAQ</a> for more information.
+</aside>
 
 
 <h2 id="bugs"> 提交 Bug 和新特性</h2>

@@ -1,12 +1,17 @@
 ---
 layout: default
 title: "Dart 代码示例"
+description: 用于展示 Polymer, HTML5, Angular 等内容的 Dart示例代码。
 header:
   css: ["/samples/samples.css"]
 has_permalinks: true
 ---
 {% injectdata samples samples/samples.yaml %}
-  <h1> {{ page.title }} </h1>
+
+# {{ page.title }} 
+
+查看其他 [Dart 示例代码](/dart-by-example/).
+
 <div class="row">
 <div class="col-md-3">
   <ol class="toc nav bs-sidenav" id="markdown-toc" role="complementary">

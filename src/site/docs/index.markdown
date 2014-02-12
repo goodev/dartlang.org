@@ -19,7 +19,7 @@ Dart 开发概览告诉你一些能够
 或者开始[下载 Dart](/#get-started)
 并玩玩 Dart 编辑器。
 
-[试试 Dart](/codelabs/darrrt/)
+[海盗们 停下来：编写个 Web 应用吧](/codelabs/darrrt/)
 ：一步一步创建一个 web 应用 。
 这个一小时代码实验室假设你具有其他编程语言背景，
 但是并不要求对 Dart 或者 HTML 有所了解。
